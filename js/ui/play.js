@@ -10,6 +10,7 @@ import { playerProfile, levelFor, starsFor, XP_PER_LEVEL } from '../progress/pla
 import { getSettings, saveSettings } from '../storage/settings.js';
 import { h, toast, fa, ltr, badge, percent, keepFocus } from './dom.js';
 import { createAnswerWidget, INSTRUCTIONS } from './answer-widgets.js';
+import { splitPrompt } from './prompt.js';
 import { speak, speakButtons, completeSentence, contextSentence } from './speech-out.js';
 
 /** True when `word` appears as a whole word in `sentence` (case-insensitive). */
@@ -395,9 +396,6 @@ function renderQuestion(root, session, flow) {
  */
 function questionBlock(q) {
   const glossary = q.glossary ?? [];
-  if (glossary.length === 0) {
-    return h('p', { class: 'question', dir: 'auto' }, q.question);
-  }
 
   const tip = h('div', { class: 'gloss-tip', dir: 'auto', hidden: true });
   const sentence = contextSentence(q);
@@ -428,29 +426,42 @@ function questionBlock(q) {
   };
 
   const byWord = new Map(glossary.map((entry) => [entry.word.toLowerCase(), entry]));
-  const words = q.question.split(/(\s+)/).map((part) => {
-    const entry = byWord.get(part.replace(/[^\p{L}']/gu, '').toLowerCase());
-    return entry
-      ? keepFocus(h('span', { class: 'gloss-word', role: 'button', onclick: () => show(entry) }, part))
-      : part;
-  });
+  // Glossary words become tappable spans; everything else is plain text.
+  const wordNodes = (text) =>
+    text.split(/(\s+)/).map((part) => {
+      const entry = byWord.get(part.replace(/[^\p{L}']/gu, '').toLowerCase());
+      return entry
+        ? keepFocus(h('span', { class: 'gloss-word', role: 'button', onclick: () => show(entry) }, part))
+        : part;
+    });
+
+  // Two separate lines: the Persian instruction (right-to-left) and the English sentence (left-to-right).
+  const { instruction, sentence: englishLine } = splitPrompt(q.question);
+  const lines = englishLine
+    ? [
+        instruction ? h('p', { class: 'q-instruction', dir: 'rtl' }, instruction) : null,
+        h('p', { class: 'question q-english', dir: 'ltr' }, ...wordNodes(englishLine)),
+      ]
+    : [h('p', { class: 'question', dir: 'auto' }, ...wordNodes(instruction))];
 
   return h(
     'div',
     { class: 'question-block' },
-    h('p', { class: 'question', dir: 'auto' }, ...words),
-    h(
-      'div',
-      { class: 'glossary' },
-      h('span', { class: 'gloss-label' }, 'کلمه‌های کلیدی · روی هر کدام بزن:'),
-      h(
-        'div',
-        { class: 'chips' },
-        glossary.map((entry) =>
-          keepFocus(h('button', { type: 'button', class: 'chip gloss-chip', dir: 'ltr', onclick: () => show(entry) }, entry.word)),
-        ),
-      ),
-    ),
+    lines,
+    glossary.length
+      ? h(
+          'div',
+          { class: 'glossary' },
+          h('span', { class: 'gloss-label' }, 'کلمه‌های کلیدی · روی هر کدام بزن:'),
+          h(
+            'div',
+            { class: 'chips' },
+            glossary.map((entry) =>
+              keepFocus(h('button', { type: 'button', class: 'chip gloss-chip', dir: 'ltr', onclick: () => show(entry) }, entry.word)),
+            ),
+          ),
+        )
+      : null,
     tip,
   );
 }

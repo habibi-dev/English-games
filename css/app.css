@@ -1589,3 +1589,27 @@ textarea {
 .tip-meaning {
   font-size: 1.02rem;
 }
+
+/* Question prompt split into two lines: Persian instruction (RTL) and English sentence (LTR) */
+.q-instruction {
+  margin: 0;
+  direction: rtl;
+  text-align: start;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.q-english {
+  direction: ltr;
+  text-align: left;
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-inline-start: 4px solid var(--primary);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.6;
+}
