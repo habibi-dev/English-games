@@ -214,6 +214,21 @@ async function showSetup(root) {
   refresh();
 }
 
+/** One dot per question of the mission: green = correct, red = wrong, pulsing = current. */
+function progressTrack(session) {
+  return h(
+    'div',
+    { class: 'progress-track', role: 'img', 'aria-label': `پیشرفت: ${fa(session.index + 1)} از ${fa(session.total)}` },
+    Array.from({ length: session.total }, (_, i) => {
+      const outcome = session.outcomes[i];
+      let state = 'todo';
+      if (outcome) state = outcome.correct ? 'ok' : 'bad';
+      else if (i === session.index) state = 'current';
+      return h('span', { class: `dot ${state}` });
+    }),
+  );
+}
+
 /** Consecutive correct answers at the end of the session. */
 function currentStreak(outcomes) {
   let streak = 0;
@@ -225,8 +240,9 @@ function renderQuestion(root, session, flow) {
   stopTimer();
   const { question: q, index, total } = session.current;
 
-  const scoreEl = h('span', { class: 'score' }, `⭐ ${fa(session.summary().score)} امتیاز`);
-  const streakEl = h('span', { class: 'streak', 'aria-live': 'polite' }, `🔥 زنجیره: ${fa(currentStreak(session.outcomes))}`);
+  const scoreEl = h('span', { class: 'hud-chip score' }, `⭐ ${fa(session.summary().score)}`);
+  const streakEl = h('span', { class: 'hud-chip streak', 'aria-live': 'polite' }, `🔥 ${fa(currentStreak(session.outcomes))}`);
+  let progressEl = progressTrack(session);
   const timerFill = h('div', { class: 'timer-fill' });
   const timerText = h('span', { class: 'timer-text' });
   const feedback = h('div', { class: 'feedback', hidden: true, role: 'alert' });
@@ -260,12 +276,16 @@ function renderQuestion(root, session, flow) {
     stopTimer();
     widget.lock(q.expected_answer);
     submitButton.hidden = true;
-    scoreEl.textContent = `⭐ ${fa(session.summary().score)} امتیاز`;
-    streakEl.textContent = `🔥 زنجیره: ${fa(currentStreak(session.outcomes))}`;
+    scoreEl.textContent = `⭐ ${fa(session.summary().score)}`;
+    streakEl.textContent = `🔥 ${fa(currentStreak(session.outcomes))}`;
+    const freshTrack = progressTrack(session);
+    progressEl.replaceWith(freshTrack);
+    progressEl = freshTrack;
     showFeedback(outcome);
     nextButton.hidden = false;
     nextButton.textContent = session.index + 1 < session.total ? 'سؤال بعدی' : 'پایان و نتیجه';
-    nextButton.focus();
+    // Focus is intentionally not moved to the next button: pressing Enter in the answer box
+    // only submits the answer, and the learner moves on with the button.
     recordOutcome(outcome).catch(() => toast('ذخیره‌ی نتیجه انجام نشد.', 'error'));
   }
 
@@ -277,22 +297,30 @@ function renderQuestion(root, session, flow) {
         ? 'زمان تمام شد.'
         : 'اشتباه بود.';
 
+    const icon = outcome.correct ? '✓' : outcome.timedOut ? '⏱' : '✕';
     feedback.hidden = false;
     feedback.className = `feedback ${outcome.correct ? 'ok' : 'bad'}`;
     feedback.replaceChildren(
       ...[
-        h('strong', {}, headline),
         h(
-          'p',
-          { class: 'answer-line' },
-          h('span', {}, 'جمله‌ی کامل: '),
-          ltr(fullSentence),
+          'div',
+          { class: 'fb-head' },
+          h('span', { class: 'fb-icon', 'aria-hidden': 'true' }, icon),
+          h('strong', { class: 'fb-title' }, headline),
+        ),
+        h(
+          'div',
+          { class: 'fb-box fb-sentence' },
+          h('span', { class: 'fb-label' }, 'جمله‌ی کامل'),
+          h('p', { class: 'fb-text' }, ltr(fullSentence)),
           speakButtons(fullSentence),
         ),
         outcome.correct || outcome.timedOut
           ? null
-          : h('p', { class: 'answer-line' }, h('span', {}, 'پاسخ تو: '), ltr(outcome.answer)),
-        outcome.correct || !q.explanation ? null : h('p', { class: 'explanation', dir: 'auto' }, q.explanation),
+          : h('div', { class: 'fb-box fb-yours' }, h('span', { class: 'fb-label' }, 'پاسخ تو'), h('p', { class: 'fb-text' }, ltr(outcome.answer))),
+        outcome.correct || !q.explanation
+          ? null
+          : h('div', { class: 'fb-box fb-note', dir: 'auto' }, h('span', { class: 'fb-label' }, 'نکته'), h('p', { class: 'fb-text-sm' }, q.explanation)),
       ].filter(Boolean),
     );
   }
@@ -310,24 +338,49 @@ function renderQuestion(root, session, flow) {
     h(
       'section',
       { class: 'card play' },
-      h('div', { class: 'play-meta' }, h('span', {}, `سؤال ${fa(index + 1)} از ${fa(total)}`), scoreEl, streakEl),
-      h('div', { class: 'timer' }, h('div', { class: 'timer-track' }, timerFill), timerText),
+      // Top bar: where the learner is, score and streak, then the mission progress track.
       h(
         'div',
-        { class: 'badges' },
-        badge(CATEGORIES[q.category] ?? q.category, 'accent'),
-        badge(topicLabel(q.topic)),
-        badge(DIFFICULTIES[q.difficulty] ?? q.difficulty),
+        { class: 'hud' },
+        h(
+          'div',
+          { class: 'hud-top' },
+          h('span', { class: 'hud-count' }, `سؤال ${fa(index + 1)} از ${fa(total)}`),
+          h('div', { class: 'hud-chips' }, scoreEl, streakEl),
+        ),
+        progressEl,
       ),
-      h('p', { class: 'instruction' }, INSTRUCTIONS[q.category] ?? ''),
-      questionBlock(q),
-      widget.element,
-      hintText
-        ? keepFocus(h('button', { type: 'button', class: 'btn ghost small', onclick: () => (hintText.hidden = false) }, 'راهنما'))
-        : null,
-      hintText,
+      h('div', { class: 'timer' }, h('div', { class: 'timer-track' }, timerFill), timerText),
+      // Stage: the question itself, with its type and level tags above it.
+      h(
+        'div',
+        { class: 'stage' },
+        h(
+          'div',
+          { class: 'stage-tags' },
+          badge(CATEGORIES[q.category] ?? q.category, 'accent'),
+          badge(topicLabel(q.topic)),
+          badge(DIFFICULTIES[q.difficulty] ?? q.difficulty),
+        ),
+        h('p', { class: 'instruction' }, INSTRUCTIONS[q.category] ?? ''),
+        questionBlock(q),
+      ),
+      // Answer zone: the input (or choices) and the optional hint.
+      h(
+        'div',
+        { class: 'answer-zone' },
+        widget.element,
+        hintText
+          ? h(
+              'div',
+              { class: 'hint-row' },
+              keepFocus(h('button', { type: 'button', class: 'btn ghost small', onclick: () => (hintText.hidden = false) }, 'راهنما')),
+              hintText,
+            )
+          : null,
+      ),
       feedback,
-      h('div', { class: 'actions' }, submitButton, nextButton),
+      h('div', { class: 'actions play-actions' }, submitButton, nextButton),
     ),
   );
 
@@ -346,7 +399,7 @@ function questionBlock(q) {
     return h('p', { class: 'question', dir: 'auto' }, q.question);
   }
 
-  const tip = h('p', { class: 'gloss-tip', dir: 'auto', hidden: true });
+  const tip = h('div', { class: 'gloss-tip', dir: 'auto', hidden: true });
   const sentence = contextSentence(q);
   const show = (entry) => {
     // Spoken inside its sentence so the pronunciation matches how it sounds in context.
@@ -355,8 +408,12 @@ function questionBlock(q) {
     tip.hidden = false;
     tip.replaceChildren(
       ...[
-        h('strong', { dir: 'ltr' }, entry.word),
-        ` = ${entry.meaning}`,
+        h(
+          'div',
+          { class: 'tip-head' },
+          h('strong', { class: 'tip-word', dir: 'ltr' }, entry.word),
+          h('span', { class: 'tip-meaning' }, entry.meaning),
+        ),
         h(
           'span',
           { class: 'speak-buttons' },
@@ -385,7 +442,7 @@ function questionBlock(q) {
     h(
       'div',
       { class: 'glossary' },
-      h('span', { class: 'muted small' }, 'کلمات کلیدی (روی هر کدام بزن تا معنی‌اش را ببینی و بشنوی):'),
+      h('span', { class: 'gloss-label' }, 'کلمه‌های کلیدی · روی هر کدام بزن:'),
       h(
         'div',
         { class: 'chips' },

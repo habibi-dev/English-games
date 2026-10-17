@@ -102,7 +102,12 @@ function textAnswer(onSubmit, initial = '') {
     autocapitalize: 'off',
     spellcheck: false,
     onkeydown: (event) => {
-      if (event.key === 'Enter') onSubmit();
+      if (event.key === 'Enter') {
+        // Enter behaves like the "send" button: it only submits. preventDefault stops the browser
+        // from also firing a click on whatever gets focus next.
+        event.preventDefault();
+        onSubmit();
+      }
     },
   });
 
