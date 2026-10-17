@@ -1,4 +1,4 @@
-// Progress Tracker: stores one attempt per answered question.
+// Progress Tracker: stores one attempt per answered question, on this device (IndexedDB).
 // Each attempt keeps a snapshot of the question's metadata, so reports still make sense
 // after a question is edited or deleted from the bank.
 

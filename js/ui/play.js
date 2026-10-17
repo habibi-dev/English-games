@@ -1,13 +1,35 @@
-// Play screen: setup -> question loop (timer, submit, feedback) -> results.
+// Play screen: setup (player card + missions) -> question loop (timer, submit, feedback) -> results.
 // Only UI logic lives here. Selection, timing and scoring come from the Game Engine,
 // answer checks from the Answer Validator, and storage from the Progress Tracker.
 
 import { listQuestions, listBanks } from '../bank/repository.js';
 import { CATEGORIES, DIFFICULTIES, topicLabel } from '../bank/schema.js';
 import { filterQuestions, pickQuestions, GameSession } from '../engine/game-engine.js';
-import { recordOutcome } from '../progress/tracker.js';
-import { h, toast, fa, ltr, badge, stat } from './dom.js';
+import { recordOutcome, loadAttempts } from '../progress/tracker.js';
+import { playerProfile, levelFor, starsFor, XP_PER_LEVEL } from '../progress/player.js';
+import { getSettings, saveSettings } from '../storage/settings.js';
+import { h, toast, fa, ltr, badge, percent, keepFocus } from './dom.js';
 import { createAnswerWidget, INSTRUCTIONS } from './answer-widgets.js';
+import { speak, speakButtons, completeSentence, contextSentence } from './speech-out.js';
+
+/** True when `word` appears as a whole word in `sentence` (case-insensitive). */
+function containsWord(sentence, word) {
+  const target = word.toLowerCase();
+  return sentence
+    .toLowerCase()
+    .split(/[^a-z']+/)
+    .some((token) => token === target);
+}
+
+const COUNTS = [10, 20, 50, 0]; // 0 means "all"
+const CATEGORY_ICONS = {
+  quick_translation: '🔤',
+  sentence_builder: '🧩',
+  grammar_correction: '🛠️',
+  multiple_choice: '🎯',
+  positive_negative_question: '⚖️',
+  voice_translation: '🎤',
+};
 
 let timerId = null;
 
@@ -25,8 +47,8 @@ export async function renderPlay(root) {
 }
 
 // Chip group. `selected` is an array that is mutated in place.
-function chipGroup(options, selected, { multiple = true, onChange }) {
-  const box = h('div', { class: 'chips' });
+function chipGroup(options, selected, { multiple = true, onChange, className = '' }) {
+  const box = h('div', { class: `chips ${className}`.trim() });
   const draw = () =>
     box.replaceChildren(
       ...options.map(([value, label]) => {
@@ -57,68 +79,133 @@ function chipGroup(options, selected, { multiple = true, onChange }) {
   return box;
 }
 
-async function showSetup(root) {
-  const questions = await listQuestions();
-  const topicOptions = [...new Set(questions.map((q) => q.topic))].map((topic) => [topic, topicLabel(topic)]);
+/** Keeps only saved values that still exist; falls back when nothing was saved. */
+function restored(value, valid, fallback) {
+  return Array.isArray(value) ? value.filter((item) => valid.includes(item)) : fallback;
+}
 
-  const banks = await listBanks();
+function miniStat(value, label) {
+  return h('div', { class: 'mini-stat' }, h('strong', {}, value), h('span', {}, label));
+}
+
+/** Level, XP progress and lifetime numbers at the top of the setup screen. */
+function playerCard(profile) {
+  const pct = Math.round(profile.levelProgress * 100);
+  return h(
+    'div',
+    { class: 'hero' },
+    h('div', { class: 'level-badge', 'aria-label': `سطح ${fa(profile.level)}` }, h('span', {}, 'سطح'), h('strong', {}, fa(profile.level))),
+    h(
+      'div',
+      { class: 'hero-body' },
+      h('strong', { class: 'hero-title' }, 'آماده‌ای برای مأموریت بعدی؟'),
+      h(
+        'div',
+        { class: 'xp-bar', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': pct },
+        h('div', { class: 'xp-fill', style: `width: ${pct}%` }),
+      ),
+      h('span', { class: 'muted small' }, `${fa(profile.xp % XP_PER_LEVEL)} از ${fa(XP_PER_LEVEL)} XP تا سطح بعد`),
+    ),
+    h(
+      'div',
+      { class: 'hero-stats' },
+      miniStat(fa(profile.answered), 'حل‌شده'),
+      miniStat(profile.accuracy == null ? '—' : percent(profile.accuracy), 'دقت'),
+      miniStat(fa(profile.bestStreak), 'بهترین زنجیره'),
+    ),
+  );
+}
+
+function stepTitle(number, text) {
+  return h('h4', { class: 'step-title' }, h('span', { class: 'step-no' }, fa(number)), text);
+}
+
+async function showSetup(root) {
+  root.replaceChildren(h('p', { class: 'loading' }, 'در حال آماده‌سازی…'));
+
+  const [questions, banks, attempts] = await Promise.all([listQuestions(), listBanks(), loadAttempts()]);
+  const profile = playerProfile(attempts);
+  const saved = getSettings();
+
+  const topicOptions = [...new Set(questions.map((q) => q.topic))].map((topic) => [topic, topicLabel(topic)]);
   const bankOptions = banks.map((bank) => [bank.id, bank.name]);
   const defaultBanks = banks.filter((bank) => bank.default).map((bank) => bank.id);
+  const allBanks = banks.map((bank) => bank.id);
+  const allTopics = topicOptions.map(([topic]) => topic);
+  const allCategories = Object.keys(CATEGORIES);
+  const allDifficulties = Object.keys(DIFFICULTIES);
 
   const state = {
-    banks: defaultBanks.length ? defaultBanks : banks.map((bank) => bank.id),
-    topics: topicOptions.map(([topic]) => topic),
-    categories: Object.keys(CATEGORIES),
-    difficulties: Object.keys(DIFFICULTIES),
-    count: [10],
+    banks: restored(saved.banks, allBanks, defaultBanks.length ? defaultBanks : allBanks),
+    topics: restored(saved.topics, allTopics, allTopics),
+    categories: restored(saved.categories, allCategories, allCategories),
+    difficulties: restored(saved.difficulties, allDifficulties, allDifficulties),
+    count: [COUNTS.includes(saved.count) ? saved.count : 10],
   };
 
-  const info = h('p', { class: 'muted small' });
-  const startButton = h('button', { type: 'button', class: 'btn primary wide', onclick: start }, 'شروع تمرین');
+  const info = h('p', { class: 'muted small info' });
+  const startButton = h('button', { type: 'button', class: 'btn primary start-btn', onclick: start }, 'شروع مأموریت!');
 
   function available() {
     return filterQuestions(questions, state);
   }
 
   function refresh() {
+    saveSettings({
+      banks: state.banks,
+      topics: state.topics,
+      categories: state.categories,
+      difficulties: state.difficulties,
+      count: state.count[0],
+    });
     const count = available().length;
-    info.textContent = `${fa(count)} سؤال فعال با تنظیمات انتخابی`;
+    info.textContent = `${fa(count)} سؤال آماده برای این مأموریت`;
     startButton.disabled = count === 0;
   }
 
-  function start() {
+  async function start() {
     const pool = pickQuestions(questions, state, { count: state.count[0] || Infinity });
     if (pool.length === 0) {
       toast('سؤالی با این تنظیمات پیدا نشد.', 'warn');
       return;
     }
-    renderQuestion(root, new GameSession(pool));
+    const before = playerProfile(await loadAttempts());
+    renderQuestion(root, new GameSession(pool), {
+      restart: start,
+      home: () => showSetup(root),
+      xpBefore: before.xp,
+    });
   }
 
   root.replaceChildren(
     h(
       'section',
-      { class: 'card setup' },
-      h('h2', {}, 'تمرین گرامر'),
-      h('p', { class: 'muted' }, 'بانک، موضوع، نوع سؤال و سطح را انتخاب کن.'),
-      bankOptions.length ? h('h4', {}, 'بانک سؤال') : null,
-      bankOptions.length ? chipGroup(bankOptions, state.banks, { onChange: refresh }) : null,
-      h('h4', {}, 'موضوع'),
-      chipGroup(topicOptions, state.topics, { onChange: refresh }),
-      h('h4', {}, 'نوع سؤال'),
-      chipGroup(Object.entries(CATEGORIES), state.categories, { onChange: refresh }),
-      h('h4', {}, 'سطح'),
-      chipGroup(Object.entries(DIFFICULTIES), state.difficulties, { onChange: refresh }),
-      h('h4', {}, 'تعداد سؤال'),
+      { class: 'card setup game' },
+      playerCard(profile),
+      bankOptions.length ? stepTitle(1, 'بانک سؤال') : null,
+      bankOptions.length
+        ? chipGroup(bankOptions, state.banks, { onChange: refresh, className: 'card-options' })
+        : null,
+      stepTitle(2, 'موضوع'),
+      chipGroup(topicOptions, state.topics, { onChange: refresh, className: 'card-options' }),
+      stepTitle(3, 'نوع مأموریت'),
+      chipGroup(
+        Object.entries(CATEGORIES).map(([key, label]) => [key, `${CATEGORY_ICONS[key] ?? ''} ${label}`.trim()]),
+        state.categories,
+        { onChange: refresh, className: 'card-options mission-options' },
+      ),
+      stepTitle(4, 'سختی'),
+      chipGroup(Object.entries(DIFFICULTIES), state.difficulties, { onChange: refresh, className: 'card-options' }),
+      stepTitle(5, 'طول مأموریت'),
       chipGroup(
         [
-          [10, `${fa(10)} سؤال`],
-          [20, `${fa(20)} سؤال`],
-          [50, `${fa(50)} سؤال`],
-          [0, 'همه'],
+          [10, `${fa(10)} سؤال · کوتاه`],
+          [20, `${fa(20)} سؤال · متوسط`],
+          [50, `${fa(50)} سؤال · بلند`],
+          [0, 'همه‌ی سؤال‌ها'],
         ],
         state.count,
-        { multiple: false, onChange: refresh },
+        { multiple: false, onChange: refresh, className: 'card-options' },
       ),
       info,
       startButton,
@@ -127,11 +214,19 @@ async function showSetup(root) {
   refresh();
 }
 
-function renderQuestion(root, session) {
+/** Consecutive correct answers at the end of the session. */
+function currentStreak(outcomes) {
+  let streak = 0;
+  for (let i = outcomes.length - 1; i >= 0 && outcomes[i].correct; i -= 1) streak += 1;
+  return streak;
+}
+
+function renderQuestion(root, session, flow) {
   stopTimer();
   const { question: q, index, total } = session.current;
 
-  const scoreEl = h('span', { class: 'score' }, `امتیاز: ${fa(session.summary().score)}`);
+  const scoreEl = h('span', { class: 'score' }, `⭐ ${fa(session.summary().score)} امتیاز`);
+  const streakEl = h('span', { class: 'streak', 'aria-live': 'polite' }, `🔥 زنجیره: ${fa(currentStreak(session.outcomes))}`);
   const timerFill = h('div', { class: 'timer-fill' });
   const timerText = h('span', { class: 'timer-text' });
   const feedback = h('div', { class: 'feedback', hidden: true, role: 'alert' });
@@ -165,7 +260,8 @@ function renderQuestion(root, session) {
     stopTimer();
     widget.lock(q.expected_answer);
     submitButton.hidden = true;
-    scoreEl.textContent = `امتیاز: ${fa(session.summary().score)}`;
+    scoreEl.textContent = `⭐ ${fa(session.summary().score)} امتیاز`;
+    streakEl.textContent = `🔥 زنجیره: ${fa(currentStreak(session.outcomes))}`;
     showFeedback(outcome);
     nextButton.hidden = false;
     nextButton.textContent = session.index + 1 < session.total ? 'سؤال بعدی' : 'پایان و نتیجه';
@@ -174,6 +270,7 @@ function renderQuestion(root, session) {
   }
 
   function showFeedback(outcome) {
+    const fullSentence = completeSentence(q);
     const headline = outcome.correct
       ? `درست! +${fa(outcome.points)} امتیاز`
       : outcome.timedOut
@@ -185,9 +282,13 @@ function renderQuestion(root, session) {
     feedback.replaceChildren(
       ...[
         h('strong', {}, headline),
-        outcome.correct
-          ? null
-          : h('p', { class: 'answer-line' }, h('span', {}, 'پاسخ صحیح: '), ltr(q.expected_answer)),
+        h(
+          'p',
+          { class: 'answer-line' },
+          h('span', {}, 'جمله‌ی کامل: '),
+          ltr(fullSentence),
+          speakButtons(fullSentence),
+        ),
         outcome.correct || outcome.timedOut
           ? null
           : h('p', { class: 'answer-line' }, h('span', {}, 'پاسخ تو: '), ltr(outcome.answer)),
@@ -199,9 +300,9 @@ function renderQuestion(root, session) {
   function next() {
     session.next();
     if (session.finished) {
-      renderResults(root, session);
+      renderResults(root, session, flow);
     } else {
-      renderQuestion(root, session);
+      renderQuestion(root, session, flow);
     }
   }
 
@@ -209,7 +310,7 @@ function renderQuestion(root, session) {
     h(
       'section',
       { class: 'card play' },
-      h('div', { class: 'play-meta' }, h('span', {}, `سؤال ${fa(index + 1)} از ${fa(total)}`), scoreEl),
+      h('div', { class: 'play-meta' }, h('span', {}, `سؤال ${fa(index + 1)} از ${fa(total)}`), scoreEl, streakEl),
       h('div', { class: 'timer' }, h('div', { class: 'timer-track' }, timerFill), timerText),
       h(
         'div',
@@ -221,7 +322,9 @@ function renderQuestion(root, session) {
       h('p', { class: 'instruction' }, INSTRUCTIONS[q.category] ?? ''),
       questionBlock(q),
       widget.element,
-      hintText ? h('button', { type: 'button', class: 'btn ghost small', onclick: () => (hintText.hidden = false) }, 'راهنما') : null,
+      hintText
+        ? keepFocus(h('button', { type: 'button', class: 'btn ghost small', onclick: () => (hintText.hidden = false) }, 'راهنما'))
+        : null,
       hintText,
       feedback,
       h('div', { class: 'actions' }, submitButton, nextButton),
@@ -235,7 +338,7 @@ function renderQuestion(root, session) {
 
 /**
  * The question text plus its glossary. Tapping a glossary word, either in the text or in the
- * chip list below it, shows the Persian meaning.
+ * chip list below it, shows the Persian meaning and says the word aloud.
  */
 function questionBlock(q) {
   const glossary = q.glossary ?? [];
@@ -244,16 +347,34 @@ function questionBlock(q) {
   }
 
   const tip = h('p', { class: 'gloss-tip', dir: 'auto', hidden: true });
+  const sentence = contextSentence(q);
   const show = (entry) => {
+    // Spoken inside its sentence so the pronunciation matches how it sounds in context.
+    // The isolated word is offered separately, since a single word can be pronounced differently.
+    const inContext = Boolean(sentence) && containsWord(sentence, entry.word);
     tip.hidden = false;
-    tip.replaceChildren(h('strong', { dir: 'ltr' }, entry.word), ` = ${entry.meaning}`);
+    tip.replaceChildren(
+      ...[
+        h('strong', { dir: 'ltr' }, entry.word),
+        ` = ${entry.meaning}`,
+        h(
+          'span',
+          { class: 'speak-buttons' },
+          inContext
+            ? keepFocus(h('button', { type: 'button', class: 'btn ghost small speak', onclick: () => speak(sentence) }, '🔊 در جمله'))
+            : null,
+          keepFocus(h('button', { type: 'button', class: 'btn ghost small speak', onclick: () => speak(entry.word) }, '🔊 کلمه‌ی تنها')),
+        ),
+      ].filter(Boolean),
+    );
+    speak(inContext ? sentence : entry.word);
   };
 
   const byWord = new Map(glossary.map((entry) => [entry.word.toLowerCase(), entry]));
   const words = q.question.split(/(\s+)/).map((part) => {
     const entry = byWord.get(part.replace(/[^\p{L}']/gu, '').toLowerCase());
     return entry
-      ? h('span', { class: 'gloss-word', role: 'button', onclick: () => show(entry) }, part)
+      ? keepFocus(h('span', { class: 'gloss-word', role: 'button', onclick: () => show(entry) }, part))
       : part;
   });
 
@@ -264,12 +385,12 @@ function questionBlock(q) {
     h(
       'div',
       { class: 'glossary' },
-      h('span', { class: 'muted small' }, 'کلمات کلیدی (روی هر کدام بزن تا معنی‌اش را ببینی):'),
+      h('span', { class: 'muted small' }, 'کلمات کلیدی (روی هر کدام بزن تا معنی‌اش را ببینی و بشنوی):'),
       h(
         'div',
         { class: 'chips' },
         glossary.map((entry) =>
-          h('button', { type: 'button', class: 'chip gloss-chip', dir: 'ltr', onclick: () => show(entry) }, entry.word),
+          keepFocus(h('button', { type: 'button', class: 'chip gloss-chip', dir: 'ltr', onclick: () => show(entry) }, entry.word)),
         ),
       ),
     ),
@@ -277,22 +398,41 @@ function questionBlock(q) {
   );
 }
 
-function renderResults(root, session) {
+const RESULT_TITLES = ['دفعه‌ی بعد بهتر می‌شود!', 'خوب شروع کردی!', 'خیلی خوب بود!', 'عالی! ستاره‌ی کامل!'];
+
+function renderResults(root, session, flow) {
   const summary = session.summary();
   const mistakes = session.outcomes.filter((o) => !o.correct);
+  const xpGained = session.outcomes.filter((o) => o.correct).reduce((sum, o) => sum + (Number(o.points) || 0), 0);
+  const stars = starsFor(summary.correct, summary.answered);
+
+  const xpBefore = flow.xpBefore ?? 0;
+  const levelBefore = levelFor(xpBefore);
+  const levelAfter = levelFor(xpBefore + xpGained);
 
   root.replaceChildren(
     h(
       'section',
-      { class: 'card results' },
-      h('h2', {}, 'نتیجه تمرین'),
+      { class: 'card results game' },
+      h(
+        'div',
+        { class: 'result-hero' },
+        h(
+          'div',
+          { class: 'stars', role: 'img', 'aria-label': `${fa(stars)} ستاره از ۳` },
+          [1, 2, 3].map((n) => h('span', { class: n <= stars ? 'star on' : 'star' }, '★')),
+        ),
+        h('h2', {}, RESULT_TITLES[stars]),
+        h('p', { class: 'xp-gain' }, `+${fa(xpGained)} XP`),
+        levelAfter > levelBefore ? h('p', { class: 'level-up' }, `سطح جدید! حالا سطح ${fa(levelAfter)}`) : null,
+      ),
       h(
         'div',
         { class: 'stats-grid' },
-        stat('امتیاز', `${fa(summary.score)} از ${fa(summary.maxScore)}`),
-        stat('درست', fa(summary.correct)),
-        stat('اشتباه', fa(summary.wrong)),
-        stat('زمان تمام شد', fa(summary.timeouts)),
+        miniStat(`${fa(summary.score)} از ${fa(summary.maxScore)}`, 'امتیاز'),
+        miniStat(fa(summary.correct), 'درست'),
+        miniStat(fa(summary.wrong), 'اشتباه'),
+        miniStat(fa(summary.timeouts), 'زمان تمام شد'),
       ),
       h('h3', {}, mistakes.length ? 'مرور اشتباه‌ها' : 'عالی! هیچ اشتباهی نبود.'),
       ...mistakes.map((o) =>
@@ -300,14 +440,15 @@ function renderResults(root, session) {
           'div',
           { class: 'mistake' },
           h('p', { dir: 'auto' }, o.question.question),
-          h('p', { class: 'answer-line' }, h('span', {}, 'پاسخ صحیح: '), ltr(o.question.expected_answer)),
+          h('p', { class: 'answer-line' }, h('span', {}, 'جمله‌ی کامل: '), ltr(completeSentence(o.question)), speakButtons(completeSentence(o.question))),
           o.question.explanation ? h('p', { class: 'explanation', dir: 'auto' }, o.question.explanation) : null,
         ),
       ),
       h(
         'div',
-        { class: 'actions' },
-        h('button', { type: 'button', class: 'btn primary', onclick: () => showSetup(root) }, 'تمرین جدید'),
+        { class: 'actions results-actions' },
+        h('button', { type: 'button', class: 'btn primary', onclick: () => flow.restart() }, '↻ بازی دوباره'),
+        h('button', { type: 'button', class: 'btn ghost', onclick: () => flow.home() }, 'صفحه‌ی اول'),
         h('a', { class: 'btn ghost', href: '#/reports' }, 'گزارش‌ها'),
       ),
     ),

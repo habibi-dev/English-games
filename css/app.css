@@ -507,6 +507,24 @@ p {
   display: none;
 }
 
+/* Read-aloud buttons */
+.speak-buttons {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-inline-start: 8px;
+  vertical-align: middle;
+}
+
+.speak-buttons .speak {
+  min-height: 34px;
+  padding: 4px 12px;
+}
+
+.gloss-tip .speak-buttons {
+  margin-inline-start: 0;
+}
+
 .options {
   display: grid;
   gap: 10px;
@@ -824,4 +842,261 @@ textarea {
   .question {
     font-size: 1.15rem;
   }
+}
+
+/* ---------- Game look: player card, missions, streak, stars ---------- */
+
+.setup.game {
+  padding: 18px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px 16px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 18px;
+  color: #fff;
+  background: linear-gradient(135deg, #1d4ed8, #4f46e5 55%, #7c3aed);
+  box-shadow: 0 10px 24px rgba(79, 70, 229, 0.3);
+}
+
+.level-badge {
+  display: grid;
+  place-items: center;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 25%, #fde68a, #f59e0b 70%);
+  color: #422006;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.15), 0 0 0 4px rgba(255, 255, 255, 0.25);
+  line-height: 1.1;
+}
+
+.level-badge span {
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.level-badge strong {
+  font-size: 1.7rem;
+}
+
+.hero-body {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.hero-title {
+  font-size: 1.1rem;
+}
+
+.hero .muted {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.xp-bar {
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  overflow: hidden;
+}
+
+.xp-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #fde047, #facc15);
+  transition: width 0.6s ease;
+}
+
+.hero-stats {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.mini-stat {
+  display: grid;
+  place-items: center;
+  padding: 8px 4px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.16);
+  text-align: center;
+}
+
+.mini-stat strong {
+  font-size: 1.2rem;
+}
+
+.mini-stat span {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.step-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 18px 0 8px;
+}
+
+.step-no {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.card-options .chip-toggle {
+  min-height: 48px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-weight: 600;
+  box-shadow: 0 2px 0 rgba(37, 99, 235, 0.12);
+}
+
+.card-options .chip-toggle.active {
+  box-shadow: 0 3px 0 rgba(29, 78, 216, 0.5);
+  transform: translateY(-1px);
+}
+
+.mission-options .chip-toggle {
+  min-width: 132px;
+  justify-content: center;
+}
+
+.info {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.start-btn {
+  width: 100%;
+  margin-top: 8px;
+  min-height: 60px;
+  font-size: 1.25rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+.start-btn:disabled {
+  animation: none;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+  }
+  50% {
+    box-shadow: 0 8px 28px rgba(124, 58, 237, 0.55);
+  }
+}
+
+.streak {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--warn-soft);
+  color: var(--warn);
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.results.game {
+  text-align: center;
+}
+
+.result-hero {
+  display: grid;
+  gap: 6px;
+  justify-items: center;
+  padding: 10px 0 16px;
+}
+
+.stars {
+  display: flex;
+  gap: 6px;
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.star {
+  color: #d1d5db;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.star.on {
+  color: #f59e0b;
+  animation: pop 0.5s ease both;
+}
+
+.star.on:nth-child(2) {
+  animation-delay: 0.12s;
+}
+
+.star.on:nth-child(3) {
+  animation-delay: 0.24s;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.xp-gain {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 0;
+}
+
+.level-up {
+  margin: 0;
+  padding: 8px 14px;
+  border-radius: 12px;
+  background: var(--ok-soft);
+  color: var(--ok);
+  font-weight: 700;
+}
+
+.results-actions {
+  justify-content: center;
+}
+
+.results-actions .btn {
+  min-width: 130px;
+}
+
+.results .mistake {
+  text-align: start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .start-btn,
+  .star.on {
+    animation: none;
+  }
+}
+
+/* Keep the last controls of a screen clear of the floating bottom navigation. */
+#app {
+  padding-bottom: 120px;
 }

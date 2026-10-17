@@ -29,6 +29,23 @@ export function h(tag, props = {}, ...children) {
   return el;
 }
 
+/**
+ * Keeps keyboard focus where it is when this element is pressed (used for helper buttons
+ * inside the answer screen, so tapping a word or a speak button does not drop the answer input).
+ * The click event still fires normally.
+ */
+export function keepFocus(el) {
+  el.addEventListener('mousedown', (event) => event.preventDefault());
+  el.addEventListener('click', () => {
+    // Some browsers still move focus on click, so put it back on the answer input if it is open.
+    setTimeout(() => {
+      const input = document.querySelector('.answer-input:not([disabled])');
+      if (input && document.activeElement !== input) input.focus({ preventScroll: true });
+    }, 0);
+  });
+  return el;
+}
+
 export const fa = (n) => Number(n ?? 0).toLocaleString('fa-IR');
 
 export const percent = (ratio) => (ratio == null ? '—' : `${fa(Math.round(ratio * 100))}٪`);

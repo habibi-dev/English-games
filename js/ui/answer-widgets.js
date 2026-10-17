@@ -5,7 +5,7 @@
 //   lock(expected)  disable input, optionally highlighting the expected answer
 //   focus()
 
-import { h, toast } from './dom.js';
+import { h, toast, keepFocus } from './dom.js';
 
 export const INSTRUCTIONS = {
   quick_translation: 'جمله را به انگلیسی بنویس.',
@@ -69,22 +69,24 @@ function createMicButton(input) {
   };
   recognizer.onend = () => button.classList.remove('listening');
 
-  button = h(
-    'button',
-    {
-      type: 'button',
-      class: 'btn ghost mic',
-      'aria-label': 'پاسخ را با صدا وارد کن',
-      onclick: () => {
-        try {
-          button.classList.add('listening');
-          recognizer.start();
-        } catch {
-          button.classList.remove('listening');
-        }
+  button = keepFocus(
+    h(
+      'button',
+      {
+        type: 'button',
+        class: 'btn ghost mic',
+        'aria-label': 'پاسخ را با صدا وارد کن',
+        onclick: () => {
+          try {
+            button.classList.add('listening');
+            recognizer.start();
+          } catch {
+            button.classList.remove('listening');
+          }
+        },
       },
-    },
-    'صحبت کن',
+      'صحبت کن',
+    ),
   );
   return button;
 }
