@@ -66,6 +66,9 @@ jobs:
           git fetch origin $(printf '%q' "$GITHUB_REF_NAME")
           git checkout $(printf '%q' "$GITHUB_REF_NAME")
           git reset --hard origin/$(printf '%q' "$GITHUB_REF_NAME")
-          docker compose up -d --build --remove-orphans
-          docker image prune -f
+          export XDG_RUNTIME_DIR="/run/user/\$(id -u)"
+          if [ -S "\$XDG_RUNTIME_DIR/bus" ]; then
+            export DBUS_SESSION_BUS_ADDRESS="unix:path=\$XDG_RUNTIME_DIR/bus"
+          fi
+          bash scripts/deploy.sh
           EOF

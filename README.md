@@ -125,23 +125,10 @@ docker build --target test -t english-grammar-quest:test .
 
 ### استقرار خودکار (GitHub Actions)
 
-با هر push به شاخه‌ی `master` یا `main`، ورک‌فلو `.github/workflows/ci.yml` اول تست‌ها را اجرا می‌کند و بعد با SSH به سرور وصل می‌شود، همان شاخه را می‌گیرد و `docker compose up -d --build` را اجرا می‌کند. pull request فقط تست می‌شود.
+با هر push به شاخه‌ی `master` یا `main`، ورک‌فلو `.github/workflows/ci.yml` اول تست‌ها را اجرا می‌کند و بعد با SSH به سرور وصل می‌شود، همان شاخه را در مسیر دیپلوی می‌گیرد و `scripts/deploy.sh` را اجرا می‌کند. pull request فقط تست می‌شود.
 
-یک بار روی سرور:
+`scripts/deploy.sh` اگر به Docker دسترسی داشته باشد `docker compose up -d --build` را اجرا می‌کند. اگر سوکت داکر برای این کاربر بسته باشد، همان `nginx.conf` را با nginx سیستم، روی پورت ۸۰۸۰، به‌صورت سرویس کاربر systemd اجرا می‌کند.
 
-۱. Docker و Docker Compose و Git را نصب کن.
-۲. یک کلید SSH مخصوص دیپلوی بساز و کلید عمومی را در `~/.ssh/authorized_keys` کاربر دیپلوی بگذار.
-۳. ریپو را clone کن، مثلاً `/opt/english-grammar-quest`. آن پوشه باید متعلق به همان کاربر SSH باشد تا `git` و `docker` بدون رمز اجرا شوند. کاربر باید در گروه `docker` باشد.
+Secretهای لازم در GitHub Actions: `SSH_HOST`، `SSH_USER`، `SSH_PRIVATE_KEY`، `DEPLOY_PATH`. `SSH_PORT` و `SSH_KNOWN_HOSTS` اختیاری‌اند. رمز عبور را داخل ریپو یا ورک‌فلو نگذار.
 
-در GitHub، از **Settings → Secrets and variables → Actions** این secretها را بگذار:
-
-| Secret | مقدار |
-| --- | --- |
-| `SSH_HOST` | آدرس سرور |
-| `SSH_USER` | کاربر SSH |
-| `SSH_PRIVATE_KEY` | کلید خصوصی (کل فایل، شامل `BEGIN` و `END`) |
-| `DEPLOY_PATH` | مسیر clone روی سرور، مثلاً `/opt/english-grammar-quest` |
-| `SSH_PORT` | اختیاری؛ پیش‌فرض `22` |
-| `SSH_KNOWN_HOSTS` | اختیاری؛ خروجی `ssh-keyscan -H your-server` |
-
-شاخه‌ی فعلی این ریپو `master` است. push به `master` همین حالا دیپلوی را راه می‌اندازد.
+شاخه‌ی فعلی این ریپو `master` است. پوشه‌ی برنامه روی سرور `/home/amir/webapp` است.
