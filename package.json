@@ -1,0 +1,11 @@
+{
+  "name": "english-grammar-quest",
+  "version": "1.0.0",
+  "description": "Data-driven English grammar practice PWA (To Be, Do/Does) with a separate question bank.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "UNLICENSED"
+}
