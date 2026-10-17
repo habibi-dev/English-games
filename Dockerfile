@@ -20,6 +20,7 @@ COPY index.html manifest.webmanifest sw.js banks.json /usr/share/nginx/html/
 # Every file in banks/ is served. A new bank only needs a file here and an entry in banks.json.
 COPY banks /usr/share/nginx/html/banks
 COPY css /usr/share/nginx/html/css
+COPY fonts /usr/share/nginx/html/fonts
 COPY js /usr/share/nginx/html/js
 COPY icons /usr/share/nginx/html/icons
 
