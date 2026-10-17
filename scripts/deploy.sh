@@ -45,7 +45,6 @@ types {
   text/css css;
   application/javascript js mjs;
   application/json json;
-  application/manifest+json webmanifest;
   image/png png;
   image/svg+xml svg;
   text/plain txt;
@@ -103,4 +102,3 @@ nginx -t -c "${NGINX_HOME}/nginx.conf" -p "${NGINX_HOME}"
 systemctl --user daemon-reload
 systemctl --user enable --now english-games.service
 systemctl --user restart english-games.service
-EOF
