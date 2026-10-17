@@ -1,0 +1,71 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm test
+
+  deploy:
+    name: Deploy
+    needs: test
+    if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Deploy over SSH
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+          DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SSH_HOST}" ] || [ -z "${SSH_USER}" ] || [ -z "${SSH_PRIVATE_KEY}" ] || [ -z "${DEPLOY_PATH}" ]; then
+            echo "Missing deploy secrets. Set SSH_HOST, SSH_USER, SSH_PRIVATE_KEY, and DEPLOY_PATH."
+            exit 1
+          fi
+          if [ -z "${SSH_PORT}" ]; then
+            SSH_PORT=22
+          fi
+
+          install -m 700 -d ~/.ssh
+          printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          if [ -n "${SSH_KNOWN_HOSTS}" ]; then
+            printf '%s\n' "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+          else
+            ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" > ~/.ssh/known_hosts
+          fi
+          chmod 644 ~/.ssh/known_hosts
+
+          ssh -i ~/.ssh/deploy_key \
+            -p "$SSH_PORT" \
+            -o IdentitiesOnly=yes \
+            "${SSH_USER}@${SSH_HOST}" \
+            "bash -s" <<EOF
+          set -euo pipefail
+          cd $(printf '%q' "$DEPLOY_PATH")
+          git fetch origin $(printf '%q' "$GITHUB_REF_NAME")
+          git checkout $(printf '%q' "$GITHUB_REF_NAME")
+          git reset --hard origin/$(printf '%q' "$GITHUB_REF_NAME")
+          docker compose up -d --build --remove-orphans
+          docker image prune -f
+          EOF

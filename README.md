@@ -122,3 +122,26 @@ docker build --target test -t english-grammar-quest:test .
 ## استقرار
 
 ایمیج داکر فقط فایل‌های استاتیک را سرو می‌کند. فایل‌های JSON و JS و CSS همیشه از سرور تازه گرفته می‌شوند (`no-cache`)، پس بعد از هر بار `up --build` نسخه‌ی جدید به کاربران می‌رسد.
+
+### استقرار خودکار (GitHub Actions)
+
+با هر push به شاخه‌ی `master` یا `main`، ورک‌فلو `.github/workflows/ci.yml` اول تست‌ها را اجرا می‌کند و بعد با SSH به سرور وصل می‌شود، همان شاخه را می‌گیرد و `docker compose up -d --build` را اجرا می‌کند. pull request فقط تست می‌شود.
+
+یک بار روی سرور:
+
+۱. Docker و Docker Compose و Git را نصب کن.
+۲. یک کلید SSH مخصوص دیپلوی بساز و کلید عمومی را در `~/.ssh/authorized_keys` کاربر دیپلوی بگذار.
+۳. ریپو را clone کن، مثلاً `/opt/english-grammar-quest`. آن پوشه باید متعلق به همان کاربر SSH باشد تا `git` و `docker` بدون رمز اجرا شوند. کاربر باید در گروه `docker` باشد.
+
+در GitHub، از **Settings → Secrets and variables → Actions** این secretها را بگذار:
+
+| Secret | مقدار |
+| --- | --- |
+| `SSH_HOST` | آدرس سرور |
+| `SSH_USER` | کاربر SSH |
+| `SSH_PRIVATE_KEY` | کلید خصوصی (کل فایل، شامل `BEGIN` و `END`) |
+| `DEPLOY_PATH` | مسیر clone روی سرور، مثلاً `/opt/english-grammar-quest` |
+| `SSH_PORT` | اختیاری؛ پیش‌فرض `22` |
+| `SSH_KNOWN_HOSTS` | اختیاری؛ خروجی `ssh-keyscan -H your-server` |
+
+شاخه‌ی فعلی این ریپو `master` است. push به `master` همین حالا دیپلوی را راه می‌اندازد.
