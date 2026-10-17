@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { bankSummary, performanceSummary, reviewList } from '../js/progress/report.js';
 import { importQuestions } from '../js/bank/importer.js';
 
-const DATASET = new URL('../english_grammar_question_bank_1000.json', import.meta.url);
+const DATASET = new URL('../banks/english_grammar_question_bank_1000.json', import.meta.url);
 
 test('bank summary counts Do / Does questions by type from metadata', () => {
   const { questions } = importQuestions(readFileSync(DATASET, 'utf8'));

@@ -5,7 +5,7 @@ import { normalizeQuestion, validateQuestion } from '../js/bank/schema.js';
 import { importQuestions, serializeQuestions } from '../js/bank/importer.js';
 import { parseCsv, stringifyCsv } from '../js/bank/csv.js';
 
-const DATASET = new URL('../english_grammar_question_bank_1000.json', import.meta.url);
+const DATASET = new URL('../banks/english_grammar_question_bank_1000.json', import.meta.url);
 
 test('CSV parser handles quotes, commas, escaped quotes and new lines', () => {
   const rows = parseCsv('a,b,c\r\n"x, y","say ""hi""","line1\nline2"\r\n');

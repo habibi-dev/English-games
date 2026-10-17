@@ -1435,3 +1435,157 @@ textarea {
 .gloss-tip .speak-buttons {
   margin-inline-start: 0;
 }
+
+/* ---------- Compact play screen (less scrolling on phones) ---------- */
+
+.play.card {
+  padding: 12px;
+  gap: 10px;
+}
+
+.hud {
+  gap: 6px;
+}
+
+.hud-top {
+  flex-wrap: nowrap;
+}
+
+.hud-count {
+  font-size: 0.95rem;
+}
+
+.hud-chip {
+  padding: 2px 10px;
+  font-size: 0.9rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+}
+
+.dot.current {
+  transform: scale(1.2);
+}
+
+.hud .timer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hud .timer-track {
+  flex: 1;
+  height: 8px;
+}
+
+.hud .timer-text {
+  font-size: 0.85rem;
+  min-width: 56px;
+  text-align: end;
+}
+
+.stage {
+  gap: 6px;
+  padding: 12px;
+  border-radius: 16px;
+}
+
+.stage .instruction {
+  font-size: 0.88rem;
+}
+
+.stage .question {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 2px 0 0;
+}
+
+.stage-tags .badge {
+  font-size: 0.78rem;
+  padding: 2px 8px;
+}
+
+.glossary {
+  padding-top: 6px;
+  gap: 6px 8px;
+}
+
+.gloss-chip {
+  min-height: 34px;
+  padding: 4px 12px;
+  font-size: 0.95rem;
+}
+
+.answer-zone {
+  gap: 8px;
+}
+
+.play-actions {
+  bottom: 92px;
+  padding: 6px 0;
+}
+
+.play-actions .btn {
+  min-height: 46px;
+  font-size: 1.02rem;
+}
+
+/* Feedback: one compact block, sentence and speak buttons on the same line */
+.feedback {
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 14px;
+}
+
+.fb-icon {
+  width: 28px;
+  height: 28px;
+  font-size: 0.95rem;
+}
+
+.fb-title {
+  font-size: 1.05rem;
+}
+
+.fb-box {
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.fb-sentence {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+}
+
+.fb-sentence .speak-buttons {
+  margin-top: 0;
+}
+
+.fb-sentence .fb-label {
+  flex-basis: 100%;
+}
+
+.fb-text {
+  font-size: 1.12rem;
+}
+
+.fb-text-sm {
+  font-size: 0.95rem;
+}
+
+.gloss-tip {
+  padding: 8px 10px;
+  gap: 6px;
+}
+
+.tip-word {
+  font-size: 1.15rem;
+}
+
+.tip-meaning {
+  font-size: 1.02rem;
+}

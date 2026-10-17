@@ -7,7 +7,8 @@ WORKDIR /app
 COPY package.json ./
 COPY js ./js
 COPY tests ./tests
-COPY english_grammar_question_bank_1000.json beginner_question_bank.json banks.json ./
+COPY banks ./banks
+COPY banks.json ./
 RUN npm test
 
 # ---- runtime: static files served by nginx (no build step needed) ----
@@ -16,7 +17,8 @@ FROM nginxinc/nginx-unprivileged:stable-alpine AS runtime
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 COPY index.html manifest.webmanifest sw.js banks.json /usr/share/nginx/html/
-COPY english_grammar_question_bank_1000.json beginner_question_bank.json /usr/share/nginx/html/
+# Every file in banks/ is served. A new bank only needs a file here and an entry in banks.json.
+COPY banks /usr/share/nginx/html/banks
 COPY css /usr/share/nginx/html/css
 COPY js /usr/share/nginx/html/js
 COPY icons /usr/share/nginx/html/icons

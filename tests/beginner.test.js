@@ -1,10 +1,10 @@
-﻿import { test } from 'node:test';
+import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { normalizeQuestion, validateQuestion } from '../js/bank/schema.js';
 import { importQuestions, serializeQuestions } from '../js/bank/importer.js';
 
-const BEGINNER = new URL('../beginner_question_bank.json', import.meta.url);
+const BEGINNER = new URL('../banks/beginner_question_bank.json', import.meta.url);
 
 test('beginner bank imports with no invalid rows and no warnings', () => {
   const result = importQuestions(readFileSync(BEGINNER, 'utf8'));

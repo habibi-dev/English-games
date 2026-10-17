@@ -58,7 +58,14 @@ export async function syncBanks({ force = false } = {}) {
     try {
       const result = importQuestions(await fetchText(bank.file));
       // Every question remembers which bank it came from, so the game can filter by bank.
-      await db.putQuestions(result.questions.map((question) => ({ ...question, bank: bank.id })));
+      const incoming = result.questions.map((question) => ({ ...question, bank: bank.id }));
+      await db.putQuestions(incoming);
+
+      // The file is the source of truth for its bank: questions removed from the file are removed here too.
+      // This runs only after the new file loaded, so a failed download never empties a bank.
+      const incomingIds = new Set(incoming.map((question) => question.id));
+      const stale = (await db.getAllQuestions()).filter((q) => q.bank === bank.id && !incomingIds.has(q.id));
+      for (const question of stale) await db.deleteQuestion(question.id);
 
       const entry = {
         id: bank.id,

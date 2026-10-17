@@ -5,7 +5,7 @@
 
 import { writeFileSync } from 'node:fs';
 
-const OUT = new URL('../beginner_question_bank.json', import.meta.url);
+const OUT = new URL('../banks/beginner_question_bank.json', import.meta.url);
 
 const TIME_LIMIT = {
   quick_translation: 25,
@@ -279,4 +279,4 @@ const document = {
 };
 
 writeFileSync(OUT, `${JSON.stringify(document, null, 2)}\n`, 'utf8');
-console.log(`wrote ${records.length} questions to beginner_question_bank.json`);
+console.log(`wrote ${records.length} questions to banks/beginner_question_bank.json`);

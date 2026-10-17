@@ -3,21 +3,21 @@
     {
       "id": "beginner",
       "name": "مبتدی: جمله‌های کوتاه",
-      "file": "beginner_question_bank.json",
+      "file": "banks/beginner_question_bank.json",
       "version": "1",
       "default": false
     },
     {
       "id": "beginner-v2",
       "name": "مبتدی: جمله‌های کوتاه (2)",
-      "file": "beginner_question_bank_expanded.json",
+      "file": "banks/beginner_question_bank_expanded.json",
       "version": "1",
       "default": true
     },
     {
       "id": "grammar-1000",
       "name": "کامل: ۱۰۰۰ سؤال",
-      "file": "english_grammar_question_bank_1000.json",
+      "file": "banks/english_grammar_question_bank_1000.json",
       "version": "2"
     }
   ]

@@ -349,8 +349,8 @@ function renderQuestion(root, session, flow) {
           h('div', { class: 'hud-chips' }, scoreEl, streakEl),
         ),
         progressEl,
+        h('div', { class: 'timer' }, h('div', { class: 'timer-track' }, timerFill), timerText),
       ),
-      h('div', { class: 'timer' }, h('div', { class: 'timer-track' }, timerFill), timerText),
       // Stage: the question itself, with its type and level tags above it.
       h(
         'div',
