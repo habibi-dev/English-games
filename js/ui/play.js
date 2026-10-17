@@ -33,6 +33,34 @@ const CATEGORY_ICONS = {
 };
 
 let timerId = null;
+// Removes the result modal of the current question (set by renderQuestion).
+let closeModal = () => {};
+
+const CONFETTI_COLORS = ['#f94144', '#f3722c', '#f9c74f', '#90be6d', '#43aa8b', '#577590', '#c77dff'];
+
+/** Colored paper that falls when the answer is correct. */
+function confettiPieces() {
+  return Array.from({ length: 70 }, (_, i) => {
+    const piece = h('span', { class: 'confetti-piece' });
+    piece.style.left = `${Math.random() * 100}%`;
+    piece.style.background = CONFETTI_COLORS[i % CONFETTI_COLORS.length];
+    piece.style.animationDelay = `${Math.random() * 0.5}s`;
+    piece.style.animationDuration = `${2.2 + Math.random() * 1.8}s`;
+    piece.style.setProperty('--drift', `${(Math.random() - 0.5) * 160}px`);
+    return piece;
+  });
+}
+
+/** Slow blue drops that fall when the answer is wrong or the time ran out. */
+function rainDrops() {
+  return Array.from({ length: 45 }, () => {
+    const drop = h('span', { class: 'rain-drop' });
+    drop.style.left = `${Math.random() * 100}%`;
+    drop.style.animationDelay = `${Math.random() * 1.5}s`;
+    drop.style.animationDuration = `${1.6 + Math.random() * 1.2}s`;
+    return drop;
+  });
+}
 
 function stopTimer() {
   if (timerId !== null) {
@@ -44,7 +72,10 @@ function stopTimer() {
 /** Route entry point. Returns a cleanup function that the router calls when leaving the view. */
 export async function renderPlay(root) {
   await showSetup(root);
-  return stopTimer;
+  return () => {
+    stopTimer();
+    closeModal();
+  };
 }
 
 // Chip group. `selected` is an array that is mutated in place.
@@ -239,6 +270,9 @@ function currentStreak(outcomes) {
 
 function renderQuestion(root, session, flow) {
   stopTimer();
+  closeModal();
+  // Every new question starts at the top of the page.
+  window.scrollTo(0, 0);
   const { question: q, index, total } = session.current;
 
   const scoreEl = h('span', { class: 'hud-chip score' }, `⭐ ${fa(session.summary().score)}`);
@@ -252,6 +286,17 @@ function renderQuestion(root, session, flow) {
   const nextButton = h('button', { type: 'button', class: 'btn primary', hidden: true, onclick: next });
 
   const widget = createAnswerWidget(q, { onSubmit: submit });
+
+  // The result pops up as a modal card: a celebration when correct, falling rain when not.
+  const resultMood = h('div', { class: 'result-mood', 'aria-hidden': 'true' });
+  const resultEffect = h('div', { class: 'fx', 'aria-hidden': 'true' });
+  const resultOverlay = h(
+    'div',
+    { class: 'result-overlay' },
+    resultEffect,
+    h('div', { class: 'result-card', role: 'dialog', 'aria-modal': 'true' }, resultMood, feedback, nextButton),
+  );
+  closeModal = () => resultOverlay.remove();
 
   function tick() {
     const remaining = session.remainingMs();
@@ -301,6 +346,9 @@ function renderQuestion(root, session, flow) {
     const icon = outcome.correct ? '✓' : outcome.timedOut ? '⏱' : '✕';
     feedback.hidden = false;
     feedback.className = `feedback ${outcome.correct ? 'ok' : 'bad'}`;
+    resultOverlay.className = `result-overlay ${outcome.correct ? 'ok' : 'bad'}`;
+    resultMood.textContent = outcome.correct ? '🎉' : outcome.timedOut ? '⏱' : '😢';
+    resultEffect.replaceChildren(...(outcome.correct ? confettiPieces() : rainDrops()));
     feedback.replaceChildren(
       ...[
         h(
@@ -324,9 +372,11 @@ function renderQuestion(root, session, flow) {
           : h('div', { class: 'fb-box fb-note', dir: 'auto' }, h('span', { class: 'fb-label' }, 'نکته'), h('p', { class: 'fb-text-sm' }, q.explanation)),
       ].filter(Boolean),
     );
+    document.body.append(resultOverlay);
   }
 
   function next() {
+    closeModal();
     session.next();
     if (session.finished) {
       renderResults(root, session, flow);
@@ -380,8 +430,7 @@ function renderQuestion(root, session, flow) {
             )
           : null,
       ),
-      feedback,
-      h('div', { class: 'actions play-actions' }, submitButton, nextButton),
+      h('div', { class: 'actions play-actions' }, submitButton),
     ),
   );
 

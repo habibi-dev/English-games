@@ -1613,3 +1613,131 @@ textarea {
   font-weight: 700;
   line-height: 1.6;
 }
+
+/* Result modal: pops up after each answer. Correct = confetti, wrong or timed out = falling rain. */
+.result-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.55);
+  animation: result-fade 0.2s ease-out;
+  overflow: hidden;
+}
+
+.result-card {
+  position: relative;
+  z-index: 1;
+  width: min(440px, 100%);
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 18px 16px 16px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: result-pop 0.35s cubic-bezier(0.2, 1.4, 0.4, 1);
+}
+
+.result-overlay.ok .result-card { border-top: 6px solid #43aa8b; }
+.result-overlay.bad .result-card { border-top: 6px solid #e5484d; }
+
+.result-mood {
+  font-size: 3.2rem;
+  line-height: 1;
+  text-align: center;
+  animation: result-bounce 0.6s ease-out;
+}
+
+.result-overlay.bad .result-mood {
+  animation: result-sway 0.8s ease-in-out 2;
+}
+
+.result-card .feedback {
+  margin: 8px 0 0;
+}
+
+.result-card .btn.primary {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.fx {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -14px;
+  width: 9px;
+  height: 14px;
+  border-radius: 2px;
+  animation-name: confetti-fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.rain-drop {
+  position: absolute;
+  top: -30px;
+  width: 3px;
+  height: 26px;
+  border-radius: 3px;
+  background: linear-gradient(#bfdbfe, #3b82f6);
+  opacity: 0.6;
+  animation-name: rain-fall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes result-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes result-pop {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes result-bounce {
+  0% { transform: scale(0.3); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes result-sway {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-12deg); }
+  75% { transform: rotate(12deg); }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate3d(var(--drift, 0px), 110vh, 0) rotate(720deg); opacity: 0.9; }
+}
+
+@keyframes rain-fall {
+  from { transform: translateY(0); }
+  to { transform: translateY(115vh); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-overlay,
+  .result-card,
+  .result-mood,
+  .result-overlay.bad .result-mood,
+  .confetti-piece,
+  .rain-drop {
+    animation: none !important;
+  }
+  .confetti-piece,
+  .rain-drop {
+    display: none;
+  }
+}

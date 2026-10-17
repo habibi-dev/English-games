@@ -121,6 +121,8 @@ docker build --target test -t english-grammar-quest:test .
 
 ## استقرار
 
+آدرس عمومی برنامه: <https://eng.wortschatz.site/>
+
 ایمیج داکر فقط فایل‌های استاتیک را سرو می‌کند. فایل‌های JSON و JS و CSS همیشه از سرور تازه گرفته می‌شوند (`no-cache`)، پس بعد از هر بار `up --build` نسخه‌ی جدید به کاربران می‌رسد.
 
 ### استقرار خودکار (GitHub Actions)
