@@ -9,14 +9,14 @@ import { h, toast, keepFocus } from './dom.js';
 import { playButton } from './speech-out.js';
 
 export const INSTRUCTIONS = {
-  quick_translation: 'جمله را به انگلیسی بنویس.',
-  sentence_builder: 'کلمات را به ترتیب درست کنار هم بگذار.',
-  grammar_correction: 'جمله‌ی اشتباه را اصلاح کن و کل جمله‌ی درست را بنویس.',
-  multiple_choice: 'گزینه‌ی درست را انتخاب کن.',
-  positive_negative_question: 'جمله را طبق دستور تبدیل کن و کل جمله را بنویس.',
-  voice_translation: 'جمله را با صدا بگو یا تایپ کن.',
-  dictation: 'جمله را بشنو و همان‌طور که شنیدی بنویس.',
-  vocabulary: 'مترادف یا متضاد بنویس. اگر چند مورد خواسته شده، با ، از هم جدا کن.',
+  quick_translation: 'Translate the sentence into English.',
+  sentence_builder: 'Put the words together in the correct order.',
+  grammar_correction: 'Correct the wrong sentence and write the whole correct sentence.',
+  multiple_choice: 'Choose the correct option.',
+  positive_negative_question: 'Change the sentence as instructed and write the whole sentence.',
+  voice_translation: 'Say the sentence aloud or type it.',
+  dictation: 'Listen to the sentence and write it exactly as you hear it.',
+  vocabulary: 'Write a synonym or an antonym. If several are asked, separate them with commas.',
 };
 
 export function createAnswerWidget(question, { onSubmit }) {
@@ -34,7 +34,7 @@ export function createAnswerWidget(question, { onSubmit }) {
         onSubmit,
         '',
         question.answer_mode === 'list'
-          ? `حداقل ${question.min_items ?? 1} پاسخ؛ با ، یا فاصله جدا کن`
+          ? `At least ${question.min_items ?? 1} answers; separate them with commas or spaces`
           : undefined,
       );
   }
@@ -42,14 +42,14 @@ export function createAnswerWidget(question, { onSubmit }) {
 
 const SpeechRecognitionClass = () => window.SpeechRecognition ?? window.webkitSpeechRecognition;
 
-// Persian messages for the error codes of the Web Speech API (null = stay silent).
+// English messages for the error codes of the Web Speech API (null = stay silent).
 const SPEECH_ERRORS = {
-  'not-allowed': 'دسترسی به میکروفون داده نشده است. از تنظیمات مرورگر اجازه بده.',
-  'service-not-allowed': 'مرورگر اجازه‌ی استفاده از سرویس تشخیص گفتار را نداد.',
-  'audio-capture': 'میکروفونی پیدا نشد.',
-  'no-speech': 'صدایی شنیده نشد.',
-  network: 'سرویس تشخیص گفتار مرورگر در دسترس نیست. این سرویس به اینترنت و سرورهای گوگل وصل می‌شود.',
-  'language-not-supported': 'زبان انگلیسی در این مرورگر پشتیبانی نمی‌شود.',
+  'not-allowed': 'Microphone access was not granted. Allow it in your browser settings.',
+  'service-not-allowed': 'The browser did not allow the speech recognition service.',
+  'audio-capture': 'No microphone was found.',
+  'no-speech': 'No speech was heard.',
+  network: 'The browser speech recognition service is unavailable. It connects to the internet and Google servers.',
+  'language-not-supported': 'English is not supported in this browser.',
   aborted: null,
 };
 
@@ -76,8 +76,8 @@ function createMicButton(input) {
   };
   recognizer.onerror = (event) => {
     console.warn('Speech recognition error:', event.error);
-    const message = SPEECH_ERRORS[event.error] ?? `خطای تشخیص گفتار: ${event.error}`;
-    if (message) toast(`${message} می‌توانی تایپ کنی.`, 'warn');
+    const message = SPEECH_ERRORS[event.error] ?? `Speech recognition error: ${event.error}`;
+    if (message) toast(`${message} You can type instead.`, 'warn');
   };
   recognizer.onend = () => button.classList.remove('listening');
 
@@ -90,8 +90,8 @@ function createMicButton(input) {
       {
         type: 'button',
         class: 'btn ghost mic',
-        title: 'صحبت کن',
-        'aria-label': 'پاسخ را با صدا وارد کن',
+        title: 'Speak',
+        'aria-label': 'Enter the answer by voice',
         onclick: () => {
           try {
             button.classList.add('listening');
@@ -107,7 +107,7 @@ function createMicButton(input) {
   return button;
 }
 
-function textAnswer(onSubmit, initial = '', placeholder = 'پاسخ انگلیسی') {
+function textAnswer(onSubmit, initial = '', placeholder = 'English answer') {
   const input = h('input', {
     type: 'text',
     class: 'answer-input',
@@ -139,7 +139,7 @@ function textAnswer(onSubmit, initial = '', placeholder = 'پاسخ انگلیس
         : h(
             'p',
             { class: 'muted small' },
-            'تایپ با صدا در این مرورگر در دسترس نیست. می‌توانی از دیکته‌ی کیبورد استفاده کنی (مثلاً Win+H در ویندوز یا میکروفون کیبورد موبایل).',
+            'Voice typing is not available in this browser. You can use keyboard dictation instead (for example Win+H on Windows, or the keyboard microphone on a phone).',
           ),
     ),
     getValue: () => input.value,
@@ -175,7 +175,7 @@ function sentenceBuilder(question) {
         render();
       },
     },
-    'پاک کردن',
+    'Clear',
   );
 
   function render() {
@@ -188,7 +188,7 @@ function sentenceBuilder(question) {
               render();
             }),
           )
-        : [h('span', { class: 'placeholder', dir: 'auto' }, 'کلمات را اینجا بچین')]),
+        : [h('span', { class: 'placeholder', dir: 'auto' }, 'Arrange the words here')]),
     );
     bankRow.replaceChildren(
       ...tokens.flatMap((token, tokenIndex) =>
@@ -253,7 +253,7 @@ function multipleChoice(question, onSubmit) {
   );
   // Each option has its own play button: it only speaks the option, and choosing is a separate click.
   const rows = buttons.map((button, index) =>
-    h('div', { class: 'option-row' }, button, playButton(options[index], 'این گزینه را بشنو')),
+    h('div', { class: 'option-row' }, button, playButton(options[index], 'Listen to this option')),
   );
 
   return {

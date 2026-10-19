@@ -39,7 +39,7 @@ export function parseBankText(text, format) {
     const data = JSON.parse(body);
     const list = Array.isArray(data) ? data : data?.questions;
     if (!Array.isArray(list)) {
-      throw new Error('فایل JSON باید آرایه‌ای از سؤال‌ها یا کلید "questions" داشته باشد.');
+      throw new Error('JSON file must contain an array of questions or a "questions" key.');
     }
     return list;
   }
@@ -48,7 +48,7 @@ export function parseBankText(text, format) {
     return rowsToRecords(parseCsv(body));
   }
 
-  throw new Error(`فرمت ناشناخته: ${kind}`);
+  throw new Error(`Unknown format: ${kind}`);
 }
 
 /**
@@ -67,7 +67,7 @@ export function importQuestions(text, format) {
     const { errors, warnings: notes } = validateQuestion(question);
 
     if (question.id && seenIds.has(question.id)) {
-      errors.push(`شناسه تکراری در همین فایل: ${question.id}`);
+      errors.push(`Duplicate id in this file: ${question.id}`);
     }
 
     if (errors.length > 0) {

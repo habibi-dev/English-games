@@ -9,20 +9,20 @@ export const SCHEMA_VERSION = '2.0';
 
 // Exercise types. An exercise's type is the question category: the UI picks its answer widget from it.
 export const CATEGORIES = Object.freeze({
-  quick_translation: 'ترجمه سریع',
-  sentence_builder: 'ساخت جمله',
-  grammar_correction: 'اصلاح گرامر',
-  multiple_choice: 'چندگزینه‌ای',
-  positive_negative_question: 'مثبت / منفی / سؤالی',
-  voice_translation: 'ترجمه صوتی',
-  dictation: 'املا',
-  vocabulary: 'مترادف و متضاد',
+  quick_translation: 'Quick translation',
+  sentence_builder: 'Sentence building',
+  grammar_correction: 'Grammar correction',
+  multiple_choice: 'Multiple choice',
+  positive_negative_question: 'Positive / Negative / Question',
+  voice_translation: 'Audio translation',
+  dictation: 'Dictation',
+  vocabulary: 'Synonyms and antonyms',
 });
 
 // How the English sentence is shown: as text, or only played (listening).
 export const PRESENTATIONS = Object.freeze({
-  text: 'متن',
-  audio: 'فقط صدا',
+  text: 'Text',
+  audio: 'Audio only',
 });
 
 // Known topics get nice labels. Unknown topics from future lessons are still accepted.
@@ -32,15 +32,15 @@ export const TOPIC_LABELS = Object.freeze({
 });
 
 export const DIFFICULTIES = Object.freeze({
-  easy: 'آسان',
-  medium: 'متوسط',
-  hard: 'سخت',
+  easy: 'Easy',
+  medium: 'Medium',
+  hard: 'Hard',
 });
 
 export const OPERATIONS = Object.freeze({
-  positive: 'مثبت',
-  negative: 'منفی',
-  question: 'سؤالی',
+  positive: 'Positive',
+  negative: 'Negative',
+  question: 'Question',
 });
 
 export const DEFAULT_POINTS = Object.freeze({ easy: 10, medium: 15, hard: 20 });
@@ -74,8 +74,8 @@ function toBool(value, fallback) {
 const unique = (items) => [...new Set(items)];
 
 /**
- * Glossary: key words with their meaning, e.g. [{word: "work", meaning: "کار کردن"}].
- * Accepts objects, or strings like "work=کار کردن" (used by CSV and the admin form).
+ * Glossary: key words with their meaning, e.g. [{word: "work", meaning: "to do"}].
+ * Accepts objects, or strings like "work=to do" (used by CSV and the admin form).
  */
 function toGlossary(value) {
   const items = Array.isArray(value) ? value : typeof value === 'string' ? value.split('|') : [];
@@ -159,80 +159,80 @@ export function validateQuestion(q) {
   const errors = [];
   const warnings = [];
 
-  if (!q.id) errors.push('شناسه (id) خالی است.');
-  if (!CATEGORIES[q.category]) errors.push(`نوع تمرین (category) نامعتبر است: «${q.category}».`);
-  if (!q.book) errors.push('کتاب (book) خالی است.');
-  if (!q.lesson) errors.push('درس (lesson) خالی است.');
-  if (!q.topic) errors.push('موضوع (topic) خالی است.');
-  if (!DIFFICULTIES[q.difficulty]) errors.push(`سطح (difficulty) نامعتبر است: «${q.difficulty}».`);
-  if (!PRESENTATIONS[q.presentation]) errors.push(`حالت نمایش (presentation) نامعتبر است: «${q.presentation}».`);
-  if (!q.question) errors.push('متن سؤال خالی است.');
-  if (!q.expected_answer) errors.push('پاسخ اصلی (expected_answer) خالی است.');
-  if (!q.explanation) warnings.push('توضیح (explanation) خالی است.');
+  if (!q.id) errors.push('id is empty.');
+  if (!CATEGORIES[q.category]) errors.push(`Exercise type (category) is invalid: "${q.category}".`);
+  if (!q.book) errors.push('book is empty.');
+  if (!q.lesson) errors.push('lesson is empty.');
+  if (!q.topic) errors.push('topic is empty.');
+  if (!DIFFICULTIES[q.difficulty]) errors.push(`Level (difficulty) is invalid: "${q.difficulty}".`);
+  if (!PRESENTATIONS[q.presentation]) errors.push(`Presentation mode (presentation) is invalid: "${q.presentation}".`);
+  if (!q.question) errors.push('Question text is empty.');
+  if (!q.expected_answer) errors.push('Expected answer (expected_answer) is empty.');
+  if (!q.explanation) warnings.push('Explanation (explanation) is empty.');
   for (const entry of q.glossary ?? []) {
-    if (!entry.meaning) warnings.push(`معنی کلمه‌ی کلیدی «${entry.word}» خالی است.`);
+    if (!entry.meaning) warnings.push(`Meaning of key word "${entry.word}" is empty.`);
   }
-  if (!Number.isInteger(q.points) || q.points <= 0) errors.push('امتیاز (points) باید عدد صحیح مثبت باشد.');
-  if (!(Number.isFinite(q.time_limit) && q.time_limit > 0)) errors.push('زمان (time_limit) باید عدد مثبت باشد.');
+  if (!Number.isInteger(q.points) || q.points <= 0) errors.push('Points (points) must be a positive whole number.');
+  if (!(Number.isFinite(q.time_limit) && q.time_limit > 0)) errors.push('Time limit (time_limit) must be a positive number.');
 
   if (q.answer_mode !== undefined && q.answer_mode !== 'list') {
-    errors.push(`حالت پاسخ (answer_mode) نامعتبر است: «${q.answer_mode}».`);
+    errors.push(`Answer mode (answer_mode) is invalid: "${q.answer_mode}".`);
   }
   if (q.answer_mode === 'list') {
     if (!Number.isInteger(q.min_items) || q.min_items < 1) {
-      errors.push('min_items باید عدد صحیح و حداقل ۱ باشد.');
+      errors.push('min_items must be a whole number, at least 1.');
     } else if (q.min_items > (q.accepted_answers ?? []).length) {
-      errors.push('min_items بیشتر از تعداد پاسخ‌های قابل قبول است.');
+      errors.push('min_items is greater than the number of accepted answers.');
     }
   }
 
   if (q.presentation === 'audio') {
     // A listening question has to play an English sentence, and a blank would give the answer away.
-    if (!/[A-Za-z]/.test(q.question)) errors.push('تمرین شنیداری باید متن انگلیسی برای پخش صوتی داشته باشد.');
-    if (q.question.includes('___')) errors.push('تمرین شنیداری نمی‌تواند جای خالی (___) داشته باشد.');
-    if ((q.glossary ?? []).length > 0) warnings.push('در تمرین شنیداری کلمات کلیدی نمایش داده نمی‌شوند.');
+    if (!/[A-Za-z]/.test(q.question)) errors.push('A listening exercise needs English text to play as audio.');
+    if (q.question.includes('___')) errors.push('A listening exercise cannot contain a blank (___).');
+    if ((q.glossary ?? []).length > 0) warnings.push('Key words are not shown in a listening exercise.');
   }
 
   switch (q.category) {
     case 'sentence_builder': {
       const bank = q.word_bank ?? [];
       if (bank.length < 2) {
-        errors.push('word_bank باید حداقل دو کلمه داشته باشد.');
+        errors.push('word_bank must contain at least two words.');
       } else if (q.expected_answer) {
         const bankWords = tokenize(bank.join(' ')).sort().join(' ');
         const answerWords = tokenize(q.expected_answer).sort().join(' ');
         if (bankWords !== answerWords) {
-          errors.push('کلمات word_bank با کلمات expected_answer یکی نیست.');
+          errors.push('The words in word_bank do not match the words in expected_answer.');
         }
       }
       break;
     }
     case 'grammar_correction':
       if (!q.incorrect_sentence) {
-        errors.push('جمله اشتباه (incorrect_sentence) خالی است.');
+        errors.push('Incorrect sentence (incorrect_sentence) is empty.');
       } else if (normalizeAnswer(q.incorrect_sentence) === normalizeAnswer(q.expected_answer)) {
-        warnings.push('جمله اشتباه با پاسخ صحیح یکی است؛ ممکن است خطایی در آن نباشد.');
+        warnings.push('The incorrect sentence is the same as the correct answer; it may not contain a mistake.');
       }
       break;
     case 'multiple_choice': {
       const options = q.options ?? [];
       const sameAs = (a, b) => normalizeAnswer(a) === normalizeAnswer(b);
-      if (options.length < 2) errors.push('حداقل دو گزینه لازم است.');
+      if (options.length < 2) errors.push('At least two options are required.');
       if (new Set(options.map(normalizeAnswer)).size !== options.length) {
-        errors.push('گزینه‌های تکراری وجود دارد.');
+        errors.push('There are duplicate options.');
       }
       if (q.expected_answer && !options.some((o) => sameAs(o, q.expected_answer))) {
-        errors.push('پاسخ صحیح (expected_answer) در گزینه‌ها نیست.');
+        errors.push('The correct answer (expected_answer) is not among the options.');
       }
       for (const answer of q.accepted_answers) {
         if (!options.some((o) => sameAs(o, answer))) {
-          warnings.push(`پاسخ قابل قبول «${answer}» در گزینه‌ها نیست.`);
+          warnings.push(`Accepted answer "${answer}" is not among the options.`);
         }
       }
       break;
     }
     case 'positive_negative_question':
-      if (!OPERATIONS[q.operation]) errors.push(`نوع تبدیل (operation) نامعتبر است: «${q.operation}».`);
+      if (!OPERATIONS[q.operation]) errors.push(`Operation (operation) is invalid: "${q.operation}".`);
       break;
     default:
       break;

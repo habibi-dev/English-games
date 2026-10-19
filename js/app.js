@@ -38,24 +38,24 @@ async function route() {
   } catch (error) {
     console.error(error);
     root.replaceChildren(
-      h('div', { class: 'card error-box' }, h('strong', {}, 'خطا در نمایش صفحه.'), h('p', {}, error.message)),
+      h('div', { class: 'card error-box' }, h('strong', {}, 'Error displaying this page.'), h('p', {}, error.message)),
     );
   }
 }
 
 async function boot() {
-  root.replaceChildren(h('p', { class: 'loading' }, 'در حال آماده‌سازی درس‌ها…'));
+  root.replaceChildren(h('p', { class: 'loading' }, 'Preparing lessons…'));
 
   try {
     const { loaded, errors } = await syncContent();
     if (loaded.length) {
       const total = loaded.reduce((sum, lesson) => sum + lesson.count, 0);
-      toast(`${fa(total)} سؤال از درس‌های جدید بارگذاری شد.`);
+      toast(`${fa(total)} questions loaded from new lessons.`);
     }
-    errors.forEach((e) => toast(`درس ${e.lesson}: ${e.message}`, 'error'));
+    errors.forEach((e) => toast(`Lesson ${e.lesson}: ${e.message}`, 'error'));
   } catch (error) {
     console.error(error);
-    toast(`بارگذاری محتوای درس‌ها ناموفق بود: ${error.message}`, 'error');
+    toast(`Failed to load lesson content: ${error.message}`, 'error');
   }
 
   window.addEventListener('hashchange', route);

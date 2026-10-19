@@ -13,6 +13,8 @@ export async function recordOutcome(outcome) {
     difficulty: q.difficulty,
     question: q.question,
     expected_answer: q.expected_answer,
+    // The sentence the learner had to correct (grammar questions); null for the other types.
+    incorrect_sentence: q.incorrect_sentence ?? null,
     answer: outcome.answer,
     correct: outcome.correct,
     timedOut: outcome.timedOut,

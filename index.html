@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="fa" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#2563eb">
-  <meta name="description" content="تمرین گرامر انگلیسی با بانک سؤال مستقل؛ قابل نصب روی موبایل و بدون نیاز به اینترنت پس از اولین بار.">
+  <meta name="description" content="English grammar practice with an independent question bank. Installable on mobile and works offline after the first visit.">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Grammar Quest">
   <title>English Grammar Quest</title>
@@ -18,21 +18,27 @@
   <header class="topbar">
     <div class="brand">
       <span class="logo" aria-hidden="true">🎮</span>
-      <div>
+      <div class="brand-text">
         <h1>English Grammar Quest</h1>
-        <p>تمرین گرامر انگلیسی</p>
+        <p>English grammar practice</p>
       </div>
+      <a class="topbar-admin" href="#/admin" data-nav="admin" aria-label="Question bank" title="Question bank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+          <ellipse cx="12" cy="5" rx="8" ry="3"/>
+          <path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/>
+          <path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>
+        </svg>
+      </a>
     </div>
   </header>
 
   <main id="app" class="container">
-    <p class="loading">در حال بارگذاری…</p>
+    <p class="loading">Loading…</p>
   </main>
 
-  <nav class="bottom-nav" aria-label="ناوبری اصلی">
-    <a href="#/play" data-nav="play">بازی</a>
-    <a href="#/reports" data-nav="reports">گزارش</a>
-    <a href="#/admin" data-nav="admin">بانک سؤال</a>
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <a href="#/play" data-nav="play">Play</a>
+    <a href="#/reports" data-nav="reports">Reports</a>
   </nav>
 
   <script type="module" src="js/app.js"></script>

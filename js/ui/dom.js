@@ -46,9 +46,10 @@ export function keepFocus(el) {
   return el;
 }
 
-export const fa = (n) => Number(n ?? 0).toLocaleString('fa-IR');
+// Numbers are shown with Latin digits: the interface is English and left-to-right.
+export const fa = (n) => Number(n ?? 0).toLocaleString('en-US');
 
-export const percent = (ratio) => (ratio == null ? '—' : `${fa(Math.round(ratio * 100))}٪`);
+export const percent = (ratio) => (ratio == null ? '—' : `${fa(Math.round(ratio * 100))}%`);
 
 export const ltr = (text) => h('bdi', { class: 'ltr', dir: 'ltr' }, text);
 

@@ -52,10 +52,13 @@ export class GameSession {
   #startedAt;
   #outcomes = [];
   #answered = false;
+  // Questions that already gave points (earlier sessions or this one). They score nothing again.
+  #scored;
 
-  constructor(questions, { clock = () => Date.now() } = {}) {
+  constructor(questions, { clock = () => Date.now(), alreadyScored = [] } = {}) {
     this.#questions = [...questions];
     this.#clock = clock;
+    this.#scored = new Set(alreadyScored);
     this.#startedAt = clock();
   }
 
@@ -118,7 +121,7 @@ export class GameSession {
 
   next() {
     if (!this.#answered) {
-      throw new Error('ابتدا به سؤال فعلی پاسخ بده.');
+      throw new Error('Answer the current question first.');
     }
     this.#index++;
     this.#answered = false;
@@ -144,13 +147,16 @@ export class GameSession {
   }
 
   #assertOpen() {
-    if (this.finished) throw new Error('این تمرین تمام شده است.');
-    if (this.#answered) throw new Error('به این سؤال قبلاً پاسخ داده شده است.');
+    if (this.finished) throw new Error('This exercise is already finished.');
+    if (this.#answered) throw new Error('This question has already been answered.');
   }
 
   #record(data) {
     const elapsedMs = this.#clock() - this.#startedAt;
-    const points = data.correct ? data.question.points ?? 0 : 0;
+    // A question pays its points only on the first correct answer. Repeats are still recorded and still count for the streak.
+    const id = data.question.id;
+    const points = data.correct && !this.#scored.has(id) ? data.question.points ?? 0 : 0;
+    if (data.correct) this.#scored.add(id);
     const outcome = { ...data, points, elapsedMs };
     this.#outcomes.push(outcome);
     this.#answered = true;

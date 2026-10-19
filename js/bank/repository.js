@@ -25,7 +25,7 @@ export async function importIntoStore(text, format) {
 async function fetchText(url) {
   const response = await fetch(url, { cache: 'no-cache' });
   if (!response.ok) {
-    throw new Error(`فایل ${url} پیدا نشد (HTTP ${response.status}).`);
+    throw new Error(`File ${url} not found (HTTP ${response.status}).`);
   }
   return response.text();
 }
@@ -60,7 +60,7 @@ export async function syncContent({ force = false } = {}) {
     try {
       const result = flattenLesson(JSON.parse(await fetchText(info.file)), { book: info.book, lesson: info.lesson });
       if (result.questions.length === 0) {
-        throw new Error(`هیچ تمرین معتبری در ${info.file} پیدا نشد.`);
+        throw new Error(`No valid exercises found in ${info.file}.`);
       }
       await db.putQuestions(result.questions);
 

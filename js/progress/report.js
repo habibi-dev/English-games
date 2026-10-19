@@ -47,7 +47,7 @@ const finish = (row) => ({ ...row, successRate: row.attempted ? row.correct / ro
 export function performanceSummary(attempts) {
   const cells = new Map();
   const topics = new Map();
-  const overall = statRow({ label: 'کل' });
+  const overall = statRow({ label: 'Total' });
 
   for (const attempt of attempts) {
     const key = `${attempt.topic}|${attempt.category}`;
@@ -88,6 +88,7 @@ export function reviewList(attempts) {
         lastCorrect: true,
         lastAnswer: '',
         lastAt: 0,
+        incorrect_sentence: attempt.incorrect_sentence ?? null,
       };
       byQuestion.set(attempt.questionId, entry);
     }

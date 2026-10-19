@@ -1,4 +1,4 @@
-import { test } from 'node:test';
+﻿import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { filterQuestions, pickQuestions, GameSession } from '../js/engine/game-engine.js';
 
@@ -52,7 +52,7 @@ test('a wrong answer scores 0 and the flow waits for next()', () => {
   const outcome = session.submit('I is a developer');
   assert.equal(outcome.correct, false);
   assert.equal(outcome.points, 0);
-  assert.throws(() => session.submit('again'), /قبلاً/);
+  assert.throws(() => session.submit('again'), /already been answered/);
   session.next();
   assert.equal(session.index, 1);
   assert.equal(session.answered, false);
@@ -87,5 +87,20 @@ test('summary and finish state after the last question', () => {
     (({ answered, correct, wrong, timeouts, score, maxScore }) => ({ answered, correct, wrong, timeouts, score, maxScore }))(session.summary()),
     { answered: 2, correct: 1, wrong: 1, timeouts: 1, score: 10, maxScore: 30 },
   );
-  assert.throws(() => session.timeout(), /تمام شده/);
+  assert.throws(() => session.timeout(), /already finished/);
+});
+
+test('a question that already gave points pays nothing on a repeated correct answer', () => {
+  const session = new GameSession([make('x')], { alreadyScored: ['x'] });
+  const outcome = session.submit('I am a developer.');
+  assert.equal(outcome.correct, true);
+  assert.equal(outcome.points, 0);
+  assert.equal(session.summary().score, 0);
+});
+
+test('the same question inside one session pays only once', () => {
+  const session = new GameSession([make('x'), make('x')]);
+  assert.equal(session.submit('I am a developer.').points, 10);
+  session.next();
+  assert.equal(session.submit('I am a developer.').points, 0);
 });

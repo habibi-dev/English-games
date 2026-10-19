@@ -83,7 +83,8 @@ function speakIconButton(label, icon, onclick, variant) {
 }
 
 // Filled play triangle, for listening questions.
-const PLAY_ICON = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.9-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg>`;
+// The viewBox is shifted so the triangle's own box (x 8 to 20.4) is centred in the icon.
+const PLAY_ICON = `<svg viewBox="2.2 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M8 5.14v13.72a1 1 0 0 0 1.52.85l10.9-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14z"/></svg>`;
 
 /**
  * Speak button for the question sentence. Returns null when the browser cannot speak.
@@ -102,8 +103,8 @@ export function questionSpeakButton(text, { big = false, lang = 'en-US', label }
       {
         type: 'button',
         class: big ? 'q-speak q-speak-big' : 'q-speak',
-        title: label ?? (big ? 'پخش' : 'بخوان'),
-        'aria-label': label ?? (big ? 'پخش جمله' : 'جمله را با صدا بخوان'),
+        title: label ?? (big ? 'Play' : 'Read aloud'),
+        'aria-label': label ?? (big ? 'Play sentence' : 'Read the sentence aloud'),
         onclick: () =>
           speak(text, {
             lang,
@@ -121,23 +122,29 @@ export function questionSpeakButton(text, { big = false, lang = 'en-US', label }
  * Small play button that only speaks `text`. It never submits anything, so the learner can listen to
  * every option and then choose. Returns null when the browser cannot speak.
  */
-export function playButton(text, label = 'پخش') {
+export function playButton(text, label = 'Play') {
   if (!canSpeak() || !text) return null;
+  // Same look as the sentence's read-aloud button, so every audio control in a question matches.
   const glyph = h('span', { class: 'speak-glyph' });
-  glyph.innerHTML = PLAY_ICON;
-  return keepFocus(
+  glyph.innerHTML = SPEAKER_ICON;
+  const button = keepFocus(
     h(
       'button',
       {
         type: 'button',
-        class: 'btn ghost small speak speak-icon normal play-only',
+        class: 'q-speak',
         title: label,
         'aria-label': label,
-        onclick: () => speak(text),
+        onclick: () =>
+          speak(text, {
+            onStart: () => button.classList.add('speaking'),
+            onEnd: () => button.classList.remove('speaking'),
+          }),
       },
       glyph,
     ),
   );
+  return button;
 }
 
 // Speech bubble: "say it inside the sentence".
@@ -145,7 +152,7 @@ const SENTENCE_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor
 const KIND_ICON = { normal: SPEAKER_ICON, slow: SLOW_ICON, sentence: SENTENCE_ICON };
 
 /**
- * A control bar of icon buttons with a "پخش صدا" label, used under a word tip.
+ * A control bar of icon buttons with a "Play audio" label, used under a word tip.
  * Each action: { kind: 'normal' | 'slow' | 'sentence', label, onclick }. Null actions are skipped.
  * Returns null when the browser cannot speak.
  */
@@ -159,13 +166,13 @@ export function speakBar(actions) {
 }
 
 /** Normal and slow read-aloud buttons (icon only, with tooltips). Returns null when the browser cannot speak. */
-export function speakButtons(text, { label = 'بخوان' } = {}) {
+export function speakButtons(text, { label = 'Read aloud' } = {}) {
   if (!canSpeak() || !text) return null;
   return h(
     'span',
     { class: 'speak-buttons' },
     speakIconButton(label, SPEAKER_ICON, () => speak(text), 'normal'),
-    speakIconButton('آهسته بخوان', SLOW_ICON, () => speak(text, { slow: true }), 'slow'),
+    speakIconButton('Read slowly', SLOW_ICON, () => speak(text, { slow: true }), 'slow'),
   );
 }
 

@@ -16,11 +16,11 @@ export const CONTENT_INDEX_URL = 'content/index.json';
 export function indexLessons(index) {
   const entries = [];
   for (const series of index?.series ?? []) {
-    if (!series?.id) throw new Error('هر سری در content/index.json باید id داشته باشد.');
+    if (!series?.id) throw new Error('Every series in content/index.json must have an id.');
     for (const book of series.books ?? []) {
-      if (!book?.id) throw new Error(`کتاب بدون id در سری «${series.id}».`);
+      if (!book?.id) throw new Error(`Book without an id in series "${series.id}".`);
       for (const lesson of book.lessons ?? []) {
-        if (!lesson?.id || !lesson?.file) throw new Error(`درس بدون id یا file در کتاب «${book.id}».`);
+        if (!lesson?.id || !lesson?.file) throw new Error(`Lesson without an id or file in book "${book.id}".`);
         entries.push({
           series: series.id,
           seriesTitle: series.title ?? series.id,
@@ -56,7 +56,7 @@ export function flattenLesson(data, { book, lesson }) {
   if (!Array.isArray(data?.exercises)) {
     return {
       questions,
-      invalid: [{ index: null, id: null, errors: ['فایل درس باید آرایه‌ای به نام exercises داشته باشد.'] }],
+      invalid: [{ index: null, id: null, errors: ['Lesson file must contain an array named exercises.'] }],
       warnings,
       total,
     };
@@ -70,7 +70,7 @@ export function flattenLesson(data, { book, lesson }) {
       invalid.push({
         index: null,
         id: exercise?.id ?? null,
-        errors: [`نوع تمرین (type) نامعتبر است: «${type}» در تمرین «${exercise?.id ?? ''}».`],
+        errors: [`Exercise type (type) is invalid: "${type}" in exercise "${exercise?.id ?? ''}".`],
       });
       total += items.length;
       continue;
@@ -94,7 +94,7 @@ export function flattenLesson(data, { book, lesson }) {
 
       const question = normalizeQuestion(raw);
       const { errors, warnings: notes } = validateQuestion(question);
-      if (question.id && seen.has(question.id)) errors.push(`شناسه تکراری در همین درس: ${question.id}`);
+      if (question.id && seen.has(question.id)) errors.push(`Duplicate id in this lesson: ${question.id}`);
 
       if (errors.length > 0) {
         invalid.push({ index: total, id: question.id || null, errors });

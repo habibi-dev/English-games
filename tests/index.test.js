@@ -1,4 +1,4 @@
-import { test } from 'node:test';
+﻿import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { indexLessons } from '../js/bank/content.js';
 
@@ -52,10 +52,10 @@ test('an empty or missing index gives no lessons', () => {
 });
 
 test('a series, book or lesson without an id is reported', () => {
-  assert.throws(() => indexLessons({ series: [{ title: 'x', books: [] }] }), /سری/);
-  assert.throws(() => indexLessons({ series: [{ id: 's', books: [{ title: 'x', lessons: [] }] }] }), /کتاب بدون id/);
+  assert.throws(() => indexLessons({ series: [{ title: 'x', books: [] }] }), /series/);
+  assert.throws(() => indexLessons({ series: [{ id: 's', books: [{ title: 'x', lessons: [] }] }] }), /Book without an id/);
   assert.throws(
     () => indexLessons({ series: [{ id: 's', books: [{ id: 'b', lessons: [{ id: 'l' }] }] }] }),
-    /درس بدون id/,
+    /Lesson without an id/,
   );
 });

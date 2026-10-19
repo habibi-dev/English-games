@@ -1,7 +1,7 @@
 {
   "name": "English Grammar Quest",
   "short_name": "Grammar Quest",
-  "description": "تمرین گرامر انگلیسی با بانک سؤال مستقل",
+  "description": "English grammar practice with an independent question bank",
   "lang": "fa",
   "dir": "rtl",
   "start_url": "./index.html",
