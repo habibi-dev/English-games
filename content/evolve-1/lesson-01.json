@@ -16,7 +16,9 @@
           "question": "نام کوچک من علی است.",
           "expected_answer": "My first name is Ali.",
           "accepted_answers": [
-            "My first name's Ali."
+            "My first name's Ali.",
+            "My given name is Ali.",
+            "My given name's Ali."
           ],
           "explanation": "First name یعنی نام کوچک. شکل کوتاه is در این جمله به صورت 's نوشته می‌شود.",
           "hint": "کلمه‌ی کلیدی: «نام کوچک» = first name؛ تلفظ: /fɜːrst neɪm/ (فِرست نِیم)؛ نکته: given name هم همین معنی را دارد.",
@@ -40,7 +42,9 @@
           "question": "اسم کوچک تو چیست؟",
           "expected_answer": "What is your first name?",
           "accepted_answers": [
-            "What's your first name?"
+            "What's your first name?",
+            "What is your given name?",
+            "What's your given name?"
           ],
           "explanation": "What's شکل کوتاه What is است.",
           "hint": "کلمه‌ی کلیدی: «اسم کوچک» = first name؛ تلفظ: /fɜːrst neɪm/ (فِرست نِیم)؛ نکته: «تو» در انگلیسی your است.",
@@ -939,22 +943,6 @@
           "expected_answer": "Assist me.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: assist = کمک کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-tr-113",
-          "question": "نام کوچک من علی است.",
-          "expected_answer": "My given name is Ali.",
-          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: given name = نام کوچک. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-tr-114",
-          "question": "نام خانوادگی تو چیست؟",
-          "expected_answer": "What is your family name?",
-          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: family name = نام خانوادگی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60
         },
         {
@@ -2811,7 +2799,9 @@
           "hint": "نام کوچک = first name؛ my = من؛ is = است.",
           "time_limit": 60,
           "accepted_answers": [
-            "My first name's Ali."
+            "My first name's Ali.",
+            "My given name is Ali.",
+            "My given name's Ali."
           ]
         },
         {
@@ -3952,29 +3942,6 @@
           "time_limit": 60
         },
         {
-          "id": "evolve-1-l01-wt-105",
-          "word_bank": [
-            "نام کوچک",
-            "من",
-            "علی",
-            "است"
-          ],
-          "expected_answer": "My given name is Ali.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-wt-106",
-          "word_bank": [
-            "نام خانوادگی",
-            "تو",
-            "چیست؟"
-          ],
-          "expected_answer": "What is your family name?",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
-          "time_limit": 60
-        },
-        {
           "id": "evolve-1-l01-wt-107",
           "word_bank": [
             "این",
@@ -4007,7 +3974,11 @@
           ],
           "expected_answer": "What is your last name?",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "What is your family name?",
+            "What's your family name?"
+          ]
         },
         {
           "id": "evolve-1-l01-wt-110",
@@ -4211,7 +4182,9 @@
           "explanation": "First name یعنی نام کوچک. شکل کوتاه is در این جمله به صورت 's نوشته می‌شود.",
           "time_limit": 60,
           "accepted_answers": [
-            "My first name's Ali."
+            "My first name's Ali.",
+            "My given name is Ali.",
+            "My given name's Ali."
           ],
           "hint": "کلمه‌ی کلیدی: «نام کوچک» = first name؛ تلفظ: /fɜːrst neɪm/ (فِرست نِیم)؛ نکته: given name هم همین معنی را دارد."
         },
@@ -4235,7 +4208,9 @@
           "explanation": "What's شکل کوتاه What is است.",
           "time_limit": 60,
           "accepted_answers": [
-            "What's your first name?"
+            "What's your first name?",
+            "What is your given name?",
+            "What's your given name?"
           ],
           "hint": "کلمه‌ی کلیدی: «اسم کوچک» = first name؛ تلفظ: /fɜːrst neɪm/ (فِرست نِیم)؛ نکته: «تو» در انگلیسی your است."
         },
@@ -5133,22 +5108,6 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: assist = کمک کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
-        },
-        {
-          "id": "evolve-1-l01-vt-113",
-          "question": "نام کوچک من علی است.",
-          "expected_answer": "My given name is Ali.",
-          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: given name = نام کوچک. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
-        },
-        {
-          "id": "evolve-1-l01-vt-114",
-          "question": "نام خانوادگی تو چیست؟",
-          "expected_answer": "What is your family name?",
-          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: family name = نام خانوادگی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
         },
         {
           "id": "evolve-1-l01-vt-115",

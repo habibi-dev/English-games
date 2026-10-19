@@ -1081,9 +1081,14 @@ function questionBlock(q) {
     return h('div', { class: 'question-block' }, h('p', { class: 'question meaning-question', dir: 'rtl' }, q.hint));
   }
 
-  // Letters mode (dictation): the letter tiles are the question. The answer widget builds them.
+  // Letters mode (dictation): the letter tiles are the answer, built by the answer widget.
+  // The Persian meaning is shown above them, so the learner knows which word to spell.
   if (q.presentation === 'letters') {
-    return h('div', { class: 'question-block letters-only' });
+    return h(
+      'div',
+      { class: 'question-block letters-only' },
+      q.hint ? h('p', { class: 'question meaning-question', dir: 'rtl' }, q.hint) : null,
+    );
   }
 
   // Listening question: the English text stays hidden, only the play button is shown (no glossary either,
