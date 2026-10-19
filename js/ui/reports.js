@@ -60,6 +60,15 @@ const MONTH_NAMES = [
 let calendarView = null;
 let selectedDay = null;
 
+// Legend for the calendar colours, matching levelFor() in js/progress/activity.js.
+const LEGEND = [
+  [0, 'None'],
+  [1, '< 15 min'],
+  [2, '15–30 min'],
+  [3, '30–60 min'],
+  [4, '1 h+'],
+];
+
 /** Play time in hours and minutes, e.g. "2 h 15 min", "45 min". */
 function durationText(ms) {
   const totalMinutes = Math.round(ms / 60000);
@@ -133,7 +142,7 @@ function activitySection(root, now) {
       sessions.length === 0 ? emptyNote('No play time yet. Start a mission and it will show here.') : null,
       h(
         'div',
-        { class: 'report-stats activity-tiles' },
+        { class: 'report-stats activity-tiles activity-row activity-periods' },
         statCard('☀️', durationText(stats.today), 'Today', 'amber'),
         statCard('🌙', durationText(stats.yesterday), 'Yesterday', 'indigo'),
         statCard('📅', durationText(stats.week), 'This week', 'blue'),
@@ -142,7 +151,7 @@ function activitySection(root, now) {
       ),
       h(
         'div',
-        { class: 'report-stats activity-tiles' },
+        { class: 'report-stats activity-tiles activity-row activity-stats' },
         statCard('🔥', `${fa(stats.currentStreak)} days`, 'Current streak', 'amber'),
         statCard('🏆', `${fa(stats.bestStreak)} days`, 'Best streak', 'violet'),
         statCard('✅', fa(stats.activeDays), 'Active days', 'green'),
@@ -184,9 +193,10 @@ function activitySection(root, now) {
         h(
           'div',
           { class: 'cal-legend' },
-          h('span', {}, 'Less'),
-          [0, 1, 2, 3, 4].map((level) => h('span', { class: `cal-swatch lvl-${level}` })),
-          h('span', {}, 'More'),
+          // Each colour is a band of play time per day, so the legend shows the hours it stands for.
+          LEGEND.map(([level, label]) =>
+            h('span', { class: 'cal-legend-item' }, h('span', { class: `cal-swatch lvl-${level}` }), label),
+          ),
         ),
         h('p', { class: 'cal-selected' }, `${dayLabel(shownKey)}: ${durationText(totals.get(shownKey) ?? 0)}`),
       ),

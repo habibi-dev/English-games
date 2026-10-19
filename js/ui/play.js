@@ -495,6 +495,14 @@ async function showSetup(root) {
     refresh();
   }
 
+  // Done / total of one exercise type in the chosen lessons, counted the same way as the lesson tiles.
+  function categoryProgress(category) {
+    return progressOf(
+      questions.filter((q) => q.category === category && state.lessons.includes(lessonKey(q.book, q.lesson))),
+      done,
+    );
+  }
+
   // Step 4: the rest of the settings, on their own screen: exercise types, presentation and length.
   function drawSettingsStep() {
     settingsStart = null;
@@ -530,7 +538,10 @@ async function showSetup(root) {
         }),
         stepTitle('Exercise types'),
         chipGroup(
-          Object.entries(CATEGORIES).map(([key, label]) => [key, `${CATEGORY_ICONS[key] ?? ''} ${label}`.trim()]),
+          Object.entries(CATEGORIES).map(([key, label]) => [
+            key,
+            categoryChip(`${CATEGORY_ICONS[key] ?? ''} ${label}`.trim(), categoryProgress(key)),
+          ]),
           state.categories,
           { onChange: refresh, className: 'card-options mission-options' },
         ),
@@ -624,6 +635,27 @@ function progressLine(progress) {
       h('span', { class: 'progress-fill', style: `width: ${progress.percent}%` }),
     ),
     h('span', { class: 'muted small', dir: 'ltr' }, `${fa(progress.done)} of ${fa(progress.total)} done · ${fa(progress.percent)}%`),
+  );
+}
+
+/** An exercise-type tile: its name, and a small bar with done / total when the chosen lessons have that type. */
+function categoryChip(label, progress) {
+  return h(
+    'span',
+    { class: 'cat-chip' },
+    h('span', { class: 'cat-name' }, label),
+    progress.total
+      ? h(
+          'span',
+          { class: 'cat-progress' },
+          h(
+            'span',
+            { class: 'progress-bar', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': progress.percent },
+            h('span', { class: 'progress-fill', style: `width: ${progress.percent}%` }),
+          ),
+          h('span', { class: 'cat-count', dir: 'ltr' }, `${fa(progress.done)}/${fa(progress.total)} · ${fa(progress.percent)}%`),
+        )
+      : null,
   );
 }
 

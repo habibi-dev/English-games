@@ -121,7 +121,7 @@
             "Please help me."
           ],
           "explanation": "Help یعنی کمک کردن.",
-          "hint": "کلمه‌ی کلیدی: «کمک کن» = help؛ تلفظ: /help/ (هِلپ)؛ نکته: «به من» در انگلیسی me است و جمله با فعل امر شروع می‌شود.",
+          "hint": "کلمه‌ی کلیدی: «کمک کن» = help؛ تلفظ: /help/ (هِلپ)؛ نکته: «به من» در انگلیسی me است؛ راهنما: به نوع جمله (امری) دقت کن.",
           "time_limit": 60
         },
         {
@@ -137,9 +137,12 @@
           "question": "چطور به انگلیسی می‌گویی «کمک»؟",
           "expected_answer": "How do you say help in English?",
           "explanation": "از الگوی How do you say ... in English? برای پرسیدن معادل انگلیسی استفاده می‌کنیم.",
-          "hint": "کلمه‌ی کلیدی: «کمک» = help؛ تلفظ: /help/ (هِلپ)؛ نکته: الگو: How do you say ... in English? یعنی «چطور به انگلیسی می‌گویی ...؟»",
+          "hint": "کلمه‌ی کلیدی: «کمک» = help؛ تلفظ: /help/ (هِلپ)؛ راهنما: به شکل پرسشی جمله دقت کن.",
           "time_limit": 60,
           "accepted_answers": [
+            "How do you say کمک in English?",
+            "How do you say help in English?",
+            "How do you say 'کمک' in English?",
             "How do you say 'help' in English?"
           ]
         },
@@ -151,7 +154,7 @@
             "What does the word teacher mean?"
           ],
           "explanation": "برای پرسیدن معنی کلمه از الگوی What does ... mean? استفاده می‌کنیم.",
-          "hint": "کلمه‌ی کلیدی: «معنی» = mean؛ تلفظ: /miːn/ (مین)؛ نکته: الگو: What does ... mean? یعنی «... چه معنایی می‌دهد؟»",
+          "hint": "کلمه‌ی کلیدی: «معنی» = mean؛ تلفظ: /miːn/ (مین)؛ راهنما: به شکل پرسشی جمله دقت کن.",
           "time_limit": 60
         }
       ]
@@ -318,7 +321,7 @@
           ],
           "expected_answer": "He reads.",
           "explanation": "برای He فعل read به reads تبدیل می‌شود.",
-          "hint": "او (مرد) = He؛ می‌خواند = read؛ برای He، فعل s می‌گیرد.",
+          "hint": "او (مرد) = He؛ می‌خواند = read؛ راهنما: به فاعل جمله دقت کن.",
           "time_limit": 60
         },
         {
@@ -330,7 +333,7 @@
           ],
           "expected_answer": "She walks.",
           "explanation": "برای She فعل walk به walks تبدیل می‌شود.",
-          "hint": "او (زن) = She؛ راه رفتن = walk؛ برای She، فعل s می‌گیرد.",
+          "hint": "او (زن) = She؛ راه رفتن = walk؛ راهنما: به فاعل جمله دقت کن.",
           "time_limit": 60
         },
         {
@@ -377,6 +380,2148 @@
           "accepted_answers": [
             "I'm a partner."
           ]
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-word-translation-review",
+      "type": "word_translation",
+      "title": "ترجمه‌ی جمله‌ها با کلمات فارسی (مرور)",
+      "difficulty": "easy",
+      "presentation": "text",
+      "items": [
+        {
+          "id": "evolve-1-l01-wtr-01",
+          "word_bank": [
+            "آن",
+            "مادر من",
+            "است"
+          ],
+          "expected_answer": "That is my mother.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-02",
+          "word_bank": [
+            "آن‌ها",
+            "دوستان من",
+            "هستند"
+          ],
+          "expected_answer": "They are my friends.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-03",
+          "word_bank": [
+            "این",
+            "خیابان من",
+            "است"
+          ],
+          "expected_answer": "This is my street.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-04",
+          "word_bank": [
+            "خانه‌ی من",
+            "در این خیابان پهن و بزرگ",
+            "است"
+          ],
+          "expected_answer": "My house is on this avenue.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-05",
+          "word_bank": [
+            "جاده",
+            "طولانی",
+            "است"
+          ],
+          "expected_answer": "The road is long.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-06",
+          "word_bank": [
+            "کوچه",
+            "تاریک",
+            "است"
+          ],
+          "expected_answer": "The alley is dark.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-07",
+          "word_bank": [
+            "من",
+            "می‌توانم",
+            "گروه",
+            "را",
+            "ببینم"
+          ],
+          "expected_answer": "I can see the group.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-08",
+          "word_bank": [
+            "می‌شود",
+            "پاسخ را",
+            "به من بگویی؟"
+          ],
+          "expected_answer": "Could you tell me the answer?",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-09",
+          "word_bank": [
+            "آیا",
+            "می‌توانی",
+            "داستان",
+            "را",
+            "دوباره",
+            "بازگو",
+            "کنی؟"
+          ],
+          "expected_answer": "Can you retell the story?",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-10",
+          "word_bank": [
+            "من",
+            "می‌توانم",
+            "پاسخ",
+            "را",
+            "به یاد",
+            "بیاورم"
+          ],
+          "expected_answer": "I can recall the answer.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-11",
+          "word_bank": [
+            "ما",
+            "می‌توانیم",
+            "خانه",
+            "را",
+            "دوباره",
+            "بسازیم"
+          ],
+          "expected_answer": "We can rebuild the house.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-12",
+          "word_bank": [
+            "او",
+            "می‌تواند",
+            "سلامتی‌اش",
+            "را",
+            "دوباره",
+            "به دست بیاورد"
+          ],
+          "expected_answer": "He can regain his health.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-13",
+          "word_bank": [
+            "لطفاً",
+            "این جمله",
+            "را",
+            "دوباره",
+            "بنویس"
+          ],
+          "expected_answer": "Please rewrite this sentence.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-14",
+          "word_bank": [
+            "ببخشید",
+            "اشتباه",
+            "از من بود"
+          ],
+          "expected_answer": "Sorry, my bad.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-15",
+          "word_bank": [
+            "بیایید",
+            "درس",
+            "را",
+            "بخوانیم"
+          ],
+          "expected_answer": "Let's study the lesson.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-16",
+          "word_bank": [
+            "او",
+            "نامش",
+            "را",
+            "حک",
+            "خواهد کرد"
+          ],
+          "expected_answer": "He will inscribe his name.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-17",
+          "word_bank": [
+            "به تخته",
+            "نگاه کن"
+          ],
+          "expected_answer": "Look at the board.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-18",
+          "word_bank": [
+            "تیم",
+            "پنج",
+            "هدف",
+            "دارد"
+          ],
+          "expected_answer": "The team has five objectives.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-19",
+          "word_bank": [
+            "هدف ما",
+            "این هدف",
+            "است"
+          ],
+          "expected_answer": "Our goal is this objective.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-20",
+          "word_bank": [
+            "هدف از آزمون",
+            "روشن",
+            "است"
+          ],
+          "expected_answer": "The purpose of the test is clear.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-21",
+          "word_bank": [
+            "هدف من",
+            "یک نمره‌ی خوب",
+            "است"
+          ],
+          "expected_answer": "My target is a good grade.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-22",
+          "word_bank": [
+            "آیا",
+            "می‌توانی",
+            "به من کمک کنی؟"
+          ],
+          "expected_answer": "Can you give me a hand?",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-23",
+          "word_bank": [
+            "من",
+            "پیام",
+            "را",
+            "می‌گیرم"
+          ],
+          "expected_answer": "I get the message.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-24",
+          "word_bank": [
+            "این",
+            "کتاب شخصی من",
+            "است"
+          ],
+          "expected_answer": "This is my personal book.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-25",
+          "word_bank": [
+            "این",
+            "یک اتاق خصوصی",
+            "است"
+          ],
+          "expected_answer": "This is a private room.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-26",
+          "word_bank": [
+            "این",
+            "یک پارک عمومی",
+            "است"
+          ],
+          "expected_answer": "This is a public park.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-27",
+          "word_bank": [
+            "من",
+            "زمان",
+            "را",
+            "بررسی",
+            "می‌کنم"
+          ],
+          "expected_answer": "I check the time.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-28",
+          "word_bank": [
+            "لطفاً",
+            "در هتل",
+            "ثبت ورود کن"
+          ],
+          "expected_answer": "Please check in at the hotel.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-29",
+          "word_bank": [
+            "ما",
+            "ظهر",
+            "هتل را ترک می‌کنیم"
+          ],
+          "expected_answer": "We check out at noon.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-30",
+          "word_bank": [
+            "مردم",
+            "داخل",
+            "خانه",
+            "هستند"
+          ],
+          "expected_answer": "The people are inside the house.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-31",
+          "word_bank": [
+            "مردم",
+            "بیرون",
+            "هستند"
+          ],
+          "expected_answer": "The people are outside.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-32",
+          "word_bank": [
+            "خانه‌ی جدید",
+            "قدیمی",
+            "نیست"
+          ],
+          "expected_answer": "The new house is not old.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-33",
+          "word_bank": [
+            "مرد جوان",
+            "کمک‌کننده‌ی من",
+            "است"
+          ],
+          "expected_answer": "The young man is my helper.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-34",
+          "word_bank": [
+            "کمک‌کننده‌ی ما",
+            "جوان",
+            "است"
+          ],
+          "expected_answer": "Our helper is young.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-35",
+          "word_bank": [
+            "من",
+            "به مدرسه",
+            "راه می‌روم"
+          ],
+          "expected_answer": "I walk to school.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-36",
+          "word_bank": [
+            "او",
+            "یک سیب",
+            "می‌خورد"
+          ],
+          "expected_answer": "She eats an apple.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-37",
+          "word_bank": [
+            "او",
+            "اخبار",
+            "را",
+            "تماشا",
+            "می‌کند"
+          ],
+          "expected_answer": "He watches the news.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-38",
+          "word_bank": [
+            "او",
+            "سلام",
+            "می‌گوید"
+          ],
+          "expected_answer": "She says hello.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-39",
+          "word_bank": [
+            "ما",
+            "هر روز",
+            "می‌خوانیم",
+            "و",
+            "می‌نویسیم"
+          ],
+          "expected_answer": "We read and write every day.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-40",
+          "word_bank": [
+            "من",
+            "موسیقی",
+            "را",
+            "می‌شنوم"
+          ],
+          "expected_answer": "I hear the music.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-41",
+          "word_bank": [
+            "در",
+            "را",
+            "ببند"
+          ],
+          "expected_answer": "Shut the door.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-42",
+          "word_bank": [
+            "در",
+            "را",
+            "قفل",
+            "کن"
+          ],
+          "expected_answer": "Lock the door.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-43",
+          "word_bank": [
+            "پنجره",
+            "را",
+            "باز",
+            "کن"
+          ],
+          "expected_answer": "Open the window.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-44",
+          "word_bank": [
+            "پنجره",
+            "را",
+            "ببند"
+          ],
+          "expected_answer": "Close the window.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-45",
+          "word_bank": [
+            "به معلم",
+            "گوش",
+            "کن"
+          ],
+          "expected_answer": "Listen to the teacher.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-46",
+          "word_bank": [
+            "گروه موسیقی",
+            "معروف",
+            "است"
+          ],
+          "expected_answer": "The band is famous.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-47",
+          "word_bank": [
+            "این",
+            "یک جفت",
+            "کفش",
+            "است"
+          ],
+          "expected_answer": "This is a pair of shoes.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-48",
+          "word_bank": [
+            "آن‌ها",
+            "یک زوج",
+            "شاد",
+            "هستند"
+          ],
+          "expected_answer": "They are a happy couple.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-49",
+          "word_bank": [
+            "آن‌ها",
+            "انگلیسی",
+            "صحبت",
+            "می‌کنند"
+          ],
+          "expected_answer": "They are speaking English.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-50",
+          "word_bank": [
+            "آن‌ها",
+            "الان",
+            "صحبت",
+            "می‌کنند"
+          ],
+          "expected_answer": "They are talking now.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-51",
+          "word_bank": [
+            "درس را",
+            "الان",
+            "شروع",
+            "کن"
+          ],
+          "expected_answer": "Start the lesson now.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-52",
+          "word_bank": [
+            "آزمون را",
+            "شروع",
+            "کن"
+          ],
+          "expected_answer": "Begin the test.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-53",
+          "word_bank": [
+            "یک",
+            "مثال",
+            "به من",
+            "بده"
+          ],
+          "expected_answer": "Give me an example.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-54",
+          "word_bank": [
+            "این",
+            "نمونه‌ای از یک فعل",
+            "است"
+          ],
+          "expected_answer": "This is an instance of a verb.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-55",
+          "word_bank": [
+            "فاعل",
+            "این جمله",
+            "تو",
+            "است"
+          ],
+          "expected_answer": "The subject of this sentence is you.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-56",
+          "word_bank": [
+            "فعل",
+            "این جمله",
+            "خواندن",
+            "است"
+          ],
+          "expected_answer": "The verb in this sentence is read.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-57",
+          "word_bank": [
+            "من",
+            "تلویزیون",
+            "تماشا",
+            "می‌کنم"
+          ],
+          "expected_answer": "I watch TV.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-58",
+          "word_bank": [
+            "تخته",
+            "را",
+            "با دقت",
+            "مشاهده",
+            "کن"
+          ],
+          "expected_answer": "Observe the board carefully.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-59",
+          "word_bank": [
+            "بعداً",
+            "می‌بینمت"
+          ],
+          "expected_answer": "See you later.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-60",
+          "word_bank": [
+            "من",
+            "یک سؤال",
+            "می‌پرسم"
+          ],
+          "expected_answer": "I ask a question.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-61",
+          "word_bank": [
+            "من",
+            "یک کتاب جدید",
+            "درخواست",
+            "می‌کنم"
+          ],
+          "expected_answer": "I request a new book.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-62",
+          "word_bank": [
+            "من",
+            "سؤال را",
+            "می‌فهمم"
+          ],
+          "expected_answer": "I understand the question.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-63",
+          "word_bank": [
+            "من",
+            "ایده را",
+            "درک",
+            "می‌کنم"
+          ],
+          "expected_answer": "I grasp the idea.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-64",
+          "word_bank": [
+            "دوباره",
+            "آن را",
+            "بگو"
+          ],
+          "expected_answer": "Say it again.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-65",
+          "word_bank": [
+            "داستان",
+            "را",
+            "به من",
+            "بگو"
+          ],
+          "expected_answer": "Tell me the story.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-66",
+          "word_bank": [
+            "مادر من",
+            "معلم",
+            "است"
+          ],
+          "expected_answer": "My mother is a teacher.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-67",
+          "word_bank": [
+            "همسر من",
+            "یک",
+            "پزشک",
+            "است"
+          ],
+          "expected_answer": "My wife is a doctor.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-68",
+          "word_bank": [
+            "شوهر من",
+            "یک",
+            "پزشک",
+            "است"
+          ],
+          "expected_answer": "My husband is a doctor.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-69",
+          "word_bank": [
+            "همسر من",
+            "معلم",
+            "است"
+          ],
+          "expected_answer": "My spouse is a teacher.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-70",
+          "word_bank": [
+            "مدرس خصوصی من",
+            "مهربان",
+            "است"
+          ],
+          "expected_answer": "My tutor is kind.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-71",
+          "word_bank": [
+            "مربی",
+            "اینجا",
+            "است"
+          ],
+          "expected_answer": "The instructor is here.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-72",
+          "word_bank": [
+            "نام کوچک من",
+            "علی",
+            "است"
+          ],
+          "expected_answer": "My given name is Ali.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-73",
+          "word_bank": [
+            "نام خانوادگی من",
+            "حبیبی",
+            "است"
+          ],
+          "expected_answer": "My family name is Habibi.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-74",
+          "word_bank": [
+            "پاسخ خود را",
+            "اینجا",
+            "بنویس"
+          ],
+          "expected_answer": "Write your answer here.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-75",
+          "word_bank": [
+            "کمک‌کننده",
+            "مهربان",
+            "است"
+          ],
+          "expected_answer": "The helper is kind.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-76",
+          "word_bank": [
+            "آیا",
+            "می‌توانی",
+            "به من کمک کنی؟"
+          ],
+          "expected_answer": "Can you help me?",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-77",
+          "word_bank": [
+            "پزشک",
+            "به ما",
+            "کمک",
+            "خواهد کرد"
+          ],
+          "expected_answer": "The doctor will assist us.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-78",
+          "word_bank": [
+            "ما",
+            "به کمک بیشتری",
+            "نیاز داریم"
+          ],
+          "expected_answer": "We need more aid.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-79",
+          "word_bank": [
+            "من",
+            "در خانه",
+            "هستم"
+          ],
+          "expected_answer": "I am at home.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-80",
+          "word_bank": [
+            "این افراد",
+            "دوستان من",
+            "هستند"
+          ],
+          "expected_answer": "These individuals are my friends.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-81",
+          "word_bank": [
+            "هم‌معنی",
+            "یک کلمه‌ی مشابه",
+            "است"
+          ],
+          "expected_answer": "A synonym is a similar word.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-82",
+          "word_bank": [
+            "متضادِ گرم",
+            "سرد",
+            "است"
+          ],
+          "expected_answer": "The opposite of hot is cold.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-83",
+          "word_bank": [
+            "شریک من",
+            "اینجا",
+            "است"
+          ],
+          "expected_answer": "My partner is here.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wtr-84",
+          "word_bank": [
+            "آن‌ها",
+            "صبحانه",
+            "می‌خورند"
+          ],
+          "expected_answer": "They eat breakfast.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-sentence-review",
+      "type": "sentence_builder",
+      "title": "جمله‌سازی (مرور)",
+      "difficulty": "easy",
+      "presentation": "text",
+      "items": [
+        {
+          "id": "evolve-1-l01-sbr-01",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "That is my mother.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "my",
+            "mother.",
+            "That",
+            "is"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-02",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "They are my friends.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "my",
+            "friends.",
+            "They",
+            "are"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-03",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "This is my street.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "my",
+            "street.",
+            "This",
+            "is"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-04",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "My house is on this avenue.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "on",
+            "this",
+            "avenue.",
+            "My",
+            "house",
+            "is"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-05",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The road is long.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "long.",
+            "The",
+            "road"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-06",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The alley is dark.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "dark.",
+            "The",
+            "alley"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-07",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I can see the group.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "see",
+            "the",
+            "group.",
+            "I",
+            "can"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-08",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Could you tell me the answer?",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "me",
+            "the",
+            "answer?",
+            "Could",
+            "you",
+            "tell"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-09",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Can you retell the story?",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "retell",
+            "the",
+            "story?",
+            "Can",
+            "you"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-10",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I can recall the answer.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "recall",
+            "the",
+            "answer.",
+            "I",
+            "can"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-11",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "We can rebuild the house.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "rebuild",
+            "the",
+            "house.",
+            "We",
+            "can"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-12",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "He can regain his health.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "regain",
+            "his",
+            "health.",
+            "He",
+            "can"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-13",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Please rewrite this sentence.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "this",
+            "sentence.",
+            "Please",
+            "rewrite"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-14",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Sorry, my bad.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "my",
+            "bad.",
+            "Sorry,"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-15",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Let's study the lesson.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "lesson.",
+            "Let's",
+            "study"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-16",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "He will inscribe his name.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "inscribe",
+            "his",
+            "name.",
+            "He",
+            "will"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-17",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Look at the board.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "board.",
+            "Look",
+            "at"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-18",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The team has five objectives.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "has",
+            "five",
+            "objectives.",
+            "The",
+            "team"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-19",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Our goal is this objective.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "this",
+            "objective.",
+            "Our",
+            "goal"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-20",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The purpose of the test is clear.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "test",
+            "is",
+            "clear.",
+            "The",
+            "purpose",
+            "of"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-21",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "My target is a good grade.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "a",
+            "good",
+            "grade.",
+            "My",
+            "target",
+            "is"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-22",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Can you give me a hand?",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "me",
+            "a",
+            "hand?",
+            "Can",
+            "you",
+            "give"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-23",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I get the message.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "message.",
+            "I",
+            "get"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-24",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "This is my personal book.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "my",
+            "personal",
+            "book.",
+            "This",
+            "is"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-25",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "This is a private room.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "a",
+            "private",
+            "room.",
+            "This",
+            "is"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-26",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "This is a public park.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "a",
+            "public",
+            "park.",
+            "This",
+            "is"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-27",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I check the time.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "time.",
+            "I",
+            "check"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-28",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Please check in at the hotel.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "at",
+            "the",
+            "hotel.",
+            "Please",
+            "check",
+            "in"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-29",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "We check out at noon.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "out",
+            "at",
+            "noon.",
+            "We",
+            "check"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-30",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The people are inside the house.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "inside",
+            "the",
+            "house.",
+            "The",
+            "people",
+            "are"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-31",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The people are outside.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "are",
+            "outside.",
+            "The",
+            "people"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-32",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The new house is not old.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "not",
+            "old.",
+            "The",
+            "new",
+            "house"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-33",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The young man is my helper.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "my",
+            "helper.",
+            "The",
+            "young",
+            "man"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-34",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Our helper is young.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "young.",
+            "Our",
+            "helper"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-35",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I walk to school.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "to",
+            "school.",
+            "I",
+            "walk"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-36",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "She eats an apple.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "an",
+            "apple.",
+            "She",
+            "eats"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-37",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "He watches the news.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "news.",
+            "He",
+            "watches"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-38",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "She says hello.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "says",
+            "hello.",
+            "She"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-39",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "We read and write every day.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "write",
+            "every",
+            "day.",
+            "We",
+            "read",
+            "and"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-40",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I hear the music.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "music.",
+            "I",
+            "hear"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-41",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Shut the door.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "door.",
+            "Shut"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-42",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Lock the door.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "door.",
+            "Lock"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-43",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Open the window.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "window.",
+            "Open"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-44",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Close the window.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "window.",
+            "Close"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-45",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Listen to the teacher.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "teacher.",
+            "Listen",
+            "to"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-46",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The band is famous.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "famous.",
+            "The",
+            "band"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-47",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "This is a pair of shoes.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "pair",
+            "of",
+            "shoes.",
+            "This",
+            "is",
+            "a"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-48",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "They are a happy couple.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "a",
+            "happy",
+            "couple.",
+            "They",
+            "are"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-49",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "They are speaking English.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "speaking",
+            "English.",
+            "They",
+            "are"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-50",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "They are talking now.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "talking",
+            "now.",
+            "They",
+            "are"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-51",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Start the lesson now.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "lesson",
+            "now.",
+            "Start",
+            "the"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-52",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Begin the test.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "test.",
+            "Begin"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-53",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Give me an example.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "an",
+            "example.",
+            "Give",
+            "me"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-54",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "This is an instance of a verb.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "instance",
+            "of",
+            "a",
+            "verb.",
+            "This",
+            "is",
+            "an"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-55",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The subject of this sentence is you.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "this",
+            "sentence",
+            "is",
+            "you.",
+            "The",
+            "subject",
+            "of"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-56",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The verb in this sentence is read.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "this",
+            "sentence",
+            "is",
+            "read.",
+            "The",
+            "verb",
+            "in"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-57",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I watch TV.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "watch",
+            "TV.",
+            "I"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-58",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Observe the board carefully.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "board",
+            "carefully.",
+            "Observe",
+            "the"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-59",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "See you later.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "you",
+            "later.",
+            "See"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-60",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I ask a question.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "a",
+            "question.",
+            "I",
+            "ask"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-61",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I request a new book.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "a",
+            "new",
+            "book.",
+            "I",
+            "request"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-62",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I understand the question.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "question.",
+            "I",
+            "understand"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-63",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I grasp the idea.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "idea.",
+            "I",
+            "grasp"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-64",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Say it again.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "it",
+            "again.",
+            "Say"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-65",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Tell me the story.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "the",
+            "story.",
+            "Tell",
+            "me"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-66",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "My mother is a teacher.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "a",
+            "teacher.",
+            "My",
+            "mother"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-67",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "My wife is a doctor.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "a",
+            "doctor.",
+            "My",
+            "wife"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-68",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "My husband is a doctor.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "a",
+            "doctor.",
+            "My",
+            "husband"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-69",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "My spouse is a teacher.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "a",
+            "teacher.",
+            "My",
+            "spouse"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-70",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "My tutor is kind.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "kind.",
+            "My",
+            "tutor"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-71",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The instructor is here.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "here.",
+            "The",
+            "instructor"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-72",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "My given name is Ali.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "name",
+            "is",
+            "Ali.",
+            "My",
+            "given"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-73",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "My family name is Habibi.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "name",
+            "is",
+            "Habibi.",
+            "My",
+            "family"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-74",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Write your answer here.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "answer",
+            "here.",
+            "Write",
+            "your"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-75",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The helper is kind.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "kind.",
+            "The",
+            "helper"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-76",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Can you help me?",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "help",
+            "me?",
+            "Can",
+            "you"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-77",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The doctor will assist us.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "will",
+            "assist",
+            "us.",
+            "The",
+            "doctor"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-78",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "We need more aid.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "more",
+            "aid.",
+            "We",
+            "need"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-79",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I am at home.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "at",
+            "home.",
+            "I",
+            "am"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-80",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "These individuals are my friends.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "are",
+            "my",
+            "friends.",
+            "These",
+            "individuals"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-81",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "A synonym is a similar word.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "similar",
+            "a",
+            "word.",
+            "A",
+            "synonym",
+            "is"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-82",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The opposite of hot is cold.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "is",
+            "hot",
+            "cold.",
+            "The",
+            "opposite",
+            "of"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-83",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "My partner is here.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "partner",
+            "here.",
+            "is",
+            "My"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-84",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "They eat breakfast.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "eat",
+            "They",
+            "breakfast."
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sbr-85",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "This is the last page.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "page.",
+            "the",
+            "This",
+            "last",
+            "is"
+          ],
+          "time_limit": 60
         }
       ]
     },
@@ -1754,7 +3899,7 @@
           "question": "او غذا می‌خورد. (مرد)",
           "expected_answer": "He eats.",
           "explanation": "با He فعل eat به eats تبدیل می‌شود.",
-          "hint": "کلمه‌ی کلیدی: «می‌خورد» = eat؛ تلفظ: /iːt/ (ایت)؛ نکته: برای He / She / It، فعل s می‌گیرد: eats.",
+          "hint": "کلمه‌ی کلیدی: «می‌خورد» = eat؛ تلفظ: /iːt/ (ایت)؛ راهنما: به فاعل جمله دقت کن.",
           "time_limit": 60
         },
         {
@@ -1762,7 +3907,7 @@
           "question": "او می‌خواند. (زن)",
           "expected_answer": "She reads.",
           "explanation": "با She فعل read به reads تبدیل می‌شود.",
-          "hint": "کلمه‌ی کلیدی: «می‌خواند» = read؛ تلفظ: /riːd/ (ریـد)؛ نکته: برای She، فعل s می‌گیرد: reads.",
+          "hint": "کلمه‌ی کلیدی: «می‌خواند» = read؛ تلفظ: /riːd/ (ریـد)؛ راهنما: به فاعل جمله دقت کن.",
           "time_limit": 60
         }
       ]
