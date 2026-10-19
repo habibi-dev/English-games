@@ -753,6 +753,52 @@ function answerText(question) {
   return question.answer_mode === 'list' ? acceptedItems(question).join(', ') : completeSentence(question);
 }
 
+const TRANSLATE_ICON =
+  '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">' +
+  '<path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0014.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/>' +
+  '</svg>';
+
+/**
+ * The full answer sentence, its read-aloud buttons, and (when the question has one) a Persian
+ * translation that the learner opens with a third button.
+ */
+function sentenceBox(q, fullSentence) {
+  const translation = q.translation
+    ? h('p', { class: 'fb-translation', dir: 'rtl', hidden: true }, q.translation)
+    : null;
+  // The translate button sits in the read-aloud bar, next to the two speak buttons.
+  const bar = speakButtons(fullSentence) || (translation ? h('span', { class: 'speak-buttons' }) : null);
+  if (translation && bar) {
+    const button = keepFocus(
+      h(
+        'button',
+        {
+          type: 'button',
+          class: 'translate-btn',
+          title: 'Show Persian translation',
+          'aria-label': 'Show Persian translation',
+          'aria-expanded': 'false',
+          onclick: () => {
+            translation.hidden = !translation.hidden;
+            button.setAttribute('aria-expanded', String(!translation.hidden));
+            button.classList.toggle('on', !translation.hidden);
+          },
+        },
+        Object.assign(h('span', { class: 'translate-glyph' }), { innerHTML: TRANSLATE_ICON }),
+      ),
+    );
+    bar.append(button);
+  }
+  return h(
+    'div',
+    { class: 'fb-box fb-sentence' },
+    h('span', { class: 'fb-label' }, 'Full sentence'),
+    h('p', { class: 'fb-text' }, ltr(fullSentence)),
+    bar,
+    translation,
+  );
+}
+
 /**
  * Feedback box for list answers (synonyms, for example): every good answer, each with its own speak
  * buttons, so the learner sees all of them and can hear each word.
@@ -920,13 +966,7 @@ function renderQuestion(root, session, flow) {
         ),
         q.answer_mode === 'list'
           ? acceptedAnswersBox(q)
-          : h(
-          'div',
-          { class: 'fb-box fb-sentence' },
-          h('span', { class: 'fb-label' }, 'Full sentence'),
-          h('p', { class: 'fb-text' }, ltr(fullSentence)),
-          speakButtons(fullSentence),
-        ),
+          : sentenceBox(q, fullSentence),
         meaningBox(q),
         outcome.correct || outcome.timedOut || !outcome.answer
           ? null

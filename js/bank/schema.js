@@ -140,6 +140,9 @@ export function normalizeQuestion(raw = {}) {
     presentation: str(raw.presentation) || 'text',
   };
 
+  // Persian translation of the answer sentence (or word). Shown on request after an answer.
+  if (str(raw.translation)) question.translation = str(raw.translation);
+
   // Course position. Set by the lesson loader; a question always belongs to one lesson.
   if (str(raw.book)) question.book = str(raw.book);
   if (str(raw.lesson)) question.lesson = str(raw.lesson);

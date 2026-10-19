@@ -2902,6 +2902,59 @@ textarea {
   color: var(--muted);
 }
 
+/* Persian translation: a third button in the read-aloud bar, and a section below the bar that it reveals */
+.speak-buttons .translate-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  background: #fff;
+  color: #334155;
+  cursor: pointer;
+}
+
+.speak-buttons .translate-btn:hover:not(:disabled) {
+  background: #eef2ff;
+}
+
+.speak-buttons .translate-btn.on {
+  background: #e0e7ff;
+  border-color: #818cf8;
+  color: #3730a3;
+}
+
+.speak-buttons .translate-btn:focus-visible {
+  outline: 2px solid #6366f1;
+  outline-offset: 2px;
+}
+
+.translate-glyph {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+}
+
+.translate-glyph svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+}
+
+.feedback .fb-sentence > .fb-translation {
+  direction: rtl;
+  text-align: right;
+  margin: 0;
+  padding: 8px 12px 12px;
+  border-top: 1px dashed #cbd5e1;
+  background: #f8fafc;
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
 /* Word tip (glossary): the word on top, its read-aloud bar below, same structure as the feedback box */
 .question-block .gloss-tip {
   gap: 0;

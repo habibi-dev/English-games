@@ -10,6 +10,20 @@ const SAMPLE_LESSON = new URL('../content/evolve-1/lesson-01.json', import.meta.
 const sampleQuestions = () =>
   flattenLesson(JSON.parse(readFileSync(SAMPLE_LESSON, 'utf8')), { book: 'evolve-1', lesson: 'lesson-01' });
 
+test('a Persian translation survives normalization and is only kept when present', () => {
+  const kept = normalizeQuestion({ category: 'translation', question: 'آن خانه من است.', expected_answer: 'It is my house.', translation: ' آن خانه من است. ' });
+  assert.equal(kept.translation, 'آن خانه من است.');
+  const bare = normalizeQuestion({ category: 'translation', question: 'آن خانه من است.', expected_answer: 'It is my house.' });
+  assert.equal('translation' in bare, false);
+});
+
+test('every English question in the lesson has a Persian translation', () => {
+  const { questions, invalid } = sampleQuestions();
+  assert.equal(invalid.length, 0);
+  const missing = questions.filter((q) => !q.translation).map((q) => q.id);
+  assert.deepEqual(missing, []);
+});
+
 test('CSV parser handles quotes, commas, escaped quotes and new lines', () => {
   const rows = parseCsv('a,b,c\r\n"x, y","say ""hi""","line1\nline2"\r\n');
   assert.deepEqual(rows, [
