@@ -1040,6 +1040,86 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-tr-127",
+          "question": "من نمی‌فهمم.",
+          "expected_answer": "I don't understand.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: به نوع جمله دقت کن..",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-tr-128",
+          "question": "چطور هجی می‌کنی؟",
+          "expected_answer": "How do you spell?",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: spell = هجی کردن. راهنما: به نوع جمله دقت کن..",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-tr-129",
+          "question": "می‌توانی آن را تکرار کنی، لطفاً؟",
+          "expected_answer": "Can you repeat that, please?",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: can = می‌توانم / توانستن؛ repeat = تکرار کردن. راهنما: به نوع جمله دقت کن..",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-tr-130",
+          "question": "ببخشید، کدام صفحه؟",
+          "expected_answer": "Sorry, what page?",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: page = صفحه. راهنما: به نوع جمله دقت کن..",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-tr-131",
+          "question": "آیا سؤالی داری؟",
+          "expected_answer": "Do you have any questions?",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: questions = سؤال‌ها. راهنما: به نوع جمله دقت کن..",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-tr-132",
+          "question": "کتابت را ببند.",
+          "expected_answer": "Close your book.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: close = بستن / نزدیک؛ book = کتاب. راهنما: به نوع جمله دقت کن..",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-tr-133",
+          "question": "کتابت را باز کن.",
+          "expected_answer": "Open your book.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: open = باز کردن / باز؛ book = کتاب. راهنما: به نوع جمله دقت کن..",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-tr-134",
+          "question": "به صفحه برو.",
+          "expected_answer": "Go to page.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: page = صفحه. راهنما: به نوع جمله دقت کن..",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-tr-135",
+          "question": "معلم تو.",
+          "expected_answer": "Your teacher.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: به نوع جمله دقت کن..",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-tr-136",
+          "question": "این معلم تو است.",
+          "expected_answer": "This is your teacher.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: به نوع جمله دقت کن..",
+          "time_limit": 60
         }
       ]
     },
@@ -2763,6 +2843,131 @@
             "We"
           ],
           "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sb-142",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I don't understand.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "understand.",
+            "don't",
+            "I"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sb-143",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "How do you spell?",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "spell?",
+            "you",
+            "do",
+            "How"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sb-144",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Can you repeat that, please?",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "please?",
+            "that,",
+            "repeat",
+            "you",
+            "Can"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sb-145",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Sorry, what page?",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "page?",
+            "what",
+            "Sorry,"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sb-146",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Do you have any questions?",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "questions?",
+            "any",
+            "have",
+            "you",
+            "Do"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sb-147",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Close your book.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "book.",
+            "your",
+            "Close"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sb-148",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Open your book.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "book.",
+            "your",
+            "Open"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sb-149",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Go to page.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "page.",
+            "to",
+            "Go"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sb-150",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Your teacher.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "teacher.",
+            "Your"
+          ],
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-sb-151",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "This is your teacher.",
+          "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
+          "word_bank": [
+            "teacher.",
+            "your",
+            "is",
+            "This"
+          ],
+          "time_limit": 60
         }
       ]
     },
@@ -4165,6 +4370,102 @@
           "expected_answer": "What does teacher mean?",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-127",
+          "word_bank": [
+            "من",
+            "نمی‌فهمم"
+          ],
+          "expected_answer": "I don't understand.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-128",
+          "word_bank": [
+            "چطور",
+            "هجی می‌کنی؟"
+          ],
+          "expected_answer": "How do you spell?",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-129",
+          "word_bank": [
+            "می‌توانی",
+            "تکرار کنی",
+            "آن را",
+            "لطفاً؟"
+          ],
+          "expected_answer": "Can you repeat that, please?",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-130",
+          "word_bank": [
+            "ببخشید،",
+            "کدام",
+            "صفحه؟"
+          ],
+          "expected_answer": "Sorry, what page?",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-131",
+          "word_bank": [
+            "آیا",
+            "سؤالی",
+            "داری؟"
+          ],
+          "expected_answer": "Do you have any questions?",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-132",
+          "word_bank": [
+            "ببند",
+            "کتابت را"
+          ],
+          "expected_answer": "Close your book.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-133",
+          "word_bank": [
+            "باز کن",
+            "کتابت را"
+          ],
+          "expected_answer": "Open your book.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-134",
+          "word_bank": [
+            "برو",
+            "به صفحه"
+          ],
+          "expected_answer": "Go to page.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-135",
+          "word_bank": [
+            "این",
+            "معلم",
+            "تو",
+            "است"
+          ],
+          "expected_answer": "This is your teacher.",
+          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "time_limit": 60
         }
       ]
     },
@@ -5204,6 +5505,86 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+        },
+        {
+          "id": "evolve-1-l01-vt-127",
+          "question": "من نمی‌فهمم.",
+          "expected_answer": "I don't understand.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.."
+        },
+        {
+          "id": "evolve-1-l01-vt-128",
+          "question": "چطور هجی می‌کنی؟",
+          "expected_answer": "How do you spell?",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: spell = هجی کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.."
+        },
+        {
+          "id": "evolve-1-l01-vt-129",
+          "question": "می‌توانی آن را تکرار کنی، لطفاً؟",
+          "expected_answer": "Can you repeat that, please?",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: can = می‌توانم / توانستن؛ repeat = تکرار کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.."
+        },
+        {
+          "id": "evolve-1-l01-vt-130",
+          "question": "ببخشید، کدام صفحه؟",
+          "expected_answer": "Sorry, what page?",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: page = صفحه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.."
+        },
+        {
+          "id": "evolve-1-l01-vt-131",
+          "question": "آیا سؤالی داری؟",
+          "expected_answer": "Do you have any questions?",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: questions = سؤال‌ها. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.."
+        },
+        {
+          "id": "evolve-1-l01-vt-132",
+          "question": "کتابت را ببند.",
+          "expected_answer": "Close your book.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: close = بستن / نزدیک؛ book = کتاب. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.."
+        },
+        {
+          "id": "evolve-1-l01-vt-133",
+          "question": "کتابت را باز کن.",
+          "expected_answer": "Open your book.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: open = باز کردن / باز؛ book = کتاب. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.."
+        },
+        {
+          "id": "evolve-1-l01-vt-134",
+          "question": "به صفحه برو.",
+          "expected_answer": "Go to page.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: page = صفحه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.."
+        },
+        {
+          "id": "evolve-1-l01-vt-135",
+          "question": "معلم تو.",
+          "expected_answer": "Your teacher.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.."
+        },
+        {
+          "id": "evolve-1-l01-vt-136",
+          "question": "این معلم تو است.",
+          "expected_answer": "This is your teacher.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.."
         }
       ]
     },
@@ -6266,6 +6647,33 @@
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "We has a house.",
           "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-gc-118",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "Close your book.",
+          "incorrect_sentence": "Closes your book.",
+          "explanation": "به فعل و فاعل جمله دقت کن.",
+          "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-gc-119",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "Open your book.",
+          "incorrect_sentence": "Opens your book.",
+          "explanation": "به فعل و فاعل جمله دقت کن.",
+          "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-gc-120",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "This is your teacher.",
+          "incorrect_sentence": "This are your teacher.",
+          "explanation": "به فعل و فاعل جمله دقت کن.",
+          "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
+          "time_limit": 60
         }
       ]
     },
@@ -6319,28 +6727,6 @@
           ],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
           "hint": "کلمه‌های کلیدی: first name = نام کوچک. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-04",
-          "question": "جمله را منفی کن: I have a question.",
-          "expected_answer": "I do not have a question.",
-          "accepted_answers": [
-            "I don't have a question."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-05",
-          "question": "جمله را منفی کن: He eats.",
-          "expected_answer": "He does not eat.",
-          "accepted_answers": [
-            "He doesn't eat."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: eat = خوردن. راهنما: not = نه.",
           "time_limit": 60
         },
         {
@@ -6619,171 +7005,6 @@
           "time_limit": 60
         },
         {
-          "id": "evolve-1-l01-neg-31",
-          "question": "جمله را منفی کن: I have a goal.",
-          "expected_answer": "I do not have a goal.",
-          "accepted_answers": [
-            "I don't have a goal."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: goal = هدف. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-32",
-          "question": "جمله را منفی کن: I have a team.",
-          "expected_answer": "I do not have a team.",
-          "accepted_answers": [
-            "I don't have a team."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: team = تیم. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-33",
-          "question": "جمله را منفی کن: I have a group.",
-          "expected_answer": "I do not have a group.",
-          "accepted_answers": [
-            "I don't have a group."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: group = گروه. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-34",
-          "question": "جمله را منفی کن: I have a house.",
-          "expected_answer": "I do not have a house.",
-          "accepted_answers": [
-            "I don't have a house."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-35",
-          "question": "جمله را منفی کن: I have a pair.",
-          "expected_answer": "I do not have a pair.",
-          "accepted_answers": [
-            "I don't have a pair."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: pair = جفت. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-36",
-          "question": "جمله را منفی کن: I have a request.",
-          "expected_answer": "I do not have a request.",
-          "accepted_answers": [
-            "I don't have a request."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: request = درخواست کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-37",
-          "question": "جمله را منفی کن: I have a band.",
-          "expected_answer": "I do not have a band.",
-          "accepted_answers": [
-            "I don't have a band."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: band = گروه موسیقی. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-38",
-          "question": "جمله را منفی کن: I have a helper.",
-          "expected_answer": "I do not have a helper.",
-          "accepted_answers": [
-            "I don't have a helper."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-39",
-          "question": "جمله را منفی کن: I have a tutor.",
-          "expected_answer": "I do not have a tutor.",
-          "accepted_answers": [
-            "I don't have a tutor."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-40",
-          "question": "جمله را منفی کن: We have a tutor.",
-          "expected_answer": "We do not have a tutor.",
-          "accepted_answers": [
-            "We don't have a tutor."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-41",
-          "question": "جمله را منفی کن: We have a helper.",
-          "expected_answer": "We do not have a helper.",
-          "accepted_answers": [
-            "We don't have a helper."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-42",
-          "question": "جمله را منفی کن: We have a team.",
-          "expected_answer": "We do not have a team.",
-          "accepted_answers": [
-            "We don't have a team."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: team = تیم. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-43",
-          "question": "جمله را منفی کن: We have a group.",
-          "expected_answer": "We do not have a group.",
-          "accepted_answers": [
-            "We don't have a group."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: group = گروه. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-44",
-          "question": "جمله را منفی کن: We have a goal.",
-          "expected_answer": "We do not have a goal.",
-          "accepted_answers": [
-            "We don't have a goal."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: goal = هدف. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-45",
-          "question": "جمله را منفی کن: We have a home.",
-          "expected_answer": "We do not have a home.",
-          "accepted_answers": [
-            "We don't have a home."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: home = خانه / محل زندگی. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
           "id": "evolve-1-l01-neg-46",
           "question": "جمله را منفی کن: I am a tutor.",
           "expected_answer": "I am not a tutor.",
@@ -6803,566 +7024,6 @@
           ],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
           "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-48",
-          "question": "جمله را منفی کن: I eat.",
-          "expected_answer": "I do not eat.",
-          "accepted_answers": [
-            "I don't eat."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: eat = خوردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-49",
-          "question": "جمله را منفی کن: I read.",
-          "expected_answer": "I do not read.",
-          "accepted_answers": [
-            "I don't read."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: read = خواندن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-50",
-          "question": "جمله را منفی کن: I write.",
-          "expected_answer": "I do not write.",
-          "accepted_answers": [
-            "I don't write."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: write = نوشتن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-51",
-          "question": "جمله را منفی کن: I watch.",
-          "expected_answer": "I do not watch.",
-          "accepted_answers": [
-            "I don't watch."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: watch = تماشا کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-52",
-          "question": "جمله را منفی کن: I listen.",
-          "expected_answer": "I do not listen.",
-          "accepted_answers": [
-            "I don't listen."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: listen = گوش دادن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-53",
-          "question": "جمله را منفی کن: I say.",
-          "expected_answer": "I do not say.",
-          "accepted_answers": [
-            "I don't say."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: say = گفتن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-54",
-          "question": "جمله را منفی کن: I see.",
-          "expected_answer": "I do not see.",
-          "accepted_answers": [
-            "I don't see."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: see = دیدن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-55",
-          "question": "جمله را منفی کن: I hear.",
-          "expected_answer": "I do not hear.",
-          "accepted_answers": [
-            "I don't hear."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: hear = شنیدن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-56",
-          "question": "جمله را منفی کن: I ask.",
-          "expected_answer": "I do not ask.",
-          "accepted_answers": [
-            "I don't ask."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: ask = پرسیدن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-57",
-          "question": "جمله را منفی کن: I start.",
-          "expected_answer": "I do not start.",
-          "accepted_answers": [
-            "I don't start."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: start = شروع کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-58",
-          "question": "جمله را منفی کن: I check.",
-          "expected_answer": "I do not check.",
-          "accepted_answers": [
-            "I don't check."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: check = بررسی کردن / چک کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-59",
-          "question": "جمله را منفی کن: I open.",
-          "expected_answer": "I do not open.",
-          "accepted_answers": [
-            "I don't open."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: open = باز کردن / باز. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-60",
-          "question": "جمله را منفی کن: I close.",
-          "expected_answer": "I do not close.",
-          "accepted_answers": [
-            "I don't close."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: close = بستن / نزدیک. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-61",
-          "question": "جمله را منفی کن: I lock.",
-          "expected_answer": "I do not lock.",
-          "accepted_answers": [
-            "I don't lock."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: lock = قفل کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-62",
-          "question": "جمله را منفی کن: I understand.",
-          "expected_answer": "I do not understand.",
-          "accepted_answers": [
-            "I don't understand."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-63",
-          "question": "جمله را منفی کن: I study.",
-          "expected_answer": "I do not study.",
-          "accepted_answers": [
-            "I don't study."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: study = درس خواندن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-64",
-          "question": "جمله را منفی کن: I walk.",
-          "expected_answer": "I do not walk.",
-          "accepted_answers": [
-            "I don't walk."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: walk = راه رفتن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-65",
-          "question": "جمله را منفی کن: I get.",
-          "expected_answer": "I do not get.",
-          "accepted_answers": [
-            "I don't get."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: get = گرفتن / به دست آوردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-66",
-          "question": "جمله را منفی کن: I give.",
-          "expected_answer": "I do not give.",
-          "accepted_answers": [
-            "I don't give."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: give = دادن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-67",
-          "question": "جمله را منفی کن: I observe.",
-          "expected_answer": "I do not observe.",
-          "accepted_answers": [
-            "I don't observe."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: observe = مشاهده کردن / با دقت نگاه کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-68",
-          "question": "جمله را منفی کن: I request.",
-          "expected_answer": "I do not request.",
-          "accepted_answers": [
-            "I don't request."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: request = درخواست کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-69",
-          "question": "جمله را منفی کن: I rewrite.",
-          "expected_answer": "I do not rewrite.",
-          "accepted_answers": [
-            "I don't rewrite."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: rewrite = بازنویسی کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-70",
-          "question": "جمله را منفی کن: I recall.",
-          "expected_answer": "I do not recall.",
-          "accepted_answers": [
-            "I don't recall."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: recall = به یاد آوردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-71",
-          "question": "جمله را منفی کن: I rebuild.",
-          "expected_answer": "I do not rebuild.",
-          "accepted_answers": [
-            "I don't rebuild."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: rebuild = دوباره ساختن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-72",
-          "question": "جمله را منفی کن: He says.",
-          "expected_answer": "He does not say.",
-          "accepted_answers": [
-            "He doesn't say."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: say = گفتن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-73",
-          "question": "جمله را منفی کن: She sees.",
-          "expected_answer": "She does not see.",
-          "accepted_answers": [
-            "She doesn't see."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: see = دیدن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-74",
-          "question": "جمله را منفی کن: He hears.",
-          "expected_answer": "He does not hear.",
-          "accepted_answers": [
-            "He doesn't hear."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: hear = شنیدن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-75",
-          "question": "جمله را منفی کن: She watches.",
-          "expected_answer": "She does not watch.",
-          "accepted_answers": [
-            "She doesn't watch."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: watch = تماشا کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-76",
-          "question": "جمله را منفی کن: He listens.",
-          "expected_answer": "He does not listen.",
-          "accepted_answers": [
-            "He doesn't listen."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: listen = گوش دادن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-77",
-          "question": "جمله را منفی کن: She writes.",
-          "expected_answer": "She does not write.",
-          "accepted_answers": [
-            "She doesn't write."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: write = نوشتن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-78",
-          "question": "جمله را منفی کن: He asks.",
-          "expected_answer": "He does not ask.",
-          "accepted_answers": [
-            "He doesn't ask."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: ask = پرسیدن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-79",
-          "question": "جمله را منفی کن: She starts.",
-          "expected_answer": "She does not start.",
-          "accepted_answers": [
-            "She doesn't start."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: start = شروع کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-80",
-          "question": "جمله را منفی کن: He checks.",
-          "expected_answer": "He does not check.",
-          "accepted_answers": [
-            "He doesn't check."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: check = بررسی کردن / چک کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-81",
-          "question": "جمله را منفی کن: She opens.",
-          "expected_answer": "She does not open.",
-          "accepted_answers": [
-            "She doesn't open."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: open = باز کردن / باز. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-82",
-          "question": "جمله را منفی کن: He closes.",
-          "expected_answer": "He does not close.",
-          "accepted_answers": [
-            "He doesn't close."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: close = بستن / نزدیک. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-83",
-          "question": "جمله را منفی کن: She locks.",
-          "expected_answer": "She does not lock.",
-          "accepted_answers": [
-            "She doesn't lock."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: lock = قفل کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-84",
-          "question": "جمله را منفی کن: He understands.",
-          "expected_answer": "He does not understand.",
-          "accepted_answers": [
-            "He doesn't understand."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-85",
-          "question": "جمله را منفی کن: She studies.",
-          "expected_answer": "She does not study.",
-          "accepted_answers": [
-            "She doesn't study."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: study = درس خواندن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-86",
-          "question": "جمله را منفی کن: He gets.",
-          "expected_answer": "He does not get.",
-          "accepted_answers": [
-            "He doesn't get."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: get = گرفتن / به دست آوردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-87",
-          "question": "جمله را منفی کن: She gives.",
-          "expected_answer": "She does not give.",
-          "accepted_answers": [
-            "She doesn't give."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: give = دادن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-88",
-          "question": "جمله را منفی کن: He observes.",
-          "expected_answer": "He does not observe.",
-          "accepted_answers": [
-            "He doesn't observe."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: observe = مشاهده کردن / با دقت نگاه کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-89",
-          "question": "جمله را منفی کن: She requests.",
-          "expected_answer": "She does not request.",
-          "accepted_answers": [
-            "She doesn't request."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: request = درخواست کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-90",
-          "question": "جمله را منفی کن: He helps.",
-          "expected_answer": "He does not help.",
-          "accepted_answers": [
-            "He doesn't help."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: help = کمک (کردن). راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-91",
-          "question": "جمله را منفی کن: She retells.",
-          "expected_answer": "She does not retell.",
-          "accepted_answers": [
-            "She doesn't retell."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: retell = بازگو کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-92",
-          "question": "جمله را منفی کن: He recalls.",
-          "expected_answer": "He does not recall.",
-          "accepted_answers": [
-            "He doesn't recall."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: recall = به یاد آوردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-93",
-          "question": "جمله را منفی کن: She rewrites.",
-          "expected_answer": "She does not rewrite.",
-          "accepted_answers": [
-            "She doesn't rewrite."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: rewrite = بازنویسی کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-94",
-          "question": "جمله را منفی کن: He rebuilds.",
-          "expected_answer": "He does not rebuild.",
-          "accepted_answers": [
-            "He doesn't rebuild."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: rebuild = دوباره ساختن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-95",
-          "question": "جمله را منفی کن: She eats.",
-          "expected_answer": "She does not eat.",
-          "accepted_answers": [
-            "She doesn't eat."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: eat = خوردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-96",
-          "question": "جمله را منفی کن: Ask me.",
-          "expected_answer": "Do not ask me.",
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: ask = پرسیدن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-97",
-          "question": "جمله را منفی کن: Tell me.",
-          "expected_answer": "Do not tell me.",
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: tell = گفتن (به کسی). راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-98",
-          "question": "جمله را منفی کن: Give me.",
-          "expected_answer": "Do not give me.",
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: give = دادن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-99",
-          "question": "جمله را منفی کن: Assist me.",
-          "expected_answer": "Do not assist me.",
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: assist = کمک کردن. راهنما: not = نه.",
           "time_limit": 60
         },
         {
@@ -7399,132 +7060,6 @@
           "time_limit": 60
         },
         {
-          "id": "evolve-1-l01-neg-103",
-          "question": "جمله را منفی کن: I begin.",
-          "expected_answer": "I do not begin.",
-          "accepted_answers": [
-            "I don't begin."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: begin = شروع کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-104",
-          "question": "جمله را منفی کن: He begins.",
-          "expected_answer": "He does not begin.",
-          "accepted_answers": [
-            "He doesn't begin."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: begin = شروع کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-105",
-          "question": "جمله را منفی کن: I retell.",
-          "expected_answer": "I do not retell.",
-          "accepted_answers": [
-            "I don't retell."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: retell = بازگو کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-106",
-          "question": "جمله را منفی کن: I regain.",
-          "expected_answer": "I do not regain.",
-          "accepted_answers": [
-            "I don't regain."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: regain = دوباره به دست آوردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-107",
-          "question": "جمله را منفی کن: I shut.",
-          "expected_answer": "I do not shut.",
-          "accepted_answers": [
-            "I don't shut."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: shut = بستن (در و پنجره). راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-108",
-          "question": "جمله را منفی کن: I inscribe.",
-          "expected_answer": "I do not inscribe.",
-          "accepted_answers": [
-            "I don't inscribe."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: inscribe = حک کردن / کنده‌کاری کردن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-109",
-          "question": "جمله را منفی کن: I check in.",
-          "expected_answer": "I do not check in.",
-          "accepted_answers": [
-            "I don't check in."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: check in = ثبت ورود (در هتل). راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-110",
-          "question": "جمله را منفی کن: I check out.",
-          "expected_answer": "I do not check out.",
-          "accepted_answers": [
-            "I don't check out."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: check out = ترک هتل / ثبت خروج. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-111",
-          "question": "جمله را منفی کن: Give me a hand.",
-          "expected_answer": "Do not give me a hand.",
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: give me a hand = کمکم کن (اصطلاح). راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-112",
-          "question": "جمله را منفی کن: Aid me.",
-          "expected_answer": "Do not aid me.",
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: aid = کمک. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-113",
-          "question": "جمله را منفی کن: You have a question.",
-          "expected_answer": "You do not have a question.",
-          "accepted_answers": [
-            "You don't have a question."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-114",
-          "question": "جمله را منفی کن: They have a question.",
-          "expected_answer": "They do not have a question.",
-          "accepted_answers": [
-            "They don't have a question."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
           "id": "evolve-1-l01-neg-115",
           "question": "جمله را منفی کن: It is my house.",
           "expected_answer": "It is not my house.",
@@ -7558,47 +7093,6 @@
           "time_limit": 60
         },
         {
-          "id": "evolve-1-l01-neg-118",
-          "question": "جمله را منفی کن: Help me.",
-          "expected_answer": "Do not help me.",
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: help = کمک (کردن). راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-119",
-          "question": "جمله را منفی کن: We have a teacher.",
-          "expected_answer": "We do not have a teacher.",
-          "accepted_answers": [
-            "We don't have a teacher."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-120",
-          "question": "جمله را منفی کن: He reads.",
-          "expected_answer": "He does not read.",
-          "accepted_answers": [
-            "He doesn't read."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: read = خواندن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-neg-121",
-          "question": "جمله را منفی کن: She walks.",
-          "expected_answer": "She does not walk.",
-          "accepted_answers": [
-            "She doesn't walk."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: walk = راه رفتن. راهنما: not = نه.",
-          "time_limit": 60
-        },
-        {
           "id": "evolve-1-l01-neg-122",
           "question": "جمله را منفی کن: I am a partner.",
           "expected_answer": "I am not a partner.",
@@ -7611,13 +7105,13 @@
         },
         {
           "id": "evolve-1-l01-neg-123",
-          "question": "جمله را منفی کن: We have a house.",
-          "expected_answer": "We do not have a house.",
+          "question": "جمله را منفی کن: This is your teacher.",
+          "expected_answer": "This is not your teacher.",
           "accepted_answers": [
-            "We don't have a house."
+            "This isn't your teacher."
           ],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: not = نه.",
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: not = نه..",
           "time_limit": 60
         }
       ],
@@ -7936,6 +7430,14 @@
           "expected_answer": "Am I a partner?",
           "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
           "hint": "کلمه‌های کلیدی: partner = شریک / همراه. راهنما: Am = آیا (در ابتدای سؤال).",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-q-116",
+          "question": "جمله را سؤالی کن: This is your teacher.",
+          "expected_answer": "Is this your teacher?",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: Is = آیا (در ابتدای سؤال)..",
           "time_limit": 60
         }
       ],
@@ -8808,6 +8310,84 @@
           ],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-070",
+          "question": "جای خالی را کامل کن: How ___ you spell?",
+          "expected_answer": "do",
+          "options": [
+            "do",
+            "does",
+            "is"
+          ],
+          "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
+          "hint": "do = معنی در جمله",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-071",
+          "question": "جای خالی را کامل کن: Can you ___ that, please?",
+          "expected_answer": "repeat",
+          "options": [
+            "repeat",
+            "repeats",
+            "repeating"
+          ],
+          "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
+          "hint": "repeat = تکرار کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-072",
+          "question": "جای خالی را کامل کن: Sorry, what ___?",
+          "expected_answer": "page",
+          "options": [
+            "page",
+            "pages",
+            "book"
+          ],
+          "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
+          "hint": "page = صفحه",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-073",
+          "question": "جای خالی را کامل کن: Close ___ book.",
+          "expected_answer": "your",
+          "options": [
+            "your",
+            "my",
+            "this"
+          ],
+          "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
+          "hint": "your = مال تو / تو",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-074",
+          "question": "جای خالی را کامل کن: Open ___ book.",
+          "expected_answer": "your",
+          "options": [
+            "your",
+            "my",
+            "this"
+          ],
+          "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
+          "hint": "your = مال تو / تو",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-075",
+          "question": "جای خالی را کامل کن: This is ___ teacher.",
+          "expected_answer": "your",
+          "options": [
+            "your",
+            "my",
+            "this"
+          ],
+          "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
+          "hint": "your = مال تو / تو",
           "time_limit": 60
         }
       ]
@@ -9882,6 +9462,46 @@
           "expected_answer": "says",
           "explanation": "شکل فعل say برای he، she و it به صورت says نوشته می‌شود.",
           "hint": "می‌گوید",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-dic-096",
+          "question": "spell",
+          "expected_answer": "spell",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "هجی کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-dic-097",
+          "question": "repeat",
+          "expected_answer": "repeat",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "تکرار کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-dic-098",
+          "question": "page",
+          "expected_answer": "page",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "صفحه",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-dic-099",
+          "question": "book",
+          "expected_answer": "book",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "کتاب",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-dic-100",
+          "question": "questions",
+          "expected_answer": "questions",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "سؤال‌ها",
           "time_limit": 60
         }
       ]
