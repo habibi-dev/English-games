@@ -14,7 +14,7 @@ import { h, toast, fa, ltr, badge, percent, keepFocus } from './dom.js';
 import { createAnswerWidget, instructionFor } from './answer-widgets.js';
 import { splitPrompt } from './prompt.js';
 import { speak, speakButtons, speakBar, completeSentence, contextSentence, questionSpeakButton } from './speech-out.js';
-import { playResultSound, startMusic, stopMusic, vibrateFor } from './sounds.js';
+import { playResultSound, vibrateFor } from './sounds.js';
 import { beginMission, endMission } from '../progress/activity.js';
 import { keepScreenOn } from './wake-lock.js';
 import { applySpellingMode } from '../engine/spelling.js';
@@ -133,7 +133,6 @@ export async function renderPlay(root) {
     endMission();
     gameInProgress = false;
     keepScreenOn(false);
-    stopMusic();
     settingsStart = null;
   };
 }
@@ -815,8 +814,6 @@ function renderQuestion(root, session, flow) {
   gameInProgress = true;
   // The screen stays on for the whole game, so it does not sleep between questions.
   keepScreenOn(true);
-  // The background tune starts with the game (it does nothing when it is already playing).
-  startMusic();
   settingsStart = null;
   // Every new question starts at the top of the page.
   window.scrollTo(0, 0);
@@ -1177,7 +1174,6 @@ function resultTile(icon, value, label, tone) {
 function renderResults(root, session, flow) {
   gameInProgress = false;
   keepScreenOn(false);
-  stopMusic();
   // The end of the game has its own vibration pattern.
   vibrateFor('end');
   // The mission is over: its time is saved now.

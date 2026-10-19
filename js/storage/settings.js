@@ -52,7 +52,6 @@ export const SOUND_DEFAULTS = Object.freeze({
   win: true,
   lose: true,
   timeout: true,
-  music: true,
   vibrate: true,
   volume: 0.6,
 });
@@ -67,7 +66,6 @@ export function getSoundSettings() {
       win: typeof stored.win === 'boolean' ? stored.win : SOUND_DEFAULTS.win,
       lose: typeof stored.lose === 'boolean' ? stored.lose : SOUND_DEFAULTS.lose,
       timeout: typeof stored.timeout === 'boolean' ? stored.timeout : SOUND_DEFAULTS.timeout,
-      music: typeof stored.music === 'boolean' ? stored.music : SOUND_DEFAULTS.music,
       vibrate: typeof stored.vibrate === 'boolean' ? stored.vibrate : SOUND_DEFAULTS.vibrate,
       volume: Number.isFinite(volume) ? Math.min(1, Math.max(0, volume)) : SOUND_DEFAULTS.volume,
     };
