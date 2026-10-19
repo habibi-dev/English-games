@@ -3025,3 +3025,39 @@ textarea {
 .review-start .btn {
   min-width: 220px;
 }
+
+/* Hint: a pill button, and the hint itself as a full-width amber panel below it. */
+.hint-row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  margin: 8px 0 0;
+}
+
+.hint-row > .btn.ghost {
+  align-self: flex-start;
+  min-height: 36px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #fffbeb;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+  font-weight: 700;
+}
+
+.hint-row > .btn.ghost:hover {
+  background: #fef3c7;
+}
+
+.hint-row > .hint {
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-inline-start: 4px solid #f59e0b;
+  color: #78350f;
+  font-size: 1rem;
+  line-height: 1.7;
+}

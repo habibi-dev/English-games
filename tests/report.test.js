@@ -14,10 +14,12 @@ test('bank summary counts the sample lesson by topic and type', () => {
   const summary = bankSummary(questions);
   // Items without their own topic take the lesson id as their topic.
   const lessonRow = summary.byTopic.find((row) => row.topic === 'lesson-01');
-  assert.equal(lessonRow.total, 8);
-  assert.equal(lessonRow.byCategory.quick_translation, 1);
-  assert.equal(summary.totals.total, 8);
-  assert.equal(summary.totals.enabled, 8);
+  const quickCount = questions.filter((q) => q.category === 'quick_translation').length;
+  const enabledCount = questions.filter((q) => q.enabled !== false).length;
+  assert.equal(lessonRow.total, questions.length);
+  assert.equal(lessonRow.byCategory.quick_translation, quickCount);
+  assert.equal(summary.totals.total, questions.length);
+  assert.equal(summary.totals.enabled, enabledCount);
 });
 
 test('bank summary separates disabled questions', () => {

@@ -2,141 +2,2107 @@
   "schema_version": "2.0",
   "book": "evolve-1",
   "lesson": "lesson-01",
-  "title": "درس ۱ (نمونه)",
+  "title": "Lesson 01",
   "exercises": [
     {
-      "id": "l01-translation",
+      "id": "evolve-1-l01-translation",
       "type": "quick_translation",
-      "title": "ترجمه‌ی جمله",
+      "title": "ترجمه جمله‌ها و عبارت‌ها",
       "presentation": "text",
       "difficulty": "easy",
       "items": [
         {
-          "id": "l01-tr-01",
-          "question": "من دانشجو هستم.",
-          "expected_answer": "I am a student.",
-          "accepted_answers": ["I am a student"],
-          "explanation": "برای I از am استفاده می‌کنیم.",
-          "glossary": [{ "word": "student", "meaning": "دانشجو" }],
-          "points": 10,
-          "time_limit": 25
+          "id": "evolve-1-l01-tr-01",
+          "question": "نام کوچک من امیرحسین است.",
+          "expected_answer": "My first name is Amir Hossein.",
+          "accepted_answers": [
+            "My first name's Amir Hossein."
+          ],
+          "explanation": "First name یعنی نام کوچک. شکل کوتاه is در این جمله به صورت 's نوشته می‌شود."
+        },
+        {
+          "id": "evolve-1-l01-tr-02",
+          "question": "نام خانوادگی من حبیبی است.",
+          "expected_answer": "My last name is Habibi.",
+          "accepted_answers": [
+            "My family name is Habibi.",
+            "My last name's Habibi.",
+            "My family name's Habibi."
+          ],
+          "explanation": "Last name و family name هر دو برای نام خانوادگی به کار می‌روند."
+        },
+        {
+          "id": "evolve-1-l01-tr-03",
+          "question": "اسم کوچک تو چیست؟",
+          "expected_answer": "What is your first name?",
+          "accepted_answers": [
+            "What's your first name?"
+          ],
+          "explanation": "What's شکل کوتاه What is است."
+        },
+        {
+          "id": "evolve-1-l01-tr-04",
+          "question": "نام خانوادگی تو چیست؟",
+          "expected_answer": "What is your last name?",
+          "accepted_answers": [
+            "What's your last name?",
+            "What is your family name?",
+            "What's your family name?"
+          ],
+          "explanation": "می‌توانی از last name یا family name استفاده کنی؛ What's هم شکل کوتاه What is است."
+        },
+        {
+          "id": "evolve-1-l01-tr-05",
+          "question": "این معلم من است.",
+          "expected_answer": "This is my teacher.",
+          "explanation": "This برای اشاره به شخص یا چیزی که نزدیک است به کار می‌رود."
+        },
+        {
+          "id": "evolve-1-l01-tr-06",
+          "question": "این دوست من است.",
+          "expected_answer": "This is my friend.",
+          "explanation": "Friend یعنی دوست."
+        },
+        {
+          "id": "evolve-1-l01-tr-07",
+          "question": "این شوهر من است.",
+          "expected_answer": "This is my husband.",
+          "explanation": "Husband یعنی شوهر."
+        },
+        {
+          "id": "evolve-1-l01-tr-08",
+          "question": "این همسر من است.",
+          "expected_answer": "This is my wife.",
+          "accepted_answers": [
+            "This is my spouse."
+          ],
+          "explanation": "Wife برای همسر زن و spouse برای همسر بدون مشخص کردن جنسیت استفاده می‌شود."
+        },
+        {
+          "id": "evolve-1-l01-tr-09",
+          "question": "این شریک من است.",
+          "expected_answer": "This is my partner.",
+          "explanation": "Partner یعنی شریک یا همراه؛ با helper به معنی کمک‌کننده یکی نیست."
+        },
+        {
+          "id": "evolve-1-l01-tr-10",
+          "question": "من یک سؤال دارم.",
+          "expected_answer": "I have a question.",
+          "explanation": "Question یعنی سؤال."
+        },
+        {
+          "id": "evolve-1-l01-tr-11",
+          "question": "به من کمک کن.",
+          "expected_answer": "Help me.",
+          "accepted_answers": [
+            "Please help me."
+          ],
+          "explanation": "Help یعنی کمک کردن."
+        },
+        {
+          "id": "evolve-1-l01-tr-12",
+          "question": "به من کمک کن. (اصطلاح)",
+          "expected_answer": "Give me a hand.",
+          "explanation": "Give me a hand یک عبارت رایج به معنی کمکم کن است."
+        },
+        {
+          "id": "evolve-1-l01-tr-13",
+          "question": "چطور به انگلیسی می‌گویی «کمک»؟",
+          "expected_answer": "How do you say help in English?",
+          "explanation": "از الگوی How do you say ... in English? برای پرسیدن معادل انگلیسی استفاده می‌کنیم."
+        },
+        {
+          "id": "evolve-1-l01-tr-14",
+          "question": "کلمه teacher چه معنی‌ای می‌دهد؟",
+          "expected_answer": "What does teacher mean?",
+          "accepted_answers": [
+            "What does the word teacher mean?"
+          ],
+          "explanation": "برای پرسیدن معنی کلمه از الگوی What does ... mean? استفاده می‌کنیم."
         }
       ]
     },
     {
-      "id": "l01-negative",
+      "id": "evolve-1-l01-builder",
+      "type": "sentence_builder",
+      "title": "مرتب‌سازی کلمات",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-sb-01",
+          "question": "کلمات را به ترتیب درست مرتب کن.",
+          "expected_answer": "My first name is Amir Hossein.",
+          "explanation": "ترتیب جمله: My + first name + is + نام.",
+          "word_bank": [
+            "Hossein.",
+            "name",
+            "My",
+            "Amir",
+            "first",
+            "is"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-sb-02",
+          "question": "کلمات را به ترتیب درست مرتب کن.",
+          "expected_answer": "This is my teacher.",
+          "explanation": "This is my ... برای معرفی یک شخص یا چیز استفاده می‌شود.",
+          "word_bank": [
+            "teacher.",
+            "This",
+            "my",
+            "is"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-sb-03",
+          "question": "کلمات را به ترتیب درست مرتب کن.",
+          "expected_answer": "This is my friend.",
+          "explanation": "به ترتیب This + is + my + اسم توجه کن.",
+          "word_bank": [
+            "my",
+            "friend.",
+            "is",
+            "This"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-sb-04",
+          "question": "کلمات را به ترتیب درست مرتب کن.",
+          "expected_answer": "I have a question.",
+          "explanation": "ترتیب جمله: فاعل + فعل + a + اسم.",
+          "word_bank": [
+            "question.",
+            "have",
+            "I",
+            "a"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-sb-05",
+          "question": "کلمات را به ترتیب درست مرتب کن.",
+          "expected_answer": "He eats.",
+          "explanation": "در جمله مثبت حال ساده، فعل بعد از He حرف s می‌گیرد.",
+          "word_bank": [
+            "eats.",
+            "He"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-sb-06",
+          "question": "کلمات را به ترتیب درست مرتب کن.",
+          "expected_answer": "They listen.",
+          "explanation": "با They از شکل ساده فعل، بدون s، استفاده می‌کنیم.",
+          "word_bank": [
+            "listen.",
+            "They"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-sb-07",
+          "question": "کلمات را به ترتیب درست مرتب کن.",
+          "expected_answer": "My mother and I eat.",
+          "explanation": "My mother and I معادل We است؛ بنابراین فعل s نمی‌گیرد.",
+          "word_bank": [
+            "eat.",
+            "I",
+            "mother",
+            "My",
+            "and"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-correction",
+      "type": "grammar_correction",
+      "title": "اصلاح فعل در جمله",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-gc-01",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "He eats.",
+          "explanation": "با He در جمله مثبت حال ساده به فعل s اضافه می‌کنیم.",
+          "incorrect_sentence": "He eat."
+        },
+        {
+          "id": "evolve-1-l01-gc-02",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "She walks.",
+          "explanation": "با She فعل در جمله مثبت حال ساده s می‌گیرد.",
+          "incorrect_sentence": "She walk."
+        },
+        {
+          "id": "evolve-1-l01-gc-03",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "It listens.",
+          "explanation": "It سوم‌شخص مفرد است؛ در این الگو فعل s می‌گیرد.",
+          "incorrect_sentence": "It listen."
+        },
+        {
+          "id": "evolve-1-l01-gc-04",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "I eat.",
+          "explanation": "با I از شکل ساده فعل، بدون s، استفاده می‌کنیم.",
+          "incorrect_sentence": "I eats."
+        },
+        {
+          "id": "evolve-1-l01-gc-05",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "We read.",
+          "explanation": "با We فعل بدون s می‌آید.",
+          "incorrect_sentence": "We reads."
+        },
+        {
+          "id": "evolve-1-l01-gc-06",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "They write.",
+          "explanation": "با They از شکل ساده فعل استفاده می‌کنیم.",
+          "incorrect_sentence": "They writes."
+        },
+        {
+          "id": "evolve-1-l01-gc-07",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "My mother and I walk.",
+          "explanation": "My mother and I معادل We است؛ پس فعل بدون s می‌آید.",
+          "incorrect_sentence": "My mother and I walks."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-negative",
       "type": "positive_negative_question",
       "title": "تبدیل به منفی",
       "presentation": "text",
-      "operation": "negative",
       "difficulty": "easy",
       "items": [
         {
-          "id": "l01-neg-01",
-          "question": "جمله را منفی کن: She is a teacher.",
-          "expected_answer": "She is not a teacher.",
-          "accepted_answers": ["She isn't a teacher."],
-          "explanation": "بعد از is کلمه‌ی not می‌آید."
+          "id": "evolve-1-l01-neg-01",
+          "question": "جمله را منفی کن: This is my teacher.",
+          "expected_answer": "This is not my teacher.",
+          "accepted_answers": [
+            "This isn't my teacher."
+          ],
+          "explanation": "برای منفی کردن is، کلمه not را بعد از آن می‌آوریم. شکل کوتاه is not برابر isn't است."
+        },
+        {
+          "id": "evolve-1-l01-neg-02",
+          "question": "جمله را منفی کن: This is my friend.",
+          "expected_answer": "This is not my friend.",
+          "accepted_answers": [
+            "This isn't my friend."
+          ],
+          "explanation": "This is not و This isn't هر دو درست هستند."
         }
-      ]
+      ],
+      "operation": "negative"
     },
     {
-      "id": "l01-question",
+      "id": "evolve-1-l01-question",
       "type": "positive_negative_question",
-      "title": "تبدیل به سؤالی",
-      "presentation": "text",
-      "operation": "question",
-      "difficulty": "medium",
-      "items": [
-        {
-          "id": "l01-q-01",
-          "question": "جمله را سؤالی کن: They are happy.",
-          "expected_answer": "Are they happy?",
-          "accepted_answers": ["Are they happy"],
-          "explanation": "is و are را جلوی فاعل می‌آوریم."
-        }
-      ]
-    },
-    {
-      "id": "l01-dictation",
-      "type": "dictation",
-      "title": "املا",
-      "presentation": "audio",
-      "difficulty": "medium",
-      "items": [
-        {
-          "id": "l01-dic-01",
-          "question": "جمله را بشنو و بنویس: My name is Ali.",
-          "expected_answer": "My name is Ali.",
-          "explanation": "حرف‌های بزرگ و نقطه را هم درست بنویس.",
-          "points": 15
-        }
-      ]
-    },
-    {
-      "id": "l01-synonyms",
-      "type": "vocabulary",
-      "title": "مترادف",
-      "presentation": "text",
-      "difficulty": "medium",
-      "items": [
-        {
-          "id": "l01-syn-01",
-          "question": "دو مترادف این کلمه را بگو: big",
-          "expected_answer": "large",
-          "accepted_answers": ["large", "huge", "great", "enormous"],
-          "answer_mode": "list",
-          "min_items": 2,
-          "explanation": "هر دو مورد درست باشد کافی است؛ مثلاً large و huge.",
-          "points": 20
-        }
-      ]
-    },
-    {
-      "id": "l01-builder",
-      "type": "sentence_builder",
-      "title": "ساخت جمله",
+      "title": "تبدیل به سؤال",
       "presentation": "text",
       "difficulty": "easy",
       "items": [
         {
-          "id": "l01-sb-01",
-          "question": "کلمات را به ترتیب درست کنار هم بگذار.",
-          "expected_answer": "I am happy.",
-          "word_bank": ["happy", "am", "I"],
-          "explanation": "ترتیب درست: فاعل، فعل، صفت."
+          "id": "evolve-1-l01-q-01",
+          "question": "جمله را سؤالی کن: This is my teacher.",
+          "expected_answer": "Is this my teacher?",
+          "explanation": "برای سؤالی کردن این جمله، is را به ابتدای جمله می‌آوریم."
+        },
+        {
+          "id": "evolve-1-l01-q-02",
+          "question": "جمله را سؤالی کن: This is my friend.",
+          "expected_answer": "Is this my friend?",
+          "explanation": "در سؤال، is پیش از this قرار می‌گیرد."
         }
-      ]
+      ],
+      "operation": "question"
     },
     {
-      "id": "l01-choice",
+      "id": "evolve-1-l01-choice",
       "type": "multiple_choice",
-      "title": "چندگزینه‌ای",
+      "title": "انتخاب گزینه درست",
       "presentation": "text",
       "difficulty": "easy",
       "items": [
         {
-          "id": "l01-mc-01",
-          "question": "کدام جمله درست است؟",
-          "expected_answer": "She is my sister.",
-          "options": ["She are my sister.", "She is my sister.", "She be my sister."],
-          "explanation": "برای She از is استفاده می‌کنیم."
+          "id": "evolve-1-l01-mc-01",
+          "question": "کدام گزینه ضمیر فاعلی است؟",
+          "expected_answer": "They",
+          "explanation": "They ضمیر فاعلی است؛ them ضمیر مفعولی و their صفت ملکی است.",
+          "options": [
+            "He",
+            "She",
+            "They"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-mc-02",
+          "question": "معادل فاعلی «مادر من و من» کدام است؟",
+          "expected_answer": "We",
+          "explanation": "My mother and I یعنی من و مادرم؛ معادل آن We است.",
+          "options": [
+            "They",
+            "We",
+            "She"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-mc-03",
+          "question": "جای خالی را کامل کن: You ___.",
+          "expected_answer": "eat",
+          "explanation": "با You شکل ساده فعل، بدون s، می‌آید.",
+          "options": [
+            "eats",
+            "eat",
+            "eating"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-mc-04",
+          "question": "جای خالی را کامل کن: She ___.",
+          "expected_answer": "watches",
+          "explanation": "فعل watch برای She به watches تبدیل می‌شود.",
+          "options": [
+            "watch",
+            "watchs",
+            "watches"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-mc-05",
+          "question": "برای گوش دادن با تمرکز و توجه کدام فعل مناسب است؟",
+          "expected_answer": "Listen",
+          "explanation": "Listen یعنی عمداً گوش دادن؛ hear یعنی شنیدن صدا.",
+          "options": [
+            "Hear",
+            "Listen",
+            "Read"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-mc-06",
+          "question": "کدام فعل به معنی مشاهده کردن با دقت است؟",
+          "expected_answer": "Observe",
+          "explanation": "Observe یعنی با دقت نگاه یا بررسی کردن.",
+          "options": [
+            "Observe",
+            "Say",
+            "Get"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-mc-07",
+          "question": "برای ساختمان محل زندگی، کدام کلمه مناسب‌تر است؟",
+          "expected_answer": "House",
+          "explanation": "House بیشتر به ساختمان اشاره دارد؛ home بیشتر به محل زندگی و حس تعلق اشاره می‌کند.",
+          "options": [
+            "House",
+            "Home",
+            "People"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-mc-08",
+          "question": "برای «قفل کردن در» کدام فعل مناسب است؟",
+          "expected_answer": "Lock",
+          "explanation": "Lock یعنی قفل کردن؛ close یعنی بستن.",
+          "options": [
+            "Close",
+            "Lock",
+            "Open"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-mc-09",
+          "question": "کدام عبارت معمولاً برای ورود به هتل استفاده می‌شود؟",
+          "expected_answer": "Check in",
+          "explanation": "Check in یعنی ثبت ورود؛ check out یعنی ثبت خروج.",
+          "options": [
+            "Check out",
+            "Check in",
+            "Check"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-mc-10",
+          "question": "کدام کلمه معمولاً به گروه موسیقی اشاره می‌کند؟",
+          "expected_answer": "Band",
+          "explanation": "Band معمولاً گروه موسیقی است؛ team گروهی از افراد برای انجام کاری مشترک است.",
+          "options": [
+            "Team",
+            "Band",
+            "Individuals"
+          ]
         }
       ]
     },
     {
-      "id": "l01-correction",
-      "type": "grammar_correction",
-      "title": "اصلاح جمله",
+      "id": "evolve-1-l01-vocabulary",
+      "type": "vocabulary",
+      "title": "مترادف و متضاد",
       "presentation": "text",
       "difficulty": "easy",
       "items": [
         {
-          "id": "l01-gc-01",
+          "id": "evolve-1-l01-voc-01",
+          "question": "مترادف first name چیست؟",
+          "expected_answer": "given name",
+          "explanation": "First name و given name هر دو به معنی نام کوچک هستند."
+        },
+        {
+          "id": "evolve-1-l01-voc-02",
+          "question": "مترادف last name چیست؟",
+          "expected_answer": "family name",
+          "explanation": "Family name نیز به معنی نام خانوادگی است."
+        },
+        {
+          "id": "evolve-1-l01-voc-03",
+          "question": "یک مترادف برای teacher بنویس.",
+          "expected_answer": "tutor",
+          "accepted_answers": [
+            "instructor"
+          ],
+          "explanation": "Tutor و instructor هر دو به فرد آموزش‌دهنده اشاره می‌کنند؛ کاربردشان بسته به موقعیت فرق دارد.",
+          "answer_mode": "list",
+          "min_items": 1
+        },
+        {
+          "id": "evolve-1-l01-voc-04",
+          "question": "یک مترادف برای help بنویس.",
+          "expected_answer": "assist",
+          "accepted_answers": [
+            "aid"
+          ],
+          "explanation": "Assist و aid هر دو به معنی کمک کردن هستند.",
+          "answer_mode": "list",
+          "min_items": 1
+        },
+        {
+          "id": "evolve-1-l01-voc-05",
+          "question": "مترادف close به معنی «بستن» چیست؟",
+          "expected_answer": "shut",
+          "explanation": "Close و shut در معنی فعل بستن به هم نزدیک‌اند."
+        },
+        {
+          "id": "evolve-1-l01-voc-06",
+          "question": "مترادف start چیست؟",
+          "expected_answer": "begin",
+          "explanation": "Start و begin هر دو به معنی شروع کردن هستند."
+        },
+        {
+          "id": "evolve-1-l01-voc-07",
+          "question": "مترادف speaking چیست؟",
+          "expected_answer": "talking",
+          "explanation": "Speaking و talking هر دو به صحبت کردن اشاره دارند."
+        },
+        {
+          "id": "evolve-1-l01-voc-08",
+          "question": "مترادف example چیست؟",
+          "expected_answer": "instance",
+          "explanation": "Example و instance در بسیاری از جمله‌ها به معنی نمونه هستند."
+        },
+        {
+          "id": "evolve-1-l01-voc-09",
+          "question": "مترادف pair چیست؟",
+          "expected_answer": "couple",
+          "explanation": "Pair و couple هر دو می‌توانند به معنی یک جفت باشند."
+        },
+        {
+          "id": "evolve-1-l01-voc-10",
+          "question": "مترادف understand چیست؟",
+          "expected_answer": "grasp",
+          "explanation": "Grasp در این کاربرد به معنی فهمیدن است."
+        },
+        {
+          "id": "evolve-1-l01-voc-11",
+          "question": "دو مترادف برای goal بنویس.",
+          "expected_answer": "objective",
+          "accepted_answers": [
+            "purpose",
+            "target"
+          ],
+          "explanation": "Objective، purpose، target و aim بسته به جمله می‌توانند به مفهوم هدف اشاره کنند.",
+          "answer_mode": "list",
+          "min_items": 2
+        },
+        {
+          "id": "evolve-1-l01-voc-12",
+          "question": "مترادف people چیست؟",
+          "expected_answer": "individuals",
+          "explanation": "Individuals به معنی افراد است و در بسیاری از موقعیت‌ها می‌تواند جای people بیاید."
+        },
+        {
+          "id": "evolve-1-l01-voc-13",
+          "question": "مترادف نزدیک personal در معنی «خصوصی» چیست؟",
+          "expected_answer": "private",
+          "explanation": "Personal و private در بعضی کاربردها به هم نزدیک‌اند، اما در همه جمله‌ها قابل جایگزینی نیستند."
+        },
+        {
+          "id": "evolve-1-l01-voc-14",
+          "question": "مترادف ask در معنی «درخواست کردن» چیست؟",
+          "expected_answer": "request",
+          "explanation": "Request رسمی‌تر از ask است و می‌تواند به معنی درخواست کردن باشد."
+        },
+        {
+          "id": "evolve-1-l01-voc-15",
+          "question": "در یادداشت‌ها کلمه‌ی مقابل open چیست؟",
+          "expected_answer": "close",
+          "explanation": "Open و close در اینجا به معنی باز کردن و بستن هستند."
+        },
+        {
+          "id": "evolve-1-l01-voc-16",
+          "question": "متضاد inside چیست؟",
+          "expected_answer": "outside",
+          "explanation": "Inside یعنی داخل و outside یعنی بیرون."
+        },
+        {
+          "id": "evolve-1-l01-voc-17",
+          "question": "متضاد public چیست؟",
+          "expected_answer": "private",
+          "explanation": "Public یعنی عمومی و private یعنی خصوصی."
+        },
+        {
+          "id": "evolve-1-l01-voc-18",
+          "question": "متضاد new برای یک وسیله چیست؟",
+          "expected_answer": "old",
+          "explanation": "برای اشیا، new یعنی جدید و old یعنی قدیمی."
+        },
+        {
+          "id": "evolve-1-l01-voc-19",
+          "question": "متضاد young برای توصیف سن انسان چیست؟",
+          "expected_answer": "old",
+          "explanation": "برای سن انسان، young یعنی جوان و old یعنی پیر یا سالخورده."
+        },
+        {
+          "id": "evolve-1-l01-voc-20",
+          "question": "کدام فعل در یادداشت‌ها در برابر give آمده است؟",
+          "expected_answer": "get",
+          "explanation": "در این جفت آموزشی، give به معنی دادن و get به معنی گرفتن است."
+        },
+        {
+          "id": "evolve-1-l01-voc-21",
+          "question": "کدام عبارت در برابر check in آمده است؟",
+          "expected_answer": "check out",
+          "explanation": "Check in به ورود و check out به خروج اشاره دارد."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-spelling",
+      "type": "dictation",
+      "title": "املای همه واژه‌ها و عبارت‌ها",
+      "presentation": "audio",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-dic-001",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: synonym",
+          "expected_answer": "synonym",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-002",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: opposite",
+          "expected_answer": "opposite",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-003",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: subject",
+          "expected_answer": "subject",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-004",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: verb",
+          "expected_answer": "verb",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-005",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: first name",
+          "expected_answer": "first name",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-006",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: given name",
+          "expected_answer": "given name",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-007",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: last name",
+          "expected_answer": "last name",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-008",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: family name",
+          "expected_answer": "family name",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-009",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: this",
+          "expected_answer": "this",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-010",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: that",
+          "expected_answer": "that",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-011",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: teacher",
+          "expected_answer": "teacher",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-012",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: tutor",
+          "expected_answer": "tutor",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-013",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: instructor",
+          "expected_answer": "instructor",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-014",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: friend",
+          "expected_answer": "friend",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-015",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: husband",
+          "expected_answer": "husband",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-016",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: wife",
+          "expected_answer": "wife",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-017",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: spouse",
+          "expected_answer": "spouse",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-018",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: partner",
+          "expected_answer": "partner",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-019",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: helper",
+          "expected_answer": "helper",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-020",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: question",
+          "expected_answer": "question",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-021",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: answer",
+          "expected_answer": "answer",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-022",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: help",
+          "expected_answer": "help",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-023",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: assist",
+          "expected_answer": "assist",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-024",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: aid",
+          "expected_answer": "aid",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-025",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: give me a hand",
+          "expected_answer": "give me a hand",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-026",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: ask",
+          "expected_answer": "ask",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-027",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: request",
+          "expected_answer": "request",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-028",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: understand",
+          "expected_answer": "understand",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-029",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: grasp",
+          "expected_answer": "grasp",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-030",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: say",
+          "expected_answer": "say",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-031",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: tell",
+          "expected_answer": "tell",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-032",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: can",
+          "expected_answer": "can",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-033",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: could",
+          "expected_answer": "could",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-034",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: retell",
+          "expected_answer": "retell",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-035",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: recall",
+          "expected_answer": "recall",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-036",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: rebuild",
+          "expected_answer": "rebuild",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-037",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: regain",
+          "expected_answer": "regain",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-038",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: rewrite",
+          "expected_answer": "rewrite",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-039",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: sorry",
+          "expected_answer": "sorry",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-040",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: my bad",
+          "expected_answer": "my bad",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-041",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: open",
+          "expected_answer": "open",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-042",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: close",
+          "expected_answer": "close",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-043",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: shut",
+          "expected_answer": "shut",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-044",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: lock",
+          "expected_answer": "lock",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-045",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: listen",
+          "expected_answer": "listen",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-046",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: hear",
+          "expected_answer": "hear",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-047",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: pair",
+          "expected_answer": "pair",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-048",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: couple",
+          "expected_answer": "couple",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-049",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: speaking",
+          "expected_answer": "speaking",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-050",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: talking",
+          "expected_answer": "talking",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-051",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: group",
+          "expected_answer": "group",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-052",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: team",
+          "expected_answer": "team",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-053",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: band",
+          "expected_answer": "band",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-054",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: read",
+          "expected_answer": "read",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-055",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: study",
+          "expected_answer": "study",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-056",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: write",
+          "expected_answer": "write",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-057",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: inscribe",
+          "expected_answer": "inscribe",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-058",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: watch",
+          "expected_answer": "watch",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-059",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: see",
+          "expected_answer": "see",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-060",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: look at",
+          "expected_answer": "look at",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-061",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: observe",
+          "expected_answer": "observe",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-062",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: start",
+          "expected_answer": "start",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-063",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: begin",
+          "expected_answer": "begin",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-064",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: example",
+          "expected_answer": "example",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-065",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: instance",
+          "expected_answer": "instance",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-066",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: objectives",
+          "expected_answer": "objectives",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-067",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: objective",
+          "expected_answer": "objective",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-068",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: purpose",
+          "expected_answer": "purpose",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-069",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: goal",
+          "expected_answer": "goal",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-070",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: target",
+          "expected_answer": "target",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-071",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: give",
+          "expected_answer": "give",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-072",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: get",
+          "expected_answer": "get",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-073",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: personal",
+          "expected_answer": "personal",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-074",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: private",
+          "expected_answer": "private",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-075",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: public",
+          "expected_answer": "public",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-076",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: check",
+          "expected_answer": "check",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-077",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: check in",
+          "expected_answer": "check in",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-078",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: check out",
+          "expected_answer": "check out",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-079",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: house",
+          "expected_answer": "house",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-080",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: home",
+          "expected_answer": "home",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-081",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: people",
+          "expected_answer": "people",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-082",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: individuals",
+          "expected_answer": "individuals",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-083",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: outside",
+          "expected_answer": "outside",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-084",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: inside",
+          "expected_answer": "inside",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-085",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: new",
+          "expected_answer": "new",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-086",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: old",
+          "expected_answer": "old",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-087",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: young",
+          "expected_answer": "young",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-088",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: street",
+          "expected_answer": "street",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-089",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: avenue",
+          "expected_answer": "avenue",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-090",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: road",
+          "expected_answer": "road",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-091",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: alley",
+          "expected_answer": "alley",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-092",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: eat",
+          "expected_answer": "eat",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-093",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: walk",
+          "expected_answer": "walk",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-094",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: mother",
+          "expected_answer": "mother",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-dic-095",
+          "question": "کلمه یا عبارت را بشنو و املای آن را بنویس: I, you, he, she, it, we, they",
+          "expected_answer": "I, you, he, she, it, we, they",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "time_limit": 20
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-noun-plurals",
+      "type": "vocabulary",
+      "title": "جمع اسم‌های درس",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-pl-noun-01",
+          "question": "جمع این کلمه را بنویس: first name",
+          "expected_answer": "first names",
+          "explanation": "در عبارت چندکلمه‌ای، name جمع بسته می‌شود.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-02",
+          "question": "جمع این کلمه را بنویس: last name",
+          "expected_answer": "last names",
+          "explanation": "در عبارت چندکلمه‌ای، name جمع بسته می‌شود.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-03",
+          "question": "جمع این کلمه را بنویس: family name",
+          "expected_answer": "family names",
+          "explanation": "در عبارت چندکلمه‌ای، name جمع بسته می‌شود.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-04",
+          "question": "جمع این کلمه را بنویس: given name",
+          "expected_answer": "given names",
+          "explanation": "در عبارت چندکلمه‌ای، name جمع بسته می‌شود.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-05",
+          "question": "جمع این کلمه را بنویس: teacher",
+          "expected_answer": "teachers",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-06",
+          "question": "جمع این کلمه را بنویس: tutor",
+          "expected_answer": "tutors",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-07",
+          "question": "جمع این کلمه را بنویس: instructor",
+          "expected_answer": "instructors",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-08",
+          "question": "جمع این کلمه را بنویس: friend",
+          "expected_answer": "friends",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-09",
+          "question": "جمع این کلمه را بنویس: husband",
+          "expected_answer": "husbands",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-10",
+          "question": "جمع این کلمه را بنویس: wife",
+          "expected_answer": "wives",
+          "explanation": "در wife، شکل جمع به wives تغییر می‌کند.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-11",
+          "question": "جمع این کلمه را بنویس: spouse",
+          "expected_answer": "spouses",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-12",
+          "question": "جمع این کلمه را بنویس: partner",
+          "expected_answer": "partners",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-13",
+          "question": "جمع این کلمه را بنویس: helper",
+          "expected_answer": "helpers",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-14",
+          "question": "جمع این کلمه را بنویس: question",
+          "expected_answer": "questions",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-15",
+          "question": "جمع این کلمه را بنویس: answer",
+          "expected_answer": "answers",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-16",
+          "question": "جمع این کلمه را بنویس: subject",
+          "expected_answer": "subjects",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-17",
+          "question": "جمع این کلمه را بنویس: verb",
+          "expected_answer": "verbs",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-18",
+          "question": "جمع این کلمه را بنویس: person",
+          "expected_answer": "people",
+          "explanation": "People جمع بی‌قاعده‌ی person است.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-19",
+          "question": "جمع این کلمه را بنویس: individual",
+          "expected_answer": "individuals",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-20",
+          "question": "جمع این کلمه را بنویس: pair",
+          "expected_answer": "pairs",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-21",
+          "question": "جمع این کلمه را بنویس: couple",
+          "expected_answer": "couples",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-22",
+          "question": "جمع این کلمه را بنویس: group",
+          "expected_answer": "groups",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-23",
+          "question": "جمع این کلمه را بنویس: team",
+          "expected_answer": "teams",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-24",
+          "question": "جمع این کلمه را بنویس: band",
+          "expected_answer": "bands",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-25",
+          "question": "جمع این کلمه را بنویس: objective",
+          "expected_answer": "objectives",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-26",
+          "question": "جمع این کلمه را بنویس: purpose",
+          "expected_answer": "purposes",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-27",
+          "question": "جمع این کلمه را بنویس: goal",
+          "expected_answer": "goals",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-28",
+          "question": "جمع این کلمه را بنویس: target",
+          "expected_answer": "targets",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-29",
+          "question": "جمع این کلمه را بنویس: house",
+          "expected_answer": "houses",
+          "explanation": "برای house در پایان es اضافه می‌شود.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-30",
+          "question": "جمع این کلمه را بنویس: home",
+          "expected_answer": "homes",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-31",
+          "question": "جمع این کلمه را بنویس: street",
+          "expected_answer": "streets",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-32",
+          "question": "جمع این کلمه را بنویس: avenue",
+          "expected_answer": "avenues",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-33",
+          "question": "جمع این کلمه را بنویس: road",
+          "expected_answer": "roads",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-34",
+          "question": "جمع این کلمه را بنویس: alley",
+          "expected_answer": "alleys",
+          "explanation": "چون قبل از y یک حرف صدادار آمده، فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-35",
+          "question": "جمع این کلمه را بنویس: example",
+          "expected_answer": "examples",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-36",
+          "question": "جمع این کلمه را بنویس: instance",
+          "expected_answer": "instances",
+          "explanation": "برای بیشتر اسم‌ها فقط s اضافه می‌کنیم.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-pl-noun-37",
+          "question": "جمع این کلمه را بنویس: family",
+          "expected_answer": "families",
+          "explanation": "وقتی قبل از y حرف بی‌صدا باشد، y به ies تبدیل می‌شود.",
+          "hint": "شکل جمع اسم را بنویس؛ به املای آخر کلمه دقت کن.",
+          "points": 10,
+          "time_limit": 20
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-verb-forms",
+      "type": "vocabulary",
+      "title": "شکل فعل با He / She / It",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-vb-form-01",
+          "question": "شکل فعل را برای he / she / it بنویس: eat",
+          "expected_answer": "eats",
+          "explanation": "برای he، she و it به eat حرف s اضافه می‌کنیم.",
+          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-vb-form-02",
+          "question": "شکل فعل را برای he / she / it بنویس: walk",
+          "expected_answer": "walks",
+          "explanation": "برای he، she و it به walk حرف s اضافه می‌کنیم.",
+          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-vb-form-03",
+          "question": "شکل فعل را برای he / she / it بنویس: listen",
+          "expected_answer": "listens",
+          "explanation": "برای he، she و it به listen حرف s اضافه می‌کنیم.",
+          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-vb-form-04",
+          "question": "شکل فعل را برای he / she / it بنویس: say",
+          "expected_answer": "says",
+          "explanation": "در say که به y بعد از حرف صدادار ختم می‌شود، فقط s اضافه می‌کنیم.",
+          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-vb-form-05",
+          "question": "شکل فعل را برای he / she / it بنویس: read",
+          "expected_answer": "reads",
+          "explanation": "برای he، she و it به read حرف s اضافه می‌کنیم.",
+          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-vb-form-06",
+          "question": "شکل فعل را برای he / she / it بنویس: write",
+          "expected_answer": "writes",
+          "explanation": "برای he، she و it به write حرف s اضافه می‌کنیم.",
+          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 20
+        },
+        {
+          "id": "evolve-1-l01-vb-form-07",
+          "question": "شکل فعل را برای he / she / it بنویس: watch",
+          "expected_answer": "watches",
+          "explanation": "برای فعل‌های ختم‌شده به ch، معمولاً es اضافه می‌کنیم.",
+          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 20
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-demonstrative-forms",
+      "type": "vocabulary",
+      "title": "جمع This و That",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-dem-voc-01",
+          "question": "شکل جمع this چیست؟",
+          "expected_answer": "these",
+          "explanation": "This برای مفرد نزدیک و these برای جمع نزدیک استفاده می‌شود."
+        },
+        {
+          "id": "evolve-1-l01-dem-voc-02",
+          "question": "شکل جمع that چیست؟",
+          "expected_answer": "those",
+          "explanation": "That برای مفرد دور و those برای جمع دور استفاده می‌شود."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-demonstrative-translation",
+      "type": "quick_translation",
+      "title": "ترجمه با These و Those",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-dem-tr-01",
+          "question": "این‌ها دوستان من هستند.",
+          "expected_answer": "These are my friends.",
+          "explanation": "برای جمع نزدیک از these و are استفاده می‌کنیم.",
+          "accepted_answers": [
+            "These are my friends"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-dem-tr-02",
+          "question": "آن‌ها معلم‌های من هستند. (اشاره به افراد دور)",
+          "expected_answer": "Those are my teachers.",
+          "explanation": "برای جمع دور از those و are استفاده می‌کنیم.",
+          "accepted_answers": [
+            "Those are my teachers"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-dem-tr-03",
+          "question": "این‌ها خانه‌های من هستند.",
+          "expected_answer": "These are my houses.",
+          "explanation": "These شکل جمع this است و با are می‌آید."
+        },
+        {
+          "id": "evolve-1-l01-dem-tr-04",
+          "question": "آن‌ها خیابان‌های قدیمی هستند.",
+          "expected_answer": "Those are old streets.",
+          "explanation": "Those برای اشاره به چند چیز دور استفاده می‌شود."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-demonstrative-builder",
+      "type": "sentence_builder",
+      "title": "جمله‌سازی با These و Those",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-dem-sb-01",
+          "question": "کلمات را به ترتیب درست مرتب کن.",
+          "expected_answer": "These are my friends.",
+          "word_bank": [
+            "friends.",
+            "These",
+            "my",
+            "are"
+          ],
+          "explanation": "These برای جمع نزدیک و are برای فاعل جمع استفاده می‌شود."
+        },
+        {
+          "id": "evolve-1-l01-dem-sb-02",
+          "question": "کلمات را به ترتیب درست مرتب کن.",
+          "expected_answer": "Those are my teachers.",
+          "word_bank": [
+            "my",
+            "Those",
+            "teachers.",
+            "are"
+          ],
+          "explanation": "ترتیب جمله: Those + are + my + اسم جمع."
+        },
+        {
+          "id": "evolve-1-l01-dem-sb-03",
+          "question": "کلمات را به ترتیب درست مرتب کن.",
+          "expected_answer": "These are old houses.",
+          "word_bank": [
+            "old",
+            "These",
+            "houses.",
+            "are"
+          ],
+          "explanation": "صفت قبل از اسم می‌آید و اسم به شکل جمع استفاده می‌شود."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-demonstrative-choice",
+      "type": "multiple_choice",
+      "title": "انتخاب These و Those",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-dem-mc-01",
+          "question": "برای اشاره به چند چیز نزدیک کدام کلمه درست است؟",
+          "expected_answer": "These",
+          "options": [
+            "This",
+            "These",
+            "Those"
+          ],
+          "explanation": "These برای جمع نزدیک است."
+        },
+        {
+          "id": "evolve-1-l01-dem-mc-02",
+          "question": "برای اشاره به چند چیز دور کدام کلمه درست است؟",
+          "expected_answer": "Those",
+          "options": [
+            "That",
+            "These",
+            "Those"
+          ],
+          "explanation": "Those برای جمع دور است."
+        },
+        {
+          "id": "evolve-1-l01-dem-mc-03",
+          "question": "کدام جمله درست است؟",
+          "expected_answer": "These are my friends.",
+          "options": [
+            "These is my friends.",
+            "These are my friends.",
+            "This are my friends."
+          ],
+          "explanation": "These جمع است؛ بنابراین با are می‌آید."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-demonstrative-correction",
+      "type": "grammar_correction",
+      "title": "اصلاح جمله با These و Those",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-dem-gc-01",
           "question": "جمله‌ی اشتباه را درست کن.",
-          "expected_answer": "They are students.",
-          "incorrect_sentence": "They is students.",
-          "explanation": "برای They از are استفاده می‌کنیم."
+          "expected_answer": "These are my friends.",
+          "incorrect_sentence": "These is my friends.",
+          "explanation": "These جمع است و باید با are بیاید."
+        },
+        {
+          "id": "evolve-1-l01-dem-gc-02",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "Those are my teachers.",
+          "incorrect_sentence": "Those is my teachers.",
+          "explanation": "برای Those از are استفاده می‌کنیم."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-demonstrative-negative",
+      "type": "positive_negative_question",
+      "title": "منفی کردن جمله‌های جمع",
+      "presentation": "text",
+      "difficulty": "easy",
+      "operation": "negative",
+      "items": [
+        {
+          "id": "evolve-1-l01-dem-neg-01",
+          "question": "جمله را منفی کن: These are my friends.",
+          "expected_answer": "These are not my friends.",
+          "accepted_answers": [
+            "These aren't my friends."
+          ],
+          "explanation": "Are not را می‌توان به شکل کوتاه aren't نوشت."
+        },
+        {
+          "id": "evolve-1-l01-dem-neg-02",
+          "question": "جمله را منفی کن: Those are my teachers.",
+          "expected_answer": "Those are not my teachers.",
+          "accepted_answers": [
+            "Those aren't my teachers."
+          ],
+          "explanation": "در منفی کردن are، کلمه not بعد از are می‌آید."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-demonstrative-question",
+      "type": "positive_negative_question",
+      "title": "سؤالی کردن جمله‌های جمع",
+      "presentation": "text",
+      "difficulty": "easy",
+      "operation": "question",
+      "items": [
+        {
+          "id": "evolve-1-l01-dem-q-01",
+          "question": "جمله را سؤالی کن: These are your friends.",
+          "expected_answer": "Are these your friends?",
+          "explanation": "برای سؤالی کردن، are را به ابتدای جمله می‌آوریم."
+        },
+        {
+          "id": "evolve-1-l01-dem-q-02",
+          "question": "جمله را سؤالی کن: Those are your teachers.",
+          "expected_answer": "Are those your teachers?",
+          "explanation": "در سؤال، are قبل از فاعل جمع قرار می‌گیرد."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-verb-agreement-choice",
+      "type": "multiple_choice",
+      "title": "انتخاب شکل درست فعل",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-va-mc-01",
+          "question": "جای خالی را کامل کن: I ___ .",
+          "expected_answer": "eat",
+          "options": [
+            "eat",
+            "eats"
+          ],
+          "explanation": "با I از شکل ساده‌ی فعل استفاده می‌کنیم."
+        },
+        {
+          "id": "evolve-1-l01-va-mc-02",
+          "question": "جای خالی را کامل کن: He ___ .",
+          "expected_answer": "walks",
+          "options": [
+            "walk",
+            "walks"
+          ],
+          "explanation": "با He در جمله‌ی مثبت حال ساده فعل s می‌گیرد."
+        },
+        {
+          "id": "evolve-1-l01-va-mc-03",
+          "question": "جای خالی را کامل کن: They ___ .",
+          "expected_answer": "listen",
+          "options": [
+            "listens",
+            "listen"
+          ],
+          "explanation": "با They از شکل ساده‌ی فعل استفاده می‌کنیم."
+        },
+        {
+          "id": "evolve-1-l01-va-mc-04",
+          "question": "جای خالی را کامل کن: She ___ .",
+          "expected_answer": "watches",
+          "options": [
+            "watch",
+            "watches"
+          ],
+          "explanation": "Watch برای She به watches تبدیل می‌شود."
+        },
+        {
+          "id": "evolve-1-l01-va-mc-05",
+          "question": "جای خالی را کامل کن: My mother and I ___ .",
+          "expected_answer": "walk",
+          "options": [
+            "walk",
+            "walks"
+          ],
+          "explanation": "My mother and I فاعل جمع است؛ فعل s نمی‌گیرد."
+        },
+        {
+          "id": "evolve-1-l01-va-mc-06",
+          "question": "جای خالی را کامل کن: We ___ .",
+          "expected_answer": "read",
+          "options": [
+            "reads",
+            "read"
+          ],
+          "explanation": "با We از شکل ساده‌ی فعل استفاده می‌کنیم."
+        },
+        {
+          "id": "evolve-1-l01-va-mc-07",
+          "question": "جای خالی را کامل کن: It ___ .",
+          "expected_answer": "eats",
+          "options": [
+            "eat",
+            "eats"
+          ],
+          "explanation": "It سوم‌شخص مفرد است؛ فعل s می‌گیرد."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-verb-agreement-correction",
+      "type": "grammar_correction",
+      "title": "اصلاح فعل با فاعل مفرد و جمع",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-va-gc-01",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "He walks.",
+          "incorrect_sentence": "He walk.",
+          "explanation": "He سوم‌شخص مفرد است و فعل در جمله‌ی مثبت s می‌گیرد."
+        },
+        {
+          "id": "evolve-1-l01-va-gc-02",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "They eat.",
+          "incorrect_sentence": "They eats.",
+          "explanation": "با They فعل بدون s می‌آید."
+        },
+        {
+          "id": "evolve-1-l01-va-gc-03",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "My mother and I walk.",
+          "incorrect_sentence": "My mother and I walks.",
+          "explanation": "My mother and I فاعل جمع است؛ فعل s نمی‌گیرد."
+        },
+        {
+          "id": "evolve-1-l01-va-gc-04",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "She watches.",
+          "incorrect_sentence": "She watch.",
+          "explanation": "Watch بعد از She به watches تبدیل می‌شود."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-verb-agreement-translation",
+      "type": "quick_translation",
+      "title": "ترجمه با فاعل مفرد و جمع",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-va-tr-01",
+          "question": "او غذا می‌خورد. (مرد)",
+          "expected_answer": "He eats.",
+          "explanation": "با He فعل eat به eats تبدیل می‌شود."
+        },
+        {
+          "id": "evolve-1-l01-va-tr-02",
+          "question": "او کتاب می‌خواند. (زن)",
+          "expected_answer": "She reads.",
+          "explanation": "با She فعل read به reads تبدیل می‌شود."
+        },
+        {
+          "id": "evolve-1-l01-va-tr-03",
+          "question": "آن‌ها می‌نویسند.",
+          "expected_answer": "They write.",
+          "explanation": "با They فعل بدون s می‌آید."
+        },
+        {
+          "id": "evolve-1-l01-va-tr-04",
+          "question": "مادر من و من راه می‌رویم.",
+          "expected_answer": "My mother and I walk.",
+          "explanation": "My mother and I فاعل جمع است و walk بدون s می‌آید."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-plural-dictation",
+      "type": "dictation",
+      "title": "املای شکل‌های جمع",
+      "presentation": "audio",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-pl-dic-01",
+          "question": "جمله را بشنو و بنویس: These are my friends.",
+          "expected_answer": "These are my friends.",
+          "explanation": "به املای These و friends دقت کن."
+        },
+        {
+          "id": "evolve-1-l01-pl-dic-02",
+          "question": "جمله را بشنو و بنویس: Those are my teachers.",
+          "expected_answer": "Those are my teachers.",
+          "explanation": "Those شکل جمع that و teachers شکل جمع teacher است."
+        },
+        {
+          "id": "evolve-1-l01-pl-dic-03",
+          "question": "کلمه را بشنو و بنویس: wives",
+          "expected_answer": "wives",
+          "explanation": "املای جمع wife به صورت wives است."
+        },
+        {
+          "id": "evolve-1-l01-pl-dic-04",
+          "question": "کلمه را بشنو و بنویس: people",
+          "expected_answer": "people",
+          "explanation": "People شکل جمع بی‌قاعده‌ی person است."
+        },
+        {
+          "id": "evolve-1-l01-pl-dic-05",
+          "question": "کلمه را بشنو و بنویس: families",
+          "expected_answer": "families",
+          "explanation": "در families، y به ies تبدیل شده است."
+        },
+        {
+          "id": "evolve-1-l01-pl-dic-06",
+          "question": "کلمه را بشنو و بنویس: houses",
+          "expected_answer": "houses",
+          "explanation": "املای جمع house به صورت houses است."
+        },
+        {
+          "id": "evolve-1-l01-pl-dic-07",
+          "question": "کلمه را بشنو و بنویس: watches",
+          "expected_answer": "watches",
+          "explanation": "در watches بعد از ch از es استفاده می‌کنیم."
+        },
+        {
+          "id": "evolve-1-l01-pl-dic-08",
+          "question": "کلمه را بشنو و بنویس: says",
+          "expected_answer": "says",
+          "explanation": "شکل فعل say برای he، she و it به صورت says نوشته می‌شود."
         }
       ]
     }

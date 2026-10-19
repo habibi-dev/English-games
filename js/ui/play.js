@@ -609,7 +609,7 @@ function renderQuestion(root, session, flow) {
   const timerFill = h('div', { class: 'timer-fill' });
   const timerText = h('span', { class: 'timer-text' });
   const feedback = h('div', { class: 'feedback', hidden: true, role: 'alert' });
-  const hintText = q.hint ? h('p', { class: 'hint', dir: 'auto', hidden: true }, q.hint) : null;
+  const hintText = q.hint ? h('p', { class: 'hint', dir: 'rtl', hidden: true }, q.hint) : null;
   const submitButton = h('button', { type: 'button', class: 'btn primary', onclick: submit }, 'Submit answer');
   const nextButton = h('button', { type: 'button', class: 'btn primary', hidden: true, onclick: next });
 
@@ -702,7 +702,13 @@ function renderQuestion(root, session, flow) {
           : h('div', { class: 'fb-box fb-yours' }, h('span', { class: 'fb-label' }, 'Your answer'), h('p', { class: 'fb-text' }, ltr(outcome.answer))),
         outcome.correct || !q.explanation
           ? null
-          : h('div', { class: 'fb-box fb-note', dir: 'auto' }, h('span', { class: 'fb-label' }, 'Note'), h('p', { class: 'fb-text-sm' }, q.explanation)),
+          : h(
+              'div',
+              { class: 'fb-box fb-note', dir: 'ltr' },
+              h('span', { class: 'fb-label' }, 'Note'),
+              // Explanations are written in Persian, with English words inside them: right-to-left.
+              h('p', { class: 'fb-text-sm', dir: 'rtl' }, q.explanation),
+            ),
       ].filter(Boolean),
     );
     document.body.append(resultOverlay);
@@ -762,7 +768,7 @@ function renderQuestion(root, session, flow) {
           ? h(
               'div',
               { class: 'hint-row' },
-              keepFocus(h('button', { type: 'button', class: 'btn ghost small', onclick: () => (hintText.hidden = false) }, 'Hint')),
+              keepFocus(h('button', { type: 'button', class: 'btn ghost small', onclick: () => (hintText.hidden = false) }, '💡 Hint')),
               hintText,
             )
           : null,

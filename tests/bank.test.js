@@ -68,25 +68,31 @@ test('every question must say which book and lesson it belongs to', () => {
 test('the sample lesson turns into valid questions with no errors', () => {
   const result = sampleQuestions();
   assert.equal(result.invalid.length, 0, JSON.stringify(result.invalid));
-  assert.equal(result.total, 8);
-  assert.equal(result.questions.length, 8);
-  assert.equal(new Set(result.questions.map((q) => q.id)).size, 8);
+  assert.equal(result.total, result.questions.length);
+  assert.ok(result.questions.length > 0);
+  assert.equal(new Set(result.questions.map((q) => q.id)).size, result.questions.length);
   assert.ok(result.questions.every((q) => q.accepted_answers.includes(q.expected_answer)));
   assert.ok(result.questions.every((q) => q.book === 'evolve-1' && q.lesson === 'lesson-01'));
 });
 
-test('dictation items are listening items by default, and items can override their exercise', () => {
+test('dictation items are listening items, and transformation items keep their operation', () => {
   const { questions } = sampleQuestions();
-  const dictation = questions.find((q) => q.id === 'l01-dic-01');
-  assert.equal(dictation.presentation, 'audio');
-  const negative = questions.find((q) => q.id === 'l01-neg-01');
-  assert.equal(negative.operation, 'negative');
-  assert.equal(questions.find((q) => q.id === 'l01-q-01').operation, 'question');
+  const dictation = questions.filter((q) => q.category === 'dictation');
+  assert.ok(dictation.length > 0);
+  assert.ok(dictation.every((q) => q.presentation === 'audio'));
+  const operations = questions
+    .filter((q) => q.category === 'positive_negative_question')
+    .map((q) => q.operation);
+  assert.ok(operations.includes('negative'));
+  assert.ok(operations.includes('question'));
 });
 
 test('JSON and CSV export round-trip the same records', () => {
   const { questions } = sampleQuestions();
-  const sample = questions.filter((q) => ['l01-tr-01', 'l01-sb-01', 'l01-syn-01'].includes(q.id));
+  // One plain record, one with a word bank, and one list answer, so every special field is covered.
+  const builder = questions.find((q) => q.category === 'sentence_builder');
+  const listItem = questions.find((q) => q.answer_mode === 'list');
+  const sample = [questions.find((q) => q.category === 'quick_translation'), builder, listItem];
 
   const fromJson = importQuestions(serializeQuestions(sample, 'json'));
   assert.equal(fromJson.invalid.length, 0);
@@ -100,9 +106,9 @@ test('JSON and CSV export round-trip the same records', () => {
     assert.deepEqual(csvById[original.id].accepted_answers, original.accepted_answers);
     assert.equal(csvById[original.id].lesson, 'lesson-01');
   }
-  assert.deepEqual(csvById['l01-sb-01'].word_bank, ['happy', 'am', 'I']);
-  assert.equal(csvById['l01-syn-01'].answer_mode, 'list');
-  assert.equal(csvById['l01-syn-01'].min_items, 2);
+  assert.deepEqual(csvById[builder.id].word_bank, builder.word_bank);
+  assert.equal(csvById[listItem.id].answer_mode, 'list');
+  assert.equal(csvById[listItem.id].min_items, listItem.min_items);
 });
 
 test('duplicate ids inside one file are rejected', () => {
