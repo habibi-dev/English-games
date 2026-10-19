@@ -81,57 +81,39 @@ test('summary and finish state after the last question', () => {
   session.next();
   session.timeout();
   session.next();
-  // The timed-out question comes back in this mission, so the mission is not over yet.
-  assert.equal(session.finished, false);
-  assert.equal(session.current.question.id, 'y');
-  session.submit('I am a developer.');
-  session.next();
   assert.equal(session.finished, true);
   assert.equal(session.current, null);
   assert.deepEqual(
     (({ answered, correct, wrong, timeouts, score, maxScore }) => ({ answered, correct, wrong, timeouts, score, maxScore }))(session.summary()),
-    { answered: 3, correct: 2, wrong: 1, timeouts: 1, score: 30, maxScore: 30 },
+    { answered: 2, correct: 1, wrong: 1, timeouts: 1, score: 10, maxScore: 30 },
   );
   assert.throws(() => session.timeout(), /already finished/);
 });
 
-test('a wrong answer brings the question back later in the same mission, until it is right', () => {
-  const session = new GameSession([make('x'), make('y'), make('z'), make('w'), make('v')]);
+test('a wrong answer is not asked again in the same mission', () => {
+  const session = new GameSession([make('x'), make('y')]);
   session.submit('wrong');
-  session.next();
-  // x is asked again after REPEAT_GAP (3) other questions: y, z, w, then x.
-  assert.equal(session.total, 6);
-  session.submit('wrong');
-  session.next();
-  session.submit('I am a developer.');
-  session.next();
-  session.submit('I am a developer.');
-  session.next();
-  assert.equal(session.current.question.id, 'x');
-  const outcome = session.submit('I am a developer.');
-  assert.equal(outcome.correct, true);
-  assert.equal(outcome.points, 10);
-});
-
-test('a question asked again after a mistake pays on the right answer, and the mission maximum counts it once', () => {
-  const session = new GameSession([make('x')]);
-  assert.equal(session.submit('wrong').points, 0);
   session.next();
   assert.equal(session.total, 2);
-  assert.equal(session.submit('I am a developer.').points, 10);
+  assert.equal(session.current.question.id, 'y');
+  session.submit('I am a developer.');
   session.next();
   assert.equal(session.finished, true);
-  assert.deepEqual(
-    (({ score, maxScore, answered }) => ({ score, maxScore, answered }))(session.summary()),
-    { score: 10, maxScore: 10, answered: 2 },
-  );
 });
 
-test('a correct answer is not asked again', () => {
+test('a question answered correctly is not asked again in the same mission', () => {
   const session = new GameSession([make('x'), make('y')]);
   session.submit('I am a developer.');
   session.next();
   assert.equal(session.total, 2);
+});
+
+test('a question that already gave points pays nothing on a correct answer', () => {
+  const session = new GameSession([make('x')], { alreadyScored: ['x'] });
+  const outcome = session.submit('I am a developer.');
+  assert.equal(outcome.correct, true);
+  assert.equal(outcome.points, 0);
+  assert.equal(session.summary().score, 0);
 });
 
 test('the same question inside one session pays only once', () => {

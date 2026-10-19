@@ -309,8 +309,10 @@ async function startReview(root, ids) {
     return;
   }
   const before = playerProfile(attempts);
+  // A question pays points once, on its first correct answer ever; a review of it pays nothing.
+  const alreadyScored = attempts.filter((a) => a.correct).map((a) => a.questionId);
   beginMission();
-  renderQuestion(root, new GameSession(pool), {
+  renderQuestion(root, new GameSession(pool, { alreadyScored }), {
     restart: () => startReview(root, ids),
     home: () => showSetup(root),
     xpBefore: before.xp,
@@ -414,9 +416,11 @@ async function showSetup(root) {
       return applyPlayMode(withInput, state.mode[0]);
     });
     const before = playerProfile(fresh);
+    // A question pays points once, on its first correct answer ever; asking it again pays nothing.
+    const alreadyScored = fresh.filter((a) => a.correct).map((a) => a.questionId);
     // The mission's time starts now and ends on the results screen, or when the learner leaves.
     beginMission();
-    renderQuestion(root, new GameSession(picked), {
+    renderQuestion(root, new GameSession(picked, { alreadyScored }), {
       restart: start,
       home: () => showSetup(root),
       xpBefore: before.xp,
@@ -1286,9 +1290,7 @@ function renderResults(root, session, flow) {
   // The mission is over: its time is saved now.
   endMission();
   const summary = session.summary();
-  // A question asked again after a mistake is listed once, with its first mistake.
-  const wrongs = session.outcomes.filter((o) => !o.correct);
-  const mistakes = wrongs.filter((o, i) => wrongs.findIndex((w) => w.question.id === o.question.id) === i);
+  const mistakes = session.outcomes.filter((o) => !o.correct);
   const xpGained = session.outcomes.filter((o) => o.correct).reduce((sum, o) => sum + (Number(o.points) || 0), 0);
   const stars = starsFor(summary.correct, summary.answered);
 
