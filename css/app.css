@@ -482,6 +482,71 @@ p {
   min-width: 0;
 }
 
+/* Button identity: every button has the same 3D look as the read-aloud buttons in the feedback box.
+   A solid edge under the button, a small lift on hover, and a press-down on click. */
+.btn {
+  box-shadow: 0 3px 0 #cbd5e1;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.btn:disabled {
+  box-shadow: none;
+}
+
+.btn.primary {
+  box-shadow: 0 3px 0 #1e40af, 0 6px 14px rgba(79, 70, 229, 0.25);
+}
+
+.btn.ghost {
+  box-shadow: 0 3px 0 #cbd5e1;
+}
+
+.btn.danger {
+  box-shadow: 0 3px 0 #fca5a5;
+}
+
+.chip-toggle {
+  box-shadow: 0 3px 0 #cbd5e1;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.2s ease;
+}
+
+.chip-toggle:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.chip-toggle:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.chip-toggle.active {
+  box-shadow: 0 3px 0 #a5b4fc;
+}
+
+.option {
+  box-shadow: 0 3px 0 #d1d5db;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.2s ease;
+}
+
+.option:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.option:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
 /* Microphone: a square icon button next to the answer input.
    Written as .btn.mic so it beats .btn.ghost (which sets background: transparent). */
 .btn.mic {
@@ -2907,24 +2972,34 @@ textarea {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
   padding: 0;
-  border: 1px solid #cbd5e1;
+  border: 1px solid #99f6e4;
   border-radius: 50%;
-  background: #fff;
-  color: #334155;
+  background: #ccfbf1;
+  color: #0f766e;
+  box-shadow: 0 3px 0 #99f6e4;
   cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.2s ease, background 0.2s ease;
 }
 
 .speak-buttons .translate-btn:hover:not(:disabled) {
-  background: #eef2ff;
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+.speak-buttons .translate-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
 }
 
 .speak-buttons .translate-btn.on {
-  background: #e0e7ff;
-  border-color: #818cf8;
-  color: #3730a3;
+  background: #5eead4;
+  border-color: #2dd4bf;
+  box-shadow: 0 3px 0 #2dd4bf;
+  color: #134e4a;
 }
 
 .speak-buttons .translate-btn:focus-visible {
