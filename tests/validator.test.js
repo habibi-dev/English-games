@@ -41,3 +41,18 @@ test('normalizeAnswer strips only terminal punctuation', () => {
   assert.equal(normalizeAnswer(' Does she work? '), 'does she work');
   assert.equal(normalizeAnswer('Do you know Mr. Lee'), 'do you know mr. lee');
 });
+
+test('commas do not matter, so spoken answers without them still match', () => {
+  const sorry = { accepted_answers: ['Sorry, what page?'] };
+  assert.equal(validateAnswer(sorry, 'Sorry what page').correct, true);
+  assert.equal(validateAnswer(sorry, 'sorry, what page').correct, true);
+  assert.equal(validateAnswer(sorry, 'Sorry , what page').correct, true);
+  assert.equal(validateAnswer(sorry, 'what Sorry page').correct, false);
+  const please = { accepted_answers: ['Can you repeat that, please?'] };
+  assert.equal(validateAnswer(please, 'Can you repeat that please').correct, true);
+});
+
+test('Persian comma is ignored too, and digit groups keep their commas', () => {
+  assert.equal(normalizeAnswer('Sorry، what page'), 'sorry what page');
+  assert.equal(normalizeAnswer('It costs 1,000 dollars'), 'it costs 1,000 dollars');
+});
