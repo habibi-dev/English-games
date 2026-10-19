@@ -100,7 +100,7 @@ export function stat(label, value) {
  * In-app confirmation card, shown over the page (not a browser dialog).
  * Resolves true when the confirm button is chosen, and false for cancel, Escape or a tap outside the card.
  */
-export function confirmDialog({ title, message, confirmText = 'OK', cancelText = 'Cancel' }) {
+export function confirmDialog({ title, message, confirmText = 'OK', cancelText = 'Cancel', danger = false }) {
   return new Promise((resolve) => {
     let overlay = null;
     const finish = (value) => {
@@ -123,7 +123,7 @@ export function confirmDialog({ title, message, confirmText = 'OK', cancelText =
           'div',
           { class: 'dialog-actions' },
           h('button', { type: 'button', class: 'btn ghost', onclick: () => finish(false) }, cancelText),
-          h('button', { type: 'button', class: 'btn primary', onclick: () => finish(true) }, confirmText),
+          h('button', { type: 'button', class: danger ? 'btn danger' : 'btn primary', onclick: () => finish(true) }, confirmText),
         ),
       ),
     );

@@ -2932,6 +2932,167 @@ textarea {
   color: #6d28d9;
 }
 
+/* Activity panel: period tiles and the month calendar. */
+.activity {
+  display: grid;
+  gap: 12px;
+}
+
+.activity-tiles {
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.cal {
+  display: grid;
+  gap: 8px;
+  padding-top: 4px;
+}
+
+.cal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.cal-weekday {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.cal-cell {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #f8fafc;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cal-cell.empty {
+  border: none;
+  background: none;
+  cursor: default;
+}
+
+.cal-cell.lvl-1 { background: #dbeafe; border-color: #bfdbfe; }
+.cal-cell.lvl-2 { background: #93c5fd; border-color: #60a5fa; }
+.cal-cell.lvl-3 { background: #3b82f6; border-color: #2563eb; color: #fff; }
+.cal-cell.lvl-4 { background: #1d4ed8; border-color: #1e40af; color: #fff; }
+
+.cal-cell.today {
+  outline: 2px solid #f59e0b;
+  outline-offset: 1px;
+}
+
+.cal-cell.selected {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+}
+
+.cal-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.cal-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: #f8fafc;
+}
+
+.cal-swatch.lvl-1 { background: #dbeafe; border-color: #bfdbfe; }
+.cal-swatch.lvl-2 { background: #93c5fd; border-color: #60a5fa; }
+.cal-swatch.lvl-3 { background: #3b82f6; border-color: #2563eb; }
+.cal-swatch.lvl-4 { background: #1d4ed8; border-color: #1e40af; }
+
+.cal-selected {
+  margin: 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Settings screen: section tabs (Sounds, Question bank). */
+.settings-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 10px 0 14px;
+}
+
+.settings-tab {
+  flex: 1;
+  min-height: 46px;
+  padding: 8px 12px;
+  border-radius: 14px;
+  border: 2px solid var(--border);
+  background: #fff;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.settings-tab.active {
+  background: var(--primary);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+}
+
+/* Sound effects: one row per switch, the whole row is the tap target. */
+.sound-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 8px 4px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.sound-row input[type='checkbox'] {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  accent-color: var(--primary);
+}
+
+.sound-row-text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.sound-volume {
+  display: grid;
+  gap: 8px;
+  padding: 10px 4px 4px;
+}
+
+.sound-volume input[type='range'] {
+  width: 100%;
+  accent-color: var(--primary);
+}
+
 /* Question bank: import, export and the AI guide. */
 .admin-card {
   display: grid;
@@ -3258,6 +3419,26 @@ textarea {
   width: 58px;
   min-width: 58px;
   min-height: 58px;
+}
+
+/* Word translation: the Persian words of the sentence, as separate chips (read right to left). */
+.question-block .word-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.question-block .word-chip {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  color: #3730a3;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 /* ---------- Text selection ----------

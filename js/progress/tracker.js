@@ -3,6 +3,7 @@
 // after a question is edited or deleted from the bank.
 
 import * as db from '../storage/db.js';
+import { clearActivity } from './activity.js';
 
 export async function recordOutcome(outcome) {
   const q = outcome.question;
@@ -27,4 +28,8 @@ export async function recordOutcome(outcome) {
 }
 
 export const loadAttempts = () => db.getAllAttempts();
-export const resetProgress = () => db.clearAttempts();
+// Clears every answer and the activity time, so the reports start again from nothing.
+export async function resetProgress() {
+  clearActivity();
+  return db.clearAttempts();
+}

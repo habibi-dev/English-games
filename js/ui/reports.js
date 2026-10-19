@@ -4,7 +4,8 @@ import { listQuestions } from '../bank/repository.js';
 import { CATEGORIES, topicLabel } from '../bank/schema.js';
 import { bankSummary, performanceSummary, reviewList } from '../progress/report.js';
 import { loadAttempts, resetProgress } from '../progress/tracker.js';
-import { h, fa, percent, table, toast, badge } from './dom.js';
+import { loadSessions, msByDay, activityStats, calendarMonth, dayKey, WEEK_STARTS_ON } from '../progress/activity.js';
+import { h, fa, percent, table, toast, badge, confirmDialog } from './dom.js';
 import { speakButtons, questionSpeakButton } from './speech-out.js';
 import { splitPrompt } from './prompt.js';
 import { requestReview } from './review-handoff.js';
@@ -48,6 +49,152 @@ function rateCell(ratio) {
 }
 
 const emptyNote = (text) => h('p', { class: 'report-empty' }, text);
+
+const WEEKDAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+const MONTH_NAMES = [
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December',
+];
+
+// Activity calendar state: the month on screen and the tapped day. null = this month / today.
+let calendarView = null;
+let selectedDay = null;
+
+/** Play time in hours and minutes, e.g. "2 h 15 min", "45 min". */
+function durationText(ms) {
+  const totalMinutes = Math.round(ms / 60000);
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+  return hours === 0 ? `${fa(minutes)} min` : `${fa(hours)} h ${fa(minutes)} min`;
+}
+
+/** "Thu, Oct 15, 2026" for a day key such as "2026-10-15". */
+function dayLabel(key) {
+  const [year, month, day] = key.split('-').map(Number);
+  return new Date(year, month - 1, day).toLocaleDateString('en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+
+/** Activity panel: period totals, streaks, and a month calendar coloured by play time. */
+function activitySection(root, now) {
+  const sessions = loadSessions();
+  const stats = activityStats(sessions, now);
+  const totals = msByDay(sessions);
+  const current = new Date(now);
+  const todayKey = dayKey(now);
+  const view = calendarView ?? { year: current.getFullYear(), month: current.getMonth() };
+  const isCurrentMonth = view.year === current.getFullYear() && view.month === current.getMonth();
+  const shownKey = selectedDay ?? todayKey;
+
+  const moveMonth = (delta) => {
+    let month = view.month + delta;
+    let year = view.year;
+    if (month < 0) {
+      month = 11;
+      year -= 1;
+    } else if (month > 11) {
+      month = 0;
+      year += 1;
+    }
+    calendarView = { year, month };
+    renderReports(root);
+  };
+
+  const cells = calendarMonth(view.year, view.month, totals).map((cell) =>
+    cell
+      ? h(
+          'button',
+          {
+            type: 'button',
+            class: `cal-cell lvl-${cell.level}${cell.key === todayKey ? ' today' : ''}${cell.key === shownKey ? ' selected' : ''}`,
+            title: `${dayLabel(cell.key)}: ${durationText(cell.ms)}`,
+            'aria-label': `${dayLabel(cell.key)}: ${durationText(cell.ms)}`,
+            onclick: () => {
+              selectedDay = cell.key;
+              renderReports(root);
+            },
+          },
+          fa(cell.day),
+        )
+      : h('span', { class: 'cal-cell empty', 'aria-hidden': 'true' }),
+  );
+
+  return section(
+    '⏱️',
+    'Your activity',
+    'Time counts from the start of a mission until it ends, or until you leave it.',
+    h(
+      'div',
+      { class: 'activity' },
+      sessions.length === 0 ? emptyNote('No play time yet. Start a mission and it will show here.') : null,
+      h(
+        'div',
+        { class: 'report-stats activity-tiles' },
+        statCard('☀️', durationText(stats.today), 'Today', 'amber'),
+        statCard('🌙', durationText(stats.yesterday), 'Yesterday', 'indigo'),
+        statCard('📅', durationText(stats.week), 'This week', 'blue'),
+        statCard('🗓️', durationText(stats.month), 'This month', 'green'),
+        statCard('⏳', durationText(stats.allTime), 'All time', 'violet'),
+      ),
+      h(
+        'div',
+        { class: 'report-stats activity-tiles' },
+        statCard('🔥', `${fa(stats.currentStreak)} days`, 'Current streak', 'amber'),
+        statCard('🏆', `${fa(stats.bestStreak)} days`, 'Best streak', 'violet'),
+        statCard('✅', fa(stats.activeDays), 'Active days', 'green'),
+        statCard('🎮', fa(stats.missions), 'Missions played', 'blue'),
+        statCard('⚡', durationText(stats.averagePerActiveDay), 'Average per active day', 'indigo'),
+        statCard('🥇', stats.bestDay ? durationText(stats.bestDay.ms) : '—', 'Best day', 'amber'),
+      ),
+      h(
+        'div',
+        { class: 'cal' },
+        h(
+          'div',
+          { class: 'cal-head' },
+          h(
+            'button',
+            { type: 'button', class: 'btn ghost small', 'aria-label': 'Previous month', onclick: () => moveMonth(-1) },
+            '‹',
+          ),
+          h('strong', {}, `${MONTH_NAMES[view.month]} ${fa(view.year)}`),
+          h(
+            'button',
+            {
+              type: 'button',
+              class: 'btn ghost small',
+              'aria-label': 'Next month',
+              disabled: isCurrentMonth,
+              onclick: () => moveMonth(1),
+            },
+            '›',
+          ),
+        ),
+        h(
+          'div',
+          { class: 'cal-grid cal-weekdays', 'aria-hidden': 'true' },
+          // Columns start on WEEK_STARTS_ON, the same as the calendar cells.
+          Array.from({ length: 7 }, (_, i) => h('span', { class: 'cal-weekday' }, WEEKDAY_NAMES[(WEEK_STARTS_ON + i) % 7])),
+        ),
+        h('div', { class: 'cal-grid' }, cells),
+        h(
+          'div',
+          { class: 'cal-legend' },
+          h('span', {}, 'Less'),
+          [0, 1, 2, 3, 4].map((level) => h('span', { class: `cal-swatch lvl-${level}` })),
+          h('span', {}, 'More'),
+        ),
+        h('p', { class: 'cal-selected' }, `${dayLabel(shownKey)}: ${durationText(totals.get(shownKey) ?? 0)}`),
+      ),
+    ),
+  );
+}
+
+// Calendar colours: 0 = no time, 1 = under 15 min, 2 = under 30 min, 3 = under an hour, 4 = an hour or more.
 
 export async function renderReports(root) {
   const [questions, attempts] = await Promise.all([listQuestions(), loadAttempts()]);
@@ -162,6 +309,8 @@ export async function renderReports(root) {
         statCard('⭐', fa(perf.overall.points), 'Points earned', 'violet'),
       ),
 
+      activitySection(root, Date.now()),
+
       section(
         '🗂️',
         'Question bank by topic and type',
@@ -225,7 +374,23 @@ export async function renderReports(root) {
             type: 'button',
             class: 'btn danger',
             onclick: async () => {
-              if (!confirm('Clear all progress and answer history? The question bank will not change.')) return;
+              // Two steps: the first says exactly what is deleted, the second is the final check.
+              const first = await confirmDialog({
+                title: 'Clear all progress?',
+                message:
+                  'All your history on this device will be deleted: every answer you have given, your points, XP, level, stars, lesson progress, your play time and your calendar. This cannot be undone. The question bank will not change.',
+                confirmText: 'Continue',
+                cancelText: 'Cancel',
+              });
+              if (!first) return;
+              const second = await confirmDialog({
+                title: 'Are you sure?',
+                message: 'This is the last step. Your history will be permanently erased from this device.',
+                confirmText: 'Delete everything',
+                cancelText: 'Keep my progress',
+                danger: true,
+              });
+              if (!second) return;
               await resetProgress();
               toast('Progress cleared.');
               renderReports(root);

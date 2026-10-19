@@ -11,6 +11,7 @@ export const SCHEMA_VERSION = '2.0';
 export const CATEGORIES = Object.freeze({
   quick_translation: 'Quick translation',
   sentence_builder: 'Sentence building',
+  word_translation: 'Word translation',
   grammar_correction: 'Grammar correction',
   multiple_choice: 'Multiple choice',
   positive_negative_question: 'Positive / Negative / Question',
@@ -142,6 +143,11 @@ export function normalizeQuestion(raw = {}) {
   }
 
   if (category === 'sentence_builder') question.word_bank = toList(raw.word_bank);
+  // Word translation: the Persian words of the sentence, in order. The question text is those words.
+  if (category === 'word_translation') {
+    question.word_bank = toList(raw.word_bank);
+    if (!question.question) question.question = question.word_bank.join(' / ');
+  }
   if (category === 'grammar_correction') question.incorrect_sentence = str(raw.incorrect_sentence);
   if (category === 'multiple_choice') question.options = toList(raw.options);
   if (category === 'positive_negative_question') question.operation = str(raw.operation) || 'negative';
@@ -207,6 +213,11 @@ export function validateQuestion(q) {
       }
       break;
     }
+    case 'word_translation':
+      // The learner sees these words and writes the English sentence. The words are Persian, so they
+      // are not compared with expected_answer; the list just has to hold the whole sentence.
+      if ((q.word_bank ?? []).length < 2) errors.push('word_bank must contain at least two Persian words.');
+      break;
     case 'grammar_correction':
       if (!q.incorrect_sentence) {
         errors.push('Incorrect sentence (incorrect_sentence) is empty.');

@@ -12,6 +12,7 @@ import { validateAnswer } from '../engine/validator.js';
 export const INSTRUCTIONS = {
   quick_translation: 'به انگلیسی ترجمه کن',
   sentence_builder: 'Put the words together in the correct order.',
+  word_translation: 'کلمه‌ها را به انگلیسی ترجمه کن و جمله‌ی کامل بنویس.',
   grammar_correction: 'Correct the wrong sentence and write the whole correct sentence.',
   multiple_choice: 'Choose the correct option.',
   positive_negative_question: 'Change the sentence as instructed and write the whole sentence.',

@@ -5,6 +5,14 @@ import { renderPlay, isGameInProgress, startFromNav } from './ui/play.js';
 import { renderReports } from './ui/reports.js';
 import { renderAdmin } from './ui/admin.js';
 import { h, toast, fa, confirmDialog } from './ui/dom.js';
+import { unlockSounds } from './ui/sounds.js';
+import { endMission } from './progress/activity.js';
+
+// Browsers only allow sound after a tap: the first tap anywhere prepares the sound effects.
+document.addEventListener('pointerdown', unlockSounds, { once: true });
+
+// Closing or reloading the page ends a running mission, so its time up to now is kept.
+window.addEventListener('pagehide', () => endMission());
 
 const views = {
   play: renderPlay,

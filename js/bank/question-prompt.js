@@ -89,13 +89,14 @@ Optional fields
 - min_items: list mode only. How many items the learner must give: at least 1, and no more than the number of accepted answers.
 - operation: only for positive_negative_question: "positive", "negative" or "question".
 - options: only for multiple_choice: an array of at least two different choices.
-- word_bank: only for sentence_builder: the words of expected_answer, in any order.
+- word_bank: only for sentence_builder: the words of expected_answer, in any order. For word_translation: the Persian words of the sentence, in order (at least two). question is then optional: it is made from word_bank.
 - incorrect_sentence: only for grammar_correction: the sentence with one mistake.
 
 Exercise types (category)
 ${typeLines}
 - quick_translation: question is a Persian sentence; the learner writes the English sentence.
 - sentence_builder: question is an instruction; the learner puts word_bank in order to make expected_answer.
+- word_translation: word_bank holds the Persian words of the sentence, in order (for example ["این", "معلم", "من", "است"]); the learner writes the whole English sentence (expected_answer).
 - grammar_correction: question is an instruction; incorrect_sentence has one mistake; expected_answer is the whole correct sentence.
 - multiple_choice: question asks something; the learner picks one of options; expected_answer must be one of them.
 - positive_negative_question: question is "instruction: English sentence"; expected_answer is the sentence after the change set by operation.

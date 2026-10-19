@@ -135,7 +135,10 @@
           "expected_answer": "How do you say کمک in English?",
           "explanation": "از الگوی How do you say ... in English? برای پرسیدن معادل انگلیسی استفاده می‌کنیم.",
           "hint": "کلمه‌ی کلیدی: «کمک» = help؛ تلفظ: /help/ (هِلپ)؛ نکته: الگو: How do you say ... in English? یعنی «چطور به انگلیسی می‌گویی ...؟»",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "How do you say 'help' in English?"
+          ]
         },
         {
           "id": "evolve-1-l01-tr-14",
@@ -219,6 +222,148 @@
             "eats.",
             "He"
           ],
+          "time_limit": 60
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-word-translation",
+      "type": "word_translation",
+      "title": "ترجمه با کلمات فارسی",
+      "difficulty": "easy",
+      "presentation": "text",
+      "items": [
+        {
+          "id": "evolve-1-l01-wt-01",
+          "word_bank": [
+            "این",
+            "معلم",
+            "من",
+            "است"
+          ],
+          "expected_answer": "This is my teacher.",
+          "explanation": "ترتیب کلمات فارسی همان ترتیب جمله‌ی انگلیسی است.",
+          "hint": "this = این؛ my = من؛ is = است؛ teacher = معلم.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-02",
+          "word_bank": [
+            "نام کوچک",
+            "من",
+            "علی",
+            "است"
+          ],
+          "expected_answer": "My first name is Ali.",
+          "explanation": "نام کوچک = first name؛ جمله با My شروع می‌شود.",
+          "hint": "نام کوچک = first name؛ my = من؛ is = است.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "My first name's Ali."
+          ]
+        },
+        {
+          "id": "evolve-1-l01-wt-03",
+          "word_bank": [
+            "این",
+            "دوست",
+            "من",
+            "است"
+          ],
+          "expected_answer": "This is my friend.",
+          "explanation": "دوست = friend.",
+          "hint": "this = این؛ friend = دوست؛ my = من؛ is = است.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-04",
+          "word_bank": [
+            "من",
+            "یک",
+            "سؤال",
+            "دارم"
+          ],
+          "expected_answer": "I have a question.",
+          "explanation": "دارم = have؛ یک = a.",
+          "hint": "I = من؛ have = داشتن؛ a = یک؛ question = سؤال.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-05",
+          "word_bank": [
+            "ما",
+            "یک",
+            "معلم",
+            "داریم"
+          ],
+          "expected_answer": "We have a teacher.",
+          "explanation": "داریم = have (برای We).",
+          "hint": "we = ما؛ have = داشتن؛ a = یک؛ teacher = معلم.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-06",
+          "word_bank": [
+            "او (مرد)",
+            "می‌خواند"
+          ],
+          "expected_answer": "He reads.",
+          "explanation": "برای He فعل read به reads تبدیل می‌شود.",
+          "hint": "او (مرد) = He؛ می‌خواند = read؛ برای He، فعل s می‌گیرد.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-07",
+          "word_bank": [
+            "او (زن)",
+            "راه",
+            "می‌رود"
+          ],
+          "expected_answer": "She walks.",
+          "explanation": "برای She فعل walk به walks تبدیل می‌شود.",
+          "hint": "او (زن) = She؛ راه رفتن = walk؛ برای She، فعل s می‌گیرد.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-wt-08",
+          "word_bank": [
+            "به من",
+            "کمک کن"
+          ],
+          "expected_answer": "Help me.",
+          "explanation": "جمله‌ی امر با فعل help شروع می‌شود.",
+          "hint": "کمک کن = help (فعل امر)؛ به من = me.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "Please help me."
+          ]
+        },
+        {
+          "id": "evolve-1-l01-wt-09",
+          "word_bank": [
+            "این",
+            "همسر",
+            "من",
+            "است"
+          ],
+          "expected_answer": "This is my wife.",
+          "explanation": "همسر (زن) = wife.",
+          "hint": "همسر = wife؛ این = this؛ من = my؛ است = is.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "This is my spouse."
+          ]
+        },
+        {
+          "id": "evolve-1-l01-wt-10",
+          "word_bank": [
+            "من",
+            "یک شریک",
+            "هستم"
+          ],
+          "expected_answer": "I am a partner.",
+          "explanation": "هستم = am (برای I).",
+          "hint": "I = من؛ am = هستم؛ partner = شریک.",
           "time_limit": 60
         }
       ]

@@ -14,6 +14,8 @@ import { h, toast, fa, ltr, badge, percent, keepFocus } from './dom.js';
 import { createAnswerWidget, INSTRUCTIONS } from './answer-widgets.js';
 import { splitPrompt } from './prompt.js';
 import { speak, speakButtons, speakBar, completeSentence, contextSentence, questionSpeakButton } from './speech-out.js';
+import { playResultSound } from './sounds.js';
+import { beginMission, endMission } from '../progress/activity.js';
 
 /** True when `word` appears as a whole word in `sentence` (case-insensitive). */
 function containsWord(sentence, word) {
@@ -31,6 +33,7 @@ const plural = (n, word) => `${fa(n)} ${word}${Number(n) === 1 ? '' : 's'}`;
 const CATEGORY_ICONS = {
   quick_translation: '🔤',
   sentence_builder: '🧩',
+  word_translation: '🔡',
   grammar_correction: '🛠️',
   multiple_choice: '🎯',
   positive_negative_question: '⚖️',
@@ -124,6 +127,8 @@ export async function renderPlay(root) {
   return () => {
     stopTimer();
     closeModal();
+    // Leaving the screen during a mission ends it (its time up to now is saved). Does nothing otherwise.
+    endMission();
     gameInProgress = false;
     settingsStart = null;
   };
@@ -234,6 +239,7 @@ async function startReview(root, ids) {
   }
   const before = playerProfile(attempts);
   const alreadyScored = attempts.filter((a) => a.correct).map((a) => a.questionId);
+  beginMission();
   renderQuestion(root, new GameSession(pool, { alreadyScored }), {
     restart: () => startReview(root, ids),
     home: () => showSetup(root),
@@ -330,6 +336,8 @@ async function showSetup(root) {
     const before = playerProfile(attempts);
     // Questions answered correctly before pay no points again.
     const alreadyScored = attempts.filter((a) => a.correct).map((a) => a.questionId);
+    // The mission's time starts now and ends on the results screen, or when the learner leaves.
+    beginMission();
     renderQuestion(root, new GameSession(pool, { alreadyScored }), {
       restart: start,
       home: () => showSetup(root),
@@ -831,6 +839,8 @@ function renderQuestion(root, session, flow) {
     progressEl.replaceWith(freshTrack);
     progressEl = freshTrack;
     showFeedback(outcome);
+    // The result pops up now, so its sound plays now: win for a right answer, lose for a wrong or late one.
+    playResultSound(outcome.correct);
     nextButton.hidden = false;
     nextButton.textContent = session.index + 1 < session.total ? 'Next question' : 'Finish and see results';
     // Focus is intentionally not moved to the next button: pressing Enter in the answer box
@@ -1043,9 +1053,13 @@ function questionBlock(q) {
     );
   }
 
-  // Translation questions are one Persian line, even when an English word is in it ("کلمه teacher ...?").
-  // The whole line stays together, and no read-aloud button is added to its English part.
-  const lines = q.category === 'quick_translation' && englishLine
+  // Word translation: the Persian words are shown as separate chips, in the order of the sentence.
+  // The learner writes the English sentence from them. No read-aloud button, since the words are not a sentence.
+  const lines = q.category === 'word_translation'
+    ? [h('div', { class: 'word-chips', dir: 'rtl' }, (q.word_bank ?? []).map((word) => h('span', { class: 'word-chip' }, word)))]
+    // Translation questions are one Persian line, even when an English word is in it ("کلمه teacher ...?").
+    // The whole line stays together, and no read-aloud button is added to its English part.
+    : q.category === 'quick_translation' && englishLine
     ? [h('p', { class: 'question', dir: 'auto' }, ...wordNodes(q.question))]
     : englishLine
     ? [
@@ -1097,6 +1111,8 @@ function resultTile(icon, value, label, tone) {
 
 function renderResults(root, session, flow) {
   gameInProgress = false;
+  // The mission is over: its time is saved now.
+  endMission();
   const summary = session.summary();
   const mistakes = session.outcomes.filter((o) => !o.correct);
   const xpGained = session.outcomes.filter((o) => o.correct).reduce((sum, o) => sum + (Number(o.points) || 0), 0);
