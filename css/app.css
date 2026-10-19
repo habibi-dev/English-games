@@ -2975,10 +2975,21 @@ textarea {
   gap: 6px;
 }
 
+/* Square tiles: an icon badge on top, the value in the middle, the label underneath. */
 .ov-tiles .report-stat {
-  gap: 0;
-  padding: 8px 2px;
+  gap: 4px;
+  padding: 10px 4px;
   min-width: 0;
+  aspect-ratio: 1 / 1;
+  align-content: center;
+  border-radius: 16px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 2px 6px rgba(15, 23, 42, 0.05);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.ov-tiles .report-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 6px 14px rgba(15, 23, 42, 0.1);
 }
 
 .ov-tiles .report-stat:last-child:nth-child(odd) {
@@ -2986,72 +2997,118 @@ textarea {
 }
 
 .ov-tiles .report-stat-icon {
-  font-size: 0.9rem;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  font-size: 0.95rem;
 }
 
 .ov-tiles .report-stat strong {
-  font-size: 0.85rem;
+  font-size: 1rem;
+  line-height: 1.1;
   overflow-wrap: anywhere;
 }
 
 .ov-tiles .report-stat-label {
-  font-size: 0.64rem;
+  font-size: 0.66rem;
   line-height: 1.2;
+  color: var(--muted);
   text-align: center;
   overflow-wrap: anywhere;
 }
 
+/* On narrow phones six squares would be too small: three per line, two lines per group. */
+@media (max-width: 560px) {
+  .ov-tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Month calendar: flat tiles in the site's indigo accents. Colour = play time that day. */
 .cal {
   display: grid;
-  gap: 6px;
+  gap: 14px;
 }
 
 .cal-head {
-  display: flex;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
   align-items: center;
-  justify-content: space-between;
   gap: 8px;
+}
+
+.cal-title {
+  text-align: center;
+  font-size: 1.02rem;
+  font-weight: 800;
+  color: #312e81;
+  letter-spacing: 0.01em;
+}
+
+.cal-nav {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+  color: #4338ca;
+  font: inherit;
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #c7d2fe;
+  transition: background 0.12s ease, transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.cal-nav:hover {
+  background: #e0e7ff;
+}
+
+.cal-nav:active {
+  transform: translateY(1px);
+  box-shadow: none;
 }
 
 .cal-grid {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   gap: 6px;
 }
 
 .cal-weekday {
   text-align: center;
-  font-size: 0.78rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6366f1;
 }
 
 .cal-cell {
   position: relative;
-  height: 40px;
+  height: 42px;
   display: grid;
   place-items: center;
   border-radius: 12px;
-  border: 1px solid #e6ecf5;
-  background: #f5f8ff;
-  color: var(--text);
+  border: 1px solid #e0e7ff;
+  background: #f8faff;
+  color: #334155;
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   cursor: pointer;
   padding: 0;
-  box-shadow: 0 2px 0 #e6ecf5;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
 .cal-cell:not(.empty):hover {
   transform: translateY(-1px);
-}
-
-.cal-cell:not(.empty):active {
-  transform: translateY(1px);
-  box-shadow: none;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.14);
 }
 
 .cal-cell.empty {
@@ -3061,22 +3118,41 @@ textarea {
   cursor: default;
 }
 
-/* Play-time bands in the site's blue family: the deeper the colour, the more time that day. */
-.cal-cell.lvl-1 { background: #dbeafe; border-color: #bfdbfe; box-shadow: 0 2px 0 #bfdbfe; color: #1e40af; }
-.cal-cell.lvl-2 { background: #93c5fd; border-color: #60a5fa; box-shadow: 0 2px 0 #60a5fa; color: #1e3a8a; }
-.cal-cell.lvl-3 { background: #3b82f6; border-color: #2563eb; box-shadow: 0 2px 0 #1d4ed8; color: #fff; }
-.cal-cell.lvl-4 {
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
-  border-color: #6d28d9;
-  box-shadow: 0 2px 0 #5b21b6, 0 4px 10px rgba(91, 33, 182, 0.25);
-  color: #fff;
+/* Days after today have no data yet: a white dashed tile with faint text. */
+.cal-cell.future {
+  background: #fff;
+  border-style: dashed;
+  border-color: #e0e7ff;
+  color: #a5b4fc;
+  font-weight: 600;
 }
 
-/* Today: a small dot under the number, so it stands out without a clashing outline. */
+/* Play-time bands: lighter for a little time, deeper indigo for more. */
+.cal-cell.lvl-1 { background: #e0e7ff; border-color: #c7d2fe; color: #3730a3; }
+.cal-cell.lvl-2 { background: #a5b4fc; border-color: #818cf8; color: #1e1b4b; }
+.cal-cell.lvl-3 { background: #6366f1; border-color: #4f46e5; color: #fff; }
+.cal-cell.lvl-4 {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.3);
+}
+
+/* Today: a solid indigo border (if the day has no colour) and a dot under the number. */
+.cal-cell.today {
+  border-width: 2px;
+  border-color: #818cf8;
+}
+
+.cal-cell.today.lvl-3,
+.cal-cell.today.lvl-4 {
+  border-color: transparent;
+}
+
 .cal-cell.today::after {
   content: '';
   position: absolute;
-  bottom: 4px;
+  bottom: 5px;
   left: 50%;
   width: 5px;
   height: 5px;
@@ -3085,15 +3161,10 @@ textarea {
   background: currentColor;
 }
 
-.cal-cell.today:not(.lvl-3):not(.lvl-4) {
-  color: var(--primary-dark);
-  border-color: #93c5fd;
-}
-
-/* Selected day: a white gap and a blue ring, like a focused tile. */
+/* Selected day: a white gap and an indigo ring around the tile. */
 .cal-cell.selected {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--primary), 0 2px 0 rgba(37, 99, 235, 0.2);
   transform: translateY(-1px);
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #4f46e5;
 }
 
 .cal-legend {
@@ -3101,15 +3172,19 @@ textarea {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 6px 12px;
-  font-size: 0.74rem;
-  color: var(--muted);
+  gap: 6px;
 }
 
 .cal-legend-item {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
+  padding: 3px 10px 3px 6px;
+  border-radius: 999px;
+  background: #f8faff;
+  border: 1px solid #e0e7ff;
+  font-size: 0.72rem;
+  color: #475569;
   white-space: nowrap;
 }
 
@@ -3117,23 +3192,24 @@ textarea {
   width: 12px;
   height: 12px;
   border-radius: 4px;
-  border: 1px solid #e6ecf5;
-  background: #f5f8ff;
+  border: 1px solid #e0e7ff;
+  background: #f8faff;
 }
 
-.cal-swatch.lvl-1 { background: #dbeafe; border-color: #bfdbfe; }
-.cal-swatch.lvl-2 { background: #93c5fd; border-color: #60a5fa; }
-.cal-swatch.lvl-3 { background: #3b82f6; border-color: #2563eb; }
-.cal-swatch.lvl-4 { background: linear-gradient(135deg, #2563eb, #7c3aed); border-color: #6d28d9; }
+.cal-swatch.lvl-1 { background: #e0e7ff; border-color: #c7d2fe; }
+.cal-swatch.lvl-2 { background: #a5b4fc; border-color: #818cf8; }
+.cal-swatch.lvl-3 { background: #6366f1; border-color: #4f46e5; }
+.cal-swatch.lvl-4 { background: linear-gradient(135deg, #4f46e5, #9333ea); border-color: transparent; }
 
-/* The selected day's total, as a soft pill in the site's blue. */
+/* The selected day's total, as a soft pill in the site's indigo. */
 .cal-selected {
   justify-self: center;
-  margin: 2px 0 0;
-  padding: 7px 14px;
+  margin: 0;
+  padding: 8px 16px;
   border-radius: 999px;
-  background: var(--primary-soft);
-  color: var(--primary-dark);
+  background: linear-gradient(135deg, #eef2ff, #f5f3ff);
+  border: 1px solid #c7d2fe;
+  color: #3730a3;
   font-size: 0.9rem;
   font-weight: 700;
   text-align: center;

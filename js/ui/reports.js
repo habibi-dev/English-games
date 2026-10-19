@@ -88,6 +88,11 @@ function dayLabel(key) {
   });
 }
 
+/** "1 day", "5 days". */
+function daysText(count) {
+  return `${fa(count)} ${count === 1 ? 'day' : 'days'}`;
+}
+
 /** One labelled row of tiles inside the overview card. The tile count sets the number of columns. */
 function overviewGroup(title, tiles) {
   return h(
@@ -121,8 +126,8 @@ function overviewCard(bank, perf, stats) {
       statCard('⏳', durationText(stats.allTime), 'All time', 'violet'),
     ]),
     overviewGroup('Streaks & missions', [
-      statCard('🔥', `${fa(stats.currentStreak)} days`, 'Current streak', 'amber'),
-      statCard('🏆', `${fa(stats.bestStreak)} days`, 'Best streak', 'violet'),
+      statCard('🔥', daysText(stats.currentStreak), 'Current streak', 'amber'),
+      statCard('🏆', daysText(stats.bestStreak), 'Best streak', 'violet'),
       statCard('✅', fa(stats.activeDays), 'Active days', 'green'),
       statCard('🎮', fa(stats.missions), 'Missions played', 'blue'),
       statCard('⚡', durationText(stats.averagePerActiveDay), 'Average per day', 'indigo'),
@@ -161,7 +166,7 @@ function activitySection(root, now) {
           'button',
           {
             type: 'button',
-            class: `cal-cell lvl-${cell.level}${cell.key === todayKey ? ' today' : ''}${cell.key === shownKey ? ' selected' : ''}`,
+            class: `cal-cell lvl-${cell.level}${cell.key === todayKey ? ' today' : ''}${cell.key === shownKey ? ' selected' : ''}${cell.key > todayKey ? ' future' : ''}`,
             title: `${dayLabel(cell.key)}: ${durationText(cell.ms)}`,
             'aria-label': `${dayLabel(cell.key)}: ${durationText(cell.ms)}`,
             onclick: () => {
@@ -190,15 +195,16 @@ function activitySection(root, now) {
           { class: 'cal-head' },
           h(
             'button',
-            { type: 'button', class: 'btn ghost small', 'aria-label': 'Previous month', onclick: () => moveMonth(-1) },
+            { type: 'button', class: 'cal-nav', 'aria-label': 'Previous month', onclick: () => moveMonth(-1) },
             '‹',
           ),
-          h('strong', {}, `${MONTH_NAMES[view.month]} ${fa(view.year)}`),
+          // The year is written as a plain number (no thousands separator).
+          h('strong', { class: 'cal-title' }, `${MONTH_NAMES[view.month]} ${view.year}`),
           h(
             'button',
             {
               type: 'button',
-              class: 'btn ghost small',
+              class: 'cal-nav',
               'aria-label': 'Next month',
               disabled: isCurrentMonth,
               onclick: () => moveMonth(1),

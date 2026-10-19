@@ -1111,7 +1111,8 @@ function questionBlock(q) {
     ? [h('p', { class: 'question word-sentence', dir: 'rtl' }, persianSentence(q.word_bank))]
     // Translation questions are one Persian line, even when an English word is in it ("کلمه teacher ...?").
     // The whole line stays together, and no read-aloud button is added to its English part.
-    : q.category === 'quick_translation' && englishLine
+    // Audio translation is the same kind of question, so it follows the same rule.
+    : (q.category === 'quick_translation' || q.category === 'voice_translation') && englishLine
     ? [h('p', { class: 'question', dir: 'auto' }, ...wordNodes(q.question))]
     : englishLine
     ? [
