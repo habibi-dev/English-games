@@ -8,7 +8,7 @@ import { getSoundSettings } from '../storage/settings.js';
 // Overall loudness is kept low on purpose; the volume setting scales it further.
 const MASTER_LEVEL = 0.8;
 // The background tune is much quieter than the sound effects, so it stays in the background.
-const MUSIC_LEVEL = 0.1;
+const MUSIC_LEVEL = 0.22;
 
 let context = null;
 
@@ -156,17 +156,31 @@ export function vibrateFor(kind) {
   }
 }
 
-// ---- Background music: a soft, slow chord pad that changes every few seconds.
+// ---- Background music: a soft, repeating melody of plucked notes, played quietly under the game.
 // It is made with the Web Audio API (no audio file), starts when a game starts and stops when it ends.
-const CHORDS = [
-  [130.81, 164.81, 196.0], // C3 E3 G3
-  [110.0, 130.81, 164.81], // A2 C3 E3
-  [87.31, 110.0, 130.81], // F2 A2 C3
-  [98.0, 123.47, 146.83], // G2 B2 D3
-];
-const CHORD_SECONDS = 4;
+// A soft, repeating phrase: short plucked notes from the C major pentatonic scale, in the middle range
+// where small speakers sound clear (low drones only buzz on a phone).
+const SCALE = [523.25, 587.33, 659.25, 783.99, 880.0]; // C5 D5 E5 G5 A5
+const PHRASE = [0, 2, 4, 2, 3, 1, 4, 2, 0, 3, 2, 1];
+const NOTE_SECONDS = 0.45;
+const NOTE_PEAK = 0.5;
+const NOTE_RING_SECONDS = 1.2;
 
 let music = null;
+
+/** One plucked note: a quick attack, then a soft ring-out. `when` is on the audio clock. */
+function pluck(ac, output, freq, when) {
+  const osc = ac.createOscillator();
+  const gain = ac.createGain();
+  osc.type = 'triangle';
+  osc.frequency.value = freq;
+  gain.gain.setValueAtTime(0.0001, when);
+  gain.gain.exponentialRampToValueAtTime(NOTE_PEAK, when + 0.02);
+  gain.gain.exponentialRampToValueAtTime(0.0001, when + NOTE_RING_SECONDS);
+  osc.connect(gain).connect(output);
+  osc.start(when);
+  osc.stop(when + NOTE_RING_SECONDS + 0.05);
+}
 
 /** Starts the background tune (no effect if it is already playing or the sound settings turn it off). */
 export function startMusic() {
@@ -180,27 +194,19 @@ export function startMusic() {
     output.gain.setTargetAtTime(settings.volume * MUSIC_LEVEL, ac.currentTime, 1.5); // fade in
     const filter = ac.createBiquadFilter();
     filter.type = 'lowpass';
-    filter.frequency.value = 900;
+    filter.frequency.value = 2500;
     filter.connect(output);
     output.connect(ac.destination);
 
-    const voices = CHORDS[0].map((freq) => {
-      const osc = ac.createOscillator();
-      osc.type = 'sine';
-      osc.frequency.value = freq;
-      osc.connect(filter);
-      osc.start();
-      return osc;
-    });
-
+    // One plucked note per step of the phrase, scheduled on the audio clock.
     let step = 0;
-    const changeChord = () => {
-      const chord = CHORDS[step % CHORDS.length];
+    const playNote = () => {
+      pluck(ac, filter, SCALE[PHRASE[step % PHRASE.length]], ac.currentTime + 0.02);
       step += 1;
-      voices.forEach((osc, i) => osc.frequency.setTargetAtTime(chord[i], ac.currentTime, 0.8));
     };
-    const timer = setInterval(changeChord, CHORD_SECONDS * 1000);
-    music = { ac, output, voices, timer };
+    playNote();
+    const timer = setInterval(playNote, NOTE_SECONDS * 1000);
+    music = { ac, output, timer };
   } catch {
     // Music is optional: a failure must never break the game.
     music = null;
@@ -210,12 +216,12 @@ export function startMusic() {
 /** Fades the background tune out and stops it. Does nothing when it is not playing. */
 export function stopMusic() {
   if (!music) return;
-  const { ac, output, voices, timer } = music;
+  const { ac, output, timer } = music;
   music = null;
   clearInterval(timer);
   try {
+    // Notes already playing ring out; the output fades, so the tune ends softly.
     output.gain.setTargetAtTime(0.0001, ac.currentTime, 0.4);
-    voices.forEach((osc) => osc.stop(ac.currentTime + 2));
   } catch {
     // Already stopped or the context is gone: nothing else to do.
   }
