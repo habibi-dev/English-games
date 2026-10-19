@@ -13,10 +13,10 @@
       "items": [
         {
           "id": "evolve-1-l01-tr-01",
-          "question": "نام کوچک من امیرحسین است.",
-          "expected_answer": "My first name is Amir Hossein.",
+          "question": "نام کوچک من علی است.",
+          "expected_answer": "My first name is Ali.",
           "accepted_answers": [
-            "My first name's Amir Hossein."
+            "My first name's Ali."
           ],
           "explanation": "First name یعنی نام کوچک. شکل کوتاه is در این جمله به صورت 's نوشته می‌شود.",
           "time_limit": 60
@@ -146,7 +146,7 @@
         {
           "id": "evolve-1-l01-sb-01",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "expected_answer": "My first name is Amir Hossein.",
+          "expected_answer": "My first name is Ali.",
           "explanation": "ترتیب جمله: My + first name + is + نام.",
           "word_bank": [
             "Hossein.",
