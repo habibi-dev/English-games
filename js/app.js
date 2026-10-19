@@ -60,23 +60,37 @@ document.querySelectorAll('[data-nav="play"]').forEach((link) => {
   });
 });
 
+// During a mission, leaving it ends it, so the learner confirms first (in-app card).
+// Resolves to true when it is fine to leave: at once when no game is running, otherwise after "Leave game".
+async function confirmLeaveGame() {
+  if (!isGameInProgress()) return true;
+  return confirmDialog({
+    title: 'Leave this game?',
+    message: 'Your answers so far are saved. The rest of this mission will not be played.',
+    confirmText: 'Leave game',
+    cancelText: 'Keep playing',
+  });
+}
+
 // Logo and title: always back to the main (play) screen, from any screen.
-// During a mission, leaving ends it, so ask first (in-app card).
 // The click is handled here for every case: if the hash is already #/play (for example on the results screen),
 // the browser would not fire hashchange, so the view is re-rendered directly.
 document.querySelector('.brand-home')?.addEventListener('click', async (event) => {
   event.preventDefault();
-  if (isGameInProgress()) {
-    const leave = await confirmDialog({
-      title: 'Leave this game?',
-      message: 'Your answers so far are saved. The rest of this mission will not be played.',
-      confirmText: 'Leave game',
-      cancelText: 'Keep playing',
-    });
-    if (!leave) return;
-  }
+  if (!(await confirmLeaveGame())) return;
   if (location.hash === '#/play' || location.hash === '') route();
   else location.hash = '#/play';
+});
+
+// Reports, Settings and the other tabs: leaving a running game asks first, like the logo does.
+// The Play tab is left out: it has its own rule (see above).
+document.querySelectorAll('[data-nav]:not([data-nav="play"])').forEach((link) => {
+  link.addEventListener('click', async (event) => {
+    if (!isGameInProgress()) return;
+    event.preventDefault();
+    if (!(await confirmLeaveGame())) return;
+    location.hash = link.getAttribute('href') ?? `#/${link.dataset.nav}`;
+  });
 });
 
 async function boot() {
