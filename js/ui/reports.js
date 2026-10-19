@@ -5,7 +5,7 @@ import { CATEGORIES, topicLabel } from '../bank/schema.js';
 import { bankSummary, performanceSummary, reviewList } from '../progress/report.js';
 import { loadAttempts, resetProgress } from '../progress/tracker.js';
 import { loadSessions, msByDay, activityStats, calendarMonth, dayKey, WEEK_STARTS_ON } from '../progress/activity.js';
-import { h, fa, percent, table, toast, badge, confirmDialog } from './dom.js';
+import { h, fa, percent, toast, badge, confirmDialog } from './dom.js';
 import { speakButtons, questionSpeakButton } from './speech-out.js';
 import { splitPrompt } from './prompt.js';
 import { requestReview } from './review-handoff.js';
@@ -35,16 +35,138 @@ function section(icon, title, hint, content) {
   );
 }
 
-/** Success rate as a number with a bar: green from 75%, amber from 50%, red below that. */
-function rateCell(ratio) {
-  if (ratio == null) return h('span', { class: 'muted' }, '—');
+/** Success tone: green from 75%, amber from 50%, red below that. */
+function toneFor(ratio) {
+  if (ratio == null) return 'none';
   const pct = Math.round(ratio * 100);
-  const tone = pct >= 75 ? 'good' : pct >= 50 ? 'mid' : 'low';
+  return pct >= 75 ? 'good' : pct >= 50 ? 'mid' : 'low';
+}
+
+/** One label over one number, used inside the performance and question bank cards. */
+const metric = (label, value, tone = '') =>
+  h('div', { class: `perf-metric ${tone}`.trim() }, h('dt', {}, label), h('dd', {}, fa(value)));
+
+/**
+ * One result as a card: its name, the success rate with a bar, then the counts.
+ * Cards fit a phone screen, where a wide table would need sideways scrolling.
+ */
+function perfCard(title, subtitle, row) {
+  const tone = toneFor(row.successRate);
+  const pct = row.successRate == null ? 0 : Math.round(row.successRate * 100);
   return h(
-    'span',
-    { class: 'rate' },
-    h('span', { class: 'rate-bar' }, h('span', { class: `rate-fill ${tone}`, style: `width: ${pct}%` })),
-    h('strong', {}, percent(ratio)),
+    'article',
+    { class: 'perf-card' },
+    h(
+      'div',
+      { class: 'perf-head' },
+      h('div', { class: 'perf-titles' }, h('h4', {}, title), subtitle ? h('span', { class: 'perf-sub' }, subtitle) : null),
+      h('span', { class: `perf-pill ${tone}` }, percent(row.successRate)),
+    ),
+    h('span', { class: 'perf-bar', 'aria-hidden': 'true' }, h('span', { class: `perf-fill ${tone}`, style: `width: ${pct}%` })),
+    h(
+      'dl',
+      { class: 'perf-metrics' },
+      metric('Answers', row.attempted),
+      metric('Correct', row.correct, 'ok'),
+      metric('Wrong', row.wrong, 'bad'),
+      metric('Timed out', row.timeouts),
+    ),
+  );
+}
+
+/** A topic (or the whole bank) as a card: its counts, then one chip per question type. */
+function bankCard(row, title, categoryEntries, isTotal = false) {
+  return h(
+    'article',
+    { class: `perf-card bank-card${isTotal ? ' total' : ''}` },
+    h(
+      'div',
+      { class: 'perf-head' },
+      h('div', { class: 'perf-titles' }, h('h4', {}, title)),
+      h('span', { class: 'perf-pill info' }, `${fa(row.enabled)} active`),
+    ),
+    h(
+      'dl',
+      { class: 'perf-metrics three' },
+      metric('Total', row.total),
+      metric('Active', row.enabled, 'ok'),
+      metric('Inactive', row.disabled),
+    ),
+    h(
+      'div',
+      { class: 'bank-chips' },
+      categoryEntries.map(([key, label]) =>
+        h('span', { class: 'bank-chip' }, `${label} `, h('strong', {}, fa(row.byCategory[key] ?? 0))),
+      ),
+    ),
+  );
+}
+
+/** Daily study goal: the target shown in the goal card. */
+const DAILY_GOAL_MS = 15 * 60000;
+
+/**
+ * The first thing on the reports: today's goal, a message about the next step, and one main action.
+ * It tells the learner how close they are, so one more mission feels worth doing.
+ */
+function goalCard(stats, perf, reviewCount, onReview) {
+  const goal = DAILY_GOAL_MS;
+  const today = stats.today;
+  const pct = Math.min(Math.round((today / goal) * 100), 100);
+  let title;
+  let text;
+  if (stats.allTime === 0) {
+    title = 'Start your first mission';
+    text = 'Every answer is saved here. Your goal, streak and progress begin with one mission.';
+  } else if (today >= 2 * goal) {
+    title = 'Outstanding! You are on fire today';
+    text = `${durationText(today)} of practice already. Keep going while the momentum is high.`;
+  } else if (today >= goal) {
+    title = 'Daily goal reached!';
+    text = 'Great work. One more mission today makes your progress even stronger.';
+  } else if (today > 0) {
+    title = `Only ${durationText(goal - today)} to go`;
+    text = "Finish today's goal to keep your momentum.";
+  } else if (stats.currentStreak > 0) {
+    title = `Your ${fa(stats.currentStreak)}-day streak is waiting`;
+    text = 'Play one mission today to keep it alive.';
+  } else {
+    title = 'Time to practise';
+    text = 'Short daily practice works better than long breaks. Start a mission now.';
+  }
+
+  const accuracy = perf.overall.successRate == null ? '—' : percent(perf.overall.successRate);
+
+  return h(
+    'section',
+    { class: 'goal-card' },
+    h(
+      'div',
+      { class: 'goal-top' },
+      h('span', { class: 'goal-kicker' }, "Today's goal"),
+      h('span', { class: 'goal-goal' }, `${durationText(today)} / ${durationText(goal)}`),
+    ),
+    h('h3', { class: 'goal-title' }, title),
+    h('p', { class: 'goal-text' }, text),
+    h(
+      'div',
+      { class: 'goal-bar', role: 'progressbar', 'aria-label': "Today's goal", 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': pct },
+      h('span', { class: 'goal-fill', style: `width: ${pct}%` }),
+    ),
+    h(
+      'div',
+      { class: 'goal-chips' },
+      h('span', { class: 'goal-chip' }, `🔥 ${daysText(stats.currentStreak)} streak`),
+      h('span', { class: 'goal-chip' }, `🎯 ${accuracy} accuracy`),
+      h('span', { class: 'goal-chip' }, `⭐ ${fa(perf.overall.points)} points`),
+    ),
+    reviewCount > 0
+      ? h(
+          'button',
+          { type: 'button', class: 'btn primary goal-cta', onclick: onReview },
+          `▶ Review ${fa(reviewCount)} weak ${reviewCount === 1 ? 'question' : 'questions'}`,
+        )
+      : h('a', { class: 'btn primary goal-cta', href: '#/play' }, '▶ Start a mission'),
   );
 }
 
@@ -63,10 +185,10 @@ let selectedDay = null;
 // Legend for the calendar colours, matching levelFor() in js/progress/activity.js.
 const LEGEND = [
   [0, 'None'],
-  [1, '< 15 min'],
-  [2, '15–30 min'],
-  [3, '30–60 min'],
-  [4, '1 h+'],
+  [1, '<15m'],
+  [2, '15–30m'],
+  [3, '30–60m'],
+  [4, '1h+'],
 ];
 
 /** Play time in hours and minutes, e.g. "2 h 15 min", "45 min". */
@@ -244,31 +366,13 @@ export async function renderReports(root) {
   // Older attempts were saved without the sentence, so it is also read from the question bank.
   const sentenceById = new Map(questions.map((q) => [q.id, q.incorrect_sentence]));
 
-  const bankRows = [...bank.byTopic, { topic: 'totals', label: 'Total', ...bank.totals }].map((row) => [
-    row.label ?? topicLabel(row.topic),
-    fa(row.total),
-    fa(row.enabled),
-    fa(row.disabled),
-    ...categoryEntries.map(([key]) => fa(row.byCategory[key] ?? 0)),
-  ]);
+  const stats = activityStats(loadSessions(), Date.now());
 
-  const topicRows = perf.topics.map((row) => [
-    topicLabel(row.topic),
-    fa(row.attempted),
-    fa(row.correct),
-    fa(row.wrong),
-    fa(row.timeouts),
-    rateCell(row.successRate),
-  ]);
-
-  const cellRows = perf.cells.map((row) => [
-    topicLabel(row.topic),
-    CATEGORIES[row.category] ?? row.category,
-    fa(row.attempted),
-    fa(row.correct),
-    fa(row.wrong),
-    rateCell(row.successRate),
-  ]);
+  // The same action from the goal card and the review section: start a review game with these questions.
+  const startReview = () => {
+    requestReview(review.map((row) => row.questionId));
+    location.hash = '#/play';
+  };
 
   // Review items are shown as cards, not table rows: a question and its answer read better in full width.
   // The sentence to correct is shown first. The answer stays hidden until the learner asks for it.
@@ -338,7 +442,9 @@ export async function renderReports(root) {
         h('h2', {}, 'Reports'),
         h('p', { class: 'muted small' }, 'Your progress and the question bank status'),
       ),
-      overviewCard(bank, perf, activityStats(loadSessions(), Date.now())),
+      goalCard(stats, perf, review.length, startReview),
+
+      overviewCard(bank, perf, stats),
 
       activitySection(root, Date.now()),
 
@@ -346,7 +452,12 @@ export async function renderReports(root) {
         '🗂️',
         'Question bank by topic and type',
         'How many questions are ready for each topic and type.',
-        table(['Topic', 'Total', 'Active', 'Inactive', ...categoryEntries.map(([, label]) => label)], bankRows),
+        h(
+          'div',
+          { class: 'perf-list' },
+          bankCard(bank.totals, 'All topics', categoryEntries, true),
+          bank.byTopic.map((row) => bankCard(row, topicLabel(row.topic), categoryEntries)),
+        ),
       ),
 
       section(
@@ -354,7 +465,11 @@ export async function renderReports(root) {
         'Performance by topic',
         null,
         perf.topics.length
-          ? table(['Topic', 'Answers', 'Correct', 'Wrong', 'Timed out', 'Success'], topicRows)
+          ? h(
+              'div',
+              { class: 'perf-list' },
+              perf.topics.map((row) => perfCard(topicLabel(row.topic), null, row)),
+            )
           : emptyNote('No answers recorded yet.'),
       ),
 
@@ -363,7 +478,11 @@ export async function renderReports(root) {
         'Performance by topic and type',
         null,
         perf.cells.length
-          ? table(['Topic', 'Type', 'Answers', 'Correct', 'Wrong', 'Success'], cellRows)
+          ? h(
+              'div',
+              { class: 'perf-list' },
+              perf.cells.map((row) => perfCard(topicLabel(row.topic), CATEGORIES[row.category] ?? row.category, row)),
+            )
           : emptyNote('No answers recorded yet.'),
       ),
 
@@ -383,10 +502,7 @@ export async function renderReports(root) {
                   {
                     type: 'button',
                     class: 'btn primary',
-                    onclick: () => {
-                      requestReview(review.map((row) => row.questionId));
-                      location.hash = '#/play';
-                    },
+                    onclick: startReview,
                   },
                   `▶ Start review (${fa(review.length)})`,
                 ),
