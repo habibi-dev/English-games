@@ -8,11 +8,12 @@
 import { h, toast, keepFocus } from './dom.js';
 import { playButton } from './speech-out.js';
 import { validateAnswer } from '../engine/validator.js';
+import { scrambleLetters } from '../engine/spelling.js';
 
 export const INSTRUCTIONS = {
   quick_translation: 'به انگلیسی ترجمه کن',
   sentence_builder: 'Put the words together in the correct order.',
-  word_translation: 'کلمه‌ها را به انگلیسی ترجمه کن و جمله‌ی کامل بنویس.',
+  word_translation: 'این جمله‌ی فارسی را به انگلیسی ترجمه کن.',
   grammar_correction: 'Correct the wrong sentence and write the whole correct sentence.',
   multiple_choice: 'Choose the correct option.',
   positive_negative_question: 'Change the sentence as instructed and write the whole sentence.',
@@ -21,7 +22,20 @@ export const INSTRUCTIONS = {
   vocabulary: 'Write a synonym or an antonym. If several are asked, separate them with commas.',
 };
 
+/** The instruction line for a question. Dictation words have one per spelling mode. */
+export function instructionFor(question) {
+  if (question.category === 'dictation') {
+    if (question.presentation === 'meaning') return 'Write the English word for this meaning.';
+    if (question.presentation === 'letters') return 'Tap the letters in the right order to spell the word.';
+  }
+  return INSTRUCTIONS[question.category] ?? '';
+}
+
 export function createAnswerWidget(question, { onSubmit }) {
+  // Letters mode of spelling: the learner builds the word from letter tiles.
+  if (question.category === 'dictation' && question.presentation === 'letters') {
+    return spellingLetters(question);
+  }
   switch (question.category) {
     case 'sentence_builder':
       return sentenceBuilder(question);
@@ -42,7 +56,8 @@ export function createAnswerWidget(question, { onSubmit }) {
         question.answer_mode === 'list'
           ? `At least ${question.min_items ?? 1} answers; separate them with commas or spaces`
           : undefined,
-        { voice: question.category !== 'dictation' || isVoiceOnly(question), voiceOnly: isVoiceOnly(question), question },
+        // Only a heard-only word (audio) has no mic in normal missions; meaning and text items can use it.
+        { voice: question.presentation !== 'audio' || isVoiceOnly(question), voiceOnly: isVoiceOnly(question), question },
       );
   }
 }
@@ -193,14 +208,34 @@ function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { vo
   };
 }
 
-function chip(text, onClick) {
-  return h('button', { type: 'button', class: 'chip', onclick: onClick }, text);
+function chip(text, onClick, extraClass = '') {
+  return h('button', { type: 'button', class: extraClass ? `chip ${extraClass}` : 'chip', onclick: onClick }, text);
 }
 
 function sentenceBuilder(question) {
-  const tokens = question.word_bank ?? [];
+  return tokenBuilder(question.word_bank ?? [], { joiner: ' ', placeholder: 'Arrange the words here' });
+}
+
+/**
+ * Letters of a dictation word, as tiles to tap into order (the letters mode of spelling).
+ * The tiles start shuffled, so the learner has to rebuild the spelling from memory.
+ */
+function spellingLetters(question) {
+  return tokenBuilder(scrambleLetters(question.expected_answer), {
+    joiner: '',
+    placeholder: 'Tap the letters here, in order',
+    tileClass: 'letter',
+  });
+}
+
+/**
+ * Tiles the learner taps into order. The answer is the picked tiles joined with `joiner`:
+ * a space for words (sentence building), nothing for letters (spelling).
+ */
+function tokenBuilder(tokens, { joiner = ' ', placeholder = 'Arrange the words here', tileClass = '' } = {}) {
   const picked = [];
   let locked = false;
+  const tile = (text, onClick) => chip(text, onClick, tileClass);
 
   const answerRow = h('div', { class: 'token-row answer-row', dir: 'ltr' });
   const bankRow = h('div', { class: 'token-row bank-row', dir: 'ltr' });
@@ -222,20 +257,20 @@ function sentenceBuilder(question) {
     answerRow.replaceChildren(
       ...(picked.length
         ? picked.map((tokenIndex, position) =>
-            chip(tokens[tokenIndex], () => {
+            tile(tokens[tokenIndex], () => {
               if (locked) return;
               picked.splice(position, 1);
               render();
             }),
           )
-        : [h('span', { class: 'placeholder', dir: 'auto' }, 'Arrange the words here')]),
+        : [h('span', { class: 'placeholder', dir: 'auto' }, placeholder)]),
     );
     bankRow.replaceChildren(
       ...tokens.flatMap((token, tokenIndex) =>
         picked.includes(tokenIndex)
           ? []
           : [
-              chip(token, () => {
+              tile(token, () => {
                 if (locked) return;
                 picked.push(tokenIndex);
                 render();
@@ -249,7 +284,7 @@ function sentenceBuilder(question) {
 
   return {
     element: h('div', { class: 'builder' }, answerRow, bankRow, h('div', { class: 'builder-actions' }, clearButton)),
-    getValue: () => picked.map((tokenIndex) => tokens[tokenIndex]).join(' '),
+    getValue: () => picked.map((tokenIndex) => tokens[tokenIndex]).join(joiner),
     lock() {
       locked = true;
       clearButton.disabled = true;

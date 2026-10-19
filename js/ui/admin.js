@@ -7,7 +7,7 @@ import { listQuestions, importIntoStore } from '../bank/repository.js';
 import { serializeQuestions } from '../bank/importer.js';
 import { QUESTION_PROMPT } from '../bank/question-prompt.js';
 import { getSoundSettings, saveSoundSettings } from '../storage/settings.js';
-import { playWinSound, playLoseSound } from './sounds.js';
+import { playWinSound, playLoseSound, playTimeoutSound } from './sounds.js';
 import { h, fa, toast, download } from './dom.js';
 
 const SECTIONS = [
@@ -79,11 +79,12 @@ function soundsSection() {
     h(
       'p',
       { class: 'muted small' },
-      'A right answer plays the win sound. A wrong answer or a time-out plays the lose sound.',
+      'A right answer plays the win sound. A wrong answer plays the lose sound. A time-out plays the time-up sound.',
     ),
     toggle('enabled', 'Sound effects', 'Turns all sounds on or off.'),
     toggle('win', 'Win sound', 'A soft rising chime.'),
     toggle('lose', 'Lose sound', 'A soft, slow "aww" from a small group.'),
+    toggle('timeout', 'Time-up sound', 'Two short falling blips when the time runs out.'),
     h(
       'label',
       { class: 'sound-volume' },
@@ -107,6 +108,7 @@ function soundsSection() {
       { class: 'toolbar-actions' },
       h('button', { type: 'button', class: 'btn primary', onclick: () => playWinSound() }, '▶ Play win sound'),
       h('button', { type: 'button', class: 'btn ghost', onclick: () => playLoseSound() }, '▶ Play lose sound'),
+      h('button', { type: 'button', class: 'btn ghost', onclick: () => playTimeoutSound() }, '▶ Play time-up sound'),
     ),
     h('p', { class: 'muted small' }, 'The preview plays even when sound effects are off.'),
   );

@@ -75,6 +75,16 @@ function loseSound(ac, output) {
   note(ac, filter, { freq: 466.16, slideTo: 349.23, start: 0.05, duration: 1.1, type: 'triangle', peak: 0.14 }); // Bb4 down to F4
 }
 
+// Time's up: two short, falling blips, like a soft buzzer. Shorter and higher than the lose sound.
+function timeoutSound(ac, output) {
+  const filter = ac.createBiquadFilter();
+  filter.type = 'lowpass';
+  filter.frequency.value = 1400;
+  filter.connect(output);
+  note(ac, filter, { freq: 587.33, slideTo: 440, start: 0, duration: 0.2, type: 'triangle', peak: 0.2 }); // D5 down to A4
+  note(ac, filter, { freq: 440, slideTo: 329.63, start: 0.24, duration: 0.3, type: 'triangle', peak: 0.2 }); // A4 down to E4
+}
+
 /** Plays one sound at the chosen volume. Silent (and no error) where audio is not available. */
 function play(sound) {
   try {
@@ -99,15 +109,25 @@ export function playLoseSound() {
   play(loseSound);
 }
 
+/** The time-up sound. Used for previews too, so it plays even when sounds are turned off. */
+export function playTimeoutSound() {
+  play(timeoutSound);
+}
+
 /**
- * Called when an answer is judged: a right answer plays the win sound, a wrong or timed-out answer plays the lose sound.
+ * Called when an answer is judged:
+ *  - a right answer plays the win sound;
+ *  - a wrong answer plays the lose sound;
+ *  - a time-out plays the time-up sound.
  * Respects the sound settings (master switch and each sound's own switch).
  */
-export function playResultSound(correct) {
+export function playResultSound(correct, timedOut = false) {
   const settings = getSoundSettings();
   if (!settings.enabled) return;
   if (correct) {
     if (settings.win) play(winSound);
+  } else if (timedOut) {
+    if (settings.timeout) play(timeoutSound);
   } else if (settings.lose) {
     play(loseSound);
   }

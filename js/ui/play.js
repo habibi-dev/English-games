@@ -3,7 +3,7 @@
 // answer checks from the Answer Validator, and storage from the Progress Tracker.
 
 import { listQuestions, listLessons } from '../bank/repository.js';
-import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey } from '../bank/schema.js';
+import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey, persianSentence } from '../bank/schema.js';
 import { filterQuestions, pickQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode } from '../engine/game-engine.js';
 import { takeReview } from './review-handoff.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
@@ -11,11 +11,12 @@ import { playerProfile, levelFor, starsFor, XP_PER_LEVEL } from '../progress/pla
 import { doneIds, progressOf, markPractice } from '../progress/lesson-progress.js';
 import { getSettings, saveSettings, getLessonResets, markLessonReset } from '../storage/settings.js';
 import { h, toast, fa, ltr, badge, percent, keepFocus } from './dom.js';
-import { createAnswerWidget, INSTRUCTIONS } from './answer-widgets.js';
+import { createAnswerWidget, instructionFor } from './answer-widgets.js';
 import { splitPrompt } from './prompt.js';
 import { speak, speakButtons, speakBar, completeSentence, contextSentence, questionSpeakButton } from './speech-out.js';
 import { playResultSound } from './sounds.js';
 import { beginMission, endMission } from '../progress/activity.js';
+import { applySpellingMode } from '../engine/spelling.js';
 
 /** True when `word` appears as a whole word in `sentence` (case-insensitive). */
 function containsWord(sentence, word) {
@@ -230,7 +231,10 @@ async function startReview(root, ids) {
     markPractice(
       ids.map((id) => byId.get(id)).filter((q) => q && q.enabled !== false && !done.has(q.id)),
       resets,
-    ).map((q) => applyPlayMode(voiceOnly ? { ...q, answer_input: 'voice' } : q, saved.mode)),
+    ).map((q) => {
+      const spelled = applySpellingMode(q);
+      return applyPlayMode(voiceOnly ? { ...spelled, answer_input: 'voice' } : spelled, saved.mode);
+    }),
   );
   if (pool.length === 0) {
     toast('No questions to review are left.', 'warn');
@@ -328,7 +332,8 @@ async function showSetup(root) {
     const forced = state.presentation[0];
     const voiceOnly = state.input[0] === 'voice';
     const picked = chosen.map((question) => {
-      const next = forced === 'auto' ? question : { ...question, presentation: forced };
+      // A dictation word picks its spelling mode (audio, meaning or letters) when the exercise keeps its own presentation.
+      const next = forced === 'auto' ? applySpellingMode(question) : { ...question, presentation: forced };
       const withInput = voiceOnly ? { ...next, answer_input: 'voice' } : next;
       return applyPlayMode(withInput, state.mode[0]);
     });
@@ -734,7 +739,7 @@ function acceptedAnswersBox(question) {
  * not just the bare word. Null for every other item.
  */
 function meaningBox(q) {
-  if (q.presentation !== 'audio' || !q.hint) return null;
+  if (q.category !== 'dictation' || !q.hint) return null;
   return h(
     'div',
     { class: 'fb-box fb-note', dir: 'rtl' },
@@ -782,7 +787,8 @@ function renderQuestion(root, session, flow) {
   const timerFill = h('div', { class: 'timer-fill' });
   const timerText = h('span', { class: 'timer-text' });
   const feedback = h('div', { class: 'feedback', hidden: true, role: 'alert' });
-  const hintText = q.hint ? h('p', { class: 'hint', dir: 'rtl', hidden: true }, q.hint) : null;
+  // In meaning mode the hint is already the question, so there is no hint button.
+  const hintText = q.hint && q.presentation !== 'meaning' ? h('p', { class: 'hint', dir: 'rtl', hidden: true }, q.hint) : null;
   const submitButton = h('button', { type: 'button', class: 'btn primary', onclick: submit }, 'Submit answer');
   // Small red button beside Submit: gives up on the question. It counts as a wrong answer, and the correct answer is shown.
   const skipButton = h('button', { type: 'button', class: 'btn danger skip-btn', onclick: skip }, 'Skip');
@@ -840,7 +846,7 @@ function renderQuestion(root, session, flow) {
     progressEl = freshTrack;
     showFeedback(outcome);
     // The result pops up now, so its sound plays now: win for a right answer, lose for a wrong or late one.
-    playResultSound(outcome.correct);
+    playResultSound(outcome.correct, outcome.timedOut);
     nextButton.hidden = false;
     nextButton.textContent = session.index + 1 < session.total ? 'Next question' : 'Finish and see results';
     // Focus is intentionally not moved to the next button: pressing Enter in the answer box
@@ -942,7 +948,7 @@ function renderQuestion(root, session, flow) {
           badge(DIFFICULTIES[q.difficulty] ?? q.difficulty),
           q.practice ? badge('Practice · no points') : null,
         ),
-        h('p', { class: 'instruction', dir: 'auto' }, INSTRUCTIONS[q.category] ?? ''),
+        h('p', { class: 'instruction', dir: 'auto' }, instructionFor(q)),
         questionBlock(q),
       ),
       // Answer zone: the input (or choices) and the optional hint.
@@ -1034,6 +1040,16 @@ function questionBlock(q) {
   // Two separate lines: the Persian instruction (right-to-left) and the English sentence (left-to-right).
   const { instruction, sentence: englishLine } = splitPrompt(q.question);
 
+  // Meaning mode (dictation): the Persian meaning is the question, and the learner writes the English word.
+  if (q.presentation === 'meaning') {
+    return h('div', { class: 'question-block' }, h('p', { class: 'question meaning-question', dir: 'rtl' }, q.hint));
+  }
+
+  // Letters mode (dictation): the letter tiles are the question. The answer widget builds them.
+  if (q.presentation === 'letters') {
+    return h('div', { class: 'question-block letters-only' });
+  }
+
   // Listening question: the English text stays hidden, only the play button is shown (no glossary either,
   // since it would show the words). The learner answers from what they hear.
   if (q.presentation === 'audio' && sentence) {
@@ -1053,10 +1069,10 @@ function questionBlock(q) {
     );
   }
 
-  // Word translation: the Persian words are shown as separate chips, in the order of the sentence.
-  // The learner writes the English sentence from them. No read-aloud button, since the words are not a sentence.
+  // Word translation: the whole Persian sentence on one line, to be written in English.
+  // No read-aloud button here: this is a sentence to translate, the same as the other translation questions.
   const lines = q.category === 'word_translation'
-    ? [h('div', { class: 'word-chips', dir: 'rtl' }, (q.word_bank ?? []).map((word) => h('span', { class: 'word-chip' }, word)))]
+    ? [h('p', { class: 'question word-sentence', dir: 'rtl' }, persianSentence(q.word_bank))]
     // Translation questions are one Persian line, even when an English word is in it ("کلمه teacher ...?").
     // The whole line stays together, and no read-aloud button is added to its English part.
     : q.category === 'quick_translation' && englishLine
@@ -1167,7 +1183,7 @@ function renderResults(root, session, flow) {
             speakButtons(answerText(o.question)),
           ),
           o.question.explanation ? h('p', { class: 'mistake-note', dir: 'auto' }, o.question.explanation) : null,
-          o.question.presentation === 'audio' && o.question.hint
+          o.question.category === 'dictation' && o.question.hint
             ? h('p', { class: 'mistake-note', dir: 'rtl' }, `Meaning: ${o.question.hint}`)
             : null,
         ),

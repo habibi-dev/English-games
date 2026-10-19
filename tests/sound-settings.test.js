@@ -22,6 +22,14 @@ test('sound effects are on by default, at a moderate volume', () => {
   assert.equal(SOUND_DEFAULTS.enabled, true);
   assert.equal(SOUND_DEFAULTS.win, true);
   assert.equal(SOUND_DEFAULTS.lose, true);
+  assert.equal(SOUND_DEFAULTS.timeout, true);
+});
+
+test('the time-up sound has its own switch, and saving it keeps the others', () => {
+  saveSoundSettings({ timeout: false });
+  const settings = getSoundSettings();
+  assert.equal(settings.timeout, false);
+  assert.equal(settings.lose, true);
 });
 
 test('saving one sound setting keeps the others', () => {

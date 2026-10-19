@@ -24,7 +24,7 @@ test('word translation keeps its Persian words and makes the question from them'
     explanation: 'e',
   });
   assert.deepEqual(q.word_bank, ['این', 'معلم', 'من', 'است']);
-  assert.equal(q.question, 'این / معلم / من / است');
+  assert.equal(q.question, 'این معلم من است.');
   assert.deepEqual(validateQuestion(q).errors, []);
 });
 

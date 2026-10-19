@@ -75,6 +75,16 @@ function toBool(value, fallback) {
 const unique = (items) => [...new Set(items)];
 
 /**
+ * The Persian sentence made from its parts (word_translation): the parts joined by spaces, with a full stop
+ * when the sentence has no final punctuation. e.g. ["من", "یک شریک", "هستم"] -> "من یک شریک هستم."
+ */
+export function persianSentence(parts) {
+  const text = (parts ?? []).map(str).filter(Boolean).join(' ');
+  if (!text) return '';
+  return /[.!?؟]$/.test(text) ? text : `${text}.`;
+}
+
+/**
  * Glossary: key words with their meaning, e.g. [{word: "work", meaning: "to do"}].
  * Accepts objects, or strings like "work=to do" (used by CSV and the admin form).
  */
@@ -146,7 +156,7 @@ export function normalizeQuestion(raw = {}) {
   // Word translation: the Persian words of the sentence, in order. The question text is those words.
   if (category === 'word_translation') {
     question.word_bank = toList(raw.word_bank);
-    if (!question.question) question.question = question.word_bank.join(' / ');
+    if (!question.question) question.question = persianSentence(question.word_bank);
   }
   if (category === 'grammar_correction') question.incorrect_sentence = str(raw.incorrect_sentence);
   if (category === 'multiple_choice') question.options = toList(raw.options);

@@ -2933,19 +2933,47 @@ textarea {
 }
 
 /* Activity panel: period tiles and the month calendar. */
+/* The panel sits inside the report card: one standard inner padding, and no boxes inside boxes. */
 .activity {
   display: grid;
   gap: 12px;
+  padding: 14px;
 }
 
-.activity-tiles {
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+.activity .activity-tiles {
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+  gap: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+}
+
+.activity .activity-tiles .report-stat {
+  gap: 0;
+  padding: 8px 6px;
+}
+
+.activity .activity-tiles .report-stat strong {
+  font-size: 1.15rem;
+}
+
+.activity .activity-tiles .report-stat-icon {
+  font-size: 1.1rem;
+}
+
+.activity .activity-tiles .report-stat:last-child:nth-child(odd) {
+  grid-column: auto;
+}
+
+.activity .activity-tiles .report-stat-label {
+  font-size: 0.78rem;
 }
 
 .cal {
   display: grid;
-  gap: 8px;
-  padding-top: 4px;
+  gap: 6px;
 }
 
 .cal-head {
@@ -2958,7 +2986,7 @@ textarea {
 .cal-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
+  gap: 4px;
 }
 
 .cal-weekday {
@@ -2969,7 +2997,7 @@ textarea {
 }
 
 .cal-cell {
-  aspect-ratio: 1;
+  height: 34px;
   display: grid;
   place-items: center;
   border-radius: 10px;
@@ -3421,24 +3449,12 @@ textarea {
   min-height: 58px;
 }
 
-/* Word translation: the Persian words of the sentence, as separate chips (read right to left). */
-.question-block .word-chips {
-  display: flex;
-  flex-wrap: wrap;
+/* Spelling letters (dictation, letters mode): the tiles are a little larger, so each letter is easy to tap. */
+.builder .chip.letter {
+  min-width: 42px;
   justify-content: center;
-  gap: 8px;
-  padding: 4px 0;
-}
-
-.question-block .word-chip {
-  padding: 8px 14px;
-  border-radius: 999px;
-  background: #eef2ff;
-  border: 1px solid #c7d2fe;
-  color: #3730a3;
-  font-size: 1.1rem;
-  font-weight: 600;
-  line-height: 1.4;
+  font-size: 1.15rem;
+  font-weight: 700;
 }
 
 /* ---------- Text selection ----------

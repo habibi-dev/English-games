@@ -108,7 +108,10 @@
           "expected_answer": "I have a question.",
           "explanation": "Question یعنی سؤال.",
           "hint": "کلمه‌ی کلیدی: «سؤال» = question؛ تلفظ: /ˈkwestʃən/ (کوئِستشِن)؛ نکته: فعل پرسیدن ask است.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a question."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-11",
@@ -132,7 +135,7 @@
         {
           "id": "evolve-1-l01-tr-13",
           "question": "چطور به انگلیسی می‌گویی «کمک»؟",
-          "expected_answer": "How do you say کمک in English?",
+          "expected_answer": "How do you say help in English?",
           "explanation": "از الگوی How do you say ... in English? برای پرسیدن معادل انگلیسی استفاده می‌کنیم.",
           "hint": "کلمه‌ی کلیدی: «کمک» = help؛ تلفظ: /help/ (هِلپ)؛ نکته: الگو: How do you say ... in English? یعنی «چطور به انگلیسی می‌گویی ...؟»",
           "time_limit": 60,
@@ -286,7 +289,10 @@
           "expected_answer": "I have a question.",
           "explanation": "دارم = have؛ یک = a.",
           "hint": "I = من؛ have = داشتن؛ a = یک؛ question = سؤال.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a question."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-05",
@@ -299,7 +305,10 @@
           "expected_answer": "We have a teacher.",
           "explanation": "داریم = have (برای We).",
           "hint": "we = ما؛ have = داشتن؛ a = یک؛ teacher = معلم.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a teacher."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-06",
@@ -364,7 +373,10 @@
           "expected_answer": "I am a partner.",
           "explanation": "هستم = am (برای I).",
           "hint": "I = من؛ am = هستم؛ partner = شریک.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I'm a partner."
+          ]
         }
       ]
     },

@@ -47,7 +47,7 @@ export function markLessonReset(key, at = Date.now()) {
 // Sound effects (win and lose sounds). Small preferences, so they live in localStorage like the play settings.
 // Missing values fall back to the defaults: sounds are on, at a moderate volume.
 const SOUNDS_KEY = 'grammar-quest.sounds.v1';
-export const SOUND_DEFAULTS = Object.freeze({ enabled: true, win: true, lose: true, volume: 0.6 });
+export const SOUND_DEFAULTS = Object.freeze({ enabled: true, win: true, lose: true, timeout: true, volume: 0.6 });
 
 export function getSoundSettings() {
   try {
@@ -58,6 +58,7 @@ export function getSoundSettings() {
       enabled: typeof stored.enabled === 'boolean' ? stored.enabled : SOUND_DEFAULTS.enabled,
       win: typeof stored.win === 'boolean' ? stored.win : SOUND_DEFAULTS.win,
       lose: typeof stored.lose === 'boolean' ? stored.lose : SOUND_DEFAULTS.lose,
+      timeout: typeof stored.timeout === 'boolean' ? stored.timeout : SOUND_DEFAULTS.timeout,
       volume: Number.isFinite(volume) ? Math.min(1, Math.max(0, volume)) : SOUND_DEFAULTS.volume,
     };
   } catch {
