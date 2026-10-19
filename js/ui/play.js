@@ -966,7 +966,11 @@ function questionBlock(q) {
     );
   }
 
-  const lines = englishLine
+  // Translation questions are one Persian line, even when an English word is in it ("کلمه teacher ...?").
+  // The whole line stays together, and no read-aloud button is added to its English part.
+  const lines = q.category === 'quick_translation' && englishLine
+    ? [h('p', { class: 'question', dir: 'auto' }, ...wordNodes(q.question))]
+    : englishLine
     ? [
         instruction ? h('p', { class: 'q-instruction', dir: 'rtl' }, instruction) : null,
         // Read-aloud for the sentence. No button while a blank is still in it (contextSentence is null then).
