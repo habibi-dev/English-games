@@ -538,10 +538,14 @@ async function showSetup(root) {
         }),
         stepTitle('Exercise types'),
         chipGroup(
-          Object.entries(CATEGORIES).map(([key, label]) => [
-            key,
-            categoryChip(`${CATEGORY_ICONS[key] ?? ''} ${label}`.trim(), categoryProgress(key)),
-          ]),
+          // Only the exercise types that have questions in the chosen lessons are offered.
+          Object.entries(CATEGORIES)
+            .map(([key, label]) => [key, label, categoryProgress(key)])
+            .filter(([, , progress]) => progress.total > 0)
+            .map(([key, label, progress]) => [
+              key,
+              categoryChip(`${CATEGORY_ICONS[key] ?? ''} ${label}`.trim(), progress),
+            ]),
           state.categories,
           { onChange: refresh, className: 'card-options mission-options' },
         ),

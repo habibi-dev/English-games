@@ -3111,6 +3111,931 @@
       ]
     },
     {
+      "id": "evolve-1-l01-voice-translation",
+      "type": "voice_translation",
+      "title": "ترجمه با صدا",
+      "difficulty": "easy",
+      "presentation": "text",
+      "items": [
+        {
+          "id": "evolve-1-l01-vt-001",
+          "question": "نام کوچک من علی است.",
+          "expected_answer": "My first name is Ali.",
+          "explanation": "First name یعنی نام کوچک. شکل کوتاه is در این جمله به صورت 's نوشته می‌شود.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "My first name's Ali."
+          ]
+        },
+        {
+          "id": "evolve-1-l01-vt-002",
+          "question": "نام خانوادگی من حبیبی است.",
+          "expected_answer": "My last name is Habibi.",
+          "explanation": "Last name و family name هر دو برای نام خانوادگی به کار می‌روند.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "My family name is Habibi.",
+            "My last name's Habibi.",
+            "My family name's Habibi."
+          ]
+        },
+        {
+          "id": "evolve-1-l01-vt-003",
+          "question": "اسم کوچک تو چیست؟",
+          "expected_answer": "What is your first name?",
+          "explanation": "What's شکل کوتاه What is است.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "What's your first name?"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-vt-004",
+          "question": "نام خانوادگی تو چیست؟",
+          "expected_answer": "What is your last name?",
+          "explanation": "می‌توانی از last name یا family name استفاده کنی؛ What's هم شکل کوتاه What is است.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "What's your last name?",
+            "What is your family name?",
+            "What's your family name?"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-vt-005",
+          "question": "این معلم من است.",
+          "expected_answer": "This is my teacher.",
+          "explanation": "This برای اشاره به شخص یا چیزی که نزدیک است به کار می‌رود.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-006",
+          "question": "این دوست من است.",
+          "expected_answer": "This is my friend.",
+          "explanation": "Friend یعنی دوست.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-007",
+          "question": "این شوهر من است.",
+          "expected_answer": "This is my husband.",
+          "explanation": "Husband یعنی شوهر.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-008",
+          "question": "این همسر من است.",
+          "expected_answer": "This is my wife.",
+          "explanation": "Wife برای همسر زن و spouse برای همسر بدون مشخص کردن جنسیت استفاده می‌شود.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "This is my spouse."
+          ]
+        },
+        {
+          "id": "evolve-1-l01-vt-009",
+          "question": "این شریک من است.",
+          "expected_answer": "This is my partner.",
+          "explanation": "Partner یعنی شریک یا همراه؛ با helper به معنی کمک‌کننده یکی نیست.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-010",
+          "question": "من یک سؤال دارم.",
+          "expected_answer": "I have a question.",
+          "explanation": "Question یعنی سؤال.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a question."
+          ]
+        },
+        {
+          "id": "evolve-1-l01-vt-011",
+          "question": "به من کمک کن.",
+          "expected_answer": "Help me.",
+          "explanation": "Help یعنی کمک کردن.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "Please help me."
+          ]
+        },
+        {
+          "id": "evolve-1-l01-vt-012",
+          "question": "به من کمک کن. (اصطلاح)",
+          "expected_answer": "Give me a hand.",
+          "explanation": "Give me a hand یک عبارت رایج به معنی کمکم کن است.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-013",
+          "question": "چطور به انگلیسی می‌گویی «کمک»؟",
+          "expected_answer": "How do you say help in English?",
+          "explanation": "از الگوی How do you say ... in English? برای پرسیدن معادل انگلیسی استفاده می‌کنیم.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "How do you say کمک in English?",
+            "How do you say help in English?",
+            "How do you say 'کمک' in English?",
+            "How do you say 'help' in English?"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-vt-014",
+          "question": "کلمه teacher چه معنی‌ای می‌دهد؟",
+          "expected_answer": "What does teacher mean?",
+          "explanation": "برای پرسیدن معنی کلمه از الگوی What does ... mean? استفاده می‌کنیم.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "What does the word teacher mean?"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-vt-015",
+          "question": "ما یک معلم داریم.",
+          "expected_answer": "We have a teacher.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-016",
+          "question": "او (مرد) می‌خواند.",
+          "expected_answer": "He reads.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-017",
+          "question": "او (زن) راه می‌رود.",
+          "expected_answer": "She walks.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-018",
+          "question": "من یک شریک هستم.",
+          "expected_answer": "I am a partner.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-019",
+          "question": "این مدرس خصوصی من است.",
+          "expected_answer": "This is my tutor.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-020",
+          "question": "این مربی من است.",
+          "expected_answer": "This is my instructor.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-021",
+          "question": "این همسر من است.",
+          "expected_answer": "This is my spouse.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-022",
+          "question": "این کمک‌کننده من است.",
+          "expected_answer": "This is my helper.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-023",
+          "question": "این مادر من است.",
+          "expected_answer": "This is my mother.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-024",
+          "question": "این گروه من است.",
+          "expected_answer": "This is my group.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-025",
+          "question": "این تیم من است.",
+          "expected_answer": "This is my team.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-026",
+          "question": "این گروه موسیقی من است.",
+          "expected_answer": "This is my band.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-027",
+          "question": "این خانه من است.",
+          "expected_answer": "This is my house.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-028",
+          "question": "این محل زندگی من است.",
+          "expected_answer": "This is my home.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-029",
+          "question": "این خیابان من است.",
+          "expected_answer": "This is my street.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-030",
+          "question": "این جاده من است.",
+          "expected_answer": "This is my road.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-031",
+          "question": "این خیابان بزرگ من است.",
+          "expected_answer": "This is my avenue.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-032",
+          "question": "این کوچه من است.",
+          "expected_answer": "This is my alley.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-033",
+          "question": "این هدف من است.",
+          "expected_answer": "This is my goal.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-034",
+          "question": "این هدف اصلی من است.",
+          "expected_answer": "This is my objective.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-035",
+          "question": "این منظور من است.",
+          "expected_answer": "This is my purpose.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-036",
+          "question": "این هدف نهایی من است.",
+          "expected_answer": "This is my target.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-037",
+          "question": "این نمونه من است.",
+          "expected_answer": "This is my example.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-038",
+          "question": "این پاسخ من است.",
+          "expected_answer": "This is my answer.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-039",
+          "question": "این درخواست من است.",
+          "expected_answer": "This is my request.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-040",
+          "question": "آن مدرس خصوصی من است.",
+          "expected_answer": "That is my tutor.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-041",
+          "question": "آن گروه من است.",
+          "expected_answer": "That is my group.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-042",
+          "question": "آن خانه من است.",
+          "expected_answer": "That is my house.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-043",
+          "question": "آن هدف من است.",
+          "expected_answer": "That is my goal.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-044",
+          "question": "من یک هدف دارم.",
+          "expected_answer": "I have a goal.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-045",
+          "question": "من یک تیم دارم.",
+          "expected_answer": "I have a team.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-046",
+          "question": "من یک گروه دارم.",
+          "expected_answer": "I have a group.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-047",
+          "question": "من یک خانه دارم.",
+          "expected_answer": "I have a house.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-048",
+          "question": "من یک جفت دارم.",
+          "expected_answer": "I have a pair.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-049",
+          "question": "من یک درخواست دارم.",
+          "expected_answer": "I have a request.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-050",
+          "question": "من یک گروه موسیقی دارم.",
+          "expected_answer": "I have a band.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-051",
+          "question": "من یک کمک‌کننده دارم.",
+          "expected_answer": "I have a helper.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-052",
+          "question": "من یک مدرس خصوصی دارم.",
+          "expected_answer": "I have a tutor.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-053",
+          "question": "ما یک مدرس خصوصی داریم.",
+          "expected_answer": "We have a tutor.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-054",
+          "question": "ما یک کمک‌کننده داریم.",
+          "expected_answer": "We have a helper.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-055",
+          "question": "ما یک تیم داریم.",
+          "expected_answer": "We have a team.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-056",
+          "question": "ما یک گروه داریم.",
+          "expected_answer": "We have a group.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-057",
+          "question": "ما یک هدف داریم.",
+          "expected_answer": "We have a goal.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-058",
+          "question": "ما یک خانه داریم.",
+          "expected_answer": "We have a house.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-059",
+          "question": "من یک مدرس خصوصی هستم.",
+          "expected_answer": "I am a tutor.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-060",
+          "question": "من یک کمک‌کننده هستم.",
+          "expected_answer": "I am a helper.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-061",
+          "question": "من می‌خورم.",
+          "expected_answer": "I eat.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-062",
+          "question": "من می‌خوانم.",
+          "expected_answer": "I read.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-063",
+          "question": "من می‌نویسم.",
+          "expected_answer": "I write.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-064",
+          "question": "من تماشا می‌کنم.",
+          "expected_answer": "I watch.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-065",
+          "question": "من گوش می‌دهم.",
+          "expected_answer": "I listen.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-066",
+          "question": "من می‌گویم.",
+          "expected_answer": "I say.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-067",
+          "question": "من می‌بینم.",
+          "expected_answer": "I see.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-068",
+          "question": "من می‌شنوم.",
+          "expected_answer": "I hear.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-069",
+          "question": "من می‌پرسم.",
+          "expected_answer": "I ask.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-070",
+          "question": "من شروع می‌کنم.",
+          "expected_answer": "I start.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-071",
+          "question": "من بررسی می‌کنم.",
+          "expected_answer": "I check.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-072",
+          "question": "من باز می‌کنم.",
+          "expected_answer": "I open.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-073",
+          "question": "من می‌بندم.",
+          "expected_answer": "I close.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-074",
+          "question": "من قفل می‌کنم.",
+          "expected_answer": "I lock.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-075",
+          "question": "من می‌فهمم.",
+          "expected_answer": "I understand.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-076",
+          "question": "من درس می‌خوانم.",
+          "expected_answer": "I study.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-077",
+          "question": "من راه می‌روم.",
+          "expected_answer": "I walk.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-078",
+          "question": "من می‌گیرم.",
+          "expected_answer": "I get.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-079",
+          "question": "من می‌دهم.",
+          "expected_answer": "I give.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-080",
+          "question": "من مشاهده می‌کنم.",
+          "expected_answer": "I observe.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-081",
+          "question": "من درخواست می‌کنم.",
+          "expected_answer": "I request.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-082",
+          "question": "من بازنویسی می‌کنم.",
+          "expected_answer": "I rewrite.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-083",
+          "question": "من به یاد می‌آورم.",
+          "expected_answer": "I recall.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-084",
+          "question": "من دوباره می‌سازم.",
+          "expected_answer": "I rebuild.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-085",
+          "question": "او (مرد) می‌گوید.",
+          "expected_answer": "He says.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-086",
+          "question": "او (زن) می‌بیند.",
+          "expected_answer": "She sees.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-087",
+          "question": "او (مرد) می‌شنود.",
+          "expected_answer": "He hears.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-088",
+          "question": "او (زن) تماشا می‌کند.",
+          "expected_answer": "She watches.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-089",
+          "question": "او (مرد) گوش می‌دهد.",
+          "expected_answer": "He listens.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-090",
+          "question": "او (زن) می‌نویسد.",
+          "expected_answer": "She writes.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-091",
+          "question": "او (مرد) می‌پرسد.",
+          "expected_answer": "He asks.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-092",
+          "question": "او (زن) شروع می‌کند.",
+          "expected_answer": "She starts.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-093",
+          "question": "او (مرد) بررسی می‌کند.",
+          "expected_answer": "He checks.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-094",
+          "question": "او (زن) باز می‌کند.",
+          "expected_answer": "She opens.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-095",
+          "question": "او (مرد) می‌بندد.",
+          "expected_answer": "He closes.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-096",
+          "question": "او (زن) قفل می‌کند.",
+          "expected_answer": "She locks.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-097",
+          "question": "او (مرد) می‌فهمد.",
+          "expected_answer": "He understands.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-098",
+          "question": "او (زن) درس می‌خواند.",
+          "expected_answer": "She studies.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-099",
+          "question": "او (مرد) می‌گیرد.",
+          "expected_answer": "He gets.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-100",
+          "question": "او (زن) می‌دهد.",
+          "expected_answer": "She gives.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-101",
+          "question": "او (مرد) مشاهده می‌کند.",
+          "expected_answer": "He observes.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-102",
+          "question": "او (زن) درخواست می‌کند.",
+          "expected_answer": "She requests.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-103",
+          "question": "او (مرد) کمک می‌کند.",
+          "expected_answer": "He helps.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-104",
+          "question": "او (زن) بازگو می‌کند.",
+          "expected_answer": "She retells.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-105",
+          "question": "او (مرد) به یاد می‌آورد.",
+          "expected_answer": "He recalls.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-106",
+          "question": "او (زن) بازنویسی می‌کند.",
+          "expected_answer": "She rewrites.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-107",
+          "question": "او (مرد) دوباره می‌سازد.",
+          "expected_answer": "He rebuilds.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-108",
+          "question": "او (زن) می‌خورد.",
+          "expected_answer": "She eats.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-109",
+          "question": "از من بپرس.",
+          "expected_answer": "Ask me.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-110",
+          "question": "به من بگو.",
+          "expected_answer": "Tell me.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-111",
+          "question": "به من بده.",
+          "expected_answer": "Give me.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-112",
+          "question": "به من کمک کن.",
+          "expected_answer": "Assist me.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-113",
+          "question": "نام کوچک من علی است.",
+          "expected_answer": "My given name is Ali.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-114",
+          "question": "نام خانوادگی تو چیست؟",
+          "expected_answer": "What is your family name?",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-115",
+          "question": "من شروع می‌کنم.",
+          "expected_answer": "I begin.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-116",
+          "question": "او (مرد) شروع می‌کند.",
+          "expected_answer": "He begins.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-117",
+          "question": "من بازگو می‌کنم.",
+          "expected_answer": "I retell.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-118",
+          "question": "من دوباره به دست می‌آورم.",
+          "expected_answer": "I regain.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-119",
+          "question": "من می‌بندم.",
+          "expected_answer": "I shut.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-120",
+          "question": "من حک می‌کنم.",
+          "expected_answer": "I inscribe.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-121",
+          "question": "من ثبت ورود می‌کنم.",
+          "expected_answer": "I check in.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-122",
+          "question": "من ترک هتل می‌کنم.",
+          "expected_answer": "I check out.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-123",
+          "question": "به من کمک کن.",
+          "expected_answer": "Aid me.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-124",
+          "question": "تو یک سؤال داری.",
+          "expected_answer": "You have a question.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-125",
+          "question": "آن‌ها یک سؤال دارند.",
+          "expected_answer": "They have a question.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-vt-126",
+          "question": "آن خانه من است.",
+          "expected_answer": "It is my house.",
+          "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "time_limit": 60
+        }
+      ]
+    },
+    {
       "id": "evolve-1-l01-correction",
       "type": "grammar_correction",
       "title": "اصلاح جمله",
