@@ -63,8 +63,8 @@ test('the lesson file has a word translation exercise and every item in it is va
   const result = flattenLesson(lessonFile, { book: 'evolve-1', lesson: 'lesson-01' });
   assert.deepEqual(result.invalid, []);
   const words = result.questions.filter((q) => q.category === 'word_translation');
-  // 10 from the first exercise and 112 built by swapping words into the existing sentence patterns.
-  assert.equal(words.length, 122);
+  // The first 10 plus every other sentence of the lesson that has a Persian text (see the merged sentence pool).
+  assert.equal(words.length, 126);
   assert.ok(words.every((q) => q.presentation === 'text' && q.word_bank.length >= 2));
 });
 
