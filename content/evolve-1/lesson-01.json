@@ -167,7 +167,10 @@
           "expected_answer": "We have a teacher.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a teacher."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-16",
@@ -191,7 +194,10 @@
           "expected_answer": "I am a partner.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: partner = شریک / همراه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I'm a partner."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-19",
@@ -367,7 +373,10 @@
           "expected_answer": "That is my tutor.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی؛ that = آن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "That's my tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-41",
@@ -375,7 +384,10 @@
           "expected_answer": "That is my group.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: group = گروه؛ that = آن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "That's my group."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-42",
@@ -383,7 +395,10 @@
           "expected_answer": "That is my house.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: house = خانه (ساختمان)؛ that = آن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "That's my house."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-43",
@@ -391,7 +406,10 @@
           "expected_answer": "That is my goal.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: that = آن؛ goal = هدف. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "That's my goal."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-44",
@@ -399,7 +417,10 @@
           "expected_answer": "I have a goal.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: goal = هدف. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a goal."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-45",
@@ -407,7 +428,10 @@
           "expected_answer": "I have a team.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: team = تیم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a team."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-46",
@@ -415,7 +439,10 @@
           "expected_answer": "I have a group.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: group = گروه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a group."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-47",
@@ -423,7 +450,10 @@
           "expected_answer": "I have a house.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a house."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-48",
@@ -431,7 +461,10 @@
           "expected_answer": "I have a pair.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: pair = جفت. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a pair."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-49",
@@ -439,7 +472,10 @@
           "expected_answer": "I have a request.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: request = درخواست کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a request."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-50",
@@ -447,7 +483,10 @@
           "expected_answer": "I have a band.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: band = گروه موسیقی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a band."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-51",
@@ -455,7 +494,10 @@
           "expected_answer": "I have a helper.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a helper."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-52",
@@ -463,7 +505,10 @@
           "expected_answer": "I have a tutor.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-53",
@@ -471,7 +516,10 @@
           "expected_answer": "We have a tutor.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-54",
@@ -479,7 +527,10 @@
           "expected_answer": "We have a helper.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a helper."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-55",
@@ -487,7 +538,10 @@
           "expected_answer": "We have a team.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: team = تیم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a team."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-56",
@@ -495,7 +549,10 @@
           "expected_answer": "We have a group.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: group = گروه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a group."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-57",
@@ -503,7 +560,10 @@
           "expected_answer": "We have a goal.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: goal = هدف. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a goal."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-58",
@@ -511,7 +571,10 @@
           "expected_answer": "We have a house.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a house."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-59",
@@ -519,7 +582,10 @@
           "expected_answer": "I am a tutor.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I'm a tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-60",
@@ -527,7 +593,10 @@
           "expected_answer": "I am a helper.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I'm a helper."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-61",
@@ -1023,7 +1092,10 @@
           "expected_answer": "You have a question.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "You've a question."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-125",
@@ -1031,7 +1103,10 @@
           "expected_answer": "They have a question.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "They've a question."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-126",
@@ -1039,7 +1114,10 @@
           "expected_answer": "It is my house.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "It's my house."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-127",
@@ -1047,7 +1125,10 @@
           "expected_answer": "I don't understand.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: به نوع جمله دقت کن..",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I do not understand."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-128",
@@ -1079,7 +1160,10 @@
           "expected_answer": "Do you have any questions?",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: questions = سؤال‌ها. راهنما: به نوع جمله دقت کن..",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "Do you've any questions?"
+          ]
         },
         {
           "id": "evolve-1-l01-tr-132",
@@ -4632,7 +4716,10 @@
           "expected_answer": "We have a teacher.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "We've a teacher."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-016",
@@ -4656,7 +4743,10 @@
           "expected_answer": "I am a partner.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: partner = شریک / همراه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: partner = شریک / همراه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "I'm a partner."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-019",
@@ -4832,7 +4922,10 @@
           "expected_answer": "That is my tutor.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی؛ that = آن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی؛ that = آن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "That's my tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-041",
@@ -4840,7 +4933,10 @@
           "expected_answer": "That is my group.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: group = گروه؛ that = آن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: group = گروه؛ that = آن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "That's my group."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-042",
@@ -4848,7 +4944,10 @@
           "expected_answer": "That is my house.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: house = خانه (ساختمان)؛ that = آن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: house = خانه (ساختمان)؛ that = آن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "That's my house."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-043",
@@ -4856,7 +4955,10 @@
           "expected_answer": "That is my goal.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: that = آن؛ goal = هدف. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: that = آن؛ goal = هدف. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "That's my goal."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-044",
@@ -4864,7 +4966,10 @@
           "expected_answer": "I have a goal.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: goal = هدف. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: goal = هدف. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "I've a goal."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-045",
@@ -4872,7 +4977,10 @@
           "expected_answer": "I have a team.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: team = تیم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: team = تیم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "I've a team."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-046",
@@ -4880,7 +4988,10 @@
           "expected_answer": "I have a group.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: group = گروه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: group = گروه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "I've a group."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-047",
@@ -4888,7 +4999,10 @@
           "expected_answer": "I have a house.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "I've a house."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-048",
@@ -4896,7 +5010,10 @@
           "expected_answer": "I have a pair.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: pair = جفت. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: pair = جفت. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "I've a pair."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-049",
@@ -4904,7 +5021,10 @@
           "expected_answer": "I have a request.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: request = درخواست کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: request = درخواست کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "I've a request."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-050",
@@ -4912,7 +5032,10 @@
           "expected_answer": "I have a band.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: band = گروه موسیقی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: band = گروه موسیقی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "I've a band."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-051",
@@ -4920,7 +5043,10 @@
           "expected_answer": "I have a helper.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "I've a helper."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-052",
@@ -4928,7 +5054,10 @@
           "expected_answer": "I have a tutor.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "I've a tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-053",
@@ -4936,7 +5065,10 @@
           "expected_answer": "We have a tutor.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "We've a tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-054",
@@ -4944,7 +5076,10 @@
           "expected_answer": "We have a helper.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "We've a helper."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-055",
@@ -4952,7 +5087,10 @@
           "expected_answer": "We have a team.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: team = تیم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: team = تیم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "We've a team."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-056",
@@ -4960,7 +5098,10 @@
           "expected_answer": "We have a group.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: group = گروه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: group = گروه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "We've a group."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-057",
@@ -4968,7 +5109,10 @@
           "expected_answer": "We have a goal.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: goal = هدف. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: goal = هدف. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "We've a goal."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-058",
@@ -4976,7 +5120,10 @@
           "expected_answer": "We have a house.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "We've a house."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-059",
@@ -4984,7 +5131,10 @@
           "expected_answer": "I am a tutor.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "I'm a tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-060",
@@ -4992,7 +5142,10 @@
           "expected_answer": "I am a helper.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "I'm a helper."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-061",
@@ -5488,7 +5641,10 @@
           "expected_answer": "You have a question.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "You've a question."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-125",
@@ -5496,7 +5652,10 @@
           "expected_answer": "They have a question.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "They've a question."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-126",
@@ -5504,7 +5663,10 @@
           "expected_answer": "It is my house.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو."
+          "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "accepted_answers": [
+            "It's my house."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-127",
@@ -5512,7 +5674,10 @@
           "expected_answer": "I don't understand.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.."
+          "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
+          "accepted_answers": [
+            "I do not understand."
+          ]
         },
         {
           "id": "evolve-1-l01-vt-128",
@@ -5544,7 +5709,10 @@
           "expected_answer": "Do you have any questions?",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: questions = سؤال‌ها. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.."
+          "hint": "کلمه‌های کلیدی: questions = سؤال‌ها. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
+          "accepted_answers": [
+            "Do you've any questions?"
+          ]
         },
         {
           "id": "evolve-1-l01-vt-132",
@@ -5665,7 +5833,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I has a question.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a question."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-09",
@@ -5863,7 +6034,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "That are my tutor.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "That's my tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-31",
@@ -5872,7 +6046,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "That are my group.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "That's my group."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-32",
@@ -5881,7 +6058,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "That are my house.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "That's my house."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-33",
@@ -5890,7 +6070,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "That are my goal.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "That's my goal."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-34",
@@ -5899,7 +6082,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I has a goal.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a goal."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-35",
@@ -5908,7 +6094,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I has a team.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a team."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-36",
@@ -5917,7 +6106,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I has a group.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a group."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-37",
@@ -5926,7 +6118,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I has a house.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a house."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-38",
@@ -5935,7 +6130,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I has a pair.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a pair."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-39",
@@ -5944,7 +6142,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I has a request.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a request."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-40",
@@ -5953,7 +6154,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I has a band.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a band."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-41",
@@ -5962,7 +6166,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I has a helper.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a helper."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-42",
@@ -5971,7 +6178,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I has a tutor.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I've a tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-43",
@@ -5980,7 +6190,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "We has a tutor.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-44",
@@ -5989,7 +6202,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "We has a helper.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a helper."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-45",
@@ -5998,7 +6214,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "We has a team.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a team."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-46",
@@ -6007,7 +6226,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "We has a group.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a group."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-47",
@@ -6016,7 +6238,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "We has a goal.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a goal."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-48",
@@ -6025,7 +6250,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "We has a home.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a home."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-49",
@@ -6034,7 +6262,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I is a tutor.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I'm a tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-50",
@@ -6043,7 +6274,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I is a helper.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I'm a helper."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-51",
@@ -6574,7 +6808,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "You has a question.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "You've a question."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-110",
@@ -6583,7 +6820,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "They has a question.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "They've a question."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-111",
@@ -6592,7 +6832,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "It are my house.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "It's my house."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-112",
@@ -6619,7 +6862,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "We has a teacher.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a teacher."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-115",
@@ -6637,7 +6883,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I is a partner.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "I'm a partner."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-117",
@@ -6646,7 +6895,10 @@
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "We has a house.",
-          "time_limit": 60
+          "time_limit": 60,
+          "accepted_answers": [
+            "We've a house."
+          ]
         },
         {
           "id": "evolve-1-l01-gc-118",
@@ -6965,7 +7217,8 @@
           "question": "جمله را منفی کن: That is my tutor.",
           "expected_answer": "That is not my tutor.",
           "accepted_answers": [
-            "That isn't my tutor."
+            "That isn't my tutor.",
+            "That's not my tutor."
           ],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
           "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: not = نه.",
@@ -6976,7 +7229,8 @@
           "question": "جمله را منفی کن: That is my group.",
           "expected_answer": "That is not my group.",
           "accepted_answers": [
-            "That isn't my group."
+            "That isn't my group.",
+            "That's not my group."
           ],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
           "hint": "کلمه‌های کلیدی: group = گروه. راهنما: not = نه.",
@@ -6987,7 +7241,8 @@
           "question": "جمله را منفی کن: That is my house.",
           "expected_answer": "That is not my house.",
           "accepted_answers": [
-            "That isn't my house."
+            "That isn't my house.",
+            "That's not my house."
           ],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
           "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: not = نه.",
@@ -6998,7 +7253,8 @@
           "question": "جمله را منفی کن: That is my goal.",
           "expected_answer": "That is not my goal.",
           "accepted_answers": [
-            "That isn't my goal."
+            "That isn't my goal.",
+            "That's not my goal."
           ],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
           "hint": "کلمه‌های کلیدی: goal = هدف. راهنما: not = نه.",
@@ -7064,7 +7320,8 @@
           "question": "جمله را منفی کن: It is my house.",
           "expected_answer": "It is not my house.",
           "accepted_answers": [
-            "It isn't my house."
+            "It isn't my house.",
+            "It's not my house."
           ],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
           "hint": "کلمه‌های کلیدی: house = خانه (ساختمان). راهنما: not = نه.",
