@@ -188,7 +188,7 @@ Writing rules
 - One grammar point per question, matching its topic.
 - Instructions, explanations, hints, translations and glossary meanings are in Persian. English sentences and answers are in English.
 - Whenever an instruction names a grammar term in Persian, write the English term next to it in brackets, for example: مترادف (synonym), متضاد (antonym), زمان حال ساده (present simple). Never write the Persian term alone.
-- Use normal English punctuation. Final punctuation (. ! ?) is ignored when answers are checked.
+- Use normal English punctuation. Final punctuation (. ! ?) and commas are ignored when answers are checked, so "Sorry, what page?" and "Sorry what page" are the same answer.
 - Use contractions only when that form is listed in accepted_answers. Write them with a straight apostrophe (').
 - Accepted answers: list every correct form a learner may type, for example both "She is not a teacher." and "She isn't a teacher.". Word order matters: "Isn't she?" and "Is she not?" are different answers, and each one must be listed if it is correct.
 - Vocabulary that asks for several words: answer_mode "list", min_items set to the number asked, and accepted_answers holding every correct word.

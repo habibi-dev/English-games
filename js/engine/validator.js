@@ -8,6 +8,8 @@
  * Normalization applied to both the learner's answer and each accepted answer:
  * - Unicode NFC
  * - curly apostrophes/quotes -> straight ones (keyboard/speech output differences only)
+ * - commas (Latin or Persian) treated as spaces, since speech input cannot type them
+ *   ("Sorry, what page?" and "Sorry what page" are the same answer; digit groups such as 1,000 are kept)
  * - extra spaces collapsed and trimmed
  * - terminal punctuation (. ! ?) removed
  * - case-insensitive (lowercased)
@@ -20,6 +22,7 @@ export function normalizeAnswer(text) {
     .normalize('NFC')
     .replace(/[\u2018\u2019\u02BC]/g, "'")
     .replace(/[\u201C\u201D]/g, '"')
+    .replace(/(?<!\d),|,(?!\d)|،/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()
     .replace(/\s*[.!?]+$/, '')
