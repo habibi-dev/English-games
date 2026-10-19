@@ -1271,6 +1271,9 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: can = می‌توانم / توانستن؛ repeat = تکرار کردن. راهنما: به نوع جمله دقت کن..",
           "time_limit": 60,
+          "accepted_answers": [
+            "Can you repeat that please?"
+          ],
           "translation": "می‌توانی آن را تکرار کنی، لطفاً؟"
         },
         {
@@ -6312,6 +6315,9 @@
           "question": "می‌توانی آن را تکرار کنی، لطفاً؟",
           "expected_answer": "Can you repeat that, please?",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
+          "accepted_answers": [
+            "Can you repeat that please?"
+          ],
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: can = می‌توانم / توانستن؛ repeat = تکرار کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
           "translation": "می‌توانی آن را تکرار کنی، لطفاً؟"
