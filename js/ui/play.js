@@ -788,7 +788,6 @@ function renderQuestion(root, session, flow) {
 
   tick();
   timerId = setInterval(tick, 250);
-  widget.focus();
 }
 
 // Translation questions show a Persian sentence to translate. The learner can hear it read in Persian,
@@ -853,6 +852,13 @@ function questionBlock(q) {
   // since it would show the words). The learner answers from what they hear.
   if (q.presentation === 'audio' && sentence) {
     const play = questionSpeakButton(sentence, { big: true });
+    // Played once by itself when the question appears. The pulse shows that it is playing; the button replays it.
+    if (play) {
+      speak(sentence, {
+        onStart: () => play.classList.add('speaking'),
+        onEnd: () => play.classList.remove('speaking'),
+      });
+    }
     return h(
       'div',
       { class: 'question-block listen-only' },

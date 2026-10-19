@@ -28,14 +28,15 @@ export function createAnswerWidget(question, { onSubmit }) {
     case 'grammar_correction':
       return textAnswer(onSubmit, question.incorrect_sentence);
     default:
-      // quick_translation, positive_negative_question and voice_translation all use a text box;
-      // the microphone button is available on every text answer.
+      // quick_translation, positive_negative_question, voice_translation and dictation use a text box.
+      // Dictation is about typing what is heard, so it has no voice input.
       return textAnswer(
         onSubmit,
         '',
         question.answer_mode === 'list'
           ? `At least ${question.min_items ?? 1} answers; separate them with commas or spaces`
           : undefined,
+        { voice: question.category !== 'dictation' },
       );
   }
 }
@@ -107,16 +108,19 @@ function createMicButton(input) {
   return button;
 }
 
-function textAnswer(onSubmit, initial = '', placeholder = 'English answer') {
+function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { voice = true } = {}) {
   const input = h('input', {
     type: 'text',
     class: 'answer-input',
     dir: 'ltr',
     value: initial,
     placeholder,
+    // No suggestions, corrections or completions: the learner must type the sentence from memory.
     autocomplete: 'off',
+    autocorrect: 'off',
     autocapitalize: 'off',
     spellcheck: false,
+    name: 'answer-text',
     onkeydown: (event) => {
       if (event.key === 'Enter') {
         // Enter behaves like the "send" button: it only submits. preventDefault stops the browser
@@ -127,14 +131,14 @@ function textAnswer(onSubmit, initial = '', placeholder = 'English answer') {
     },
   });
 
-  const mic = createMicButton(input);
+  const mic = voice ? createMicButton(input) : null;
 
   return {
     element: h(
       'div',
       { class: 'answer-box' },
       h('div', { class: 'input-row' }, input, mic),
-      mic
+      !voice || mic
         ? null
         : h(
             'p',
