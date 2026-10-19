@@ -547,6 +547,22 @@ p {
   box-shadow: none;
 }
 
+/* Hint: a warm yellow button, with a yellow edge (a grey edge looked wrong on it) */
+.btn.hint-btn {
+  background: #fef9c3;
+  border: 1px solid #fde68a;
+  color: #92400e;
+  box-shadow: 0 3px 0 #fcd34d;
+}
+
+.btn.hint-btn:hover:not(:disabled) {
+  background: #fef08a;
+}
+
+.btn.hint-btn:active:not(:disabled) {
+  box-shadow: none;
+}
+
 /* Microphone: a square icon button next to the answer input.
    Written as .btn.mic so it beats .btn.ghost (which sets background: transparent). */
 .btn.mic {
@@ -2601,11 +2617,11 @@ textarea {
 }
 
 .play-actions .btn.primary {
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.28);
+  box-shadow: 0 4px 0 #1e40af, 0 8px 16px rgba(79, 70, 229, 0.25);
 }
 
 .play-actions .btn.skip-btn {
-  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.16);
+  box-shadow: 0 4px 0 #a5b4fc;
 }
 
 /* Feedback: one compact block, sentence and speak buttons on the same line */
@@ -3715,20 +3731,22 @@ textarea {
   margin-top: 18px;
 }
 
-/* Skip: a small red button beside Submit answer. It gives up on the question (counted as wrong). */
+/* Skip: the secondary action beside Submit answer, in the app's indigo theme (not red).
+   It gives up on the question (counted as wrong). */
 .play-actions .btn.skip-btn {
   flex: none;
   min-width: 96px;
   min-height: 46px;
   font-size: 1rem;
   border-radius: 14px;
-  background: #fef2f2;
-  border: 2px solid #fca5a5;
-  color: #b91c1c;
+  background: var(--primary-soft);
+  border: 2px solid #c7d2fe;
+  color: var(--primary-dark);
+  box-shadow: 0 4px 0 #a5b4fc;
 }
 
 .play-actions .btn.skip-btn:hover:not(:disabled) {
-  background: #fee2e2;
+  background: #d4dffd;
 }
 
 /* The answer box is a clear panel with a label above it, so the place to answer is easy to see. */

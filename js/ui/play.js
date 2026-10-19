@@ -1040,7 +1040,7 @@ function renderQuestion(root, session, flow) {
           ? h(
               'div',
               { class: 'hint-row' },
-              keepFocus(h('button', { type: 'button', class: 'btn ghost small', onclick: () => (hintText.hidden = false) }, '💡 Hint')),
+              keepFocus(h('button', { type: 'button', class: 'btn ghost small hint-btn', onclick: () => (hintText.hidden = false) }, '💡 Hint')),
               hintText,
             )
           : null,
