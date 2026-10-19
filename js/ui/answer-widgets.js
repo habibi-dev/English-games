@@ -9,7 +9,7 @@ import { h, toast, keepFocus } from './dom.js';
 import { playButton } from './speech-out.js';
 
 export const INSTRUCTIONS = {
-  quick_translation: 'Translate the sentence into English.',
+  quick_translation: 'به انگلیسی ترجمه کن',
   sentence_builder: 'Put the words together in the correct order.',
   grammar_correction: 'Correct the wrong sentence and write the whole correct sentence.',
   multiple_choice: 'Choose the correct option.',

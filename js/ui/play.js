@@ -8,7 +8,8 @@ import { filterQuestions, pickQuestions, shuffle, GameSession } from '../engine/
 import { takeReview } from './review-handoff.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, XP_PER_LEVEL } from '../progress/player.js';
-import { getSettings, saveSettings } from '../storage/settings.js';
+import { doneIds, progressOf, markPractice } from '../progress/lesson-progress.js';
+import { getSettings, saveSettings, getLessonResets, markLessonReset } from '../storage/settings.js';
 import { h, toast, fa, ltr, badge, percent, keepFocus } from './dom.js';
 import { createAnswerWidget, INSTRUCTIONS } from './answer-widgets.js';
 import { splitPrompt } from './prompt.js';
@@ -181,9 +182,17 @@ async function startReview(root, ids) {
   root.replaceChildren(h('p', { class: 'loading' }, 'Getting ready…'));
   const [questions, attempts] = await Promise.all([listQuestions(), loadAttempts()]);
   const byId = new Map(questions.map((q) => [q.id, q]));
-  const pool = shuffle(ids.map((id) => byId.get(id)).filter((q) => q && q.enabled !== false));
+  const resets = getLessonResets();
+  const done = doneIds(questions, attempts, resets);
+  // Questions already answered correctly in this round are not offered again.
+  const pool = shuffle(
+    markPractice(
+      ids.map((id) => byId.get(id)).filter((q) => q && q.enabled !== false && !done.has(q.id)),
+      resets,
+    ),
+  );
   if (pool.length === 0) {
-    toast('No questions to review are left in the bank.', 'warn');
+    toast('No questions to review are left.', 'warn');
     await showSetup(root);
     return;
   }
@@ -201,6 +210,14 @@ async function showSetup(root) {
 
   const [questions, lessons, attempts] = await Promise.all([listQuestions(), listLessons(), loadAttempts()]);
   const profile = playerProfile(attempts);
+  const resets = getLessonResets();
+  // Questions answered correctly in the current round are done: they are not offered again.
+  const done = doneIds(questions, attempts, resets);
+  const progressOfLessons = (keys) =>
+    progressOf(
+      questions.filter((q) => keys.includes(lessonKey(q.book, q.lesson))),
+      done,
+    );
   const saved = getSettings();
   const series = seriesList(lessons);
   const allBooks = series.flatMap((entry) => entry.books);
@@ -223,8 +240,11 @@ async function showSetup(root) {
   let info = null;
   let startButton = null;
 
+  // Questions the mission can still offer: enabled, matching the settings, and not done yet in this round.
   function available() {
-    return filterQuestions(questions, { books: [state.book], lessons: state.lessons, categories: state.categories });
+    return filterQuestions(questions, { books: [state.book], lessons: state.lessons, categories: state.categories }).filter(
+      (q) => !done.has(q.id),
+    );
   }
 
   function refresh() {
@@ -242,17 +262,26 @@ async function showSetup(root) {
   }
 
   async function start() {
-    const chosen = pickQuestions(questions, { books: [state.book], lessons: state.lessons, categories: state.categories }, {
+    // Read the attempts again: a game that just ended may have finished more questions.
+    const attempts = await loadAttempts();
+    const freshDone = doneIds(questions, attempts, getLessonResets());
+    const filters = { books: [state.book], lessons: state.lessons, categories: state.categories };
+    const chosen = pickQuestions(questions.filter((q) => !freshDone.has(q.id)), filters, {
       count: state.count[0] || Infinity,
     });
     if (chosen.length === 0) {
-      toast('No questions match these settings.', 'warn');
+      toast(
+        filterQuestions(questions, filters).length
+          ? 'Every question of this mission is done. Reset a finished lesson to practise it again.'
+          : 'No questions match these settings.',
+        'warn',
+      );
       return;
     }
     // "auto" keeps each exercise's own presentation; the other choices apply to the whole mission.
     const forced = state.presentation[0];
-    const pool = forced === 'auto' ? chosen : chosen.map((question) => ({ ...question, presentation: forced }));
-    const attempts = await loadAttempts();
+    const picked = forced === 'auto' ? chosen : chosen.map((question) => ({ ...question, presentation: forced }));
+    const pool = markPractice(picked, getLessonResets());
     const before = playerProfile(attempts);
     // Questions answered correctly before pay no points again.
     const alreadyScored = attempts.filter((a) => a.correct).map((a) => a.questionId);
@@ -352,22 +381,33 @@ async function showSetup(root) {
         title: 'All lessons in this book',
         subtitle: `For review · ${plural(allKeys.length, 'lesson')}`,
         dashed: true,
+        progress: progressOfLessons(allKeys),
         onclick: () => {
           state.lessons = [...allKeys];
           drawSettingsStep();
         },
       }),
-      ...book.lessons.map((lesson) =>
-        lessonRow({
+      ...book.lessons.map((lesson) => {
+        const progress = progressOfLessons([lesson.key]);
+        return lessonRow({
           title: lesson.lessonTitle,
           subtitle: plural(lesson.count, 'question'),
-          tag: lesson.key === lastKey ? 'Last practised' : null,
+          tag: progress.complete ? 'Completed' : lesson.key === lastKey ? 'Last practised' : null,
+          progress,
+          // A finished lesson can start a new round. The new round is practice only.
+          onReset: progress.complete
+            ? () => {
+                markLessonReset(lesson.key);
+                toast(`${lesson.lessonTitle} was reset. Practice rounds give no points.`, 'info');
+                showSetup(root);
+              }
+            : null,
           onclick: () => {
             state.lessons = [lesson.key];
             drawSettingsStep();
           },
-        }),
-      ),
+        });
+      }),
     );
     info = null;
     startButton = null;
@@ -377,7 +417,7 @@ async function showSetup(root) {
       h(
         'section',
         { class: 'card setup game' },
-        bookHeader(book, allKeys.length),
+        bookHeader(book, allKeys.length, progressOfLessons(allKeys)),
         h(
           'div',
           { class: 'actions' },
@@ -405,7 +445,7 @@ async function showSetup(root) {
       h(
         'section',
         { class: 'card setup game' },
-        bookHeader(book, book.lessons.length),
+        bookHeader(book, book.lessons.length, progressOfLessons(state.lessons)),
         h(
           'div',
           { class: 'actions' },
@@ -494,22 +534,52 @@ function lastPracticedKey(book) {
   return book?.lessons.some((lesson) => lesson.key === last) ? last : null;
 }
 
-/** One tile of the lesson grid: the title, a subtitle and an optional tag. Tapping it chooses it. */
-function lessonRow({ title, subtitle, dashed = false, tag = null, onclick }) {
+/** A thin bar with the done / total numbers and the percent. `progress` comes from progressOf. */
+function progressLine(progress) {
   return h(
+    'span',
+    { class: 'progress-line' },
+    h(
+      'span',
+      { class: 'progress-bar', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': progress.percent },
+      h('span', { class: 'progress-fill', style: `width: ${progress.percent}%` }),
+    ),
+    h('span', { class: 'muted small', dir: 'ltr' }, `${fa(progress.done)} of ${fa(progress.total)} done · ${fa(progress.percent)}%`),
+  );
+}
+
+/**
+ * One tile of the lesson grid: the title, a subtitle, an optional tag and the progress.
+ * Tapping it chooses it. A finished lesson also gets a reset button under the tile (a button cannot hold a button).
+ */
+function lessonRow({ title, subtitle, dashed = false, tag = null, progress = null, onclick, onReset = null }) {
+  const row = h(
     'button',
     {
       type: 'button',
       class: `lesson-row${dashed ? ' all-row' : ''}`,
       onclick,
     },
-    h('span', { class: 'lesson-main' }, h('strong', { dir: 'auto' }, title), h('span', { class: 'muted small' }, subtitle)),
+    h(
+      'span',
+      { class: 'lesson-main' },
+      h('strong', { dir: 'auto' }, title),
+      h('span', { class: 'muted small' }, subtitle),
+      progress ? progressLine(progress) : null,
+    ),
     tag ? h('span', { class: 'lesson-tag' }, tag) : null,
+  );
+  if (!onReset) return row;
+  return h(
+    'div',
+    { class: 'lesson-cell' },
+    row,
+    keepFocus(h('button', { type: 'button', class: 'btn ghost small reset-btn', onclick: onReset }, '↻ Reset lesson')),
   );
 }
 
-/** The chosen book as a card: its cover, a small label, the title, and the level and lesson count as pills. */
-function bookHeader(book, lessonCount) {
+/** The chosen book as a card: its cover, a small label, the title, the level and lesson count, and its progress on the end side. */
+function bookHeader(book, lessonCount, progress = null) {
   return h(
     'div',
     { class: 'book-head' },
@@ -526,6 +596,19 @@ function bookHeader(book, lessonCount) {
         h('span', { class: 'meta-pill' }, plural(lessonCount, 'lesson')),
       ),
     ),
+    progress
+      ? h(
+          'div',
+          { class: 'book-progress', dir: 'ltr' },
+          h('strong', { class: 'book-progress-value' }, `${fa(progress.percent)}%`),
+          h('span', { class: 'muted small' }, `${fa(progress.done)} of ${fa(progress.total)} done`),
+          h(
+            'span',
+            { class: 'progress-bar', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': progress.percent },
+            h('span', { class: 'progress-fill', style: `width: ${progress.percent}%` }),
+          ),
+        )
+      : null,
   );
 }
 
@@ -770,8 +853,9 @@ function renderQuestion(root, session, flow) {
           badge(CATEGORIES[q.category] ?? q.category, 'accent'),
           badge(topicLabel(q.topic)),
           badge(DIFFICULTIES[q.difficulty] ?? q.difficulty),
+          q.practice ? badge('Practice · no points') : null,
         ),
-        h('p', { class: 'instruction' }, INSTRUCTIONS[q.category] ?? ''),
+        h('p', { class: 'instruction', dir: 'auto' }, INSTRUCTIONS[q.category] ?? ''),
         questionBlock(q),
       ),
       // Answer zone: the input (or choices) and the optional hint.

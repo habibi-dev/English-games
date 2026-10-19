@@ -29,16 +29,18 @@ export function bestStreak(attempts) {
   return best;
 }
 
+/** Profile from the scored attempts only: practice attempts (of a reset lesson) add no XP or stats. */
 export function playerProfile(attempts) {
-  const xp = totalXp(attempts);
-  const correct = attempts.filter((a) => a.correct).length;
+  const scored = attempts.filter((a) => !a.practice);
+  const xp = totalXp(scored);
+  const correct = scored.filter((a) => a.correct).length;
   return {
     xp,
     level: levelFor(xp),
     levelProgress: levelProgress(xp),
-    answered: attempts.length,
-    accuracy: attempts.length ? correct / attempts.length : null,
-    bestStreak: bestStreak(attempts),
+    answered: scored.length,
+    accuracy: scored.length ? correct / scored.length : null,
+    bestStreak: bestStreak(scored),
   };
 }
 

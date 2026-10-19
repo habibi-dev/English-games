@@ -3061,3 +3061,56 @@ textarea {
   font-size: 1rem;
   line-height: 1.7;
 }
+
+/* Progress of a lesson or a book: a thin bar with the done / total numbers and the percent. */
+.progress-line {
+  display: grid;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.progress-bar {
+  display: block;
+  height: 7px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.progress-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #6366f1, #22c55e);
+  transition: width 0.3s ease;
+}
+
+/* A lesson tile and its reset button, stacked. */
+.lesson-cell {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+}
+
+.reset-btn {
+  justify-self: start;
+}
+
+/* Progress of the chosen book (or selected lessons), on the end side of the book card. */
+.book-progress {
+  flex: none;
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+  min-width: 110px;
+}
+
+.book-progress-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+.book-progress .progress-bar {
+  width: 110px;
+}

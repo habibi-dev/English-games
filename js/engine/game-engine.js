@@ -142,7 +142,7 @@ export class GameSession {
       wrong: this.#outcomes.length - correct,
       timeouts,
       score: this.#outcomes.reduce((sum, o) => sum + o.points, 0),
-      maxScore: this.#questions.reduce((sum, q) => sum + (q.points ?? 0), 0),
+      maxScore: this.#questions.reduce((sum, q) => sum + (q.practice ? 0 : q.points ?? 0), 0),
     };
   }
 
@@ -155,7 +155,9 @@ export class GameSession {
     const elapsedMs = this.#clock() - this.#startedAt;
     // A question pays its points only on the first correct answer. Repeats are still recorded and still count for the streak.
     const id = data.question.id;
-    const points = data.correct && !this.#scored.has(id) ? data.question.points ?? 0 : 0;
+    // Practice questions (of a reset lesson) never pay points.
+    const pays = data.correct && !data.question.practice && !this.#scored.has(id);
+    const points = pays ? data.question.points ?? 0 : 0;
     if (data.correct) this.#scored.add(id);
     const outcome = { ...data, points, elapsedMs };
     this.#outcomes.push(outcome);
