@@ -47,7 +47,7 @@ export const EXAMPLE_QUESTIONS = Object.freeze([
     topic: 'vocabulary',
     category: 'vocabulary',
     difficulty: 'medium',
-    question: 'دو مترادف این کلمه را بگو: big',
+    question: 'دو مترادف (synonym) این کلمه را بگو: big',
     expected_answer: 'large',
     accepted_answers: ['large', 'huge', 'great', 'enormous'],
     answer_mode: 'list',
@@ -106,6 +106,7 @@ ${typeLines}
 Writing rules
 - One grammar point per question, matching its topic.
 - Instructions, explanations, hints and glossary meanings are in Persian. English sentences and answers are in English.
+- Whenever an instruction names a grammar term in Persian, write the English term next to it in brackets, for example: مترادف (synonym), متضاد (antonym), زمان حال ساده (present simple). Never write the Persian term alone.
 - Use normal English punctuation. Final punctuation (. ! ?) is ignored when answers are checked.
 - Use contractions only when that form is listed in accepted_answers.
 - Keep questions short and clear for a beginner.
