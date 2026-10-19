@@ -16,6 +16,7 @@ import { splitPrompt } from './prompt.js';
 import { speak, speakButtons, speakBar, completeSentence, contextSentence, questionSpeakButton } from './speech-out.js';
 import { playResultSound } from './sounds.js';
 import { beginMission, endMission } from '../progress/activity.js';
+import { keepScreenOn } from './wake-lock.js';
 import { applySpellingMode } from '../engine/spelling.js';
 
 /** True when `word` appears as a whole word in `sentence` (case-insensitive). */
@@ -131,6 +132,7 @@ export async function renderPlay(root) {
     // Leaving the screen during a mission ends it (its time up to now is saved). Does nothing otherwise.
     endMission();
     gameInProgress = false;
+    keepScreenOn(false);
     settingsStart = null;
   };
 }
@@ -810,6 +812,8 @@ function renderQuestion(root, session, flow) {
   stopTimer();
   closeModal();
   gameInProgress = true;
+  // The screen stays on for the whole game, so it does not sleep between questions.
+  keepScreenOn(true);
   settingsStart = null;
   // Every new question starts at the top of the page.
   window.scrollTo(0, 0);
@@ -1169,6 +1173,7 @@ function resultTile(icon, value, label, tone) {
 
 function renderResults(root, session, flow) {
   gameInProgress = false;
+  keepScreenOn(false);
   // The mission is over: its time is saved now.
   endMission();
   const summary = session.summary();

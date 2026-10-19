@@ -7662,912 +7662,280 @@
           "id": "evolve-1-l01-q-03",
           "question": "جمله را سؤالی کن: My first name is Ali.",
           "expected_answer": "Is my first name Ali?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-04",
-          "question": "جمله را سؤالی کن: I have a question.",
-          "expected_answer": "Do I have a question?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-05",
-          "question": "جمله را سؤالی کن: He eats.",
-          "expected_answer": "Does he eat?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-06",
           "question": "جمله را سؤالی کن: This is my tutor.",
           "expected_answer": "Is this my tutor?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-07",
           "question": "جمله را سؤالی کن: This is my instructor.",
           "expected_answer": "Is this my instructor?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-08",
           "question": "جمله را سؤالی کن: This is my spouse.",
           "expected_answer": "Is this my spouse?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-09",
           "question": "جمله را سؤالی کن: This is my helper.",
           "expected_answer": "Is this my helper?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-10",
           "question": "جمله را سؤالی کن: This is my mother.",
           "expected_answer": "Is this my mother?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-11",
           "question": "جمله را سؤالی کن: This is my group.",
           "expected_answer": "Is this my group?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-12",
           "question": "جمله را سؤالی کن: This is my team.",
           "expected_answer": "Is this my team?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-13",
           "question": "جمله را سؤالی کن: This is my band.",
           "expected_answer": "Is this my band?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-14",
           "question": "جمله را سؤالی کن: This is my house.",
           "expected_answer": "Is this my house?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-15",
           "question": "جمله را سؤالی کن: This is my home.",
           "expected_answer": "Is this my home?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-16",
           "question": "جمله را سؤالی کن: This is my street.",
           "expected_answer": "Is this my street?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-17",
           "question": "جمله را سؤالی کن: This is my road.",
           "expected_answer": "Is this my road?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-18",
           "question": "جمله را سؤالی کن: This is my avenue.",
           "expected_answer": "Is this my avenue?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-19",
           "question": "جمله را سؤالی کن: This is my alley.",
           "expected_answer": "Is this my alley?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-20",
           "question": "جمله را سؤالی کن: This is my goal.",
           "expected_answer": "Is this my goal?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-21",
           "question": "جمله را سؤالی کن: This is my objective.",
           "expected_answer": "Is this my objective?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-22",
           "question": "جمله را سؤالی کن: This is my purpose.",
           "expected_answer": "Is this my purpose?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-23",
           "question": "جمله را سؤالی کن: This is my target.",
           "expected_answer": "Is this my target?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-24",
           "question": "جمله را سؤالی کن: This is my example.",
           "expected_answer": "Is this my example?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-25",
           "question": "جمله را سؤالی کن: This is my answer.",
           "expected_answer": "Is this my answer?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-26",
           "question": "جمله را سؤالی کن: This is my request.",
           "expected_answer": "Is this my request?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-27",
           "question": "جمله را سؤالی کن: That is my tutor.",
           "expected_answer": "Is that my tutor?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-28",
           "question": "جمله را سؤالی کن: That is my group.",
           "expected_answer": "Is that my group?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-29",
           "question": "جمله را سؤالی کن: That is my house.",
           "expected_answer": "Is that my house?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-30",
           "question": "جمله را سؤالی کن: That is my goal.",
           "expected_answer": "Is that my goal?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-31",
-          "question": "جمله را سؤالی کن: I have a goal.",
-          "expected_answer": "Do I have a goal?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-32",
-          "question": "جمله را سؤالی کن: I have a team.",
-          "expected_answer": "Do I have a team?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-33",
-          "question": "جمله را سؤالی کن: I have a group.",
-          "expected_answer": "Do I have a group?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-34",
-          "question": "جمله را سؤالی کن: I have a house.",
-          "expected_answer": "Do I have a house?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-35",
-          "question": "جمله را سؤالی کن: I have a pair.",
-          "expected_answer": "Do I have a pair?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-36",
-          "question": "جمله را سؤالی کن: I have a request.",
-          "expected_answer": "Do I have a request?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-37",
-          "question": "جمله را سؤالی کن: I have a band.",
-          "expected_answer": "Do I have a band?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-38",
-          "question": "جمله را سؤالی کن: I have a helper.",
-          "expected_answer": "Do I have a helper?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-39",
-          "question": "جمله را سؤالی کن: I have a tutor.",
-          "expected_answer": "Do I have a tutor?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-40",
-          "question": "جمله را سؤالی کن: We have a tutor.",
-          "expected_answer": "Do we have a tutor?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-41",
-          "question": "جمله را سؤالی کن: We have a helper.",
-          "expected_answer": "Do we have a helper?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-42",
-          "question": "جمله را سؤالی کن: We have a team.",
-          "expected_answer": "Do we have a team?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-43",
-          "question": "جمله را سؤالی کن: We have a group.",
-          "expected_answer": "Do we have a group?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-44",
-          "question": "جمله را سؤالی کن: We have a goal.",
-          "expected_answer": "Do we have a goal?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-45",
-          "question": "جمله را سؤالی کن: We have a home.",
-          "expected_answer": "Do we have a home?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-46",
           "question": "جمله را سؤالی کن: I am a tutor.",
           "expected_answer": "Am I a tutor?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-47",
           "question": "جمله را سؤالی کن: I am a helper.",
           "expected_answer": "Am I a helper?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-48",
-          "question": "جمله را سؤالی کن: I eat.",
-          "expected_answer": "Do I eat?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-49",
-          "question": "جمله را سؤالی کن: I read.",
-          "expected_answer": "Do I read?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-50",
-          "question": "جمله را سؤالی کن: I write.",
-          "expected_answer": "Do I write?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-51",
-          "question": "جمله را سؤالی کن: I watch.",
-          "expected_answer": "Do I watch?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-52",
-          "question": "جمله را سؤالی کن: I listen.",
-          "expected_answer": "Do I listen?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-53",
-          "question": "جمله را سؤالی کن: I say.",
-          "expected_answer": "Do I say?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-54",
-          "question": "جمله را سؤالی کن: I see.",
-          "expected_answer": "Do I see?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-55",
-          "question": "جمله را سؤالی کن: I hear.",
-          "expected_answer": "Do I hear?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-56",
-          "question": "جمله را سؤالی کن: I ask.",
-          "expected_answer": "Do I ask?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-57",
-          "question": "جمله را سؤالی کن: I start.",
-          "expected_answer": "Do I start?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-58",
-          "question": "جمله را سؤالی کن: I check.",
-          "expected_answer": "Do I check?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-59",
-          "question": "جمله را سؤالی کن: I open.",
-          "expected_answer": "Do I open?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-60",
-          "question": "جمله را سؤالی کن: I close.",
-          "expected_answer": "Do I close?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-61",
-          "question": "جمله را سؤالی کن: I lock.",
-          "expected_answer": "Do I lock?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-62",
-          "question": "جمله را سؤالی کن: I understand.",
-          "expected_answer": "Do I understand?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-63",
-          "question": "جمله را سؤالی کن: I study.",
-          "expected_answer": "Do I study?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-64",
-          "question": "جمله را سؤالی کن: I walk.",
-          "expected_answer": "Do I walk?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-65",
-          "question": "جمله را سؤالی کن: I get.",
-          "expected_answer": "Do I get?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-66",
-          "question": "جمله را سؤالی کن: I give.",
-          "expected_answer": "Do I give?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-67",
-          "question": "جمله را سؤالی کن: I observe.",
-          "expected_answer": "Do I observe?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-68",
-          "question": "جمله را سؤالی کن: I request.",
-          "expected_answer": "Do I request?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-69",
-          "question": "جمله را سؤالی کن: I rewrite.",
-          "expected_answer": "Do I rewrite?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-70",
-          "question": "جمله را سؤالی کن: I recall.",
-          "expected_answer": "Do I recall?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-71",
-          "question": "جمله را سؤالی کن: I rebuild.",
-          "expected_answer": "Do I rebuild?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-72",
-          "question": "جمله را سؤالی کن: He says.",
-          "expected_answer": "Does he say?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-73",
-          "question": "جمله را سؤالی کن: She sees.",
-          "expected_answer": "Does she see?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-74",
-          "question": "جمله را سؤالی کن: He hears.",
-          "expected_answer": "Does he hear?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-75",
-          "question": "جمله را سؤالی کن: She watches.",
-          "expected_answer": "Does she watch?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-76",
-          "question": "جمله را سؤالی کن: He listens.",
-          "expected_answer": "Does he listen?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-77",
-          "question": "جمله را سؤالی کن: She writes.",
-          "expected_answer": "Does she write?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-78",
-          "question": "جمله را سؤالی کن: He asks.",
-          "expected_answer": "Does he ask?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-79",
-          "question": "جمله را سؤالی کن: She starts.",
-          "expected_answer": "Does she start?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-80",
-          "question": "جمله را سؤالی کن: He checks.",
-          "expected_answer": "Does he check?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-81",
-          "question": "جمله را سؤالی کن: She opens.",
-          "expected_answer": "Does she open?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-82",
-          "question": "جمله را سؤالی کن: He closes.",
-          "expected_answer": "Does he close?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-83",
-          "question": "جمله را سؤالی کن: She locks.",
-          "expected_answer": "Does she lock?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-84",
-          "question": "جمله را سؤالی کن: He understands.",
-          "expected_answer": "Does he understand?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-85",
-          "question": "جمله را سؤالی کن: She studies.",
-          "expected_answer": "Does she study?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-86",
-          "question": "جمله را سؤالی کن: He gets.",
-          "expected_answer": "Does he get?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-87",
-          "question": "جمله را سؤالی کن: She gives.",
-          "expected_answer": "Does she give?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-88",
-          "question": "جمله را سؤالی کن: He observes.",
-          "expected_answer": "Does he observe?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-89",
-          "question": "جمله را سؤالی کن: She requests.",
-          "expected_answer": "Does she request?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-90",
-          "question": "جمله را سؤالی کن: He helps.",
-          "expected_answer": "Does he help?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-91",
-          "question": "جمله را سؤالی کن: She retells.",
-          "expected_answer": "Does she retell?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-92",
-          "question": "جمله را سؤالی کن: He recalls.",
-          "expected_answer": "Does he recall?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-93",
-          "question": "جمله را سؤالی کن: She rewrites.",
-          "expected_answer": "Does she rewrite?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-94",
-          "question": "جمله را سؤالی کن: He rebuilds.",
-          "expected_answer": "Does he rebuild?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-95",
-          "question": "جمله را سؤالی کن: She eats.",
-          "expected_answer": "Does she eat?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-96",
           "question": "جمله را سؤالی کن: My given name is Ali.",
           "expected_answer": "Is my given name Ali?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-97",
           "question": "جمله را سؤالی کن: This is my husband.",
           "expected_answer": "Is this my husband?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-98",
           "question": "جمله را سؤالی کن: My last name is Habibi.",
           "expected_answer": "Is my last name Habibi?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-99",
-          "question": "جمله را سؤالی کن: I begin.",
-          "expected_answer": "Do I begin?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-100",
-          "question": "جمله را سؤالی کن: He begins.",
-          "expected_answer": "Does he begin?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-101",
-          "question": "جمله را سؤالی کن: I retell.",
-          "expected_answer": "Do I retell?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-102",
-          "question": "جمله را سؤالی کن: I regain.",
-          "expected_answer": "Do I regain?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-103",
-          "question": "جمله را سؤالی کن: I shut.",
-          "expected_answer": "Do I shut?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-104",
-          "question": "جمله را سؤالی کن: I inscribe.",
-          "expected_answer": "Do I inscribe?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-105",
-          "question": "جمله را سؤالی کن: I check in.",
-          "expected_answer": "Do I check in?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-106",
-          "question": "جمله را سؤالی کن: I check out.",
-          "expected_answer": "Do I check out?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-107",
-          "question": "جمله را سؤالی کن: You have a question.",
-          "expected_answer": "Do you have a question?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-108",
-          "question": "جمله را سؤالی کن: They have a question.",
-          "expected_answer": "Do they have a question?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-109",
           "question": "جمله را سؤالی کن: It is my house.",
           "expected_answer": "Is it my house?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-110",
           "question": "جمله را سؤالی کن: This is my wife.",
           "expected_answer": "Is this my wife?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-111",
           "question": "جمله را سؤالی کن: This is my partner.",
           "expected_answer": "Is this my partner?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-112",
-          "question": "جمله را سؤالی کن: We have a teacher.",
-          "expected_answer": "Do we have a teacher?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-113",
-          "question": "جمله را سؤالی کن: He reads.",
-          "expected_answer": "Does he read?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-114",
-          "question": "جمله را سؤالی کن: She walks.",
-          "expected_answer": "Does she walk?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         },
         {
           "id": "evolve-1-l01-q-115",
           "question": "جمله را سؤالی کن: I am a partner.",
           "expected_answer": "Am I a partner?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
-          "time_limit": 60
-        },
-        {
-          "id": "evolve-1-l01-q-116",
-          "question": "جمله را سؤالی کن: We have a house.",
-          "expected_answer": "Do we have a house?",
-          "explanation": "برای سؤالی کردن، فعل کمکی یا is را به ابتدای جمله می‌آوریم.",
-          "hint": "Is / Do / Does / Am = آیا (در ابتدای سؤال)",
+          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
           "time_limit": 60
         }
       ],
