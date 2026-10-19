@@ -8716,6 +8716,772 @@
             "Individuals"
           ],
           "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-11",
+          "question": "جای خالی را کامل کن: My first name ___ Ali.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-12",
+          "question": "جای خالی را کامل کن: This ___ my teacher.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-13",
+          "question": "جای خالی را کامل کن: This ___ my friend.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-14",
+          "question": "جای خالی را کامل کن: I ___ a question.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-15",
+          "question": "جای خالی را کامل کن: He ___.",
+          "expected_answer": "eats",
+          "options": [
+            "eats",
+            "eat",
+            "is"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-16",
+          "question": "جای خالی را کامل کن: This ___ my tutor.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-17",
+          "question": "جای خالی را کامل کن: This ___ my instructor.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-18",
+          "question": "جای خالی را کامل کن: This ___ my spouse.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-19",
+          "question": "جای خالی را کامل کن: This ___ my helper.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-20",
+          "question": "جای خالی را کامل کن: This ___ my mother.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-21",
+          "question": "جای خالی را کامل کن: This ___ my group.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-22",
+          "question": "جای خالی را کامل کن: This ___ my team.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-23",
+          "question": "جای خالی را کامل کن: This ___ my band.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-24",
+          "question": "جای خالی را کامل کن: This ___ my house.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-25",
+          "question": "جای خالی را کامل کن: This ___ my home.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-26",
+          "question": "جای خالی را کامل کن: This ___ my street.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-27",
+          "question": "جای خالی را کامل کن: This ___ my road.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-28",
+          "question": "جای خالی را کامل کن: This ___ my avenue.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-29",
+          "question": "جای خالی را کامل کن: This ___ my alley.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-30",
+          "question": "جای خالی را کامل کن: This ___ my goal.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-31",
+          "question": "جای خالی را کامل کن: This ___ my objective.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-32",
+          "question": "جای خالی را کامل کن: This ___ my purpose.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-33",
+          "question": "جای خالی را کامل کن: This ___ my target.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-34",
+          "question": "جای خالی را کامل کن: This ___ my example.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-35",
+          "question": "جای خالی را کامل کن: This ___ my answer.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-36",
+          "question": "جای خالی را کامل کن: This ___ my request.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-37",
+          "question": "جای خالی را کامل کن: That ___ my tutor.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-38",
+          "question": "جای خالی را کامل کن: That ___ my group.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-39",
+          "question": "جای خالی را کامل کن: That ___ my house.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-40",
+          "question": "جای خالی را کامل کن: That ___ my goal.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-41",
+          "question": "جای خالی را کامل کن: I ___ a goal.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-42",
+          "question": "جای خالی را کامل کن: I ___ a team.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-43",
+          "question": "جای خالی را کامل کن: I ___ a group.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-44",
+          "question": "جای خالی را کامل کن: I ___ a house.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-45",
+          "question": "جای خالی را کامل کن: I ___ a pair.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-46",
+          "question": "جای خالی را کامل کن: I ___ a request.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-47",
+          "question": "جای خالی را کامل کن: I ___ a band.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-48",
+          "question": "جای خالی را کامل کن: I ___ a helper.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-49",
+          "question": "جای خالی را کامل کن: I ___ a tutor.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-50",
+          "question": "جای خالی را کامل کن: We ___ a tutor.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-51",
+          "question": "جای خالی را کامل کن: We ___ a helper.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-52",
+          "question": "جای خالی را کامل کن: We ___ a team.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-53",
+          "question": "جای خالی را کامل کن: We ___ a group.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-54",
+          "question": "جای خالی را کامل کن: We ___ a goal.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-55",
+          "question": "جای خالی را کامل کن: We ___ a home.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-56",
+          "question": "جای خالی را کامل کن: I ___.",
+          "expected_answer": "eat",
+          "options": [
+            "eat",
+            "eats",
+            "is"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "eat = خوردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-57",
+          "question": "جای خالی را کامل کن: My given name ___ Ali.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-58",
+          "question": "جای خالی را کامل کن: This ___ my husband.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-59",
+          "question": "جای خالی را کامل کن: My last name ___ Habibi.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-60",
+          "question": "جای خالی را کامل کن: I ___ in.",
+          "expected_answer": "check",
+          "options": [
+            "check",
+            "checks",
+            "is"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "check = بررسی کردن / چک کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-61",
+          "question": "جای خالی را کامل کن: I ___ out.",
+          "expected_answer": "check",
+          "options": [
+            "check",
+            "checks",
+            "is"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "check = بررسی کردن / چک کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-62",
+          "question": "جای خالی را کامل کن: You ___ a question.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-63",
+          "question": "جای خالی را کامل کن: They ___ a question.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-64",
+          "question": "جای خالی را کامل کن: It ___ my house.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-65",
+          "question": "جای خالی را کامل کن: This ___ my wife.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-66",
+          "question": "جای خالی را کامل کن: This ___ my partner.",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "is = است",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-67",
+          "question": "جای خالی را کامل کن: We ___ a teacher.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-68",
+          "question": "جای خالی را کامل کن: I ___ a partner.",
+          "expected_answer": "am",
+          "options": [
+            "am",
+            "is",
+            "are"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "am = هستم",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-mc-69",
+          "question": "جای خالی را کامل کن: We ___ a house.",
+          "expected_answer": "have",
+          "options": [
+            "have",
+            "has",
+            "having"
+          ],
+          "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
+          "hint": "have = داشتن",
+          "time_limit": 60
         }
       ]
     },
@@ -8908,6 +9674,102 @@
           "expected_answer": "check out",
           "explanation": "Check in به ورود و check out به خروج اشاره دارد.",
           "hint": "check in = ثبت ورود (در هتل)",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-voc-22",
+          "question": "Synonym: aid",
+          "expected_answer": "help",
+          "explanation": "کلمه‌ای را بنویس که معنای نزدیک یا مشابه دارد.",
+          "hint": "aid = کمک",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-voc-23",
+          "question": "Synonym: home",
+          "expected_answer": "house",
+          "explanation": "کلمه‌ای را بنویس که معنای نزدیک یا مشابه دارد.",
+          "hint": "home = خانه / محل زندگی",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-voc-24",
+          "question": "Synonym: group",
+          "expected_answer": "team",
+          "explanation": "کلمه‌ای را بنویس که معنای نزدیک یا مشابه دارد.",
+          "hint": "group = گروه",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-voc-25",
+          "question": "Synonym: band",
+          "expected_answer": "group",
+          "explanation": "کلمه‌ای را بنویس که معنای نزدیک یا مشابه دارد.",
+          "hint": "band = گروه موسیقی",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-voc-26",
+          "question": "Synonym: instructor",
+          "expected_answer": "teacher",
+          "explanation": "کلمه‌ای را بنویس که معنای نزدیک یا مشابه دارد.",
+          "hint": "instructor = مربی / مدرس",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-voc-27",
+          "question": "Synonym: goal",
+          "expected_answer": "purpose",
+          "explanation": "کلمه‌ای را بنویس که معنای نزدیک یا مشابه دارد.",
+          "hint": "goal = هدف",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-voc-28",
+          "question": "Synonym: target",
+          "expected_answer": "goal",
+          "explanation": "کلمه‌ای را بنویس که معنای نزدیک یا مشابه دارد.",
+          "hint": "target = هدف / نشانه",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-voc-29",
+          "question": "Synonym: watch",
+          "expected_answer": "observe",
+          "explanation": "کلمه‌ای را بنویس که معنای نزدیک یا مشابه دارد.",
+          "hint": "watch = تماشا کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-voc-30",
+          "question": "Synonym: avenue",
+          "expected_answer": "street",
+          "explanation": "کلمه‌ای را بنویس که معنای نزدیک یا مشابه دارد.",
+          "hint": "avenue = خیابان پهن و بزرگ",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-voc-31",
+          "question": "Opposite: lock",
+          "expected_answer": "open",
+          "explanation": "کلمه‌ای را بنویس که معنای مخالف دارد.",
+          "hint": "lock = قفل کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-voc-32",
+          "question": "Opposite: shut",
+          "expected_answer": "open",
+          "explanation": "کلمه‌ای را بنویس که معنای مخالف دارد.",
+          "hint": "shut = بستن (در و پنجره)",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-voc-33",
+          "question": "Opposite: this",
+          "expected_answer": "that",
+          "explanation": "کلمه‌ای را بنویس که معنای مخالف دارد.",
+          "hint": "this = این",
           "time_limit": 60
         }
       ]
