@@ -88,10 +88,52 @@ function dayLabel(key) {
   });
 }
 
-/** Activity panel: period totals, streaks, and a month calendar coloured by play time. */
+/** One labelled row of tiles inside the overview card. The tile count sets the number of columns. */
+function overviewGroup(title, tiles) {
+  return h(
+    'div',
+    { class: 'ov-group' },
+    h('span', { class: 'ov-title' }, title),
+    h('div', { class: 'ov-tiles', style: `--cols: ${tiles.length}` }, tiles),
+  );
+}
+
+/**
+ * The top of the reports: question bank status, study time and streaks, as one card with three rows.
+ * Each row is one line of small tiles, so the whole picture is visible at a glance.
+ */
+function overviewCard(bank, perf, stats) {
+  return h(
+    'section',
+    { class: 'overview' },
+    overviewGroup('Progress', [
+      statCard('📚', fa(bank.totals.total), 'Total questions', 'blue'),
+      statCard('✅', fa(bank.totals.enabled), 'Active questions', 'green'),
+      statCard('✍️', fa(perf.overall.attempted), 'Answers', 'indigo'),
+      statCard('🎯', percent(perf.overall.successRate), 'Success rate', 'amber'),
+      statCard('⭐', fa(perf.overall.points), 'Points earned', 'violet'),
+    ]),
+    overviewGroup('Study time', [
+      statCard('☀️', durationText(stats.today), 'Today', 'amber'),
+      statCard('🌙', durationText(stats.yesterday), 'Yesterday', 'indigo'),
+      statCard('📅', durationText(stats.week), 'This week', 'blue'),
+      statCard('🗓️', durationText(stats.month), 'This month', 'green'),
+      statCard('⏳', durationText(stats.allTime), 'All time', 'violet'),
+    ]),
+    overviewGroup('Streaks & missions', [
+      statCard('🔥', `${fa(stats.currentStreak)} days`, 'Current streak', 'amber'),
+      statCard('🏆', `${fa(stats.bestStreak)} days`, 'Best streak', 'violet'),
+      statCard('✅', fa(stats.activeDays), 'Active days', 'green'),
+      statCard('🎮', fa(stats.missions), 'Missions played', 'blue'),
+      statCard('⚡', durationText(stats.averagePerActiveDay), 'Average per day', 'indigo'),
+      statCard('🥇', stats.bestDay ? durationText(stats.bestDay.ms) : '—', 'Best day', 'amber'),
+    ]),
+  );
+}
+
+/** Activity panel: the month calendar coloured by play time, with the selected day's total. */
 function activitySection(root, now) {
   const sessions = loadSessions();
-  const stats = activityStats(sessions, now);
   const totals = msByDay(sessions);
   const current = new Date(now);
   const todayKey = dayKey(now);
@@ -140,25 +182,6 @@ function activitySection(root, now) {
       'div',
       { class: 'activity' },
       sessions.length === 0 ? emptyNote('No play time yet. Start a mission and it will show here.') : null,
-      h(
-        'div',
-        { class: 'report-stats activity-tiles activity-row activity-periods' },
-        statCard('☀️', durationText(stats.today), 'Today', 'amber'),
-        statCard('🌙', durationText(stats.yesterday), 'Yesterday', 'indigo'),
-        statCard('📅', durationText(stats.week), 'This week', 'blue'),
-        statCard('🗓️', durationText(stats.month), 'This month', 'green'),
-        statCard('⏳', durationText(stats.allTime), 'All time', 'violet'),
-      ),
-      h(
-        'div',
-        { class: 'report-stats activity-tiles activity-row activity-stats' },
-        statCard('🔥', `${fa(stats.currentStreak)} days`, 'Current streak', 'amber'),
-        statCard('🏆', `${fa(stats.bestStreak)} days`, 'Best streak', 'violet'),
-        statCard('✅', fa(stats.activeDays), 'Active days', 'green'),
-        statCard('🎮', fa(stats.missions), 'Missions played', 'blue'),
-        statCard('⚡', durationText(stats.averagePerActiveDay), 'Average per active day', 'indigo'),
-        statCard('🥇', stats.bestDay ? durationText(stats.bestDay.ms) : '—', 'Best day', 'amber'),
-      ),
       h(
         'div',
         { class: 'cal' },
@@ -309,15 +332,7 @@ export async function renderReports(root) {
         h('h2', {}, 'Reports'),
         h('p', { class: 'muted small' }, 'Your progress and the question bank status'),
       ),
-      h(
-        'div',
-        { class: 'report-stats stat-row' },
-        statCard('📚', fa(bank.totals.total), 'Total questions', 'blue'),
-        statCard('✅', fa(bank.totals.enabled), 'Active questions', 'green'),
-        statCard('✍️', fa(perf.overall.attempted), 'Answers', 'indigo'),
-        statCard('🎯', percent(perf.overall.successRate), 'Success rate', 'amber'),
-        statCard('⭐', fa(perf.overall.points), 'Points earned', 'violet'),
-      ),
+      overviewCard(bank, perf, activityStats(loadSessions(), Date.now())),
 
       activitySection(root, Date.now()),
 

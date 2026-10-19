@@ -17,7 +17,7 @@ export const INSTRUCTIONS = {
   grammar_correction: 'Correct the wrong sentence and write the whole correct sentence.',
   multiple_choice: 'Choose the correct option.',
   positive_negative_question: 'Change the sentence as instructed and write the whole sentence.',
-  voice_translation: 'Say the sentence aloud or type it.',
+  voice_translation: 'این جمله‌ی فارسی را به انگلیسی بگو.',
   dictation: 'Listen to the sentence and write it exactly as you hear it.',
   vocabulary: 'Write a synonym or an antonym. If several are asked, separate them with commas.',
 };
@@ -50,6 +50,7 @@ export function createAnswerWidget(question, { onSubmit }) {
     default:
       // quick_translation, positive_negative_question, voice_translation and dictation use a text box.
       // Dictation is about typing what is heard, so it has no voice input, unless the mission is voice only.
+      // Audio translation is always spoken: the box is read-only and only the mic fills it.
       return textAnswer(
         onSubmit,
         '',
@@ -57,7 +58,11 @@ export function createAnswerWidget(question, { onSubmit }) {
           ? `At least ${question.min_items ?? 1} answers; separate them with commas or spaces`
           : undefined,
         // Only a heard-only word (audio) has no mic in normal missions; meaning and text items can use it.
-        { voice: question.presentation !== 'audio' || isVoiceOnly(question), voiceOnly: isVoiceOnly(question), question },
+        {
+          voice: isVoiceTranslation(question) || question.presentation !== 'audio' || isVoiceOnly(question),
+          voiceOnly: isVoiceTranslation(question) || isVoiceOnly(question),
+          question,
+        },
       );
   }
 }
@@ -65,6 +70,11 @@ export function createAnswerWidget(question, { onSubmit }) {
 /** Voice-only missions: the answer is spoken, never typed. */
 function isVoiceOnly(question) {
   return question.answer_input === 'voice';
+}
+
+/** Audio translation is always answered by voice, whatever the mission's input setting. */
+function isVoiceTranslation(question) {
+  return question.category === 'voice_translation';
 }
 
 /**

@@ -2932,112 +2932,73 @@ textarea {
   color: #6d28d9;
 }
 
-/* Activity panel: period tiles and the month calendar. */
-/* The panel sits inside the report card: one standard inner padding, and no boxes inside boxes. */
+/* Activity panel: the month calendar, inside the report card. */
 .activity {
   display: grid;
   gap: 12px;
   padding: 14px;
 }
 
-.activity .activity-tiles {
-  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
-  gap: 8px;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  box-shadow: none;
-  background: none;
+/* Overview: progress, study time and streaks in one card, one labelled row each. */
+.overview {
+  display: grid;
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
 }
 
-.activity .activity-tiles .report-stat {
-  gap: 0;
-  padding: 8px 6px;
+.ov-group {
+  display: grid;
+  gap: 6px;
+  padding: 10px 2px;
 }
 
-.activity .activity-tiles .report-stat strong {
-  font-size: 1.15rem;
+.ov-group + .ov-group {
+  border-top: 1px dashed var(--border);
 }
 
-.activity .activity-tiles .report-stat-icon {
-  font-size: 1.1rem;
+.ov-title {
+  padding-left: 2px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
-.activity .activity-tiles .report-stat:last-child:nth-child(odd) {
-  grid-column: auto;
-}
-
-.activity .activity-tiles .report-stat-label {
-  font-size: 0.78rem;
-}
-
-/* Compact tile rows: every row fits on one line. Each tile is narrow, so its icon, value and label are smaller. */
-.activity .activity-row {
+/* One line of tiles per group: the number of columns comes from the tile count. */
+.ov-tiles {
+  display: grid;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
   gap: 6px;
 }
 
-.activity .activity-row .report-stat {
+.ov-tiles .report-stat {
+  gap: 0;
   padding: 8px 2px;
   min-width: 0;
 }
 
-.activity .activity-row .report-stat-icon {
-  font-size: 0.9rem;
-}
-
-.activity .activity-row .report-stat strong {
-  font-size: 0.85rem;
-  overflow-wrap: anywhere;
-}
-
-.activity .activity-row .report-stat-label {
-  font-size: 0.64rem;
-  line-height: 1.2;
-  text-align: center;
-  overflow-wrap: anywhere;
-}
-
-/* The top summary of the reports: five small tiles in one row. */
-.report-stats.stat-row {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 6px;
-  padding: 10px;
-}
-
-.stat-row .report-stat {
-  padding: 8px 2px;
-  min-width: 0;
-  gap: 0;
-}
-
-.stat-row .report-stat:last-child:nth-child(odd) {
+.ov-tiles .report-stat:last-child:nth-child(odd) {
   grid-column: auto;
 }
 
-.stat-row .report-stat-icon {
+.ov-tiles .report-stat-icon {
   font-size: 0.9rem;
 }
 
-.stat-row .report-stat strong {
+.ov-tiles .report-stat strong {
   font-size: 0.85rem;
   overflow-wrap: anywhere;
 }
 
-.stat-row .report-stat-label {
+.ov-tiles .report-stat-label {
   font-size: 0.64rem;
   line-height: 1.2;
   text-align: center;
   overflow-wrap: anywhere;
-}
-
-/* Period row: today, yesterday, week, month, all time. */
-.activity .activity-periods {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-
-/* Streak row: current streak, best streak, active days, missions, average, best day. */
-.activity .activity-stats {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .cal {
