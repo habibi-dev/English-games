@@ -2662,6 +2662,11 @@ body:has(.card.play) .bottom-nav {
   box-shadow: none;
 }
 
+/* Multiple choice has no Submit button: Skip takes the full width of the dock. */
+.play-actions.skip-only .btn.skip-btn {
+  flex: 1;
+}
+
 .play-actions .btn.skip-btn:hover:not(:disabled) {
   background: rgba(255, 255, 255, 0.28);
 }

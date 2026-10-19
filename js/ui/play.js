@@ -1113,9 +1113,14 @@ function renderQuestion(root, session, flow) {
             )
           : null,
       ),
-      // The action dock is the last thing of the card: Submit and Skip sit at the very bottom.
-      // Multiple choice submits on click, so it has no send button.
-      q.category === 'multiple_choice' ? null : h('div', { class: 'actions play-actions' }, submitButton, skipButton),
+      // The action dock is always shown: Skip is needed on every question type.
+      // Multiple choice submits on click, so it has no Submit button; its dock holds Skip alone.
+      h(
+        'div',
+        { class: `actions play-actions${q.category === 'multiple_choice' ? ' skip-only' : ''}` },
+        q.category === 'multiple_choice' ? null : submitButton,
+        skipButton,
+      ),
     ),
   );
 
