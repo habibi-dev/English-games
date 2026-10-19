@@ -15,6 +15,11 @@ test('other questions read the expected answer as the full sentence', () => {
   assert.equal(completeSentence({ question: 'جمله را منفی کن: I am happy.', expected_answer: 'I am not happy.' }), 'I am not happy.');
 });
 
+test('the Persian instruction is never part of the full sentence', () => {
+  assert.equal(completeSentence({ question: 'جای خالی را کامل کن: It ___ .', expected_answer: 'eats' }), 'It eats.');
+  assert.equal(completeSentence({ question: 'جای خالی را کامل کن: You ___.', expected_answer: 'eat' }), 'You eat.');
+});
+
 test('missing or padded values are handled', () => {
   assert.equal(completeSentence({ question: 'x ___ y.', expected_answer: '  is  ' }), 'x is y.');
   assert.equal(completeSentence({ question: '', expected_answer: '' }), '');

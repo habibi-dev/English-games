@@ -19,6 +19,7 @@
             "My first name's Ali."
           ],
           "explanation": "First name یعنی نام کوچک. شکل کوتاه is در این جمله به صورت 's نوشته می‌شود.",
+          "hint": "کلمه‌ی کلیدی: «نام کوچک» = first name؛ تلفظ: /fɜːrst neɪm/ (فِرست نِیم)؛ نکته: given name هم همین معنی را دارد.",
           "time_limit": 60
         },
         {
@@ -31,6 +32,7 @@
             "My family name's Habibi."
           ],
           "explanation": "Last name و family name هر دو برای نام خانوادگی به کار می‌روند.",
+          "hint": "کلمه‌ی کلیدی: «نام خانوادگی» = last name؛ تلفظ: /læst neɪm/ (لَست نِیم)؛ نکته: family name هم همین معنی را دارد.",
           "time_limit": 60
         },
         {
@@ -41,6 +43,7 @@
             "What's your first name?"
           ],
           "explanation": "What's شکل کوتاه What is است.",
+          "hint": "کلمه‌ی کلیدی: «اسم کوچک» = first name؛ تلفظ: /fɜːrst neɪm/ (فِرست نِیم)؛ نکته: «تو» در انگلیسی your است.",
           "time_limit": 60
         },
         {
@@ -53,6 +56,7 @@
             "What's your family name?"
           ],
           "explanation": "می‌توانی از last name یا family name استفاده کنی؛ What's هم شکل کوتاه What is است.",
+          "hint": "کلمه‌ی کلیدی: «نام خانوادگی» = last name؛ تلفظ: /læst neɪm/ (لَست نِیم)؛ نکته: family name هم درست است.",
           "time_limit": 60
         },
         {
@@ -60,6 +64,7 @@
           "question": "این معلم من است.",
           "expected_answer": "This is my teacher.",
           "explanation": "This برای اشاره به شخص یا چیزی که نزدیک است به کار می‌رود.",
+          "hint": "کلمه‌ی کلیدی: «معلم» = teacher؛ تلفظ: /ˈtiːtʃər/ (تیچِر)؛ نکته: tutor و instructor هم به معنی مدرس هستند، اما teacher واژه‌ی عمومی‌تری است.",
           "time_limit": 60
         },
         {
@@ -67,6 +72,7 @@
           "question": "این دوست من است.",
           "expected_answer": "This is my friend.",
           "explanation": "Friend یعنی دوست.",
+          "hint": "کلمه‌ی کلیدی: «دوست» = friend؛ تلفظ: /frend/ (فِرند)؛ نکته: برای دوست زن و مرد هر دو به کار می‌رود.",
           "time_limit": 60
         },
         {
@@ -74,6 +80,7 @@
           "question": "این شوهر من است.",
           "expected_answer": "This is my husband.",
           "explanation": "Husband یعنی شوهر.",
+          "hint": "کلمه‌ی کلیدی: «شوهر» = husband؛ تلفظ: /ˈhʌzbənd/ (هازبَند)؛ نکته: برای همسر مرد استفاده می‌شود.",
           "time_limit": 60
         },
         {
@@ -84,6 +91,7 @@
             "This is my spouse."
           ],
           "explanation": "Wife برای همسر زن و spouse برای همسر بدون مشخص کردن جنسیت استفاده می‌شود.",
+          "hint": "کلمه‌ی کلیدی: «همسر» = wife؛ تلفظ: /waɪf/ (وایف)؛ نکته: برای همسر زن است و spouse /spaʊs/ (اسپَوز) هم به معنی همسر و بدون مشخص کردن جنسیت، قابل قبول است.",
           "time_limit": 60
         },
         {
@@ -91,6 +99,7 @@
           "question": "این شریک من است.",
           "expected_answer": "This is my partner.",
           "explanation": "Partner یعنی شریک یا همراه؛ با helper به معنی کمک‌کننده یکی نیست.",
+          "hint": "کلمه‌ی کلیدی: «شریک» = partner؛ تلفظ: /ˈpɑːrtnər/ (پارتنِر)؛ نکته: helper به معنی کمک‌کننده است و با شریک فرق دارد.",
           "time_limit": 60
         },
         {
@@ -98,6 +107,7 @@
           "question": "من یک سؤال دارم.",
           "expected_answer": "I have a question.",
           "explanation": "Question یعنی سؤال.",
+          "hint": "کلمه‌ی کلیدی: «سؤال» = question؛ تلفظ: /ˈkwestʃən/ (کوئِستشِن)؛ نکته: فعل پرسیدن ask است.",
           "time_limit": 60
         },
         {
@@ -108,6 +118,7 @@
             "Please help me."
           ],
           "explanation": "Help یعنی کمک کردن.",
+          "hint": "کلمه‌ی کلیدی: «کمک کن» = help؛ تلفظ: /help/ (هِلپ)؛ نکته: «به من» در انگلیسی me است و جمله با فعل امر شروع می‌شود.",
           "time_limit": 60
         },
         {
@@ -115,6 +126,7 @@
           "question": "به من کمک کن. (اصطلاح)",
           "expected_answer": "Give me a hand.",
           "explanation": "Give me a hand یک عبارت رایج به معنی کمکم کن است.",
+          "hint": "کلمه‌ی کلیدی: «به من کمک کن (اصطلاح)» = give me a hand؛ تلفظ: /ɡɪv miː ə hænd/ (گیو می ا هَند)؛ نکته: این یک اصطلاح است و کلمه‌به‌کلمه ترجمه نمی‌شود.",
           "time_limit": 60
         },
         {
@@ -122,6 +134,7 @@
           "question": "چطور به انگلیسی می‌گویی «کمک»؟",
           "expected_answer": "How do you say help in English?",
           "explanation": "از الگوی How do you say ... in English? برای پرسیدن معادل انگلیسی استفاده می‌کنیم.",
+          "hint": "کلمه‌ی کلیدی: «کمک» = help؛ تلفظ: /help/ (هِلپ)؛ نکته: الگو: How do you say ... in English? یعنی «چطور به انگلیسی می‌گویی ...؟»",
           "time_limit": 60
         },
         {
@@ -132,6 +145,7 @@
             "What does the word teacher mean?"
           ],
           "explanation": "برای پرسیدن معنی کلمه از الگوی What does ... mean? استفاده می‌کنیم.",
+          "hint": "کلمه‌ی کلیدی: «معنی» = mean؛ تلفظ: /miːn/ (مین)؛ نکته: الگو: What does ... mean? یعنی «... چه معنایی می‌دهد؟»",
           "time_limit": 60
         }
       ]
@@ -221,6 +235,7 @@
           "question": "جمله‌ی اشتباه را درست کن.",
           "expected_answer": "He eats.",
           "explanation": "با He در جمله مثبت حال ساده به فعل s اضافه می‌کنیم.",
+          "hint": "He = او (مرد)؛ eats = می‌خورد",
           "incorrect_sentence": "He eat.",
           "time_limit": 60
         },
@@ -229,6 +244,7 @@
           "question": "جمله‌ی اشتباه را درست کن.",
           "expected_answer": "She walks.",
           "explanation": "با She فعل در جمله مثبت حال ساده s می‌گیرد.",
+          "hint": "She = او (زن)؛ walks = راه می‌رود",
           "incorrect_sentence": "She walk.",
           "time_limit": 60
         },
@@ -237,6 +253,7 @@
           "question": "جمله‌ی اشتباه را درست کن.",
           "expected_answer": "It listens.",
           "explanation": "It سوم‌شخص مفرد است؛ در این الگو فعل s می‌گیرد.",
+          "hint": "It = آن (برای چیز یا حیوان)؛ listens = گوش می‌دهد",
           "incorrect_sentence": "It listen.",
           "time_limit": 60
         },
@@ -245,6 +262,7 @@
           "question": "جمله‌ی اشتباه را درست کن.",
           "expected_answer": "I eat.",
           "explanation": "با I از شکل ساده فعل، بدون s، استفاده می‌کنیم.",
+          "hint": "I = من؛ eat = خوردن",
           "incorrect_sentence": "I eats.",
           "time_limit": 60
         }
@@ -265,6 +283,13 @@
             "This isn't my teacher."
           ],
           "explanation": "برای منفی کردن is، کلمه not را بعد از آن می‌آوریم. شکل کوتاه is not برابر isn't است.",
+          "hint": "not = نه؛ isn't = نیست (شکل کوتاه is not)",
+          "glossary": [
+            {
+              "word": "teacher",
+              "meaning": "معلم"
+            }
+          ],
           "time_limit": 60
         },
         {
@@ -275,6 +300,13 @@
             "This isn't my friend."
           ],
           "explanation": "This is not و This isn't هر دو درست هستند.",
+          "hint": "not = نه؛ isn't = نیست (شکل کوتاه is not)",
+          "glossary": [
+            {
+              "word": "friend",
+              "meaning": "دوست"
+            }
+          ],
           "time_limit": 60
         }
       ],
@@ -292,6 +324,13 @@
           "question": "جمله را سؤالی کن: This is my teacher.",
           "expected_answer": "Is this my teacher?",
           "explanation": "برای سؤالی کردن این جمله، is را به ابتدای جمله می‌آوریم.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
+          "glossary": [
+            {
+              "word": "teacher",
+              "meaning": "معلم"
+            }
+          ],
           "time_limit": 60
         },
         {
@@ -299,6 +338,13 @@
           "question": "جمله را سؤالی کن: This is my friend.",
           "expected_answer": "Is this my friend?",
           "explanation": "در سؤال، is پیش از this قرار می‌گیرد.",
+          "hint": "Is = آیا (در ابتدای سؤال)",
+          "glossary": [
+            {
+              "word": "friend",
+              "meaning": "دوست"
+            }
+          ],
           "time_limit": 60
         }
       ],
@@ -421,6 +467,7 @@
           "question": "Synonym: first name",
           "expected_answer": "given name",
           "explanation": "First name و given name هر دو به معنی نام کوچک هستند.",
+          "hint": "first name = نام کوچک",
           "time_limit": 60
         },
         {
@@ -428,6 +475,7 @@
           "question": "Synonym: last name",
           "expected_answer": "family name",
           "explanation": "Family name نیز به معنی نام خانوادگی است.",
+          "hint": "last name = نام خانوادگی",
           "time_limit": 60
         },
         {
@@ -438,6 +486,7 @@
             "instructor"
           ],
           "explanation": "Tutor و instructor هر دو به فرد آموزش‌دهنده اشاره می‌کنند؛ کاربردشان بسته به موقعیت فرق دارد.",
+          "hint": "teacher = معلم",
           "answer_mode": "list",
           "min_items": 1,
           "time_limit": 60
@@ -450,6 +499,7 @@
             "aid"
           ],
           "explanation": "Assist و aid هر دو به معنی کمک کردن هستند.",
+          "hint": "help = کمک",
           "answer_mode": "list",
           "min_items": 1,
           "time_limit": 60
@@ -459,6 +509,7 @@
           "question": "Synonym: close",
           "expected_answer": "shut",
           "explanation": "Close و shut در معنی فعل بستن به هم نزدیک‌اند.",
+          "hint": "close = بستن / نزدیک",
           "time_limit": 60
         },
         {
@@ -466,6 +517,7 @@
           "question": "Synonym: start",
           "expected_answer": "begin",
           "explanation": "Start و begin هر دو به معنی شروع کردن هستند.",
+          "hint": "start = شروع کردن",
           "time_limit": 60
         },
         {
@@ -473,6 +525,7 @@
           "question": "Synonym: speaking",
           "expected_answer": "talking",
           "explanation": "Speaking و talking هر دو به صحبت کردن اشاره دارند.",
+          "hint": "speaking = صحبت کردن",
           "time_limit": 60
         },
         {
@@ -480,6 +533,7 @@
           "question": "Synonym: example",
           "expected_answer": "instance",
           "explanation": "Example و instance در بسیاری از جمله‌ها به معنی نمونه هستند.",
+          "hint": "example = مثال / نمونه",
           "time_limit": 60
         },
         {
@@ -487,6 +541,7 @@
           "question": "Synonym: pair",
           "expected_answer": "couple",
           "explanation": "Pair و couple هر دو می‌توانند به معنی یک جفت باشند.",
+          "hint": "pair = جفت",
           "time_limit": 60
         },
         {
@@ -494,6 +549,7 @@
           "question": "Synonym: understand",
           "expected_answer": "grasp",
           "explanation": "Grasp در این کاربرد به معنی فهمیدن است.",
+          "hint": "understand = فهمیدن",
           "time_limit": 60
         },
         {
@@ -505,6 +561,7 @@
             "target"
           ],
           "explanation": "Objective، purpose، target و aim بسته به جمله می‌توانند به مفهوم هدف اشاره کنند.",
+          "hint": "goal = هدف",
           "answer_mode": "list",
           "min_items": 2,
           "time_limit": 60
@@ -514,6 +571,7 @@
           "question": "Synonym: people",
           "expected_answer": "individuals",
           "explanation": "Individuals به معنی افراد است و در بسیاری از موقعیت‌ها می‌تواند جای people بیاید.",
+          "hint": "people = مردم",
           "time_limit": 60
         },
         {
@@ -521,6 +579,7 @@
           "question": "Synonym: personal",
           "expected_answer": "private",
           "explanation": "Personal و private در بعضی کاربردها به هم نزدیک‌اند، اما در همه جمله‌ها قابل جایگزینی نیستند.",
+          "hint": "personal = شخصی",
           "time_limit": 60
         },
         {
@@ -528,6 +587,7 @@
           "question": "Synonym: ask",
           "expected_answer": "request",
           "explanation": "Request رسمی‌تر از ask است و می‌تواند به معنی درخواست کردن باشد.",
+          "hint": "ask = پرسیدن",
           "time_limit": 60
         },
         {
@@ -535,6 +595,7 @@
           "question": "Opposite: open",
           "expected_answer": "close",
           "explanation": "Open و close در اینجا به معنی باز کردن و بستن هستند.",
+          "hint": "open = باز کردن / باز",
           "time_limit": 60
         },
         {
@@ -542,6 +603,7 @@
           "question": "Opposite: inside",
           "expected_answer": "outside",
           "explanation": "Inside یعنی داخل و outside یعنی بیرون.",
+          "hint": "inside = داخل",
           "time_limit": 60
         },
         {
@@ -549,6 +611,7 @@
           "question": "Opposite: public",
           "expected_answer": "private",
           "explanation": "Public یعنی عمومی و private یعنی خصوصی.",
+          "hint": "public = عمومی",
           "time_limit": 60
         },
         {
@@ -556,6 +619,7 @@
           "question": "Opposite: new",
           "expected_answer": "old",
           "explanation": "برای اشیا، new یعنی جدید و old یعنی قدیمی.",
+          "hint": "new = جدید",
           "time_limit": 60
         },
         {
@@ -563,6 +627,7 @@
           "question": "Opposite: young",
           "expected_answer": "old",
           "explanation": "برای سن انسان، young یعنی جوان و old یعنی پیر یا سالخورده.",
+          "hint": "young = جوان",
           "time_limit": 60
         },
         {
@@ -570,6 +635,7 @@
           "question": "Opposite: give",
           "expected_answer": "get",
           "explanation": "در این جفت آموزشی، give به معنی دادن و get به معنی گرفتن است.",
+          "hint": "give = دادن",
           "time_limit": 60
         },
         {
@@ -577,6 +643,7 @@
           "question": "Opposite: check in",
           "expected_answer": "check out",
           "explanation": "Check in به ورود و check out به خروج اشاره دارد.",
+          "hint": "check in = ثبت ورود (در هتل)",
           "time_limit": 60
         }
       ]
@@ -593,6 +660,7 @@
           "question": "synonym",
           "expected_answer": "synonym",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "synonym = مترادف",
           "time_limit": 60
         },
         {
@@ -600,6 +668,7 @@
           "question": "opposite",
           "expected_answer": "opposite",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "opposite = متضاد",
           "time_limit": 60
         },
         {
@@ -607,6 +676,7 @@
           "question": "subject",
           "expected_answer": "subject",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "subject = فاعل (در جمله)",
           "time_limit": 60
         },
         {
@@ -614,6 +684,7 @@
           "question": "verb",
           "expected_answer": "verb",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "verb = فعل",
           "time_limit": 60
         },
         {
@@ -621,6 +692,7 @@
           "question": "first name",
           "expected_answer": "first name",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "first name = نام کوچک",
           "time_limit": 60
         },
         {
@@ -628,6 +700,7 @@
           "question": "given name",
           "expected_answer": "given name",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "given name = نام کوچک",
           "time_limit": 60
         },
         {
@@ -635,6 +708,7 @@
           "question": "last name",
           "expected_answer": "last name",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "last name = نام خانوادگی",
           "time_limit": 60
         },
         {
@@ -642,6 +716,7 @@
           "question": "family name",
           "expected_answer": "family name",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "family name = نام خانوادگی",
           "time_limit": 60
         },
         {
@@ -649,6 +724,7 @@
           "question": "this",
           "expected_answer": "this",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "this = این",
           "time_limit": 60
         },
         {
@@ -656,6 +732,7 @@
           "question": "that",
           "expected_answer": "that",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "that = آن",
           "time_limit": 60
         },
         {
@@ -663,6 +740,7 @@
           "question": "teacher",
           "expected_answer": "teacher",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "teacher = معلم",
           "time_limit": 60
         },
         {
@@ -670,6 +748,7 @@
           "question": "tutor",
           "expected_answer": "tutor",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "tutor = مدرس خصوصی",
           "time_limit": 60
         },
         {
@@ -677,6 +756,7 @@
           "question": "instructor",
           "expected_answer": "instructor",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "instructor = مربی / مدرس",
           "time_limit": 60
         },
         {
@@ -684,6 +764,7 @@
           "question": "friend",
           "expected_answer": "friend",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "friend = دوست",
           "time_limit": 60
         },
         {
@@ -691,6 +772,7 @@
           "question": "husband",
           "expected_answer": "husband",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "husband = شوهر",
           "time_limit": 60
         },
         {
@@ -698,6 +780,7 @@
           "question": "wife",
           "expected_answer": "wife",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "wife = همسر (زن)",
           "time_limit": 60
         },
         {
@@ -705,6 +788,7 @@
           "question": "spouse",
           "expected_answer": "spouse",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "spouse = همسر (بدون مشخص کردن جنسیت)",
           "time_limit": 60
         },
         {
@@ -712,6 +796,7 @@
           "question": "partner",
           "expected_answer": "partner",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "partner = شریک / همراه",
           "time_limit": 60
         },
         {
@@ -719,6 +804,7 @@
           "question": "helper",
           "expected_answer": "helper",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "helper = کمک‌کننده",
           "time_limit": 60
         },
         {
@@ -726,6 +812,7 @@
           "question": "question",
           "expected_answer": "question",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "question = سؤال",
           "time_limit": 60
         },
         {
@@ -733,6 +820,7 @@
           "question": "answer",
           "expected_answer": "answer",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "answer = پاسخ",
           "time_limit": 60
         },
         {
@@ -740,6 +828,7 @@
           "question": "help",
           "expected_answer": "help",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "help = کمک",
           "time_limit": 60
         },
         {
@@ -747,6 +836,7 @@
           "question": "assist",
           "expected_answer": "assist",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "assist = کمک کردن",
           "time_limit": 60
         },
         {
@@ -754,6 +844,7 @@
           "question": "aid",
           "expected_answer": "aid",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "aid = کمک",
           "time_limit": 60
         },
         {
@@ -761,6 +852,7 @@
           "question": "give me a hand",
           "expected_answer": "give me a hand",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "give = دادن؛ me = به من / مرا؛ a = یک؛ hand = دست",
           "time_limit": 60
         },
         {
@@ -768,6 +860,7 @@
           "question": "ask",
           "expected_answer": "ask",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "ask = پرسیدن",
           "time_limit": 60
         },
         {
@@ -775,6 +868,7 @@
           "question": "request",
           "expected_answer": "request",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "request = درخواست کردن",
           "time_limit": 60
         },
         {
@@ -782,6 +876,7 @@
           "question": "understand",
           "expected_answer": "understand",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "understand = فهمیدن",
           "time_limit": 60
         },
         {
@@ -789,6 +884,7 @@
           "question": "grasp",
           "expected_answer": "grasp",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "grasp = فهمیدن / درک کردن",
           "time_limit": 60
         },
         {
@@ -796,6 +892,7 @@
           "question": "say",
           "expected_answer": "say",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "say = گفتن",
           "time_limit": 60
         },
         {
@@ -803,6 +900,7 @@
           "question": "tell",
           "expected_answer": "tell",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "tell = گفتن (به کسی)",
           "time_limit": 60
         },
         {
@@ -810,6 +908,7 @@
           "question": "can",
           "expected_answer": "can",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "can = می‌توانم / توانستن",
           "time_limit": 60
         },
         {
@@ -817,6 +916,7 @@
           "question": "could",
           "expected_answer": "could",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "could = می‌توانست",
           "time_limit": 60
         },
         {
@@ -824,6 +924,7 @@
           "question": "retell",
           "expected_answer": "retell",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "retell = بازگو کردن",
           "time_limit": 60
         },
         {
@@ -831,6 +932,7 @@
           "question": "recall",
           "expected_answer": "recall",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "recall = به یاد آوردن",
           "time_limit": 60
         },
         {
@@ -838,6 +940,7 @@
           "question": "rebuild",
           "expected_answer": "rebuild",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "rebuild = دوباره ساختن",
           "time_limit": 60
         },
         {
@@ -845,6 +948,7 @@
           "question": "regain",
           "expected_answer": "regain",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "regain = دوباره به دست آوردن",
           "time_limit": 60
         },
         {
@@ -852,6 +956,7 @@
           "question": "rewrite",
           "expected_answer": "rewrite",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "rewrite = بازنویسی کردن",
           "time_limit": 60
         },
         {
@@ -859,6 +964,7 @@
           "question": "sorry",
           "expected_answer": "sorry",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "sorry = متأسف / ببخشید",
           "time_limit": 60
         },
         {
@@ -866,6 +972,7 @@
           "question": "my bad",
           "expected_answer": "my bad",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "my bad = ببخشید (اشتباه از من بود)",
           "time_limit": 60
         },
         {
@@ -873,6 +980,7 @@
           "question": "open",
           "expected_answer": "open",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "open = باز کردن / باز",
           "time_limit": 60
         },
         {
@@ -880,6 +988,7 @@
           "question": "close",
           "expected_answer": "close",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "close = بستن / نزدیک",
           "time_limit": 60
         },
         {
@@ -887,6 +996,7 @@
           "question": "shut",
           "expected_answer": "shut",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "shut = بستن (در و پنجره)",
           "time_limit": 60
         },
         {
@@ -894,6 +1004,7 @@
           "question": "lock",
           "expected_answer": "lock",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "lock = قفل کردن",
           "time_limit": 60
         },
         {
@@ -901,6 +1012,7 @@
           "question": "listen",
           "expected_answer": "listen",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "listen = گوش دادن",
           "time_limit": 60
         },
         {
@@ -908,6 +1020,7 @@
           "question": "hear",
           "expected_answer": "hear",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "hear = شنیدن",
           "time_limit": 60
         },
         {
@@ -915,6 +1028,7 @@
           "question": "pair",
           "expected_answer": "pair",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "pair = جفت",
           "time_limit": 60
         },
         {
@@ -922,6 +1036,7 @@
           "question": "couple",
           "expected_answer": "couple",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "couple = زوج / جفت",
           "time_limit": 60
         },
         {
@@ -929,6 +1044,7 @@
           "question": "speaking",
           "expected_answer": "speaking",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "speaking = صحبت کردن",
           "time_limit": 60
         },
         {
@@ -936,6 +1052,7 @@
           "question": "talking",
           "expected_answer": "talking",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "talking = صحبت کردن",
           "time_limit": 60
         },
         {
@@ -943,6 +1060,7 @@
           "question": "group",
           "expected_answer": "group",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "group = گروه",
           "time_limit": 60
         },
         {
@@ -950,6 +1068,7 @@
           "question": "team",
           "expected_answer": "team",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "team = تیم",
           "time_limit": 60
         },
         {
@@ -957,6 +1076,7 @@
           "question": "band",
           "expected_answer": "band",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "band = گروه موسیقی",
           "time_limit": 60
         },
         {
@@ -964,6 +1084,7 @@
           "question": "read",
           "expected_answer": "read",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "read = خواندن",
           "time_limit": 60
         },
         {
@@ -971,6 +1092,7 @@
           "question": "study",
           "expected_answer": "study",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "study = درس خواندن",
           "time_limit": 60
         },
         {
@@ -978,6 +1100,7 @@
           "question": "write",
           "expected_answer": "write",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "write = نوشتن",
           "time_limit": 60
         },
         {
@@ -985,6 +1108,7 @@
           "question": "inscribe",
           "expected_answer": "inscribe",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "inscribe = حک کردن / کنده‌کاری کردن",
           "time_limit": 60
         },
         {
@@ -992,6 +1116,7 @@
           "question": "watch",
           "expected_answer": "watch",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "watch = تماشا کردن",
           "time_limit": 60
         },
         {
@@ -999,6 +1124,7 @@
           "question": "see",
           "expected_answer": "see",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "see = دیدن",
           "time_limit": 60
         },
         {
@@ -1006,6 +1132,7 @@
           "question": "look at",
           "expected_answer": "look at",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "look at = نگاه کردن به",
           "time_limit": 60
         },
         {
@@ -1013,6 +1140,7 @@
           "question": "observe",
           "expected_answer": "observe",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "observe = مشاهده کردن / با دقت نگاه کردن",
           "time_limit": 60
         },
         {
@@ -1020,6 +1148,7 @@
           "question": "start",
           "expected_answer": "start",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "start = شروع کردن",
           "time_limit": 60
         },
         {
@@ -1027,6 +1156,7 @@
           "question": "begin",
           "expected_answer": "begin",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "begin = شروع کردن",
           "time_limit": 60
         },
         {
@@ -1034,6 +1164,7 @@
           "question": "example",
           "expected_answer": "example",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "example = مثال / نمونه",
           "time_limit": 60
         },
         {
@@ -1041,6 +1172,7 @@
           "question": "instance",
           "expected_answer": "instance",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "instance = نمونه / مثال",
           "time_limit": 60
         },
         {
@@ -1048,6 +1180,7 @@
           "question": "objectives",
           "expected_answer": "objectives",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "objectives = اهداف",
           "time_limit": 60
         },
         {
@@ -1055,6 +1188,7 @@
           "question": "objective",
           "expected_answer": "objective",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "objective = هدف",
           "time_limit": 60
         },
         {
@@ -1062,6 +1196,7 @@
           "question": "purpose",
           "expected_answer": "purpose",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "purpose = هدف / منظور",
           "time_limit": 60
         },
         {
@@ -1069,6 +1204,7 @@
           "question": "goal",
           "expected_answer": "goal",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "goal = هدف",
           "time_limit": 60
         },
         {
@@ -1076,6 +1212,7 @@
           "question": "target",
           "expected_answer": "target",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "target = هدف / نشانه",
           "time_limit": 60
         },
         {
@@ -1083,6 +1220,7 @@
           "question": "give",
           "expected_answer": "give",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "give = دادن",
           "time_limit": 60
         },
         {
@@ -1090,6 +1228,7 @@
           "question": "get",
           "expected_answer": "get",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "get = گرفتن / به دست آوردن",
           "time_limit": 60
         },
         {
@@ -1097,6 +1236,7 @@
           "question": "personal",
           "expected_answer": "personal",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "personal = شخصی",
           "time_limit": 60
         },
         {
@@ -1104,6 +1244,7 @@
           "question": "private",
           "expected_answer": "private",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "private = خصوصی",
           "time_limit": 60
         },
         {
@@ -1111,6 +1252,7 @@
           "question": "public",
           "expected_answer": "public",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "public = عمومی",
           "time_limit": 60
         },
         {
@@ -1118,6 +1260,7 @@
           "question": "check",
           "expected_answer": "check",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "check = بررسی کردن / چک کردن",
           "time_limit": 60
         },
         {
@@ -1125,6 +1268,7 @@
           "question": "check in",
           "expected_answer": "check in",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "check in = ثبت ورود (در هتل)",
           "time_limit": 60
         },
         {
@@ -1132,6 +1276,7 @@
           "question": "check out",
           "expected_answer": "check out",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "check out = ترک هتل / ثبت خروج",
           "time_limit": 60
         },
         {
@@ -1139,6 +1284,7 @@
           "question": "house",
           "expected_answer": "house",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "house = خانه (ساختمان)",
           "time_limit": 60
         },
         {
@@ -1146,6 +1292,7 @@
           "question": "home",
           "expected_answer": "home",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "home = خانه / محل زندگی",
           "time_limit": 60
         },
         {
@@ -1153,6 +1300,7 @@
           "question": "people",
           "expected_answer": "people",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "people = مردم",
           "time_limit": 60
         },
         {
@@ -1160,6 +1308,7 @@
           "question": "individuals",
           "expected_answer": "individuals",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "individuals = افراد",
           "time_limit": 60
         },
         {
@@ -1167,6 +1316,7 @@
           "question": "outside",
           "expected_answer": "outside",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "outside = بیرون",
           "time_limit": 60
         },
         {
@@ -1174,6 +1324,7 @@
           "question": "inside",
           "expected_answer": "inside",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "inside = داخل",
           "time_limit": 60
         },
         {
@@ -1181,6 +1332,7 @@
           "question": "new",
           "expected_answer": "new",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "new = جدید",
           "time_limit": 60
         },
         {
@@ -1188,6 +1340,7 @@
           "question": "old",
           "expected_answer": "old",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "old = قدیمی / پیر",
           "time_limit": 60
         },
         {
@@ -1195,6 +1348,7 @@
           "question": "young",
           "expected_answer": "young",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "young = جوان",
           "time_limit": 60
         },
         {
@@ -1202,6 +1356,7 @@
           "question": "street",
           "expected_answer": "street",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "street = خیابان",
           "time_limit": 60
         },
         {
@@ -1209,6 +1364,7 @@
           "question": "avenue",
           "expected_answer": "avenue",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "avenue = خیابان پهن و بزرگ",
           "time_limit": 60
         },
         {
@@ -1216,6 +1372,7 @@
           "question": "road",
           "expected_answer": "road",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "road = جاده",
           "time_limit": 60
         },
         {
@@ -1223,6 +1380,7 @@
           "question": "alley",
           "expected_answer": "alley",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "alley = کوچه",
           "time_limit": 60
         },
         {
@@ -1230,6 +1388,7 @@
           "question": "eat",
           "expected_answer": "eat",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "eat = خوردن",
           "time_limit": 60
         },
         {
@@ -1237,6 +1396,7 @@
           "question": "walk",
           "expected_answer": "walk",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "walk = راه رفتن",
           "time_limit": 60
         },
         {
@@ -1244,6 +1404,7 @@
           "question": "mother",
           "expected_answer": "mother",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "mother = مادر",
           "time_limit": 60
         },
         {
@@ -1251,6 +1412,7 @@
           "question": "I, you, he, she, it, we, they",
           "expected_answer": "I, you, he, she, it, we, they",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "I = من؛ you = تو / شما؛ he = او (مرد)؛ she = او (زن)؛ it = آن (برای چیز یا حیوان)؛ we = ما؛ they = آن‌ها",
           "time_limit": 60
         },
         {
@@ -1258,6 +1420,7 @@
           "question": "watches",
           "expected_answer": "watches",
           "explanation": "در watches بعد از ch از es استفاده می‌کنیم.",
+          "hint": "watches = ساعت‌ها (جمع watch) / تماشا می‌کند (برای He / She / It)",
           "time_limit": 60
         },
         {
@@ -1265,6 +1428,7 @@
           "question": "says",
           "expected_answer": "says",
           "explanation": "شکل فعل say برای he، she و it به صورت says نوشته می‌شود.",
+          "hint": "says = می‌گوید",
           "time_limit": 60
         }
       ]
@@ -1281,7 +1445,7 @@
           "question": "He / She / It: eat",
           "expected_answer": "eats",
           "explanation": "برای he، she و it به eat حرف s اضافه می‌کنیم.",
-          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "hint": "eat = خوردن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
           "points": 10,
           "time_limit": 60
         },
@@ -1290,7 +1454,7 @@
           "question": "He / She / It: walk",
           "expected_answer": "walks",
           "explanation": "برای he، she و it به walk حرف s اضافه می‌کنیم.",
-          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "hint": "walk = راه رفتن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
           "points": 10,
           "time_limit": 60
         },
@@ -1299,7 +1463,7 @@
           "question": "He / She / It: listen",
           "expected_answer": "listens",
           "explanation": "برای he، she و it به listen حرف s اضافه می‌کنیم.",
-          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "hint": "listen = گوش دادن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
           "points": 10,
           "time_limit": 60
         },
@@ -1308,7 +1472,7 @@
           "question": "He / She / It: say",
           "expected_answer": "says",
           "explanation": "در say که به y بعد از حرف صدادار ختم می‌شود، فقط s اضافه می‌کنیم.",
-          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "hint": "say = گفتن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
           "points": 10,
           "time_limit": 60
         },
@@ -1317,7 +1481,7 @@
           "question": "He / She / It: read",
           "expected_answer": "reads",
           "explanation": "برای he، she و it به read حرف s اضافه می‌کنیم.",
-          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "hint": "read = خواندن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
           "points": 10,
           "time_limit": 60
         },
@@ -1326,7 +1490,7 @@
           "question": "He / She / It: write",
           "expected_answer": "writes",
           "explanation": "برای he، she و it به write حرف s اضافه می‌کنیم.",
-          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "hint": "write = نوشتن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
           "points": 10,
           "time_limit": 60
         },
@@ -1335,7 +1499,7 @@
           "question": "He / She / It: watch",
           "expected_answer": "watches",
           "explanation": "برای فعل‌های ختم‌شده به ch، معمولاً es اضافه می‌کنیم.",
-          "hint": "این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "hint": "watch = تماشا کردن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
           "points": 10,
           "time_limit": 60
         }
@@ -1407,6 +1571,7 @@
           "expected_answer": "He walks.",
           "incorrect_sentence": "He walk.",
           "explanation": "He سوم‌شخص مفرد است و فعل در جمله‌ی مثبت s می‌گیرد.",
+          "hint": "He = او (مرد)؛ walks = راه می‌رود",
           "time_limit": 60
         },
         {
@@ -1415,6 +1580,7 @@
           "expected_answer": "She watches.",
           "incorrect_sentence": "She watch.",
           "explanation": "Watch بعد از She به watches تبدیل می‌شود.",
+          "hint": "She = او (زن)؛ watches = تماشا می‌کند",
           "time_limit": 60
         }
       ]
@@ -1431,6 +1597,7 @@
           "question": "او غذا می‌خورد. (مرد)",
           "expected_answer": "He eats.",
           "explanation": "با He فعل eat به eats تبدیل می‌شود.",
+          "hint": "کلمه‌ی کلیدی: «می‌خورد» = eat؛ تلفظ: /iːt/ (ایت)؛ نکته: برای He / She / It، فعل s می‌گیرد: eats.",
           "time_limit": 60
         },
         {
@@ -1438,6 +1605,7 @@
           "question": "او کتاب می‌خواند. (زن)",
           "expected_answer": "She reads.",
           "explanation": "با She فعل read به reads تبدیل می‌شود.",
+          "hint": "کلمه‌ی کلیدی: «می‌خواند» = read؛ تلفظ: /riːd/ (ریـد)؛ نکته: برای She، فعل s می‌گیرد: reads.",
           "time_limit": 60
         }
       ]

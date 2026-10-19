@@ -5,6 +5,7 @@
 // So words are spoken inside their sentence whenever possible, and never cut into single words.
 
 import { h, keepFocus } from './dom.js';
+import { splitPrompt } from './prompt.js';
 
 const NORMAL_RATE = 0.9;
 const SLOW_RATE = 0.55;
@@ -192,10 +193,13 @@ export function contextSentence(question) {
 /**
  * The complete English sentence of a question, once it is answered.
  * For a fill-in-the-blank item ("I ___ a student."), the blank is filled with the expected answer.
+ * Only the English part is used: the Persian instruction ("جای خالی را کامل کن: ") is not part of the sentence.
  * Otherwise the expected answer is already the full sentence.
  */
 export function completeSentence(question) {
   const expected = String(question.expected_answer ?? '').trim();
-  const text = String(question.question ?? '');
-  return text.includes('___') ? text.replace('___', expected).trim() : expected;
+  const english = splitPrompt(String(question.question ?? '')).sentence;
+  if (!english.includes('___')) return expected;
+  // "It ___ ." becomes "It eats." (no space before the final punctuation).
+  return english.replace('___', expected).replace(/\s+([.!?,;:])/g, '$1').trim();
 }

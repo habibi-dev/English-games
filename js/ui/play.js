@@ -572,6 +572,20 @@ function acceptedAnswersBox(question) {
   );
 }
 
+/**
+ * Listening (dictation) items: the hint holds the word's meaning, so the final answer shows it too,
+ * not just the bare word. Null for every other item.
+ */
+function meaningBox(q) {
+  if (q.presentation !== 'audio' || !q.hint) return null;
+  return h(
+    'div',
+    { class: 'fb-box fb-note', dir: 'rtl' },
+    h('span', { class: 'fb-label' }, 'Meaning'),
+    h('p', { class: 'fb-text-sm', dir: 'rtl' }, q.hint),
+  );
+}
+
 /** One dot per question of the mission: green = correct, red = wrong, pulsing = current. */
 function progressTrack(session) {
   return h(
@@ -697,6 +711,7 @@ function renderQuestion(root, session, flow) {
           h('p', { class: 'fb-text' }, ltr(fullSentence)),
           speakButtons(fullSentence),
         ),
+        meaningBox(q),
         outcome.correct || outcome.timedOut
           ? null
           : h('div', { class: 'fb-box fb-yours' }, h('span', { class: 'fb-label' }, 'Your answer'), h('p', { class: 'fb-text' }, ltr(outcome.answer))),
@@ -970,6 +985,9 @@ function renderResults(root, session, flow) {
             speakButtons(answerText(o.question)),
           ),
           o.question.explanation ? h('p', { class: 'mistake-note', dir: 'auto' }, o.question.explanation) : null,
+          o.question.presentation === 'audio' && o.question.hint
+            ? h('p', { class: 'mistake-note', dir: 'rtl' }, `Meaning: ${o.question.hint}`)
+            : null,
         ),
       ),
       h(
