@@ -1939,10 +1939,21 @@ textarea {
   animation: pop 0.4s ease;
 }
 
+/* One line of dots. A long mission scrolls sideways inside this strip, so the footer keeps its height. */
 .progress-track {
   display: flex;
   gap: 6px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: thin;
+  padding: 6px;
+  margin: -6px;
+}
+
+.progress-track .dot {
+  flex: none;
 }
 
 .dot {
@@ -1986,6 +1997,7 @@ textarea {
 /* The path (label and dots) takes the free space on the start side. It keeps a little space from the edge. */
 .footer-path {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 4px;
   flex: 1;
   min-width: 0;
@@ -3727,6 +3739,13 @@ body.game-running .topbar-admin .icon-exit {
 /* Voice-only answers: the box shows what was heard, and the mic is the way in. */
 .answer-box.voice-only .answer-input {
   cursor: default;
+}
+
+.type-instead {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
 }
 
 .answer-box.voice-only .mic {

@@ -5,10 +5,11 @@
 //   lock(expected)  disable input, optionally highlighting the expected answer
 //   focus()
 
-import { h, toast, keepFocus } from './dom.js';
+import { h, toast, keepFocus, confirmDialog, fa } from './dom.js';
 import { playButton } from './speech-out.js';
 import { validateAnswer } from '../engine/validator.js';
 import { scrambleLetters } from '../engine/spelling.js';
+import { typingQuota, spendTypingQuota } from '../storage/typing-quota.js';
 
 export const INSTRUCTIONS = {
   quick_translation: 'به انگلیسی ترجمه کن',
@@ -160,6 +161,57 @@ function createMicButton(input, question = null) {
   return button;
 }
 
+/**
+ * "Type instead" for a voice-only answer: a few typed answers a day. The learner is asked first,
+ * and each confirmed use takes one of the day's allowance (see storage/typing-quota.js).
+ */
+function typeInstead(input, placeholder, onUnlock) {
+  const count = h('span', { class: 'typing-quota muted small', dir: 'ltr' });
+  const button = h(
+    'button',
+    { type: 'button', class: 'btn ghost small type-instead-btn', title: 'Type this answer instead of saying it', onclick: askToType },
+    '⌨ Type instead',
+  );
+  const element = h('div', { class: 'type-instead' }, button, count);
+
+  function showQuota() {
+    const quota = typingQuota();
+    count.textContent = `${fa(quota.left)} of ${fa(quota.limit)} typed answers left today`;
+    button.disabled = quota.left === 0;
+  }
+
+  async function askToType() {
+    const before = typingQuota();
+    const confirmed = await confirmDialog({
+      title: 'Type this answer?',
+      message: `You can type up to ${fa(before.limit)} answers a day. ${fa(before.left)} of ${fa(before.limit)} are left today, and this answer uses one of them.`,
+      confirmText: 'Type it',
+      cancelText: 'Keep using voice',
+    });
+    if (!confirmed || input.disabled) return;
+    if (!spendTypingQuota()) {
+      showQuota();
+      toast('No typed answers are left today.', 'warn');
+      return;
+    }
+    input.readOnly = false;
+    input.removeAttribute('inputmode');
+    input.placeholder = placeholder;
+    onUnlock();
+    button.hidden = true;
+    showQuota();
+    input.focus();
+  }
+
+  showQuota();
+  return {
+    element,
+    lock() {
+      button.disabled = true;
+    },
+  };
+}
+
 function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { voice = true, voiceOnly = false, question = null } = {}) {
   const input = h('input', {
     type: 'text',
@@ -199,18 +251,29 @@ function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { vo
       : 'Voice typing is not available in this browser. You can use keyboard dictation instead (for example Win+H on Windows, or the keyboard microphone on a phone).';
   }
 
+  const label = h('span', { class: 'answer-label' }, voiceMode ? 'Your answer · say it' : 'Your answer');
+  const typing = voiceMode
+    ? typeInstead(input, placeholder, () => {
+        box.classList.remove('voice-only');
+        label.textContent = 'Your answer';
+      })
+    : null;
+  const box = h(
+    'div',
+    { class: `answer-box${voiceMode ? ' voice-only' : ''}` },
+    label,
+    h('div', { class: 'input-row' }, input, mic),
+    typing?.element,
+    note ? h('p', { class: 'muted small' }, note) : null,
+  );
+
   return {
-    element: h(
-      'div',
-      { class: `answer-box${voiceMode ? ' voice-only' : ''}` },
-      h('span', { class: 'answer-label' }, voiceMode ? 'Your answer · say it' : 'Your answer'),
-      h('div', { class: 'input-row' }, input, mic),
-      note ? h('p', { class: 'muted small' }, note) : null,
-    ),
+    element: box,
     getValue: () => input.value,
     lock() {
       input.disabled = true;
       if (mic) mic.disabled = true;
+      typing?.lock();
     },
     focus() {
       input.focus();

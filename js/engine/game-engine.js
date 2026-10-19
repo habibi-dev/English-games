@@ -37,6 +37,9 @@ export function shuffle(items, random = Math.random) {
   return copy;
 }
 
+// The most questions one mission (or review game) holds. Longer lists make the progress strip and the session too long.
+export const MAX_MISSION_QUESTIONS = 50;
+
 export function pickQuestions(questions, filters = {}, { count = Infinity, random = Math.random } = {}) {
   return shuffle(filterQuestions(questions, filters), random).slice(0, count);
 }

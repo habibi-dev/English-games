@@ -4,7 +4,7 @@
 
 import { listQuestions, listLessons } from '../bank/repository.js';
 import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey, persianSentence } from '../bank/schema.js';
-import { filterQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode } from '../engine/game-engine.js';
+import { filterQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode, MAX_MISSION_QUESTIONS } from '../engine/game-engine.js';
 import { takeReview } from './review-handoff.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, levelStartXp } from '../progress/player.js';
@@ -29,7 +29,9 @@ function containsWord(sentence, word) {
     .some((token) => token === target);
 }
 
-const COUNTS = [10, 20, 50, 0]; // 0 means "all"
+const COUNTS = [10, 20, MAX_MISSION_QUESTIONS];
+// Missions saved before the "all questions" choice was removed (stored as 0) play the longest length.
+const savedCount = (value) => (value === 0 ? MAX_MISSION_QUESTIONS : value);
 
 /** "1 lesson", "3 lessons". */
 const plural = (n, word) => `${fa(n)} ${word}${Number(n) === 1 ? '' : 's'}`;
@@ -302,7 +304,7 @@ async function startReview(root, ids) {
         const spelled = applySpellingMode(q);
         return applyPlayMode(voiceOnly ? { ...spelled, answer_input: 'voice' } : spelled, saved.mode);
       }),
-  );
+  ).slice(0, MAX_MISSION_QUESTIONS);
   if (pool.length === 0) {
     toast('No questions to review are left.', 'warn');
     await showSetup(root);
@@ -350,7 +352,7 @@ async function showSetup(root) {
     presentation: [PRESENTATION_CHOICES.some(([value]) => value === saved.presentation) ? saved.presentation : 'auto'],
     input: [saved.answerInput === 'voice' ? 'voice' : 'typing'],
     mode: [Object.hasOwn(PLAY_MODES, saved.mode) ? saved.mode : 'easy'],
-    count: [COUNTS.includes(saved.count) ? saved.count : 10],
+    count: [COUNTS.includes(savedCount(saved.count)) ? savedCount(saved.count) : 10],
   };
 
   // Set by the mission step; the book step does not show them.
@@ -396,7 +398,7 @@ async function showSetup(root) {
     const freshNow = Date.now();
     const freshSchedule = scheduleOf(fresh);
     const chosen = missionQuestions(selectedQuestions(), freshSchedule, freshNow, {
-      count: state.count[0] || Infinity,
+      count: state.count[0],
     });
     if (chosen.length === 0) {
       const next = nextDueAt(selectedQuestions(), freshSchedule, freshNow);
@@ -635,8 +637,7 @@ async function showSetup(root) {
           [
             [10, `${fa(10)} questions · short`],
             [20, `${fa(20)} questions · medium`],
-            [50, `${fa(50)} questions · long`],
-            [0, 'All questions'],
+            [MAX_MISSION_QUESTIONS, `${fa(MAX_MISSION_QUESTIONS)} questions · long`],
           ],
           state.count,
           { multiple: false, onChange: refresh, className: 'card-options' },
@@ -892,6 +893,15 @@ function meaningBox(q) {
   );
 }
 
+/** Moves the strip sideways so its current dot is in view. Only the strip scrolls, not the page. */
+function keepCurrentDotVisible(track) {
+  const dot = track.querySelector('.dot.current');
+  if (!dot) return;
+  const trackBox = track.getBoundingClientRect();
+  const dotBox = dot.getBoundingClientRect();
+  track.scrollLeft += dotBox.left - trackBox.left - (trackBox.width - dotBox.width) / 2;
+}
+
 /** One dot per question of the mission: green = correct, red = wrong, pulsing = current. */
 function progressTrack(session) {
   return h(
@@ -993,6 +1003,7 @@ function renderQuestion(root, session, flow) {
     const freshTrack = progressTrack(session);
     progressEl.replaceWith(freshTrack);
     progressEl = freshTrack;
+    keepCurrentDotVisible(freshTrack);
     showFeedback(outcome);
     // The result pops up now, so its sound plays now: win for a right answer, lose for a wrong or late one.
     playResultSound(outcome.correct, outcome.timedOut);
@@ -1127,6 +1138,7 @@ function renderQuestion(root, session, flow) {
       ),
     ),
   );
+  keepCurrentDotVisible(progressEl);
 
   tick();
   timerId = setInterval(tick, 250);
