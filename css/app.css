@@ -2654,6 +2654,14 @@ textarea {
   transition: transform 0.15s ease, filter 0.2s ease;
 }
 
+/* A speak control is waiting for its sound to start: show the loading cursor on it. */
+.speak.loading,
+.q-speak.loading,
+.gloss-word.loading,
+.gloss-chip.loading {
+  cursor: progress !important;
+}
+
 .q-speak .speak-glyph {
   width: 24px;
   height: 24px;

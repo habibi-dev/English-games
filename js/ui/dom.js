@@ -35,12 +35,23 @@ export function h(tag, props = {}, ...children) {
  * The click event still fires normally.
  */
 export function keepFocus(el) {
-  el.addEventListener('mousedown', (event) => event.preventDefault());
+  // The element that had focus when the press started (null if none, or if it was not the answer input).
+  let focusedBefore = null;
+  el.addEventListener('mousedown', (event) => {
+    const active = document.activeElement;
+    focusedBefore = active?.classList?.contains('answer-input') ? active : null;
+    event.preventDefault();
+  });
   el.addEventListener('click', () => {
-    // Some browsers still move focus on click, so put it back on the answer input if it is open.
+    // Only give the focus back to the answer input when it had it before the press.
+    // Helper buttons (speak, hint, key words) must not move the focus into the input by themselves.
+    const input = focusedBefore;
+    focusedBefore = null;
+    if (!input) return;
     setTimeout(() => {
-      const input = document.querySelector('.answer-input:not([disabled])');
-      if (input && document.activeElement !== input) input.focus({ preventScroll: true });
+      if (input.isConnected && !input.disabled && document.activeElement !== input) {
+        input.focus({ preventScroll: true });
+      }
     }, 0);
   });
   return el;

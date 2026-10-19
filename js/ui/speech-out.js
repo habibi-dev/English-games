@@ -7,6 +7,27 @@
 import { h, keepFocus } from './dom.js';
 import { splitPrompt } from './prompt.js';
 
+// Controls that read something aloud. Pressing one of them shows the loading cursor until the sound starts.
+const SPEAK_TRIGGER = '.speak, .q-speak, .gloss-word, .gloss-chip';
+const LOADING_LIMIT_MS = 6000;
+let pendingTrigger = null;
+
+if (typeof document !== 'undefined') {
+  // Runs before the button's own click handler, which calls speak() synchronously.
+  // The mark is cleared right after the click, so a speak call from anywhere else never uses it.
+  document.addEventListener(
+    'click',
+    (event) => {
+      const trigger = event.target instanceof Element ? event.target.closest(SPEAK_TRIGGER) : null;
+      pendingTrigger = trigger;
+      setTimeout(() => {
+        if (pendingTrigger === trigger) pendingTrigger = null;
+      }, 0);
+    },
+    true,
+  );
+}
+
 const NORMAL_RATE = 0.9;
 const SLOW_RATE = 0.55;
 
@@ -43,14 +64,33 @@ export function speak(text, { slow = false, onStart, onEnd, lang = 'en-US' } = {
   const synth = window.speechSynthesis;
   synth.cancel(); // do not queue several readings when the learner taps quickly
 
+  // The control the learner just pressed (if any). It shows a loading cursor until the sound starts.
+  const trigger = pendingTrigger;
+  pendingTrigger = null;
+  let loadingTimer = null;
+  const stopLoading = () => {
+    clearTimeout(loadingTimer);
+    trigger?.classList.remove('loading');
+  };
+  trigger?.classList.add('loading');
+  // Safety net: if the browser never reports the start, the cursor must not stay in loading state.
+  loadingTimer = setTimeout(stopLoading, LOADING_LIMIT_MS);
+
   const utterance = new SpeechSynthesisUtterance(text);
   utterance.lang = lang;
   utterance.rate = slow ? SLOW_RATE : NORMAL_RATE;
   const voice = pickVoice(lang);
   if (voice) utterance.voice = voice;
-  utterance.onstart = () => onStart?.();
-  utterance.onend = () => onEnd?.();
+  utterance.onstart = () => {
+    stopLoading();
+    onStart?.();
+  };
+  utterance.onend = () => {
+    stopLoading();
+    onEnd?.();
+  };
   utterance.onerror = (event) => {
+    stopLoading();
     onEnd?.();
     if (event.error !== 'interrupted' && event.error !== 'canceled') {
       console.warn('Speech synthesis error:', event.error);
