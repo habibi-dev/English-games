@@ -3785,7 +3785,10 @@
           "expected_answer": "That is my tutor.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "آن مدرس خصوصی من است."
+          "translation": "آن مدرس خصوصی من است.",
+          "accepted_answers": [
+            "That's my tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-33",
@@ -3798,7 +3801,10 @@
           "expected_answer": "That is my group.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "آن گروه من است."
+          "translation": "آن گروه من است.",
+          "accepted_answers": [
+            "That's my group."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-34",
@@ -3811,7 +3817,10 @@
           "expected_answer": "That is my house.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "آن خانه من است."
+          "translation": "آن خانه من است.",
+          "accepted_answers": [
+            "That's my house."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-35",
@@ -3824,7 +3833,10 @@
           "expected_answer": "That is my goal.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "آن هدف من است."
+          "translation": "آن هدف من است.",
+          "accepted_answers": [
+            "That's my goal."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-36",
@@ -3837,7 +3849,10 @@
           "expected_answer": "I have a goal.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "من یک هدف دارم."
+          "translation": "من یک هدف دارم.",
+          "accepted_answers": [
+            "I've a goal."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-37",
@@ -3850,7 +3865,10 @@
           "expected_answer": "I have a team.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "من یک تیم دارم."
+          "translation": "من یک تیم دارم.",
+          "accepted_answers": [
+            "I've a team."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-38",
@@ -3863,7 +3881,10 @@
           "expected_answer": "I have a group.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "من یک گروه دارم."
+          "translation": "من یک گروه دارم.",
+          "accepted_answers": [
+            "I've a group."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-39",
@@ -3876,7 +3897,10 @@
           "expected_answer": "I have a house.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "من یک خانه دارم."
+          "translation": "من یک خانه دارم.",
+          "accepted_answers": [
+            "I've a house."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-40",
@@ -3889,7 +3913,10 @@
           "expected_answer": "I have a pair.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "من یک جفت دارم."
+          "translation": "من یک جفت دارم.",
+          "accepted_answers": [
+            "I've a pair."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-41",
@@ -3902,7 +3929,10 @@
           "expected_answer": "I have a request.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "من یک درخواست دارم."
+          "translation": "من یک درخواست دارم.",
+          "accepted_answers": [
+            "I've a request."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-42",
@@ -3915,7 +3945,10 @@
           "expected_answer": "I have a band.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "من یک گروه موسیقی دارم."
+          "translation": "من یک گروه موسیقی دارم.",
+          "accepted_answers": [
+            "I've a band."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-43",
@@ -3928,7 +3961,10 @@
           "expected_answer": "I have a helper.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "من یک کمک‌کننده دارم."
+          "translation": "من یک کمک‌کننده دارم.",
+          "accepted_answers": [
+            "I've a helper."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-44",
@@ -3941,7 +3977,10 @@
           "expected_answer": "I have a tutor.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "من یک مدرس خصوصی دارم."
+          "translation": "من یک مدرس خصوصی دارم.",
+          "accepted_answers": [
+            "I've a tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-45",
@@ -3954,7 +3993,10 @@
           "expected_answer": "We have a tutor.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "ما یک مدرس خصوصی داریم."
+          "translation": "ما یک مدرس خصوصی داریم.",
+          "accepted_answers": [
+            "We've a tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-46",
@@ -3967,7 +4009,10 @@
           "expected_answer": "We have a helper.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "ما یک کمک‌کننده داریم."
+          "translation": "ما یک کمک‌کننده داریم.",
+          "accepted_answers": [
+            "We've a helper."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-47",
@@ -3980,7 +4025,10 @@
           "expected_answer": "We have a team.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "ما یک تیم داریم."
+          "translation": "ما یک تیم داریم.",
+          "accepted_answers": [
+            "We've a team."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-48",
@@ -3993,7 +4041,10 @@
           "expected_answer": "We have a group.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "ما یک گروه داریم."
+          "translation": "ما یک گروه داریم.",
+          "accepted_answers": [
+            "We've a group."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-49",
@@ -4006,7 +4057,10 @@
           "expected_answer": "We have a goal.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "ما یک هدف داریم."
+          "translation": "ما یک هدف داریم.",
+          "accepted_answers": [
+            "We've a goal."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-50",
@@ -4019,7 +4073,10 @@
           "expected_answer": "We have a house.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "ما یک خانه داریم."
+          "translation": "ما یک خانه داریم.",
+          "accepted_answers": [
+            "We've a house."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-51",
@@ -4032,7 +4089,10 @@
           "expected_answer": "I am a tutor.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "من یک مدرس خصوصی هستم."
+          "translation": "من یک مدرس خصوصی هستم.",
+          "accepted_answers": [
+            "I'm a tutor."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-52",
@@ -4045,7 +4105,10 @@
           "expected_answer": "I am a helper.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "من یک کمک‌کننده هستم."
+          "translation": "من یک کمک‌کننده هستم.",
+          "accepted_answers": [
+            "I'm a helper."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-53",
@@ -4657,7 +4720,8 @@
           "time_limit": 60,
           "accepted_answers": [
             "What is your family name?",
-            "What's your family name?"
+            "What's your family name?",
+            "What's your last name?"
           ],
           "translation": "نام خانوادگی تو چیست؟"
         },
@@ -4782,7 +4846,10 @@
           "expected_answer": "You have a question.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "تو یک سؤال داری."
+          "translation": "تو یک سؤال داری.",
+          "accepted_answers": [
+            "You've a question."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-121",
@@ -4795,7 +4862,10 @@
           "expected_answer": "They have a question.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "آن‌ها یک سؤال دارند."
+          "translation": "آن‌ها یک سؤال دارند.",
+          "accepted_answers": [
+            "They've a question."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-122",
@@ -4808,7 +4878,10 @@
           "expected_answer": "It is my house.",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "آن خانه من است."
+          "translation": "آن خانه من است.",
+          "accepted_answers": [
+            "It's my house."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-123",
@@ -4821,7 +4894,10 @@
           "expected_answer": "What is your first name?",
           "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
           "time_limit": 60,
-          "translation": "اسم کوچک تو چیست؟"
+          "translation": "اسم کوچک تو چیست؟",
+          "accepted_answers": [
+            "What's your first name?"
+          ]
         },
         {
           "id": "evolve-1-l01-wt-124",
