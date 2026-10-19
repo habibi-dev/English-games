@@ -7,14 +7,14 @@ import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey, persianSentence } from
 import { filterQuestions, pickQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode } from '../engine/game-engine.js';
 import { takeReview } from './review-handoff.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
-import { playerProfile, levelFor, starsFor, XP_PER_LEVEL } from '../progress/player.js';
+import { playerProfile, levelFor, starsFor, levelStartXp } from '../progress/player.js';
 import { doneIds, progressOf, markPractice } from '../progress/lesson-progress.js';
 import { getSettings, saveSettings, getLessonResets, markLessonReset } from '../storage/settings.js';
 import { h, toast, fa, ltr, badge, percent, keepFocus } from './dom.js';
 import { createAnswerWidget, instructionFor } from './answer-widgets.js';
 import { splitPrompt } from './prompt.js';
 import { speak, speakButtons, speakBar, completeSentence, contextSentence, questionSpeakButton } from './speech-out.js';
-import { playResultSound } from './sounds.js';
+import { playResultSound, startMusic, stopMusic, vibrateFor } from './sounds.js';
 import { beginMission, endMission } from '../progress/activity.js';
 import { keepScreenOn } from './wake-lock.js';
 import { applySpellingMode } from '../engine/spelling.js';
@@ -133,6 +133,7 @@ export async function renderPlay(root) {
     endMission();
     gameInProgress = false;
     keepScreenOn(false);
+    stopMusic();
     settingsStart = null;
   };
 }
@@ -200,7 +201,7 @@ function playerCard(profile) {
         { class: 'xp-bar', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': pct },
         h('div', { class: 'xp-fill', style: `width: ${pct}%` }),
       ),
-      h('span', { class: 'muted small' }, `${fa(profile.xp % XP_PER_LEVEL)} of ${fa(XP_PER_LEVEL)} XP to the next level`),
+      h('span', { class: 'muted small' }, `${fa(profile.xp - levelStartXp(profile.level))} of ${fa(levelStartXp(profile.level + 1) - levelStartXp(profile.level))} XP to the next level`),
     ),
     h(
       'div',
@@ -814,6 +815,8 @@ function renderQuestion(root, session, flow) {
   gameInProgress = true;
   // The screen stays on for the whole game, so it does not sleep between questions.
   keepScreenOn(true);
+  // The background tune starts with the game (it does nothing when it is already playing).
+  startMusic();
   settingsStart = null;
   // Every new question starts at the top of the page.
   window.scrollTo(0, 0);
@@ -1174,6 +1177,9 @@ function resultTile(icon, value, label, tone) {
 function renderResults(root, session, flow) {
   gameInProgress = false;
   keepScreenOn(false);
+  stopMusic();
+  // The end of the game has its own vibration pattern.
+  vibrateFor('end');
   // The mission is over: its time is saved now.
   endMission();
   const summary = session.summary();

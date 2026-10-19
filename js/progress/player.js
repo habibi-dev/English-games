@@ -1,7 +1,14 @@
 // Player profile for the game feel: XP, level, accuracy and best streak.
 // Pure functions over attempts (no storage access), so they are easy to test.
 
-export const XP_PER_LEVEL = 100;
+// Level L starts at XP_BASE * (L - 1)^2 XP. Each level costs more XP than the one before,
+// so the early levels come quickly and the later ones take many more games (level 8 needs 2940 XP).
+export const XP_BASE = 60;
+
+/** The XP at which `level` starts. */
+export function levelStartXp(level) {
+  return XP_BASE * (level - 1) ** 2;
+}
 
 /** XP = points earned on correct answers. */
 export function totalXp(attempts) {
@@ -9,12 +16,15 @@ export function totalXp(attempts) {
 }
 
 export function levelFor(xp) {
-  return Math.floor(xp / XP_PER_LEVEL) + 1;
+  return Math.floor(Math.sqrt(Math.max(0, xp) / XP_BASE)) + 1;
 }
 
-/** Share of the way to the next level, from 0 to 1. */
+/** Share of the way from the current level to the next one, from 0 to 1. */
 export function levelProgress(xp) {
-  return (xp % XP_PER_LEVEL) / XP_PER_LEVEL;
+  const level = levelFor(xp);
+  const start = levelStartXp(level);
+  const next = levelStartXp(level + 1);
+  return (xp - start) / (next - start);
 }
 
 /** Longest run of consecutive correct answers, in the order they were answered. */

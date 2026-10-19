@@ -11,9 +11,13 @@ test('XP counts points of correct answers only', () => {
 
 test('level goes up every 100 XP and progress shows the share toward the next level', () => {
   assert.equal(levelFor(0), 1);
-  assert.equal(levelFor(99), 1);
-  assert.equal(levelFor(100), 2);
+  assert.equal(levelFor(59), 1);
+  assert.equal(levelFor(60), 2);
   assert.equal(levelProgress(150), 0.5);
+  // Each level costs more: level 8 needs 2940 XP, so 700 XP (the old level 8) is only level 4.
+  assert.equal(levelFor(2939), 7);
+  assert.equal(levelFor(2940), 8);
+  assert.equal(levelFor(700), 4);
 });
 
 test('best streak is the longest run of correct answers in order', () => {

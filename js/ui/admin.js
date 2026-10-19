@@ -85,6 +85,8 @@ function soundsSection() {
     toggle('win', 'Win sound', 'A soft rising chime.'),
     toggle('lose', 'Lose sound', 'A soft, slow "aww" from a small group.'),
     toggle('timeout', 'Time-up sound', 'Two short falling blips when the time runs out.'),
+    toggle('music', 'Background music', 'A soft, slow tune that plays while a game is on.'),
+    toggle('vibrate', 'Vibration', 'A long buzz for a wrong answer or time-up, one short tap for a right answer, and a pattern at the end of a game. Phones only.'),
     h(
       'label',
       { class: 'sound-volume' },

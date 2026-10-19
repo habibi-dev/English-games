@@ -7,6 +7,8 @@ import { getSoundSettings } from '../storage/settings.js';
 
 // Overall loudness is kept low on purpose; the volume setting scales it further.
 const MASTER_LEVEL = 0.8;
+// The background tune is much quieter than the sound effects, so it stays in the background.
+const MUSIC_LEVEL = 0.1;
 
 let context = null;
 
@@ -122,6 +124,7 @@ export function playTimeoutSound() {
  * Respects the sound settings (master switch and each sound's own switch).
  */
 export function playResultSound(correct, timedOut = false) {
+  vibrateFor(correct ? 'correct' : 'wrong');
   const settings = getSoundSettings();
   if (!settings.enabled) return;
   if (correct) {
@@ -130,5 +133,90 @@ export function playResultSound(correct, timedOut = false) {
     if (settings.timeout) play(timeoutSound);
   } else if (settings.lose) {
     play(loseSound);
+  }
+}
+
+// ---- Vibration (phones and tablets that have a vibration motor; ignored elsewhere).
+// correct: one short tap. wrong (and time-up): one long buzz. end: a pattern at the end of a game.
+const VIBRATION = {
+  correct: [70],
+  wrong: [600],
+  end: [120, 90, 120, 90, 380],
+};
+
+/** Vibrates for an event, if the device can and the vibration setting is on. */
+export function vibrateFor(kind) {
+  try {
+    if (!getSoundSettings().vibrate) return;
+    if (typeof navigator !== 'undefined' && typeof navigator.vibrate === 'function') {
+      navigator.vibrate(VIBRATION[kind] ?? []);
+    }
+  } catch {
+    // Vibration is a nicety: never let it break the answer screen.
+  }
+}
+
+// ---- Background music: a soft, slow chord pad that changes every few seconds.
+// It is made with the Web Audio API (no audio file), starts when a game starts and stops when it ends.
+const CHORDS = [
+  [130.81, 164.81, 196.0], // C3 E3 G3
+  [110.0, 130.81, 164.81], // A2 C3 E3
+  [87.31, 110.0, 130.81], // F2 A2 C3
+  [98.0, 123.47, 146.83], // G2 B2 D3
+];
+const CHORD_SECONDS = 4;
+
+let music = null;
+
+/** Starts the background tune (no effect if it is already playing or the sound settings turn it off). */
+export function startMusic() {
+  const settings = getSoundSettings();
+  if (!settings.enabled || !settings.music || music) return;
+  try {
+    const ac = audioContext();
+    if (!ac) return;
+    const output = ac.createGain();
+    output.gain.value = 0.0001;
+    output.gain.setTargetAtTime(settings.volume * MUSIC_LEVEL, ac.currentTime, 1.5); // fade in
+    const filter = ac.createBiquadFilter();
+    filter.type = 'lowpass';
+    filter.frequency.value = 900;
+    filter.connect(output);
+    output.connect(ac.destination);
+
+    const voices = CHORDS[0].map((freq) => {
+      const osc = ac.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      osc.connect(filter);
+      osc.start();
+      return osc;
+    });
+
+    let step = 0;
+    const changeChord = () => {
+      const chord = CHORDS[step % CHORDS.length];
+      step += 1;
+      voices.forEach((osc, i) => osc.frequency.setTargetAtTime(chord[i], ac.currentTime, 0.8));
+    };
+    const timer = setInterval(changeChord, CHORD_SECONDS * 1000);
+    music = { ac, output, voices, timer };
+  } catch {
+    // Music is optional: a failure must never break the game.
+    music = null;
+  }
+}
+
+/** Fades the background tune out and stops it. Does nothing when it is not playing. */
+export function stopMusic() {
+  if (!music) return;
+  const { ac, output, voices, timer } = music;
+  music = null;
+  clearInterval(timer);
+  try {
+    output.gain.setTargetAtTime(0.0001, ac.currentTime, 0.4);
+    voices.forEach((osc) => osc.stop(ac.currentTime + 2));
+  } catch {
+    // Already stopped or the context is gone: nothing else to do.
   }
 }
