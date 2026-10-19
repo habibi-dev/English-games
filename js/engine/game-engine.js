@@ -4,6 +4,7 @@
 // Pure module with an injectable clock, so it can be unit-tested.
 
 import { validateAnswer } from './validator.js';
+import { lessonKey } from '../bank/schema.js';
 
 const allows = (list, value) => list === undefined || list.includes(value);
 
@@ -11,12 +12,16 @@ const allows = (list, value) => list === undefined || list.includes(value);
  * Returns enabled questions that match the filters.
  * An undefined filter means "no restriction"; an empty array means "match nothing".
  */
-export function filterQuestions(questions, { banks, topics, categories, difficulties, includeDisabled = false } = {}) {
+export function filterQuestions(
+  questions,
+  { books, lessons, topics, categories, difficulties, includeDisabled = false } = {},
+) {
   return questions.filter(
     (q) =>
       (includeDisabled || q.enabled !== false) &&
-      // Questions without a bank (added by hand) are always part of the selection.
-      (!q.bank || allows(banks, q.bank)) &&
+      allows(books, q.book) &&
+      // lessons are "book/lesson" keys (see lessonKey), so the same lesson number in two books stays apart.
+      allows(lessons, lessonKey(q.book, q.lesson)) &&
       allows(topics, q.topic) &&
       allows(categories, q.category) &&
       allows(difficulties, q.difficulty),

@@ -1,19 +1,20 @@
-// Admin screen (question bank management): list, filters, enable/disable, add/edit/delete,
-// JSON/CSV import and export, reset from the bank files. The game code is never touched here.
+// Admin screen (question management): list, filters, enable/disable, add/edit/delete,
+// JSON/CSV import and export, reset from the lesson files. The game code is never touched here.
 
 import {
   listQuestions,
-  listBanks,
+  listLessons,
   saveQuestion,
   removeQuestion,
   getQuestion,
   importIntoStore,
-  syncBanks,
+  syncContent,
 } from '../bank/repository.js';
 import {
   CATEGORIES,
   DIFFICULTIES,
   OPERATIONS,
+  PRESENTATIONS,
   normalizeQuestion,
   validateQuestion,
   topicLabel,
@@ -46,7 +47,7 @@ async function renderList(root) {
   const body = h('div', { class: 'admin-body' });
   const ctx = {
     questions: [],
-    banks: [],
+    lessons: [],
     issues: new Map(),
     topicSelect: null,
     draw: () => body.replaceChildren(...listContent(ctx).filter(Boolean)),
@@ -54,9 +55,9 @@ async function renderList(root) {
   };
 
   ctx.reload = async () => {
-    const [questions, banks] = await Promise.all([listQuestions(), listBanks()]);
+    const [questions, lessons] = await Promise.all([listQuestions(), listLessons()]);
     ctx.questions = questions.sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true }));
-    ctx.banks = banks;
+    ctx.lessons = lessons.sort((a, b) => a.order - b.order);
     ctx.issues = new Map(
       ctx.questions.flatMap((q) => {
         const { errors, warnings } = validateQuestion(q);
@@ -157,7 +158,7 @@ function toolbar(ctx) {
       h('button', { type: 'button', class: 'btn', onclick: () => fileInput.click() }, 'ایمپورت JSON / CSV'),
       h('button', { type: 'button', class: 'btn ghost', onclick: () => exportAll(ctx, 'json') }, 'خروجی JSON'),
       h('button', { type: 'button', class: 'btn ghost', onclick: () => exportAll(ctx, 'csv') }, 'خروجی CSV'),
-      h('button', { type: 'button', class: 'btn ghost', onclick: () => resetFromBanks(ctx) }, 'بازگردانی از فایل‌های بانک'),
+      h('button', { type: 'button', class: 'btn ghost', onclick: () => resetFromContent(ctx) }, 'بازگردانی از فایل‌های درس'),
     ),
     h(
       'p',
@@ -194,14 +195,14 @@ function listContent(ctx) {
     ),
   ];
 
-  if (ctx.banks.length) {
+  if (ctx.lessons.length) {
     parts.push(
       h(
         'p',
         { class: 'muted small' },
-        'بانک‌های نصب‌شده: ' +
-          ctx.banks
-            .map((b) => `${b.name} (نسخه ${b.version}، ${fa(b.count)} سؤال${b.invalid ? `، ${fa(b.invalid)} رد شده` : ''})`)
+        'درس‌های نصب‌شده: ' +
+          ctx.lessons
+            .map((l) => `${l.bookTitle} · ${l.lessonTitle} (نسخه ${l.version}، ${fa(l.count)} سؤال${l.invalid ? `، ${fa(l.invalid)} رد شده` : ''})`)
             .join(' · '),
       ),
     );
@@ -344,14 +345,14 @@ function exportAll(ctx, format) {
   );
 }
 
-async function resetFromBanks(ctx) {
-  if (!confirm('سؤال‌ها از روی فایل‌های بانک دوباره نوشته می‌شوند (بر اساس شناسه). ویرایش‌های همان سؤال‌ها از بین می‌رود. ادامه می‌دهی؟')) {
+async function resetFromContent(ctx) {
+  if (!confirm('سؤال‌ها از روی فایل‌های درس دوباره نوشته می‌شوند (بر اساس شناسه). ویرایش‌های همان سؤال‌ها از بین می‌رود. ادامه می‌دهی؟')) {
     return;
   }
-  const { loaded, errors } = await syncBanks({ force: true });
-  errors.forEach((e) => toast(`بانک ${e.bank}: ${e.message}`, 'error'));
-  const total = loaded.reduce((sum, bank) => sum + bank.count, 0);
-  toast(`${fa(total)} سؤال از فایل‌های بانک بارگذاری شد.`);
+  const { loaded, errors } = await syncContent({ force: true });
+  errors.forEach((e) => toast(`درس ${e.lesson}: ${e.message}`, 'error'));
+  const total = loaded.reduce((sum, lesson) => sum + lesson.count, 0);
+  toast(`${fa(total)} سؤال از فایل‌های درس بارگذاری شد.`);
   await ctx.reload();
 }
 
@@ -398,12 +399,23 @@ async function renderEditor(root, existing) {
     question: textarea(data.question, { rows: 2 }),
     expected: textInput(data.expected_answer, { ltr: true }),
     accepted: textarea((data.accepted_answers ?? []).join('\n'), { rows: 3, ltr: true }),
+    answer_mode: select(
+      [
+        ['single', 'یک پاسخ (پیش‌فرض)'],
+        ['list', 'فهرست: چند مورد از پاسخ‌ها'],
+      ],
+      data.answer_mode ?? 'single',
+    ),
+    min_items: h('input', { type: 'number', min: 1, value: data.min_items ?? 1 }),
+    book: textInput(data.book, { ltr: true }),
+    lesson: textInput(data.lesson, { ltr: true }),
     explanation: textarea(data.explanation, { rows: 2 }),
     hint: textInput(data.hint),
     glossary: textarea((data.glossary ?? []).map((e) => `${e.word} = ${e.meaning}`).join('\n'), { rows: 3 }),
     points: h('input', { type: 'number', min: 1, value: data.points ?? 10 }),
     time_limit: h('input', { type: 'number', min: 1, value: data.time_limit ?? 20 }),
     enabled: h('input', { type: 'checkbox', checked: data.enabled !== false }),
+    presentation: select(Object.entries(PRESENTATIONS), data.presentation ?? 'text'),
     word_bank: textarea((data.word_bank ?? []).join('\n'), { rows: 6, ltr: true }),
     incorrect: textInput(data.incorrect_sentence, { ltr: true }),
     options: textarea((data.options ?? []).join('\n'), { rows: 4, ltr: true }),
@@ -436,14 +448,19 @@ async function renderEditor(root, existing) {
       question: f.question.value,
       expected_answer: f.expected.value,
       accepted_answers: splitLines(f.accepted.value),
+      answer_mode: f.answer_mode.value,
+      min_items: f.min_items.value,
+      book: f.book.value,
+      lesson: f.lesson.value,
       explanation: f.explanation.value,
       hint: f.hint.value,
       glossary: splitLines(f.glossary.value),
-      // Keep the bank the question came from, so it stays in its bank after editing.
-      bank: data.bank,
+      // Keep the exercise the question came from, so it stays in its exercise after editing.
+      exercise: data.exercise,
       points: f.points.value,
       time_limit: f.time_limit.value,
       enabled: f.enabled.checked,
+      presentation: f.presentation.value,
       word_bank: splitLines(f.word_bank.value),
       incorrect_sentence: f.incorrect.value,
       options: splitLines(f.options.value),
@@ -489,6 +506,8 @@ async function renderEditor(root, existing) {
         field('شناسه (id)', f.id, { note: isNew ? 'یکتا باشد؛ پیشنهادی است.' : 'شناسه قابل تغییر نیست.' }),
         field('نوع سؤال (category)', f.category),
         field('موضوع (topic)', f.topic, { note: 'مثلاً to_be یا do_does؛ موضوع جدید هم قابل قبول است.' }),
+        field('کتاب (book)', f.book, { note: 'مثلاً evolve-1. خالی بگذار اگر درسی نیست.' }),
+        field('درس (lesson)', f.lesson, { note: 'شماره‌ی درس، مثلاً 3.' }),
         field('سطح (difficulty)', f.difficulty),
         field('متن سؤال', f.question, { wide: true }),
         field('پاسخ اصلی (expected_answer)', f.expected, { wide: true }),
@@ -496,6 +515,11 @@ async function renderEditor(root, existing) {
           wide: true,
           note: 'پاسخ اصلی خودکار اضافه می‌شود. هیچ پاسخی غیر از این‌ها پذیرفته نمی‌شود.',
         }),
+        field('حالت پاسخ (answer_mode)', f.answer_mode, {
+          wide: true,
+          note: 'در حالت فهرست، پاسخ‌ها با ، یا ؛ جدا می‌شوند و همه‌ی موارد از فهرست پاسخ‌های قابل قبول حساب می‌شوند.',
+        }),
+        field('حداقل تعداد پاسخ درست (min_items)', f.min_items, { note: 'فقط برای حالت فهرست.' }),
         field('توضیح (explanation)', f.explanation, { wide: true, note: 'در پاسخ اشتباه نمایش داده می‌شود.' }),
         field('راهنما (hint)', f.hint, { wide: true }),
         field('کلمات کلیدی و معنی (هر خط: word = معنی)', f.glossary, {
@@ -505,6 +529,10 @@ async function renderEditor(root, existing) {
         field('امتیاز (points)', f.points),
         field('زمان (time_limit، ثانیه)', f.time_limit),
         field('وضعیت', h('label', { class: 'switch' }, f.enabled, h('span', {}, 'فعال'))),
+        field('نمایش جمله (presentation)', f.presentation, {
+          wide: true,
+          note: 'فقط صدا: متن انگلیسی پنهان می‌شود و فقط دکمه‌ی پخش دیده می‌شود.',
+        }),
         field('کلمات جمله (هر خط یک کلمه)', f.word_bank, { wide: true, only: 'sentence_builder' }),
         field('جمله‌ی اشتباه (incorrect_sentence)', f.incorrect, { wide: true, only: 'grammar_correction' }),
         field('گزینه‌ها (هر خط یکی)', f.options, { wide: true, only: 'multiple_choice' }),

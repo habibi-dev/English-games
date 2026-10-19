@@ -2,8 +2,8 @@
 // Only UI logic lives here. Selection, timing and scoring come from the Game Engine,
 // answer checks from the Answer Validator, and storage from the Progress Tracker.
 
-import { listQuestions, listBanks } from '../bank/repository.js';
-import { CATEGORIES, DIFFICULTIES, topicLabel } from '../bank/schema.js';
+import { listQuestions, listLessons } from '../bank/repository.js';
+import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey } from '../bank/schema.js';
 import { filterQuestions, pickQuestions, GameSession } from '../engine/game-engine.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, XP_PER_LEVEL } from '../progress/player.js';
@@ -11,7 +11,7 @@ import { getSettings, saveSettings } from '../storage/settings.js';
 import { h, toast, fa, ltr, badge, percent, keepFocus } from './dom.js';
 import { createAnswerWidget, INSTRUCTIONS } from './answer-widgets.js';
 import { splitPrompt } from './prompt.js';
-import { speak, speakButtons, completeSentence, contextSentence } from './speech-out.js';
+import { speak, speakButtons, speakBar, completeSentence, contextSentence, questionSpeakButton } from './speech-out.js';
 
 /** True when `word` appears as a whole word in `sentence` (case-insensitive). */
 function containsWord(sentence, word) {
@@ -30,7 +30,16 @@ const CATEGORY_ICONS = {
   multiple_choice: '🎯',
   positive_negative_question: '⚖️',
   voice_translation: '🎤',
+  dictation: '📝',
+  vocabulary: '🔁',
 };
+
+// Presentation of the English sentence for a mission: follow each exercise, or force one mode.
+const PRESENTATION_CHOICES = [
+  ['auto', 'طبق تمرین'],
+  ['text', 'همیشه متن'],
+  ['audio', 'همیشه فقط صدا'],
+];
 
 let timerId = null;
 // Removes the result modal of the current question (set by renderQuestion).
@@ -155,52 +164,59 @@ function stepTitle(number, text) {
 async function showSetup(root) {
   root.replaceChildren(h('p', { class: 'loading' }, 'در حال آماده‌سازی…'));
 
-  const [questions, banks, attempts] = await Promise.all([listQuestions(), listBanks(), loadAttempts()]);
+  const [questions, lessons, attempts] = await Promise.all([listQuestions(), listLessons(), loadAttempts()]);
   const profile = playerProfile(attempts);
   const saved = getSettings();
-
-  const topicOptions = [...new Set(questions.map((q) => q.topic))].map((topic) => [topic, topicLabel(topic)]);
-  const bankOptions = banks.map((bank) => [bank.id, bank.name]);
-  const defaultBanks = banks.filter((bank) => bank.default).map((bank) => bank.id);
-  const allBanks = banks.map((bank) => bank.id);
-  const allTopics = topicOptions.map(([topic]) => topic);
-  const allCategories = Object.keys(CATEGORIES);
-  const allDifficulties = Object.keys(DIFFICULTIES);
+  const series = seriesList(lessons);
+  const allBooks = series.flatMap((entry) => entry.books);
+  const lessonsOf = (bookId) => allBooks.find((book) => book.id === bookId)?.lessons ?? [];
+  const seriesOf = (bookId) => series.find((entry) => entry.books.some((book) => book.id === bookId)) ?? null;
+  // The book the learner used last. When it still exists, the setup opens inside it.
+  const savedBook = allBooks.some((book) => book.id === saved.book) ? saved.book : null;
+  const allLessonKeys = lessonsOf(savedBook).map((lesson) => lesson.key);
+  const savedLessons = restored(saved.lessons, allLessonKeys, []);
 
   const state = {
-    banks: restored(saved.banks, allBanks, defaultBanks.length ? defaultBanks : allBanks),
-    topics: restored(saved.topics, allTopics, allTopics),
-    categories: restored(saved.categories, allCategories, allCategories),
-    difficulties: restored(saved.difficulties, allDifficulties, allDifficulties),
+    book: savedBook,
+    lessons: savedLessons.length ? savedLessons : allLessonKeys,
+    categories: restored(saved.categories, Object.keys(CATEGORIES), Object.keys(CATEGORIES)),
+    presentation: [PRESENTATION_CHOICES.some(([value]) => value === saved.presentation) ? saved.presentation : 'auto'],
     count: [COUNTS.includes(saved.count) ? saved.count : 10],
   };
 
-  const info = h('p', { class: 'muted small info' });
-  const startButton = h('button', { type: 'button', class: 'btn primary start-btn', onclick: start }, 'شروع مأموریت!');
+  // Set by the mission step; the book step does not show them.
+  let info = null;
+  let startButton = null;
 
   function available() {
-    return filterQuestions(questions, state);
+    return filterQuestions(questions, { books: [state.book], lessons: state.lessons, categories: state.categories });
   }
 
   function refresh() {
     saveSettings({
-      banks: state.banks,
-      topics: state.topics,
+      book: state.book,
+      lessons: state.lessons,
       categories: state.categories,
-      difficulties: state.difficulties,
+      presentation: state.presentation[0],
       count: state.count[0],
     });
+    if (!info) return;
     const count = available().length;
     info.textContent = `${fa(count)} سؤال آماده برای این مأموریت`;
     startButton.disabled = count === 0;
   }
 
   async function start() {
-    const pool = pickQuestions(questions, state, { count: state.count[0] || Infinity });
-    if (pool.length === 0) {
+    const chosen = pickQuestions(questions, { books: [state.book], lessons: state.lessons, categories: state.categories }, {
+      count: state.count[0] || Infinity,
+    });
+    if (chosen.length === 0) {
       toast('سؤالی با این تنظیمات پیدا نشد.', 'warn');
       return;
     }
+    // "auto" keeps each exercise's own presentation; the other choices apply to the whole mission.
+    const forced = state.presentation[0];
+    const pool = forced === 'auto' ? chosen : chosen.map((question) => ({ ...question, presentation: forced }));
     const before = playerProfile(await loadAttempts());
     renderQuestion(root, new GameSession(pool), {
       restart: start,
@@ -209,41 +225,364 @@ async function showSetup(root) {
     });
   }
 
-  root.replaceChildren(
+  // Screens of the picker, in order: series -> book -> mission (lessons, exercise types, presentation, length).
+  // "Continue" sits directly under the cards it applies to.
+
+  // Step 1: choose the series (for example Evolve).
+  function drawSeriesStep() {
+    info = null;
+    startButton = null;
+    let picked = seriesOf(state.book)?.id ?? series[0]?.id ?? null;
+    const grid = h('div', { class: 'picker-grid series-grid' });
+    const next = h('button', { type: 'button', class: 'btn primary wide continue-btn', onclick: () => drawBookStep(picked) }, 'ادامه ←');
+    const paint = () => {
+      grid.replaceChildren(
+        ...series.map((entry) =>
+          pickCard({
+            image: entry.logo,
+            title: entry.title,
+            subtitle: `${fa(entry.books.length)} کتاب`,
+            active: entry.id === picked,
+            onclick: () => {
+              picked = entry.id;
+              paint();
+            },
+          }),
+        ),
+      );
+      next.disabled = !picked;
+    };
+    paint();
+
+    root.replaceChildren(
+      h(
+        'section',
+        { class: 'card setup game' },
+        playerCard(profile),
+        series.length
+          ? stepTitle(1, 'سری کتاب')
+          : h('p', { class: 'empty' }, 'هنوز درسی نصب نشده است. پوشه‌ی content را بررسی کن.'),
+        grid,
+        series.length ? next : null,
+      ),
+    );
+  }
+
+  // Step 2: choose the book inside the series. Opening it from the mission screen goes back here.
+  function drawBookStep(seriesId) {
+    info = null;
+    startButton = null;
+    const entry = series.find((item) => item.id === seriesId) ?? series[0];
+    let picked = entry.books.some((book) => book.id === state.book) ? state.book : null;
+    const grid = h('div', { class: 'picker-grid book-grid' });
+    const next = h(
+      'button',
+      {
+        type: 'button',
+        class: 'btn primary wide continue-btn',
+        onclick: () => {
+          // Remember the book: the next visit opens straight into it.
+          state.book = picked;
+          // Opening a book starts from the lesson practised last in it, or from its first lesson.
+          const chosenBook = allBooks.find((item) => item.id === picked);
+          const start = lastPracticedKey(chosenBook) ?? chosenBook?.lessons[0]?.key;
+          state.lessons = start ? [start] : [];
+          saveSettings({ ...getSettings(), book: state.book, lessons: state.lessons });
+          drawMissionStep();
+        },
+      },
+      'ادامه ←',
+    );
+    const paint = () => {
+      grid.replaceChildren(
+        ...entry.books.map((book) =>
+          pickCard({
+            image: book.cover,
+            title: book.title,
+            subtitle: `${fa(book.lessons.length)} درس`,
+            badge: book.level,
+            active: book.id === picked,
+            onclick: () => {
+              picked = book.id;
+              paint();
+            },
+          }),
+        ),
+      );
+      next.disabled = !picked;
+    };
+    paint();
+
+    root.replaceChildren(
+      h(
+        'section',
+        { class: 'card setup game' },
+        playerCard(profile),
+        h(
+          'div',
+          { class: 'actions' },
+          h('button', { type: 'button', class: 'btn ghost small', onclick: () => drawSeriesStep() }, `← سری‌ها (${entry.title})`),
+        ),
+        stepTitle(2, `کتاب‌های ${entry.title}`),
+        grid,
+        next,
+      ),
+    );
+  }
+
+  // Step 3: inside the chosen book. Lessons (or the whole book), exercise types, presentation and length.
+  function drawMissionStep() {
+    const book = allBooks.find((entry) => entry.id === state.book);
+    const parent = seriesOf(book.id);
+    const allKeys = book.lessons.map((lesson) => lesson.key);
+    // The lesson list: one row per lesson (tap to add or remove it), plus a row that selects the whole book for review.
+    const lessonBox = h('div', { class: 'lesson-list' });
+    // "Continue" opens the settings screen; it needs at least one lesson.
+    const next = h(
+      'button',
+      { type: 'button', class: 'btn primary wide continue-btn', onclick: () => drawSettingsStep() },
+      'ادامه ←',
+    );
+    const paintLessons = () => {
+      const whole = allKeys.length > 0 && allKeys.every((key) => state.lessons.includes(key));
+      const lastKey = lastPracticedKey(book);
+      lessonBox.replaceChildren(
+        lessonRow({
+          title: 'همه‌ی درس‌های کتاب',
+          subtitle: `برای مرور · ${fa(allKeys.length)} درس`,
+          active: whole,
+          dashed: true,
+          onclick: () => {
+            state.lessons = whole ? [] : [...allKeys];
+            paintLessons();
+            refresh();
+          },
+        }),
+        ...book.lessons.map((lesson) =>
+          lessonRow({
+            title: lesson.lessonTitle,
+            subtitle: `${fa(lesson.count)} سؤال`,
+            active: state.lessons.includes(lesson.key),
+            tag: lesson.key === lastKey ? 'آخرین تمرین' : null,
+            onclick: () => {
+              const index = state.lessons.indexOf(lesson.key);
+              if (index >= 0) state.lessons.splice(index, 1);
+              else state.lessons.push(lesson.key);
+              paintLessons();
+              refresh();
+            },
+          }),
+        ),
+      );
+      next.disabled = state.lessons.length === 0;
+    };
+    paintLessons();
+    info = null;
+    startButton = null;
+
+    root.replaceChildren(
+      h(
+        'section',
+        { class: 'card setup game' },
+        playerCard(profile),
+        bookHeader(book, allKeys.length),
+        h(
+          'div',
+          { class: 'actions' },
+          h(
+            'button',
+            { type: 'button', class: 'btn ghost small', onclick: () => drawBookStep(parent?.id) },
+            `← کتاب‌ها (${parent?.title ?? ''})`.trim(),
+          ),
+        ),
+        stepTitle(1, 'درس‌ها'),
+        lessonBox,
+        next,
+      ),
+    );
+    refresh();
+  }
+
+  // Step 4: the rest of the settings, on their own screen: exercise types, presentation and length.
+  function drawSettingsStep() {
+    const book = allBooks.find((entry) => entry.id === state.book);
+    info = h('p', { class: 'muted small info' });
+    startButton = h('button', { type: 'button', class: 'btn primary start-btn', onclick: start }, 'شروع مأموریت!');
+
+    root.replaceChildren(
+      h(
+        'section',
+        { class: 'card setup game' },
+        playerCard(profile),
+        bookHeader(book, book.lessons.length),
+        h(
+          'div',
+          { class: 'actions' },
+          h(
+            'button',
+            { type: 'button', class: 'btn ghost small', onclick: () => drawMissionStep() },
+            `← درس‌ها (${fa(state.lessons.length)} انتخاب شده)`,
+          ),
+        ),
+        stepTitle(1, 'نوع تمرین'),
+        chipGroup(
+          Object.entries(CATEGORIES).map(([key, label]) => [key, `${CATEGORY_ICONS[key] ?? ''} ${label}`.trim()]),
+          state.categories,
+          { onChange: refresh, className: 'card-options mission-options' },
+        ),
+        stepTitle(2, 'نمایش جمله'),
+        chipGroup(PRESENTATION_CHOICES, state.presentation, {
+          multiple: false,
+          onChange: refresh,
+          className: 'card-options',
+        }),
+        stepTitle(3, 'طول مأموریت'),
+        chipGroup(
+          [
+            [10, `${fa(10)} سؤال · کوتاه`],
+            [20, `${fa(20)} سؤال · متوسط`],
+            [50, `${fa(50)} سؤال · بلند`],
+            [0, 'همه‌ی سؤال‌ها'],
+          ],
+          state.count,
+          { multiple: false, onChange: refresh, className: 'card-options' },
+        ),
+        info,
+        startButton,
+      ),
+    );
+    refresh();
+  }
+
+  // The last book is remembered: the setup opens inside it. Otherwise the learner starts with the series.
+  if (state.book) drawMissionStep();
+  else drawSeriesStep();
+}
+
+/**
+ * Series -> books -> lessons, in the order of the course index.
+ * Every lesson record carries its series and book details (see indexLessons in content.js).
+ */
+function seriesList(lessons) {
+  const series = new Map();
+  for (const lesson of [...lessons].sort((a, b) => a.order - b.order)) {
+    const seriesId = lesson.series || 'default';
+    if (!series.has(seriesId)) {
+      series.set(seriesId, { id: seriesId, title: lesson.seriesTitle || 'کتاب‌ها', logo: lesson.seriesLogo || '', books: [] });
+    }
+    const entry = series.get(seriesId);
+    let book = entry.books.find((item) => item.id === lesson.book);
+    if (!book) {
+      book = { id: lesson.book, title: lesson.bookTitle || lesson.book, level: lesson.bookLevel || '', cover: lesson.bookCover || '', lessons: [] };
+      entry.books.push(book);
+    }
+    book.lessons.push(lesson);
+  }
+  return [...series.values()];
+}
+
+/** A selectable card with an image (series logo or book cover), a title and a subtitle. */
+function pickCard({ image, title, subtitle, badge: levelBadge, active, onclick }) {
+  return h(
+    'button',
+    {
+      type: 'button',
+      class: `pick-card${active ? ' active' : ''}`,
+      'aria-pressed': active,
+      onclick,
+    },
+    h('span', { class: `pick-media${image ? '' : ' no-image'}` }, image ? h('img', { src: image, alt: '', loading: 'lazy' }) : h('span', {}, title.slice(0, 2))),
+    levelBadge ? h('span', { class: 'pick-level' }, levelBadge) : null,
+    h('strong', { class: 'pick-title', dir: 'auto' }, title),
+    subtitle ? h('span', { class: 'pick-sub' }, subtitle) : null,
+    active ? h('span', { class: 'pick-check', 'aria-hidden': 'true' }, '✓') : null,
+  );
+}
+
+/** Key of the lesson practised last, when it belongs to this book; otherwise null. */
+function lastPracticedKey(book) {
+  const last = getSettings().lastLesson;
+  return book?.lessons.some((lesson) => lesson.key === last) ? last : null;
+}
+
+/** One row of the lesson list: a check, the title, a subtitle and an optional tag. */
+function lessonRow({ title, subtitle, active, dashed = false, tag = null, onclick }) {
+  return h(
+    'button',
+    {
+      type: 'button',
+      class: `lesson-row${active ? ' active' : ''}${dashed ? ' all-row' : ''}`,
+      'aria-pressed': active,
+      onclick,
+    },
+    h('span', { class: 'lesson-check', 'aria-hidden': 'true' }, active ? '✓' : ''),
+    h('span', { class: 'lesson-main' }, h('strong', { dir: 'auto' }, title), h('span', { class: 'muted small' }, subtitle)),
+    tag ? h('span', { class: 'lesson-tag' }, tag) : null,
+  );
+}
+
+/** The chosen book as a card: its cover, a small label, the title, and the level and lesson count as pills. */
+function bookHeader(book, lessonCount) {
+  return h(
+    'div',
+    { class: 'book-head' },
+    coverThumb(book.cover),
     h(
-      'section',
-      { class: 'card setup game' },
-      playerCard(profile),
-      bankOptions.length ? stepTitle(1, 'بانک سؤال') : null,
-      bankOptions.length
-        ? chipGroup(bankOptions, state.banks, { onChange: refresh, className: 'card-options' })
-        : null,
-      stepTitle(2, 'موضوع'),
-      chipGroup(topicOptions, state.topics, { onChange: refresh, className: 'card-options' }),
-      stepTitle(3, 'نوع مأموریت'),
-      chipGroup(
-        Object.entries(CATEGORIES).map(([key, label]) => [key, `${CATEGORY_ICONS[key] ?? ''} ${label}`.trim()]),
-        state.categories,
-        { onChange: refresh, className: 'card-options mission-options' },
+      'div',
+      { class: 'book-head-text' },
+      h('span', { class: 'book-kicker' }, 'کتاب انتخاب‌شده'),
+      h('strong', { class: 'book-title', dir: 'auto' }, book.title),
+      h(
+        'span',
+        { class: 'book-meta' },
+        book.level ? h('span', { class: 'meta-pill level' }, book.level) : null,
+        h('span', { class: 'meta-pill' }, `${fa(lessonCount)} درس`),
       ),
-      stepTitle(4, 'سختی'),
-      chipGroup(Object.entries(DIFFICULTIES), state.difficulties, { onChange: refresh, className: 'card-options' }),
-      stepTitle(5, 'طول مأموریت'),
-      chipGroup(
-        [
-          [10, `${fa(10)} سؤال · کوتاه`],
-          [20, `${fa(20)} سؤال · متوسط`],
-          [50, `${fa(50)} سؤال · بلند`],
-          [0, 'همه‌ی سؤال‌ها'],
-        ],
-        state.count,
-        { multiple: false, onChange: refresh, className: 'card-options' },
-      ),
-      info,
-      startButton,
     ),
   );
-  refresh();
+}
+
+/** Cover image of a book (or a placeholder when the book has none). */
+function coverThumb(src) {
+  return h('span', { class: `book-thumb${src ? '' : ' no-image'}` }, src ? h('img', { src, alt: '' }) : '📘');
+}
+
+/** The good answers of a question, expected answer first, without repeats. */
+function acceptedItems(question) {
+  const seen = new Set();
+  const items = [];
+  for (const text of [question.expected_answer, ...(question.accepted_answers ?? [])]) {
+    const clean = String(text ?? '').trim();
+    if (clean && !seen.has(clean.toLowerCase())) {
+      seen.add(clean.toLowerCase());
+      items.push(clean);
+    }
+  }
+  return items;
+}
+
+/** The full answer as text: the sentence, or for a list question all good items joined. */
+function answerText(question) {
+  return question.answer_mode === 'list' ? acceptedItems(question).join(' ، ') : completeSentence(question);
+}
+
+/**
+ * Feedback box for list answers (synonyms, for example): every good answer, each with its own speak
+ * buttons, so the learner sees all of them and can hear each word.
+ */
+function acceptedAnswersBox(question) {
+  return h(
+    'div',
+    { class: 'fb-box fb-sentence' },
+    h('span', { class: 'fb-label' }, 'همه‌ی پاسخ‌های درست'),
+    h(
+      'div',
+      { class: 'accepted-list' },
+      acceptedItems(question).map((item) =>
+        h('span', { class: 'accepted-item' }, h('bdi', { class: 'ltr', dir: 'ltr' }, item), speakButtons(item)),
+      ),
+    ),
+  );
 }
 
 /** One dot per question of the mission: green = correct, red = wrong, pulsing = current. */
@@ -274,6 +613,8 @@ function renderQuestion(root, session, flow) {
   // Every new question starts at the top of the page.
   window.scrollTo(0, 0);
   const { question: q, index, total } = session.current;
+  // The lesson being practised is remembered: the next visit to its book starts from it.
+  saveSettings({ ...getSettings(), lastLesson: lessonKey(q.book, q.lesson) });
 
   const scoreEl = h('span', { class: 'hud-chip score' }, `⭐ ${fa(session.summary().score)}`);
   const streakEl = h('span', { class: 'hud-chip streak', 'aria-live': 'polite' }, `🔥 ${fa(currentStreak(session.outcomes))}`);
@@ -303,6 +644,7 @@ function renderQuestion(root, session, flow) {
     const limit = q.time_limit * 1000;
     timerFill.style.width = `${(remaining / limit) * 100}%`;
     timerFill.classList.toggle('low', remaining <= limit * 0.25);
+    timerText.classList.toggle('low', remaining <= limit * 0.25);
     timerText.textContent = `${fa(Math.ceil(remaining / 1000))} ثانیه`;
     if (remaining <= 0 && !session.answered) {
       finish(session.timeout());
@@ -357,7 +699,9 @@ function renderQuestion(root, session, flow) {
           h('span', { class: 'fb-icon', 'aria-hidden': 'true' }, icon),
           h('strong', { class: 'fb-title' }, headline),
         ),
-        h(
+        q.answer_mode === 'list'
+          ? acceptedAnswersBox(q)
+          : h(
           'div',
           { class: 'fb-box fb-sentence' },
           h('span', { class: 'fb-label' }, 'جمله‌ی کامل'),
@@ -389,7 +733,7 @@ function renderQuestion(root, session, flow) {
     h(
       'section',
       { class: 'card play' },
-      // Top bar: where the learner is, score and streak, then the mission progress track.
+      // Top bar: which question this is, and the time left for it.
       h(
         'div',
         { class: 'hud' },
@@ -397,10 +741,14 @@ function renderQuestion(root, session, flow) {
           'div',
           { class: 'hud-top' },
           h('span', { class: 'hud-count' }, `سؤال ${fa(index + 1)} از ${fa(total)}`),
-          h('div', { class: 'hud-chips' }, scoreEl, streakEl),
         ),
-        progressEl,
-        h('div', { class: 'timer' }, h('div', { class: 'timer-track' }, timerFill), timerText),
+        h(
+          'div',
+          { class: 'timer' },
+          h('span', { class: 'timer-icon', 'aria-hidden': 'true' }, '⏱️'),
+          h('div', { class: 'timer-track' }, timerFill),
+          timerText,
+        ),
       ),
       // Stage: the question itself, with its type and level tags above it.
       h(
@@ -430,13 +778,34 @@ function renderQuestion(root, session, flow) {
             )
           : null,
       ),
-      h('div', { class: 'actions play-actions' }, submitButton),
+      // Multiple choice submits on click, so it has no send button.
+      q.category === 'multiple_choice' ? null : h('div', { class: 'actions play-actions' }, submitButton),
+      // Footer: score, streak, and the path so far (one dot per question).
+      h(
+        'div',
+        { class: 'play-footer' },
+        // First in the row, so it sits on the start (right) side; the counters sit on the other side.
+        h('div', { class: 'footer-path' }, progressEl),
+        h('div', { class: 'hud-chips' }, scoreEl, streakEl),
+      ),
     ),
   );
 
   tick();
   timerId = setInterval(tick, 250);
   widget.focus();
+}
+
+// Translation questions show a Persian sentence to translate. The learner can hear it read in Persian,
+// when the device has a Persian voice (the button is not shown otherwise).
+const PERSIAN_SPEAK_CATEGORIES = new Set(['quick_translation', 'voice_translation']);
+
+function persianPrompt(q, text, wordNodes) {
+  const line = h('p', { class: 'question', dir: 'auto' }, ...wordNodes(text));
+  const button = PERSIAN_SPEAK_CATEGORIES.has(q.category)
+    ? questionSpeakButton(text, { lang: 'fa-IR', label: 'جمله‌ی فارسی را بخوان' })
+    : null;
+  return button ? h('div', { class: 'q-english-row', dir: 'rtl' }, line, button) : line;
 }
 
 /**
@@ -453,6 +822,7 @@ function questionBlock(q) {
     // The isolated word is offered separately, since a single word can be pronounced differently.
     const inContext = Boolean(sentence) && containsWord(sentence, entry.word);
     tip.hidden = false;
+    // Same control bar as the feedback sentence: slow word, normal word, and the word in its sentence.
     tip.replaceChildren(
       ...[
         h(
@@ -461,14 +831,11 @@ function questionBlock(q) {
           h('strong', { class: 'tip-word', dir: 'ltr' }, entry.word),
           h('span', { class: 'tip-meaning' }, entry.meaning),
         ),
-        h(
-          'span',
-          { class: 'speak-buttons' },
-          inContext
-            ? keepFocus(h('button', { type: 'button', class: 'btn ghost small speak', onclick: () => speak(sentence) }, '🔊 در جمله'))
-            : null,
-          keepFocus(h('button', { type: 'button', class: 'btn ghost small speak', onclick: () => speak(entry.word) }, '🔊 کلمه‌ی تنها')),
-        ),
+        speakBar([
+          { kind: 'slow', label: 'کلمه را آهسته بخوان', onclick: () => speak(entry.word, { slow: true }) },
+          { kind: 'normal', label: 'کلمه را بخوان', onclick: () => speak(entry.word) },
+          inContext ? { kind: 'sentence', label: 'کلمه را در جمله بخوان', onclick: () => speak(sentence) } : null,
+        ]),
       ].filter(Boolean),
     );
     speak(inContext ? sentence : entry.word);
@@ -486,12 +853,31 @@ function questionBlock(q) {
 
   // Two separate lines: the Persian instruction (right-to-left) and the English sentence (left-to-right).
   const { instruction, sentence: englishLine } = splitPrompt(q.question);
+
+  // Listening question: the English text stays hidden, only the play button is shown (no glossary either,
+  // since it would show the words). The learner answers from what they hear.
+  if (q.presentation === 'audio' && sentence) {
+    const play = questionSpeakButton(sentence, { big: true });
+    return h(
+      'div',
+      { class: 'question-block listen-only' },
+      instruction ? h('p', { class: 'q-instruction', dir: 'rtl' }, instruction) : null,
+      h('div', { class: 'listen-block' }, play ?? h('p', { class: 'muted small' }, 'پخش صدا در این مرورگر در دسترس نیست.')),
+    );
+  }
+
   const lines = englishLine
     ? [
         instruction ? h('p', { class: 'q-instruction', dir: 'rtl' }, instruction) : null,
-        h('p', { class: 'question q-english', dir: 'ltr' }, ...wordNodes(englishLine)),
+        // Read-aloud for the sentence. No button while a blank is still in it (contextSentence is null then).
+        h(
+          'div',
+          { class: 'q-english-row', dir: 'ltr' },
+          h('p', { class: 'question q-english', dir: 'ltr' }, ...wordNodes(englishLine)),
+          sentence ? questionSpeakButton(sentence) : null,
+        ),
       ]
-    : [h('p', { class: 'question', dir: 'auto' }, ...wordNodes(instruction))];
+    : [persianPrompt(q, instruction, wordNodes)];
 
   return h(
     'div',
@@ -516,6 +902,17 @@ function questionBlock(q) {
 }
 
 const RESULT_TITLES = ['دفعه‌ی بعد بهتر می‌شود!', 'خوب شروع کردی!', 'خیلی خوب بود!', 'عالی! ستاره‌ی کامل!'];
+
+/** One number of the results screen: an icon, the value and its label, on a tinted tile. */
+function resultTile(icon, value, label, tone) {
+  return h(
+    'div',
+    { class: `result-tile ${tone}` },
+    h('span', { class: 'result-tile-icon', 'aria-hidden': 'true' }, icon),
+    h('strong', {}, value),
+    h('span', { class: 'result-tile-label' }, label),
+  );
+}
 
 function renderResults(root, session, flow) {
   const summary = session.summary();
@@ -545,20 +942,33 @@ function renderResults(root, session, flow) {
       ),
       h(
         'div',
-        { class: 'stats-grid' },
-        miniStat(`${fa(summary.score)} از ${fa(summary.maxScore)}`, 'امتیاز'),
-        miniStat(fa(summary.correct), 'درست'),
-        miniStat(fa(summary.wrong), 'اشتباه'),
-        miniStat(fa(summary.timeouts), 'زمان تمام شد'),
+        { class: 'result-tiles' },
+        resultTile('⭐', `${fa(summary.score)} از ${fa(summary.maxScore)}`, 'امتیاز', 'gold'),
+        resultTile('✓', fa(summary.correct), 'درست', 'ok'),
+        resultTile('✕', fa(summary.wrong), 'اشتباه', 'bad'),
+        resultTile('⏱', fa(summary.timeouts), 'زمان تمام شد', 'time'),
       ),
-      h('h3', {}, mistakes.length ? 'مرور اشتباه‌ها' : 'عالی! هیچ اشتباهی نبود.'),
+      mistakes.length
+        ? h(
+            'div',
+            { class: 'mistakes-head' },
+            h('h3', {}, 'مرور اشتباه‌ها'),
+            h('span', { class: 'mistakes-count' }, fa(mistakes.length)),
+          )
+        : h('div', { class: 'all-correct' }, '🎉 عالی! هیچ اشتباهی نبود.'),
       ...mistakes.map((o) =>
         h(
-          'div',
-          { class: 'mistake' },
-          h('p', { dir: 'auto' }, o.question.question),
-          h('p', { class: 'answer-line' }, h('span', {}, 'جمله‌ی کامل: '), ltr(completeSentence(o.question)), speakButtons(completeSentence(o.question))),
-          o.question.explanation ? h('p', { class: 'explanation', dir: 'auto' }, o.question.explanation) : null,
+          'article',
+          { class: 'mistake-card' },
+          h('p', { class: 'mistake-q', dir: 'auto' }, o.question.question),
+          h(
+            'div',
+            { class: 'mistake-answer' },
+            h('span', { class: 'mistake-label' }, 'جواب درست'),
+            h('bdi', { class: 'ltr', dir: 'ltr' }, answerText(o.question)),
+            speakButtons(answerText(o.question)),
+          ),
+          o.question.explanation ? h('p', { class: 'mistake-note', dir: 'auto' }, o.question.explanation) : null,
         ),
       ),
       h(

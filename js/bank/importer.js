@@ -22,7 +22,12 @@ export const CSV_COLUMNS = [
   'options',
   'operation',
   'glossary',
-  'bank',
+  'book',
+  'lesson',
+  'exercise',
+  'presentation',
+  'answer_mode',
+  'min_items',
 ];
 
 // Returns raw records (not yet normalized) from JSON or CSV text.

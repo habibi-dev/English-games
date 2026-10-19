@@ -1,7 +1,7 @@
-// Last-used play settings (bank, topic, type, level, count). Kept in localStorage on this device.
-// Only small preferences go here; progress and the question bank live in IndexedDB.
+// Last-used play settings (book, lessons, exercise types, presentation, count). Kept in localStorage on this device.
+// Only small preferences go here; progress and the course content live in IndexedDB.
 
-const KEY = 'grammar-quest.settings.v1';
+const KEY = 'grammar-quest.settings.v2';
 
 export function getSettings() {
   try {

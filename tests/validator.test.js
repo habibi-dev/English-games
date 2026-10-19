@@ -17,6 +17,7 @@ test('keeps word order significant', () => {
 test('rejects grammar errors unless they are listed as accepted', () => {
   assert.equal(validateAnswer(q, 'I is a developer').correct, false);
   assert.equal(validateAnswer(q, 'I am developers').correct, false);
+  // "I'm" is not "I am" unless the data lists it: the app does not rewrite forms.
   assert.equal(validateAnswer(q, "I'm a developer").correct, false);
 });
 
@@ -28,7 +29,7 @@ test('accepts any listed answer and reports which one matched', () => {
 });
 
 test('empty answers are never correct', () => {
-  assert.deepEqual(validateAnswer(q, '   '), { correct: false, matched: null, reason: 'empty' });
+  assert.deepEqual(validateAnswer(q, '   '), { correct: false, matched: null, matchedItems: [], reason: 'empty' });
   assert.equal(validateAnswer(q, undefined).correct, false);
 });
 

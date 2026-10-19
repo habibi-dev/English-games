@@ -1,7 +1,7 @@
 {
   "name": "english-grammar-quest",
   "version": "1.0.0",
-  "description": "Data-driven English grammar practice PWA (To Be, Do/Does) with a separate question bank.",
+  "description": "Data-driven English practice PWA. Books, lessons and exercises are JSON content files, not code.",
   "private": true,
   "type": "module",
   "scripts": {

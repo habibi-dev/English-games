@@ -1,0 +1,26 @@
+{
+  "schema_version": "3.0",
+  "series": [
+    {
+      "id": "evolve",
+      "title": "Evolve",
+      "logo": "content/covers/evolve-logo.png",
+      "books": [
+        {
+          "id": "evolve-1",
+          "title": "Evolve 1",
+          "level": "A1",
+          "cover": "content/covers/evolve-1.png",
+          "lessons": [
+            {
+              "id": "lesson-01",
+              "title": "درس ۱ (نمونه)",
+              "file": "content/evolve-1/lesson-01.json",
+              "version": "1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

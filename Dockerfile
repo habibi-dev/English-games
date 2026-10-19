@@ -7,8 +7,7 @@ WORKDIR /app
 COPY package.json ./
 COPY js ./js
 COPY tests ./tests
-COPY banks ./banks
-COPY banks.json ./
+COPY content ./content
 RUN npm test
 
 # ---- runtime: static files served by nginx (no build step needed) ----
@@ -16,9 +15,9 @@ FROM nginxinc/nginx-unprivileged:stable-alpine AS runtime
 
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-COPY index.html manifest.webmanifest sw.js banks.json /usr/share/nginx/html/
-# Every file in banks/ is served. A new bank only needs a file here and an entry in banks.json.
-COPY banks /usr/share/nginx/html/banks
+COPY index.html manifest.webmanifest sw.js /usr/share/nginx/html/
+# Everything in content/ is served: content/index.json lists the books, and each lesson file is a JSON file.
+COPY content /usr/share/nginx/html/content
 COPY css /usr/share/nginx/html/css
 COPY fonts /usr/share/nginx/html/fonts
 COPY js /usr/share/nginx/html/js

@@ -1,10 +1,13 @@
 // Thin IndexedDB wrapper. Three object stores:
-//   questions - the question bank (keyed by question id)
+//   questions - the questions of every loaded lesson (keyed by question id)
 //   attempts  - one row per answered question (used by the Progress Tracker)
-//   banks     - which bank files have been loaded, and their version
+//   lessons   - which lesson files have been loaded, and their version (keyed by "book/lesson")
+//
+// Version 2 replaced the old flat question banks. Upgrading from version 1 drops the old questions and
+// bank metadata; they are loaded again from content/ on the next start. Attempts are kept.
 
 const DB_NAME = 'english-grammar-quest';
-const DB_VERSION = 1;
+const DB_VERSION = 2;
 
 let dbPromise = null;
 
@@ -13,8 +16,14 @@ export function openDb() {
     dbPromise = new Promise((resolve, reject) => {
       const request = indexedDB.open(DB_NAME, DB_VERSION);
 
-      request.onupgradeneeded = () => {
+      request.onupgradeneeded = (event) => {
         const db = request.result;
+        if (event.oldVersion < 2) {
+          // The flat bank layout is gone: drop its stores (created again below).
+          for (const name of ['questions', 'banks']) {
+            if (db.objectStoreNames.contains(name)) db.deleteObjectStore(name);
+          }
+        }
         if (!db.objectStoreNames.contains('questions')) {
           const store = db.createObjectStore('questions', { keyPath: 'id' });
           store.createIndex('topic', 'topic');
@@ -24,8 +33,8 @@ export function openDb() {
           const store = db.createObjectStore('attempts', { keyPath: 'id', autoIncrement: true });
           store.createIndex('questionId', 'questionId');
         }
-        if (!db.objectStoreNames.contains('banks')) {
-          db.createObjectStore('banks', { keyPath: 'id' });
+        if (!db.objectStoreNames.contains('lessons')) {
+          db.createObjectStore('lessons', { keyPath: 'key' });
         }
       };
 
@@ -68,9 +77,10 @@ export const putQuestion = (question) => single('questions', 'readwrite', (s) =>
 export const putQuestions = (questions) => bulkPut('questions', questions);
 export const deleteQuestion = (id) => single('questions', 'readwrite', (s) => s.delete(id));
 
-// Bank metadata
-export const getAllBankMeta = () => single('banks', 'readonly', (s) => s.getAll());
-export const putBankMeta = (meta) => single('banks', 'readwrite', (s) => s.put(meta));
+// Lesson metadata
+export const getAllLessonMeta = () => single('lessons', 'readonly', (s) => s.getAll());
+export const putLessonMeta = (meta) => single('lessons', 'readwrite', (s) => s.put(meta));
+export const deleteLessonMeta = (key) => single('lessons', 'readwrite', (s) => s.delete(key));
 
 // Attempts
 export const addAttempt = (attempt) => single('attempts', 'readwrite', (s) => s.add(attempt));

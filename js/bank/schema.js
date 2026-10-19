@@ -1,13 +1,13 @@
-// Question Bank schema: canonical record shape, normalization and validation.
+// Question schema: canonical record shape, normalization and validation.
 // Pure module (no DOM / storage) so it can be unit-tested in Node.
-// The game never builds questions itself: everything it shows comes from records
+// Questions are written inside lesson files (see content.js). The game only ever sees records
 // that pass through this module.
 
 import { normalizeAnswer } from '../engine/validator.js';
 
-export const SCHEMA_VERSION = '1.1';
+export const SCHEMA_VERSION = '2.0';
 
-// Question types. The UI picks its answer widget from `category`.
+// Exercise types. An exercise's type is the question category: the UI picks its answer widget from it.
 export const CATEGORIES = Object.freeze({
   quick_translation: 'ترجمه سریع',
   sentence_builder: 'ساخت جمله',
@@ -15,9 +15,17 @@ export const CATEGORIES = Object.freeze({
   multiple_choice: 'چندگزینه‌ای',
   positive_negative_question: 'مثبت / منفی / سؤالی',
   voice_translation: 'ترجمه صوتی',
+  dictation: 'املا',
+  vocabulary: 'مترادف و متضاد',
 });
 
-// Known topics get nice labels. Unknown topics from future banks are still accepted.
+// How the English sentence is shown: as text, or only played (listening).
+export const PRESENTATIONS = Object.freeze({
+  text: 'متن',
+  audio: 'فقط صدا',
+});
+
+// Known topics get nice labels. Unknown topics from future lessons are still accepted.
 export const TOPIC_LABELS = Object.freeze({
   to_be: 'To Be',
   do_does: 'Do / Does',
@@ -39,6 +47,9 @@ export const DEFAULT_POINTS = Object.freeze({ easy: 10, medium: 15, hard: 20 });
 export const DEFAULT_TIME_LIMIT = 20;
 
 export const topicLabel = (topic) => TOPIC_LABELS[topic] ?? topic;
+
+/** Identifies a lesson across books, e.g. "iwelo-1/lesson-03". */
+export const lessonKey = (book, lesson) => `${book}/${lesson}`;
 
 const str = (value) => (value == null ? '' : String(value).trim());
 
@@ -92,7 +103,7 @@ export function tokenize(text) {
 }
 
 /**
- * Turns any raw record (from JSON, CSV or the admin form) into the canonical shape.
+ * Turns any raw record (from a lesson file, JSON, CSV or the admin form) into the canonical shape.
  * Only fields that belong to the record's category are kept.
  * The expected answer is always part of accepted_answers.
  */
@@ -115,10 +126,20 @@ export function normalizeQuestion(raw = {}) {
     time_limit: toNumber(raw.time_limit, DEFAULT_TIME_LIMIT),
     enabled: toBool(raw.enabled, true),
     glossary: toGlossary(raw.glossary),
+    presentation: str(raw.presentation) || 'text',
   };
 
-  // Set by the loader to the bank the question came from. Questions without a bank are manual ones.
-  if (raw.bank) question.bank = str(raw.bank);
+  // Course position. Set by the lesson loader; a question always belongs to one lesson.
+  if (str(raw.book)) question.book = str(raw.book);
+  if (str(raw.lesson)) question.lesson = str(raw.lesson);
+  if (str(raw.exercise)) question.exercise = str(raw.exercise);
+
+  // Answer mode: 'single' (default, one reply) or 'list' (the learner gives several items, at least min_items).
+  const answerMode = str(raw.answer_mode);
+  if (answerMode && answerMode !== 'single') {
+    question.answer_mode = answerMode;
+    if (answerMode === 'list') question.min_items = toNumber(raw.min_items, 1);
+  }
 
   if (category === 'sentence_builder') question.word_bank = toList(raw.word_bank);
   if (category === 'grammar_correction') question.incorrect_sentence = str(raw.incorrect_sentence);
@@ -139,9 +160,12 @@ export function validateQuestion(q) {
   const warnings = [];
 
   if (!q.id) errors.push('شناسه (id) خالی است.');
-  if (!CATEGORIES[q.category]) errors.push(`نوع سؤال (category) نامعتبر است: «${q.category}».`);
+  if (!CATEGORIES[q.category]) errors.push(`نوع تمرین (category) نامعتبر است: «${q.category}».`);
+  if (!q.book) errors.push('کتاب (book) خالی است.');
+  if (!q.lesson) errors.push('درس (lesson) خالی است.');
   if (!q.topic) errors.push('موضوع (topic) خالی است.');
   if (!DIFFICULTIES[q.difficulty]) errors.push(`سطح (difficulty) نامعتبر است: «${q.difficulty}».`);
+  if (!PRESENTATIONS[q.presentation]) errors.push(`حالت نمایش (presentation) نامعتبر است: «${q.presentation}».`);
   if (!q.question) errors.push('متن سؤال خالی است.');
   if (!q.expected_answer) errors.push('پاسخ اصلی (expected_answer) خالی است.');
   if (!q.explanation) warnings.push('توضیح (explanation) خالی است.');
@@ -150,6 +174,24 @@ export function validateQuestion(q) {
   }
   if (!Number.isInteger(q.points) || q.points <= 0) errors.push('امتیاز (points) باید عدد صحیح مثبت باشد.');
   if (!(Number.isFinite(q.time_limit) && q.time_limit > 0)) errors.push('زمان (time_limit) باید عدد مثبت باشد.');
+
+  if (q.answer_mode !== undefined && q.answer_mode !== 'list') {
+    errors.push(`حالت پاسخ (answer_mode) نامعتبر است: «${q.answer_mode}».`);
+  }
+  if (q.answer_mode === 'list') {
+    if (!Number.isInteger(q.min_items) || q.min_items < 1) {
+      errors.push('min_items باید عدد صحیح و حداقل ۱ باشد.');
+    } else if (q.min_items > (q.accepted_answers ?? []).length) {
+      errors.push('min_items بیشتر از تعداد پاسخ‌های قابل قبول است.');
+    }
+  }
+
+  if (q.presentation === 'audio') {
+    // A listening question has to play an English sentence, and a blank would give the answer away.
+    if (!/[A-Za-z]/.test(q.question)) errors.push('تمرین شنیداری باید متن انگلیسی برای پخش صوتی داشته باشد.');
+    if (q.question.includes('___')) errors.push('تمرین شنیداری نمی‌تواند جای خالی (___) داشته باشد.');
+    if ((q.glossary ?? []).length > 0) warnings.push('در تمرین شنیداری کلمات کلیدی نمایش داده نمی‌شوند.');
+  }
 
   switch (q.category) {
     case 'sentence_builder': {

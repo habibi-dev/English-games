@@ -1,6 +1,6 @@
-// App entry point: loads question banks, routes between screens, registers the service worker.
+// App entry point: loads the course content (content/index.json), routes between screens, registers the service worker.
 
-import { syncBanks } from './bank/repository.js';
+import { syncContent } from './bank/repository.js';
 import { renderPlay } from './ui/play.js';
 import { renderReports } from './ui/reports.js';
 import { renderAdmin } from './ui/admin.js';
@@ -44,18 +44,18 @@ async function route() {
 }
 
 async function boot() {
-  root.replaceChildren(h('p', { class: 'loading' }, 'در حال آماده‌سازی بانک سؤال…'));
+  root.replaceChildren(h('p', { class: 'loading' }, 'در حال آماده‌سازی درس‌ها…'));
 
   try {
-    const { loaded, errors } = await syncBanks();
+    const { loaded, errors } = await syncContent();
     if (loaded.length) {
-      const total = loaded.reduce((sum, bank) => sum + bank.count, 0);
-      toast(`${fa(total)} سؤال از بانک‌های جدید بارگذاری شد.`);
+      const total = loaded.reduce((sum, lesson) => sum + lesson.count, 0);
+      toast(`${fa(total)} سؤال از درس‌های جدید بارگذاری شد.`);
     }
-    errors.forEach((e) => toast(`بانک ${e.bank}: ${e.message}`, 'error'));
+    errors.forEach((e) => toast(`درس ${e.lesson}: ${e.message}`, 'error'));
   } catch (error) {
     console.error(error);
-    toast(`بارگذاری بانک سؤال ناموفق بود: ${error.message}`, 'error');
+    toast(`بارگذاری محتوای درس‌ها ناموفق بود: ${error.message}`, 'error');
   }
 
   window.addEventListener('hashchange', route);

@@ -3,9 +3,11 @@
 //   { instruction: "جمله را سؤالی کن", sentence: "The students like tea." }
 // A prompt with no English (for example a Persian sentence to translate) gives sentence "".
 
+// The English part starts at its first letter, or at a blank ("___") that comes before it,
+// so a sentence that opens with a blank keeps the blank in the English line.
 export function splitPrompt(text) {
   const source = String(text ?? '').trim();
-  const start = source.search(/[A-Za-z]/);
+  const start = source.search(/[A-Za-z]|_{2,}/);
   if (start < 0) return { instruction: source, sentence: '' };
 
   return {

@@ -1,0 +1,144 @@
+{
+  "schema_version": "2.0",
+  "book": "evolve-1",
+  "lesson": "lesson-01",
+  "title": "درس ۱ (نمونه)",
+  "exercises": [
+    {
+      "id": "l01-translation",
+      "type": "quick_translation",
+      "title": "ترجمه‌ی جمله",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "l01-tr-01",
+          "question": "من دانشجو هستم.",
+          "expected_answer": "I am a student.",
+          "accepted_answers": ["I am a student"],
+          "explanation": "برای I از am استفاده می‌کنیم.",
+          "glossary": [{ "word": "student", "meaning": "دانشجو" }],
+          "points": 10,
+          "time_limit": 25
+        }
+      ]
+    },
+    {
+      "id": "l01-negative",
+      "type": "positive_negative_question",
+      "title": "تبدیل به منفی",
+      "presentation": "text",
+      "operation": "negative",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "l01-neg-01",
+          "question": "جمله را منفی کن: She is a teacher.",
+          "expected_answer": "She is not a teacher.",
+          "accepted_answers": ["She isn't a teacher."],
+          "explanation": "بعد از is کلمه‌ی not می‌آید."
+        }
+      ]
+    },
+    {
+      "id": "l01-question",
+      "type": "positive_negative_question",
+      "title": "تبدیل به سؤالی",
+      "presentation": "text",
+      "operation": "question",
+      "difficulty": "medium",
+      "items": [
+        {
+          "id": "l01-q-01",
+          "question": "جمله را سؤالی کن: They are happy.",
+          "expected_answer": "Are they happy?",
+          "accepted_answers": ["Are they happy"],
+          "explanation": "is و are را جلوی فاعل می‌آوریم."
+        }
+      ]
+    },
+    {
+      "id": "l01-dictation",
+      "type": "dictation",
+      "title": "املا",
+      "presentation": "audio",
+      "difficulty": "medium",
+      "items": [
+        {
+          "id": "l01-dic-01",
+          "question": "جمله را بشنو و بنویس: My name is Ali.",
+          "expected_answer": "My name is Ali.",
+          "explanation": "حرف‌های بزرگ و نقطه را هم درست بنویس.",
+          "points": 15
+        }
+      ]
+    },
+    {
+      "id": "l01-synonyms",
+      "type": "vocabulary",
+      "title": "مترادف",
+      "presentation": "text",
+      "difficulty": "medium",
+      "items": [
+        {
+          "id": "l01-syn-01",
+          "question": "دو مترادف این کلمه را بگو: big",
+          "expected_answer": "large",
+          "accepted_answers": ["large", "huge", "great", "enormous"],
+          "answer_mode": "list",
+          "min_items": 2,
+          "explanation": "هر دو مورد درست باشد کافی است؛ مثلاً large و huge.",
+          "points": 20
+        }
+      ]
+    },
+    {
+      "id": "l01-builder",
+      "type": "sentence_builder",
+      "title": "ساخت جمله",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "l01-sb-01",
+          "question": "کلمات را به ترتیب درست کنار هم بگذار.",
+          "expected_answer": "I am happy.",
+          "word_bank": ["happy", "am", "I"],
+          "explanation": "ترتیب درست: فاعل، فعل، صفت."
+        }
+      ]
+    },
+    {
+      "id": "l01-choice",
+      "type": "multiple_choice",
+      "title": "چندگزینه‌ای",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "l01-mc-01",
+          "question": "کدام جمله درست است؟",
+          "expected_answer": "She is my sister.",
+          "options": ["She are my sister.", "She is my sister.", "She be my sister."],
+          "explanation": "برای She از is استفاده می‌کنیم."
+        }
+      ]
+    },
+    {
+      "id": "l01-correction",
+      "type": "grammar_correction",
+      "title": "اصلاح جمله",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "l01-gc-01",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "They are students.",
+          "incorrect_sentence": "They is students.",
+          "explanation": "برای They از are استفاده می‌کنیم."
+        }
+      ]
+    }
+  ]
+}

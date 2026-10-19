@@ -2,18 +2,22 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { bankSummary, performanceSummary, reviewList } from '../js/progress/report.js';
-import { importQuestions } from '../js/bank/importer.js';
+import { flattenLesson } from '../js/bank/content.js';
 
-const DATASET = new URL('../banks/english_grammar_question_bank_1000.json', import.meta.url);
+const SAMPLE_LESSON = new URL('../content/evolve-1/lesson-01.json', import.meta.url);
 
-test('bank summary counts Do / Does questions by type from metadata', () => {
-  const { questions } = importQuestions(readFileSync(DATASET, 'utf8'));
+test('bank summary counts the sample lesson by topic and type', () => {
+  const { questions } = flattenLesson(JSON.parse(readFileSync(SAMPLE_LESSON, 'utf8')), {
+    book: 'evolve-1',
+    lesson: 'lesson-01',
+  });
   const summary = bankSummary(questions);
-  const doDoes = summary.byTopic.find((row) => row.topic === 'do_does');
-  assert.equal(doDoes.total, 504);
-  assert.equal(doDoes.byCategory.quick_translation, 200);
-  assert.equal(summary.totals.total, 1000);
-  assert.equal(summary.totals.enabled, 1000);
+  // Items without their own topic take the lesson id as their topic.
+  const lessonRow = summary.byTopic.find((row) => row.topic === 'lesson-01');
+  assert.equal(lessonRow.total, 8);
+  assert.equal(lessonRow.byCategory.quick_translation, 1);
+  assert.equal(summary.totals.total, 8);
+  assert.equal(summary.totals.enabled, 8);
 });
 
 test('bank summary separates disabled questions', () => {
