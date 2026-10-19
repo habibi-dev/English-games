@@ -3741,6 +3741,13 @@ body.game-running .topbar-admin .icon-exit {
   cursor: default;
 }
 
+.type-instead {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
 .answer-box.voice-only .mic {
   width: 56px;
   height: 56px;
