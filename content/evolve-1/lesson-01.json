@@ -1602,7 +1602,7 @@
         },
         {
           "id": "evolve-1-l01-va-tr-02",
-          "question": "او کتاب می‌خواند. (زن)",
+          "question": "او می‌خواند. (زن)",
           "expected_answer": "She reads.",
           "explanation": "با She فعل read به reads تبدیل می‌شود.",
           "hint": "کلمه‌ی کلیدی: «می‌خواند» = read؛ تلفظ: /riːd/ (ریـد)؛ نکته: برای She، فعل s می‌گیرد: reads.",
