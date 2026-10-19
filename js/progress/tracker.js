@@ -20,8 +20,6 @@ export async function recordOutcome(outcome) {
     correct: outcome.correct,
     timedOut: outcome.timedOut,
     points: outcome.points,
-    // Practice attempts (a reset lesson) give no points, XP or stats. Reports still list them.
-    practice: Boolean(q.practice),
     elapsedMs: outcome.elapsedMs,
     at: Date.now(),
   });

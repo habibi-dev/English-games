@@ -1,10 +1,10 @@
 // App entry point: loads the course content (content/index.json), routes between screens, registers the service worker.
 
 import { syncContent } from './bank/repository.js';
-import { renderPlay, isGameInProgress, startFromNav } from './ui/play.js';
+import { renderPlay, isGameInProgress, startFromNav, confirmLeaveGame, endGame } from './ui/play.js';
 import { renderReports } from './ui/reports.js';
 import { renderAdmin } from './ui/admin.js';
-import { h, toast, fa, confirmDialog } from './ui/dom.js';
+import { h, toast, fa } from './ui/dom.js';
 import { unlockSounds } from './ui/sounds.js';
 import { endMission } from './progress/activity.js';
 
@@ -60,31 +60,30 @@ document.querySelectorAll('[data-nav="play"]').forEach((link) => {
   });
 });
 
-// During a mission, leaving it ends it, so the learner confirms first (in-app card).
-// Resolves to true when it is fine to leave: at once when no game is running, otherwise after "Leave game".
-async function confirmLeaveGame() {
-  if (!isGameInProgress()) return true;
-  return confirmDialog({
-    title: 'Leave this game?',
-    message: 'Your answers so far are saved. The rest of this mission will not be played.',
-    confirmText: 'Leave game',
-    cancelText: 'Keep playing',
-  });
-}
-
 // Logo and title: always back to the main (play) screen, from any screen.
-// The click is handled here for every case: if the hash is already #/play (for example on the results screen),
-// the browser would not fire hashchange, so the view is re-rendered directly.
+// During a mission it asks first (see confirmLeaveGame in play.js) and then ends the mission on the spot.
+// Otherwise the click is handled here for every case: if the hash is already #/play (for example on the results
+// screen), the browser would not fire hashchange, so the view is re-rendered directly.
 document.querySelector('.brand-home')?.addEventListener('click', async (event) => {
   event.preventDefault();
-  if (!(await confirmLeaveGame())) return;
+  if (isGameInProgress()) {
+    if (await confirmLeaveGame()) endGame();
+    return;
+  }
   if (location.hash === '#/play' || location.hash === '') route();
   else location.hash = '#/play';
 });
 
-// Reports, Settings and the other tabs: leaving a running game asks first, like the logo does.
-// The Play tab is left out: it has its own rule (see above).
-document.querySelectorAll('[data-nav]:not([data-nav="play"])').forEach((link) => {
+// Top-right button: Settings normally. While a game runs it leaves the game instead, after asking.
+document.querySelector('.topbar-admin')?.addEventListener('click', async (event) => {
+  if (!isGameInProgress()) return; // a normal link to Settings
+  event.preventDefault();
+  if (await confirmLeaveGame()) endGame();
+});
+
+// Reports and the other tabs: leaving a running game asks first, like the logo does.
+// The Play tab is left out: it has its own rule (see above). The top-right button has its own rule too.
+document.querySelectorAll('[data-nav]:not([data-nav="play"]):not(.topbar-admin)').forEach((link) => {
   link.addEventListener('click', async (event) => {
     if (!isGameInProgress()) return;
     event.preventDefault();

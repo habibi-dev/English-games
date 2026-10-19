@@ -62,8 +62,11 @@ export function applyPlayMode(question, mode = 'easy') {
   };
 }
 
+/** A question answered wrong comes back this many questions later in the same mission, until it is answered right. */
+export const REPEAT_GAP = 3;
+
 /**
- * One practice run over a fixed list of questions.
+ * One mission over a fixed list of questions.
  * Flow: current() -> submit(answer) or timeout() -> next() -> ... until finished.
  */
 export class GameSession {
@@ -73,13 +76,12 @@ export class GameSession {
   #startedAt;
   #outcomes = [];
   #answered = false;
-  // Questions that already gave points (earlier sessions or this one). They score nothing again.
-  #scored;
+  // Questions that already gave points in this mission. A question pays only on its first correct answer here.
+  #scored = new Set();
 
-  constructor(questions, { clock = () => Date.now(), alreadyScored = [] } = {}) {
+  constructor(questions, { clock = () => Date.now() } = {}) {
     this.#questions = [...questions];
     this.#clock = clock;
-    this.#scored = new Set(alreadyScored);
     this.#startedAt = clock();
   }
 
@@ -144,6 +146,11 @@ export class GameSession {
     if (!this.#answered) {
       throw new Error('Answer the current question first.');
     }
+    // A wrong answer (or a timeout) asks the question again later in this mission, until it is answered right.
+    if (!this.#outcomes[this.#outcomes.length - 1].correct) {
+      const at = Math.min(this.#index + 1 + REPEAT_GAP, this.#questions.length);
+      this.#questions.splice(at, 0, this.#questions[this.#index]);
+    }
     this.#index++;
     this.#answered = false;
     this.#startedAt = this.#clock();
@@ -157,13 +164,15 @@ export class GameSession {
   summary() {
     const correct = this.#outcomes.filter((o) => o.correct).length;
     const timeouts = this.#outcomes.filter((o) => o.timedOut).length;
+    // A question can be asked again, but it is worth its points only once.
+    const unique = new Map(this.#questions.map((q) => [q.id, q]));
     return {
       answered: this.#outcomes.length,
       correct,
       wrong: this.#outcomes.length - correct,
       timeouts,
       score: this.#outcomes.reduce((sum, o) => sum + o.points, 0),
-      maxScore: this.#questions.reduce((sum, q) => sum + (q.practice ? 0 : q.points ?? 0), 0),
+      maxScore: [...unique.values()].reduce((sum, q) => sum + (q.points ?? 0), 0),
     };
   }
 
@@ -174,10 +183,9 @@ export class GameSession {
 
   #record(data) {
     const elapsedMs = this.#clock() - this.#startedAt;
-    // A question pays its points only on the first correct answer. Repeats are still recorded and still count for the streak.
+    // A question pays its points only on its first correct answer in this mission. Repeats are still recorded and still count for the streak.
     const id = data.question.id;
-    // Practice questions (of a reset lesson) never pay points.
-    const pays = data.correct && !data.question.practice && !this.#scored.has(id);
+    const pays = data.correct && !this.#scored.has(id);
     const points = pays ? data.question.points ?? 0 : 0;
     if (data.correct) this.#scored.add(id);
     const outcome = { ...data, points, elapsedMs };

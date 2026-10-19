@@ -4,13 +4,14 @@
 
 import { listQuestions, listLessons } from '../bank/repository.js';
 import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey, persianSentence } from '../bank/schema.js';
-import { filterQuestions, pickQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode } from '../engine/game-engine.js';
+import { filterQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode } from '../engine/game-engine.js';
 import { takeReview } from './review-handoff.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, levelStartXp } from '../progress/player.js';
-import { doneIds, progressOf, markPractice } from '../progress/lesson-progress.js';
-import { getSettings, saveSettings, getLessonResets, markLessonReset } from '../storage/settings.js';
-import { h, toast, fa, ltr, badge, percent, keepFocus } from './dom.js';
+import { doneIds, progressOf } from '../progress/lesson-progress.js';
+import { scheduleOf, isDue, missionQuestions, nextDueAt } from '../progress/spaced-repetition.js';
+import { getSettings, saveSettings } from '../storage/settings.js';
+import { h, toast, fa, ltr, badge, percent, keepFocus, confirmDialog } from './dom.js';
 import { createAnswerWidget, instructionFor } from './answer-widgets.js';
 import { splitPrompt } from './prompt.js';
 import { speak, speakButtons, speakBar, completeSentence, contextSentence, questionSpeakButton } from './speech-out.js';
@@ -32,6 +33,9 @@ const COUNTS = [10, 20, 50, 0]; // 0 means "all"
 
 /** "1 lesson", "3 lessons". */
 const plural = (n, word) => `${fa(n)} ${word}${Number(n) === 1 ? '' : 's'}`;
+
+/** When a question is due again, for the setup screen, e.g. "Oct 21, 9:00 AM". */
+const dueText = (ms) => new Date(ms).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
 const CATEGORY_ICONS = {
   quick_translation: '🔤',
   sentence_builder: '🧩',
@@ -70,9 +74,73 @@ let closeModal = () => {};
 
 // True while a mission or review is being played (from its first question until its results).
 let gameInProgress = false;
+// The flow of the running game (restart and home), so the game can be left from outside its screens.
+let currentFlow = null;
+// True while the history entry added for the running game is still there (see pushGuard).
+let guardPushed = false;
 
 /** Used by the header to ask before leaving a game. */
 export const isGameInProgress = () => gameInProgress;
+
+/** Sets the game state, and the header button: while a game runs, that button leaves the game. */
+function setGameRunning(running) {
+  gameInProgress = running;
+  document.body.classList.toggle('game-running', running);
+  const button = document.querySelector('.topbar-admin');
+  const label = running ? 'Leave game' : 'Settings';
+  button?.setAttribute('aria-label', label);
+  if (button) button.title = label;
+}
+
+/** Asks before a running game is left. Resolves to true when it is fine to leave: at once when no game is running. */
+export async function confirmLeaveGame() {
+  if (!gameInProgress) return true;
+  return confirmDialog({
+    title: 'Leave this game?',
+    message: 'Your answers so far are saved. The rest of this mission will not be played.',
+    confirmText: 'Leave game',
+    cancelText: 'Keep playing',
+  });
+}
+
+/**
+ * The browser's back button asks before it leaves a game. Starting a game adds one history entry (the guard)
+ * with the same address. Back removes that entry: the learner is asked, and "Keep playing" adds it again.
+ */
+function pushGuard() {
+  history.pushState({ game: true }, '', location.href);
+  guardPushed = true;
+}
+
+/** Removes the guard when the game ends on this screen, so the back button does not show the same screen twice. */
+function dropGuard() {
+  if (!guardPushed) return;
+  guardPushed = false;
+  history.back();
+}
+
+window.addEventListener('popstate', async () => {
+  if (!guardPushed) return;
+  guardPushed = false;
+  if (!gameInProgress) return;
+  if (await confirmLeaveGame()) endGame();
+  else if (gameInProgress) pushGuard();
+});
+
+/**
+ * Ends the running game on this screen: its time is saved and the setup screen comes back.
+ * The caller asks the learner first (see confirmLeaveGame).
+ */
+export function endGame() {
+  if (!gameInProgress) return;
+  stopTimer();
+  closeModal();
+  endMission();
+  setGameRunning(false);
+  keepScreenOn(false);
+  dropGuard();
+  currentFlow?.home();
+}
 
 // The start action of the settings screen (null on every other screen). Set by drawSettingsStep.
 let settingsStart = null;
@@ -131,7 +199,7 @@ export async function renderPlay(root) {
     closeModal();
     // Leaving the screen during a mission ends it (its time up to now is saved). Does nothing otherwise.
     endMission();
-    gameInProgress = false;
+    setGameRunning(false);
     keepScreenOn(false);
     settingsStart = null;
   };
@@ -218,25 +286,22 @@ function stepTitle(text) {
 
 /**
  * A review game: the questions that were answered wrong, in random order, with the same
- * timer, points and results as a normal game. Points still follow the first-correct-answer rule.
+ * timer, points and results as a normal game. Review asks for these questions whether or not they are due.
  */
 async function startReview(root, ids) {
   root.replaceChildren(h('p', { class: 'loading' }, 'Getting ready…'));
   const [questions, attempts] = await Promise.all([listQuestions(), loadAttempts()]);
   const byId = new Map(questions.map((q) => [q.id, q]));
-  const resets = getLessonResets();
-  const done = doneIds(questions, attempts, resets);
-  // Questions already answered correctly in this round are not offered again.
   const saved = getSettings();
   const voiceOnly = saved.answerInput === 'voice';
   const pool = shuffle(
-    markPractice(
-      ids.map((id) => byId.get(id)).filter((q) => q && q.enabled !== false && !done.has(q.id)),
-      resets,
-    ).map((q) => {
-      const spelled = applySpellingMode(q);
-      return applyPlayMode(voiceOnly ? { ...spelled, answer_input: 'voice' } : spelled, saved.mode);
-    }),
+    ids
+      .map((id) => byId.get(id))
+      .filter((q) => q && q.enabled !== false)
+      .map((q) => {
+        const spelled = applySpellingMode(q);
+        return applyPlayMode(voiceOnly ? { ...spelled, answer_input: 'voice' } : spelled, saved.mode);
+      }),
   );
   if (pool.length === 0) {
     toast('No questions to review are left.', 'warn');
@@ -244,9 +309,8 @@ async function startReview(root, ids) {
     return;
   }
   const before = playerProfile(attempts);
-  const alreadyScored = attempts.filter((a) => a.correct).map((a) => a.questionId);
   beginMission();
-  renderQuestion(root, new GameSession(pool, { alreadyScored }), {
+  renderQuestion(root, new GameSession(pool), {
     restart: () => startReview(root, ids),
     home: () => showSetup(root),
     xpBefore: before.xp,
@@ -258,9 +322,10 @@ async function showSetup(root) {
 
   const [questions, lessons, attempts] = await Promise.all([listQuestions(), listLessons(), loadAttempts()]);
   const profile = playerProfile(attempts);
-  const resets = getLessonResets();
-  // Questions answered correctly in the current round are done: they are not offered again.
-  const done = doneIds(questions, attempts, resets);
+  // A question answered correctly is done until its interval expires, then it is due again (see spaced-repetition.js).
+  const now = Date.now();
+  const schedule = scheduleOf(attempts);
+  const done = doneIds(questions, attempts, now);
   const progressOfLessons = (keys) =>
     progressOf(
       questions.filter((q) => keys.includes(lessonKey(q.book, q.lesson))),
@@ -290,11 +355,14 @@ async function showSetup(root) {
   let info = null;
   let startButton = null;
 
-  // Questions the mission can still offer: enabled, matching the settings, and not done yet in this round.
+  // Questions of the chosen book, lessons and exercise types (enabled ones).
+  function selectedQuestions() {
+    return filterQuestions(questions, { books: [state.book], lessons: state.lessons, categories: state.categories });
+  }
+
+  // Questions the mission can offer now: the selected ones that are due.
   function available() {
-    return filterQuestions(questions, { books: [state.book], lessons: state.lessons, categories: state.categories }).filter(
-      (q) => !done.has(q.id),
-    );
+    return selectedQuestions().filter((q) => isDue(schedule, q.id, now));
   }
 
   function refresh() {
@@ -309,23 +377,29 @@ async function showSetup(root) {
     });
     if (!info) return;
     const count = available().length;
-    info.textContent = `${plural(count, 'question')} ready for this mission`;
+    if (count) {
+      info.textContent = `${plural(count, 'question')} due for this mission`;
+    } else {
+      const next = nextDueAt(selectedQuestions(), schedule, now);
+      info.textContent = next
+        ? `Nothing is due yet. The next question is due ${dueText(next)}.`
+        : 'No questions match these settings.';
+    }
     startButton.disabled = count === 0;
   }
 
   async function start() {
-    // Read the attempts again: a game that just ended may have finished more questions.
-    const attempts = await loadAttempts();
-    const freshDone = doneIds(questions, attempts, getLessonResets());
-    const filters = { books: [state.book], lessons: state.lessons, categories: state.categories };
-    const chosen = pickQuestions(questions.filter((q) => !freshDone.has(q.id)), filters, {
+    // Read the attempts again: a game that just ended may have changed the schedule.
+    const fresh = await loadAttempts();
+    const freshNow = Date.now();
+    const freshSchedule = scheduleOf(fresh);
+    const chosen = missionQuestions(selectedQuestions(), freshSchedule, freshNow, {
       count: state.count[0] || Infinity,
     });
     if (chosen.length === 0) {
+      const next = nextDueAt(selectedQuestions(), freshSchedule, freshNow);
       toast(
-        filterQuestions(questions, filters).length
-          ? 'Every question of this mission is done. Reset a finished lesson to practise it again.'
-          : 'No questions match these settings.',
+        next ? `Nothing is due yet. The next question is due ${dueText(next)}.` : 'No questions match these settings.',
         'warn',
       );
       return;
@@ -339,13 +413,10 @@ async function showSetup(root) {
       const withInput = voiceOnly ? { ...next, answer_input: 'voice' } : next;
       return applyPlayMode(withInput, state.mode[0]);
     });
-    const pool = markPractice(picked, getLessonResets());
-    const before = playerProfile(attempts);
-    // Questions answered correctly before pay no points again.
-    const alreadyScored = attempts.filter((a) => a.correct).map((a) => a.questionId);
+    const before = playerProfile(fresh);
     // The mission's time starts now and ends on the results screen, or when the learner leaves.
     beginMission();
-    renderQuestion(root, new GameSession(pool, { alreadyScored }), {
+    renderQuestion(root, new GameSession(picked), {
       restart: start,
       home: () => showSetup(root),
       xpBefore: before.xp,
@@ -457,14 +528,6 @@ async function showSetup(root) {
           subtitle: plural(lesson.count, 'question'),
           tag: progress.complete ? 'Completed' : lesson.key === lastKey ? 'Last practised' : null,
           progress,
-          // A finished lesson can start a new round. The new round is practice only.
-          onReset: progress.complete
-            ? () => {
-                markLessonReset(lesson.key);
-                toast(`${lesson.lessonTitle} was reset. Practice rounds give no points.`, 'info');
-                showSetup(root);
-              }
-            : null,
           onclick: () => {
             state.lessons = [lesson.key];
             drawSettingsStep();
@@ -667,10 +730,10 @@ function categoryChip(label, progress) {
 
 /**
  * One tile of the lesson grid: the title, a subtitle, an optional tag and the progress.
- * Tapping it chooses it. A finished lesson also gets a reset button under the tile (a button cannot hold a button).
+ * Tapping it chooses it.
  */
-function lessonRow({ title, subtitle, dashed = false, tag = null, progress = null, onclick, onReset = null }) {
-  const row = h(
+function lessonRow({ title, subtitle, dashed = false, tag = null, progress = null, onclick }) {
+  return h(
     'button',
     {
       type: 'button',
@@ -685,13 +748,6 @@ function lessonRow({ title, subtitle, dashed = false, tag = null, progress = nul
       progress ? progressLine(progress) : null,
     ),
     tag ? h('span', { class: 'lesson-tag' }, tag) : null,
-  );
-  if (!onReset) return row;
-  return h(
-    'div',
-    { class: 'lesson-cell' },
-    row,
-    keepFocus(h('button', { type: 'button', class: 'btn ghost small reset-btn', onclick: onReset }, '↻ Reset lesson')),
   );
 }
 
@@ -857,7 +913,10 @@ function currentStreak(outcomes) {
 function renderQuestion(root, session, flow) {
   stopTimer();
   closeModal();
-  gameInProgress = true;
+  // The first question of a game adds the back-button guard; later questions of the same game do not.
+  if (!gameInProgress) pushGuard();
+  setGameRunning(true);
+  currentFlow = flow;
   // The screen stays on for the whole game, so it does not sleep between questions.
   keepScreenOn(true);
   settingsStart = null;
@@ -995,7 +1054,17 @@ function renderQuestion(root, session, flow) {
     }
   }
 
+  // Status above the card, outside it: the path so far (one dot per question), with the score and streak.
+  const footer = h(
+    'div',
+    { class: 'play-footer' },
+    // First in the row, so it sits on the start (right) side; the counters sit on the other side.
+    h('div', { class: 'footer-path' }, progressEl),
+    h('div', { class: 'hud-chips' }, scoreEl, streakEl),
+  );
+
   root.replaceChildren(
+    footer,
     h(
       'section',
       { class: 'card play' },
@@ -1026,7 +1095,6 @@ function renderQuestion(root, session, flow) {
           badge(CATEGORIES[q.category] ?? q.category, 'accent'),
           badge(topicLabel(q.topic)),
           badge(DIFFICULTIES[q.difficulty] ?? q.difficulty),
-          q.practice ? badge('Practice · no points') : null,
         ),
         h('p', { class: 'instruction', dir: 'auto' }, instructionFor(q)),
         questionBlock(q),
@@ -1045,16 +1113,9 @@ function renderQuestion(root, session, flow) {
             )
           : null,
       ),
+      // The action dock is the last thing of the card: Submit and Skip sit at the very bottom.
       // Multiple choice submits on click, so it has no send button.
       q.category === 'multiple_choice' ? null : h('div', { class: 'actions play-actions' }, submitButton, skipButton),
-      // Footer: score, streak, and the path so far (one dot per question).
-      h(
-        'div',
-        { class: 'play-footer' },
-        // First in the row, so it sits on the start (right) side; the counters sit on the other side.
-        h('div', { class: 'footer-path' }, progressEl),
-        h('div', { class: 'hud-chips' }, scoreEl, streakEl),
-      ),
     ),
   );
 
@@ -1212,14 +1273,17 @@ function resultTile(icon, value, label, tone) {
 }
 
 function renderResults(root, session, flow) {
-  gameInProgress = false;
+  setGameRunning(false);
+  dropGuard();
   keepScreenOn(false);
   // The end of the game has its own vibration pattern.
   vibrateFor('end');
   // The mission is over: its time is saved now.
   endMission();
   const summary = session.summary();
-  const mistakes = session.outcomes.filter((o) => !o.correct);
+  // A question asked again after a mistake is listed once, with its first mistake.
+  const wrongs = session.outcomes.filter((o) => !o.correct);
+  const mistakes = wrongs.filter((o, i) => wrongs.findIndex((w) => w.question.id === o.question.id) === i);
   const xpGained = session.outcomes.filter((o) => o.correct).reduce((sum, o) => sum + (Number(o.points) || 0), 0);
   const stars = starsFor(summary.correct, summary.answered);
 

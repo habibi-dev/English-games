@@ -1949,7 +1949,8 @@ textarea {
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: var(--border);
+  /* Not answered yet: darker than the page, so the empty dots are still visible. */
+  background: #cbd5e1;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
@@ -1967,22 +1968,28 @@ textarea {
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
 }
 
-/* Footer under the answer: score, streak and the progress dots. */
+/* Status row above the action dock: score, streak and the progress dots. */
 .play-footer {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 16px;
-  padding-top: 12px;
-  border-top: 1px dashed var(--border);
+  /* A white strip like the question card, so the dots and the counters stand out from the page. */
+  padding: 8px 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+  /* The footer sits above the question card, so it needs room before the card. */
+  margin: 0 0 10px;
 }
 
-/* The path (label and dots) takes the free space on the start side. */
+/* The path (label and dots) takes the free space on the start side. It keeps a little space from the edge. */
 .footer-path {
   display: grid;
   gap: 4px;
   flex: 1;
   min-width: 0;
+  padding-left: 10px;
 }
 
 .play-footer .hud-chips {
@@ -2600,28 +2607,63 @@ textarea {
   gap: 8px;
 }
 
-/* Sit clearly above the fixed bottom nav so the buttons' shadows are not covered by it.
-   Padding is generous so the shadows have room and are never cut off. */
+/* The action dock: fixed at the bottom of the screen, in the place of the bottom navigation.
+   While a question is on screen the navigation is hidden (see the rule right after this one), so the
+   dock takes its place. It uses the header's banner look (indigo gradient, rounded corners, same glow). */
 .play-actions {
-  bottom: 104px;
-  padding: 10px 6px 14px;
-  margin: 0 -6px;
+  position: fixed;
+  left: 10px;
+  right: 10px;
+  bottom: calc(10px + env(safe-area-inset-bottom));
   z-index: 2;
-  overflow: visible;
-  background: linear-gradient(180deg, rgba(244, 246, 251, 0), var(--bg) 40%);
+  max-width: 740px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1d4ed8 0%, #4f46e5 55%, #7c3aed 100%);
+  box-shadow: 0 10px 28px rgba(79, 70, 229, 0.35), inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* While a question is on screen, the action dock replaces the bottom navigation. */
+body:has(.card.play) .bottom-nav {
+  display: none;
 }
 
 .play-actions .btn {
-  min-height: 46px;
-  font-size: 1.02rem;
+  min-height: 50px;
+  font-size: 1.05rem;
+  border-radius: 14px;
 }
 
+/* Submit: white on the banner, so it is the strongest control. */
 .play-actions .btn.primary {
-  box-shadow: 0 4px 0 #1e40af, 0 8px 16px rgba(79, 70, 229, 0.25);
+  flex: 1;
+  background: #fff;
+  border-color: transparent;
+  color: var(--primary-dark);
+  box-shadow: 0 4px 0 rgba(15, 23, 42, 0.25);
 }
 
+.play-actions .btn.primary:hover:not(:disabled) {
+  filter: none;
+  background: #f5f7ff;
+}
+
+/* Skip: the secondary action, a translucent button on the banner (like the header's settings icon).
+   It gives up on the question (counted as wrong). */
 .play-actions .btn.skip-btn {
-  box-shadow: 0 4px 0 #a5b4fc;
+  flex: none;
+  min-width: 96px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  box-shadow: none;
+}
+
+.play-actions .btn.skip-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.28);
 }
 
 /* Feedback: one compact block, sentence and speak buttons on the same line */
@@ -3554,6 +3596,19 @@ textarea {
   height: 22px;
 }
 
+/* While a game runs, the settings icon becomes the leave-game icon (see setGameRunning in play.js). */
+.topbar-admin .icon-exit {
+  display: none;
+}
+
+body.game-running .topbar-admin .icon-gear {
+  display: none;
+}
+
+body.game-running .topbar-admin .icon-exit {
+  display: block;
+}
+
 .topbar-admin:hover {
   background: rgba(255, 255, 255, 0.28);
 }
@@ -3729,24 +3784,6 @@ textarea {
   justify-content: flex-end;
   gap: 8px;
   margin-top: 18px;
-}
-
-/* Skip: the secondary action beside Submit answer, in the app's indigo theme (not red).
-   It gives up on the question (counted as wrong). */
-.play-actions .btn.skip-btn {
-  flex: none;
-  min-width: 96px;
-  min-height: 46px;
-  font-size: 1rem;
-  border-radius: 14px;
-  background: var(--primary-soft);
-  border: 2px solid #c7d2fe;
-  color: var(--primary-dark);
-  box-shadow: 0 4px 0 #a5b4fc;
-}
-
-.play-actions .btn.skip-btn:hover:not(:disabled) {
-  background: #d4dffd;
 }
 
 /* The answer box is a clear panel with a label above it, so the place to answer is easy to see. */
