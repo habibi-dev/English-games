@@ -42,6 +42,27 @@ export function pickQuestions(questions, filters = {}, { count = Infinity, rando
 }
 
 /**
+ * Play modes of a mission. The time limit is split into three steps (full, two thirds, one third),
+ * and the points grow with the harder mode.
+ */
+export const PLAY_MODES = Object.freeze({
+  easy: Object.freeze({ time: 1, points: 1 }),
+  medium: Object.freeze({ time: 2 / 3, points: 1.25 }),
+  hard: Object.freeze({ time: 1 / 3, points: 1.5 }),
+});
+
+/** A copy of the question with its time limit and points scaled by the mode. Unknown modes count as easy. */
+export function applyPlayMode(question, mode = 'easy') {
+  const rule = PLAY_MODES[mode] ?? PLAY_MODES.easy;
+  if (rule.time === 1 && rule.points === 1) return question;
+  return {
+    ...question,
+    time_limit: Math.max(5, Math.round((question.time_limit ?? 20) * rule.time)),
+    points: Math.round((question.points ?? 0) * rule.points),
+  };
+}
+
+/**
  * One practice run over a fixed list of questions.
  * Flow: current() -> submit(answer) or timeout() -> next() -> ... until finished.
  */

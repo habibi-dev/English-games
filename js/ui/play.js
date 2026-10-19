@@ -4,7 +4,7 @@
 
 import { listQuestions, listLessons } from '../bank/repository.js';
 import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey } from '../bank/schema.js';
-import { filterQuestions, pickQuestions, shuffle, GameSession } from '../engine/game-engine.js';
+import { filterQuestions, pickQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode } from '../engine/game-engine.js';
 import { takeReview } from './review-handoff.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, XP_PER_LEVEL } from '../progress/player.js';
@@ -46,6 +46,13 @@ const PRESENTATION_CHOICES = [
   ['audio', 'Audio only'],
 ];
 
+// Play modes: the time of each question is split into three steps, and the points grow with the mode.
+const MODE_CHOICES = [
+  ['easy', 'Easy · full time · normal points'],
+  ['medium', 'Medium · ⅔ of the time · more points'],
+  ['hard', 'Hard · ⅓ of the time · most points'],
+];
+
 // How the learner gives a text answer: typing (with the mic as an extra), or the mic only.
 const ANSWER_INPUT_CHOICES = [
   ['typing', 'Type or speak'],
@@ -55,6 +62,25 @@ const ANSWER_INPUT_CHOICES = [
 let timerId = null;
 // Removes the result modal of the current question (set by renderQuestion).
 let closeModal = () => {};
+
+// True while a mission or review is being played (from its first question until its results).
+let gameInProgress = false;
+
+/** Used by the header to ask before leaving a game. */
+export const isGameInProgress = () => gameInProgress;
+
+// The start action of the settings screen (null on every other screen). Set by drawSettingsStep.
+let settingsStart = null;
+
+/**
+ * The bottom Play tab, while the settings screen is open: starts the mission, like the Start game button.
+ * Returns false when that does not apply, so the tab navigates as usual.
+ */
+export function startFromNav() {
+  if (!settingsStart) return false;
+  settingsStart();
+  return true;
+}
 
 const CONFETTI_COLORS = ['#f94144', '#f3722c', '#f9c74f', '#90be6d', '#43aa8b', '#577590', '#c77dff'];
 
@@ -98,6 +124,8 @@ export async function renderPlay(root) {
   return () => {
     stopTimer();
     closeModal();
+    gameInProgress = false;
+    settingsStart = null;
   };
 }
 
@@ -191,12 +219,13 @@ async function startReview(root, ids) {
   const resets = getLessonResets();
   const done = doneIds(questions, attempts, resets);
   // Questions already answered correctly in this round are not offered again.
-  const voiceOnly = getSettings().answerInput === 'voice';
+  const saved = getSettings();
+  const voiceOnly = saved.answerInput === 'voice';
   const pool = shuffle(
     markPractice(
       ids.map((id) => byId.get(id)).filter((q) => q && q.enabled !== false && !done.has(q.id)),
       resets,
-    ).map((q) => (voiceOnly ? { ...q, answer_input: 'voice' } : q)),
+    ).map((q) => applyPlayMode(voiceOnly ? { ...q, answer_input: 'voice' } : q, saved.mode)),
   );
   if (pool.length === 0) {
     toast('No questions to review are left.', 'warn');
@@ -241,6 +270,7 @@ async function showSetup(root) {
     categories: restored(saved.categories, Object.keys(CATEGORIES), Object.keys(CATEGORIES)),
     presentation: [PRESENTATION_CHOICES.some(([value]) => value === saved.presentation) ? saved.presentation : 'auto'],
     input: [saved.answerInput === 'voice' ? 'voice' : 'typing'],
+    mode: [Object.hasOwn(PLAY_MODES, saved.mode) ? saved.mode : 'easy'],
     count: [COUNTS.includes(saved.count) ? saved.count : 10],
   };
 
@@ -262,6 +292,7 @@ async function showSetup(root) {
       categories: state.categories,
       presentation: state.presentation[0],
       answerInput: state.input[0],
+      mode: state.mode[0],
       count: state.count[0],
     });
     if (!info) return;
@@ -292,7 +323,8 @@ async function showSetup(root) {
     const voiceOnly = state.input[0] === 'voice';
     const picked = chosen.map((question) => {
       const next = forced === 'auto' ? question : { ...question, presentation: forced };
-      return voiceOnly ? { ...next, answer_input: 'voice' } : next;
+      const withInput = voiceOnly ? { ...next, answer_input: 'voice' } : next;
+      return applyPlayMode(withInput, state.mode[0]);
     });
     const pool = markPractice(picked, getLessonResets());
     const before = playerProfile(attempts);
@@ -310,6 +342,7 @@ async function showSetup(root) {
 
   // Step 1: choose the series (for example Evolve).
   function drawSeriesStep() {
+    settingsStart = null;
     info = null;
     startButton = null;
     // Tapping a series opens its books at once.
@@ -341,6 +374,7 @@ async function showSetup(root) {
 
   // Step 2: choose the book inside the series. Opening it from the mission screen goes back here.
   function drawBookStep(seriesId) {
+    settingsStart = null;
     info = null;
     startButton = null;
     const entry = series.find((item) => item.id === seriesId) ?? series[0];
@@ -382,6 +416,7 @@ async function showSetup(root) {
 
   // Step 3: inside the chosen book. Lessons (or the whole book), exercise types, presentation and length.
   function drawMissionStep() {
+    settingsStart = null;
     const book = allBooks.find((entry) => entry.id === state.book);
     const parent = seriesOf(book.id);
     const allKeys = book.lessons.map((lesson) => lesson.key);
@@ -449,9 +484,15 @@ async function showSetup(root) {
 
   // Step 4: the rest of the settings, on their own screen: exercise types, presentation and length.
   function drawSettingsStep() {
+    settingsStart = null;
     const book = allBooks.find((entry) => entry.id === state.book);
     info = h('p', { class: 'muted small info' });
     startButton = h('button', { type: 'button', class: 'btn primary start-btn', onclick: start }, 'Start game');
+    // The bottom Play tab does the same as this button, while the settings are on screen.
+    settingsStart = () => {
+      if (!startButton.disabled) start();
+      return true;
+    };
 
     root.replaceChildren(
       playerCard(profile),
@@ -468,6 +509,12 @@ async function showSetup(root) {
             '← Back to lessons',
           ),
         ),
+        stepTitle('Difficulty'),
+        chipGroup(MODE_CHOICES, state.mode, {
+          multiple: false,
+          onChange: refresh,
+          className: 'card-options',
+        }),
         stepTitle('Exercise types'),
         chipGroup(
           Object.entries(CATEGORIES).map(([key, label]) => [key, `${CATEGORY_ICONS[key] ?? ''} ${label}`.trim()]),
@@ -713,6 +760,8 @@ function currentStreak(outcomes) {
 function renderQuestion(root, session, flow) {
   stopTimer();
   closeModal();
+  gameInProgress = true;
+  settingsStart = null;
   // Every new question starts at the top of the page.
   window.scrollTo(0, 0);
   const { question: q, index, total } = session.current;
@@ -727,6 +776,8 @@ function renderQuestion(root, session, flow) {
   const feedback = h('div', { class: 'feedback', hidden: true, role: 'alert' });
   const hintText = q.hint ? h('p', { class: 'hint', dir: 'rtl', hidden: true }, q.hint) : null;
   const submitButton = h('button', { type: 'button', class: 'btn primary', onclick: submit }, 'Submit answer');
+  // Small red button beside Submit: gives up on the question. It counts as a wrong answer, and the correct answer is shown.
+  const skipButton = h('button', { type: 'button', class: 'btn danger skip-btn', onclick: skip }, 'Skip');
   const nextButton = h('button', { type: 'button', class: 'btn primary', hidden: true, onclick: next });
 
   const widget = createAnswerWidget(q, { onSubmit: submit });
@@ -763,10 +814,17 @@ function renderQuestion(root, session, flow) {
     finish(session.submit(widget.getValue()));
   }
 
+  // Skip: an empty answer, so it is a wrong answer; the feedback then shows the correct answer.
+  function skip() {
+    if (session.answered) return;
+    finish(session.submit(''));
+  }
+
   function finish(outcome) {
     stopTimer();
     widget.lock(q.expected_answer);
     submitButton.hidden = true;
+    skipButton.hidden = true;
     scoreEl.textContent = `⭐ ${fa(session.summary().score)}`;
     streakEl.textContent = `🔥 ${fa(currentStreak(session.outcomes))}`;
     const freshTrack = progressTrack(session);
@@ -814,7 +872,7 @@ function renderQuestion(root, session, flow) {
           speakButtons(fullSentence),
         ),
         meaningBox(q),
-        outcome.correct || outcome.timedOut
+        outcome.correct || outcome.timedOut || !outcome.answer
           ? null
           : h('div', { class: 'fb-box fb-yours' }, h('span', { class: 'fb-label' }, 'Your answer'), h('p', { class: 'fb-text' }, ltr(outcome.answer))),
         outcome.correct || !q.explanation
@@ -892,7 +950,7 @@ function renderQuestion(root, session, flow) {
           : null,
       ),
       // Multiple choice submits on click, so it has no send button.
-      q.category === 'multiple_choice' ? null : h('div', { class: 'actions play-actions' }, submitButton),
+      q.category === 'multiple_choice' ? null : h('div', { class: 'actions play-actions' }, submitButton, skipButton),
       // Footer: score, streak, and the path so far (one dot per question).
       h(
         'div',
@@ -1038,6 +1096,7 @@ function resultTile(icon, value, label, tone) {
 }
 
 function renderResults(root, session, flow) {
+  gameInProgress = false;
   const summary = session.summary();
   const mistakes = session.outcomes.filter((o) => !o.correct);
   const xpGained = session.outcomes.filter((o) => o.correct).reduce((sum, o) => sum + (Number(o.points) || 0), 0);

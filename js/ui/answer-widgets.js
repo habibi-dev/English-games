@@ -177,6 +177,7 @@ function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { vo
     element: h(
       'div',
       { class: `answer-box${voiceMode ? ' voice-only' : ''}` },
+      h('span', { class: 'answer-label' }, voiceMode ? 'Your answer · say it' : 'Your answer'),
       h('div', { class: 'input-row' }, input, mic),
       note ? h('p', { class: 'muted small' }, note) : null,
     ),

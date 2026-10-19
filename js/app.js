@@ -1,10 +1,10 @@
 // App entry point: loads the course content (content/index.json), routes between screens, registers the service worker.
 
 import { syncContent } from './bank/repository.js';
-import { renderPlay } from './ui/play.js';
+import { renderPlay, isGameInProgress, startFromNav } from './ui/play.js';
 import { renderReports } from './ui/reports.js';
 import { renderAdmin } from './ui/admin.js';
-import { h, toast, fa } from './ui/dom.js';
+import { h, toast, fa, confirmDialog } from './ui/dom.js';
 
 const views = {
   play: renderPlay,
@@ -42,6 +42,34 @@ async function route() {
     );
   }
 }
+
+// Bottom Play tab: on the settings screen it starts the mission (same as the Start game button).
+// Elsewhere it navigates as usual.
+document.querySelectorAll('[data-nav="play"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    if (!startFromNav()) return;
+    event.preventDefault();
+  });
+});
+
+// Logo and title: always back to the main (play) screen, from any screen.
+// During a mission, leaving ends it, so ask first (in-app card).
+// The click is handled here for every case: if the hash is already #/play (for example on the results screen),
+// the browser would not fire hashchange, so the view is re-rendered directly.
+document.querySelector('.brand-home')?.addEventListener('click', async (event) => {
+  event.preventDefault();
+  if (isGameInProgress()) {
+    const leave = await confirmDialog({
+      title: 'Leave this game?',
+      message: 'Your answers so far are saved. The rest of this mission will not be played.',
+      confirmText: 'Leave game',
+      cancelText: 'Keep playing',
+    });
+    if (!leave) return;
+  }
+  if (location.hash === '#/play' || location.hash === '') route();
+  else location.hash = '#/play';
+});
 
 async function boot() {
   root.replaceChildren(h('p', { class: 'loading' }, 'Preparing lessons…'));

@@ -2519,14 +2519,28 @@ textarea {
   gap: 8px;
 }
 
+/* Sit clearly above the fixed bottom nav so the buttons' shadows are not covered by it.
+   Padding is generous so the shadows have room and are never cut off. */
 .play-actions {
-  bottom: 92px;
-  padding: 6px 0;
+  bottom: 104px;
+  padding: 10px 6px 14px;
+  margin: 0 -6px;
+  z-index: 2;
+  overflow: visible;
+  background: linear-gradient(180deg, rgba(244, 246, 251, 0), var(--bg) 40%);
 }
 
 .play-actions .btn {
   min-height: 46px;
   font-size: 1.02rem;
+}
+
+.play-actions .btn.primary {
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.28);
+}
+
+.play-actions .btn.skip-btn {
+  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.16);
 }
 
 /* Feedback: one compact block, sentence and speak buttons on the same line */
@@ -2728,6 +2742,7 @@ textarea {
   width: min(440px, 100%);
   max-height: 88vh;
   overflow-y: auto;
+  overflow-x: hidden;
   padding: 18px 16px 16px;
   border-radius: 22px;
   background: #fff;
@@ -2738,7 +2753,12 @@ textarea {
 .result-overlay.ok .result-card { border-top: 6px solid #43aa8b; }
 .result-overlay.bad .result-card { border-top: 6px solid #e5484d; }
 
+/* The mood box is only as wide as the emoji. A full-width box would be scaled/rotated past the card
+   edges by the bounce and sway animations, which made the card briefly scroll sideways. */
 .result-mood {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
   font-size: 3.2rem;
   line-height: 1;
   text-align: center;
@@ -3123,4 +3143,163 @@ textarea {
 .answer-box.voice-only .mic {
   width: 56px;
   height: 56px;
+}
+
+/* The logo and title as one link back to the first screen. Keeps the look of the header. */
+.brand-home {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 14px;
+}
+
+.brand-home:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 3px;
+}
+
+/* In-app confirmation (replaces the browser dialog). */
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.dialog-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 20px;
+  border-radius: 18px;
+  background: #fff;
+  color: var(--text);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.3);
+}
+
+.dialog-title {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.dialog-message {
+  margin: 0;
+  color: var(--muted, #475569);
+  line-height: 1.6;
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+/* Skip: a small red button beside Submit answer. It gives up on the question (counted as wrong). */
+.play-actions .btn.skip-btn {
+  flex: none;
+  min-width: 96px;
+  min-height: 46px;
+  font-size: 1rem;
+  border-radius: 14px;
+  background: #fef2f2;
+  border: 2px solid #fca5a5;
+  color: #b91c1c;
+}
+
+.play-actions .btn.skip-btn:hover:not(:disabled) {
+  background: #fee2e2;
+}
+
+/* The answer box is a clear panel with a label above it, so the place to answer is easy to see. */
+.answer-zone .answer-box {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 18px;
+  background: #f5f7ff;
+  border: 2px solid #c7d2fe;
+  box-shadow: 0 8px 22px rgba(79, 70, 229, 0.08);
+}
+
+.answer-zone .answer-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: var(--primary-dark);
+}
+
+.answer-zone .answer-box .input-row {
+  gap: 12px;
+}
+
+.answer-zone .answer-box .answer-input {
+  min-height: 58px;
+  padding: 14px 16px;
+  font-size: 1.2rem;
+  border: 2px solid #a5b4fc;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.answer-zone .answer-box .answer-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.18);
+}
+
+.answer-zone .answer-box .btn.mic {
+  width: 58px;
+  min-width: 58px;
+  min-height: 58px;
+}
+
+/* ---------- Text selection ----------
+   The app is a game, not a document: selecting UI chrome (buttons, nav, chips, badges)
+   gets in the way. Everything is non-selectable by default, and only text is selectable. */
+*,
+*::before,
+*::after {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Text content stays selectable (listed with :where so these do not outrank the rules below). */
+:where(p, span, div, h1, h2, h3, h4, h5, h6, li, td, th, dt, dd, blockquote, label, bdi, strong, em, b, i, small, code, pre, section, article, main, header, footer, nav) {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Typing fields and interactive controls keep their own behaviour. */
+input,
+textarea,
+[contenteditable="true"] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+button,
+button *,
+.btn,
+.btn *,
+a,
+a *,
+select,
+svg,
+svg *,
+img,
+.bottom-nav,
+.bottom-nav *,
+.topbar,
+.topbar *,
+.chip-toggle,
+.chip-toggle * {
+  -webkit-user-select: none;
+  user-select: none;
 }
