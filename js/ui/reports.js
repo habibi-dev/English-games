@@ -311,7 +311,7 @@ export async function renderReports(root) {
       ),
       h(
         'div',
-        { class: 'report-stats' },
+        { class: 'report-stats stat-row' },
         statCard('📚', fa(bank.totals.total), 'Total questions', 'blue'),
         statCard('✅', fa(bank.totals.enabled), 'Active questions', 'green'),
         statCard('✍️', fa(perf.overall.attempted), 'Answers', 'indigo'),

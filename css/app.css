@@ -2997,6 +2997,39 @@ textarea {
   overflow-wrap: anywhere;
 }
 
+/* The top summary of the reports: five small tiles in one row. */
+.report-stats.stat-row {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  padding: 10px;
+}
+
+.stat-row .report-stat {
+  padding: 8px 2px;
+  min-width: 0;
+  gap: 0;
+}
+
+.stat-row .report-stat:last-child:nth-child(odd) {
+  grid-column: auto;
+}
+
+.stat-row .report-stat-icon {
+  font-size: 0.9rem;
+}
+
+.stat-row .report-stat strong {
+  font-size: 0.85rem;
+  overflow-wrap: anywhere;
+}
+
+.stat-row .report-stat-label {
+  font-size: 0.64rem;
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
 /* Period row: today, yesterday, week, month, all time. */
 .activity .activity-periods {
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -3262,8 +3295,11 @@ textarea {
   width: 100%;
 }
 
+/* The empty part of the bar is white with a thin outline, so it stays visible on the tile's tint. */
 .cat-progress .progress-bar {
   height: 5px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #c7d2fe;
 }
 
 .cat-count {
