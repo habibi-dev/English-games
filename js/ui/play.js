@@ -46,6 +46,12 @@ const PRESENTATION_CHOICES = [
   ['audio', 'Audio only'],
 ];
 
+// How the learner gives a text answer: typing (with the mic as an extra), or the mic only.
+const ANSWER_INPUT_CHOICES = [
+  ['typing', 'Type or speak'],
+  ['voice', 'Voice only'],
+];
+
 let timerId = null;
 // Removes the result modal of the current question (set by renderQuestion).
 let closeModal = () => {};
@@ -185,11 +191,12 @@ async function startReview(root, ids) {
   const resets = getLessonResets();
   const done = doneIds(questions, attempts, resets);
   // Questions already answered correctly in this round are not offered again.
+  const voiceOnly = getSettings().answerInput === 'voice';
   const pool = shuffle(
     markPractice(
       ids.map((id) => byId.get(id)).filter((q) => q && q.enabled !== false && !done.has(q.id)),
       resets,
-    ),
+    ).map((q) => (voiceOnly ? { ...q, answer_input: 'voice' } : q)),
   );
   if (pool.length === 0) {
     toast('No questions to review are left.', 'warn');
@@ -233,6 +240,7 @@ async function showSetup(root) {
     lessons: savedLessons.length ? savedLessons : allLessonKeys,
     categories: restored(saved.categories, Object.keys(CATEGORIES), Object.keys(CATEGORIES)),
     presentation: [PRESENTATION_CHOICES.some(([value]) => value === saved.presentation) ? saved.presentation : 'auto'],
+    input: [saved.answerInput === 'voice' ? 'voice' : 'typing'],
     count: [COUNTS.includes(saved.count) ? saved.count : 10],
   };
 
@@ -253,6 +261,7 @@ async function showSetup(root) {
       lessons: state.lessons,
       categories: state.categories,
       presentation: state.presentation[0],
+      answerInput: state.input[0],
       count: state.count[0],
     });
     if (!info) return;
@@ -280,7 +289,11 @@ async function showSetup(root) {
     }
     // "auto" keeps each exercise's own presentation; the other choices apply to the whole mission.
     const forced = state.presentation[0];
-    const picked = forced === 'auto' ? chosen : chosen.map((question) => ({ ...question, presentation: forced }));
+    const voiceOnly = state.input[0] === 'voice';
+    const picked = chosen.map((question) => {
+      const next = forced === 'auto' ? question : { ...question, presentation: forced };
+      return voiceOnly ? { ...next, answer_input: 'voice' } : next;
+    });
     const pool = markPractice(picked, getLessonResets());
     const before = playerProfile(attempts);
     // Questions answered correctly before pay no points again.
@@ -463,6 +476,12 @@ async function showSetup(root) {
         ),
         stepTitle('Sentence display'),
         chipGroup(PRESENTATION_CHOICES, state.presentation, {
+          multiple: false,
+          onChange: refresh,
+          className: 'card-options',
+        }),
+        stepTitle('Answer input'),
+        chipGroup(ANSWER_INPUT_CHOICES, state.input, {
           multiple: false,
           onChange: refresh,
           className: 'card-options',

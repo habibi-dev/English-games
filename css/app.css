@@ -3114,3 +3114,13 @@ textarea {
 .book-progress .progress-bar {
   width: 110px;
 }
+
+/* Voice-only answers: the box shows what was heard, and the mic is the way in. */
+.answer-box.voice-only .answer-input {
+  cursor: default;
+}
+
+.answer-box.voice-only .mic {
+  width: 56px;
+  height: 56px;
+}

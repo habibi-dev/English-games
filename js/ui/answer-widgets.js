@@ -7,6 +7,7 @@
 
 import { h, toast, keepFocus } from './dom.js';
 import { playButton } from './speech-out.js';
+import { validateAnswer } from '../engine/validator.js';
 
 export const INSTRUCTIONS = {
   quick_translation: 'به انگلیسی ترجمه کن',
@@ -26,19 +27,42 @@ export function createAnswerWidget(question, { onSubmit }) {
     case 'multiple_choice':
       return multipleChoice(question, onSubmit);
     case 'grammar_correction':
-      return textAnswer(onSubmit, question.incorrect_sentence);
+      return textAnswer(onSubmit, question.incorrect_sentence, undefined, {
+        voice: true,
+        voiceOnly: isVoiceOnly(question),
+        question,
+      });
     default:
       // quick_translation, positive_negative_question, voice_translation and dictation use a text box.
-      // Dictation is about typing what is heard, so it has no voice input.
+      // Dictation is about typing what is heard, so it has no voice input, unless the mission is voice only.
       return textAnswer(
         onSubmit,
         '',
         question.answer_mode === 'list'
           ? `At least ${question.min_items ?? 1} answers; separate them with commas or spaces`
           : undefined,
-        { voice: question.category !== 'dictation' },
+        { voice: question.category !== 'dictation' || isVoiceOnly(question), voiceOnly: isVoiceOnly(question), question },
       );
   }
+}
+
+/** Voice-only missions: the answer is spoken, never typed. */
+function isVoiceOnly(question) {
+  return question.answer_input === 'voice';
+}
+
+/**
+ * Picks the transcript to fill in: the first recognised alternative that is a correct answer, otherwise the top one.
+ * Only the words are judged (the validator ignores case and final punctuation), so pronunciation does not matter.
+ */
+export function pickTranscript(alternatives, question = null) {
+  const options = alternatives.map((text) => String(text ?? '').trim()).filter(Boolean);
+  if (options.length === 0) return '';
+  if (question) {
+    const correct = options.find((text) => validateAnswer(question, text).correct);
+    if (correct) return correct;
+  }
+  return options[0];
 }
 
 const SpeechRecognitionClass = () => window.SpeechRecognition ?? window.webkitSpeechRecognition;
@@ -61,18 +85,20 @@ const MIC_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
  * Microphone button that fills `input` with the spoken English text.
  * Returns null when the browser has no speech recognition (the caller shows a fallback hint).
  */
-function createMicButton(input) {
+function createMicButton(input, question = null) {
   const Recognition = SpeechRecognitionClass();
   if (!Recognition) return null;
 
   const recognizer = new Recognition();
   recognizer.lang = 'en-US';
   recognizer.interimResults = false;
-  recognizer.maxAlternatives = 1;
+  // Several candidates, so a correct answer heard in one of them is not lost to the top guess.
+  recognizer.maxAlternatives = 5;
 
   let button;
   recognizer.onresult = (event) => {
-    input.value = event.results[0][0].transcript.trim();
+    const alternatives = Array.from(event.results[0] ?? [], (alternative) => alternative.transcript);
+    input.value = pickTranscript(alternatives, question);
     input.focus();
   };
   recognizer.onerror = (event) => {
@@ -108,7 +134,7 @@ function createMicButton(input) {
   return button;
 }
 
-function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { voice = true } = {}) {
+function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { voice = true, voiceOnly = false, question = null } = {}) {
   const input = h('input', {
     type: 'text',
     class: 'answer-input',
@@ -131,20 +157,28 @@ function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { vo
     },
   });
 
-  const mic = voice ? createMicButton(input) : null;
+  const mic = voice ? createMicButton(input, question) : null;
+  // Voice only: the answer is spoken, so the box cannot be typed in. Without speech recognition the learner can still type.
+  const voiceMode = voiceOnly && mic !== null;
+  if (voiceMode) {
+    input.readOnly = true;
+    input.inputMode = 'none';
+    input.placeholder = 'Press the mic and say the answer';
+  }
+
+  let note = null;
+  if (voice && !mic) {
+    note = voiceOnly
+      ? 'Speech recognition is not available in this browser, so you can type the answer instead.'
+      : 'Voice typing is not available in this browser. You can use keyboard dictation instead (for example Win+H on Windows, or the keyboard microphone on a phone).';
+  }
 
   return {
     element: h(
       'div',
-      { class: 'answer-box' },
+      { class: `answer-box${voiceMode ? ' voice-only' : ''}` },
       h('div', { class: 'input-row' }, input, mic),
-      !voice || mic
-        ? null
-        : h(
-            'p',
-            { class: 'muted small' },
-            'Voice typing is not available in this browser. You can use keyboard dictation instead (for example Win+H on Windows, or the keyboard microphone on a phone).',
-          ),
+      note ? h('p', { class: 'muted small' }, note) : null,
     ),
     getValue: () => input.value,
     lock() {
