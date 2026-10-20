@@ -233,6 +233,26 @@ p {
   box-shadow: 0 6px 14px rgba(79, 70, 229, 0.3);
 }
 
+/* Results screen only: the middle button of the bottom bar plays again (see renderResults in play.js).
+   It is not coloured like the active Home tab, so it looks like the other plain tabs. */
+.bottom-nav .bottom-again {
+  flex: 1;
+  padding: 12px 4px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* On the Difficulty step the bottom bar is one Play button: Reports is hidden there (see setTabMode in play.js). */
+body.play-step .bottom-nav a[data-nav="reports"] {
+  display: none;
+}
+
 /* Buttons and chips */
 
 .btn {
@@ -1713,14 +1733,6 @@ textarea {
   background: var(--ok-soft);
   color: var(--ok);
   font-weight: 700;
-}
-
-.results-actions {
-  justify-content: center;
-}
-
-.results-actions .btn {
-  min-width: 130px;
 }
 
 .result-hero .xp-gain {

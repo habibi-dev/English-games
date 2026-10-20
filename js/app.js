@@ -1,7 +1,7 @@
 // App entry point: loads the course content (content/index.json), routes between screens, registers the service worker.
 
 import { syncContent } from './bank/repository.js';
-import { renderPlay, isGameInProgress, startFromNav, confirmLeaveGame, endGame } from './ui/play.js';
+import { renderPlay, isGameInProgress, setTabMode, startFromNav, confirmLeaveGame, endGame } from './ui/play.js';
 import { renderReports } from './ui/reports.js';
 import { renderAdmin } from './ui/admin.js';
 import { h, toast, fa } from './ui/dom.js';
@@ -35,6 +35,8 @@ async function route() {
   document.querySelectorAll('[data-nav]').forEach((link) => {
     link.classList.toggle('active', link.dataset.nav === viewName);
   });
+  // The setup screens switch the bar to its Play mode themselves (see setTabMode in play.js).
+  setTabMode('home');
 
   try {
     const result = await views[viewName](root, rest);
@@ -51,12 +53,18 @@ async function route() {
   }
 }
 
-// Bottom Play tab: on the settings screen it starts the mission (same as the Start game button).
-// Elsewhere it navigates as usual.
+// Bottom Play tab. On the Difficulty step it reads "Play" and starts the mission (see setTabMode in play.js).
+// Everywhere else it reads "Home" and goes to the first screen; during a mission it asks first.
 document.querySelectorAll('[data-nav="play"]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    if (!startFromNav()) return;
+  link.addEventListener('click', async (event) => {
     event.preventDefault();
+    if (startFromNav()) return;
+    if (isGameInProgress()) {
+      if (await confirmLeaveGame()) endGame();
+      return;
+    }
+    if (location.hash === '#/play' || location.hash === '') route();
+    else location.hash = '#/play';
   });
 });
 

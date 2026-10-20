@@ -84,6 +84,20 @@ let guardPushed = false;
 /** Used by the header to ask before leaving a game. */
 export const isGameInProgress = () => gameInProgress;
 
+/**
+ * The bottom bar. 'play': the Difficulty step, where the bar is one "Play" button that starts the mission (Reports is hidden).
+ * 'home': every other screen, where the first tab reads "Home" and Reports is shown next to it.
+ */
+export function setTabMode(mode) {
+  document.body.classList.toggle('play-step', mode === 'play');
+  document.querySelectorAll('[data-nav="play"]').forEach((link) => {
+    link.textContent = mode === 'play' ? 'Play' : 'Home';
+  });
+  // The "Practice again" button belongs to the results screen only.
+  const again = document.querySelector('.bottom-again');
+  if (again) again.hidden = true;
+}
+
 /** Sets the game state, and the header button: while a game runs, that button leaves the game. */
 function setGameRunning(running) {
   gameInProgress = running;
@@ -148,8 +162,8 @@ export function endGame() {
 let settingsStart = null;
 
 /**
- * The bottom Play tab, while the settings screen is open: starts the mission, like the Start game button.
- * Returns false when that does not apply, so the tab navigates as usual.
+ * The bottom Play tab, while the settings screen is open: starts the mission (there is no Start button).
+ * Returns false when that does not apply, so the tab is handled as usual.
  */
 export function startFromNav() {
   if (!settingsStart) return false;
@@ -322,6 +336,7 @@ async function startReview(root, ids) {
 }
 
 async function showSetup(root) {
+  setTabMode('home');
   root.replaceChildren(h('p', { class: 'loading' }, 'Getting ready…'));
 
   const [questions, lessons, attempts] = await Promise.all([listQuestions(), listLessons(), loadAttempts()]);
@@ -357,7 +372,6 @@ async function showSetup(root) {
 
   // Set by the mission step; the book step does not show them.
   let info = null;
-  let startButton = null;
 
   // Questions of the chosen book, lessons and exercise types (enabled ones).
   function selectedQuestions() {
@@ -389,7 +403,6 @@ async function showSetup(root) {
         ? `Nothing is due yet. The next question is due ${dueText(next)}.`
         : 'No questions match these settings.';
     }
-    startButton.disabled = count === 0;
   }
 
   async function start() {
@@ -435,8 +448,8 @@ async function showSetup(root) {
   // Step 1: choose the series (for example Evolve).
   function drawSeriesStep() {
     settingsStart = null;
+    setTabMode('home');
     info = null;
-    startButton = null;
     // Tapping a series opens its books at once.
     const grid = h(
       'div',
@@ -467,8 +480,8 @@ async function showSetup(root) {
   // Step 2: choose the book inside the series. Opening it from the mission screen goes back here.
   function drawBookStep(seriesId) {
     settingsStart = null;
+    setTabMode('home');
     info = null;
-    startButton = null;
     const entry = series.find((item) => item.id === seriesId) ?? series[0];
     // Tapping a book opens its lessons at once. The book is remembered for the next visit.
     const grid = h(
@@ -509,6 +522,7 @@ async function showSetup(root) {
   // Step 3: inside the chosen book. Lessons (or the whole book), exercise types, presentation and length.
   function drawMissionStep() {
     settingsStart = null;
+    setTabMode('home');
     const book = allBooks.find((entry) => entry.id === state.book);
     const parent = seriesOf(book.id);
     const allKeys = book.lessons.map((lesson) => lesson.key);
@@ -542,7 +556,6 @@ async function showSetup(root) {
       }),
     );
     info = null;
-    startButton = null;
 
     root.replaceChildren(
       playerCard(profile),
@@ -579,12 +592,12 @@ async function showSetup(root) {
     settingsStart = null;
     const book = allBooks.find((entry) => entry.id === state.book);
     info = h('p', { class: 'muted small info' });
-    startButton = h('button', { type: 'button', class: 'btn primary start-btn', onclick: start }, 'Start game');
-    // The bottom Play tab does the same as this button, while the settings are on screen.
+    // The Difficulty step: the bottom bar is one Play button, and it starts the mission (there is no Start button).
     settingsStart = () => {
-      if (!startButton.disabled) start();
+      start();
       return true;
     };
+    setTabMode('play');
 
     root.replaceChildren(
       playerCard(profile),
@@ -643,7 +656,6 @@ async function showSetup(root) {
           { multiple: false, onChange: refresh, className: 'card-options' },
         ),
         info,
-        startButton,
       ),
     );
     refresh();
@@ -934,6 +946,7 @@ function renderQuestion(root, session, flow) {
   // The screen stays on for the whole game, so it does not sleep between questions.
   keepScreenOn(true);
   settingsStart = null;
+  setTabMode('home');
   // Every new question starts at the top of the page.
   window.scrollTo(0, 0);
   const { question: q, index, total } = session.current;
@@ -1310,6 +1323,13 @@ function renderResults(root, session, flow) {
   const levelBefore = levelFor(xpBefore);
   const levelAfter = levelFor(xpBefore + xpGained);
 
+  // The bottom bar gets a "Practice again" button in the middle: the same kind of game, with new questions.
+  const again = document.querySelector('.bottom-again');
+  if (again) {
+    again.onclick = () => flow.restart();
+    again.hidden = false;
+  }
+
   root.replaceChildren(
     h(
       'section',
@@ -1359,13 +1379,6 @@ function renderResults(root, session, flow) {
             ? h('p', { class: 'mistake-note', dir: 'rtl' }, `Meaning: ${o.question.hint}`)
             : null,
         ),
-      ),
-      h(
-        'div',
-        { class: 'actions results-actions' },
-        h('button', { type: 'button', class: 'btn primary', onclick: () => flow.restart() }, '↻ Play again'),
-        h('button', { type: 'button', class: 'btn ghost', onclick: () => flow.home() }, 'Home'),
-        h('a', { class: 'btn ghost', href: '#/reports' }, 'Reports'),
       ),
     ),
   );
