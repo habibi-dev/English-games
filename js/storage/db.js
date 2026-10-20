@@ -84,5 +84,6 @@ export const deleteLessonMeta = (key) => single('lessons', 'readwrite', (s) => s
 
 // Attempts
 export const addAttempt = (attempt) => single('attempts', 'readwrite', (s) => s.add(attempt));
+export const addAttempts = (attempts) => bulkPut('attempts', attempts);
 export const getAllAttempts = () => single('attempts', 'readonly', (s) => s.getAll());
 export const clearAttempts = () => single('attempts', 'readwrite', (s) => s.clear());

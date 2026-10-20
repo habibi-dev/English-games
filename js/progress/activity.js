@@ -42,6 +42,26 @@ export function recordSession(start, end) {
   }
 }
 
+/** Adds the sessions of an imported backup that this device does not have yet. Returns how many were added. */
+export function addSessions(incoming) {
+  const existing = loadSessions();
+  const seen = new Set(existing.map((s) => `${s.start}|${s.end}`));
+  const fresh = incoming.filter(isSession).filter((s) => {
+    const key = `${s.start}|${s.end}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+  if (fresh.length === 0) return 0;
+  try {
+    localStorage.setItem(KEY, JSON.stringify([...existing, ...fresh]));
+    return fresh.length;
+  } catch {
+    // Storage full or disabled: nothing was added.
+    return 0;
+  }
+}
+
 // The mission in progress, if any. Set when it starts, cleared when it ends.
 let missionStart = null;
 

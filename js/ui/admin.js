@@ -1,5 +1,6 @@
-// Settings screen (opened from the gear in the header). Two sections:
+// Settings screen (opened from the gear in the header). Three sections:
 //   Sounds: the win and lose sound effects, each on or off, with a volume and a preview.
+//   Progress: export the answers so far as a signed text, and import it on another device.
 //   Question bank: import and export, plus a guide and prompt for writing questions with an AI.
 // Questions are written in files and imported here. The game code is never touched here.
 
@@ -7,11 +8,15 @@ import { listQuestions, importIntoStore } from '../bank/repository.js';
 import { serializeQuestions } from '../bank/importer.js';
 import { QUESTION_PROMPT } from '../bank/question-prompt.js';
 import { getSoundSettings, saveSoundSettings } from '../storage/settings.js';
+import { loadAttempts, importAttempts } from '../progress/tracker.js';
+import { loadSessions, addSessions } from '../progress/activity.js';
+import { encodeBackup, decodeBackup } from '../progress/backup.js';
 import { playWinSound, playLoseSound, playTimeoutSound } from './sounds.js';
 import { h, fa, toast, download } from './dom.js';
 
 const SECTIONS = [
   ['sounds', 'Sounds'],
+  ['progress', 'Progress'],
   ['questions', 'Question bank'],
 ];
 
@@ -22,7 +27,12 @@ let activeSection = 'sounds';
 let importReport = null;
 
 export async function renderAdmin(root) {
-  const body = activeSection === 'sounds' ? soundsSection() : await questionBankSection(root);
+  const body =
+    activeSection === 'sounds'
+      ? soundsSection()
+      : activeSection === 'progress'
+        ? progressSection()
+        : await questionBankSection(root);
 
   root.replaceChildren(
     h(
@@ -113,6 +123,80 @@ function soundsSection() {
     ),
     h('p', { class: 'muted small' }, 'The preview plays even when sound effects are off.'),
   );
+}
+
+/** Progress: the answers so far as one signed text, to move to another device, and the import of such a text. */
+function progressSection() {
+  const fileInput = h('input', {
+    type: 'file',
+    accept: '.txt,text/plain',
+    class: 'hidden-input',
+    onchange: async (event) => {
+      const file = event.target.files?.[0];
+      event.target.value = '';
+      if (file) await handleProgressImport(file);
+    },
+  });
+
+  return h(
+    'section',
+    { class: 'settings-section' },
+    h(
+      'div',
+      { class: 'card admin-card' },
+      h('h3', {}, 'Export progress'),
+      h(
+        'p',
+        { class: 'muted small' },
+        'Save every answer and the activity time (the calendar) so far as one text file. Open the app on another device and import that file there. The file is signed, so a changed file is refused.',
+      ),
+      h(
+        'div',
+        { class: 'toolbar-actions' },
+        h('button', { type: 'button', class: 'btn primary', onclick: exportProgress }, 'Export progress'),
+      ),
+    ),
+    h(
+      'div',
+      { class: 'card admin-card' },
+      h('h3', {}, 'Import progress'),
+      h(
+        'p',
+        { class: 'muted small' },
+        'Add the answers and the activity time from a progress file. What this device already has is skipped, so importing the same file twice changes nothing.',
+      ),
+      h(
+        'div',
+        { class: 'toolbar-actions' },
+        h('button', { type: 'button', class: 'btn ghost', onclick: () => fileInput.click() }, 'Import progress file'),
+      ),
+      fileInput,
+    ),
+  );
+}
+
+async function exportProgress() {
+  const attempts = await loadAttempts();
+  const sessions = loadSessions();
+  if (attempts.length === 0 && sessions.length === 0) {
+    toast('There is no progress to export yet.', 'warn');
+    return;
+  }
+  const stamp = new Date().toISOString().slice(0, 10);
+  download(`grammar-quest-progress-${stamp}.txt`, await encodeBackup({ attempts, sessions }), 'text/plain');
+}
+
+async function handleProgressImport(file) {
+  try {
+    const { attempts, sessions } = await decodeBackup(await file.text());
+    const answers = await importAttempts(attempts);
+    const days = addSessions(sessions);
+    toast(
+      `${fa(answers.added)} answers and ${fa(days)} activity sessions added. ${fa(answers.skipped)} answers were already here.`,
+    );
+  } catch (error) {
+    toast(error.message, 'error');
+  }
 }
 
 /** Question bank: the stored count, import, export and the AI guide. */

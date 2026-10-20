@@ -4,6 +4,7 @@
 
 import * as db from '../storage/db.js';
 import { clearActivity } from './activity.js';
+import { newAttempts } from './backup.js';
 
 export async function recordOutcome(outcome) {
   const q = outcome.question;
@@ -26,6 +27,13 @@ export async function recordOutcome(outcome) {
 }
 
 export const loadAttempts = () => db.getAllAttempts();
+
+/** Adds the answers of an imported backup that this device does not have yet. Nothing is replaced. */
+export async function importAttempts(incoming) {
+  const fresh = newAttempts(await loadAttempts(), incoming);
+  if (fresh.length) await db.addAttempts(fresh);
+  return { added: fresh.length, skipped: incoming.length - fresh.length };
+}
 // Clears every answer and the activity time, so the reports start again from nothing.
 export async function resetProgress() {
   clearActivity();
