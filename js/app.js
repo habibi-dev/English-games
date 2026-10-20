@@ -5,7 +5,11 @@ import { renderPlay, isGameInProgress, setTabMode, startFromNav, confirmLeaveGam
 import { renderReports } from './ui/reports.js';
 import { renderAdmin } from './ui/admin.js';
 import { h, toast, fa, scrollToTop } from './ui/dom.js';
+import { keepAppFeel } from './ui/native-feel.js';
 import { unlockSounds } from './ui/sounds.js';
+
+// Behaves like an app: no zoom, no browser menus on long press (see native-feel.js).
+keepAppFeel();
 import { endMission } from './progress/activity.js';
 
 // Browsers only allow sound after a tap: the first tap anywhere prepares the sound effects.

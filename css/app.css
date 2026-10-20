@@ -260,6 +260,20 @@ body.play-step .bottom-nav a[data-nav="reports"] {
   display: none;
 }
 
+/* On the lesson's choice page the bottom bar is one bold Practice button (in place of Home and Reports). */
+body.practice-step .bottom-nav a[data-nav="reports"] {
+  display: none;
+}
+
+/* Same colours as the Play button of the Difficulty step (the active tab style: blue to violet). */
+body.practice-step .bottom-nav a[data-nav="play"] {
+  flex: 1;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 6px 14px rgba(79, 70, 229, 0.3);
+  text-align: center;
+}
+
 /* Buttons and chips */
 
 .btn {
@@ -400,10 +414,47 @@ body.play-step .bottom-nav a[data-nav="reports"] {
   margin: 12px 0;
 }
 
+/* The clock: a coloured badge with a white clock. In the last quarter of the time it turns warm and wiggles. */
 .timer-icon {
+  display: grid;
+  place-items: center;
   flex: none;
-  font-size: 1.25rem;
-  line-height: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3), inset 0 -2px 0 rgba(15, 23, 42, 0.15);
+  line-height: 0;
+}
+
+.timer-icon .ui-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.timer-icon.low {
+  background: linear-gradient(135deg, #fb923c 0%, #ef4444 100%);
+  box-shadow: 0 4px 10px rgba(239, 68, 68, 0.4), inset 0 -2px 0 rgba(127, 29, 29, 0.25);
+  animation: timer-wiggle 0.8s ease-in-out infinite;
+}
+
+@keyframes timer-wiggle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timer-icon.low {
+    animation: none;
+  }
 }
 
 .timer-track {
@@ -419,8 +470,8 @@ body.play-step .bottom-nav a[data-nav="reports"] {
 .timer-fill {
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(90deg, #22d3ee 0%, #6366f1 100%);
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.45);
+  background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+  box-shadow: 0 0 10px rgba(79, 70, 229, 0.35);
   transition: width 0.25s linear, background 0.3s, box-shadow 0.3s;
 }
 
@@ -434,11 +485,10 @@ body.play-step .bottom-nav a[data-nav="reports"] {
 .timer-text {
   flex: none;
   min-width: 92px;
-  padding: 3px 12px;
+  padding: 4px 12px;
   border-radius: 999px;
-  background: #fff;
-  border: 1px solid var(--border);
-  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08);
+  background: var(--primary-soft);
+  box-shadow: inset 0 0 0 1px rgba(37, 99, 235, 0.12);
   text-align: center;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
@@ -447,7 +497,8 @@ body.play-step .bottom-nav a[data-nav="reports"] {
 
 .timer-text.low {
   color: var(--bad);
-  border-color: #fecaca;
+  background: var(--bad-soft);
+  box-shadow: inset 0 0 0 1px rgba(185, 28, 28, 0.15);
   animation: timer-pulse 1s ease-in-out infinite;
 }
 
@@ -2646,6 +2697,7 @@ textarea {
 }
 
 /* One line of dots. A long mission scrolls sideways inside this strip, so the footer keeps its height. */
+/* The scrollbar is hidden: a mouse drags the row (see drag-scroll.js), a finger swipes it. */
 .progress-track {
   display: flex;
   gap: 6px;
@@ -2653,9 +2705,19 @@ textarea {
   min-width: 0;
   overflow-x: auto;
   overscroll-behavior-x: contain;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  cursor: grab;
   padding: 6px;
   margin: -6px;
+}
+
+.progress-track::-webkit-scrollbar {
+  display: none;
+}
+
+.progress-track.is-dragging {
+  cursor: grabbing;
+  user-select: none;
 }
 
 .progress-track .dot {
@@ -4875,6 +4937,197 @@ img,
 }
 
 /* The lesson hub: one coloured tile for each choice (Words, Sentences, Practice). */
+/* The result character (mascot.js): a face whose eyes blink and whose mouth, tear or sparkles show the mood. */
+.mascot {
+  display: inline-block;
+  width: 96px;
+  height: 96px;
+  line-height: 0;
+}
+
+.mascot svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.mascot .m-face {
+  fill: #fde68a;
+}
+
+.mascot-calm .m-face {
+  fill: #e0f2fe;
+}
+
+.mascot-proud .m-face {
+  fill: #fde047;
+}
+
+.mascot-sad .m-face {
+  fill: #dbeafe;
+}
+
+.mascot-surprised .m-face {
+  fill: #fed7aa;
+}
+
+.mascot .m-eye {
+  fill: #1f2937;
+  stroke: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: m-blink 4.2s infinite;
+}
+
+.mascot .m-eye-wide {
+  animation: none;
+}
+
+.mascot .m-mouth-fill {
+  fill: #7c2d12;
+  stroke: none;
+}
+
+.mascot .m-teeth {
+  stroke: #fff;
+  stroke-width: 3;
+}
+
+.mascot .m-cheek {
+  fill: #fb7185;
+  stroke: none;
+  opacity: 0.45;
+}
+
+.mascot .m-tear {
+  fill: #60a5fa;
+  stroke: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: m-tear 1.8s ease-in infinite;
+}
+
+.mascot .m-sparkle {
+  fill: #f59e0b;
+  stroke: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: m-twinkle 1.6s ease-in-out infinite;
+}
+
+.mascot .m-sparkle-2 {
+  animation-delay: 0.8s;
+}
+
+.mascot-cheer {
+  animation: m-bounce 1.1s ease-in-out infinite;
+}
+
+.mascot-proud {
+  animation: m-bounce 1.5s ease-in-out infinite;
+}
+
+.mascot-calm {
+  animation: m-float 3s ease-in-out infinite;
+}
+
+.mascot-sad {
+  animation: m-droop 2.6s ease-in-out infinite;
+  transform-origin: 50% 90%;
+}
+
+.mascot-surprised {
+  animation: m-pop 0.5s ease-out 2;
+}
+
+.result-mood .mascot {
+  width: 72px;
+  height: 72px;
+}
+
+.rs-badge .mascot {
+  width: 72px;
+  height: 72px;
+}
+
+@keyframes m-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes m-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes m-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes m-droop {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  50% { transform: rotate(-4deg) translateY(4px); }
+}
+
+@keyframes m-pop {
+  0% { transform: scale(0.6); }
+  60% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@keyframes m-tear {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(14px); opacity: 0; }
+}
+
+@keyframes m-twinkle {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(0.6); opacity: 0.5; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mascot,
+  .mascot * {
+    animation: none !important;
+  }
+}
+
+/* Native feel: the page behaves like an app (see native-feel.js). No rubber-band bounce or pull-to-refresh, no double-tap
+   zoom, no tap flash, and no selecting the interface by accident. Text fields and the story text stay selectable. */
+html,
+body {
+  overscroll-behavior: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input,
+textarea,
+select,
+[contenteditable="true"],
+.lc-story-text {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+/* Text fields at 16px or more: iOS does not zoom into a field when it is focused. */
+@media (pointer: coarse) {
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
+}
+
 /* Icons from icons.js (used instead of emoji): sized by the font size around them, in the text colour. */
 .ui-icon {
   display: inline-block;
@@ -4895,13 +5148,33 @@ img,
   margin-inline-end: 4px;
 }
 
-/* Square game-style tiles: two per row, the last one (if odd) centred. */
+/* Square game-style tiles in one row that scrolls sideways (the Practice button is in the bottom bar).
+   The scrollbar is hidden: a mouse drags the row, a finger swipes it (see dragToScroll in lesson-content.js). */
 .hub-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: flex-start;
   gap: 12px;
-  margin-top: 6px;
+  /* Room inside the scroll area for the tiles' shadows and hover lift (the negative margins keep the layout). */
+  padding: 10px 18px 28px;
+  margin: -10px -18px -28px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  /* Snap to the same inset as the padding so the first tile keeps its left gap. */
+  scroll-padding-inline: 18px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  cursor: grab;
+}
+
+.hub-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.hub-grid.is-dragging {
+  scroll-snap-type: none;
+  cursor: grabbing;
+  user-select: none;
 }
 
 .hub-tile {
@@ -4910,9 +5183,13 @@ img,
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: calc(50% - 6px);
+  flex: 0 0 150px;
+  width: 150px;
+  align-self: flex-start;
+  scroll-snap-align: start;
   aspect-ratio: 1 / 1;
-  padding: 14px;
+  overflow: hidden;
+  padding: 12px;
   border: 0;
   border-radius: 22px;
   color: #fff;
@@ -4960,9 +5237,9 @@ img,
 .hub-icon {
   display: grid;
   place-items: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
   background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 4px 10px rgba(15, 23, 42, 0.15);
   font-size: 2rem;
@@ -4983,8 +5260,8 @@ img,
 
 .hub-sub {
   opacity: 0.92;
-  font-size: 0.82rem;
-  line-height: 1.35;
+  font-size: 0.8rem;
+  line-height: 1.3;
 }
 
 /* The Words and Sentences pages: the side switch, then the rows. */
@@ -5058,8 +5335,7 @@ img,
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: 60vh;
-  overflow-y: auto;
+  /* No inner scroll: the whole page scrolls, so the list just grows downwards. */
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: #fff;

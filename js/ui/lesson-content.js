@@ -1,6 +1,7 @@
 import { h } from './dom.js';
 import { speak, speakActionButton, speakButtons, stopSpeaking } from './speech-out.js';
 import { uiIcon } from './icons.js';
+import { dragToScroll } from './drag-scroll.js';
 
 const EYE_ICON =
   '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
@@ -16,8 +17,11 @@ const EYE_OFF_ICON =
  * The lesson's choice page: one coloured tile per page. Each tile is { kind, icon, title, subtitle, onclick }.
  */
 export function lessonHub(tiles) {
-  return h('div', { class: 'hub-grid' }, ...tiles.map(hubTile));
+  const grid = h('div', { class: 'hub-grid' }, ...tiles.map(hubTile));
+  dragToScroll(grid);
+  return grid;
 }
+
 
 function hubIcon(kind) {
   return h('span', { class: 'hub-icon', 'aria-hidden': 'true' }, uiIcon(kind));

@@ -15,6 +15,8 @@ import { scheduleOf, isDue, missionQuestions, nextDueAt } from '../progress/spac
 import { getSettings, saveSettings, getSoundSettings } from '../storage/settings.js';
 import { h, toast, fa, ltr, badge, percent, keepFocus, confirmDialog, scrollToTop } from './dom.js';
 import { uiIcon } from './icons.js';
+import { mascot } from './mascot.js';
+import { dragToScroll } from './drag-scroll.js';
 import { createAnswerWidget, instructionFor } from './answer-widgets.js';
 import { splitPrompt } from './prompt.js';
 import {
@@ -108,12 +110,14 @@ export const isGameInProgress = () => gameInProgress;
 
 /**
  * The bottom bar. 'play': the Difficulty step, where the bar is one "Play" button that starts the mission (Reports is hidden).
+ * 'practice': the lesson's choice page, where the bar is one "Practice" button (it opens the exercise settings).
  * 'home': every other screen, where the first tab reads "Home" and Reports is shown next to it.
  */
 export function setTabMode(mode) {
   document.body.classList.toggle('play-step', mode === 'play');
+  document.body.classList.toggle('practice-step', mode === 'practice');
   document.querySelectorAll('[data-nav="play"]').forEach((link) => {
-    link.textContent = mode === 'play' ? 'Play' : 'Home';
+    link.textContent = mode === 'play' ? 'Play' : mode === 'practice' ? 'Practice' : 'Home';
   });
   // The "Practice again" button belongs to the results screen only.
   const again = document.querySelector('.bottom-again');
@@ -782,13 +786,13 @@ async function showSetup(root, restore = null) {
         {
           kind: 'words',
           title: 'Words',
-          subtitle: `${plural(material.words.length, 'word')} · meaning and pronunciation`,
+          subtitle: `${plural(material.words.length, 'word')} · meaning and sound`,
           onclick: () => go({ ...hubStep, name: 'words' }),
         },
         {
           kind: 'sentences',
           title: 'Sentences',
-          subtitle: `${plural(material.sentences.length, 'sentence')} · translation on tap`,
+          subtitle: `${plural(material.sentences.length, 'sentence')} · tap to translate`,
           onclick: () => go({ ...hubStep, name: 'sentences' }),
         },
       ];
@@ -804,17 +808,14 @@ async function showSetup(root, restore = null) {
         tiles.push({
           kind: 'stories',
           title: 'Stories',
-          subtitle: `${plural(material.stories.length, 'story')} · only words from this lesson`,
+          subtitle: `${fa(material.stories.length)} ${material.stories.length === 1 ? 'story' : 'stories'} · from this lesson`,
           onclick: () => go({ ...hubStep, name: 'stories' }),
         });
       }
-      tiles.push({
-        kind: 'practice',
-        title: 'Practice',
-        subtitle: `${plural(chosenQuestions.length, 'question')} · exercises and missions`,
-        onclick: () => go({ name: 'settings', book: state.book, unit: hubStep.unit, lessons: [...state.lessons] }),
-      });
       body = h('div', {}, stepTitle('What do you want to do?'), lessonHub(tiles));
+      // Practice is not a tile: on this screen it is the bottom bar's button, in place of Home and Reports.
+      settingsStart = () => go({ name: 'settings', book: state.book, unit: hubStep.unit, lessons: [...state.lessons] });
+      setTabMode('practice');
     } else if (step.name === 'words') {
       body = h(
         'div',
@@ -1329,16 +1330,19 @@ function keepCurrentDotVisible(track) {
 
 /** One dot per question of the mission: green = correct, red = wrong, pulsing = current. */
 function progressTrack(session) {
-  return h(
-    'div',
-    { class: 'progress-track', role: 'img', 'aria-label': `Progress: ${fa(session.index + 1)} of ${fa(session.total)}` },
-    Array.from({ length: session.total }, (_, i) => {
-      const outcome = session.outcomes[i];
-      let state = 'todo';
-      if (outcome) state = outcome.correct ? 'ok' : 'bad';
-      else if (i === session.index) state = 'current';
-      return h('span', { class: `dot ${state}` });
-    }),
+  // A long mission scrolls this row sideways; a mouse can drag it (the scrollbar is hidden).
+  return dragToScroll(
+    h(
+      'div',
+      { class: 'progress-track', role: 'img', 'aria-label': `Progress: ${fa(session.index + 1)} of ${fa(session.total)}` },
+      Array.from({ length: session.total }, (_, i) => {
+        const outcome = session.outcomes[i];
+        let state = 'todo';
+        if (outcome) state = outcome.correct ? 'ok' : 'bad';
+        else if (i === session.index) state = 'current';
+        return h('span', { class: `dot ${state}` });
+      }),
+    ),
   );
 }
 
@@ -1378,6 +1382,7 @@ function renderQuestion(root, session, flow) {
   );
   let progressEl = progressTrack(session);
   const timerFill = h('div', { class: 'timer-fill' });
+  const timerIcon = h('span', { class: 'timer-icon', 'aria-hidden': 'true' }, uiIcon('clock'));
   const timerText = h('span', { class: 'timer-text' });
   const feedback = h('div', { class: 'feedback', hidden: true, role: 'alert' });
   // In meaning mode the hint is already the question, so there is no hint button.
@@ -1411,6 +1416,7 @@ function renderQuestion(root, session, flow) {
     timerFill.style.width = `${(remaining / limit) * 100}%`;
     timerFill.classList.toggle('low', remaining <= limit * 0.25);
     timerText.classList.toggle('low', remaining <= limit * 0.25);
+    timerIcon.classList.toggle('low', remaining <= limit * 0.25);
     timerText.textContent = `${fa(Math.ceil(remaining / 1000))} s`;
     if (remaining <= 0 && !session.answered) {
       finish(session.timeout());
@@ -1467,7 +1473,7 @@ function renderQuestion(root, session, flow) {
     feedback.hidden = false;
     feedback.className = `feedback ${outcome.correct ? 'ok' : 'bad'}`;
     resultOverlay.className = `result-overlay ${outcome.correct ? 'ok' : 'bad'}`;
-    resultMood.replaceChildren(uiIcon(outcome.correct ? 'sparkles' : outcome.timedOut ? 'clock' : 'frown', 'result-mood-icon'));
+    resultMood.replaceChildren(mascot(outcome.correct ? 'cheer' : outcome.timedOut ? 'surprised' : 'sad'));
     resultEffect.replaceChildren(...(outcome.correct ? confettiPieces() : rainDrops()));
     feedback.replaceChildren(
       ...[
@@ -1534,12 +1540,12 @@ function renderQuestion(root, session, flow) {
         h(
           'div',
           { class: 'hud-top' },
-          h('span', { class: 'hud-count' }, `Question ${fa(index + 1)} of ${fa(total)}`),
+          h('span', { class: 'hud-count' }, `${fa(index + 1)} of ${fa(total)}`),
         ),
         h(
           'div',
           { class: 'timer' },
-          h('span', { class: 'timer-icon', 'aria-hidden': 'true' }, uiIcon('clock')),
+          timerIcon,
           h('div', { class: 'timer-track' }, timerFill),
           timerText,
         ),
@@ -1906,7 +1912,7 @@ function renderResults(root, session, flow) {
         'div',
         { class: `result-hero tier-${tier}` },
         resultStage(tier),
-        h('span', { class: 'rs-badge', 'aria-hidden': 'true' }, uiIcon(look.badge)),
+        h('span', { class: 'rs-badge', 'aria-hidden': 'true' }, mascot(look.mood)),
         h(
           'div',
           { class: 'stars', role: 'img', 'aria-label': `${fa(stars)} of 3 stars` },

@@ -6,11 +6,12 @@
 import { h, fa } from './dom.js';
 
 export const RESULT_LOOKS = [
-  { badge: 'sprout', title: 'Keep going!', text: 'Every expert started here. Review your mistakes and try again.' },
-  { badge: 'sunrise', title: 'Getting there!', text: 'You are on the way. A little more practice and it clicks.' },
-  { badge: 'rocket', title: 'Good work!', text: 'A solid mission. Most of your answers were right.' },
-  { badge: 'sparkles', title: 'Excellent!', text: 'Almost perfect. Only a few answers to polish.' },
-  { badge: 'trophy', title: 'Perfect score!', text: 'Not one mistake. Legendary!' },
+  // badge: the icon on the shareable card (icons.js). mood: the animated character on the results screen (mascot.js).
+  { badge: 'sprout', mood: 'sad', title: 'Keep going!', text: 'Every expert started here. Review your mistakes and try again.' },
+  { badge: 'sunrise', mood: 'calm', title: 'Getting there!', text: 'You are on the way. A little more practice and it clicks.' },
+  { badge: 'rocket', mood: 'cheer', title: 'Good work!', text: 'A solid mission. Most of your answers were right.' },
+  { badge: 'sparkles', mood: 'proud', title: 'Excellent!', text: 'Almost perfect. Only a few answers to polish.' },
+  { badge: 'trophy', mood: 'proud', title: 'Perfect score!', text: 'Not one mistake. Legendary!' },
 ];
 
 /**
