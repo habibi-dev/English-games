@@ -6,6 +6,7 @@ import { listQuestions, listLessons } from '../bank/repository.js';
 import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey, unitKey, persianSentence } from '../bank/schema.js';
 import { filterQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode, MAX_MISSION_QUESTIONS } from '../engine/game-engine.js';
 import { takeReview } from './review-handoff.js';
+import { lessonContentBlock } from './lesson-content.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, levelStartXp, resultTier } from '../progress/player.js';
 import { doneIds, progressOf } from '../progress/lesson-progress.js';
@@ -763,6 +764,7 @@ async function showSetup(root, restore = null) {
           book.lessons.filter((lesson) => state.lessons.includes(lesson.key)),
           progressOfLessons(state.lessons),
         ),
+        lessonContentBlock(questions.filter((q) => state.lessons.includes(lessonKey(q.book, q.lesson)))),
         h(
           'div',
           { class: 'actions' },

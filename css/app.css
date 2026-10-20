@@ -4867,3 +4867,63 @@ img,
   height: 16px;
 }
 
+/* Words and sentences of the chosen lessons, under the lesson header in the Play setup. */
+.lc-block {
+  margin-top: 14px;
+}
+
+.lc-sep {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 0 0 12px;
+}
+
+.lc-tabs {
+  margin-bottom: 10px;
+}
+
+.lc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.lc-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.lc-item:last-child {
+  border-bottom: 0;
+}
+
+.lc-main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.lc-word {
+  font-size: 1.05rem;
+  overflow-wrap: anywhere;
+}
+
+.lc-sentence {
+  font-weight: 500;
+}
+
+.lc-sub {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
