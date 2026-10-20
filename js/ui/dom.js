@@ -60,6 +60,14 @@ export function keepFocus(el) {
 // Numbers are shown with Latin digits: the interface is English and left-to-right.
 export const fa = (n) => Number(n ?? 0).toLocaleString('en-US');
 
+/**
+ * Moves the page to its top. Call it whenever the content of a screen changes: a new route, a new step of the
+ * setup, a new tab of the reports, the results. 'instant' so it does not animate down the page first.
+ */
+export function scrollToTop() {
+  window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+}
+
 export const percent = (ratio) => (ratio == null ? '—' : `${fa(Math.round(ratio * 100))}%`);
 
 export const ltr = (text) => h('bdi', { class: 'ltr', dir: 'ltr' }, text);

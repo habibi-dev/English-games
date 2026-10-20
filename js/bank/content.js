@@ -9,9 +9,10 @@ import { normalizeQuestion, validateQuestion, CATEGORIES } from './schema.js';
 export const CONTENT_INDEX_URL = 'content/index.json';
 
 /**
- * Flattens content/index.json (series -> books -> lessons) into one entry per lesson, in course order.
- * Each entry carries the titles, level and images the setup screen needs, so a stored lesson is self-contained.
- * Throws when an id is missing, so the caller can report a broken index instead of loading a half-course.
+ * Flattens content/index.json (series -> books -> units -> lessons) into one entry per lesson, in course order.
+ * Each entry carries the titles, level, images and unit the setup screen needs, so a stored lesson is self-contained.
+ * Throws when an id is missing, or when a book still lists its lessons without units, so the caller can report a
+ * broken index instead of loading a half-course.
  */
 export function indexLessons(index) {
   const entries = [];
@@ -19,21 +20,29 @@ export function indexLessons(index) {
     if (!series?.id) throw new Error('Every series in content/index.json must have an id.');
     for (const book of series.books ?? []) {
       if (!book?.id) throw new Error(`Book without an id in series "${series.id}".`);
-      for (const lesson of book.lessons ?? []) {
-        if (!lesson?.id || !lesson?.file) throw new Error(`Lesson without an id or file in book "${book.id}".`);
-        entries.push({
-          series: series.id,
-          seriesTitle: series.title ?? series.id,
-          seriesLogo: series.logo ?? '',
-          book: book.id,
-          bookTitle: book.title ?? book.id,
-          bookLevel: book.level ?? '',
-          bookCover: book.cover ?? '',
-          lesson: lesson.id,
-          lessonTitle: lesson.title ?? lesson.id,
-          file: lesson.file,
-          version: String(lesson.version ?? '1'),
-        });
+      if (!Array.isArray(book.units)) {
+        throw new Error(`Book "${book.id}" must list its units in a "units" array (each unit has its own "lessons").`);
+      }
+      for (const unit of book.units) {
+        if (!unit?.id) throw new Error(`Unit without an id in book "${book.id}".`);
+        for (const lesson of unit.lessons ?? []) {
+          if (!lesson?.id || !lesson?.file) throw new Error(`Lesson without an id or file in unit "${unit.id}".`);
+          entries.push({
+            series: series.id,
+            seriesTitle: series.title ?? series.id,
+            seriesLogo: series.logo ?? '',
+            book: book.id,
+            bookTitle: book.title ?? book.id,
+            bookLevel: book.level ?? '',
+            bookCover: book.cover ?? '',
+            unit: unit.id,
+            unitTitle: unit.title ?? unit.id,
+            lesson: lesson.id,
+            lessonTitle: lesson.title ?? lesson.id,
+            file: lesson.file,
+            version: String(lesson.version ?? '1'),
+          });
+        }
       }
     }
   }

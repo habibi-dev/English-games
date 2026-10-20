@@ -12,7 +12,7 @@ import { getSoundSettings, saveSoundSettings } from '../storage/settings.js';
 import { loadAttempts, importAttempts, resetProgress } from '../progress/tracker.js';
 import { loadSessions, addSessions } from '../progress/activity.js';
 import { encodeBackup, decodeBackup } from '../progress/backup.js';
-import { playWinSound, playLoseSound, playTimeoutSound } from './sounds.js';
+import { playWinSound, playLoseSound, playTimeoutSound, playResultJingle } from './sounds.js';
 import { h, fa, toast, download, confirmDialog } from './dom.js';
 
 const SECTIONS = [
@@ -121,6 +121,15 @@ function soundsSection() {
       h('button', { type: 'button', class: 'btn primary', onclick: () => playWinSound() }, '▶ Play win sound'),
       h('button', { type: 'button', class: 'btn ghost', onclick: () => playLoseSound() }, '▶ Play lose sound'),
       h('button', { type: 'button', class: 'btn ghost', onclick: () => playTimeoutSound() }, '▶ Play time-up sound'),
+    ),
+    // One jingle per result look, from the lowest (Keep going) to the top (Perfect score).
+    h('p', { class: 'muted small' }, 'Results jingles, one for each result look:'),
+    h(
+      'div',
+      { class: 'toolbar-actions' },
+      ['Keep going', 'Getting there', 'Good work', 'Excellent', 'Perfect score'].map((label, tier) =>
+        h('button', { type: 'button', class: 'btn ghost small', onclick: () => playResultJingle(tier) }, `▶ ${label}`),
+      ),
     ),
     h('p', { class: 'muted small' }, 'The preview plays even when sound effects are off.'),
   );

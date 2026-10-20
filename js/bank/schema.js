@@ -52,6 +52,9 @@ export const topicLabel = (topic) => TOPIC_LABELS[topic] ?? topic;
 /** Identifies a lesson across books, e.g. "iwelo-1/lesson-03". */
 export const lessonKey = (book, lesson) => `${book}/${lesson}`;
 
+/** Identifies a unit across books, e.g. "iwelo-1/unit-01". */
+export const unitKey = (book, unit) => `${book}/${unit}`;
+
 const str = (value) => (value == null ? '' : String(value).trim());
 
 // Accepts an array, or a string whose items are separated by "|" (used by CSV).

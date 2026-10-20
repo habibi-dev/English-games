@@ -17,7 +17,7 @@ import {
   DAILY_GOAL_MS,
   LEVEL_LIMITS_MIN,
 } from '../progress/activity.js';
-import { h, fa, percent, badge } from './dom.js';
+import { h, fa, percent, badge, scrollToTop } from './dom.js';
 import { speakButtons, questionSpeakButton } from './speech-out.js';
 import { splitPrompt } from './prompt.js';
 import { requestReview } from './review-handoff.js';
@@ -635,6 +635,8 @@ export async function renderReports(root) {
   };
   const selectTab = (key) => {
     activeTab = key;
+    // A new tab is a new page of content: it opens at the top.
+    scrollToTop();
     renderReports(root);
   };
 

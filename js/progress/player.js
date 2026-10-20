@@ -54,12 +54,22 @@ export function playerProfile(attempts) {
   };
 }
 
-/** Stars for one session: 3 at 90% or more, 2 at 70% or more, 1 at 40% or more, otherwise 0. */
-export function starsFor(correct, total) {
+/**
+ * The look of a session's results, from 0 to 4 (see result-stage.js):
+ * 4 = every answer right, 3 = 90% or more, 2 = 70% or more, 1 = 40% or more, 0 = less.
+ */
+export function resultTier(correct, total) {
   if (!total) return 0;
+  if (correct === total) return 4;
   const ratio = correct / total;
   if (ratio >= 0.9) return 3;
   if (ratio >= 0.7) return 2;
   if (ratio >= 0.4) return 1;
   return 0;
+}
+
+/** Stars for one session: 3 at 90% or more, 2 at 70% or more, 1 at 40% or more, otherwise 0. */
+export function starsFor(correct, total) {
+  // A perfect session is still three stars: the top tier is the only one beyond the stars.
+  return Math.min(3, resultTier(correct, total));
 }

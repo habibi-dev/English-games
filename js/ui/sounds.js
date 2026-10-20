@@ -133,6 +133,73 @@ export function playResultSound(correct, timedOut = false) {
   }
 }
 
+// ---- Results jingles: one short piece for each result look (see resultTier in player.js and result-stage.js).
+// Each one has its own notes and its own sound, so the learner hears how the mission went before reading it.
+
+// A brass-like chord: a few sawtooth voices through a soft low-pass filter.
+function brass(ac, output, freqs, { start, duration, peak }) {
+  const filter = ac.createBiquadFilter();
+  filter.type = 'lowpass';
+  filter.frequency.value = 1800;
+  filter.connect(output);
+  for (const freq of freqs) {
+    note(ac, filter, { freq, type: 'sawtooth', start, duration, peak });
+  }
+}
+
+const RESULT_JINGLES = [
+  // 0 Keep going: two low, soft notes that step down, like a gentle sigh.
+  (ac, out) => {
+    note(ac, out, { freq: 329.63, start: 0, duration: 0.5, type: 'sine', peak: 0.16 }); // E4
+    note(ac, out, { freq: 261.63, start: 0.28, duration: 0.8, type: 'sine', peak: 0.16 }); // C4
+  },
+  // 1 Getting there: two rising notes on a soft wooden tone.
+  (ac, out) => {
+    note(ac, out, { freq: 349.23, start: 0, duration: 0.35, type: 'triangle', peak: 0.2 }); // F4
+    note(ac, out, { freq: 523.25, start: 0.16, duration: 0.7, type: 'triangle', peak: 0.2 }); // C5
+  },
+  // 2 Good work: three quick bell notes climbing to a high G, which rings on.
+  (ac, out) => {
+    note(ac, out, { freq: 783.99, start: 0, duration: 0.6, type: 'sine', peak: 0.2 }); // G5
+    note(ac, out, { freq: 1046.5, start: 0.1, duration: 0.6, type: 'sine', peak: 0.2 }); // C6
+    note(ac, out, { freq: 1318.5, start: 0.2, duration: 0.6, type: 'sine', peak: 0.2 }); // E6
+    note(ac, out, { freq: 1567.98, start: 0.32, duration: 1.1, type: 'triangle', peak: 0.12 }); // G6
+  },
+  // 3 Excellent: a short brass fanfare, three rising calls, then a held chord.
+  (ac, out) => {
+    brass(ac, out, [392], { start: 0, duration: 0.14, peak: 0.12 }); // G4
+    brass(ac, out, [523.25], { start: 0.14, duration: 0.14, peak: 0.12 }); // C5
+    brass(ac, out, [659.25], { start: 0.28, duration: 0.14, peak: 0.12 }); // E5
+    brass(ac, out, [523.25, 659.25, 783.99, 1046.5], { start: 0.42, duration: 1.1, peak: 0.1 }); // C major, held
+  },
+  // 4 Perfect score: a low drum, a bigger fanfare, a chord that swells, then a sparkle run up two octaves.
+  (ac, out) => {
+    note(ac, out, { freq: 120, slideTo: 50, start: 0, duration: 0.35, type: 'sine', peak: 0.35 }); // drum
+    brass(ac, out, [392], { start: 0.12, duration: 0.12, peak: 0.13 });
+    brass(ac, out, [523.25], { start: 0.24, duration: 0.12, peak: 0.13 });
+    brass(ac, out, [659.25], { start: 0.36, duration: 0.12, peak: 0.13 });
+    brass(ac, out, [523.25, 659.25, 783.99, 1046.5], { start: 0.5, duration: 1.5, peak: 0.11 });
+    [1046.5, 1318.5, 1567.98, 2093, 2637, 3136, 3951, 4186].forEach((freq, i) => {
+      note(ac, out, { freq, start: 0.75 + i * 0.07, duration: 0.45, type: 'sine', peak: 0.07 });
+    });
+  },
+];
+
+/**
+ * Plays the jingle of a result look (0 to 4). Used at the end of a mission and by the preview in Settings.
+ * The master sound switch is the only one that applies: the jingle is part of the result, not a sound effect.
+ */
+export function playResultJingle(tier) {
+  const jingle = RESULT_JINGLES[tier] ?? RESULT_JINGLES[0];
+  play(jingle);
+}
+
+/** Plays the jingle at the end of a mission, when the sound effects are on. */
+export function playResultJingleIfEnabled(tier) {
+  if (!getSoundSettings().enabled) return;
+  playResultJingle(tier);
+}
+
 // ---- Vibration (phones and tablets that have a vibration motor; ignored elsewhere).
 // correct: one short tap. wrong (and time-up): one long buzz. end: a pattern at the end of a game.
 const VIBRATION = {

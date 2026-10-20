@@ -3,15 +3,15 @@
 // answer checks from the Answer Validator, and storage from the Progress Tracker.
 
 import { listQuestions, listLessons } from '../bank/repository.js';
-import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey, persianSentence } from '../bank/schema.js';
+import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey, unitKey, persianSentence } from '../bank/schema.js';
 import { filterQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode, MAX_MISSION_QUESTIONS } from '../engine/game-engine.js';
 import { takeReview } from './review-handoff.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
-import { playerProfile, levelFor, starsFor, levelStartXp } from '../progress/player.js';
+import { playerProfile, levelFor, starsFor, levelStartXp, resultTier } from '../progress/player.js';
 import { doneIds, progressOf } from '../progress/lesson-progress.js';
 import { scheduleOf, isDue, missionQuestions, nextDueAt } from '../progress/spaced-repetition.js';
 import { getSettings, saveSettings, getSoundSettings } from '../storage/settings.js';
-import { h, toast, fa, ltr, badge, percent, keepFocus, confirmDialog } from './dom.js';
+import { h, toast, fa, ltr, badge, percent, keepFocus, confirmDialog, scrollToTop } from './dom.js';
 import { createAnswerWidget, instructionFor } from './answer-widgets.js';
 import { splitPrompt } from './prompt.js';
 import {
@@ -23,7 +23,10 @@ import {
   contextSentence,
   questionSpeakButton,
 } from './speech-out.js';
-import { playResultSound, vibrateFor } from './sounds.js';
+import { playResultSound, playResultJingleIfEnabled, vibrateFor } from './sounds.js';
+import { RESULT_LOOKS, resultStage, countUp } from './result-stage.js';
+import { missionReport } from '../progress/mission-report.js';
+import { shareResultCard, saveResultCard } from './result-card.js';
 import { beginMission, endMission } from '../progress/activity.js';
 import { keepScreenOn } from './wake-lock.js';
 import { applySpellingMode } from '../engine/spelling.js';
@@ -88,6 +91,13 @@ let gameInProgress = false;
 let currentFlow = null;
 // True while the history entry added for the running game is still there (see pushGuard).
 let guardPushed = false;
+// True while this screen is open (set by renderPlay). Back and forward then move between the setup steps.
+let playShowing = false;
+let setupRoot = null;
+// The next popstate comes from removing the guard: it is not a step of the setup, so it is ignored.
+let skipPop = false;
+// Set when the game ends through the guard: the setup comes back once the guard's entry is gone.
+let pendingHome = false;
 
 /** Used by the header to ask before leaving a game. */
 export const isGameInProgress = () => gameInProgress;
@@ -140,6 +150,7 @@ function pushGuard() {
 function dropGuard() {
   if (!guardPushed) return;
   guardPushed = false;
+  skipPop = true;
   history.back();
 }
 
@@ -149,6 +160,29 @@ window.addEventListener('popstate', async () => {
   if (!gameInProgress) return;
   if (await confirmLeaveGame()) endGame();
   else if (gameInProgress) pushGuard();
+});
+
+// The back and forward buttons between the setup steps (see showSetup: each step is a history entry).
+window.addEventListener('popstate', (event) => {
+  if (skipPop) {
+    skipPop = false;
+    if (pendingHome) {
+      pendingHome = false;
+      currentFlow?.home();
+    } else {
+      // The guard's entry was removed while the results stay on screen: they keep the top of the page.
+      scrollToTop();
+    }
+    return;
+  }
+  // Another kind of entry (for example the game guard) is not a setup step.
+  if (event.state && !event.state.setup) return;
+  const step = event.state?.setup ?? null;
+  // A change of screen fires hashchange right after this event: wait for the router, so only this screen's steps are drawn here.
+  setTimeout(() => {
+    if (!playShowing || gameInProgress || !setupRoot) return;
+    showSetup(setupRoot, step);
+  }, 0);
 });
 
 /**
@@ -162,8 +196,13 @@ export function endGame() {
   endMission();
   setGameRunning(false);
   keepScreenOn(false);
-  dropGuard();
-  currentFlow?.home();
+  if (guardPushed) {
+    // The guard's entry is removed first; the setup is drawn then, so the entry it lands on is the setup's own.
+    pendingHome = true;
+    dropGuard();
+  } else {
+    currentFlow?.home();
+  }
 }
 
 // The start action of the settings screen (null on every other screen). Set by drawSettingsStep.
@@ -214,11 +253,16 @@ function stopTimer() {
 
 /** Route entry point. Returns a cleanup function that the router calls when leaving the view. */
 export async function renderPlay(root) {
+  playShowing = true;
+  setupRoot = root;
   // Opened from the reports screen with questions to review: start that game right away.
   const reviewIds = takeReview();
   if (reviewIds) await startReview(root, reviewIds);
-  else await showSetup(root);
+  // Coming back to this screen with the back button (or after a reload) reopens the step saved on that entry.
+  else await showSetup(root, history.state?.setup ?? null);
   return () => {
+    playShowing = false;
+    setupRoot = null;
     stopTimer();
     closeModal();
     // Leaving the screen during a mission ends it (its time up to now is saved). Does nothing otherwise.
@@ -314,7 +358,7 @@ function stepTitle(text) {
  */
 async function startReview(root, ids) {
   root.replaceChildren(h('p', { class: 'loading' }, 'Getting ready…'));
-  const [questions, attempts] = await Promise.all([listQuestions(), loadAttempts()]);
+  const [questions, lessons, attempts] = await Promise.all([listQuestions(), listLessons(), loadAttempts()]);
   const byId = new Map(questions.map((q) => [q.id, q]));
   const saved = getSettings();
   const voiceOnly = saved.answerInput === 'voice';
@@ -335,16 +379,24 @@ async function startReview(root, ids) {
   const before = playerProfile(attempts);
   // A question pays points once, on its first correct answer ever; a review of it pays nothing.
   const alreadyScored = attempts.filter((a) => a.correct).map((a) => a.questionId);
+  // What the result card needs about this game: the lessons, and what was done before it started.
+  const report = { lessons, questions, doneBefore: doneIds(questions, attempts), mode: saved.mode, startedAt: Date.now() };
   beginMission();
   renderQuestion(root, new GameSession(pool, { alreadyScored }), {
     restart: () => startReview(root, ids),
     home: () => showSetup(root),
     xpBefore: before.xp,
+    report,
   });
 }
 
-async function showSetup(root) {
+/**
+ * The setup screen. `restore` is the step that the back or forward button came to (see the popstate listener);
+ * without it the setup opens on the book the learner used last.
+ */
+async function showSetup(root, restore = null) {
   setTabMode('home');
+  scrollToTop();
   root.replaceChildren(h('p', { class: 'loading' }, 'Getting ready…'));
 
   const [questions, lessons, attempts] = await Promise.all([listQuestions(), listLessons(), loadAttempts()]);
@@ -367,9 +419,12 @@ async function showSetup(root) {
   const savedBook = allBooks.some((book) => book.id === saved.book) ? saved.book : null;
   const allLessonKeys = lessonsOf(savedBook).map((lesson) => lesson.key);
   const savedLessons = restored(saved.lessons, allLessonKeys, []);
+  // The unit the learner was in, when it still belongs to the saved book (null for the whole book).
+  const savedUnit = allBooks.find((book) => book.id === savedBook)?.units.find((unit) => unit.key === saved.unit)?.key ?? null;
 
   const state = {
     book: savedBook,
+    unit: savedUnit,
     lessons: savedLessons.length ? savedLessons : allLessonKeys,
     categories: restored(saved.categories, Object.keys(CATEGORIES), Object.keys(CATEGORIES)),
     presentation: [PRESENTATION_CHOICES.some(([value]) => value === saved.presentation) ? saved.presentation : 'auto'],
@@ -394,6 +449,7 @@ async function showSetup(root) {
   function refresh() {
     saveSettings({
       book: state.book,
+      unit: state.unit,
       lessons: state.lessons,
       categories: state.categories,
       presentation: state.presentation[0],
@@ -441,16 +497,52 @@ async function showSetup(root) {
     const before = playerProfile(fresh);
     // A question pays points once, on its first correct answer ever; asking it again pays nothing.
     const alreadyScored = fresh.filter((a) => a.correct).map((a) => a.questionId);
+    // What the result card needs about this mission: the lessons, and what was done before it started.
+    const report = {
+      lessons,
+      questions,
+      doneBefore: doneIds(questions, fresh, freshNow),
+      mode: state.mode[0],
+      startedAt: Date.now(),
+    };
     // The mission's time starts now and ends on the results screen, or when the learner leaves.
     beginMission();
     renderQuestion(root, new GameSession(picked, { alreadyScored }), {
       restart: start,
       home: () => showSetup(root),
       xpBefore: before.xp,
+      report,
     });
   }
 
-  // Screens of the picker, in order: series -> book -> mission (lessons, exercise types, presentation, length).
+  // Every step the learner opens is a history entry. A step is { name, series?, book?, unit?, lessons?, depth }:
+  // name is series, book, unit, lesson or settings; the entry's depth counts the steps before it in this visit.
+  // So the back button (phone or in-app) returns to the step before, and the forward button goes on again.
+  function show(step) {
+    if (step.name === 'series') return drawSeriesStep();
+    if (step.name === 'book') return drawBookStep(step.series);
+    state.book = step.book;
+    if (step.name === 'unit') return drawUnitStep();
+    if (step.name === 'lesson') return drawLessonStep(step.unit);
+    state.unit = step.unit ?? null;
+    state.lessons = [...step.lessons];
+    return drawSettingsStep();
+  }
+
+  // Opens a step one level deeper, as a new history entry.
+  function go(step) {
+    const depth = (history.state?.setup?.depth ?? 0) + 1;
+    history.pushState({ setup: { ...step, depth } }, '', location.href);
+    show(step);
+  }
+
+  // The "← Back to …" buttons: the step before this one. When this step came from the step before, that is the history back.
+  function back(parent) {
+    if (history.state?.setup?.depth > 0) history.back();
+    else go(parent);
+  }
+
+  // Screens of the picker, in order: series -> book -> unit -> lessons -> settings (exercise types, presentation, length).
   // "Continue" sits directly under the cards it applies to.
 
   // Step 1: choose the series (for example Evolve).
@@ -467,11 +559,12 @@ async function showSetup(root) {
           image: entry.logo,
           title: entry.title,
           subtitle: plural(entry.books.length, 'book'),
-          onclick: () => drawBookStep(entry.id),
+          onclick: () => go({ name: 'book', series: entry.id }),
         }),
       ),
     );
 
+    scrollToTop();
     root.replaceChildren(
       playerCard(profile),
       h(
@@ -499,18 +592,20 @@ async function showSetup(root) {
         pickCard({
           image: book.cover,
           title: book.title,
-          subtitle: plural(book.lessons.length, 'lesson'),
+          subtitle: plural(book.units.length, 'unit'),
           badge: book.level,
           onclick: () => {
             state.book = book.id;
+            state.unit = null;
             state.lessons = [];
-            saveSettings({ ...getSettings(), book: state.book, lessons: [] });
-            drawMissionStep();
+            saveSettings({ ...getSettings(), book: state.book, unit: null, lessons: [] });
+            go({ name: 'unit', book: book.id });
           },
         }),
       ),
     );
 
+    scrollToTop();
     root.replaceChildren(
       playerCard(profile),
       h(
@@ -519,7 +614,7 @@ async function showSetup(root) {
         h(
           'div',
           { class: 'actions' },
-          h('button', { type: 'button', class: 'btn ghost small back-btn', onclick: () => drawSeriesStep() }, '← Back to series'),
+          h('button', { type: 'button', class: 'btn ghost small back-btn', onclick: () => back({ name: 'series' }) }, '← Back to series'),
         ),
         stepTitle(`Books in ${entry.title}`),
         grid,
@@ -527,60 +622,109 @@ async function showSetup(root) {
     );
   }
 
-  // Step 3: inside the chosen book. Lessons (or the whole book), exercise types, presentation and length.
-  function drawMissionStep() {
+  // Step 3: inside the chosen book, its units. Opening a unit lists its lessons. The whole book stays
+  // available for review, so the learner can still practise every lesson at once.
+  function drawUnitStep() {
     settingsStart = null;
     setTabMode('home');
     const book = allBooks.find((entry) => entry.id === state.book);
     const parent = seriesOf(book.id);
     const allKeys = book.lessons.map((lesson) => lesson.key);
-    // The lesson list: one row per lesson (tap to add or remove it), plus a row that selects the whole book for review.
-    // Tapping a tile (the whole book, or one lesson) chooses it and opens the settings screen.
-    const lessonBox = h('div', { class: 'lesson-list' });
     const lastKey = lastPracticedKey(book);
-    lessonBox.replaceChildren(
+    const unitBox = h('div', { class: 'lesson-list' });
+    unitBox.replaceChildren(
       lessonRow({
         title: 'All lessons in this book',
         subtitle: `For review · ${plural(allKeys.length, 'lesson')}`,
         dashed: true,
         progress: progressOfLessons(allKeys),
-        onclick: () => {
-          state.lessons = [...allKeys];
-          drawSettingsStep();
-        },
+        onclick: () => go({ name: 'settings', book: state.book, unit: null, lessons: [...allKeys] }),
       }),
-      ...book.lessons.map((lesson) => {
+      ...book.units.map((unit) => {
+        const keys = unit.lessons.map((lesson) => lesson.key);
+        const progress = progressOfLessons(keys);
+        return lessonRow({
+          title: unit.title,
+          subtitle: plural(keys.length, 'lesson'),
+          tag: progress.complete ? 'Completed' : keys.includes(lastKey) ? 'Last practised' : null,
+          progress,
+          onclick: () => go({ name: 'lesson', book: state.book, unit: unit.key }),
+        });
+      }),
+    );
+    info = null;
+
+    scrollToTop();
+    root.replaceChildren(
+      playerCard(profile),
+      h(
+        'section',
+        { class: 'card setup game' },
+        bookHeader(book, progressOfLessons(allKeys)),
+        h(
+          'div',
+          { class: 'actions' },
+          h(
+            'button',
+            { type: 'button', class: 'btn ghost small back-btn', onclick: () => back({ name: 'book', series: parent?.id }) },
+            '← Back to books',
+          ),
+        ),
+        stepTitle('Units'),
+        unitBox,
+      ),
+    );
+    refresh();
+  }
+
+  // Step 4: inside one unit. One row per lesson, plus a row for the whole unit.
+  function drawLessonStep(unitKeyValue) {
+    settingsStart = null;
+    setTabMode('home');
+    const book = allBooks.find((entry) => entry.id === state.book);
+    const unit = book.units.find((item) => item.key === unitKeyValue);
+    if (!unit) return drawUnitStep();
+    const allKeys = unit.lessons.map((lesson) => lesson.key);
+    const lastKey = lastPracticedKey(book);
+    const lessonBox = h('div', { class: 'lesson-list' });
+    lessonBox.replaceChildren(
+      lessonRow({
+        title: `All lessons in ${unit.title}`,
+        subtitle: `For review · ${plural(allKeys.length, 'lesson')}`,
+        dashed: true,
+        progress: progressOfLessons(allKeys),
+        onclick: () => go({ name: 'settings', book: state.book, unit: unit.key, lessons: [...allKeys] }),
+      }),
+      ...unit.lessons.map((lesson) => {
         const progress = progressOfLessons([lesson.key]);
         return lessonRow({
           title: lesson.lessonTitle,
           subtitle: plural(lesson.count, 'question'),
           tag: progress.complete ? 'Completed' : lesson.key === lastKey ? 'Last practised' : null,
           progress,
-          onclick: () => {
-            state.lessons = [lesson.key];
-            drawSettingsStep();
-          },
+          onclick: () => go({ name: 'settings', book: state.book, unit: unit.key, lessons: [lesson.key] }),
         });
       }),
     );
     info = null;
 
+    scrollToTop();
     root.replaceChildren(
       playerCard(profile),
       h(
         'section',
         { class: 'card setup game' },
-        bookHeader(book, allKeys.length, progressOfLessons(allKeys)),
+        unitHeader(book, unit, progressOfLessons(allKeys)),
         h(
           'div',
           { class: 'actions' },
           h(
             'button',
-            { type: 'button', class: 'btn ghost small back-btn', onclick: () => drawBookStep(parent?.id) },
-            '← Back to books',
+            { type: 'button', class: 'btn ghost small back-btn', onclick: () => back({ name: 'unit', book: state.book }) },
+            '← Back to units',
           ),
         ),
-        stepTitle('Lessons'),
+        stepTitle(unit.title),
         lessonBox,
       ),
     );
@@ -607,19 +751,30 @@ async function showSetup(root) {
     };
     setTabMode('play');
 
+    scrollToTop();
     root.replaceChildren(
       playerCard(profile),
       h(
         'section',
         { class: 'card setup game' },
-        bookHeader(book, book.lessons.length, progressOfLessons(state.lessons)),
+        selectionHeader(
+          book,
+          state.unit ? book.units.find((item) => item.key === state.unit) ?? null : null,
+          book.lessons.filter((lesson) => state.lessons.includes(lesson.key)),
+          progressOfLessons(state.lessons),
+        ),
         h(
           'div',
           { class: 'actions' },
           h(
             'button',
-            { type: 'button', class: 'btn ghost small back-btn', onclick: () => drawMissionStep() },
-            '← Back to lessons',
+            {
+              type: 'button',
+              class: 'btn ghost small back-btn',
+              onclick: () =>
+                back(state.unit ? { name: 'lesson', book: state.book, unit: state.unit } : { name: 'unit', book: state.book }),
+            },
+            state.unit ? '← Back to lessons' : '← Back to units',
           ),
         ),
         stepTitle('Difficulty'),
@@ -669,14 +824,30 @@ async function showSetup(root) {
     refresh();
   }
 
-  // The last book is remembered: the setup opens inside it. Otherwise the learner starts with the series.
-  if (state.book) drawMissionStep();
-  else drawSeriesStep();
+  // A saved step of a book that is no longer installed is not restored: the setup opens on its default step.
+  if (restore && restore.name !== 'series' && restore.name !== 'book' && !allBooks.some((book) => book.id === restore.book)) {
+    restore = null;
+  }
+  // The back or forward button brought the learner to a step: draw that step, the history entry is already there.
+  if (restore) return show(restore);
+
+  // The last book is remembered: the setup opens inside it (inside the last unit, when there was one).
+  // Otherwise the learner starts with the series.
+  const first = !state.book
+    ? { name: 'series' }
+    : state.unit
+      ? { name: 'lesson', book: state.book, unit: state.unit }
+      : { name: 'unit', book: state.book };
+  // The opening step is the first entry of the setup (depth 0). It replaces the current entry, so each entry always
+  // shows the screen it was saved for (a reload, or the Home tab, does not add a duplicate back entry).
+  history.replaceState({ setup: { ...first, depth: 0 } }, '', location.href);
+  show(first);
 }
 
 /**
- * Series -> books -> lessons, in the order of the course index.
- * Every lesson record carries its series and book details (see indexLessons in content.js).
+ * Series -> books -> units -> lessons, in the order of the course index.
+ * Every lesson record carries its series, book and unit details (see indexLessons in content.js).
+ * A book also keeps all its lessons in one list (`lessons`), for the whole-book review.
  */
 function seriesList(lessons) {
   const series = new Map();
@@ -688,10 +859,30 @@ function seriesList(lessons) {
     const entry = series.get(seriesId);
     let book = entry.books.find((item) => item.id === lesson.book);
     if (!book) {
-      book = { id: lesson.book, title: lesson.bookTitle || lesson.book, level: lesson.bookLevel || '', cover: lesson.bookCover || '', lessons: [] };
+      book = {
+        id: lesson.book,
+        title: lesson.bookTitle || lesson.book,
+        level: lesson.bookLevel || '',
+        cover: lesson.bookCover || '',
+        units: [],
+        lessons: [],
+      };
       entry.books.push(book);
     }
     book.lessons.push(lesson);
+
+    const unitId = lesson.unit || 'unassigned';
+    let unit = book.units.find((item) => item.id === unitId);
+    if (!unit) {
+      unit = {
+        id: unitId,
+        key: unitKey(lesson.book, unitId),
+        title: lesson.unitTitle || 'Lessons',
+        lessons: [],
+      };
+      book.units.push(unit);
+    }
+    unit.lessons.push(lesson);
   }
   return [...series.values()];
 }
@@ -776,38 +967,116 @@ function lessonRow({ title, subtitle, dashed = false, tag = null, progress = nul
   );
 }
 
-/** The chosen book as a card: its cover, a small label, the title, the level and lesson count, and its progress on the end side. */
-function bookHeader(book, lessonCount, progress = null) {
+/** Where the learner stands in a book, unit or selection: not started, in progress, or completed. Null when there are no questions. */
+function bookStatus(progress) {
+  if (!progress || progress.total === 0) return null;
+  if (progress.done >= progress.total) return { key: 'complete', label: 'Completed ✓' };
+  if (progress.done === 0) return { key: 'new', label: 'Not started' };
+  return { key: 'active', label: 'In progress' };
+}
+
+/** Total questions in a list of lessons. */
+function questionsIn(lessons) {
+  return lessons.reduce((sum, lesson) => sum + (Number(lesson.count) || 0), 0);
+}
+
+/**
+ * The compact header of the Play setup: a small cover, what is being played (kicker and title), one line of
+ * counts, and one progress line. The tint and status label follow the learner's progress.
+ */
+function setupHeader({ kicker, title, meta = '', cover = '', level = '', progress = null }) {
+  const status = bookStatus(progress);
   return h(
     'div',
-    { class: 'book-head' },
-    coverThumb(book.cover),
+    { class: `setup-head${status ? ` ${status.key}` : ''}` },
+    coverThumb(cover),
     h(
       'div',
-      { class: 'book-head-text' },
-      h('span', { class: 'book-kicker' }, 'Selected book'),
-      h('strong', { class: 'book-title', dir: 'auto' }, book.title),
+      { class: 'setup-head-text' },
       h(
-        'span',
-        { class: 'book-meta' },
-        book.level ? h('span', { class: 'meta-pill level' }, book.level) : null,
-        h('span', { class: 'meta-pill' }, plural(lessonCount, 'lesson')),
+        'div',
+        { class: 'setup-head-top' },
+        h('span', { class: 'setup-kicker' }, kicker),
+        status ? h('span', { class: `setup-status ${status.key}` }, status.label) : null,
       ),
+      h(
+        'div',
+        { class: 'setup-title-row' },
+        h('strong', { class: 'setup-title', dir: 'auto' }, title),
+        level ? h('span', { class: 'meta-pill level' }, level) : null,
+      ),
+      meta ? h('span', { class: 'setup-meta' }, meta) : null,
+      progress && progress.total > 0 ? setupProgress(progress) : null,
     ),
-    progress
-      ? h(
-          'div',
-          { class: 'book-progress', dir: 'ltr' },
-          h('strong', { class: 'book-progress-value' }, `${fa(progress.percent)}%`),
-          h('span', { class: 'muted small' }, `${fa(progress.done)} of ${fa(progress.total)} done`),
-          h(
-            'span',
-            { class: 'progress-bar', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': progress.percent },
-            h('span', { class: 'progress-fill', style: `width: ${progress.percent}%` }),
-          ),
-        )
-      : null,
   );
+}
+
+/** One line of progress: the bar, then the percentage and the done count. */
+function setupProgress(progress) {
+  return h(
+    'div',
+    { class: 'setup-progress', dir: 'ltr' },
+    h(
+      'span',
+      { class: 'progress-bar', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': progress.percent },
+      h('span', { class: 'progress-fill', style: `width: ${progress.percent}%` }),
+    ),
+    h('span', { class: 'setup-progress-text' }, `${fa(progress.percent)}% · ${fa(progress.done)} of ${fa(progress.total)}`),
+  );
+}
+
+/** Inside the book (its unit list): the book, how many units, lessons and questions it has, and its progress. */
+function bookHeader(book, progress) {
+  return setupHeader({
+    kicker: 'Book',
+    title: book.title,
+    meta: [plural(book.units.length, 'unit'), plural(book.lessons.length, 'lesson'), plural(questionsIn(book.lessons), 'question')].join(' · '),
+    cover: book.cover,
+    level: book.level,
+    progress,
+  });
+}
+
+/** Inside one unit (its lesson list): the unit's position in the book, and its lessons and questions. */
+function unitHeader(book, unit, progress) {
+  const position = book.units.indexOf(unit) + 1;
+  return setupHeader({
+    kicker: `Unit ${fa(position)} of ${fa(book.units.length)}`,
+    title: unit.title,
+    meta: [plural(unit.lessons.length, 'lesson'), plural(questionsIn(unit.lessons), 'question')].join(' · '),
+    cover: book.cover,
+    level: book.level,
+    progress,
+  });
+}
+
+/**
+ * The settings step: what will be played. One lesson, a whole unit, the whole book, or a custom set of lessons.
+ */
+function selectionHeader(book, unit, lessons, progress) {
+  const inUnit = unit && lessons.length === unit.lessons.length;
+  const wholeBook = lessons.length === book.lessons.length;
+  let kicker = 'Playing';
+  let title = plural(lessons.length, 'selected lesson');
+  if (lessons.length === 1) {
+    kicker = 'Lesson';
+    title = lessons[0].lessonTitle;
+  } else if (inUnit) {
+    kicker = 'Unit';
+    title = unit.title;
+  } else if (wholeBook) {
+    kicker = 'Whole book';
+    title = book.title;
+  }
+  const questions = plural(questionsIn(lessons), 'question');
+  return setupHeader({
+    kicker,
+    title,
+    meta: lessons.length === 1 ? questions : [plural(lessons.length, 'lesson'), questions].join(' · '),
+    cover: book.cover,
+    level: book.level,
+    progress,
+  });
 }
 
 /** Cover image of a book (or a placeholder when the book has none). */
@@ -959,7 +1228,7 @@ function renderQuestion(root, session, flow) {
   settingsStart = null;
   setTabMode('home');
   // Every new question starts at the top of the page.
-  window.scrollTo(0, 0);
+  scrollToTop();
   const { question: q, index, total } = session.current;
   // The lesson being practised is remembered: the next visit to its book starts from it.
   saveSettings({ ...getSettings(), lastLesson: lessonKey(q.book, q.lesson) });
@@ -1314,17 +1583,132 @@ function questionBlock(q) {
   );
 }
 
-const RESULT_TITLES = ['Better next time!', 'Good start!', 'Very good!', 'Excellent! All stars!'];
+/**
+ * Share and save buttons of the results: they make the result card as an image (see result-card.js).
+ * Sharing opens the device's share sheet where there is one; otherwise the image is saved.
+ */
+const SHARE_ICON =
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+  '<path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/>' +
+  '</svg>';
 
-/** One number of the results screen: an icon, the value and its label, on a tinted tile. */
-function resultTile(icon, value, label, tone) {
+const SAVE_ICON =
+  '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+  '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>' +
+  '</svg>';
+
+/**
+ * Share and save the result card as an image. Two round icon buttons in the top corner of the results card.
+ * Sharing opens the device's share sheet with the image; saving downloads the PNG.
+ */
+function resultActions(card) {
+  const glyph = (svg) => Object.assign(h('span', { class: 'round-glyph' }), { innerHTML: svg });
+  const share = h('button', { type: 'button', class: 'round-action primary-action', 'aria-label': 'Share result', title: 'Share result' }, glyph(SHARE_ICON));
+  const save = h('button', { type: 'button', class: 'round-action', 'aria-label': 'Save image', title: 'Save image' }, glyph(SAVE_ICON));
+  const run = (button, task) => async () => {
+    button.disabled = true;
+    try {
+      const outcome = await task();
+      if (outcome === 'saved') toast('Image saved. You can send it to your friends.');
+    } catch (error) {
+      if (error?.name === 'ShareUnsupported') toast('This device cannot share images. Use the save button instead.', 'warn');
+      else if (error?.name !== 'AbortError') toast('Could not make the image. Try again.', 'error');
+    } finally {
+      button.disabled = false;
+    }
+  };
+  share.onclick = run(share, () => shareResultCard(card));
+  save.onclick = run(save, () => saveResultCard(card));
+  return h('div', { class: 'result-actions' }, share, save);
+}
+
+// Icons of the result tiles (drawn as SVG, so they stay crisp at every size).
+const TILE_ICONS = {
+  star: '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+  check: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg>',
+  cross: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18M6 6l12 12"/></svg>',
+  clock: '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+};
+
+/** The round coloured badge with the icon of a result tile. */
+function tileIcon(svg) {
+  return Object.assign(h('span', { class: 'rt-icon', 'aria-hidden': 'true' }), { innerHTML: svg });
+}
+
+/** The points of the mission: a wide tile with a bar that shows how much of the maximum was won. */
+function pointsTile(score, maxScore, index) {
+  const ratio = maxScore > 0 ? Math.min(1, score / maxScore) : 0;
   return h(
     'div',
-    { class: `result-tile ${tone}` },
-    h('span', { class: 'result-tile-icon', 'aria-hidden': 'true' }, icon),
-    h('strong', {}, value),
-    h('span', { class: 'result-tile-label' }, label),
+    { class: 'result-tile points', style: `--i:${index}` },
+    tileIcon(TILE_ICONS.star),
+    h(
+      'div',
+      { class: 'rt-body' },
+      h('span', { class: 'rt-label' }, 'Points'),
+      h('strong', { class: 'rt-value' }, fa(score), h('small', {}, ` of ${fa(maxScore)}`)),
+    ),
+    h(
+      'span',
+      { class: 'rt-bar', role: 'img', 'aria-label': `${percent(ratio)} of the points` },
+      h('span', { class: 'rt-fill', style: `width:${Math.round(ratio * 100)}%` }),
+    ),
   );
+}
+
+/** One count of the results screen (correct, wrong, timed out): an icon, the number and its label. */
+function statTile(svg, value, label, tone, index) {
+  return h(
+    'div',
+    { class: `result-tile ${tone}`, style: `--i:${index}` },
+    tileIcon(svg),
+    h('strong', { class: 'rt-value' }, value),
+    h('span', { class: 'rt-label' }, label),
+  );
+}
+
+/** One mistake: the question, the correct answer in a green band, and the note. */
+function mistakeCard(outcome) {
+  const q = outcome.question;
+  return h(
+    'article',
+    { class: 'mistake-card' },
+    h('p', { class: 'mistake-q', dir: 'auto' }, q.question),
+    h(
+      'div',
+      { class: 'mistake-answer' },
+      h('span', { class: 'mistake-label' }, 'Correct answer'),
+      h('bdi', { class: 'ltr', dir: 'ltr' }, answerText(q)),
+      speakButtons(answerText(q)),
+    ),
+    q.explanation ? h('p', { class: 'mistake-note', dir: 'auto' }, q.explanation) : null,
+    q.category === 'dictation' && q.hint ? h('p', { class: 'mistake-note', dir: 'rtl' }, `Meaning: ${q.hint}`) : null,
+  );
+}
+
+/**
+ * The mistakes of the mission, folded away: a header with the count that opens the list.
+ * The list is closed when the results open, so the page stays short; the learner opens it when wanted.
+ */
+function mistakesBlock(mistakes) {
+  if (!mistakes.length) return h('div', { class: 'all-correct' }, '🎉 Perfect! No mistakes.');
+  const list = h('div', { class: 'mistakes-list', hidden: true }, ...mistakes.map(mistakeCard));
+  const toggle = h(
+    'button',
+    {
+      type: 'button',
+      class: 'mistakes-toggle',
+      'aria-expanded': 'false',
+      onclick: () => {
+        list.hidden = !list.hidden;
+        toggle.setAttribute('aria-expanded', String(!list.hidden));
+      },
+    },
+    h('span', {}, 'Review your mistakes'),
+    h('span', { class: 'mistakes-count' }, fa(mistakes.length)),
+    h('span', { class: 'mistakes-chevron', 'aria-hidden': 'true' }, '▾'),
+  );
+  return h('div', { class: 'mistakes-block' }, toggle, list);
 }
 
 function renderResults(root, session, flow) {
@@ -1339,10 +1723,29 @@ function renderResults(root, session, flow) {
   const mistakes = session.outcomes.filter((o) => !o.correct);
   const xpGained = session.outcomes.filter((o) => o.correct).reduce((sum, o) => sum + (Number(o.points) || 0), 0);
   const stars = starsFor(summary.correct, summary.answered);
+  // The look of the screen follows the accuracy of the mission (five tiers, see resultTier).
+  const tier = resultTier(summary.correct, summary.answered);
+  const look = RESULT_LOOKS[tier];
 
   const xpBefore = flow.xpBefore ?? 0;
   const levelBefore = levelFor(xpBefore);
   const levelAfter = levelFor(xpBefore + xpGained);
+
+  // The facts of the mission, for the shareable result card (what was finished, and how far it moved things).
+  const endedAt = Date.now();
+  const card = {
+    tier,
+    look,
+    stars,
+    correct: summary.correct,
+    answered: summary.answered,
+    accuracy: summary.answered ? summary.correct / summary.answered : 0,
+    levelBefore,
+    levelAfter,
+    dateText: new Date(endedAt).toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }),
+    endedAt,
+    report: missionReport({ ...flow.report, outcomes: session.outcomes, endedAt }),
+  };
 
   // The bottom bar gets a "Practice again" button in the middle: the same kind of game, with new questions.
   const again = document.querySelector('.bottom-again');
@@ -1351,56 +1754,43 @@ function renderResults(root, session, flow) {
     again.hidden = false;
   }
 
+  const xpLine = h('p', { class: 'xp-gain' }, '+0 XP');
   root.replaceChildren(
     h(
       'section',
-      { class: 'card results game' },
+      { class: `card results game tier-${tier}` },
+      // Share and save sit in the top corner of the card, above the hero.
+      resultActions(card),
       h(
         'div',
-        { class: 'result-hero' },
+        { class: `result-hero tier-${tier}` },
+        resultStage(tier),
+        h('span', { class: 'rs-badge', 'aria-hidden': 'true' }, look.badge),
         h(
           'div',
           { class: 'stars', role: 'img', 'aria-label': `${fa(stars)} of 3 stars` },
           [1, 2, 3].map((n) => h('span', { class: n <= stars ? 'star on' : 'star' }, '★')),
         ),
-        h('h2', {}, RESULT_TITLES[stars]),
-        h('p', { class: 'xp-gain' }, `+${fa(xpGained)} XP`),
+        h('h2', {}, look.title),
+        h('p', { class: 'rs-text' }, look.text),
+        xpLine,
         levelAfter > levelBefore ? h('p', { class: 'level-up' }, `New level! You are now level ${fa(levelAfter)}`) : null,
       ),
       h(
         'div',
         { class: 'result-tiles' },
-        resultTile('⭐', `${fa(summary.score)} of ${fa(summary.maxScore)}`, 'Points', 'gold'),
-        resultTile('✓', fa(summary.correct), 'Correct', 'ok'),
-        resultTile('✕', fa(summary.wrong), 'Wrong', 'bad'),
-        resultTile('⏱', fa(summary.timeouts), 'Timed out', 'time'),
+        pointsTile(summary.score, summary.maxScore, 0),
+        statTile(TILE_ICONS.check, fa(summary.correct), 'Correct', 'ok', 1),
+        statTile(TILE_ICONS.cross, fa(summary.wrong), 'Wrong', 'bad', 2),
+        statTile(TILE_ICONS.clock, fa(summary.timeouts), 'Timed out', 'time', 3),
       ),
-      mistakes.length
-        ? h(
-            'div',
-            { class: 'mistakes-head' },
-            h('h3', {}, 'Review your mistakes'),
-            h('span', { class: 'mistakes-count' }, fa(mistakes.length)),
-          )
-        : h('div', { class: 'all-correct' }, '🎉 Perfect! No mistakes.'),
-      ...mistakes.map((o) =>
-        h(
-          'article',
-          { class: 'mistake-card' },
-          h('p', { class: 'mistake-q', dir: 'auto' }, o.question.question),
-          h(
-            'div',
-            { class: 'mistake-answer' },
-            h('span', { class: 'mistake-label' }, 'Correct answer'),
-            h('bdi', { class: 'ltr', dir: 'ltr' }, answerText(o.question)),
-            speakButtons(answerText(o.question)),
-          ),
-          o.question.explanation ? h('p', { class: 'mistake-note', dir: 'auto' }, o.question.explanation) : null,
-          o.question.category === 'dictation' && o.question.hint
-            ? h('p', { class: 'mistake-note', dir: 'rtl' }, `Meaning: ${o.question.hint}`)
-            : null,
-        ),
-      ),
+      mistakesBlock(mistakes),
     ),
   );
+  // The XP counts up from zero once the screen is shown.
+  countUp(xpLine, xpGained);
+  // Each result look has its own jingle (see playResultJingle in sounds.js).
+  playResultJingleIfEnabled(tier);
+  // The results start at the top of the page, whatever the scroll was during the mission.
+  scrollToTop();
 }

@@ -1843,9 +1843,11 @@ textarea {
   line-height: 1;
 }
 
+/* An unlit star is white with a slate outline, so it stays visible on every result background. */
 .star {
-  color: #d1d5db;
-  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.06);
+  color: #ffffff;
+  -webkit-text-stroke: 1.5px #64748b;
+  text-shadow: 0 2px 0 rgba(15, 23, 42, 0.12);
 }
 
 .star.on {
@@ -1898,61 +1900,150 @@ textarea {
   box-shadow: 0 6px 16px rgba(37, 99, 235, 0.18);
 }
 
-/* Four numbers in coloured tiles. */
+/* The results numbers: the points as a wide tile with a bar, and correct, wrong and timed out as three tiles. */
 .result-tiles {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
   margin: 16px 0 8px;
 }
 
 .result-tile {
+  --tone: #64748b;
+  --tone-soft: #f8fafc;
   display: grid;
   justify-items: center;
-  gap: 2px;
-  padding: 12px 8px;
-  border-radius: 16px;
+  gap: 8px;
+  padding: 14px 8px 12px;
+  border-radius: 18px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: linear-gradient(160deg, #ffffff, var(--tone-soft));
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
   color: var(--text);
+  text-align: center;
+  animation: rt-in 0.5s ease both;
+  animation-delay: calc(var(--i, 0) * 90ms + 120ms);
 }
 
-.result-tile-icon {
-  font-size: 1.2rem;
-  line-height: 1;
+.rt-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--tone);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.18);
 }
 
-.result-tile strong {
-  font-size: 1.6rem;
+.rt-value {
+  font-size: 1.5rem;
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.1;
+  color: var(--tone);
 }
 
-.result-tile-label {
-  font-size: 0.85rem;
+.rt-value small {
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--muted);
 }
 
-.result-tile.gold {
-  background: linear-gradient(160deg, #fef9c3, #fef3c7);
+.rt-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--muted);
+}
+
+.result-tile.points {
+  --tone: #d97706;
+  --tone-soft: #fffbeb;
+  grid-column: 1 / -1;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  align-items: center;
+  justify-items: start;
+  column-gap: 14px;
+  row-gap: 10px;
+  padding: 14px 16px;
+}
+
+.result-tile.points .rt-icon {
+  background: linear-gradient(135deg, #f59e0b, #facc15);
+  color: #78350f;
+}
+
+.result-tile.points .rt-body {
+  display: grid;
+  justify-items: start;
+  gap: 2px;
+  text-align: start;
+}
+
+.result-tile.points .rt-value {
+  font-size: 1.6rem;
+  color: var(--text);
+}
+
+.rt-bar {
+  grid-column: 1 / -1;
+  justify-self: stretch;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.rt-fill {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #f59e0b, #facc15);
+  transform-origin: left center;
+  animation: rt-fill 0.9s ease-out 0.4s both;
 }
 
 .result-tile.ok {
-  background: var(--ok-soft);
-}
-
-.result-tile.ok strong {
-  color: var(--ok);
+  --tone: #16a34a;
+  --tone-soft: #ecfdf5;
 }
 
 .result-tile.bad {
-  background: var(--bad-soft);
-}
-
-.result-tile.bad strong {
-  color: var(--bad);
+  --tone: #dc2626;
+  --tone-soft: #fef2f2;
 }
 
 .result-tile.time {
-  background: #e2e8f0;
+  --tone: #0891b2;
+  --tone-soft: #ecfeff;
+}
+
+@keyframes rt-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rt-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result-tile,
+  .rt-fill {
+    animation: none;
+  }
 }
 
 .mistakes-head {
@@ -2043,9 +2134,449 @@ textarea {
   }
 }
 
-/* Keep the last controls of a screen clear of the floating bottom navigation. */
+/* ---------- Results stage: five looks, picked by the score (resultTier in player.js, see result-stage.js) ---------- */
+
+.result-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Text, stars and badge sit above the animated backdrop. */
+.result-hero > :not(.rs-stage) {
+  position: relative;
+  z-index: 1;
+}
+
+.rs-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.rs-text {
+  margin: 0;
+  max-width: 34ch;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* The big emoji in a round badge above the stars. It bobs gently on every tier. */
+.rs-badge {
+  display: grid;
+  place-items: center;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  font-size: 2.6rem;
+  line-height: 1;
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+  animation: rs-bob 2.6s ease-in-out infinite;
+}
+
+/* Tier 0: calm grey-blue, with slow clouds and a swaying sprout. */
+.result-hero.tier-0 {
+  background: linear-gradient(170deg, #e2e8f0 0%, #cbd5e1 100%);
+  border-color: #cbd5e1;
+}
+
+.result-hero.tier-0 h2 {
+  color: #334155;
+}
+
+.result-hero.tier-0 .rs-badge {
+  animation-name: rs-sway;
+}
+
+.rs-cloud {
+  position: absolute;
+  left: -120px;
+  width: 96px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 18px -14px 0 4px rgba(255, 255, 255, 0.85), -14px -8px 0 2px rgba(255, 255, 255, 0.85);
+  animation: rs-drift linear infinite;
+}
+
+/* Tier 1: warm peach, a sun with turning rays, and bubbles rising. */
+.result-hero.tier-1 {
+  background:
+    radial-gradient(circle at 50% 0%, #fde68a 0%, transparent 60%),
+    linear-gradient(170deg, #fff7ed 0%, #fed7aa 100%);
+  border-color: #fdba74;
+}
+
+.result-hero.tier-1 h2 {
+  color: #9a3412;
+}
+
+.rs-rays {
+  position: absolute;
+  left: 50%;
+  top: -150px;
+  width: 360px;
+  height: 360px;
+  margin-inline-start: -180px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, rgba(251, 191, 36, 0.3) 0deg 8deg, transparent 8deg 24deg);
+  animation: rs-spin 30s linear infinite;
+}
+
+.rs-bubble {
+  position: absolute;
+  bottom: -24px;
+  border-radius: 50%;
+  border: 2px solid rgba(251, 146, 60, 0.45);
+  background: rgba(255, 255, 255, 0.55);
+  animation: rs-rise linear infinite;
+}
+
+/* Tier 2: mint, a shine that sweeps across, and one burst of confetti. */
+.result-hero.tier-2 {
+  background: linear-gradient(170deg, #ecfdf5 0%, #a7f3d0 100%);
+  border-color: #6ee7b7;
+}
+
+.result-hero.tier-2 h2 {
+  color: #065f46;
+}
+
+.rs-shine {
+  position: absolute;
+  top: -20%;
+  bottom: -20%;
+  left: -60%;
+  width: 40%;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%);
+  transform: skewX(-20deg);
+  animation: rs-shine-sweep 3.4s ease-in-out infinite;
+}
+
+/* Confetti pieces (tiers 2 and 4). They start above the stage and fall through it. */
+.rs-piece {
+  position: absolute;
+  top: -12%;
+  width: 9px;
+  height: 14px;
+  border-radius: 2px;
+  animation-name: rs-fall;
+  animation-timing-function: cubic-bezier(0.3, 0.5, 0.6, 1);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+/* Tier 3: deep violet with fireworks. The stars glow. */
+.result-hero.tier-3 {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(253, 224, 71, 0.35) 0%, transparent 55%),
+    linear-gradient(160deg, #312e81 0%, #6d28d9 55%, #be185d 100%);
+  border-color: transparent;
+}
+
+.result-hero.tier-3 h2,
+.result-hero.tier-3 .rs-text {
+  color: #fff;
+}
+
+.result-hero.tier-3 .rs-badge {
+  background: rgba(253, 224, 71, 0.9);
+  animation-name: rs-pulse;
+}
+
+.result-hero.tier-3 .star.on {
+  text-shadow: 0 0 14px rgba(253, 224, 71, 0.9);
+}
+
+.rs-burst {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.rs-spark {
+  position: absolute;
+  left: -3px;
+  top: -3px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: rs-spark 1s ease-out forwards;
+}
+
+/* Tier 4: gold, a turning sunburst, twinkling sparkles and golden confetti that keeps falling. */
+.result-hero.tier-4 {
+  background: radial-gradient(circle at 50% 35%, #fffbeb 0%, #fde68a 42%, #f59e0b 100%);
+  border-color: #f59e0b;
+}
+
+.result-hero.tier-4 h2 {
+  color: #78350f;
+}
+
+.result-hero.tier-4 .rs-badge {
+  background: #fff7ae;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.45), 0 10px 26px rgba(146, 64, 14, 0.25);
+}
+
+.result-hero.tier-4 .rs-piece {
+  animation-iteration-count: infinite;
+}
+
+.rs-sunburst {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: 520px;
+  height: 520px;
+  margin-inline-start: -260px;
+  margin-top: -260px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, rgba(255, 255, 255, 0.6) 0deg 6deg, transparent 6deg 18deg);
+  -webkit-mask-image: radial-gradient(circle, #000 15%, transparent 68%);
+  mask-image: radial-gradient(circle, #000 15%, transparent 68%);
+  animation: rs-spin 24s linear infinite;
+}
+
+.rs-sparkle {
+  position: absolute;
+  color: #fff;
+  text-shadow: 0 0 8px #fff;
+  animation: rs-twinkle 1.8s ease-in-out infinite;
+}
+
+/* Lowest tier: the cloud and the sprout move slowly. */
+@keyframes rs-drift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100vw + 160px));
+  }
+}
+
+@keyframes rs-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes rs-sway {
+  0%,
+  100% {
+    transform: rotate(-7deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes rs-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(253, 224, 71, 0.6), 0 10px 24px rgba(15, 23, 42, 0.2);
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 14px rgba(253, 224, 71, 0), 0 10px 24px rgba(15, 23, 42, 0.2);
+  }
+}
+
+@keyframes rs-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rs-rise {
+  from {
+    transform: translateY(0);
+    opacity: 0.9;
+  }
+  to {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+}
+
+@keyframes rs-shine-sweep {
+  0% {
+    left: -60%;
+  }
+  60%,
+  100% {
+    left: 130%;
+  }
+}
+
+/* Falls well past the bottom of the hero, so a piece that has finished is out of sight. */
+@keyframes rs-fall {
+  from {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(var(--drift, 0px), 600px, 0) rotate(540deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rs-spark {
+  from {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translate(var(--dx), var(--dy)) scale(0.2);
+    opacity: 0;
+  }
+}
+
+@keyframes rs-twinkle {
+  0%,
+  100% {
+    transform: scale(0.4) rotate(0deg);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.15) rotate(45deg);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* No moving backdrop: the gradients, badges and stars stay, and the XP number appears at once. */
+  .rs-stage {
+    display: none;
+  }
+  .result-hero .rs-badge {
+    animation: none !important;
+  }
+}
+
+/* Review your mistakes: a header that opens and closes the list. The arrow turns when it is open. */
+.mistakes-block {
+  margin: 18px 0 8px;
+}
+
+.mistakes-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 10px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  font-size: 1.05rem;
+  font-weight: 800;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.mistakes-chevron {
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.mistakes-toggle[aria-expanded='true'] .mistakes-chevron {
+  transform: rotate(180deg);
+}
+
+.mistakes-list {
+  margin-top: 12px;
+}
+
+.mistakes-list[hidden] {
+  display: none;
+}
+
+/* Share and save the result card as an image: two round icon buttons in the top corner of the results card. */
+.card.results.game {
+  position: relative;
+}
+
+/* The share and save buttons sit inside the card, on a soft pill, with the same distance from the top and the side. */
+.result-actions {
+  --actions-inset: 24px;
+  position: absolute;
+  top: var(--actions-inset);
+  inset-inline-end: var(--actions-inset);
+  z-index: 3;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.round-action {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--primary);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.round-action:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.24);
+}
+
+.round-action:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.45);
+  outline-offset: 2px;
+}
+
+.round-action:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.round-action.primary-action {
+  border-color: transparent;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+}
+
+.round-glyph {
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+
+.round-glyph svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Keep the last controls of a screen clear of the floating bottom navigation (65px tall, 10px from the bottom). */
 #app {
-  padding-bottom: 120px;
+  padding-bottom: 5px;
 }
 
 /* ---------- Play screen zones: top bar, stage, answer zone ---------- */
@@ -2371,18 +2902,6 @@ textarea {
 }
 
 
-/* The chosen book, as a card with its cover on the start side. */
-.book-head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin: 6px 0 4px;
-  padding: 30px 20px 30px;
-  border-radius: 18px;
-  border: 1px solid #e0e7ff;
-  background: linear-gradient(135deg, #eef2ff 0%, #faf5ff 100%);
-}
-
 .book-thumb {
   flex: none;
   display: grid;
@@ -2403,32 +2922,6 @@ textarea {
   display: block;
 }
 
-.book-head-text {
-  display: grid;
-  align-content: center;
-  flex: 1;
-  min-width: 0;
-  gap: 10px;
-}
-
-.book-kicker {
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--primary-dark);
-}
-
-.book-title {
-  font-size: 1.25rem;
-  font-weight: 800;
-  line-height: 1.3;
-}
-
-.book-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-
 .meta-pill {
   padding: 2px 10px;
   border-radius: 999px;
@@ -2443,6 +2936,136 @@ textarea {
   border: none;
   background: linear-gradient(90deg, #f59e0b, #f97316);
   color: #fff;
+}
+
+/* The Play setup header: a compact card for the level being played (book, unit or chosen lessons). */
+.setup-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0 4px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid #e0e7ff;
+  background: linear-gradient(135deg, #eef2ff 0%, #faf5ff 100%);
+}
+
+.setup-head .book-thumb {
+  width: 44px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* The tint follows the learner's progress (bookStatus() in play.js). */
+.setup-head.new {
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+}
+
+.setup-head.active {
+  border-color: #bfdbfe;
+  background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
+}
+
+.setup-head.complete {
+  border-color: #bbf7d0;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+}
+
+.setup-head-text {
+  display: grid;
+  gap: 3px;
+  flex: 1;
+  min-width: 0;
+}
+
+.setup-head-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.setup-kicker {
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+}
+
+.setup-status {
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.setup-status.new {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.setup-status.active {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.setup-status.complete {
+  background: #16a34a;
+  color: #fff;
+}
+
+.setup-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.setup-title {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.setup-title-row .meta-pill.level {
+  flex: none;
+  padding: 1px 8px;
+  font-size: 0.68rem;
+}
+
+.setup-meta {
+  font-size: 0.76rem;
+  color: #64748b;
+}
+
+.setup-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.setup-progress .progress-bar {
+  flex: 1;
+  min-width: 0;
+}
+
+.setup-progress-text {
+  flex: none;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  white-space: nowrap;
+}
+
+.setup-head.complete .setup-progress-text {
+  color: #15803d;
 }
 
 .timer {
@@ -3787,25 +4410,6 @@ body.game-running .topbar-admin .icon-exit {
 
 .reset-btn {
   justify-self: start;
-}
-
-/* Progress of the chosen book (or selected lessons), on the end side of the book card. */
-.book-progress {
-  flex: none;
-  display: grid;
-  justify-items: end;
-  gap: 4px;
-  min-width: 110px;
-}
-
-.book-progress-value {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: var(--primary-dark);
-}
-
-.book-progress .progress-bar {
-  width: 110px;
 }
 
 /* Voice-only answers: the box shows what was heard, and the mic is the way in. */

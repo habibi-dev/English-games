@@ -11,12 +11,18 @@
           "title": "Evolve 1",
           "level": "A1",
           "cover": "content/covers/evolve-1.png",
-          "lessons": [
+          "units": [
             {
-              "id": "lesson-01",
-              "title": "Lesson 01",
-              "file": "content/evolve-1/lesson-01.json",
-              "version": "29"
+              "id": "unit-01",
+              "title": "Unit 01",
+              "lessons": [
+                {
+                  "id": "lesson-01",
+                  "title": "Lesson 01",
+                  "file": "content/evolve-1/lesson-01.json",
+                  "version": "29"
+                }
+              ]
             }
           ]
         }

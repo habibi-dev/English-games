@@ -66,6 +66,16 @@ export function applyPlayMode(question, mode = 'easy') {
 }
 
 /**
+ * Points of a correct answer, by the time it took: the full points when it is quick, and fewer the longer
+ * it takes, down to nothing when the whole time limit is used up. The limit is the mode's limit (see applyPlayMode).
+ */
+export function timedPoints(points, elapsedMs, limitMs) {
+  if (!(limitMs > 0)) return points;
+  const used = Math.min(Math.max(elapsedMs, 0), limitMs) / limitMs;
+  return Math.round(points * (1 - used));
+}
+
+/**
  * One mission over a fixed list of questions.
  * Flow: current() -> submit(answer) or timeout() -> next() -> ... until finished.
  */
@@ -180,7 +190,9 @@ export class GameSession {
     // A question pays its points only on its first correct answer ever. Repeats are still recorded and still count for the streak.
     const id = data.question.id;
     const pays = data.correct && !this.#scored.has(id);
-    const points = pays ? data.question.points ?? 0 : 0;
+    // The faster the answer, the more of the question's points it keeps (see timedPoints).
+    const limitMs = (data.question.time_limit ?? 20) * 1000;
+    const points = pays ? timedPoints(data.question.points ?? 0, elapsedMs, limitMs) : 0;
     if (data.correct) this.#scored.add(id);
     const outcome = { ...data, points, elapsedMs };
     this.#outcomes.push(outcome);

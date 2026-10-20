@@ -139,12 +139,18 @@ export const QUESTION_PROMPT = `You write practice questions for an English gram
 FORMAT
 { "questions": [ question, question, ... ] }
 
+COURSE
+The course is series > book > unit > lesson. A question belongs to one lesson. Its unit is not written: the game finds it from content/index.json.
+- book and lesson must match content/index.json exactly, for example book "evolve-1" and lesson "lesson-01". Use only ids the user gives you or that exist in the index. Never invent an id.
+- Do not write a unit field. If the user names a unit, write questions only for lessons that belong to that unit.
+- A question whose book or lesson is not in content/index.json is saved but never shown in the game.
+
 Every question is an object. Field names are exact.
 
 Required fields
 - id: unique text across the whole bank, for example "evolve-1-l03-tr-01". Never reuse an id.
-- book: the book id, for example "evolve-1".
-- lesson: the lesson id, for example "lesson-03".
+- book: the book id from content/index.json, for example "evolve-1".
+- lesson: the lesson id from content/index.json (the id, not the title), for example "lesson-03".
 - topic: the grammar topic in lowercase with underscores, for example "to_be" or "do_does". The same grammar point always gets the same topic.
 - category: one of the exercise types listed below.
 - difficulty: "easy", "medium" or "hard".
@@ -181,14 +187,15 @@ ${typeLines}
 - vocabulary: question asks for synonyms or antonyms of a word; use answer_mode "list" when several are needed.
 
 Dictation rules
-- Prefer one English word or a short phrase, with hint set to its Persian meaning. The game sometimes asks for the English word from its Persian meaning, and that needs the hint.
+- The game picks a spelling mode for each dictation item. audio: always possible; the learner hears the word and types it. meaning: only when the item has a hint; the Persian meaning is shown and the learner types the English word. letters: only when expected_answer is one plain word of at least 3 letters (no spaces, apostrophes or hyphens); the learner taps shuffled letter tiles.
+- So prefer one single English word with a hint set to its Persian meaning. That word works in all three modes. A phrase works in audio mode, and in meaning mode when it has a hint, but not in letters mode.
 - Do not give a full sentence a hint. The game would sometimes show that hint as the question "Write the English word for this meaning.", which makes no sense for a sentence.
 
 Writing rules
 - One grammar point per question, matching its topic.
 - Instructions, explanations, hints, translations and glossary meanings are in Persian. English sentences and answers are in English.
 - Whenever an instruction names a grammar term in Persian, write the English term next to it in brackets, for example: مترادف (synonym), متضاد (antonym), زمان حال ساده (present simple). Never write the Persian term alone.
-- Use normal English punctuation. Final punctuation (. ! ?) and commas are ignored when answers are checked, so "Sorry, what page?" and "Sorry what page" are the same answer.
+- Use normal English punctuation. Final punctuation (. ! ?) and commas (Latin "," or Persian "،") are ignored when answers are checked, so "Sorry, what page?" and "Sorry what page" are the same answer.
 - Use contractions only when that form is listed in accepted_answers. Write them with a straight apostrophe (').
 - Accepted answers: list every correct form a learner may type, for example both "She is not a teacher." and "She isn't a teacher.". Word order matters: "Isn't she?" and "Is she not?" are different answers, and each one must be listed if it is correct.
 - Vocabulary that asks for several words: answer_mode "list", min_items set to the number asked, and accepted_answers holding every correct word.

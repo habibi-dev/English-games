@@ -4,12 +4,16 @@ import { syncContent } from './bank/repository.js';
 import { renderPlay, isGameInProgress, setTabMode, startFromNav, confirmLeaveGame, endGame } from './ui/play.js';
 import { renderReports } from './ui/reports.js';
 import { renderAdmin } from './ui/admin.js';
-import { h, toast, fa } from './ui/dom.js';
+import { h, toast, fa, scrollToTop } from './ui/dom.js';
 import { unlockSounds } from './ui/sounds.js';
 import { endMission } from './progress/activity.js';
 
 // Browsers only allow sound after a tap: the first tap anywhere prepares the sound effects.
 document.addEventListener('pointerdown', unlockSounds, { once: true });
+
+// The app puts every screen at the top itself (see scrollToTop). The browser must not restore an old scroll position
+// when the back button moves between history entries, or the results would open part-way down.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
 // Closing or reloading the page ends a running mission, so its time up to now is kept.
 window.addEventListener('pagehide', () => endMission());
@@ -45,6 +49,8 @@ async function route() {
       return;
     }
     cleanup = typeof result === 'function' ? result : null;
+    // Every screen opens at the top of the page, whatever the scroll was on the screen before.
+    scrollToTop();
   } catch (error) {
     console.error(error);
     root.replaceChildren(

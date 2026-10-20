@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { totalXp, levelFor, levelProgress, bestStreak, playerProfile, starsFor } from '../js/progress/player.js';
+import { totalXp, levelFor, levelProgress, bestStreak, playerProfile, starsFor, resultTier } from '../js/progress/player.js';
 
 const attempt = (id, correct, points = 10) => ({ id, at: id, correct, points });
 
@@ -45,4 +45,16 @@ test('stars follow the session accuracy thresholds', () => {
   assert.equal(starsFor(4, 10), 1);
   assert.equal(starsFor(3, 10), 0);
   assert.equal(starsFor(0, 0), 0);
+  // A perfect session still shows three stars (its own look is tier 4).
+  assert.equal(starsFor(10, 10), 3);
+});
+
+test('result look has five tiers: perfect, 90%, 70%, 40%, and below', () => {
+  assert.equal(resultTier(10, 10), 4);
+  assert.equal(resultTier(9, 10), 3);
+  assert.equal(resultTier(7, 10), 2);
+  assert.equal(resultTier(4, 10), 1);
+  assert.equal(resultTier(3, 10), 0);
+  assert.equal(resultTier(1, 1), 4);
+  assert.equal(resultTier(0, 0), 0);
 });
