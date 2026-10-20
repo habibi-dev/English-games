@@ -20,8 +20,8 @@ export function saveSettings(settings) {
   }
 }
 
-// Sound effects (win and lose sounds). Small preferences, so they live in localStorage like the play settings.
-// Missing values fall back to the defaults: sounds are on, at a moderate volume.
+// Sound effects (win and lose sounds) and the spoken English after an answer. Small preferences, so they live in
+// localStorage like the play settings. Missing values fall back to the defaults: sounds are on, at a moderate volume.
 const SOUNDS_KEY = 'grammar-quest.sounds.v1';
 export const SOUND_DEFAULTS = Object.freeze({
   enabled: true,
@@ -29,6 +29,8 @@ export const SOUND_DEFAULTS = Object.freeze({
   lose: true,
   timeout: true,
   vibrate: true,
+  // After a right or wrong answer, the English sentence in the result window is read aloud slowly.
+  autoSpeak: true,
   volume: 0.6,
 });
 
@@ -43,6 +45,7 @@ export function getSoundSettings() {
       lose: typeof stored.lose === 'boolean' ? stored.lose : SOUND_DEFAULTS.lose,
       timeout: typeof stored.timeout === 'boolean' ? stored.timeout : SOUND_DEFAULTS.timeout,
       vibrate: typeof stored.vibrate === 'boolean' ? stored.vibrate : SOUND_DEFAULTS.vibrate,
+      autoSpeak: typeof stored.autoSpeak === 'boolean' ? stored.autoSpeak : SOUND_DEFAULTS.autoSpeak,
       volume: Number.isFinite(volume) ? Math.min(1, Math.max(0, volume)) : SOUND_DEFAULTS.volume,
     };
   } catch {

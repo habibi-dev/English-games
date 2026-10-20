@@ -10,11 +10,19 @@ import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, levelStartXp } from '../progress/player.js';
 import { doneIds, progressOf } from '../progress/lesson-progress.js';
 import { scheduleOf, isDue, missionQuestions, nextDueAt } from '../progress/spaced-repetition.js';
-import { getSettings, saveSettings } from '../storage/settings.js';
+import { getSettings, saveSettings, getSoundSettings } from '../storage/settings.js';
 import { h, toast, fa, ltr, badge, percent, keepFocus, confirmDialog } from './dom.js';
 import { createAnswerWidget, instructionFor } from './answer-widgets.js';
 import { splitPrompt } from './prompt.js';
-import { speak, speakButtons, speakBar, completeSentence, contextSentence, questionSpeakButton } from './speech-out.js';
+import {
+  speak,
+  stopSpeaking,
+  speakButtons,
+  speakBar,
+  completeSentence,
+  contextSentence,
+  questionSpeakButton,
+} from './speech-out.js';
 import { playResultSound, vibrateFor } from './sounds.js';
 import { beginMission, endMission } from '../progress/activity.js';
 import { keepScreenOn } from './wake-lock.js';
@@ -929,6 +937,9 @@ function progressTrack(session) {
   );
 }
 
+// After the result window opens, the sentence is read aloud once the win or lose sound has had a moment.
+const AUTO_SPEAK_DELAY_MS = 700;
+
 /** Consecutive correct answers at the end of the session. */
 function currentStreak(outcomes) {
   let streak = 0;
@@ -969,6 +980,7 @@ function renderQuestion(root, session, flow) {
   const widget = createAnswerWidget(q, { onSubmit: submit });
 
   // The result pops up as a modal card: a celebration when correct, falling rain when not.
+  let autoSpeakTimer = null;
   const resultMood = h('div', { class: 'result-mood', 'aria-hidden': 'true' });
   const resultEffect = h('div', { class: 'fx', 'aria-hidden': 'true' });
   const resultOverlay = h(
@@ -977,7 +989,11 @@ function renderQuestion(root, session, flow) {
     resultEffect,
     h('div', { class: 'result-card', role: 'dialog', 'aria-modal': 'true' }, resultMood, feedback, nextButton),
   );
-  closeModal = () => resultOverlay.remove();
+  closeModal = () => {
+    clearTimeout(autoSpeakTimer);
+    stopSpeaking();
+    resultOverlay.remove();
+  };
 
   function tick() {
     const remaining = session.remainingMs();
@@ -1070,6 +1086,11 @@ function renderQuestion(root, session, flow) {
       ].filter(Boolean),
     );
     document.body.append(resultOverlay);
+    // Settings > Sounds: a right or wrong answer reads the full English sentence slowly. A time-out is not an answer,
+    // and list answers have several items, so neither is read.
+    if (getSoundSettings().autoSpeak && !outcome.timedOut && q.answer_mode !== 'list' && fullSentence) {
+      autoSpeakTimer = setTimeout(() => speak(fullSentence, { slow: true }), AUTO_SPEAK_DELAY_MS);
+    }
   }
 
   function next() {

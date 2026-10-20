@@ -10,6 +10,7 @@ import {
   activityStats,
   calendarMonth,
   levelFor,
+  DAILY_GOAL_MS,
   dayKey,
 } from '../js/progress/activity.js';
 
@@ -134,15 +135,22 @@ test('calendar cells carry their time and colour level', () => {
   const totals = new Map([['2026-10-19', 45 * MIN]]);
   const cell = calendarMonth(2026, 9, totals).find((c) => c && c.key === '2026-10-19');
   assert.equal(cell.ms, 45 * MIN);
-  assert.equal(cell.level, 3); // under an hour
+  assert.equal(cell.level, 2); // 30 to 60 minutes
 });
 
-test('colour levels follow the minutes', () => {
+test('colour levels follow the minutes, and only three hours reach the top colour', () => {
   assert.equal(levelFor(0), 0);
   assert.equal(levelFor(10 * MIN), 1);
-  assert.equal(levelFor(20 * MIN), 2);
-  assert.equal(levelFor(45 * MIN), 3);
-  assert.equal(levelFor(90 * MIN), 4);
+  assert.equal(levelFor(29 * MIN), 1);
+  assert.equal(levelFor(30 * MIN), 2);
+  assert.equal(levelFor(60 * MIN), 3); // one hour is not the top colour any more
+  assert.equal(levelFor(179 * MIN), 3);
+  assert.equal(levelFor(180 * MIN), 4);
+  assert.equal(levelFor(300 * MIN), 4);
+});
+
+test('the daily goal is one hour', () => {
+  assert.equal(DAILY_GOAL_MS, 60 * MIN);
 });
 
 test('day keys are local dates', () => {

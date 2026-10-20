@@ -1,5 +1,6 @@
 // Settings screen (opened from the gear in the header). Three sections:
-//   Sounds: the win and lose sound effects, each on or off, with a volume and a preview.
+//   Sounds: the win and lose sound effects, each on or off, with a volume and a preview;
+//           and the spoken English that is read aloud after each answer.
 //   Progress: export the answers so far as a signed text, and import it on another device.
 //   Question bank: import and export, plus a guide and prompt for writing questions with an AI.
 // Questions are written in files and imported here. The game code is never touched here.
@@ -82,7 +83,7 @@ function soundsSection() {
 
   const volumeLabel = h('span', { class: 'muted small' }, `${fa(Math.round(settings.volume * 100))}%`);
 
-  return h(
+  const effects = h(
     'section',
     { class: 'card admin-card' },
     h('h3', {}, 'Sound effects'),
@@ -123,6 +124,20 @@ function soundsSection() {
     ),
     h('p', { class: 'muted small' }, 'The preview plays even when sound effects are off.'),
   );
+
+  const spoken = h(
+    'section',
+    { class: 'card admin-card' },
+    h('h3', {}, 'Spoken English'),
+    h(
+      'p',
+      { class: 'muted small' },
+      'The English sentence in the result window can be read aloud after each answer, slowly. Nothing plays after a time-out.',
+    ),
+    toggle('autoSpeak', 'Read the sentence after the answer', 'Plays slowly when a right or wrong answer is shown.'),
+  );
+
+  return h('div', { class: 'settings-section' }, effects, spoken);
 }
 
 /** Progress: the answers so far as one signed text, to move to another device, and the import of such a text. */

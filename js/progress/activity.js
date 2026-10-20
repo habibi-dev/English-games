@@ -190,14 +190,21 @@ function keyTime(key) {
   return new Date(y, m - 1, d).getTime();
 }
 
-/** Activity level for a day, 0 (no time) to 4 (an hour or more). Used to pick the calendar colour. */
+/** Daily study goal: one hour of play. A lesson has hundreds of questions, so a short session is not enough. */
+export const DAILY_GOAL_MS = 60 * 60000;
+
+/**
+ * Upper limits of the calendar colour bands, in minutes: under the first limit is level 1, under the second
+ * is level 2, under the third is level 3, and from the third on is level 4 (3 hours or more).
+ */
+export const LEVEL_LIMITS_MIN = Object.freeze([30, 60, 180]);
+
+/** Activity level for a day, 0 (no time) to 4 (the top band). Used to pick the calendar colour. */
 export function levelFor(ms) {
   const minutes = ms / 60000;
   if (minutes <= 0) return 0;
-  if (minutes < 15) return 1;
-  if (minutes < 30) return 2;
-  if (minutes < 60) return 3;
-  return 4;
+  const band = LEVEL_LIMITS_MIN.findIndex((limit) => minutes < limit);
+  return band === -1 ? LEVEL_LIMITS_MIN.length + 1 : band + 1;
 }
 
 /**

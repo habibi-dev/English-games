@@ -60,6 +60,19 @@ test('a bad field is replaced by its default, the valid ones are kept', () => {
   assert.equal(settings.volume, SOUND_DEFAULTS.volume);
 });
 
+test('reading the sentence after an answer is on by default and can be turned off', () => {
+  assert.equal(SOUND_DEFAULTS.autoSpeak, true);
+  assert.equal(getSoundSettings().autoSpeak, true);
+  saveSoundSettings({ autoSpeak: false });
+  assert.equal(getSoundSettings().autoSpeak, false);
+  assert.equal(getSoundSettings().win, true); // the other switches are kept
+});
+
+test('a stored non-boolean autoSpeak falls back to the default', () => {
+  globalThis.localStorage.setItem('grammar-quest.sounds.v1', JSON.stringify({ autoSpeak: 'no' }));
+  assert.equal(getSoundSettings().autoSpeak, true);
+});
+
 test('playing sounds is silent and never throws where there is no Web Audio (Node)', () => {
   assert.doesNotThrow(() => playWinSound());
   assert.doesNotThrow(() => playLoseSound());

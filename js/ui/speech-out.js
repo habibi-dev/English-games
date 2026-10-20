@@ -101,6 +101,11 @@ export function speak(text, { slow = false, onStart, onEnd, lang = 'en-US' } = {
   return true;
 }
 
+/** Stops any reading in progress, for example when the learner leaves the result window. */
+export function stopSpeaking() {
+  if (canSpeak()) window.speechSynthesis.cancel();
+}
+
 // Static SVG markup (no user input), so setting it as innerHTML is safe.
 const SPEAKER_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`;
 const SLOW_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 2h12"/><path d="M6 22h12"/><path d="M7 2v4a5 5 0 0 0 2.5 4.33L12 12l2.5-1.67A5 5 0 0 0 17 6V2"/><path d="M7 22v-4a5 5 0 0 1 2.5-4.33L12 12l2.5 1.67A5 5 0 0 1 17 18v4"/></svg>`;

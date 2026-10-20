@@ -4,7 +4,16 @@ import { listQuestions } from '../bank/repository.js';
 import { CATEGORIES, topicLabel } from '../bank/schema.js';
 import { bankSummary, performanceSummary, reviewList } from '../progress/report.js';
 import { loadAttempts, resetProgress } from '../progress/tracker.js';
-import { loadSessions, msByDay, activityStats, calendarMonth, dayKey, WEEK_STARTS_ON } from '../progress/activity.js';
+import {
+  loadSessions,
+  msByDay,
+  activityStats,
+  calendarMonth,
+  dayKey,
+  WEEK_STARTS_ON,
+  DAILY_GOAL_MS,
+  LEVEL_LIMITS_MIN,
+} from '../progress/activity.js';
 import { h, fa, percent, toast, badge, confirmDialog } from './dom.js';
 import { speakButtons, questionSpeakButton } from './speech-out.js';
 import { splitPrompt } from './prompt.js';
@@ -102,9 +111,6 @@ function bankCard(row, title, categoryEntries, isTotal = false) {
   );
 }
 
-/** Daily study goal: the target shown in the goal card. */
-const DAILY_GOAL_MS = 15 * 60000;
-
 /**
  * The first thing on the reports: today's goal, a message about the next step, and one main action.
  * It tells the learner how close they are, so one more mission feels worth doing.
@@ -182,13 +188,14 @@ const MONTH_NAMES = [
 let calendarView = null;
 let selectedDay = null;
 
-// Legend for the calendar colours, matching levelFor() in js/progress/activity.js.
+// Legend for the calendar colours, built from the same limits as levelFor() in js/progress/activity.js.
+const [lowLimit, midLimit, highLimit] = LEVEL_LIMITS_MIN;
 const LEGEND = [
   [0, 'None'],
-  [1, '<15m'],
-  [2, '15–30m'],
-  [3, '30–60m'],
-  [4, '1h+'],
+  [1, `<${lowLimit}m`],
+  [2, `${lowLimit}–${midLimit}m`],
+  [3, `${midLimit / 60}–${highLimit / 60}h`],
+  [4, `${highLimit / 60}h+`],
 ];
 
 /** Play time in hours and minutes, e.g. "2 h 15 min", "45 min". */
@@ -196,7 +203,8 @@ function durationText(ms) {
   const totalMinutes = Math.round(ms / 60000);
   const hours = Math.floor(totalMinutes / 60);
   const minutes = totalMinutes % 60;
-  return hours === 0 ? `${fa(minutes)} min` : `${fa(hours)} h ${fa(minutes)} min`;
+  if (hours === 0) return `${fa(minutes)} min`;
+  return minutes === 0 ? `${fa(hours)} h` : `${fa(hours)} h ${fa(minutes)} min`;
 }
 
 /** "Thu, Oct 15, 2026" for a day key such as "2026-10-15". */
@@ -355,7 +363,7 @@ function activitySection(root, now) {
   );
 }
 
-// Calendar colours: 0 = no time, 1 = under 15 min, 2 = under 30 min, 3 = under an hour, 4 = an hour or more.
+// Calendar colours: 0 = no time, then the bands in LEVEL_LIMITS_MIN (see the legend above the calendar).
 
 export async function renderReports(root) {
   const [questions, attempts] = await Promise.all([listQuestions(), loadAttempts()]);
