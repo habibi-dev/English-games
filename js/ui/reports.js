@@ -18,17 +18,18 @@ import {
   LEVEL_LIMITS_MIN,
 } from '../progress/activity.js';
 import { h, fa, percent, badge, scrollToTop } from './dom.js';
+import { uiIcon } from './icons.js';
 import { speakButtons, questionSpeakButton } from './speech-out.js';
 import { splitPrompt } from './prompt.js';
 import { requestReview } from './review-handoff.js';
 
-// The tabs: key, icon and label. One is shown at a time.
+// The tabs: key, icon name (icons.js) and label. One is shown at a time.
 const TABS = [
-  ['home', '🏠', 'Home'],
-  ['activity', '📅', 'Activity'],
-  ['results', '📈', 'Results'],
-  ['questions', '🗂️', 'Questions'],
-  ['review', '🔁', 'Review'],
+  ['home', 'home', 'Home'],
+  ['activity', 'calendar', 'Activity'],
+  ['results', 'trending', 'Results'],
+  ['questions', 'folder', 'Questions'],
+  ['review', 'refresh', 'Review'],
 ];
 
 // The tab on screen and the calendar state. Kept while the app runs, so a re-render stays on the same view.
@@ -103,7 +104,7 @@ function tile(icon, value, label) {
   return h(
     'div',
     { class: 'rp-tile' },
-    h('span', { class: 'rp-tile-icon', 'aria-hidden': 'true' }, icon),
+    h('span', { class: 'rp-tile-icon', 'aria-hidden': 'true' }, uiIcon(icon)),
     h('strong', {}, value),
     h('span', { class: 'rp-tile-label' }, label),
   );
@@ -151,7 +152,7 @@ function tabBar(reviewCount, onSelect) {
           'aria-pressed': key === activeTab ? 'true' : 'false',
           onclick: () => onSelect(key),
         },
-        h('span', { class: 'rp-tab-icon', 'aria-hidden': 'true' }, icon),
+        h('span', { class: 'rp-tab-icon', 'aria-hidden': 'true' }, uiIcon(icon)),
         h('span', { class: 'rp-tab-label' }, label),
         key === 'review' && reviewCount > 0 ? h('span', { class: 'rp-tab-count' }, fa(reviewCount)) : null,
       ),
@@ -207,9 +208,9 @@ function goalCard(stats, perf, reviewCount, onReview) {
     h(
       'div',
       { class: 'goal-chips' },
-      h('span', { class: 'goal-chip' }, `🔥 ${daysText(stats.currentStreak)} streak`),
-      h('span', { class: 'goal-chip' }, `🎯 ${accuracy} accuracy`),
-      h('span', { class: 'goal-chip' }, `⭐ ${fa(perf.overall.points)} points`),
+      h('span', { class: 'goal-chip' }, uiIcon('flame'), ` ${daysText(stats.currentStreak)} streak`),
+      h('span', { class: 'goal-chip' }, uiIcon('target'), ` ${accuracy} accuracy`),
+      h('span', { class: 'goal-chip' }, uiIcon('star'), ` ${fa(perf.overall.points)} points`),
     ),
     reviewCount > 0
       ? h(
@@ -278,10 +279,10 @@ function homeView(ctx) {
       h(
         'div',
         { class: 'rp-tiles' },
-        tile('✍️', fa(ctx.perf.overall.attempted), 'Answers'),
-        tile('🎮', fa(ctx.stats.missions), 'Missions'),
-        tile('📅', fa(ctx.stats.activeDays), 'Active days'),
-        tile('🏆', daysText(ctx.stats.bestStreak), 'Best streak'),
+        tile('pencil', fa(ctx.perf.overall.attempted), 'Answers'),
+        tile('gamepad', fa(ctx.stats.missions), 'Missions'),
+        tile('calendar', fa(ctx.stats.activeDays), 'Active days'),
+        tile('trophy', daysText(ctx.stats.bestStreak), 'Best streak'),
       ),
     ),
     weekCard(ctx.totals, ctx.now),

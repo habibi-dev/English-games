@@ -11105,5 +11105,1769 @@
         }
       ]
     }
-  ]
+  ],
+  "lesson_content": {
+    "vocabulary": [
+      {
+        "word": "a",
+        "ipa": "/ə/",
+        "meaning": "حرف تعریف نامعین (یک)"
+      },
+      {
+        "word": "aid",
+        "ipa": "/eɪd/",
+        "meaning": "کمک کردن / مساعدت"
+      },
+      {
+        "word": "ali",
+        "ipa": "/ˈɑːli/",
+        "meaning": "علی (نام)"
+      },
+      {
+        "word": "alley",
+        "ipa": "/ˈæli/",
+        "meaning": "کوچه"
+      },
+      {
+        "word": "am",
+        "ipa": "/æm/",
+        "meaning": "هستم (فعل بودن برای I)"
+      },
+      {
+        "word": "answer",
+        "ipa": "/ˈænsər/",
+        "meaning": "پاسخ / جواب دادن"
+      },
+      {
+        "word": "any",
+        "ipa": "/ˈeni/",
+        "meaning": "هیچ / هر"
+      },
+      {
+        "word": "are",
+        "ipa": "/ɑːr/",
+        "meaning": "هستیم / هستید / هستند"
+      },
+      {
+        "word": "ask",
+        "ipa": "/æsk/",
+        "meaning": "پرسیدن"
+      },
+      {
+        "word": "asks",
+        "ipa": "/æsks/",
+        "meaning": "می‌پرسد"
+      },
+      {
+        "word": "assist",
+        "ipa": "/əˈsɪst/",
+        "meaning": "یاری کردن"
+      },
+      {
+        "word": "at",
+        "ipa": "/æt/",
+        "meaning": "در / به (مکان)"
+      },
+      {
+        "word": "avenue",
+        "ipa": "/ˈævənuː/",
+        "meaning": "خیابان پهن و بزرگ"
+      },
+      {
+        "word": "bad",
+        "ipa": "/bæd/",
+        "meaning": "بد"
+      },
+      {
+        "word": "band",
+        "ipa": "/bænd/",
+        "meaning": "گروه موسیقی"
+      },
+      {
+        "word": "begin",
+        "ipa": "/bɪˈɡɪn/",
+        "meaning": "شروع کردن"
+      },
+      {
+        "word": "begins",
+        "ipa": "/bɪˈɡɪnz/",
+        "meaning": "شروع می‌کند"
+      },
+      {
+        "word": "book",
+        "ipa": "/bʊk/",
+        "meaning": "کتاب"
+      },
+      {
+        "word": "can",
+        "ipa": "/kæn/",
+        "meaning": "می‌توانم / توانستن"
+      },
+      {
+        "word": "check",
+        "ipa": "/tʃek/",
+        "meaning": "بررسی کردن"
+      },
+      {
+        "word": "check in",
+        "ipa": "/tʃek ɪn/",
+        "meaning": "ثبت ورود (در هتل)"
+      },
+      {
+        "word": "check out",
+        "ipa": "/tʃek aʊt/",
+        "meaning": "ترک هتل / ثبت خروج"
+      },
+      {
+        "word": "checks",
+        "ipa": "/tʃeks/",
+        "meaning": "بررسی می‌کند"
+      },
+      {
+        "word": "close",
+        "ipa": "/kloʊz/",
+        "meaning": "بستن / نزدیک"
+      },
+      {
+        "word": "closes",
+        "ipa": "/ˈkloʊzɪz/",
+        "meaning": "می‌بندد"
+      },
+      {
+        "word": "could",
+        "ipa": "/kʊd/",
+        "meaning": "می‌توانست"
+      },
+      {
+        "word": "couple",
+        "ipa": "/ˈkʌpəl/",
+        "meaning": "زوج / جفت"
+      },
+      {
+        "word": "do",
+        "ipa": "/duː/",
+        "meaning": "انجام دادن (فعل کمکی برای سؤال و منفی)"
+      },
+      {
+        "word": "does",
+        "ipa": "/dʌz/",
+        "meaning": "فعل کمکی برای سؤال و منفی با he، she و it"
+      },
+      {
+        "word": "don't",
+        "ipa": "/doʊnt/",
+        "meaning": "نمی‌کنم"
+      },
+      {
+        "word": "door",
+        "ipa": "/dɔːr/",
+        "meaning": "در (درِ خانه یا اتاق)"
+      },
+      {
+        "word": "eat",
+        "ipa": "/iːt/",
+        "meaning": "خوردن"
+      },
+      {
+        "word": "eating",
+        "ipa": "/ˈiːtɪŋ/",
+        "meaning": "خوردن (در حال)"
+      },
+      {
+        "word": "eats",
+        "ipa": "/iːts/",
+        "meaning": "می‌خورد"
+      },
+      {
+        "word": "english",
+        "ipa": "/ˈɪŋɡlɪʃ/",
+        "meaning": "انگلیسی"
+      },
+      {
+        "word": "example",
+        "ipa": "/ɪɡˈzæmpəl/",
+        "meaning": "مثال / نمونه"
+      },
+      {
+        "word": "family",
+        "ipa": "/ˈfæməli/",
+        "meaning": "خانواده"
+      },
+      {
+        "word": "family name",
+        "ipa": "/ˈfæməli neɪm/",
+        "meaning": "نام خانوادگی"
+      },
+      {
+        "word": "first",
+        "ipa": "/fɜːrst/",
+        "meaning": "اول / نخست"
+      },
+      {
+        "word": "first name",
+        "ipa": "/fɜːrst neɪm/",
+        "meaning": "نام کوچک"
+      },
+      {
+        "word": "friend",
+        "ipa": "/frend/",
+        "meaning": "دوست"
+      },
+      {
+        "word": "get",
+        "ipa": "/ɡet/",
+        "meaning": "گرفتن / به دست آوردن"
+      },
+      {
+        "word": "gets",
+        "ipa": "/ɡets/",
+        "meaning": "می‌گیرد"
+      },
+      {
+        "word": "give",
+        "ipa": "/ɡɪv/",
+        "meaning": "دادن"
+      },
+      {
+        "word": "give me a hand",
+        "ipa": "/ɡɪv miː ə hænd/",
+        "meaning": "به من کمک کن (اصطلاح)"
+      },
+      {
+        "word": "given",
+        "ipa": "/ˈɡɪvən/",
+        "meaning": "داده‌شده"
+      },
+      {
+        "word": "given name",
+        "ipa": "/ˈɡɪvən neɪm/",
+        "meaning": "نام کوچک"
+      },
+      {
+        "word": "gives",
+        "ipa": "/ɡɪvz/",
+        "meaning": "می‌دهد"
+      },
+      {
+        "word": "go",
+        "ipa": "/ɡoʊ/",
+        "meaning": "رفتن"
+      },
+      {
+        "word": "goal",
+        "ipa": "/ɡoʊl/",
+        "meaning": "هدف"
+      },
+      {
+        "word": "grasp",
+        "ipa": "/ɡræsp/",
+        "meaning": "درک کردن"
+      },
+      {
+        "word": "group",
+        "ipa": "/ɡruːp/",
+        "meaning": "گروه"
+      },
+      {
+        "word": "habibi",
+        "ipa": "/həˈbiːbi/",
+        "meaning": "حبیبی (نام خانوادگی)"
+      },
+      {
+        "word": "hand",
+        "ipa": "/hænd/",
+        "meaning": "دست"
+      },
+      {
+        "word": "has",
+        "ipa": "/hæz/",
+        "meaning": "دارد (برای he، she و it)"
+      },
+      {
+        "word": "have",
+        "ipa": "/hæv/",
+        "meaning": "داشتن"
+      },
+      {
+        "word": "having",
+        "ipa": "/ˈhævɪŋ/",
+        "meaning": "داشتن (در حال)"
+      },
+      {
+        "word": "he",
+        "ipa": "/hiː/",
+        "meaning": "او (مرد)"
+      },
+      {
+        "word": "hear",
+        "ipa": "/hɪr/",
+        "meaning": "شنیدن"
+      },
+      {
+        "word": "hears",
+        "ipa": "/hɪrz/",
+        "meaning": "می‌شنود"
+      },
+      {
+        "word": "help",
+        "ipa": "/help/",
+        "meaning": "کمک کردن"
+      },
+      {
+        "word": "helper",
+        "ipa": "/ˈhelpər/",
+        "meaning": "کمک‌کننده"
+      },
+      {
+        "word": "helps",
+        "ipa": "/helps/",
+        "meaning": "کمک می‌کند"
+      },
+      {
+        "word": "home",
+        "ipa": "/hoʊm/",
+        "meaning": "جای زندگی / خانه"
+      },
+      {
+        "word": "house",
+        "ipa": "/haʊs/",
+        "meaning": "خانه (ساختمان)"
+      },
+      {
+        "word": "how",
+        "ipa": "/haʊ/",
+        "meaning": "چطور"
+      },
+      {
+        "word": "husband",
+        "ipa": "/ˈhʌzbənd/",
+        "meaning": "شوهر"
+      },
+      {
+        "word": "i",
+        "ipa": "/aɪ/",
+        "meaning": "من"
+      },
+      {
+        "word": "in",
+        "ipa": "/ɪn/",
+        "meaning": "در / داخل"
+      },
+      {
+        "word": "individuals",
+        "ipa": "/ˌɪndɪˈvɪdʒuəlz/",
+        "meaning": "افراد"
+      },
+      {
+        "word": "inscribe",
+        "ipa": "/ɪnˈskraɪb/",
+        "meaning": "حک کردن"
+      },
+      {
+        "word": "inscribes",
+        "ipa": "/ɪnˈskraɪbz/",
+        "meaning": "حک می‌کند"
+      },
+      {
+        "word": "inside",
+        "ipa": "/ɪnˈsaɪd/",
+        "meaning": "داخل"
+      },
+      {
+        "word": "instance",
+        "ipa": "/ˈɪnstəns/",
+        "meaning": "نمونه"
+      },
+      {
+        "word": "instructor",
+        "ipa": "/ɪnˈstrʌktər/",
+        "meaning": "مربی / مدرس"
+      },
+      {
+        "word": "is",
+        "ipa": "/ɪz/",
+        "meaning": "است / هست"
+      },
+      {
+        "word": "it",
+        "ipa": "/ɪt/",
+        "meaning": "آن (برای چیز یا حیوان)"
+      },
+      {
+        "word": "last",
+        "ipa": "/læst/",
+        "meaning": "آخر (در نام خانوادگی)"
+      },
+      {
+        "word": "last name",
+        "ipa": "/læst neɪm/",
+        "meaning": "نام خانوادگی"
+      },
+      {
+        "word": "listen",
+        "ipa": "/ˈlɪsən/",
+        "meaning": "گوش دادن"
+      },
+      {
+        "word": "listens",
+        "ipa": "/ˈlɪsənz/",
+        "meaning": "گوش می‌دهد"
+      },
+      {
+        "word": "lock",
+        "ipa": "/lɑːk/",
+        "meaning": "قفل کردن"
+      },
+      {
+        "word": "locks",
+        "ipa": "/lɑːks/",
+        "meaning": "قفل می‌کند"
+      },
+      {
+        "word": "look",
+        "ipa": "/lʊk/",
+        "meaning": "نگاه کردن"
+      },
+      {
+        "word": "look at",
+        "ipa": "/lʊk æt/",
+        "meaning": "نگاه کردن به"
+      },
+      {
+        "word": "me",
+        "ipa": "/miː/",
+        "meaning": "به من / مرا"
+      },
+      {
+        "word": "mean",
+        "ipa": "/miːn/",
+        "meaning": "معنی دادن"
+      },
+      {
+        "word": "mother",
+        "ipa": "/ˈmʌðər/",
+        "meaning": "مادر"
+      },
+      {
+        "word": "my",
+        "ipa": "/maɪ/",
+        "meaning": "من (مال من)"
+      },
+      {
+        "word": "my bad",
+        "ipa": "/maɪ bæd/",
+        "meaning": "ببخشید (اشتباه از من بود)"
+      },
+      {
+        "word": "name",
+        "ipa": "/neɪm/",
+        "meaning": "نام"
+      },
+      {
+        "word": "new",
+        "ipa": "/nuː/",
+        "meaning": "جدید"
+      },
+      {
+        "word": "not",
+        "ipa": "/nɑːt/",
+        "meaning": "نه"
+      },
+      {
+        "word": "objective",
+        "ipa": "/əbˈdʒektɪv/",
+        "meaning": "هدف اصلی"
+      },
+      {
+        "word": "objectives",
+        "ipa": "/əbˈdʒektɪvz/",
+        "meaning": "اهداف"
+      },
+      {
+        "word": "observe",
+        "ipa": "/əbˈzɜːrv/",
+        "meaning": "مشاهده کردن"
+      },
+      {
+        "word": "observes",
+        "ipa": "/əbˈzɜːrvz/",
+        "meaning": "مشاهده می‌کند"
+      },
+      {
+        "word": "old",
+        "ipa": "/oʊld/",
+        "meaning": "قدیمی / پیر"
+      },
+      {
+        "word": "open",
+        "ipa": "/ˈoʊpən/",
+        "meaning": "باز کردن"
+      },
+      {
+        "word": "opens",
+        "ipa": "/ˈoʊpənz/",
+        "meaning": "باز می‌کند"
+      },
+      {
+        "word": "opposite",
+        "ipa": "/ˈɑːpəzɪt/",
+        "meaning": "متضاد"
+      },
+      {
+        "word": "out",
+        "ipa": "/aʊt/",
+        "meaning": "بیرون"
+      },
+      {
+        "word": "outside",
+        "ipa": "/ˌaʊtˈsaɪd/",
+        "meaning": "بیرون"
+      },
+      {
+        "word": "page",
+        "ipa": "/peɪdʒ/",
+        "meaning": "صفحه"
+      },
+      {
+        "word": "pages",
+        "ipa": "/ˈpeɪdʒɪz/",
+        "meaning": "صفحه‌ها"
+      },
+      {
+        "word": "pair",
+        "ipa": "/per/",
+        "meaning": "جفت"
+      },
+      {
+        "word": "partner",
+        "ipa": "/ˈpɑːrtnər/",
+        "meaning": "شریک"
+      },
+      {
+        "word": "people",
+        "ipa": "/ˈpiːpəl/",
+        "meaning": "مردم"
+      },
+      {
+        "word": "personal",
+        "ipa": "/ˈpɜːrsənəl/",
+        "meaning": "شخصی"
+      },
+      {
+        "word": "please",
+        "ipa": "/pliːz/",
+        "meaning": "لطفاً"
+      },
+      {
+        "word": "private",
+        "ipa": "/ˈpraɪvət/",
+        "meaning": "خصوصی"
+      },
+      {
+        "word": "public",
+        "ipa": "/ˈpʌblɪk/",
+        "meaning": "عمومی"
+      },
+      {
+        "word": "purpose",
+        "ipa": "/ˈpɜːrpəs/",
+        "meaning": "منظور / هدف"
+      },
+      {
+        "word": "question",
+        "ipa": "/ˈkwestʃən/",
+        "meaning": "سؤال"
+      },
+      {
+        "word": "questions",
+        "ipa": "/ˈkwestʃənz/",
+        "meaning": "سؤال‌ها"
+      },
+      {
+        "word": "read",
+        "ipa": "/riːd/",
+        "meaning": "خواندن"
+      },
+      {
+        "word": "reads",
+        "ipa": "/riːdz/",
+        "meaning": "می‌خواند"
+      },
+      {
+        "word": "rebuild",
+        "ipa": "/riːˈbɪld/",
+        "meaning": "دوباره ساختن"
+      },
+      {
+        "word": "rebuilds",
+        "ipa": "/riːˈbɪldz/",
+        "meaning": "دوباره می‌سازد"
+      },
+      {
+        "word": "recall",
+        "ipa": "/rɪˈkɔːl/",
+        "meaning": "به یاد آوردن"
+      },
+      {
+        "word": "recalls",
+        "ipa": "/rɪˈkɔːlz/",
+        "meaning": "به یاد می‌آورد"
+      },
+      {
+        "word": "regain",
+        "ipa": "/rɪˈɡeɪn/",
+        "meaning": "دوباره به دست آوردن"
+      },
+      {
+        "word": "regains",
+        "ipa": "/rɪˈɡeɪnz/",
+        "meaning": "دوباره به دست می‌آورد"
+      },
+      {
+        "word": "repeat",
+        "ipa": "/rɪˈpiːt/",
+        "meaning": "تکرار کردن"
+      },
+      {
+        "word": "repeating",
+        "ipa": "/rɪˈpiːtɪŋ/",
+        "meaning": "تکرار کردن (در حال)"
+      },
+      {
+        "word": "repeats",
+        "ipa": "/rɪˈpiːts/",
+        "meaning": "تکرار می‌کند"
+      },
+      {
+        "word": "request",
+        "ipa": "/rɪˈkwest/",
+        "meaning": "درخواست کردن"
+      },
+      {
+        "word": "requests",
+        "ipa": "/rɪˈkwests/",
+        "meaning": "درخواست می‌کند"
+      },
+      {
+        "word": "residence",
+        "ipa": "/ˈrezɪdəns/",
+        "meaning": "محل سکونت"
+      },
+      {
+        "word": "retell",
+        "ipa": "/riːˈtel/",
+        "meaning": "بازگو کردن"
+      },
+      {
+        "word": "retells",
+        "ipa": "/riːˈtelz/",
+        "meaning": "بازگو می‌کند"
+      },
+      {
+        "word": "rewrite",
+        "ipa": "/riːˈraɪt/",
+        "meaning": "بازنویسی کردن"
+      },
+      {
+        "word": "rewrites",
+        "ipa": "/riːˈraɪts/",
+        "meaning": "بازنویسی می‌کند"
+      },
+      {
+        "word": "road",
+        "ipa": "/roʊd/",
+        "meaning": "جاده"
+      },
+      {
+        "word": "say",
+        "ipa": "/seɪ/",
+        "meaning": "گفتن"
+      },
+      {
+        "word": "says",
+        "ipa": "/sez/",
+        "meaning": "می‌گوید"
+      },
+      {
+        "word": "see",
+        "ipa": "/siː/",
+        "meaning": "دیدن"
+      },
+      {
+        "word": "sees",
+        "ipa": "/siːz/",
+        "meaning": "می‌بیند"
+      },
+      {
+        "word": "she",
+        "ipa": "/ʃiː/",
+        "meaning": "او (زن)"
+      },
+      {
+        "word": "shut",
+        "ipa": "/ʃʌt/",
+        "meaning": "بستن (در و پنجره)"
+      },
+      {
+        "word": "shuts",
+        "ipa": "/ʃʌts/",
+        "meaning": "می‌بندد"
+      },
+      {
+        "word": "sorry",
+        "ipa": "/ˈsɑːri/",
+        "meaning": "متأسف / ببخشید"
+      },
+      {
+        "word": "speaking",
+        "ipa": "/ˈspiːkɪŋ/",
+        "meaning": "صحبت کردن"
+      },
+      {
+        "word": "spell",
+        "ipa": "/spel/",
+        "meaning": "هجی کردن"
+      },
+      {
+        "word": "spouse",
+        "ipa": "/spaʊs/",
+        "meaning": "همسر"
+      },
+      {
+        "word": "start",
+        "ipa": "/stɑːrt/",
+        "meaning": "شروع کردن"
+      },
+      {
+        "word": "starts",
+        "ipa": "/stɑːrts/",
+        "meaning": "شروع می‌کند"
+      },
+      {
+        "word": "street",
+        "ipa": "/striːt/",
+        "meaning": "خیابان"
+      },
+      {
+        "word": "studies",
+        "ipa": "/ˈstʌdiz/",
+        "meaning": "درس می‌خواند"
+      },
+      {
+        "word": "study",
+        "ipa": "/ˈstʌdi/",
+        "meaning": "درس خواندن"
+      },
+      {
+        "word": "subject",
+        "ipa": "/ˈsʌbdʒɪkt/",
+        "meaning": "فاعل (در جمله)"
+      },
+      {
+        "word": "synonym",
+        "ipa": "/ˈsɪnənɪm/",
+        "meaning": "مترادف"
+      },
+      {
+        "word": "talking",
+        "ipa": "/ˈtɔːkɪŋ/",
+        "meaning": "حرف زدن"
+      },
+      {
+        "word": "target",
+        "ipa": "/ˈtɑːrɡɪt/",
+        "meaning": "هدف نهایی / نشانه"
+      },
+      {
+        "word": "teacher",
+        "ipa": "/ˈtiːtʃər/",
+        "meaning": "معلم"
+      },
+      {
+        "word": "team",
+        "ipa": "/tiːm/",
+        "meaning": "تیم"
+      },
+      {
+        "word": "tell",
+        "ipa": "/tel/",
+        "meaning": "گفتن (به کسی)"
+      },
+      {
+        "word": "that",
+        "ipa": "/ðæt/",
+        "meaning": "آن"
+      },
+      {
+        "word": "the",
+        "ipa": "/ðə/",
+        "meaning": "حرف تعریف معین"
+      },
+      {
+        "word": "they",
+        "ipa": "/ðeɪ/",
+        "meaning": "آن‌ها"
+      },
+      {
+        "word": "this",
+        "ipa": "/ðɪs/",
+        "meaning": "این"
+      },
+      {
+        "word": "to",
+        "ipa": "/tuː/",
+        "meaning": "به / برای"
+      },
+      {
+        "word": "tutor",
+        "ipa": "/ˈtuːtər/",
+        "meaning": "مدرس خصوصی"
+      },
+      {
+        "word": "understand",
+        "ipa": "/ˌʌndərˈstænd/",
+        "meaning": "فهمیدن"
+      },
+      {
+        "word": "understands",
+        "ipa": "/ˌʌndərˈstændz/",
+        "meaning": "می‌فهمد"
+      },
+      {
+        "word": "verb",
+        "ipa": "/vɜːrb/",
+        "meaning": "فعل"
+      },
+      {
+        "word": "walk",
+        "ipa": "/wɔːk/",
+        "meaning": "راه رفتن"
+      },
+      {
+        "word": "walks",
+        "ipa": "/wɔːks/",
+        "meaning": "راه می‌رود"
+      },
+      {
+        "word": "watch",
+        "ipa": "/wɑːtʃ/",
+        "meaning": "تماشا کردن"
+      },
+      {
+        "word": "watches",
+        "ipa": "/ˈwɑːtʃɪz/",
+        "meaning": "تماشا می‌کند"
+      },
+      {
+        "word": "we",
+        "ipa": "/wiː/",
+        "meaning": "ما"
+      },
+      {
+        "word": "what",
+        "ipa": "/wʌt/",
+        "meaning": "چه / چی"
+      },
+      {
+        "word": "wife",
+        "ipa": "/waɪf/",
+        "meaning": "زن (همسر)"
+      },
+      {
+        "word": "word",
+        "ipa": "/wɜːrd/",
+        "meaning": "کلمه"
+      },
+      {
+        "word": "write",
+        "ipa": "/raɪt/",
+        "meaning": "نوشتن"
+      },
+      {
+        "word": "writes",
+        "ipa": "/raɪts/",
+        "meaning": "می‌نویسد"
+      },
+      {
+        "word": "you",
+        "ipa": "/juː/",
+        "meaning": "تو / شما"
+      },
+      {
+        "word": "young",
+        "ipa": "/jʌŋ/",
+        "meaning": "جوان"
+      },
+      {
+        "word": "your",
+        "ipa": "/jʊr/",
+        "meaning": "تو (مال تو)"
+      }
+    ],
+    "sentences": [
+      {
+        "en": "My first name is Ali.",
+        "fa": "نام کوچک من علی است."
+      },
+      {
+        "en": "My last name is Habibi.",
+        "fa": "نام خانوادگی من حبیبی است."
+      },
+      {
+        "en": "What is your first name?",
+        "fa": "اسم کوچک تو چیست؟"
+      },
+      {
+        "en": "What is your last name?",
+        "fa": "نام خانوادگی تو چیست؟"
+      },
+      {
+        "en": "This is my teacher.",
+        "fa": "این معلم من است."
+      },
+      {
+        "en": "This is my friend.",
+        "fa": "این دوست من است."
+      },
+      {
+        "en": "This is my husband.",
+        "fa": "این شوهر من است."
+      },
+      {
+        "en": "This is my wife.",
+        "fa": "این زن من است."
+      },
+      {
+        "en": "This is my partner.",
+        "fa": "این شریک من است."
+      },
+      {
+        "en": "I have a question.",
+        "fa": "من یک سؤال دارم."
+      },
+      {
+        "en": "Help me.",
+        "fa": "به من کمک کن."
+      },
+      {
+        "en": "Give me a hand.",
+        "fa": "به من کمک کن (اصطلاح)"
+      },
+      {
+        "en": "How do you say help in English?",
+        "fa": "چطور به انگلیسی می‌گویی «کمک»؟"
+      },
+      {
+        "en": "What does teacher mean?",
+        "fa": "کلمه teacher چه معنی‌ای می‌دهد؟"
+      },
+      {
+        "en": "We have a teacher.",
+        "fa": "ما یک معلم داریم."
+      },
+      {
+        "en": "He reads.",
+        "fa": "او (مرد) می‌خواند."
+      },
+      {
+        "en": "She walks.",
+        "fa": "او (زن) راه می‌رود."
+      },
+      {
+        "en": "I am a partner.",
+        "fa": "من یک شریک هستم."
+      },
+      {
+        "en": "This is my tutor.",
+        "fa": "این مدرس خصوصی من است."
+      },
+      {
+        "en": "This is my instructor.",
+        "fa": "این مربی من است."
+      },
+      {
+        "en": "This is my spouse.",
+        "fa": "این همسر من است."
+      },
+      {
+        "en": "This is my helper.",
+        "fa": "این کمک‌کننده من است."
+      },
+      {
+        "en": "This is my mother.",
+        "fa": "این مادر من است."
+      },
+      {
+        "en": "This is my group.",
+        "fa": "این گروه من است."
+      },
+      {
+        "en": "This is my team.",
+        "fa": "این تیم من است."
+      },
+      {
+        "en": "This is my band.",
+        "fa": "این گروه موسیقی من است."
+      },
+      {
+        "en": "This is my house.",
+        "fa": "این خانه من است."
+      },
+      {
+        "en": "This is my home.",
+        "fa": "این محل زندگی من است."
+      },
+      {
+        "en": "This is my street.",
+        "fa": "این خیابان من است."
+      },
+      {
+        "en": "This is my road.",
+        "fa": "این جاده من است."
+      },
+      {
+        "en": "This is my avenue.",
+        "fa": "این خیابان بزرگ من است."
+      },
+      {
+        "en": "This is my alley.",
+        "fa": "این کوچه من است."
+      },
+      {
+        "en": "This is my goal.",
+        "fa": "این هدف من است."
+      },
+      {
+        "en": "This is my objective.",
+        "fa": "این هدف اصلی من است."
+      },
+      {
+        "en": "This is my purpose.",
+        "fa": "این منظور من است."
+      },
+      {
+        "en": "This is my target.",
+        "fa": "این هدف نهایی من است."
+      },
+      {
+        "en": "This is my example.",
+        "fa": "این نمونه من است."
+      },
+      {
+        "en": "This is my answer.",
+        "fa": "این پاسخ من است."
+      },
+      {
+        "en": "This is my request.",
+        "fa": "این درخواست من است."
+      },
+      {
+        "en": "That is my tutor.",
+        "fa": "آن مدرس خصوصی من است."
+      },
+      {
+        "en": "That is my group.",
+        "fa": "آن گروه من است."
+      },
+      {
+        "en": "That is my house.",
+        "fa": "آن خانه من است."
+      },
+      {
+        "en": "That is my goal.",
+        "fa": "آن هدف من است."
+      },
+      {
+        "en": "I have a goal.",
+        "fa": "من یک هدف دارم."
+      },
+      {
+        "en": "I have a team.",
+        "fa": "من یک تیم دارم."
+      },
+      {
+        "en": "I have a group.",
+        "fa": "من یک گروه دارم."
+      },
+      {
+        "en": "I have a house.",
+        "fa": "من یک خانه دارم."
+      },
+      {
+        "en": "I have a pair.",
+        "fa": "من یک جفت دارم."
+      },
+      {
+        "en": "I have a request.",
+        "fa": "من یک درخواست دارم."
+      },
+      {
+        "en": "I have a band.",
+        "fa": "من یک گروه موسیقی دارم."
+      },
+      {
+        "en": "I have a helper.",
+        "fa": "من یک کمک‌کننده دارم."
+      },
+      {
+        "en": "I have a tutor.",
+        "fa": "من یک مدرس خصوصی دارم."
+      },
+      {
+        "en": "We have a tutor.",
+        "fa": "ما یک مدرس خصوصی داریم."
+      },
+      {
+        "en": "We have a helper.",
+        "fa": "ما یک کمک‌کننده داریم."
+      },
+      {
+        "en": "We have a team.",
+        "fa": "ما یک تیم داریم."
+      },
+      {
+        "en": "We have a group.",
+        "fa": "ما یک گروه داریم."
+      },
+      {
+        "en": "We have a goal.",
+        "fa": "ما یک هدف داریم."
+      },
+      {
+        "en": "We have a house.",
+        "fa": "ما یک خانه داریم."
+      },
+      {
+        "en": "I am a tutor.",
+        "fa": "من یک مدرس خصوصی هستم."
+      },
+      {
+        "en": "I am a helper.",
+        "fa": "من یک کمک‌کننده هستم."
+      },
+      {
+        "en": "I eat.",
+        "fa": "من می‌خورم."
+      },
+      {
+        "en": "I read.",
+        "fa": "من می‌خوانم."
+      },
+      {
+        "en": "I write.",
+        "fa": "من می‌نویسم."
+      },
+      {
+        "en": "I watch.",
+        "fa": "من تماشا می‌کنم."
+      },
+      {
+        "en": "I listen.",
+        "fa": "من گوش می‌دهم."
+      },
+      {
+        "en": "I say.",
+        "fa": "من می‌گویم."
+      },
+      {
+        "en": "I see.",
+        "fa": "من می‌بینم."
+      },
+      {
+        "en": "I hear.",
+        "fa": "من می‌شنوم."
+      },
+      {
+        "en": "I ask.",
+        "fa": "من می‌پرسم."
+      },
+      {
+        "en": "I start.",
+        "fa": "من شروع می‌کنم."
+      },
+      {
+        "en": "I check.",
+        "fa": "من بررسی می‌کنم."
+      },
+      {
+        "en": "I open.",
+        "fa": "من باز می‌کنم."
+      },
+      {
+        "en": "I close.",
+        "fa": "من می‌بندم."
+      },
+      {
+        "en": "I lock.",
+        "fa": "من قفل می‌کنم."
+      },
+      {
+        "en": "I understand.",
+        "fa": "من می‌فهمم."
+      },
+      {
+        "en": "I study.",
+        "fa": "من درس می‌خوانم."
+      },
+      {
+        "en": "I walk.",
+        "fa": "من راه می‌روم."
+      },
+      {
+        "en": "I get.",
+        "fa": "من می‌گیرم."
+      },
+      {
+        "en": "I give.",
+        "fa": "من می‌دهم."
+      },
+      {
+        "en": "I observe.",
+        "fa": "من مشاهده می‌کنم."
+      },
+      {
+        "en": "I request.",
+        "fa": "من درخواست می‌کنم."
+      },
+      {
+        "en": "I rewrite.",
+        "fa": "من بازنویسی می‌کنم."
+      },
+      {
+        "en": "I recall.",
+        "fa": "من به یاد می‌آورم."
+      },
+      {
+        "en": "I rebuild.",
+        "fa": "من دوباره می‌سازم."
+      },
+      {
+        "en": "He says.",
+        "fa": "او (مرد) می‌گوید."
+      },
+      {
+        "en": "She sees.",
+        "fa": "او (زن) می‌بیند."
+      },
+      {
+        "en": "He hears.",
+        "fa": "او (مرد) می‌شنود."
+      },
+      {
+        "en": "She watches.",
+        "fa": "او (زن) تماشا می‌کند."
+      },
+      {
+        "en": "He listens.",
+        "fa": "او (مرد) گوش می‌دهد."
+      },
+      {
+        "en": "She writes.",
+        "fa": "او (زن) می‌نویسد."
+      },
+      {
+        "en": "He asks.",
+        "fa": "او (مرد) می‌پرسد."
+      },
+      {
+        "en": "She starts.",
+        "fa": "او (زن) شروع می‌کند."
+      },
+      {
+        "en": "He checks.",
+        "fa": "او (مرد) بررسی می‌کند."
+      },
+      {
+        "en": "She opens.",
+        "fa": "او (زن) باز می‌کند."
+      },
+      {
+        "en": "He closes.",
+        "fa": "او (مرد) می‌بندد."
+      },
+      {
+        "en": "She locks.",
+        "fa": "او (زن) قفل می‌کند."
+      },
+      {
+        "en": "He understands.",
+        "fa": "او (مرد) می‌فهمد."
+      },
+      {
+        "en": "She studies.",
+        "fa": "او (زن) درس می‌خواند."
+      },
+      {
+        "en": "He gets.",
+        "fa": "او (مرد) می‌گیرد."
+      },
+      {
+        "en": "She gives.",
+        "fa": "او (زن) می‌دهد."
+      },
+      {
+        "en": "He observes.",
+        "fa": "او (مرد) مشاهده می‌کند."
+      },
+      {
+        "en": "She requests.",
+        "fa": "او (زن) درخواست می‌کند."
+      },
+      {
+        "en": "He helps.",
+        "fa": "او (مرد) کمک می‌کند."
+      },
+      {
+        "en": "She retells.",
+        "fa": "او (زن) بازگو می‌کند."
+      },
+      {
+        "en": "He recalls.",
+        "fa": "او (مرد) به یاد می‌آورد."
+      },
+      {
+        "en": "She rewrites.",
+        "fa": "او (زن) بازنویسی می‌کند."
+      },
+      {
+        "en": "He rebuilds.",
+        "fa": "او (مرد) دوباره می‌سازد."
+      },
+      {
+        "en": "She eats.",
+        "fa": "او (زن) می‌خورد."
+      },
+      {
+        "en": "Ask me.",
+        "fa": "از من بپرس."
+      },
+      {
+        "en": "Tell me.",
+        "fa": "به من بگو."
+      },
+      {
+        "en": "Give me.",
+        "fa": "به من بده."
+      },
+      {
+        "en": "Assist me.",
+        "fa": "به من یاری کن."
+      },
+      {
+        "en": "I begin.",
+        "fa": "من آغاز می‌کنم."
+      },
+      {
+        "en": "He begins.",
+        "fa": "او (مرد) آغاز می‌کند."
+      },
+      {
+        "en": "I retell.",
+        "fa": "من بازگو می‌کنم."
+      },
+      {
+        "en": "I regain.",
+        "fa": "من دوباره به دست می‌آورم."
+      },
+      {
+        "en": "I shut the door.",
+        "fa": "من در را می‌بندم."
+      },
+      {
+        "en": "I inscribe.",
+        "fa": "من حک می‌کنم."
+      },
+      {
+        "en": "I check in.",
+        "fa": "من ثبت ورود می‌کنم."
+      },
+      {
+        "en": "I check out.",
+        "fa": "من ترک هتل می‌کنم."
+      },
+      {
+        "en": "Aid me.",
+        "fa": "به من مساعدت کن."
+      },
+      {
+        "en": "You have a question.",
+        "fa": "تو یک سؤال داری."
+      },
+      {
+        "en": "They have a question.",
+        "fa": "آن‌ها یک سؤال دارند."
+      },
+      {
+        "en": "It is my book.",
+        "fa": "آن کتاب من است."
+      },
+      {
+        "en": "I don't understand.",
+        "fa": "من نمی‌فهمم."
+      },
+      {
+        "en": "How do you spell?",
+        "fa": "چطور هجی می‌کنی؟"
+      },
+      {
+        "en": "Can you repeat that, please?",
+        "fa": "می‌توانی آن را تکرار کنی، لطفاً؟"
+      },
+      {
+        "en": "Sorry, what page?",
+        "fa": "ببخشید، کدام صفحه؟"
+      },
+      {
+        "en": "Do you have any questions?",
+        "fa": "آیا سؤالی داری؟"
+      },
+      {
+        "en": "Close your book.",
+        "fa": "کتابت را ببند."
+      },
+      {
+        "en": "Open your book.",
+        "fa": "کتابت را باز کن."
+      },
+      {
+        "en": "Go to page.",
+        "fa": "به صفحه برو."
+      },
+      {
+        "en": "Your teacher.",
+        "fa": "معلم تو."
+      },
+      {
+        "en": "This is your teacher.",
+        "fa": "این معلم تو است."
+      },
+      {
+        "en": "He eats.",
+        "fa": "او (مرد) می‌خورد."
+      },
+      {
+        "en": "We have a home.",
+        "fa": "ما یک محل زندگی داریم."
+      },
+      {
+        "en": "My given name is Ali.",
+        "fa": "نام کوچک من علی است."
+      },
+      {
+        "en": "What is your family name?",
+        "fa": "نام خانوادگی تو چیست؟"
+      },
+      {
+        "en": "What does tutor mean?",
+        "fa": "معنی «tutor» چیست؟"
+      },
+      {
+        "en": "What does helper mean?",
+        "fa": "معنی «helper» چیست؟"
+      },
+      {
+        "en": "What does instructor mean?",
+        "fa": "معنی «instructor» چیست؟"
+      },
+      {
+        "en": "What does answer mean?",
+        "fa": "معنی «answer» چیست؟"
+      },
+      {
+        "en": "What does goal mean?",
+        "fa": "معنی «goal» چیست؟"
+      },
+      {
+        "en": "What does request mean?",
+        "fa": "معنی «request» چیست؟"
+      },
+      {
+        "en": "What does observe mean?",
+        "fa": "معنی «observe» چیست؟"
+      },
+      {
+        "en": "What does grasp mean?",
+        "fa": "معنی «grasp» چیست؟"
+      },
+      {
+        "en": "What does understand mean?",
+        "fa": "معنی «understand» چیست؟"
+      },
+      {
+        "en": "What does check mean?",
+        "fa": "معنی «check» چیست؟"
+      },
+      {
+        "en": "What does lock mean?",
+        "fa": "معنی «lock» چیست؟"
+      },
+      {
+        "en": "What does house mean?",
+        "fa": "معنی «house» چیست؟"
+      },
+      {
+        "en": "What does group mean?",
+        "fa": "معنی «group» چیست؟"
+      },
+      {
+        "en": "It is my house.",
+        "fa": "آن خانه من است."
+      },
+      {
+        "en": "She reads.",
+        "fa": "او (زن) می‌خواند."
+      }
+    ],
+    "grammar": [
+      {
+        "title": "am / is / are (بودن)",
+        "explanation": "برای I از am، برای he، she و it از is، و برای we، you و they از are استفاده می‌کنیم.",
+        "examples": [
+          {
+            "en": "I am a tutor.",
+            "fa": "من یک مدرس خصوصی هستم."
+          },
+          {
+            "en": "This is my teacher.",
+            "fa": "این معلم من است."
+          }
+        ]
+      },
+      {
+        "title": "have و has (داشتن)",
+        "explanation": "برای I، we، you و they از have، و برای he، she و it از has استفاده می‌کنیم.",
+        "examples": [
+          {
+            "en": "I have a question.",
+            "fa": "من یک سؤال دارم."
+          },
+          {
+            "en": "We have a teacher.",
+            "fa": "ما یک معلم داریم."
+          }
+        ]
+      },
+      {
+        "title": "حال ساده با I، we، you و they",
+        "explanation": "با این فاعل‌ها فعل را به شکل ساده‌اش می‌نویسیم، بدون s.",
+        "examples": [
+          {
+            "en": "I read.",
+            "fa": "من می‌خوانم."
+          },
+          {
+            "en": "I eat.",
+            "fa": "من می‌خورم."
+          }
+        ]
+      },
+      {
+        "title": "حال ساده با he، she و it",
+        "explanation": "با he، she و it به فعل s یا es اضافه می‌کنیم.",
+        "examples": [
+          {
+            "en": "She walks.",
+            "fa": "او (زن) راه می‌رود."
+          },
+          {
+            "en": "He reads.",
+            "fa": "او (مرد) می‌خواند."
+          }
+        ]
+      },
+      {
+        "title": "جمله‌ی امری (دستور)",
+        "explanation": "جمله‌ی دستوری با فعل شروع می‌شود و فاعل ندارد. مثل Give me a hand: به من کمک کن.",
+        "examples": [
+          {
+            "en": "Open your book.",
+            "fa": "کتابت را باز کن."
+          },
+          {
+            "en": "Give me a hand.",
+            "fa": "به من کمک کن."
+          }
+        ]
+      },
+      {
+        "title": "سؤال با What و How",
+        "explanation": "با What یا How اول می‌آید، بعد فعل کمکی و فاعل. در پرسش با How از do استفاده می‌کنیم.",
+        "examples": [
+          {
+            "en": "What is your last name?",
+            "fa": "نام خانوادگی تو چیست؟"
+          },
+          {
+            "en": "How do you spell?",
+            "fa": "چطور هجی می‌کنی؟"
+          }
+        ]
+      },
+      {
+        "title": "سؤال بله یا خیر با Do",
+        "explanation": "برای سؤال بله یا خیر، Do را اول جمله می‌آوریم و بعد فاعل و فعل می‌آید.",
+        "examples": [
+          {
+            "en": "Do you have any questions?",
+            "fa": "آیا سؤالی داری؟"
+          }
+        ]
+      },
+      {
+        "title": "منفی (نه)",
+        "explanation": "برای منفی کردن فعل، don't را پیش از فعل ساده می‌آوریم. don't شکل کوتاه do not است.",
+        "examples": [
+          {
+            "en": "I don't understand.",
+            "fa": "من نمی‌فهمم."
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "title": "روز اول علی",
+        "lines": [
+          {
+            "en": "My first name is Ali.",
+            "fa": "نام کوچک من علی است."
+          },
+          {
+            "en": "My last name is Habibi.",
+            "fa": "نام خانوادگی من حبیبی است."
+          },
+          {
+            "en": "This is my teacher.",
+            "fa": "این معلم من است."
+          },
+          {
+            "en": "He is a tutor.",
+            "fa": "او یک مدرس خصوصی است."
+          },
+          {
+            "en": "I have a question.",
+            "fa": "من یک سؤال دارم."
+          },
+          {
+            "en": "I ask my teacher.",
+            "fa": "من از معلمم می‌پرسم."
+          },
+          {
+            "en": "He says, 'Ask me.'",
+            "fa": "او می‌گوید: «از من بپرس.»"
+          },
+          {
+            "en": "Sorry, what page?",
+            "fa": "ببخشید، کدام صفحه؟"
+          },
+          {
+            "en": "Open your book.",
+            "fa": "کتابت را باز کن."
+          },
+          {
+            "en": "Can you repeat that, please?",
+            "fa": "می‌توانی آن را تکرار کنی، لطفاً؟"
+          },
+          {
+            "en": "I understand.",
+            "fa": "من می‌فهمم."
+          }
+        ]
+      },
+      {
+        "title": "خانه‌ی من",
+        "lines": [
+          {
+            "en": "This is my house.",
+            "fa": "این خانه‌ی من است."
+          },
+          {
+            "en": "It is my home.",
+            "fa": "این جای زندگی من است."
+          },
+          {
+            "en": "The street is new.",
+            "fa": "خیابان جدید است."
+          },
+          {
+            "en": "The road is old.",
+            "fa": "جاده قدیمی است."
+          },
+          {
+            "en": "I open the door.",
+            "fa": "من در را باز می‌کنم."
+          },
+          {
+            "en": "I lock the door.",
+            "fa": "من در را قفل می‌کنم."
+          },
+          {
+            "en": "I close the door.",
+            "fa": "من در را می‌بندم."
+          },
+          {
+            "en": "I go outside.",
+            "fa": "من به بیرون می‌روم."
+          },
+          {
+            "en": "I go inside.",
+            "fa": "من به داخل می‌روم."
+          },
+          {
+            "en": "I walk to the alley.",
+            "fa": "من به سمت کوچه راه می‌روم."
+          },
+          {
+            "en": "She walks to the avenue.",
+            "fa": "او به سمت خیابان پهن راه می‌رود."
+          }
+        ]
+      },
+      {
+        "title": "تیم من",
+        "lines": [
+          {
+            "en": "This is my team.",
+            "fa": "این تیم من است."
+          },
+          {
+            "en": "My partner is my friend.",
+            "fa": "شریک من دوست من است."
+          },
+          {
+            "en": "We have a group.",
+            "fa": "ما یک گروه داریم."
+          },
+          {
+            "en": "We begin.",
+            "fa": "ما شروع می‌کنیم."
+          },
+          {
+            "en": "My objective is to help.",
+            "fa": "هدف اصلی من کمک کردن است."
+          },
+          {
+            "en": "My goal is a new house.",
+            "fa": "هدف من یک خانه‌ی جدید است."
+          },
+          {
+            "en": "I observe the team.",
+            "fa": "من تیم را مشاهده می‌کنم."
+          },
+          {
+            "en": "My team helps me.",
+            "fa": "تیم من به من کمک می‌کند."
+          },
+          {
+            "en": "Give me a hand.",
+            "fa": "به من کمک کن."
+          },
+          {
+            "en": "I check in.",
+            "fa": "من ثبت ورود می‌کنم."
+          }
+        ]
+      }
+    ]
+  }
 }

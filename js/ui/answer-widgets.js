@@ -6,6 +6,7 @@
 //   focus()
 
 import { h, toast, keepFocus, confirmDialog, fa } from './dom.js';
+import { uiIcon } from './icons.js';
 import { playButton } from './speech-out.js';
 import { validateAnswer } from '../engine/validator.js';
 import { scrambleLetters } from '../engine/spelling.js';
@@ -170,7 +171,8 @@ function typeInstead(input, placeholder, onUnlock) {
   const button = h(
     'button',
     { type: 'button', class: 'btn ghost small type-instead-btn', title: 'Type this answer instead of saying it', onclick: askToType },
-    '⌨ Type instead',
+    uiIcon('keyboard'),
+    ' Type instead',
   );
   const element = h('div', { class: 'type-instead' }, button, count);
 

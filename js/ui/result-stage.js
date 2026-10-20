@@ -6,11 +6,11 @@
 import { h, fa } from './dom.js';
 
 export const RESULT_LOOKS = [
-  { badge: '🌱', title: 'Keep going!', text: 'Every expert started here. Review your mistakes and try again.' },
-  { badge: '🌅', title: 'Getting there!', text: 'You are on the way. A little more practice and it clicks.' },
-  { badge: '🚀', title: 'Good work!', text: 'A solid mission. Most of your answers were right.' },
-  { badge: '🎆', title: 'Excellent!', text: 'Almost perfect. Only a few answers to polish.' },
-  { badge: '🏆', title: 'Perfect score!', text: 'Not one mistake. Legendary!' },
+  { badge: 'sprout', title: 'Keep going!', text: 'Every expert started here. Review your mistakes and try again.' },
+  { badge: 'sunrise', title: 'Getting there!', text: 'You are on the way. A little more practice and it clicks.' },
+  { badge: 'rocket', title: 'Good work!', text: 'A solid mission. Most of your answers were right.' },
+  { badge: 'sparkles', title: 'Excellent!', text: 'Almost perfect. Only a few answers to polish.' },
+  { badge: 'trophy', title: 'Perfect score!', text: 'Not one mistake. Legendary!' },
 ];
 
 /**

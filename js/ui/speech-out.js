@@ -222,6 +222,19 @@ export function speakButtons(text, { label = 'Read aloud' } = {}) {
   );
 }
 
+// Filled square, the Stop control while something is being read aloud.
+const STOP_ICON = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><rect x="6" y="6" width="12" height="12" rx="2"/></svg>`;
+
+/**
+ * One speak-style icon button with its own action, looking like the read-aloud buttons of the lesson.
+ * kind: 'normal' (speaker), 'slow' (slow speaker) or 'stop' (square). Null when the browser cannot speak.
+ */
+export function speakActionButton(kind, label, onclick) {
+  if (!canSpeak()) return null;
+  const icon = kind === 'stop' ? STOP_ICON : kind === 'slow' ? SLOW_ICON : SPEAKER_ICON;
+  return speakIconButton(label, icon, onclick, kind === 'slow' ? 'slow' : 'normal');
+}
+
 /**
  * The English sentence a glossary word sits in, as the learner sees it on screen.
  * Returns null when there is no English on screen, or when a blank ("___") is still in it,

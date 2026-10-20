@@ -84,7 +84,7 @@ export const EXAMPLE_QUESTIONS = Object.freeze([
     word_bank: ['این', 'معلم', 'من', 'است'],
     expected_answer: 'This is my teacher.',
     explanation: 'ترتیب کلمات فارسی همان ترتیب جمله‌ی انگلیسی است.',
-    hint: 'this = این؛ my = من؛ is = است؛ teacher = معلم.',
+    hint: 'به ساختار معرفی کردن کسی یا چیزی و به اینکه این چیز مال چه کسی است فکر کن.',
     translation: 'این معلم من است.',
   },
   {
@@ -145,6 +145,13 @@ The course is series > book > unit > lesson. A question belongs to one lesson. I
 - Do not write a unit field. If the user names a unit, write questions only for lessons that belong to that unit.
 - A question whose book or lesson is not in content/index.json is saved but never shown in the game.
 
+SCOPE
+- Do exactly what this prompt describes. Do not add fields, exercise types, topics or sections that are not described here.
+- Use only the words and sentences of the lesson you write for. They are in the lesson file listed in content/index.json, under lesson_content (vocabulary and sentences). Do not bring in words, sentences or grammar from outside that lesson. If a word you need is not in the lesson, do not use it: write the question with a sentence the lesson already has.
+- Write only the number of questions, the lesson and the exercise types the user asks for. Do not add extra questions to fill a gap.
+- Do not change existing questions unless the user asks for it.
+- If the lesson material is not enough for the request, write fewer questions instead of inventing content.
+
 Every question is an object. Field names are exact.
 
 Required fields
@@ -201,6 +208,8 @@ Writing rules
 - Vocabulary that asks for several words: answer_mode "list", min_items set to the number asked, and accepted_answers holding every correct word.
 - voice_translation: the learner speaks the answer, so list the common spoken forms (for example the contracted form) in accepted_answers.
 - Keep questions short and clear for a beginner.
+- Persian instructions are short, plain and say exactly what the learner must do, for example: "جمله‌ی فارسی زیر را به انگلیسی بنویس." Do not write a vague instruction on its own.
+- Hints are a nudge, not a translation. Never write word-by-word pairs such as "this = این". Name the rule or the structure to think about, for example: "به ساختار معرفی کردن کسی یا چیزی و به اینکه این چیز مال چه کسی است فکر کن." The only exception is dictation (see Dictation rules).
 - Use only the field names above. No trailing commas.
 
 EXAMPLE

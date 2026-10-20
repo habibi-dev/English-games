@@ -58,7 +58,8 @@ export async function syncContent({ force = false } = {}) {
     }
 
     try {
-      const result = flattenLesson(JSON.parse(await fetchText(info.file)), { book: info.book, lesson: info.lesson });
+      const data = JSON.parse(await fetchText(info.file));
+      const result = flattenLesson(data, { book: info.book, lesson: info.lesson });
       if (result.questions.length === 0) {
         throw new Error(`No valid exercises found in ${info.file}.`);
       }
@@ -78,6 +79,8 @@ export async function syncContent({ force = false } = {}) {
         invalid: result.invalid.length,
         warnings: result.warnings.length,
         importedAt: new Date().toISOString(),
+        // The lesson's own words, sentences, grammar and stories (see lesson_content in the lesson file).
+        content: data.lesson_content ?? null,
       };
       await db.putLessonMeta(entry);
       loaded.push(entry);

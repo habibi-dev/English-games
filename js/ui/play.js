@@ -6,13 +6,15 @@ import { listQuestions, listLessons } from '../bank/repository.js';
 import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey, unitKey, persianSentence } from '../bank/schema.js';
 import { filterQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode, MAX_MISSION_QUESTIONS } from '../engine/game-engine.js';
 import { takeReview } from './review-handoff.js';
-import { lessonContentBlock } from './lesson-content.js';
+import { lessonHub, linesPage, storiesPage, stopStoryReading } from './lesson-content.js';
+import { lessonMaterial } from '../bank/lesson-vocabulary.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, levelStartXp, resultTier } from '../progress/player.js';
 import { doneIds, progressOf } from '../progress/lesson-progress.js';
 import { scheduleOf, isDue, missionQuestions, nextDueAt } from '../progress/spaced-repetition.js';
 import { getSettings, saveSettings, getSoundSettings } from '../storage/settings.js';
 import { h, toast, fa, ltr, badge, percent, keepFocus, confirmDialog, scrollToTop } from './dom.js';
+import { uiIcon } from './icons.js';
 import { createAnswerWidget, instructionFor } from './answer-widgets.js';
 import { splitPrompt } from './prompt.js';
 import {
@@ -50,16 +52,17 @@ const plural = (n, word) => `${fa(n)} ${word}${Number(n) === 1 ? '' : 's'}`;
 
 /** When a question is due again, for the setup screen, e.g. "Oct 21, 9:00 AM". */
 const dueText = (ms) => new Date(ms).toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+// The icon of each exercise type (names in icons.js).
 const CATEGORY_ICONS = {
-  quick_translation: '🔤',
-  sentence_builder: '🧩',
-  word_translation: '🔡',
-  grammar_correction: '🛠️',
-  multiple_choice: '🎯',
-  positive_negative_question: '⚖️',
-  voice_translation: '🎤',
-  dictation: '📝',
-  vocabulary: '🔁',
+  quick_translation: 'languages',
+  sentence_builder: 'layers',
+  word_translation: 'quote',
+  grammar_correction: 'pencil',
+  multiple_choice: 'list',
+  positive_negative_question: 'help',
+  voice_translation: 'mic',
+  dictation: 'file',
+  vocabulary: 'refresh',
 };
 
 // Presentation of the English sentence for a mission: follow each exercise, or force one mode.
@@ -520,6 +523,8 @@ async function showSetup(root, restore = null) {
   // name is series, book, unit, lesson or settings; the entry's depth counts the steps before it in this visit.
   // So the back button (phone or in-app) returns to the step before, and the forward button goes on again.
   function show(step) {
+    // A story read aloud stops when the learner goes to another step.
+    stopStoryReading();
     if (step.name === 'series') return drawSeriesStep();
     if (step.name === 'book') return drawBookStep(step.series);
     state.book = step.book;
@@ -527,20 +532,35 @@ async function showSetup(root, restore = null) {
     if (step.name === 'lesson') return drawLessonStep(step.unit);
     state.unit = step.unit ?? null;
     state.lessons = [...step.lessons];
+    if (LESSON_PAGES.includes(step.name)) return drawLessonPage(step);
     return drawSettingsStep();
   }
 
-  // Opens a step one level deeper, as a new history entry.
+  // Identifies the screen of a step (its name, series, book and unit). Lessons and depth do not change the screen.
+  function stepKey(step) {
+    return step ? [step.name, step.series ?? '', step.book ?? '', step.unit ?? ''].join('|') : '';
+  }
+
+  // Opens a step one level deeper, as a new history entry. The entry records the screen it came from (`from`).
   function go(step) {
-    const depth = (history.state?.setup?.depth ?? 0) + 1;
-    history.pushState({ setup: { ...step, depth } }, '', location.href);
+    const current = history.state?.setup ?? null;
+    const depth = (current?.depth ?? 0) + 1;
+    history.pushState({ setup: { ...step, depth, from: stepKey(current) } }, '', location.href);
     show(step);
   }
 
-  // The "← Back to …" buttons: the step before this one. When this step came from the step before, that is the history back.
+  // The "← Back to …" buttons: the step before this one. The history back is used only when the entry below really
+  // is that step. Otherwise (for example, the screen was opened fresh on top of an older entry) this entry is replaced
+  // by the parent, so the button never lands on an unrelated screen such as a unit list.
   function back(parent) {
-    if (history.state?.setup?.depth > 0) history.back();
-    else go(parent);
+    const current = history.state?.setup ?? null;
+    if (current?.depth > 0 && current.from === stepKey(parent)) {
+      history.back();
+      return;
+    }
+    const depth = Math.max((current?.depth ?? 1) - 1, 0);
+    history.replaceState({ setup: { ...parent, depth, from: null } }, '', location.href);
+    show(parent);
   }
 
   // Screens of the picker, in order: series -> book -> unit -> lessons -> settings (exercise types, presentation, length).
@@ -639,7 +659,7 @@ async function showSetup(root, restore = null) {
         subtitle: `For review · ${plural(allKeys.length, 'lesson')}`,
         dashed: true,
         progress: progressOfLessons(allKeys),
-        onclick: () => go({ name: 'settings', book: state.book, unit: null, lessons: [...allKeys] }),
+        onclick: () => go({ name: 'hub', book: state.book, unit: null, lessons: [...allKeys] }),
       }),
       ...book.units.map((unit) => {
         const keys = unit.lessons.map((lesson) => lesson.key);
@@ -694,7 +714,7 @@ async function showSetup(root, restore = null) {
         subtitle: `For review · ${plural(allKeys.length, 'lesson')}`,
         dashed: true,
         progress: progressOfLessons(allKeys),
-        onclick: () => go({ name: 'settings', book: state.book, unit: unit.key, lessons: [...allKeys] }),
+        onclick: () => go({ name: 'hub', book: state.book, unit: unit.key, lessons: [...allKeys] }),
       }),
       ...unit.lessons.map((lesson) => {
         const progress = progressOfLessons([lesson.key]);
@@ -703,7 +723,7 @@ async function showSetup(root, restore = null) {
           subtitle: plural(lesson.count, 'question'),
           tag: progress.complete ? 'Completed' : lesson.key === lastKey ? 'Last practised' : null,
           progress,
-          onclick: () => go({ name: 'settings', book: state.book, unit: unit.key, lessons: [lesson.key] }),
+          onclick: () => go({ name: 'hub', book: state.book, unit: unit.key, lessons: [lesson.key] }),
         });
       }),
     );
@@ -730,6 +750,121 @@ async function showSetup(root, restore = null) {
       ),
     );
     refresh();
+  }
+
+  // The lesson's own pages: the hub, and the pages it leads to (see drawLessonPage).
+  const LESSON_PAGES = ['hub', 'words', 'sentences', 'grammar', 'stories'];
+
+  // The screens between the lesson and the settings. The hub gives three choices: Words and Sentences (each a page
+  // of its own) and Practice (the settings step). Every page is a history entry, so the back buttons return to the
+  // page before it.
+  function drawLessonPage(step) {
+    settingsStart = null;
+    setTabMode('home');
+    info = null;
+    const book = allBooks.find((entry) => entry.id === state.book);
+    const unit = step.unit ? book.units.find((item) => item.key === step.unit) ?? null : null;
+    const chosenLessons = book.lessons.filter((lesson) => state.lessons.includes(lesson.key));
+    const chosenQuestions = questions.filter((q) => state.lessons.includes(lessonKey(q.book, q.lesson)));
+    const material = lessonMaterial(
+      chosenQuestions,
+      lessons.filter((lesson) => state.lessons.includes(lesson.key)).map((lesson) => lesson.content),
+    );
+    const hubStep = { name: 'hub', book: state.book, unit: step.unit ?? null, lessons: [...state.lessons] };
+
+    let backLabel = '← Back to options';
+    let backTo = hubStep;
+    let body;
+    if (step.name === 'hub') {
+      backLabel = unit ? '← Back to lessons' : '← Back to books';
+      backTo = unit ? { name: 'lesson', book: state.book, unit: unit.key } : { name: 'book', series: seriesOf(state.book)?.id };
+      const tiles = [
+        {
+          kind: 'words',
+          title: 'Words',
+          subtitle: `${plural(material.words.length, 'word')} · meaning and pronunciation`,
+          onclick: () => go({ ...hubStep, name: 'words' }),
+        },
+        {
+          kind: 'sentences',
+          title: 'Sentences',
+          subtitle: `${plural(material.sentences.length, 'sentence')} · translation on tap`,
+          onclick: () => go({ ...hubStep, name: 'sentences' }),
+        },
+      ];
+      if (material.grammar.length) {
+        tiles.push({
+          kind: 'grammar',
+          title: 'Grammar',
+          subtitle: `${plural(material.grammar.length, 'rule')} · with examples`,
+          onclick: () => go({ ...hubStep, name: 'grammar' }),
+        });
+      }
+      if (material.stories.length) {
+        tiles.push({
+          kind: 'stories',
+          title: 'Stories',
+          subtitle: `${plural(material.stories.length, 'story')} · only words from this lesson`,
+          onclick: () => go({ ...hubStep, name: 'stories' }),
+        });
+      }
+      tiles.push({
+        kind: 'practice',
+        title: 'Practice',
+        subtitle: `${plural(chosenQuestions.length, 'question')} · exercises and missions`,
+        onclick: () => go({ name: 'settings', book: state.book, unit: hubStep.unit, lessons: [...state.lessons] }),
+      });
+      body = h('div', {}, stepTitle('What do you want to do?'), lessonHub(tiles));
+    } else if (step.name === 'words') {
+      body = h(
+        'div',
+        {},
+        stepTitle('Words'),
+        linesPage({
+          groups: [{ rows: material.words.map((w) => ({ english: w.word, persian: w.meaning, ipa: w.ipa })) }],
+          speakLabel: 'Read the word aloud',
+        }),
+      );
+    } else if (step.name === 'sentences') {
+      body = h(
+        'div',
+        {},
+        stepTitle('Sentences'),
+        linesPage({ groups: [{ rows: material.sentences }], speakLabel: 'Read the sentence aloud' }),
+      );
+    } else if (step.name === 'grammar') {
+      body = h(
+        'div',
+        {},
+        stepTitle('Grammar'),
+        linesPage({
+          groups: material.grammar.map((rule) => ({
+            title: rule.title,
+            explanation: rule.explanation,
+            rows: rule.examples,
+          })),
+          speakLabel: 'Read the example aloud',
+        }),
+      );
+    } else {
+      body = h('div', {}, stepTitle('Stories'), storiesPage(material.stories));
+    }
+
+    scrollToTop();
+    root.replaceChildren(
+      playerCard(profile),
+      h(
+        'section',
+        { class: 'card setup game' },
+        selectionHeader(book, unit, chosenLessons, progressOfLessons(state.lessons)),
+        h(
+          'div',
+          { class: 'actions' },
+          h('button', { type: 'button', class: 'btn ghost small back-btn', onclick: () => back(backTo) }, backLabel),
+        ),
+        body,
+      ),
+    );
   }
 
   // Done / total of one exercise type in the chosen lessons, counted the same way as the lesson tiles.
@@ -764,7 +899,6 @@ async function showSetup(root, restore = null) {
           book.lessons.filter((lesson) => state.lessons.includes(lesson.key)),
           progressOfLessons(state.lessons),
         ),
-        lessonContentBlock(questions.filter((q) => state.lessons.includes(lessonKey(q.book, q.lesson)))),
         h(
           'div',
           { class: 'actions' },
@@ -774,9 +908,9 @@ async function showSetup(root, restore = null) {
               type: 'button',
               class: 'btn ghost small back-btn',
               onclick: () =>
-                back(state.unit ? { name: 'lesson', book: state.book, unit: state.unit } : { name: 'unit', book: state.book }),
+                back({ name: 'hub', book: state.book, unit: state.unit, lessons: [...state.lessons] }),
             },
-            state.unit ? '← Back to lessons' : '← Back to units',
+            '← Back to options',
           ),
         ),
         stepTitle('Difficulty'),
@@ -793,7 +927,7 @@ async function showSetup(root, restore = null) {
             .filter(([, , progress]) => progress.total > 0)
             .map(([key, label, progress]) => [
               key,
-              categoryChip(`${CATEGORY_ICONS[key] ?? ''} ${label}`.trim(), progress),
+              categoryChip(label, progress, CATEGORY_ICONS[key]),
             ]),
           state.categories,
           { onChange: refresh, className: 'card-options mission-options' },
@@ -926,11 +1060,11 @@ function progressLine(progress) {
 }
 
 /** An exercise-type tile: its name, and a small bar with done / total when the chosen lessons have that type. */
-function categoryChip(label, progress) {
+function categoryChip(label, progress, iconName) {
   return h(
     'span',
     { class: 'cat-chip' },
-    h('span', { class: 'cat-name' }, label),
+    h('span', { class: 'cat-name' }, iconName ? uiIcon(iconName, 'cat-icon') : null, label),
     progress.total
       ? h(
           'span',
@@ -1083,7 +1217,7 @@ function selectionHeader(book, unit, lessons, progress) {
 
 /** Cover image of a book (or a placeholder when the book has none). */
 function coverThumb(src) {
-  return h('span', { class: `book-thumb${src ? '' : ' no-image'}` }, src ? h('img', { src, alt: '' }) : '📘');
+  return h('span', { class: `book-thumb${src ? '' : ' no-image'}` }, src ? h('img', { src, alt: '' }) : uiIcon('book'));
 }
 
 /** The good answers of a question, expected answer first, without repeats. */
@@ -1235,8 +1369,13 @@ function renderQuestion(root, session, flow) {
   // The lesson being practised is remembered: the next visit to its book starts from it.
   saveSettings({ ...getSettings(), lastLesson: lessonKey(q.book, q.lesson) });
 
-  const scoreEl = h('span', { class: 'hud-chip score' }, `⭐ ${fa(session.summary().score)}`);
-  const streakEl = h('span', { class: 'hud-chip streak', 'aria-live': 'polite' }, `🔥 ${fa(currentStreak(session.outcomes))}`);
+  const scoreEl = h('span', { class: 'hud-chip score' }, uiIcon('star'), ` ${fa(session.summary().score)}`);
+  const streakEl = h(
+    'span',
+    { class: 'hud-chip streak', 'aria-live': 'polite' },
+    uiIcon('flame'),
+    ` ${fa(currentStreak(session.outcomes))}`,
+  );
   let progressEl = progressTrack(session);
   const timerFill = h('div', { class: 'timer-fill' });
   const timerText = h('span', { class: 'timer-text' });
@@ -1298,8 +1437,8 @@ function renderQuestion(root, session, flow) {
     widget.lock(q.expected_answer);
     submitButton.hidden = true;
     skipButton.hidden = true;
-    scoreEl.textContent = `⭐ ${fa(session.summary().score)}`;
-    streakEl.textContent = `🔥 ${fa(currentStreak(session.outcomes))}`;
+    scoreEl.replaceChildren(uiIcon('star'), ` ${fa(session.summary().score)}`);
+    streakEl.replaceChildren(uiIcon('flame'), ` ${fa(currentStreak(session.outcomes))}`);
     const freshTrack = progressTrack(session);
     progressEl.replaceWith(freshTrack);
     progressEl = freshTrack;
@@ -1324,11 +1463,11 @@ function renderQuestion(root, session, flow) {
         ? 'Time is up.'
         : 'Wrong answer.';
 
-    const icon = outcome.correct ? '✓' : outcome.timedOut ? '⏱' : '✕';
+    const icon = outcome.correct ? '✓' : outcome.timedOut ? uiIcon('clock') : '✕';
     feedback.hidden = false;
     feedback.className = `feedback ${outcome.correct ? 'ok' : 'bad'}`;
     resultOverlay.className = `result-overlay ${outcome.correct ? 'ok' : 'bad'}`;
-    resultMood.textContent = outcome.correct ? '🎉' : outcome.timedOut ? '⏱' : '😢';
+    resultMood.replaceChildren(uiIcon(outcome.correct ? 'sparkles' : outcome.timedOut ? 'clock' : 'frown', 'result-mood-icon'));
     resultEffect.replaceChildren(...(outcome.correct ? confettiPieces() : rainDrops()));
     feedback.replaceChildren(
       ...[
@@ -1400,7 +1539,7 @@ function renderQuestion(root, session, flow) {
         h(
           'div',
           { class: 'timer' },
-          h('span', { class: 'timer-icon', 'aria-hidden': 'true' }, '⏱️'),
+          h('span', { class: 'timer-icon', 'aria-hidden': 'true' }, uiIcon('clock')),
           h('div', { class: 'timer-track' }, timerFill),
           timerText,
         ),
@@ -1428,7 +1567,7 @@ function renderQuestion(root, session, flow) {
           ? h(
               'div',
               { class: 'hint-row' },
-              keepFocus(h('button', { type: 'button', class: 'btn ghost small hint-btn', onclick: () => (hintText.hidden = false) }, '💡 Hint')),
+              keepFocus(h('button', { type: 'button', class: 'btn ghost small hint-btn', onclick: () => (hintText.hidden = false) }, uiIcon('lightbulb'), ' Hint')),
               hintText,
             )
           : null,
@@ -1693,7 +1832,7 @@ function mistakeCard(outcome) {
  * The list is closed when the results open, so the page stays short; the learner opens it when wanted.
  */
 function mistakesBlock(mistakes) {
-  if (!mistakes.length) return h('div', { class: 'all-correct' }, '🎉 Perfect! No mistakes.');
+  if (!mistakes.length) return h('div', { class: 'all-correct' }, uiIcon('sparkles'), ' Perfect! No mistakes.');
   const list = h('div', { class: 'mistakes-list', hidden: true }, ...mistakes.map(mistakeCard));
   const toggle = h(
     'button',
@@ -1767,7 +1906,7 @@ function renderResults(root, session, flow) {
         'div',
         { class: `result-hero tier-${tier}` },
         resultStage(tier),
-        h('span', { class: 'rs-badge', 'aria-hidden': 'true' }, look.badge),
+        h('span', { class: 'rs-badge', 'aria-hidden': 'true' }, uiIcon(look.badge)),
         h(
           'div',
           { class: 'stars', role: 'img', 'aria-label': `${fa(stars)} of 3 stars` },

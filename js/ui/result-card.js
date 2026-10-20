@@ -4,12 +4,12 @@
 // The card is drawn in code, not as a screenshot, so it is sharp and reads the same on every device.
 
 import { TIER_COLORS } from './result-stage.js';
+import { drawIcon } from './icons.js';
 
 const WIDTH = 1080;
 const PAD = 72;
 const INNER = WIDTH - PAD * 2;
 const FONT = 'Vazirmatn, Tahoma, "Segoe UI", system-ui, sans-serif';
-const EMOJI_FONT = '"Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif';
 const MAX_LESSON_ROWS = 8;
 const MAX_BOOK_ROWS = 3;
 const MODE_LABELS = { easy: 'Easy', medium: 'Medium', hard: 'Hard' };
@@ -155,11 +155,7 @@ function paintContent(ctx, card, draw) {
   const cx = WIDTH / 2;
   circle(p, cx, y + 96, 96, dark ? 'rgba(253, 224, 71, 0.9)' : 'rgba(255, 255, 255, 0.78)');
   if (draw) {
-    ctx.font = font(400, 104, EMOJI_FONT);
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillStyle = colors.ink;
-    ctx.fillText(card.look.badge, cx, y + 98);
+    drawIcon(ctx, card.look.badge, cx, y + 98, 104, colors.ink);
   }
   y += 216;
   y += text(p, card.look.title, cx, y, { size: 92, weight: 800, color: colors.ink, align: 'center' });
