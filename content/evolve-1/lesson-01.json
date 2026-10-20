@@ -138,12 +138,12 @@
         },
         {
           "id": "evolve-1-l01-tr-12",
-          "question": "به من یک دست بده. (اصطلاح)",
+          "question": "به من کمک کن (اصطلاح)",
           "expected_answer": "Give me a hand.",
           "explanation": "Give me a hand یک عبارت رایج به معنی کمکم کن است.",
           "hint": "کلمه‌ی کلیدی: «به من یک دست بده (اصطلاح)» = give me a hand؛ این یک اصطلاح است و کلمه‌به‌کلمه ترجمه نمی‌شود.",
           "time_limit": 60,
-          "translation": "به من یک دست بده. (اصطلاح)"
+          "translation": "به من کمک کن (اصطلاح)"
         },
         {
           "id": "evolve-1-l01-tr-13",
@@ -2993,7 +2993,7 @@
             "Give"
           ],
           "time_limit": 60,
-          "translation": "به من یک دست بده. (اصطلاح)"
+          "translation": "به من کمک کن (اصطلاح)"
         },
         {
           "id": "evolve-1-l01-sb-127",
@@ -4924,7 +4924,7 @@
           "expected_answer": "Give me a hand.",
           "explanation": "اصطلاح give someone a hand یعنی به کسی کمک کردن. در جمله‌ی امر، give اول می‌آید و me بعد از آن.",
           "time_limit": 60,
-          "translation": "به من یک دست بده. (اصطلاح)",
+          "translation": "به من کمک کن (اصطلاح)",
           "hint": "این یک اصطلاح است؛ به معنی کلی جمله فکر کن، نه کلمه‌به‌کلمه."
         },
         {
@@ -5299,12 +5299,12 @@
         },
         {
           "id": "evolve-1-l01-vt-012",
-          "question": "به من یک دست بده. (اصطلاح)",
+          "question": "به من کمک کن (اصطلاح)",
           "expected_answer": "Give me a hand.",
           "explanation": "Give me a hand یک عبارت رایج به معنی کمکم کن است.",
           "time_limit": 60,
-          "hint": "کلمه‌ی کلیدی: «به من یک دست بده (اصطلاح)» = give me a hand؛ این یک اصطلاح است و کلمه‌به‌کلمه ترجمه نمی‌شود.",
-          "translation": "به من یک دست بده. (اصطلاح)"
+          "hint": "کلمه‌ی کلیدی: «به من یک دست بده (اصطلاح)»",
+          "translation": "به من کمک کن (اصطلاح)"
         },
         {
           "id": "evolve-1-l01-vt-013",
@@ -10214,9 +10214,9 @@
           "question": "give me a hand",
           "expected_answer": "give me a hand",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "یک دست بده (اصطلاح)",
+          "hint": "به من کمک کن (اصطلاح)",
           "time_limit": 60,
-          "translation": "به من یک دست بده. (اصطلاح)"
+          "translation": "به من کمک کن (اصطلاح)"
         },
         {
           "id": "evolve-1-l01-dic-026",
