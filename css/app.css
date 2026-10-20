@@ -1016,141 +1016,6 @@ td span[dir='auto'] {
   margin: 2px 0 0;
 }
 
-/* Summary: two tiles per row; the fifth spans the full width. */
-.report-stats {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-  padding: 14px;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-}
-
-.report-stat {
-  display: grid;
-  justify-items: center;
-  gap: 2px;
-  padding: 14px 8px;
-  border-radius: 16px;
-}
-
-.report-stat:last-child:nth-child(odd) {
-  grid-column: 1 / -1;
-}
-
-.report-stat-icon {
-  font-size: 1.3rem;
-  line-height: 1;
-}
-
-.report-stat strong {
-  font-size: 1.5rem;
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-.report-stat-label {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-.report-stat.blue {
-  background: linear-gradient(160deg, #dbeafe, #eff6ff);
-}
-.report-stat.blue strong {
-  color: #1d4ed8;
-}
-
-.report-stat.green {
-  background: linear-gradient(160deg, #dcfce7, #f0fdf4);
-}
-.report-stat.green strong {
-  color: #15803d;
-}
-
-.report-stat.indigo {
-  background: linear-gradient(160deg, #e0e7ff, #eef2ff);
-}
-.report-stat.indigo strong {
-  color: #4338ca;
-}
-
-.report-stat.amber {
-  background: linear-gradient(160deg, #fef3c7, #fffbeb);
-}
-.report-stat.amber strong {
-  color: #b45309;
-}
-
-.report-stat.violet {
-  background: linear-gradient(160deg, #ede9fe, #faf5ff);
-}
-.report-stat.violet strong {
-  color: #6d28d9;
-}
-
-/* A section: icon and title, then its table in a card. */
-.report-section {
-  display: grid;
-  gap: 8px;
-}
-
-.report-section-head {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.report-section-head h3 {
-  margin: 0;
-  font-size: 1.05rem;
-}
-
-.report-section-head p {
-  margin: 2px 0 0;
-}
-
-.report-section-icon {
-  flex: none;
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #eef2ff, #faf5ff);
-  box-shadow: inset 0 0 0 1px #e0e7ff;
-  font-size: 1.1rem;
-}
-
-.report-card {
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-}
-
-.report-card .table-wrap {
-  margin: 0;
-  border: none;
-  border-radius: 0;
-}
-
-.report-card th,
-.report-card td {
-  padding: 10px 12px;
-}
-
-.report-card tr:last-child td {
-  border-bottom: none;
-}
-
-.report-card tbody tr:nth-child(even) td {
-  background: #fafbff;
-}
-
 .report-empty {
   margin: 0;
   padding: 16px;
@@ -1161,42 +1026,333 @@ td span[dir='auto'] {
   border-radius: 16px;
 }
 
-/* Success rate: the number and a bar (green from 75%, amber from 50%, red below). */
-.rate {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
+/* ---------- Reports: tabs, cards, the last seven days, grouped results ---------- */
+
+/* Tab bar: five equal tabs with an icon over a short label. */
+.rp-tabs {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
 }
 
-.rate-bar {
-  flex: 0 0 64px;
-  height: 8px;
+.rp-tab {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 2px;
+  min-height: 56px;
+  padding: 6px 2px;
+  border: none;
+  border-radius: 14px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.rp-tab:hover {
+  background: #f1f5ff;
+}
+
+.rp-tab-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.rp-tab-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.rp-tab.active {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(79, 70, 229, 0.25);
+}
+
+/* How many questions are waiting, on the review tab. */
+.rp-tab-count {
+  position: absolute;
+  top: 4px;
+  inset-inline-end: 6px;
+  min-width: 18px;
+  padding: 0 5px;
   border-radius: 999px;
-  background: #e2e8f0;
+  background: #f43f5e;
+  color: #fff;
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 18px;
+  text-align: center;
+}
+
+/* Each tab shows one stack of cards. */
+.rp-view {
+  display: grid;
+  gap: 14px;
+}
+
+.rp-card {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.rp-card-head h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.rp-card-head p {
+  margin: 2px 0 0;
+}
+
+/* Last seven days: one circle per day, a ring that fills towards the goal, a tick when it is reached. */
+.rp-week {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+  justify-items: center;
+}
+
+.rp-day {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+}
+
+.rp-day-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.rp-day.today .rp-day-name {
+  color: #4338ca;
+}
+
+.rp-day-ring {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: conic-gradient(#6366f1 var(--p, 0%), #e2e8f0 0);
+}
+
+.rp-day-core {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+.rp-day.done .rp-day-ring {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  box-shadow: 0 3px 8px rgba(22, 163, 74, 0.3);
+}
+
+.rp-day.done .rp-day-core {
+  background: transparent;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.rp-day.today .rp-day-ring {
+  outline: 2px solid #c7d2fe;
+  outline-offset: 2px;
+}
+
+/* Totals: four tiles in one row, on phones too. */
+.rp-tiles {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.rp-tile {
+  display: grid;
+  justify-items: center;
+  gap: 2px;
+  min-width: 0;
+  padding: 10px 4px;
+  border-radius: 14px;
+  background: #f8faff;
+  border: 1px solid #e0e7ff;
+  text-align: center;
+}
+
+.rp-tile-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.rp-tile strong {
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #3730a3;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.rp-tile-label {
+  font-size: 0.72rem;
+  line-height: 1.2;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+/* Label and value rows: the label on the left, the value on the right. */
+.rp-list {
+  display: grid;
+  margin: 0;
+}
+
+.rp-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 2px;
+  border-bottom: 1px dashed var(--border);
+}
+
+.rp-row:last-child {
+  border-bottom: none;
+}
+
+.rp-row dt {
+  margin: 0;
+  color: var(--muted);
+}
+
+.rp-row dd {
+  margin: 0;
+  font-weight: 700;
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+/* Results and question bank: one collapsible group per topic. */
+.rp-overall {
+  display: grid;
+  gap: 10px;
+}
+
+.rp-groups {
+  display: grid;
+  gap: 8px;
+}
+
+.rp-group {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
   overflow: hidden;
 }
 
-.rate-fill {
-  display: block;
-  height: 100%;
-  border-radius: 999px;
+.rp-group[open] {
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
 }
 
-.rate-fill.good {
-  background: linear-gradient(90deg, #22c55e, #16a34a);
+.rp-group-summary {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  padding: 12px 36px 12px 14px;
+  cursor: pointer;
+  list-style: none;
 }
 
-.rate-fill.mid {
-  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+.rp-group-summary::-webkit-details-marker {
+  display: none;
 }
 
-.rate-fill.low {
-  background: linear-gradient(90deg, #f87171, #dc2626);
+/* A chevron at the end of the summary, turned over when the group is open. */
+.rp-group-summary::after {
+  content: '▾';
+  position: absolute;
+  top: 12px;
+  inset-inline-end: 12px;
+  color: var(--muted);
+  transition: transform 0.15s ease;
 }
 
-.reports-actions {
-  justify-content: center;
+.rp-group[open] > .rp-group-summary::after {
+  transform: rotate(180deg);
+}
+
+.rp-types {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 12px 14px 14px;
+  list-style: none;
+  border-top: 1px dashed var(--border);
+}
+
+.rp-type {
+  display: grid;
+  gap: 6px;
+}
+
+.rp-type-meta {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.perf-titles strong {
+  font-size: 1rem;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+/* Review tab: the practise button spans the card, and the cards sit inside it without a second frame. */
+.rp-review {
+  display: grid;
+  gap: 12px;
+}
+
+.rp-review > .btn {
+  width: 100%;
+}
+
+.rp-review .review-list {
+  padding: 0;
+}
+
+@media (max-width: 560px) {
+  .rp-card {
+    padding: 12px;
+  }
+
+  .rp-tab-label {
+    font-size: 0.68rem;
+  }
+
+  .goal-card {
+    padding: 16px;
+  }
 }
 
 /* Review cards: one per question that needs another look. */
@@ -3155,102 +3311,6 @@ body:has(.card.play) .bottom-nav {
   color: #6d28d9;
 }
 
-/* Activity panel: the month calendar, inside the report card. */
-.activity {
-  display: grid;
-  gap: 12px;
-  padding: 14px;
-}
-
-/* Overview: progress, study time and streaks in one card, one labelled row each. */
-.overview {
-  display: grid;
-  padding: 10px 12px;
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-}
-
-.ov-group {
-  display: grid;
-  gap: 6px;
-  padding: 10px 2px;
-}
-
-.ov-group + .ov-group {
-  border-top: 1px dashed var(--border);
-}
-
-.ov-title {
-  padding-left: 2px;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-/* One line of tiles per group: the number of columns comes from the tile count. */
-.ov-tiles {
-  display: grid;
-  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
-  gap: 6px;
-}
-
-/* Square tiles: an icon badge on top, the value in the middle, the label underneath. */
-.ov-tiles .report-stat {
-  gap: 4px;
-  padding: 10px 4px;
-  min-width: 0;
-  aspect-ratio: 1 / 1;
-  align-content: center;
-  border-radius: 16px;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 2px 6px rgba(15, 23, 42, 0.05);
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
-}
-
-.ov-tiles .report-stat:hover {
-  transform: translateY(-2px);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8), 0 6px 14px rgba(15, 23, 42, 0.1);
-}
-
-.ov-tiles .report-stat:last-child:nth-child(odd) {
-  grid-column: auto;
-}
-
-.ov-tiles .report-stat-icon {
-  display: grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
-  font-size: 0.95rem;
-}
-
-.ov-tiles .report-stat strong {
-  font-size: 1rem;
-  line-height: 1.1;
-  overflow-wrap: anywhere;
-}
-
-.ov-tiles .report-stat-label {
-  font-size: 0.66rem;
-  line-height: 1.2;
-  color: var(--muted);
-  text-align: center;
-  overflow-wrap: anywhere;
-}
-
-/* On narrow phones six squares would be too small: three per line, two lines per group. */
-@media (max-width: 560px) {
-  .ov-tiles {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 /* Month calendar: flat tiles in the site's indigo accents. Colour = play time that day. */
 .cal {
   display: grid;
@@ -4025,30 +4085,6 @@ img,
   background: #eef2ff;
 }
 
-/* The report cards hold a list of result cards, so the outer box is dropped and each result stands alone. */
-.report-card:has(> .perf-list) {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  overflow: visible;
-}
-
-.perf-list {
-  display: grid;
-  gap: 10px;
-  padding: 2px 0;
-}
-
-.perf-card {
-  display: grid;
-  gap: 10px;
-  padding: 14px;
-  border-radius: 16px;
-  background: #fff;
-  border: 1px solid var(--border);
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
-}
-
 .perf-head {
   display: flex;
   align-items: center;
@@ -4177,11 +4213,6 @@ img,
   color: #b91c1c;
 }
 
-.bank-card.total {
-  background: linear-gradient(160deg, #eef2ff, #fff);
-  border-color: #c7d2fe;
-}
-
 .bank-chips {
   display: flex;
   flex-wrap: wrap;
@@ -4232,54 +4263,3 @@ img,
   height: 16px;
 }
 
-/* Phones: square tiles would leave gaps in rows of five, so tiles are wide and two per line.
-   An odd last tile spans the full line instead of leaving an empty slot. */
-@media (max-width: 560px) {
-  .ov-tiles {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .ov-tiles .report-stat {
-    aspect-ratio: auto;
-    grid-template-columns: auto minmax(0, 1fr);
-    grid-template-rows: auto auto;
-    column-gap: 10px;
-    row-gap: 0;
-    justify-items: start;
-    align-items: center;
-    align-content: center;
-    padding: 10px 12px;
-    text-align: start;
-  }
-
-  .ov-tiles .report-stat-icon {
-    grid-row: 1 / span 2;
-    width: 36px;
-    height: 36px;
-  }
-
-  .ov-tiles .report-stat strong {
-    font-size: 1.05rem;
-  }
-
-  .ov-tiles .report-stat-label {
-    font-size: 0.74rem;
-    text-align: start;
-  }
-
-  .ov-tiles .report-stat:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-  }
-
-  .perf-card {
-    padding: 12px;
-  }
-
-  .perf-metric dd {
-    font-size: 0.98rem;
-  }
-
-  .goal-card {
-    padding: 16px;
-  }
-}

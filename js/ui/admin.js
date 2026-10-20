@@ -1,7 +1,7 @@
 // Settings screen (opened from the gear in the header). Three sections:
 //   Sounds: the win and lose sound effects, each on or off, with a volume and a preview;
 //           and the spoken English that is read aloud after each answer.
-//   Progress: export the answers so far as a signed text, and import it on another device.
+//   Progress: export the answers so far as a signed text, import it on another device, or clear it all.
 //   Question bank: import and export, plus a guide and prompt for writing questions with an AI.
 // Questions are written in files and imported here. The game code is never touched here.
 
@@ -9,11 +9,11 @@ import { listQuestions, importIntoStore } from '../bank/repository.js';
 import { serializeQuestions } from '../bank/importer.js';
 import { QUESTION_PROMPT } from '../bank/question-prompt.js';
 import { getSoundSettings, saveSoundSettings } from '../storage/settings.js';
-import { loadAttempts, importAttempts } from '../progress/tracker.js';
+import { loadAttempts, importAttempts, resetProgress } from '../progress/tracker.js';
 import { loadSessions, addSessions } from '../progress/activity.js';
 import { encodeBackup, decodeBackup } from '../progress/backup.js';
 import { playWinSound, playLoseSound, playTimeoutSound } from './sounds.js';
-import { h, fa, toast, download } from './dom.js';
+import { h, fa, toast, download, confirmDialog } from './dom.js';
 
 const SECTIONS = [
   ['sounds', 'Sounds'],
@@ -186,6 +186,54 @@ function progressSection() {
         h('button', { type: 'button', class: 'btn ghost', onclick: () => fileInput.click() }, 'Import progress file'),
       ),
       fileInput,
+    ),
+    clearProgressCard(),
+  );
+}
+
+/** Clears all the progress on this device, after two confirmations. The question bank is kept. */
+function clearProgressCard() {
+  return h(
+    'div',
+    { class: 'card admin-card' },
+    h('h3', {}, 'Clear progress'),
+    h(
+      'p',
+      { class: 'muted small' },
+      'Deletes every answer, your points, XP, level, stars, lesson progress, play time and calendar on this device. This cannot be undone. The question bank is not changed.',
+    ),
+    h(
+      'div',
+      { class: 'toolbar-actions' },
+      h(
+        'button',
+        {
+          type: 'button',
+          class: 'btn danger',
+          onclick: async () => {
+            // Two steps: the first says exactly what is deleted, the second is the final check.
+            const first = await confirmDialog({
+              title: 'Clear all progress?',
+              message:
+                'All your history on this device will be deleted: every answer you have given, your points, XP, level, stars, lesson progress, your play time and your calendar. This cannot be undone. The question bank will not change.',
+              confirmText: 'Continue',
+              cancelText: 'Cancel',
+            });
+            if (!first) return;
+            const second = await confirmDialog({
+              title: 'Are you sure?',
+              message: 'This is the last step. Your history will be permanently erased from this device.',
+              confirmText: 'Delete everything',
+              cancelText: 'Keep my progress',
+              danger: true,
+            });
+            if (!second) return;
+            await resetProgress();
+            toast('Progress cleared.');
+          },
+        },
+        'Clear progress',
+      ),
     ),
   );
 }
