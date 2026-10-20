@@ -96,15 +96,12 @@
         },
         {
           "id": "evolve-1-l01-tr-08",
-          "question": "این همسر من است.",
+          "question": "این زن من است.",
           "expected_answer": "This is my wife.",
-          "accepted_answers": [
-            "This is my spouse."
-          ],
           "explanation": "Wife برای همسر زن و spouse برای همسر بدون مشخص کردن جنسیت استفاده می‌شود.",
-          "hint": "کلمه‌ی کلیدی: «همسر» = wife؛ تلفظ: /waɪf/ (وایف)؛ نکته: برای همسر زن است و spouse /spaʊs/ (اسپَوز) هم به معنی همسر و بدون مشخص کردن جنسیت، قابل قبول است.",
+          "hint": "کلمه‌ی کلیدی: «زن» = wife؛ تلفظ: /waɪf/ (وایف)؛ نکته: «همسر» در انگلیسی spouse است، نه wife.",
           "time_limit": 60,
-          "translation": "این همسر من است."
+          "translation": "این زن من است."
         },
         {
           "id": "evolve-1-l01-tr-09",
@@ -141,12 +138,12 @@
         },
         {
           "id": "evolve-1-l01-tr-12",
-          "question": "به من کمک کن. (اصطلاح)",
+          "question": "به من یک دست بده. (اصطلاح)",
           "expected_answer": "Give me a hand.",
           "explanation": "Give me a hand یک عبارت رایج به معنی کمکم کن است.",
-          "hint": "کلمه‌ی کلیدی: «به من کمک کن (اصطلاح)» = give me a hand؛ تلفظ: /ɡɪv miː ə hænd/ (گیو می ا هَند)؛ نکته: این یک اصطلاح است و کلمه‌به‌کلمه ترجمه نمی‌شود.",
+          "hint": "کلمه‌ی کلیدی: «به من یک دست بده (اصطلاح)» = give me a hand؛ این یک اصطلاح است و کلمه‌به‌کلمه ترجمه نمی‌شود.",
           "time_limit": 60,
-          "translation": "به من کمک کن. (اصطلاح)"
+          "translation": "به من یک دست بده. (اصطلاح)"
         },
         {
           "id": "evolve-1-l01-tr-13",
@@ -156,9 +153,7 @@
           "hint": "کلمه‌ی کلیدی: «کمک» = help؛ تلفظ: /help/ (هِلپ)؛ راهنما: به شکل پرسشی جمله دقت کن.",
           "time_limit": 60,
           "accepted_answers": [
-            "How do you say کمک in English?",
             "How do you say help in English?",
-            "How do you say 'کمک' in English?",
             "How do you say 'help' in English?"
           ],
           "translation": "چطور به انگلیسی می‌گویی «کمک»؟"
@@ -357,7 +352,7 @@
           "question": "این هدف اصلی من است.",
           "expected_answer": "This is my objective.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: objective = هدف؛ this = این. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: objective = هدف اصلی؛ this = این. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60,
           "translation": "این هدف اصلی من است."
         },
@@ -906,7 +901,7 @@
           "question": "او (زن) تماشا می‌کند.",
           "expected_answer": "She watches.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: watches = ساعت‌ها (جمع) / تماشا می‌کند (برای He / She / It). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: watch = تماشا کردن؛ برای She فعل watches می‌شود. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60,
           "translation": "او (زن) تماشا می‌کند."
         },
@@ -1119,30 +1114,30 @@
         },
         {
           "id": "evolve-1-l01-tr-112",
-          "question": "به من کمک کن.",
+          "question": "به من یاری کن.",
           "expected_answer": "Assist me.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: assist = کمک کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: assist = یاری کردن (رسمی‌تر از help). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60,
-          "translation": "به من کمک کن."
+          "translation": "به من یاری کن."
         },
         {
           "id": "evolve-1-l01-tr-115",
-          "question": "من شروع می‌کنم.",
+          "question": "من آغاز می‌کنم.",
           "expected_answer": "I begin.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: begin = شروع کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: begin = آغاز کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60,
-          "translation": "من شروع می‌کنم."
+          "translation": "من آغاز می‌کنم."
         },
         {
           "id": "evolve-1-l01-tr-116",
-          "question": "او (مرد) شروع می‌کند.",
+          "question": "او (مرد) آغاز می‌کند.",
           "expected_answer": "He begins.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: begin = شروع کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: begin = آغاز کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60,
-          "translation": "او (مرد) شروع می‌کند."
+          "translation": "او (مرد) آغاز می‌کند."
         },
         {
           "id": "evolve-1-l01-tr-117",
@@ -1164,12 +1159,12 @@
         },
         {
           "id": "evolve-1-l01-tr-119",
-          "question": "من می‌بندم.",
-          "expected_answer": "I shut.",
+          "question": "من در را می‌بندم.",
+          "expected_answer": "I shut the door.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: shut = بستن (در و پنجره). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60,
-          "translation": "من می‌بندم."
+          "translation": "من در را می‌بندم."
         },
         {
           "id": "evolve-1-l01-tr-120",
@@ -1200,12 +1195,12 @@
         },
         {
           "id": "evolve-1-l01-tr-123",
-          "question": "به من کمک کن.",
+          "question": "به من مساعدت کن.",
           "expected_answer": "Aid me.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: aid = کمک. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: aid = مساعدت / کمک. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60,
-          "translation": "به من کمک کن."
+          "translation": "به من مساعدت کن."
         },
         {
           "id": "evolve-1-l01-tr-124",
@@ -1233,22 +1228,23 @@
         },
         {
           "id": "evolve-1-l01-tr-126",
-          "question": "آن خانه من است.",
-          "expected_answer": "It is my house.",
+          "question": "آن کتاب من است.",
+          "expected_answer": "It is my book.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: house = ساختمان (خانه‌ی فیزیکی). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: book = کتاب؛ it = آن (برای چیز یا حیوان).",
           "time_limit": 60,
           "accepted_answers": [
-            "It's my house."
+            "It's my book.",
+            "That is my book."
           ],
-          "translation": "آن خانه من است."
+          "translation": "آن کتاب من است."
         },
         {
           "id": "evolve-1-l01-tr-127",
           "question": "من نمی‌فهمم.",
           "expected_answer": "I don't understand.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: به نوع جمله دقت کن..",
+          "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
           "accepted_answers": [
             "I do not understand."
@@ -1260,7 +1256,7 @@
           "question": "چطور هجی می‌کنی؟",
           "expected_answer": "How do you spell?",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: spell = هجی کردن. راهنما: به نوع جمله دقت کن..",
+          "hint": "کلمه‌های کلیدی: spell = هجی کردن. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
           "translation": "چطور هجی می‌کنی؟"
         },
@@ -1269,7 +1265,7 @@
           "question": "می‌توانی آن را تکرار کنی، لطفاً؟",
           "expected_answer": "Can you repeat that, please?",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: can = می‌توانم / توانستن؛ repeat = تکرار کردن. راهنما: به نوع جمله دقت کن..",
+          "hint": "کلمه‌های کلیدی: can = می‌توانم / توانستن؛ repeat = تکرار کردن. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
           "accepted_answers": [
             "Can you repeat that please?"
@@ -1281,7 +1277,7 @@
           "question": "ببخشید، کدام صفحه؟",
           "expected_answer": "Sorry, what page?",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: page = صفحه. راهنما: به نوع جمله دقت کن..",
+          "hint": "کلمه‌های کلیدی: page = صفحه. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
           "translation": "ببخشید، کدام صفحه؟"
         },
@@ -1290,11 +1286,8 @@
           "question": "آیا سؤالی داری؟",
           "expected_answer": "Do you have any questions?",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: questions = سؤال‌ها. راهنما: به نوع جمله دقت کن..",
+          "hint": "کلمه‌های کلیدی: questions = سؤال‌ها. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
-          "accepted_answers": [
-            "Do you've any questions?"
-          ],
           "translation": "آیا سؤالی داری؟"
         },
         {
@@ -1302,7 +1295,7 @@
           "question": "کتابت را ببند.",
           "expected_answer": "Close your book.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: close = بستن / نزدیک؛ book = کتاب. راهنما: به نوع جمله دقت کن..",
+          "hint": "کلمه‌های کلیدی: close = بستن / نزدیک؛ book = کتاب. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
           "translation": "کتابت را ببند."
         },
@@ -1311,7 +1304,7 @@
           "question": "کتابت را باز کن.",
           "expected_answer": "Open your book.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: open = باز کردن / باز؛ book = کتاب. راهنما: به نوع جمله دقت کن..",
+          "hint": "کلمه‌های کلیدی: open = باز کردن / باز؛ book = کتاب. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
           "translation": "کتابت را باز کن."
         },
@@ -1320,7 +1313,7 @@
           "question": "به صفحه برو.",
           "expected_answer": "Go to page.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: page = صفحه. راهنما: به نوع جمله دقت کن..",
+          "hint": "کلمه‌های کلیدی: page = صفحه. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
           "translation": "به صفحه برو."
         },
@@ -1329,7 +1322,7 @@
           "question": "معلم تو.",
           "expected_answer": "Your teacher.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: به نوع جمله دقت کن..",
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
           "translation": "معلم تو."
         },
@@ -1338,7 +1331,7 @@
           "question": "این معلم تو است.",
           "expected_answer": "This is your teacher.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: به نوع جمله دقت کن..",
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
           "translation": "این معلم تو است."
         }
@@ -1418,7 +1411,7 @@
             "He"
           ],
           "time_limit": 60,
-          "translation": "او غذا می‌خورد. (مرد)"
+          "translation": "او (مرد) می‌خورد."
         },
         {
           "id": "evolve-1-l01-sb-06",
@@ -1978,7 +1971,7 @@
             "We"
           ],
           "time_limit": 60,
-          "translation": "ما یک خانه داریم."
+          "translation": "ما یک محل زندگی داریم."
         },
         {
           "id": "evolve-1-l01-sb-46",
@@ -2630,7 +2623,7 @@
             "Assist"
           ],
           "time_limit": 60,
-          "translation": "به من کمک کن."
+          "translation": "به من یاری کن."
         },
         {
           "id": "evolve-1-l01-sb-100",
@@ -2898,7 +2891,7 @@
             "I"
           ],
           "time_limit": 60,
-          "translation": "من شروع می‌کنم."
+          "translation": "من آغاز می‌کنم."
         },
         {
           "id": "evolve-1-l01-sb-119",
@@ -2910,7 +2903,7 @@
             "He"
           ],
           "time_limit": 60,
-          "translation": "او (مرد) شروع می‌کند."
+          "translation": "او (مرد) آغاز می‌کند."
         },
         {
           "id": "evolve-1-l01-sb-120",
@@ -2939,14 +2932,16 @@
         {
           "id": "evolve-1-l01-sb-122",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "expected_answer": "I shut.",
+          "expected_answer": "I shut the door.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
           "word_bank": [
-            "shut.",
-            "I"
+            "I",
+            "shut",
+            "the",
+            "door."
           ],
           "time_limit": 60,
-          "translation": "من می‌بندم."
+          "translation": "من در را می‌بندم."
         },
         {
           "id": "evolve-1-l01-sb-123",
@@ -2998,7 +2993,7 @@
             "Give"
           ],
           "time_limit": 60,
-          "translation": "به من کمک کن. (اصطلاح)"
+          "translation": "به من یک دست بده. (اصطلاح)"
         },
         {
           "id": "evolve-1-l01-sb-127",
@@ -3010,7 +3005,7 @@
             "Aid"
           ],
           "time_limit": 60,
-          "translation": "به من کمک کن."
+          "translation": "به من مساعدت کن."
         },
         {
           "id": "evolve-1-l01-sb-128",
@@ -3081,7 +3076,7 @@
             "This"
           ],
           "time_limit": 60,
-          "translation": "این همسر من است."
+          "translation": "این زن من است."
         },
         {
           "id": "evolve-1-l01-sb-133",
@@ -3475,18 +3470,15 @@
           "id": "evolve-1-l01-wt-09",
           "word_bank": [
             "این",
-            "همسر",
+            "زن",
             "من",
             "است"
           ],
           "expected_answer": "This is my wife.",
-          "explanation": "همسر (زن) = wife.",
-          "hint": "همسر = wife؛ این = this؛ من = my؛ است = is.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
+          "hint": "کلمه‌های کلیدی: زن = wife؛ این = this؛ من = my؛ است = is.",
           "time_limit": 60,
-          "accepted_answers": [
-            "This is my spouse."
-          ],
-          "translation": "این همسر من است."
+          "translation": "این زن من است."
         },
         {
           "id": "evolve-1-l01-wt-10",
@@ -3513,9 +3505,10 @@
             "است"
           ],
           "expected_answer": "This is my tutor.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این مدرس خصوصی من است."
+          "translation": "این مدرس خصوصی من است.",
+          "hint": "کلمه‌های کلیدی: این = this؛ مدرس خصوصی = tutor؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-12",
@@ -3526,9 +3519,10 @@
             "است"
           ],
           "expected_answer": "This is my instructor.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این مربی من است."
+          "translation": "این مربی من است.",
+          "hint": "کلمه‌های کلیدی: این = this؛ مربی = instructor؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-13",
@@ -3539,9 +3533,10 @@
             "است"
           ],
           "expected_answer": "This is my spouse.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این همسر من است."
+          "translation": "این همسر من است.",
+          "hint": "کلمه‌های کلیدی: همسر = spouse (بدون مشخص کردن جنسیت)؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-14",
@@ -3552,9 +3547,10 @@
             "است"
           ],
           "expected_answer": "This is my helper.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این کمک‌کننده من است."
+          "translation": "این کمک‌کننده من است.",
+          "hint": "کلمه‌های کلیدی: کمک‌کننده = helper؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-15",
@@ -3565,9 +3561,10 @@
             "است"
           ],
           "expected_answer": "This is my mother.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این مادر من است."
+          "translation": "این مادر من است.",
+          "hint": "کلمه‌های کلیدی: مادر = mother؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-16",
@@ -3578,9 +3575,10 @@
             "است"
           ],
           "expected_answer": "This is my group.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این گروه من است."
+          "translation": "این گروه من است.",
+          "hint": "کلمه‌های کلیدی: گروه = group؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-17",
@@ -3591,9 +3589,10 @@
             "است"
           ],
           "expected_answer": "This is my team.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این تیم من است."
+          "translation": "این تیم من است.",
+          "hint": "کلمه‌های کلیدی: تیم = team؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-18",
@@ -3604,9 +3603,10 @@
             "است"
           ],
           "expected_answer": "This is my band.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این گروه موسیقی من است."
+          "translation": "این گروه موسیقی من است.",
+          "hint": "کلمه‌های کلیدی: گروه موسیقی = band؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-19",
@@ -3617,9 +3617,10 @@
             "است"
           ],
           "expected_answer": "This is my house.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این خانه من است."
+          "translation": "این خانه من است.",
+          "hint": "کلمه‌های کلیدی: خانه = house (ساختمان)؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-20",
@@ -3630,9 +3631,10 @@
             "است"
           ],
           "expected_answer": "This is my home.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این محل زندگی من است."
+          "translation": "این محل زندگی من است.",
+          "hint": "کلمه‌های کلیدی: محل زندگی = home (جای زندگی و آرامش)؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-21",
@@ -3643,9 +3645,10 @@
             "است"
           ],
           "expected_answer": "This is my street.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این خیابان من است."
+          "translation": "این خیابان من است.",
+          "hint": "کلمه‌های کلیدی: خیابان = street؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-22",
@@ -3656,9 +3659,10 @@
             "است"
           ],
           "expected_answer": "This is my road.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این جاده من است."
+          "translation": "این جاده من است.",
+          "hint": "کلمه‌های کلیدی: جاده = road؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-23",
@@ -3669,9 +3673,10 @@
             "است"
           ],
           "expected_answer": "This is my avenue.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این خیابان بزرگ من است."
+          "translation": "این خیابان بزرگ من است.",
+          "hint": "کلمه‌های کلیدی: خیابان بزرگ = avenue (خیابان پهن)؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-24",
@@ -3682,9 +3687,10 @@
             "است"
           ],
           "expected_answer": "This is my alley.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این کوچه من است."
+          "translation": "این کوچه من است.",
+          "hint": "کلمه‌های کلیدی: کوچه = alley؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-25",
@@ -3695,9 +3701,10 @@
             "است"
           ],
           "expected_answer": "This is my goal.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این هدف من است."
+          "translation": "این هدف من است.",
+          "hint": "کلمه‌های کلیدی: هدف = goal؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-26",
@@ -3708,9 +3715,10 @@
             "است"
           ],
           "expected_answer": "This is my objective.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این هدف اصلی من است."
+          "translation": "این هدف اصلی من است.",
+          "hint": "کلمه‌های کلیدی: هدف اصلی = objective؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-27",
@@ -3721,9 +3729,10 @@
             "است"
           ],
           "expected_answer": "This is my purpose.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این منظور من است."
+          "translation": "این منظور من است.",
+          "hint": "کلمه‌های کلیدی: منظور = purpose؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-28",
@@ -3734,9 +3743,10 @@
             "است"
           ],
           "expected_answer": "This is my target.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این هدف نهایی من است."
+          "translation": "این هدف نهایی من است.",
+          "hint": "کلمه‌های کلیدی: هدف نهایی = target؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-29",
@@ -3747,9 +3757,10 @@
             "است"
           ],
           "expected_answer": "This is my example.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این نمونه من است."
+          "translation": "این نمونه من است.",
+          "hint": "کلمه‌های کلیدی: نمونه = example؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-30",
@@ -3760,9 +3771,10 @@
             "است"
           ],
           "expected_answer": "This is my answer.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این پاسخ من است."
+          "translation": "این پاسخ من است.",
+          "hint": "کلمه‌های کلیدی: پاسخ = answer؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-31",
@@ -3773,9 +3785,10 @@
             "است"
           ],
           "expected_answer": "This is my request.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این درخواست من است."
+          "translation": "این درخواست من است.",
+          "hint": "کلمه‌های کلیدی: درخواست = request؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-32",
@@ -3786,12 +3799,13 @@
             "است"
           ],
           "expected_answer": "That is my tutor.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی دورتر: That is my + اسم.",
           "time_limit": 60,
           "translation": "آن مدرس خصوصی من است.",
           "accepted_answers": [
             "That's my tutor."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: آن = that؛ مدرس خصوصی = tutor؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-33",
@@ -3802,12 +3816,13 @@
             "است"
           ],
           "expected_answer": "That is my group.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی دورتر: That is my + اسم.",
           "time_limit": 60,
           "translation": "آن گروه من است.",
           "accepted_answers": [
             "That's my group."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: آن = that؛ گروه = group؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-34",
@@ -3818,12 +3833,13 @@
             "است"
           ],
           "expected_answer": "That is my house.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی دورتر: That is my + اسم.",
           "time_limit": 60,
           "translation": "آن خانه من است.",
           "accepted_answers": [
             "That's my house."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: آن = that؛ خانه = house؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-35",
@@ -3834,12 +3850,13 @@
             "است"
           ],
           "expected_answer": "That is my goal.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی دورتر: That is my + اسم.",
           "time_limit": 60,
           "translation": "آن هدف من است.",
           "accepted_answers": [
             "That's my goal."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: آن = that؛ هدف = goal؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-36",
@@ -3850,12 +3867,13 @@
             "دارم"
           ],
           "expected_answer": "I have a goal.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "من یک هدف دارم.",
           "accepted_answers": [
             "I've a goal."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: من = I؛ یک = a؛ هدف = goal؛ دارم = have."
         },
         {
           "id": "evolve-1-l01-wt-37",
@@ -3866,12 +3884,13 @@
             "دارم"
           ],
           "expected_answer": "I have a team.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "من یک تیم دارم.",
           "accepted_answers": [
             "I've a team."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: من = I؛ یک = a؛ تیم = team؛ دارم = have."
         },
         {
           "id": "evolve-1-l01-wt-38",
@@ -3882,12 +3901,13 @@
             "دارم"
           ],
           "expected_answer": "I have a group.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "من یک گروه دارم.",
           "accepted_answers": [
             "I've a group."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: من = I؛ یک = a؛ گروه = group؛ دارم = have."
         },
         {
           "id": "evolve-1-l01-wt-39",
@@ -3898,12 +3918,13 @@
             "دارم"
           ],
           "expected_answer": "I have a house.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "من یک خانه دارم.",
           "accepted_answers": [
             "I've a house."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: من = I؛ یک = a؛ خانه = house؛ دارم = have."
         },
         {
           "id": "evolve-1-l01-wt-40",
@@ -3914,12 +3935,13 @@
             "دارم"
           ],
           "expected_answer": "I have a pair.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "من یک جفت دارم.",
           "accepted_answers": [
             "I've a pair."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: من = I؛ یک = a؛ جفت = pair؛ دارم = have."
         },
         {
           "id": "evolve-1-l01-wt-41",
@@ -3930,12 +3952,13 @@
             "دارم"
           ],
           "expected_answer": "I have a request.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "من یک درخواست دارم.",
           "accepted_answers": [
             "I've a request."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: من = I؛ یک = a؛ درخواست = request؛ دارم = have."
         },
         {
           "id": "evolve-1-l01-wt-42",
@@ -3946,12 +3969,13 @@
             "دارم"
           ],
           "expected_answer": "I have a band.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "من یک گروه موسیقی دارم.",
           "accepted_answers": [
             "I've a band."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: من = I؛ یک = a؛ گروه موسیقی = band؛ دارم = have."
         },
         {
           "id": "evolve-1-l01-wt-43",
@@ -3962,12 +3986,13 @@
             "دارم"
           ],
           "expected_answer": "I have a helper.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "من یک کمک‌کننده دارم.",
           "accepted_answers": [
             "I've a helper."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: من = I؛ یک = a؛ کمک‌کننده = helper؛ دارم = have."
         },
         {
           "id": "evolve-1-l01-wt-44",
@@ -3978,12 +4003,13 @@
             "دارم"
           ],
           "expected_answer": "I have a tutor.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "من یک مدرس خصوصی دارم.",
           "accepted_answers": [
             "I've a tutor."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: من = I؛ یک = a؛ مدرس خصوصی = tutor؛ دارم = have."
         },
         {
           "id": "evolve-1-l01-wt-45",
@@ -3994,12 +4020,13 @@
             "داریم"
           ],
           "expected_answer": "We have a tutor.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "ما یک مدرس خصوصی داریم.",
           "accepted_answers": [
             "We've a tutor."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: ما = we؛ یک = a؛ مدرس خصوصی = tutor؛ داریم = have."
         },
         {
           "id": "evolve-1-l01-wt-46",
@@ -4010,12 +4037,13 @@
             "داریم"
           ],
           "expected_answer": "We have a helper.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "ما یک کمک‌کننده داریم.",
           "accepted_answers": [
             "We've a helper."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: ما = we؛ یک = a؛ کمک‌کننده = helper؛ داریم = have."
         },
         {
           "id": "evolve-1-l01-wt-47",
@@ -4026,12 +4054,13 @@
             "داریم"
           ],
           "expected_answer": "We have a team.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "ما یک تیم داریم.",
           "accepted_answers": [
             "We've a team."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: ما = we؛ یک = a؛ تیم = team؛ داریم = have."
         },
         {
           "id": "evolve-1-l01-wt-48",
@@ -4042,12 +4071,13 @@
             "داریم"
           ],
           "expected_answer": "We have a group.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "ما یک گروه داریم.",
           "accepted_answers": [
             "We've a group."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: ما = we؛ یک = a؛ گروه = group؛ داریم = have."
         },
         {
           "id": "evolve-1-l01-wt-49",
@@ -4058,12 +4088,13 @@
             "داریم"
           ],
           "expected_answer": "We have a goal.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "ما یک هدف داریم.",
           "accepted_answers": [
             "We've a goal."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: ما = we؛ یک = a؛ هدف = goal؛ داریم = have."
         },
         {
           "id": "evolve-1-l01-wt-50",
@@ -4074,12 +4105,13 @@
             "داریم"
           ],
           "expected_answer": "We have a house.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "ما یک خانه داریم.",
           "accepted_answers": [
             "We've a house."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: ما = we؛ یک = a؛ خانه = house؛ داریم = have."
         },
         {
           "id": "evolve-1-l01-wt-51",
@@ -4090,12 +4122,13 @@
             "هستم"
           ],
           "expected_answer": "I am a tutor.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای I از am استفاده می‌کنیم: I am a + اسم.",
           "time_limit": 60,
           "translation": "من یک مدرس خصوصی هستم.",
           "accepted_answers": [
             "I'm a tutor."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: من = I؛ یک = a؛ مدرس خصوصی = tutor؛ هستم = am."
         },
         {
           "id": "evolve-1-l01-wt-52",
@@ -4106,12 +4139,13 @@
             "هستم"
           ],
           "expected_answer": "I am a helper.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای I از am استفاده می‌کنیم: I am a + اسم.",
           "time_limit": 60,
           "translation": "من یک کمک‌کننده هستم.",
           "accepted_answers": [
             "I'm a helper."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: من = I؛ یک = a؛ کمک‌کننده = helper؛ هستم = am."
         },
         {
           "id": "evolve-1-l01-wt-53",
@@ -4120,9 +4154,10 @@
             "می‌خورم"
           ],
           "expected_answer": "I eat.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من می‌خورم."
+          "translation": "من می‌خورم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ می‌خورم = eat."
         },
         {
           "id": "evolve-1-l01-wt-54",
@@ -4131,9 +4166,10 @@
             "می‌خوانم"
           ],
           "expected_answer": "I read.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من می‌خوانم."
+          "translation": "من می‌خوانم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ می‌خوانم = read."
         },
         {
           "id": "evolve-1-l01-wt-55",
@@ -4142,9 +4178,10 @@
             "می‌نویسم"
           ],
           "expected_answer": "I write.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من می‌نویسم."
+          "translation": "من می‌نویسم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ می‌نویسم = write."
         },
         {
           "id": "evolve-1-l01-wt-56",
@@ -4153,9 +4190,10 @@
             "تماشا می‌کنم"
           ],
           "expected_answer": "I watch.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من تماشا می‌کنم."
+          "translation": "من تماشا می‌کنم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ تماشا می‌کنم = watch."
         },
         {
           "id": "evolve-1-l01-wt-57",
@@ -4164,9 +4202,10 @@
             "گوش می‌دهم"
           ],
           "expected_answer": "I listen.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من گوش می‌دهم."
+          "translation": "من گوش می‌دهم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ گوش می‌دهم = listen."
         },
         {
           "id": "evolve-1-l01-wt-58",
@@ -4175,9 +4214,10 @@
             "می‌گویم"
           ],
           "expected_answer": "I say.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من می‌گویم."
+          "translation": "من می‌گویم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ می‌گویم = say."
         },
         {
           "id": "evolve-1-l01-wt-59",
@@ -4186,9 +4226,10 @@
             "می‌بینم"
           ],
           "expected_answer": "I see.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من می‌بینم."
+          "translation": "من می‌بینم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ می‌بینم = see."
         },
         {
           "id": "evolve-1-l01-wt-60",
@@ -4197,9 +4238,10 @@
             "می‌شنوم"
           ],
           "expected_answer": "I hear.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من می‌شنوم."
+          "translation": "من می‌شنوم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ می‌شنوم = hear."
         },
         {
           "id": "evolve-1-l01-wt-61",
@@ -4208,9 +4250,10 @@
             "می‌پرسم"
           ],
           "expected_answer": "I ask.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من می‌پرسم."
+          "translation": "من می‌پرسم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ می‌پرسم = ask."
         },
         {
           "id": "evolve-1-l01-wt-62",
@@ -4219,9 +4262,10 @@
             "شروع می‌کنم"
           ],
           "expected_answer": "I start.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من شروع می‌کنم."
+          "translation": "من شروع می‌کنم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ شروع می‌کنم = start."
         },
         {
           "id": "evolve-1-l01-wt-63",
@@ -4230,9 +4274,10 @@
             "بررسی می‌کنم"
           ],
           "expected_answer": "I check.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من بررسی می‌کنم."
+          "translation": "من بررسی می‌کنم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ بررسی می‌کنم = check."
         },
         {
           "id": "evolve-1-l01-wt-64",
@@ -4241,9 +4286,10 @@
             "باز می‌کنم"
           ],
           "expected_answer": "I open.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من باز می‌کنم."
+          "translation": "من باز می‌کنم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ باز می‌کنم = open."
         },
         {
           "id": "evolve-1-l01-wt-65",
@@ -4252,9 +4298,10 @@
             "می‌بندم"
           ],
           "expected_answer": "I close.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من می‌بندم."
+          "translation": "من می‌بندم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ می‌بندم = close."
         },
         {
           "id": "evolve-1-l01-wt-66",
@@ -4263,9 +4310,10 @@
             "قفل می‌کنم"
           ],
           "expected_answer": "I lock.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من قفل می‌کنم."
+          "translation": "من قفل می‌کنم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ قفل می‌کنم = lock."
         },
         {
           "id": "evolve-1-l01-wt-67",
@@ -4274,9 +4322,10 @@
             "می‌فهمم"
           ],
           "expected_answer": "I understand.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من می‌فهمم."
+          "translation": "من می‌فهمم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ می‌فهمم = understand."
         },
         {
           "id": "evolve-1-l01-wt-68",
@@ -4285,9 +4334,10 @@
             "درس می‌خوانم"
           ],
           "expected_answer": "I study.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من درس می‌خوانم."
+          "translation": "من درس می‌خوانم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ درس می‌خوانم = study."
         },
         {
           "id": "evolve-1-l01-wt-69",
@@ -4296,9 +4346,10 @@
             "راه می‌روم"
           ],
           "expected_answer": "I walk.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من راه می‌روم."
+          "translation": "من راه می‌روم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ راه می‌روم = walk."
         },
         {
           "id": "evolve-1-l01-wt-70",
@@ -4307,9 +4358,10 @@
             "می‌گیرم"
           ],
           "expected_answer": "I get.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من می‌گیرم."
+          "translation": "من می‌گیرم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ می‌گیرم = get."
         },
         {
           "id": "evolve-1-l01-wt-71",
@@ -4318,9 +4370,10 @@
             "می‌دهم"
           ],
           "expected_answer": "I give.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من می‌دهم."
+          "translation": "من می‌دهم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ می‌دهم = give."
         },
         {
           "id": "evolve-1-l01-wt-72",
@@ -4329,9 +4382,10 @@
             "مشاهده می‌کنم"
           ],
           "expected_answer": "I observe.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من مشاهده می‌کنم."
+          "translation": "من مشاهده می‌کنم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ مشاهده می‌کنم = observe."
         },
         {
           "id": "evolve-1-l01-wt-73",
@@ -4340,9 +4394,10 @@
             "درخواست می‌کنم"
           ],
           "expected_answer": "I request.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من درخواست می‌کنم."
+          "translation": "من درخواست می‌کنم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ درخواست می‌کنم = request."
         },
         {
           "id": "evolve-1-l01-wt-74",
@@ -4351,9 +4406,10 @@
             "بازنویسی می‌کنم"
           ],
           "expected_answer": "I rewrite.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من بازنویسی می‌کنم."
+          "translation": "من بازنویسی می‌کنم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ بازنویسی می‌کنم = rewrite."
         },
         {
           "id": "evolve-1-l01-wt-75",
@@ -4362,9 +4418,10 @@
             "به یاد می‌آورم"
           ],
           "expected_answer": "I recall.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من به یاد می‌آورم."
+          "translation": "من به یاد می‌آورم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ به یاد می‌آورم = recall."
         },
         {
           "id": "evolve-1-l01-wt-76",
@@ -4373,9 +4430,10 @@
             "دوباره می‌سازم"
           ],
           "expected_answer": "I rebuild.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من دوباره می‌سازم."
+          "translation": "من دوباره می‌سازم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ دوباره می‌سازم = rebuild."
         },
         {
           "id": "evolve-1-l01-wt-77",
@@ -4384,9 +4442,10 @@
             "می‌گوید"
           ],
           "expected_answer": "He says.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) می‌گوید."
+          "translation": "او (مرد) می‌گوید.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ می‌گوید = says."
         },
         {
           "id": "evolve-1-l01-wt-78",
@@ -4395,9 +4454,10 @@
             "می‌بیند"
           ],
           "expected_answer": "She sees.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (زن) می‌بیند."
+          "translation": "او (زن) می‌بیند.",
+          "hint": "کلمه‌های کلیدی: او (زن) = she؛ می‌بیند = sees."
         },
         {
           "id": "evolve-1-l01-wt-79",
@@ -4406,9 +4466,10 @@
             "می‌شنود"
           ],
           "expected_answer": "He hears.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) می‌شنود."
+          "translation": "او (مرد) می‌شنود.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ می‌شنود = hears."
         },
         {
           "id": "evolve-1-l01-wt-80",
@@ -4417,9 +4478,10 @@
             "تماشا می‌کند"
           ],
           "expected_answer": "She watches.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (زن) تماشا می‌کند."
+          "translation": "او (زن) تماشا می‌کند.",
+          "hint": "کلمه‌های کلیدی: او (زن) = she؛ تماشا می‌کند = watches."
         },
         {
           "id": "evolve-1-l01-wt-81",
@@ -4428,9 +4490,10 @@
             "گوش می‌دهد"
           ],
           "expected_answer": "He listens.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) گوش می‌دهد."
+          "translation": "او (مرد) گوش می‌دهد.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ گوش می‌دهد = listens."
         },
         {
           "id": "evolve-1-l01-wt-82",
@@ -4439,9 +4502,10 @@
             "می‌نویسد"
           ],
           "expected_answer": "She writes.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (زن) می‌نویسد."
+          "translation": "او (زن) می‌نویسد.",
+          "hint": "کلمه‌های کلیدی: او (زن) = she؛ می‌نویسد = writes."
         },
         {
           "id": "evolve-1-l01-wt-83",
@@ -4450,9 +4514,10 @@
             "می‌پرسد"
           ],
           "expected_answer": "He asks.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) می‌پرسد."
+          "translation": "او (مرد) می‌پرسد.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ می‌پرسد = asks."
         },
         {
           "id": "evolve-1-l01-wt-84",
@@ -4461,9 +4526,10 @@
             "شروع می‌کند"
           ],
           "expected_answer": "She starts.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (زن) شروع می‌کند."
+          "translation": "او (زن) شروع می‌کند.",
+          "hint": "کلمه‌های کلیدی: او (زن) = she؛ شروع می‌کند = starts."
         },
         {
           "id": "evolve-1-l01-wt-85",
@@ -4472,9 +4538,10 @@
             "بررسی می‌کند"
           ],
           "expected_answer": "He checks.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) بررسی می‌کند."
+          "translation": "او (مرد) بررسی می‌کند.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ بررسی می‌کند = checks."
         },
         {
           "id": "evolve-1-l01-wt-86",
@@ -4483,9 +4550,10 @@
             "باز می‌کند"
           ],
           "expected_answer": "She opens.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (زن) باز می‌کند."
+          "translation": "او (زن) باز می‌کند.",
+          "hint": "کلمه‌های کلیدی: او (زن) = she؛ باز می‌کند = opens."
         },
         {
           "id": "evolve-1-l01-wt-87",
@@ -4494,9 +4562,10 @@
             "می‌بندد"
           ],
           "expected_answer": "He closes.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) می‌بندد."
+          "translation": "او (مرد) می‌بندد.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ می‌بندد = closes."
         },
         {
           "id": "evolve-1-l01-wt-88",
@@ -4505,9 +4574,10 @@
             "قفل می‌کند"
           ],
           "expected_answer": "She locks.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (زن) قفل می‌کند."
+          "translation": "او (زن) قفل می‌کند.",
+          "hint": "کلمه‌های کلیدی: او (زن) = she؛ قفل می‌کند = locks."
         },
         {
           "id": "evolve-1-l01-wt-89",
@@ -4516,9 +4586,10 @@
             "می‌فهمد"
           ],
           "expected_answer": "He understands.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) می‌فهمد."
+          "translation": "او (مرد) می‌فهمد.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ می‌فهمد = understands."
         },
         {
           "id": "evolve-1-l01-wt-90",
@@ -4527,9 +4598,10 @@
             "درس می‌خواند"
           ],
           "expected_answer": "She studies.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (زن) درس می‌خواند."
+          "translation": "او (زن) درس می‌خواند.",
+          "hint": "کلمه‌های کلیدی: او (زن) = she؛ درس می‌خواند = studies."
         },
         {
           "id": "evolve-1-l01-wt-91",
@@ -4538,9 +4610,10 @@
             "می‌گیرد"
           ],
           "expected_answer": "He gets.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) می‌گیرد."
+          "translation": "او (مرد) می‌گیرد.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ می‌گیرد = gets."
         },
         {
           "id": "evolve-1-l01-wt-92",
@@ -4549,9 +4622,10 @@
             "می‌دهد"
           ],
           "expected_answer": "She gives.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (زن) می‌دهد."
+          "translation": "او (زن) می‌دهد.",
+          "hint": "کلمه‌های کلیدی: او (زن) = she؛ می‌دهد = gives."
         },
         {
           "id": "evolve-1-l01-wt-93",
@@ -4560,9 +4634,10 @@
             "مشاهده می‌کند"
           ],
           "expected_answer": "He observes.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) مشاهده می‌کند."
+          "translation": "او (مرد) مشاهده می‌کند.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ مشاهده می‌کند = observes."
         },
         {
           "id": "evolve-1-l01-wt-94",
@@ -4571,9 +4646,10 @@
             "درخواست می‌کند"
           ],
           "expected_answer": "She requests.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (زن) درخواست می‌کند."
+          "translation": "او (زن) درخواست می‌کند.",
+          "hint": "کلمه‌های کلیدی: او (زن) = she؛ درخواست می‌کند = requests."
         },
         {
           "id": "evolve-1-l01-wt-95",
@@ -4582,9 +4658,10 @@
             "کمک می‌کند"
           ],
           "expected_answer": "He helps.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) کمک می‌کند."
+          "translation": "او (مرد) کمک می‌کند.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ کمک می‌کند = helps."
         },
         {
           "id": "evolve-1-l01-wt-96",
@@ -4593,9 +4670,10 @@
             "بازگو می‌کند"
           ],
           "expected_answer": "She retells.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (زن) بازگو می‌کند."
+          "translation": "او (زن) بازگو می‌کند.",
+          "hint": "کلمه‌های کلیدی: او (زن) = she؛ بازگو می‌کند = retells."
         },
         {
           "id": "evolve-1-l01-wt-97",
@@ -4604,9 +4682,10 @@
             "به یاد می‌آورد"
           ],
           "expected_answer": "He recalls.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) به یاد می‌آورد."
+          "translation": "او (مرد) به یاد می‌آورد.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ به یاد می‌آورد = recalls."
         },
         {
           "id": "evolve-1-l01-wt-98",
@@ -4615,9 +4694,10 @@
             "بازنویسی می‌کند"
           ],
           "expected_answer": "She rewrites.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (زن) بازنویسی می‌کند."
+          "translation": "او (زن) بازنویسی می‌کند.",
+          "hint": "کلمه‌های کلیدی: او (زن) = she؛ بازنویسی می‌کند = rewrites."
         },
         {
           "id": "evolve-1-l01-wt-99",
@@ -4626,9 +4706,10 @@
             "دوباره می‌سازد"
           ],
           "expected_answer": "He rebuilds.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) دوباره می‌سازد."
+          "translation": "او (مرد) دوباره می‌سازد.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ دوباره می‌سازد = rebuilds."
         },
         {
           "id": "evolve-1-l01-wt-100",
@@ -4637,9 +4718,10 @@
             "می‌خورد"
           ],
           "expected_answer": "She eats.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (زن) می‌خورد."
+          "translation": "او (زن) می‌خورد.",
+          "hint": "کلمه‌های کلیدی: او (زن) = she؛ می‌خورد = eats."
         },
         {
           "id": "evolve-1-l01-wt-101",
@@ -4648,9 +4730,10 @@
             "بپرس"
           ],
           "expected_answer": "Ask me.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در جمله‌ی امر فعل اول می‌آید و me (به من) بعد از آن.",
           "time_limit": 60,
-          "translation": "از من بپرس."
+          "translation": "از من بپرس.",
+          "hint": "کلمه‌های کلیدی: از من = me؛ بپرس = ask."
         },
         {
           "id": "evolve-1-l01-wt-102",
@@ -4659,9 +4742,10 @@
             "بگو"
           ],
           "expected_answer": "Tell me.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در جمله‌ی امر فعل اول می‌آید و me (به من) بعد از آن.",
           "time_limit": 60,
-          "translation": "به من بگو."
+          "translation": "به من بگو.",
+          "hint": "کلمه‌های کلیدی: به من = me؛ بگو = tell."
         },
         {
           "id": "evolve-1-l01-wt-103",
@@ -4670,20 +4754,22 @@
             "بده"
           ],
           "expected_answer": "Give me.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در جمله‌ی امر فعل اول می‌آید و me (به من) بعد از آن.",
           "time_limit": 60,
-          "translation": "به من بده."
+          "translation": "به من بده.",
+          "hint": "کلمه‌های کلیدی: به من = me؛ بده = give."
         },
         {
           "id": "evolve-1-l01-wt-104",
           "word_bank": [
             "به من",
-            "کمک کن"
+            "یاری کن"
           ],
           "expected_answer": "Assist me.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در جمله‌ی امر فعل اول می‌آید و me (به من) بعد از آن.",
           "time_limit": 60,
-          "translation": "به من کمک کن."
+          "translation": "به من یاری کن.",
+          "hint": "کلمه‌های کلیدی: یاری کن = assist (رسمی‌تر از help)؛ به من = me."
         },
         {
           "id": "evolve-1-l01-wt-107",
@@ -4694,9 +4780,10 @@
             "است"
           ],
           "expected_answer": "This is my husband.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این شوهر من است."
+          "translation": "این شوهر من است.",
+          "hint": "کلمه‌های کلیدی: شوهر = husband؛ این = this؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-108",
@@ -4707,9 +4794,10 @@
             "است"
           ],
           "expected_answer": "My last name is Habibi.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای گفتن نام خانوادگی: My last name is + نام خانوادگی. (last name = نام خانوادگی)",
           "time_limit": 60,
-          "translation": "نام خانوادگی من حبیبی است."
+          "translation": "نام خانوادگی من حبیبی است.",
+          "hint": "کلمه‌های کلیدی: نام خانوادگی = last name؛ من = my؛ حبیبی = Habibi؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-109",
@@ -4719,36 +4807,39 @@
             "چیست؟"
           ],
           "expected_answer": "What is your last name?",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در سؤال با What، ابتدا What و بعد is و فاعل می‌آیند.",
           "time_limit": 60,
           "accepted_answers": [
             "What is your family name?",
             "What's your family name?",
             "What's your last name?"
           ],
-          "translation": "نام خانوادگی تو چیست؟"
+          "translation": "نام خانوادگی تو چیست؟",
+          "hint": "کلمه‌های کلیدی: نام خانوادگی = last name؛ تو = your؛ چیست = what is."
         },
         {
           "id": "evolve-1-l01-wt-110",
           "word_bank": [
             "من",
-            "شروع می‌کنم"
+            "آغاز می‌کنم"
           ],
           "expected_answer": "I begin.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من شروع می‌کنم."
+          "translation": "من آغاز می‌کنم.",
+          "hint": "کلمه‌های کلیدی: آغاز می‌کنم = begin؛ من = I."
         },
         {
           "id": "evolve-1-l01-wt-111",
           "word_bank": [
             "او (مرد)",
-            "شروع می‌کند"
+            "آغاز می‌کند"
           ],
           "expected_answer": "He begins.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای He و She فعل حال ساده به شکل s (یا es) می‌آید.",
           "time_limit": 60,
-          "translation": "او (مرد) شروع می‌کند."
+          "translation": "او (مرد) آغاز می‌کند.",
+          "hint": "کلمه‌های کلیدی: او (مرد) = he؛ آغاز می‌کند = begins."
         },
         {
           "id": "evolve-1-l01-wt-112",
@@ -4757,9 +4848,10 @@
             "بازگو می‌کنم"
           ],
           "expected_answer": "I retell.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من بازگو می‌کنم."
+          "translation": "من بازگو می‌کنم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ بازگو می‌کنم = retell."
         },
         {
           "id": "evolve-1-l01-wt-113",
@@ -4768,20 +4860,23 @@
             "دوباره به دست می‌آورم"
           ],
           "expected_answer": "I regain.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من دوباره به دست می‌آورم."
+          "translation": "من دوباره به دست می‌آورم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ دوباره به دست می‌آورم = regain."
         },
         {
           "id": "evolve-1-l01-wt-114",
           "word_bank": [
             "من",
+            "در را",
             "می‌بندم"
           ],
-          "expected_answer": "I shut.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "expected_answer": "I shut the door.",
+          "explanation": "در را = the door و می‌بندم = shut. فعل shut قبل از the door می‌آید.",
           "time_limit": 60,
-          "translation": "من می‌بندم."
+          "translation": "من در را می‌بندم.",
+          "hint": "کلمه‌های کلیدی: در را = the door؛ می‌بندم = shut."
         },
         {
           "id": "evolve-1-l01-wt-115",
@@ -4790,9 +4885,10 @@
             "حک می‌کنم"
           ],
           "expected_answer": "I inscribe.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من حک می‌کنم."
+          "translation": "من حک می‌کنم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ حک می‌کنم = inscribe."
         },
         {
           "id": "evolve-1-l01-wt-116",
@@ -4801,9 +4897,10 @@
             "ثبت ورود می‌کنم"
           ],
           "expected_answer": "I check in.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "check in یک فعل دو کلمه‌ای است (ثبت ورود کردن) و با I بدون s به کار می‌رود.",
           "time_limit": 60,
-          "translation": "من ثبت ورود می‌کنم."
+          "translation": "من ثبت ورود می‌کنم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ ثبت ورود می‌کنم = check in."
         },
         {
           "id": "evolve-1-l01-wt-117",
@@ -4812,31 +4909,35 @@
             "ترک هتل می‌کنم"
           ],
           "expected_answer": "I check out.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "check out یک فعل دو کلمه‌ای است (ترک هتل کردن) و با I بدون s به کار می‌رود.",
           "time_limit": 60,
-          "translation": "من ترک هتل می‌کنم."
+          "translation": "من ترک هتل می‌کنم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ ترک هتل می‌کنم = check out."
         },
         {
           "id": "evolve-1-l01-wt-118",
           "word_bank": [
             "به من",
-            "کمک کن"
+            "یک دست",
+            "بده"
           ],
           "expected_answer": "Give me a hand.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "اصطلاح give someone a hand یعنی به کسی کمک کردن. در جمله‌ی امر، give اول می‌آید و me بعد از آن.",
           "time_limit": 60,
-          "translation": "به من کمک کن. (اصطلاح)"
+          "translation": "به من یک دست بده. (اصطلاح)",
+          "hint": "کلمه‌های کلیدی: یک دست = a hand (کمک)؛ به من = me؛ بده = give (اصطلاح)."
         },
         {
           "id": "evolve-1-l01-wt-119",
           "word_bank": [
             "به من",
-            "کمک کن"
+            "مساعدت کن"
           ],
           "expected_answer": "Aid me.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در جمله‌ی امر فعل اول می‌آید و me (به من) بعد از آن.",
           "time_limit": 60,
-          "translation": "به من کمک کن."
+          "translation": "به من مساعدت کن.",
+          "hint": "کلمه‌های کلیدی: مساعدت کن = aid؛ به من = me."
         },
         {
           "id": "evolve-1-l01-wt-120",
@@ -4847,12 +4948,13 @@
             "داری"
           ],
           "expected_answer": "You have a question.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "تو یک سؤال داری.",
           "accepted_answers": [
             "You've a question."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: تو = you؛ یک = a؛ سؤال = question؛ داری = have."
         },
         {
           "id": "evolve-1-l01-wt-121",
@@ -4863,28 +4965,31 @@
             "دارند"
           ],
           "expected_answer": "They have a question.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "آن‌ها یک سؤال دارند.",
           "accepted_answers": [
             "They've a question."
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: آن‌ها = they؛ یک = a؛ سؤال = question؛ دارند = have."
         },
         {
           "id": "evolve-1-l01-wt-122",
           "word_bank": [
             "آن",
-            "خانه",
+            "کتاب",
             "من",
             "است"
           ],
-          "expected_answer": "It is my house.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "expected_answer": "It is my book.",
+          "explanation": "برای چیز یا حیوان از it استفاده می‌کنیم (به جای this یا that).",
           "time_limit": 60,
-          "translation": "آن خانه من است.",
+          "translation": "آن کتاب من است.",
           "accepted_answers": [
-            "It's my house."
-          ]
+            "It's my book.",
+            "That is my book."
+          ],
+          "hint": "کلمه‌های کلیدی: آن = it (برای چیز یا حیوان)؛ کتاب = book؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-123",
@@ -4895,12 +5000,13 @@
             "چیست"
           ],
           "expected_answer": "What is your first name?",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در سؤال با What، ابتدا What و بعد is و فاعل می‌آیند.",
           "time_limit": 60,
           "translation": "اسم کوچک تو چیست؟",
           "accepted_answers": [
             "What's your first name?"
-          ]
+          ],
+          "hint": "کلمه‌های کلیدی: اسم کوچک = first name؛ تو = your؛ چیست = what is."
         },
         {
           "id": "evolve-1-l01-wt-124",
@@ -4911,9 +5017,10 @@
             "است"
           ],
           "expected_answer": "This is my partner.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی نزدیک: This is my + اسم.",
           "time_limit": 60,
-          "translation": "این شریک من است."
+          "translation": "این شریک من است.",
+          "hint": "کلمه‌های کلیدی: این = this؛ شریک = partner؛ من = my؛ است = is."
         },
         {
           "id": "evolve-1-l01-wt-125",
@@ -4925,9 +5032,10 @@
             "«کمک»"
           ],
           "expected_answer": "How do you say help in English?",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در سؤال‌های How از do و فاعل (you) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "چطور به انگلیسی می‌گویی «کمک»؟"
+          "translation": "چطور به انگلیسی می‌گویی «کمک»؟",
+          "hint": "کلمه‌های کلیدی: چطور = how؛ به انگلیسی می‌گویی = say؛ «کمک» = help."
         },
         {
           "id": "evolve-1-l01-wt-126",
@@ -4939,9 +5047,10 @@
             "می‌دهد"
           ],
           "expected_answer": "What does teacher mean?",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در سؤال با What، ابتدا What و بعد is و فاعل می‌آیند.",
           "time_limit": 60,
-          "translation": "کلمه teacher چه معنی‌ای می‌دهد؟"
+          "translation": "کلمه teacher چه معنی‌ای می‌دهد؟",
+          "hint": "کلمه‌های کلیدی: کلمه = the word؛ teacher = معلم؛ چه معنی‌ای می‌دهد = what ... mean."
         },
         {
           "id": "evolve-1-l01-wt-127",
@@ -4950,9 +5059,10 @@
             "نمی‌فهمم"
           ],
           "expected_answer": "I don't understand.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "شکل منفی حال ساده با I: don't (do not) + فعل ساده.",
           "time_limit": 60,
-          "translation": "من نمی‌فهمم."
+          "translation": "من نمی‌فهمم.",
+          "hint": "کلمه‌های کلیدی: من = I؛ نمی‌فهمم = don't understand."
         },
         {
           "id": "evolve-1-l01-wt-128",
@@ -4961,9 +5071,10 @@
             "هجی می‌کنی؟"
           ],
           "expected_answer": "How do you spell?",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در سؤال‌های How از do و فاعل (you) استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "چطور هجی می‌کنی؟"
+          "translation": "چطور هجی می‌کنی؟",
+          "hint": "کلمه‌های کلیدی: چطور = how؛ هجی می‌کنی = spell."
         },
         {
           "id": "evolve-1-l01-wt-129",
@@ -4974,9 +5085,10 @@
             "لطفاً؟"
           ],
           "expected_answer": "Can you repeat that, please?",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای درخواست مؤدبانه از can you استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "می‌توانی آن را تکرار کنی، لطفاً؟"
+          "translation": "می‌توانی آن را تکرار کنی، لطفاً؟",
+          "hint": "کلمه‌های کلیدی: می‌توانی = can you؛ تکرار کنی = repeat؛ آن را = that؛ لطفاً = please."
         },
         {
           "id": "evolve-1-l01-wt-130",
@@ -4986,9 +5098,10 @@
             "صفحه؟"
           ],
           "expected_answer": "Sorry, what page?",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "Sorry برای عذرخواهی یا توجه گرفتن است و با کاما از ادامه‌ی جمله جدا می‌شود.",
           "time_limit": 60,
-          "translation": "ببخشید، کدام صفحه؟"
+          "translation": "ببخشید، کدام صفحه؟",
+          "hint": "کلمه‌های کلیدی: ببخشید = sorry؛ کدام = what؛ صفحه = page."
         },
         {
           "id": "evolve-1-l01-wt-131",
@@ -4998,9 +5111,10 @@
             "داری؟"
           ],
           "expected_answer": "Do you have any questions?",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در سؤال‌های Do، ابتدا do و بعد فاعل (you) و سپس فعل می‌آید.",
           "time_limit": 60,
-          "translation": "آیا سؤالی داری؟"
+          "translation": "آیا سؤالی داری؟",
+          "hint": "کلمه‌های کلیدی: آیا = do you (سؤال)؛ سؤالی = any questions؛ داری = have."
         },
         {
           "id": "evolve-1-l01-wt-132",
@@ -5009,9 +5123,10 @@
             "کتابت را"
           ],
           "expected_answer": "Close your book.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در جمله‌ی امر، فعل اول جمله می‌آید و فاعل نمی‌خواهد.",
           "time_limit": 60,
-          "translation": "کتابت را ببند."
+          "translation": "کتابت را ببند.",
+          "hint": "کلمه‌های کلیدی: ببند = close؛ کتابت را = your book."
         },
         {
           "id": "evolve-1-l01-wt-133",
@@ -5020,9 +5135,10 @@
             "کتابت را"
           ],
           "expected_answer": "Open your book.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در جمله‌ی امر، فعل اول جمله می‌آید و فاعل نمی‌خواهد.",
           "time_limit": 60,
-          "translation": "کتابت را باز کن."
+          "translation": "کتابت را باز کن.",
+          "hint": "کلمه‌های کلیدی: باز کن = open؛ کتابت را = your book."
         },
         {
           "id": "evolve-1-l01-wt-134",
@@ -5031,9 +5147,10 @@
             "به صفحه"
           ],
           "expected_answer": "Go to page.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "در جمله‌ی امر، فعل اول جمله می‌آید و فاعل نمی‌خواهد.",
           "time_limit": 60,
-          "translation": "به صفحه برو."
+          "translation": "به صفحه برو.",
+          "hint": "کلمه‌های کلیدی: برو = go؛ به صفحه = to page."
         },
         {
           "id": "evolve-1-l01-wt-135",
@@ -5044,9 +5161,10 @@
             "است"
           ],
           "expected_answer": "This is your teacher.",
-          "explanation": "هر بخش فارسی را در جای خودش به انگلیسی بنویس.",
+          "explanation": "برای معرفی چیزی یا کسی که مال مخاطب است: This is your + اسم.",
           "time_limit": 60,
-          "translation": "این معلم تو است."
+          "translation": "این معلم تو است.",
+          "hint": "کلمه‌های کلیدی: این = this؛ معلم = teacher؛ تو = your؛ است = is."
         }
       ]
     },
@@ -5142,15 +5260,12 @@
         },
         {
           "id": "evolve-1-l01-vt-008",
-          "question": "این همسر من است.",
+          "question": "این زن من است.",
           "expected_answer": "This is my wife.",
           "explanation": "Wife برای همسر زن و spouse برای همسر بدون مشخص کردن جنسیت استفاده می‌شود.",
           "time_limit": 60,
-          "accepted_answers": [
-            "This is my spouse."
-          ],
-          "hint": "کلمه‌ی کلیدی: «همسر» = wife؛ تلفظ: /waɪf/ (وایف)؛ نکته: برای همسر زن است و spouse /spaʊs/ (اسپَوز) هم به معنی همسر و بدون مشخص کردن جنسیت، قابل قبول است.",
-          "translation": "این همسر من است."
+          "hint": "کلمه‌ی کلیدی: «زن» = wife؛ تلفظ: /waɪf/ (وایف)؛ نکته: «همسر» در انگلیسی spouse است، نه wife.",
+          "translation": "این زن من است."
         },
         {
           "id": "evolve-1-l01-vt-009",
@@ -5187,12 +5302,12 @@
         },
         {
           "id": "evolve-1-l01-vt-012",
-          "question": "به من کمک کن. (اصطلاح)",
+          "question": "به من یک دست بده. (اصطلاح)",
           "expected_answer": "Give me a hand.",
           "explanation": "Give me a hand یک عبارت رایج به معنی کمکم کن است.",
           "time_limit": 60,
-          "hint": "کلمه‌ی کلیدی: «به من کمک کن (اصطلاح)» = give me a hand؛ تلفظ: /ɡɪv miː ə hænd/ (گیو می ا هَند)؛ نکته: این یک اصطلاح است و کلمه‌به‌کلمه ترجمه نمی‌شود.",
-          "translation": "به من کمک کن. (اصطلاح)"
+          "hint": "کلمه‌ی کلیدی: «به من یک دست بده (اصطلاح)» = give me a hand؛ این یک اصطلاح است و کلمه‌به‌کلمه ترجمه نمی‌شود.",
+          "translation": "به من یک دست بده. (اصطلاح)"
         },
         {
           "id": "evolve-1-l01-vt-013",
@@ -5201,9 +5316,7 @@
           "explanation": "از الگوی How do you say ... in English? برای پرسیدن معادل انگلیسی استفاده می‌کنیم.",
           "time_limit": 60,
           "accepted_answers": [
-            "How do you say کمک in English?",
             "How do you say help in English?",
-            "How do you say 'کمک' in English?",
             "How do you say 'help' in English?"
           ],
           "hint": "کلمه‌ی کلیدی: «کمک» = help؛ تلفظ: /help/ (هِلپ)؛ راهنما: به شکل پرسشی جمله دقت کن.",
@@ -5404,7 +5517,7 @@
           "expected_answer": "This is my objective.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: objective = هدف؛ this = این. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: objective = هدف اصلی؛ this = این. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "این هدف اصلی من است."
         },
         {
@@ -5953,7 +6066,7 @@
           "expected_answer": "She watches.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: watches = ساعت‌ها (جمع) / تماشا می‌کند (برای He / She / It). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: watch = تماشا کردن؛ برای She فعل watches می‌شود. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "او (زن) تماشا می‌کند."
         },
         {
@@ -6165,30 +6278,30 @@
         },
         {
           "id": "evolve-1-l01-vt-112",
-          "question": "به من کمک کن.",
+          "question": "به من یاری کن.",
           "expected_answer": "Assist me.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: assist = کمک کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "translation": "به من کمک کن."
+          "hint": "کلمه‌های کلیدی: assist = یاری کردن (رسمی‌تر از help). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "translation": "به من یاری کن."
         },
         {
           "id": "evolve-1-l01-vt-115",
-          "question": "من شروع می‌کنم.",
+          "question": "من آغاز می‌کنم.",
           "expected_answer": "I begin.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: begin = شروع کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "translation": "من شروع می‌کنم."
+          "hint": "کلمه‌های کلیدی: begin = آغاز کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "translation": "من آغاز می‌کنم."
         },
         {
           "id": "evolve-1-l01-vt-116",
-          "question": "او (مرد) شروع می‌کند.",
+          "question": "او (مرد) آغاز می‌کند.",
           "expected_answer": "He begins.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: begin = شروع کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "translation": "او (مرد) شروع می‌کند."
+          "hint": "کلمه‌های کلیدی: begin = آغاز کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "translation": "او (مرد) آغاز می‌کند."
         },
         {
           "id": "evolve-1-l01-vt-117",
@@ -6210,12 +6323,12 @@
         },
         {
           "id": "evolve-1-l01-vt-119",
-          "question": "من می‌بندم.",
-          "expected_answer": "I shut.",
+          "question": "من در را می‌بندم.",
+          "expected_answer": "I shut the door.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: shut = بستن (در و پنجره). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "translation": "من می‌بندم."
+          "translation": "من در را می‌بندم."
         },
         {
           "id": "evolve-1-l01-vt-120",
@@ -6246,12 +6359,12 @@
         },
         {
           "id": "evolve-1-l01-vt-123",
-          "question": "به من کمک کن.",
+          "question": "به من مساعدت کن.",
           "expected_answer": "Aid me.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: aid = کمک. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "translation": "به من کمک کن."
+          "hint": "کلمه‌های کلیدی: aid = مساعدت / کمک. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "translation": "به من مساعدت کن."
         },
         {
           "id": "evolve-1-l01-vt-124",
@@ -6279,15 +6392,16 @@
         },
         {
           "id": "evolve-1-l01-vt-126",
-          "question": "آن خانه من است.",
-          "expected_answer": "It is my house.",
+          "question": "آن کتاب من است.",
+          "expected_answer": "It is my book.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: house = ساختمان (خانه‌ی فیزیکی). راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
+          "hint": "کلمه‌های کلیدی: book = کتاب؛ it = آن (برای چیز یا حیوان).",
           "accepted_answers": [
-            "It's my house."
+            "It's my book.",
+            "That is my book."
           ],
-          "translation": "آن خانه من است."
+          "translation": "آن کتاب من است."
         },
         {
           "id": "evolve-1-l01-vt-127",
@@ -6295,7 +6409,7 @@
           "expected_answer": "I don't understand.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
+          "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "accepted_answers": [
             "I do not understand."
           ],
@@ -6307,7 +6421,7 @@
           "expected_answer": "How do you spell?",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: spell = هجی کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
+          "hint": "کلمه‌های کلیدی: spell = هجی کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "چطور هجی می‌کنی؟"
         },
         {
@@ -6319,7 +6433,7 @@
             "Can you repeat that please?"
           ],
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: can = می‌توانم / توانستن؛ repeat = تکرار کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
+          "hint": "کلمه‌های کلیدی: can = می‌توانم / توانستن؛ repeat = تکرار کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "می‌توانی آن را تکرار کنی، لطفاً؟"
         },
         {
@@ -6328,7 +6442,7 @@
           "expected_answer": "Sorry, what page?",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: page = صفحه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
+          "hint": "کلمه‌های کلیدی: page = صفحه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "ببخشید، کدام صفحه؟"
         },
         {
@@ -6337,10 +6451,7 @@
           "expected_answer": "Do you have any questions?",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: questions = سؤال‌ها. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
-          "accepted_answers": [
-            "Do you've any questions?"
-          ],
+          "hint": "کلمه‌های کلیدی: questions = سؤال‌ها. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "آیا سؤالی داری؟"
         },
         {
@@ -6349,7 +6460,7 @@
           "expected_answer": "Close your book.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: close = بستن / نزدیک؛ book = کتاب. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
+          "hint": "کلمه‌های کلیدی: close = بستن / نزدیک؛ book = کتاب. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "کتابت را ببند."
         },
         {
@@ -6358,7 +6469,7 @@
           "expected_answer": "Open your book.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: open = باز کردن / باز؛ book = کتاب. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
+          "hint": "کلمه‌های کلیدی: open = باز کردن / باز؛ book = کتاب. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "کتابت را باز کن."
         },
         {
@@ -6367,7 +6478,7 @@
           "expected_answer": "Go to page.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: page = صفحه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
+          "hint": "کلمه‌های کلیدی: page = صفحه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "به صفحه برو."
         },
         {
@@ -6376,7 +6487,7 @@
           "expected_answer": "Your teacher.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "معلم تو."
         },
         {
@@ -6385,7 +6496,7 @@
           "expected_answer": "This is your teacher.",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
-          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو..",
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "این معلم تو است."
         }
       ]
@@ -6405,7 +6516,7 @@
           "hint": "He = او (مرد)؛ eats = می‌خورد",
           "incorrect_sentence": "He eat.",
           "time_limit": 60,
-          "translation": "او غذا می‌خورد. (مرد)"
+          "translation": "او (مرد) می‌خورد."
         },
         {
           "id": "evolve-1-l01-gc-02",
@@ -6935,7 +7046,7 @@
           "accepted_answers": [
             "We've a home."
           ],
-          "translation": "ما یک خانه داریم."
+          "translation": "ما یک محل زندگی داریم."
         },
         {
           "id": "evolve-1-l01-gc-49",
@@ -7471,7 +7582,7 @@
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I begins.",
           "time_limit": 60,
-          "translation": "من شروع می‌کنم."
+          "translation": "من آغاز می‌کنم."
         },
         {
           "id": "evolve-1-l01-gc-102",
@@ -7481,7 +7592,7 @@
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "He begin.",
           "time_limit": 60,
-          "translation": "او (مرد) شروع می‌کند."
+          "translation": "او (مرد) آغاز می‌کند."
         },
         {
           "id": "evolve-1-l01-gc-103",
@@ -7506,12 +7617,12 @@
         {
           "id": "evolve-1-l01-gc-105",
           "question": "جمله‌ی اشتباه را درست کن.",
-          "expected_answer": "I shut.",
+          "expected_answer": "I shut the door.",
           "explanation": "به فعل و فاعل جمله دقت کن.",
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
-          "incorrect_sentence": "I shuts.",
+          "incorrect_sentence": "I shuts the door.",
           "time_limit": 60,
-          "translation": "من می‌بندم."
+          "translation": "من در را می‌بندم."
         },
         {
           "id": "evolve-1-l01-gc-106",
@@ -7590,7 +7701,7 @@
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "This are my wife.",
           "time_limit": 60,
-          "translation": "این همسر من است."
+          "translation": "این زن من است."
         },
         {
           "id": "evolve-1-l01-gc-113",
@@ -8125,7 +8236,7 @@
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
           "hint": "کلمه‌های کلیدی: wife = همسر (زن). راهنما: not = نه.",
           "time_limit": 60,
-          "translation": "این همسر من نیست."
+          "translation": "این زن من نیست."
         },
         {
           "id": "evolve-1-l01-neg-117",
@@ -8159,7 +8270,7 @@
             "This isn't your teacher."
           ],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: not = نه..",
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: not = نه.",
           "time_limit": 60,
           "translation": "این معلم تو نیست."
         }
@@ -8441,7 +8552,7 @@
           "id": "evolve-1-l01-q-46",
           "question": "جمله را سؤالی کن: I am a tutor.",
           "expected_answer": "Am I a tutor?",
-          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "explanation": "برای سؤالی کردن، am را به ابتدای جمله می‌آوریم.",
           "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: Am = آیا (در ابتدای سؤال).",
           "time_limit": 60,
           "translation": "آیا من یک مدرس خصوصی هستم؟"
@@ -8450,7 +8561,7 @@
           "id": "evolve-1-l01-q-47",
           "question": "جمله را سؤالی کن: I am a helper.",
           "expected_answer": "Am I a helper?",
-          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "explanation": "برای سؤالی کردن، am را به ابتدای جمله می‌آوریم.",
           "hint": "کلمه‌های کلیدی: helper = کمک‌کننده. راهنما: Am = آیا (در ابتدای سؤال).",
           "time_limit": 60,
           "translation": "آیا من یک کمک‌کننده هستم؟"
@@ -8498,7 +8609,7 @@
           "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
           "hint": "کلمه‌های کلیدی: wife = همسر (زن). راهنما: Is = آیا (در ابتدای سؤال).",
           "time_limit": 60,
-          "translation": "آیا این همسر من است؟"
+          "translation": "آیا این زن من است؟"
         },
         {
           "id": "evolve-1-l01-q-111",
@@ -8513,7 +8624,7 @@
           "id": "evolve-1-l01-q-115",
           "question": "جمله را سؤالی کن: I am a partner.",
           "expected_answer": "Am I a partner?",
-          "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
+          "explanation": "برای سؤالی کردن، am را به ابتدای جمله می‌آوریم.",
           "hint": "کلمه‌های کلیدی: partner = شریک / همراه. راهنما: Am = آیا (در ابتدای سؤال).",
           "time_limit": 60,
           "translation": "آیا من یک شریک هستم؟"
@@ -8523,7 +8634,7 @@
           "question": "جمله را سؤالی کن: This is your teacher.",
           "expected_answer": "Is this your teacher?",
           "explanation": "برای سؤالی کردن، is را به ابتدای جمله می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: Is = آیا (در ابتدای سؤال)..",
+          "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: Is = آیا (در ابتدای سؤال).",
           "time_limit": 60,
           "translation": "آیا این معلم تو است؟"
         }
@@ -8708,7 +8819,7 @@
           ],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "time_limit": 60,
-          "translation": "او غذا می‌خورد. (مرد)"
+          "translation": "او (مرد) می‌خورد."
         },
         {
           "id": "evolve-1-l01-mc-16",
@@ -9268,7 +9379,7 @@
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "have = داشتن",
           "time_limit": 60,
-          "translation": "ما یک خانه داریم."
+          "translation": "ما یک محل زندگی داریم."
         },
         {
           "id": "evolve-1-l01-mc-56",
@@ -9408,7 +9519,7 @@
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "is = است",
           "time_limit": 60,
-          "translation": "این همسر من است."
+          "translation": "این زن من است."
         },
         {
           "id": "evolve-1-l01-mc-66",
@@ -9476,7 +9587,7 @@
             "is"
           ],
           "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
-          "hint": "do = معنی در جمله",
+          "hint": "راهنما: با you از do استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "چطور هجی می‌کنی؟"
         },
@@ -9780,7 +9891,11 @@
           "explanation": "کلمه‌ای را بنویس که معنای نزدیک یا مشابه دارد.",
           "hint": "home = جای زندگی و آرامش (حس خانه بودن)",
           "time_limit": 60,
-          "translation": "ساختمان (خانه‌ی فیزیکی)"
+          "translation": "ساختمان (خانه‌ی فیزیکی)",
+          "accepted_answers": [
+            "house",
+            "residence"
+          ]
         },
         {
           "id": "evolve-1-l01-voc-24",
@@ -10021,9 +10136,9 @@
           "question": "wife",
           "expected_answer": "wife",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "همسر (زن)",
+          "hint": "زن (همسر)",
           "time_limit": 60,
-          "translation": "همسر (زن)"
+          "translation": "زن (همسر)"
         },
         {
           "id": "evolve-1-l01-dic-017",
@@ -10084,27 +10199,27 @@
           "question": "assist",
           "expected_answer": "assist",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "کمک کردن",
+          "hint": "یاری کردن",
           "time_limit": 60,
-          "translation": "کمک کردن"
+          "translation": "یاری کردن"
         },
         {
           "id": "evolve-1-l01-dic-024",
           "question": "aid",
           "expected_answer": "aid",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "کمک",
+          "hint": "مساعدت",
           "time_limit": 60,
-          "translation": "کمک"
+          "translation": "مساعدت"
         },
         {
           "id": "evolve-1-l01-dic-025",
           "question": "give me a hand",
           "expected_answer": "give me a hand",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "کمکم کن (اصطلاح)",
+          "hint": "یک دست بده (اصطلاح)",
           "time_limit": 60,
-          "translation": "به من کمک کن. (اصطلاح)"
+          "translation": "به من یک دست بده. (اصطلاح)"
         },
         {
           "id": "evolve-1-l01-dic-026",
@@ -10138,9 +10253,9 @@
           "question": "grasp",
           "expected_answer": "grasp",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "فهمیدن / درک کردن",
+          "hint": "درک کردن",
           "time_limit": 60,
-          "translation": "فهمیدن / درک کردن"
+          "translation": "درک کردن"
         },
         {
           "id": "evolve-1-l01-dic-030",
@@ -10309,9 +10424,9 @@
           "question": "couple",
           "expected_answer": "couple",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "زوج / جفت",
+          "hint": "زوج",
           "time_limit": 60,
-          "translation": "زوج / جفت"
+          "translation": "زوج"
         },
         {
           "id": "evolve-1-l01-dic-049",
@@ -10327,9 +10442,9 @@
           "question": "talking",
           "expected_answer": "talking",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "صحبت کردن",
+          "hint": "حرف زدن",
           "time_limit": 60,
-          "translation": "صحبت کردن"
+          "translation": "حرف زدن"
         },
         {
           "id": "evolve-1-l01-dic-051",
@@ -10444,9 +10559,9 @@
           "question": "begin",
           "expected_answer": "begin",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "شروع کردن",
+          "hint": "آغاز کردن",
           "time_limit": 60,
-          "translation": "شروع کردن"
+          "translation": "آغاز کردن"
         },
         {
           "id": "evolve-1-l01-dic-064",
@@ -10480,18 +10595,18 @@
           "question": "objective",
           "expected_answer": "objective",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "هدف",
+          "hint": "هدف اصلی",
           "time_limit": 60,
-          "translation": "هدف"
+          "translation": "هدف اصلی"
         },
         {
           "id": "evolve-1-l01-dic-068",
           "question": "purpose",
           "expected_answer": "purpose",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "هدف / منظور",
+          "hint": "منظور / هدف",
           "time_limit": 60,
-          "translation": "هدف / منظور"
+          "translation": "منظور / هدف"
         },
         {
           "id": "evolve-1-l01-dic-069",
@@ -10507,9 +10622,9 @@
           "question": "target",
           "expected_answer": "target",
           "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "هدف / نشانه",
+          "hint": "هدف نهایی / نشانه",
           "time_limit": 60,
-          "translation": "هدف / نشانه"
+          "translation": "هدف نهایی / نشانه"
         },
         {
           "id": "evolve-1-l01-dic-071",
@@ -10741,9 +10856,9 @@
           "question": "watches",
           "expected_answer": "watches",
           "explanation": "در watches بعد از ch از es استفاده می‌کنیم.",
-          "hint": "ساعت‌ها (جمع) / تماشا می‌کند (برای He / She / It)",
+          "hint": "تماشا می‌کند (برای He / She / It)",
           "time_limit": 60,
-          "translation": "ساعت‌ها (جمع) / تماشا می‌کند (برای He / She / It)"
+          "translation": "تماشا می‌کند (برای He / She / It)"
         },
         {
           "id": "evolve-1-l01-pl-dic-08",
@@ -10876,7 +10991,7 @@
           "hint": "watch = تماشا کردن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
           "points": 10,
           "time_limit": 60,
-          "translation": "ساعت‌ها (جمع) / تماشا می‌کند (برای He / She / It)"
+          "translation": "تماشا می‌کند (برای He / She / It)"
         }
       ]
     },
@@ -10975,21 +11090,21 @@
       "items": [
         {
           "id": "evolve-1-l01-va-tr-01",
-          "question": "او غذا می‌خورد. (مرد)",
+          "question": "او (مرد) می‌خورد.",
           "expected_answer": "He eats.",
           "explanation": "با He فعل eat به eats تبدیل می‌شود.",
           "hint": "کلمه‌ی کلیدی: «می‌خورد» = eat؛ تلفظ: /iːt/ (ایت)؛ راهنما: به فاعل جمله دقت کن.",
           "time_limit": 60,
-          "translation": "او غذا می‌خورد. (مرد)"
+          "translation": "او (مرد) می‌خورد."
         },
         {
           "id": "evolve-1-l01-va-tr-02",
-          "question": "او می‌خواند. (زن)",
+          "question": "او (زن) می‌خواند.",
           "expected_answer": "She reads.",
           "explanation": "با She فعل read به reads تبدیل می‌شود.",
           "hint": "کلمه‌ی کلیدی: «می‌خواند» = read؛ تلفظ: /riːd/ (ریـد)؛ راهنما: به فاعل جمله دقت کن.",
           "time_limit": 60,
-          "translation": "او می‌خواند. (زن)"
+          "translation": "او (زن) می‌خواند."
         }
       ]
     }
