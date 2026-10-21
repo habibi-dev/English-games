@@ -6,7 +6,7 @@ import { listQuestions, listLessons } from '../bank/repository.js';
 import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey, unitKey, persianSentence } from '../bank/schema.js';
 import { filterQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode, MAX_MISSION_QUESTIONS } from '../engine/game-engine.js';
 import { validateAnswer } from '../engine/validator.js';
-import { takeReview } from './review-handoff.js';
+import { clearReviewHandoff, hasReviewIntent, requestReview, takeReview } from './review-handoff.js';
 import { lessonHub, linesPage, storiesPage, stopStoryReading } from './lesson-content.js';
 import { lessonMaterial } from '../bank/lesson-vocabulary.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
@@ -105,6 +105,8 @@ let setupRoot = null;
 let skipPop = false;
 // Set when the game ends through the guard: the setup comes back once the guard's entry is gone.
 let pendingHome = false;
+// While a review from reports is loading, a second router run must not open the setup on an old history step.
+let reviewLoadPromise = null;
 
 /** Used by the header to ask before leaving a game. */
 export const isGameInProgress = () => gameInProgress;
@@ -266,15 +268,25 @@ export async function renderPlay(root) {
   setupRoot = root;
   // Opened from the reports screen with questions to review: start that game right away.
   const reviewIds = takeReview();
-  if (reviewIds) await startReview(root, reviewIds);
-  // Coming back to this screen with the back button (or after a reload) reopens the step saved on that entry.
-  else await showSetup(root, history.state?.setup ?? null);
+  if (reviewIds?.length && !reviewLoadPromise) {
+    clearReviewHandoff();
+    reviewLoadPromise = startReview(root, reviewIds).finally(() => {
+      reviewLoadPromise = null;
+    });
+  }
+  if (reviewLoadPromise) await reviewLoadPromise;
+  // A second route while a review is loading must not reopen the book picker from an old history step.
+  else if (!gameInProgress) {
+    const restore = hasReviewIntent() ? null : (history.state?.setup ?? null);
+    clearReviewHandoff();
+    await showSetup(root, restore);
+  }
   return () => {
     playShowing = false;
     setupRoot = null;
     stopTimer();
     closeModal();
-    // Leaving the screen during a mission ends it (its time up to now is saved). Does nothing otherwise.
+    // Leaving the screen ends any study or mission time in progress.
     endMission();
     setGameRunning(false);
     keepScreenOn(false);
@@ -381,8 +393,9 @@ async function startReview(root, ids) {
       }),
   ).slice(0, MAX_MISSION_QUESTIONS);
   if (pool.length === 0) {
+    requestReview(ids);
     toast('No questions to review are left.', 'warn');
-    await showSetup(root);
+    if (!gameInProgress) await showSetup(root);
     return;
   }
   const before = playerProfile(attempts);
@@ -538,6 +551,7 @@ async function showSetup(root, restore = null) {
     state.unit = step.unit ?? null;
     state.lessons = [...step.lessons];
     if (LESSON_PAGES.includes(step.name)) return drawLessonPage(step);
+    setLessonStudy(false);
     return drawSettingsStep();
   }
 
@@ -759,11 +773,27 @@ async function showSetup(root, restore = null) {
 
   // The lesson's own pages: the hub, and the pages it leads to (see drawLessonPage).
   const LESSON_PAGES = ['hub', 'words', 'sentences', 'grammar', 'stories'];
+  const LESSON_CONTENT_PAGES = new Set(['words', 'sentences', 'grammar', 'stories']);
+  let lessonStudyActive = false;
+
+  /** Words / sentences / grammar / stories: keep the screen on and count time like a mission until the learner leaves. */
+  function setLessonStudy(active) {
+    if (active === lessonStudyActive) return;
+    lessonStudyActive = active;
+    if (active) {
+      beginMission();
+      keepScreenOn(true);
+      return;
+    }
+    endMission();
+    if (!gameInProgress) keepScreenOn(false);
+  }
 
   // The screens between the lesson and the settings. The hub gives three choices: Words and Sentences (each a page
   // of its own) and Practice (the settings step). Every page is a history entry, so the back buttons return to the
   // page before it.
   function drawLessonPage(step) {
+    setLessonStudy(LESSON_CONTENT_PAGES.has(step.name));
     settingsStart = null;
     setTabMode('home');
     info = null;

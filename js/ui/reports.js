@@ -17,7 +17,7 @@ import {
   DAILY_GOAL_MS,
   LEVEL_LIMITS_MIN,
 } from '../progress/activity.js';
-import { h, fa, percent, badge, scrollToTop } from './dom.js';
+import { h, fa, percent, badge, scrollToTop, toast } from './dom.js';
 import { uiIcon } from './icons.js';
 import { speakButtons, questionSpeakButton } from './speech-out.js';
 import { splitPrompt } from './prompt.js';
@@ -36,6 +36,7 @@ const TABS = [
 let activeTab = 'home';
 let calendarView = null;
 let selectedDay = null;
+let renderGeneration = 0;
 
 const WEEKDAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const MONTH_NAMES = [
@@ -618,27 +619,40 @@ function reviewView(review, cards, startReview) {
 }
 
 export async function renderReports(root) {
+  const generation = ++renderGeneration;
   const [questions, attempts] = await Promise.all([listQuestions(), loadAttempts()]);
+  if (generation !== renderGeneration) return;
   const now = Date.now();
   const sessions = loadSessions();
   const totals = msByDay(sessions);
   const stats = activityStats(sessions, now);
   const bank = bankSummary(questions);
   const perf = performanceSummary(attempts);
-  const review = reviewList(attempts);
+  const byId = new Map(questions.map((q) => [q.id, q]));
+  const review = reviewList(attempts).filter((row) => {
+    const q = byId.get(row.questionId);
+    return q && q.enabled !== false;
+  });
   // Older attempts were saved without the sentence, so it is also read from the question bank.
   const sentenceById = new Map(questions.map((q) => [q.id, q.incorrect_sentence]));
 
   // The same action from the goal card and the review tab: start a review game with these questions.
   const startReview = () => {
-    requestReview(review.map((row) => row.questionId));
-    location.hash = '#/play';
+    const ids = review.map((row) => row.questionId);
+    if (!ids.length) return;
+    requestReview(ids);
+    // Drop any saved setup step so play does not reopen the book list instead of the review game.
+    history.replaceState(null, '', '#/play');
+    window.dispatchEvent(new Event('egq-route'));
   };
   const selectTab = (key) => {
     activeTab = key;
     // A new tab is a new page of content: it opens at the top.
     scrollToTop();
-    renderReports(root);
+    renderReports(root).catch((error) => {
+      console.error(error);
+      toast('Could not refresh this report tab.', 'error');
+    });
   };
 
   const ctx = { root, now, sessions, totals, stats, perf, reviewCount: review.length, startReview };
@@ -649,6 +663,7 @@ export async function renderReports(root) {
     questions: () => questionsView(bank),
     review: () => reviewView(review, reviewCards(review, sentenceById), startReview),
   };
+  if (generation !== renderGeneration) return;
   const view = (views[activeTab] ?? views.home)();
 
   root.replaceChildren(

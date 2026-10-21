@@ -106,7 +106,22 @@ document.querySelectorAll('[data-nav]:not([data-nav="play"]):not(.topbar-admin)'
     if (!isGameInProgress()) return;
     event.preventDefault();
     if (!(await confirmLeaveGame())) return;
-    location.hash = link.getAttribute('href') ?? `#/${link.dataset.nav}`;
+    const target = link.getAttribute('href') ?? `#/${link.dataset.nav}`;
+    if (location.hash === target) route();
+    else location.hash = target;
+  });
+});
+
+// Bottom nav: when the hash is already the target, the browser does not fire hashchange, so re-run the router.
+document.querySelectorAll('[data-nav]:not([data-nav="play"])').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    if (isGameInProgress()) return;
+    const href = link.getAttribute('href');
+    if (!href?.startsWith('#')) return;
+    if (location.hash === href) {
+      event.preventDefault();
+      route();
+    }
   });
 });
 
@@ -126,6 +141,7 @@ async function boot() {
   }
 
   window.addEventListener('hashchange', route);
+  window.addEventListener('egq-route', route);
   await route();
 
   // Ask the browser to keep stored progress (best effort; ignored where unsupported).

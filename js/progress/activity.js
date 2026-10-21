@@ -1,5 +1,5 @@
-// Activity time: how long the learner played. A mission counts from its start (the Start button, or a review)
-// until it ends (the results screen) or until the learner leaves it. Not just the time the page is open.
+// Activity time: how long the learner studied. A session counts from its start (Play, a review, or a lesson
+// content page — words, sentences, grammar, stories) until they leave that activity. Not just time with the app open.
 // Sessions are kept on this device in localStorage. The calculations below are pure, so they can be tested.
 
 const KEY = 'grammar-quest.activity.v1';
