@@ -36,11 +36,11 @@ export function instructionFor(question) {
 export function createAnswerWidget(question, { onSubmit }) {
   // Letters mode of spelling: the learner builds the word from letter tiles.
   if (question.category === 'dictation' && question.presentation === 'letters') {
-    return spellingLetters(question);
+    return spellingLetters(question, onSubmit);
   }
   switch (question.category) {
     case 'sentence_builder':
-      return sentenceBuilder(question);
+      return sentenceBuilder(question, onSubmit);
     case 'multiple_choice':
       return multipleChoice(question, onSubmit);
     case 'grammar_correction':
@@ -113,7 +113,7 @@ const MIC_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" str
  * Microphone button that fills `input` with the spoken English text.
  * Returns null when the browser has no speech recognition (the caller shows a fallback hint).
  */
-function createMicButton(input, question = null) {
+function createMicButton(input, question = null, onAnswerChange = null) {
   const Recognition = SpeechRecognitionClass();
   if (!Recognition) return null;
 
@@ -128,6 +128,7 @@ function createMicButton(input, question = null) {
     const alternatives = Array.from(event.results[0] ?? [], (alternative) => alternative.transcript);
     input.value = pickTranscript(alternatives, question);
     input.focus();
+    onAnswerChange?.();
   };
   recognizer.onerror = (event) => {
     console.warn('Speech recognition error:', event.error);
@@ -215,6 +216,7 @@ function typeInstead(input, placeholder, onUnlock) {
 }
 
 function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { voice = true, voiceOnly = false, question = null } = {}) {
+  const tryAutoSubmit = onSubmit;
   const input = h('input', {
     type: 'text',
     class: 'answer-input',
@@ -229,15 +231,15 @@ function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { vo
     name: 'answer-text',
     onkeydown: (event) => {
       if (event.key === 'Enter') {
-        // Enter behaves like the "send" button: it only submits. preventDefault stops the browser
-        // from also firing a click on whatever gets focus next.
+        // Enter tries an automatic submit when the answer is already correct.
         event.preventDefault();
-        onSubmit();
+        tryAutoSubmit?.();
       }
     },
+    oninput: () => tryAutoSubmit?.(),
   });
 
-  const mic = voice ? createMicButton(input, question) : null;
+  const mic = voice ? createMicButton(input, question, tryAutoSubmit) : null;
   // Voice only: the answer is spoken, so the box cannot be typed in. Without speech recognition the learner can still type.
   const voiceMode = voiceOnly && mic !== null;
   if (voiceMode) {
@@ -287,19 +289,24 @@ function chip(text, onClick, extraClass = '') {
   return h('button', { type: 'button', class: extraClass ? `chip ${extraClass}` : 'chip', onclick: onClick }, text);
 }
 
-function sentenceBuilder(question) {
-  return tokenBuilder(question.word_bank ?? [], { joiner: ' ', placeholder: 'Arrange the words here' });
+function sentenceBuilder(question, onSubmit) {
+  return tokenBuilder(question.word_bank ?? [], {
+    joiner: ' ',
+    placeholder: 'Arrange the words here',
+    onChange: onSubmit,
+  });
 }
 
 /**
  * Letters of a dictation word, as tiles to tap into order (the letters mode of spelling).
  * The tiles start shuffled, so the learner has to rebuild the spelling from memory.
  */
-function spellingLetters(question) {
+function spellingLetters(question, onSubmit) {
   return tokenBuilder(scrambleLetters(question.expected_answer), {
     joiner: '',
     placeholder: 'Tap the letters here, in order',
     tileClass: 'letter',
+    onChange: onSubmit,
   });
 }
 
@@ -307,7 +314,7 @@ function spellingLetters(question) {
  * Tiles the learner taps into order. The answer is the picked tiles joined with `joiner`:
  * a space for words (sentence building), nothing for letters (spelling).
  */
-function tokenBuilder(tokens, { joiner = ' ', placeholder = 'Arrange the words here', tileClass = '' } = {}) {
+function tokenBuilder(tokens, { joiner = ' ', placeholder = 'Arrange the words here', tileClass = '', onChange } = {}) {
   const picked = [];
   let locked = false;
   const tile = (text, onClick) => chip(text, onClick, tileClass);
@@ -353,6 +360,7 @@ function tokenBuilder(tokens, { joiner = ' ', placeholder = 'Arrange the words h
             ],
       ),
     );
+    onChange?.();
   }
 
   render();
@@ -376,6 +384,7 @@ function multipleChoice(question, onSubmit) {
 
   function choose(option) {
     if (locked) return;
+    if (!validateAnswer(question, option).correct) return;
     selected = option;
     for (const button of buttons) {
       button.classList.toggle('selected', button.dataset.value === option);

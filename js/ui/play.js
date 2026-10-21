@@ -5,6 +5,7 @@
 import { listQuestions, listLessons } from '../bank/repository.js';
 import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey, unitKey, persianSentence } from '../bank/schema.js';
 import { filterQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode, MAX_MISSION_QUESTIONS } from '../engine/game-engine.js';
+import { validateAnswer } from '../engine/validator.js';
 import { takeReview } from './review-handoff.js';
 import { lessonHub, linesPage, storiesPage, stopStoryReading } from './lesson-content.js';
 import { lessonMaterial } from '../bank/lesson-vocabulary.js';
@@ -1348,6 +1349,8 @@ function progressTrack(session) {
 
 // After the result window opens, the sentence is read aloud once the win or lose sound has had a moment.
 const AUTO_SPEAK_DELAY_MS = 700;
+/** After each answer, go to the next question unless the learner uses read-aloud or translation. */
+const AUTO_NEXT_SECONDS = 5;
 
 /** Consecutive correct answers at the end of the session. */
 function currentStreak(outcomes) {
@@ -1391,21 +1394,63 @@ function renderQuestion(root, session, flow) {
   // Small red button beside Submit: gives up on the question. It counts as a wrong answer, and the correct answer is shown.
   const skipButton = h('button', { type: 'button', class: 'btn danger skip-btn', onclick: skip }, 'Skip');
   const nextButton = h('button', { type: 'button', class: 'btn primary', hidden: true, onclick: next });
+  const autoNextText = h('span', { class: 'result-auto-next-text' });
+  const autoNextBadge = h(
+    'span',
+    { class: 'result-auto-next', hidden: true, 'aria-live': 'polite', title: 'Next question in a few seconds' },
+    autoNextText,
+  );
+  const nextRow = h('div', { class: 'result-next-row', hidden: true }, nextButton, autoNextBadge);
 
-  const widget = createAnswerWidget(q, { onSubmit: submit });
+  const widget = createAnswerWidget(q, { onSubmit: submitIfCorrect });
 
   // The result pops up as a modal card: a celebration when correct, falling rain when not.
   let autoSpeakTimer = null;
+  let autoNextTimer = null;
   const resultMood = h('div', { class: 'result-mood', 'aria-hidden': 'true' });
   const resultEffect = h('div', { class: 'fx', 'aria-hidden': 'true' });
   const resultOverlay = h(
     'div',
     { class: 'result-overlay' },
     resultEffect,
-    h('div', { class: 'result-card', role: 'dialog', 'aria-modal': 'true' }, resultMood, feedback, nextButton),
+    h('div', { class: 'result-card', role: 'dialog', 'aria-modal': 'true' }, resultMood, feedback, nextRow),
   );
+
+  function cancelAutoNext() {
+    clearInterval(autoNextTimer);
+    autoNextTimer = null;
+    autoNextBadge.hidden = true;
+  }
+
+  function startAutoNext() {
+    cancelAutoNext();
+    let left = AUTO_NEXT_SECONDS;
+    autoNextBadge.hidden = false;
+    autoNextText.textContent = `${fa(left)} s`;
+    autoNextTimer = setInterval(() => {
+      left -= 1;
+      if (left <= 0) {
+        cancelAutoNext();
+        next();
+        return;
+      }
+      autoNextText.textContent = `${fa(left)} s`;
+    }, 1000);
+  }
+
+  // Learners who open translation or tap read-aloud need more time; the countdown stops.
+  resultOverlay.addEventListener(
+    'click',
+    (event) => {
+      const target = event.target instanceof Element ? event.target.closest('.speak, .translate-btn') : null;
+      if (target) cancelAutoNext();
+    },
+    true,
+  );
+
   closeModal = () => {
     clearTimeout(autoSpeakTimer);
+    cancelAutoNext();
     stopSpeaking();
     resultOverlay.remove();
   };
@@ -1421,6 +1466,15 @@ function renderQuestion(root, session, flow) {
     if (remaining <= 0 && !session.answered) {
       finish(session.timeout());
     }
+  }
+
+  /** Correct answers submit on their own; wrong tries stay silent until the learner uses Submit or Skip. */
+  function submitIfCorrect() {
+    if (session.answered) return;
+    const value = String(widget.getValue()).trim();
+    if (!value) return;
+    if (!validateAnswer(q, value).correct) return;
+    finish(session.submit(value));
   }
 
   function submit() {
@@ -1453,6 +1507,7 @@ function renderQuestion(root, session, flow) {
     // The result pops up now, so its sound plays now: win for a right answer, lose for a wrong or late one.
     playResultSound(outcome.correct, outcome.timedOut);
     nextButton.hidden = false;
+    nextRow.hidden = false;
     nextButton.textContent = session.index + 1 < session.total ? 'Next question' : 'Finish and see results';
     // Focus is intentionally not moved to the next button: pressing Enter in the answer box
     // only submits the answer, and the learner moves on with the button.
@@ -1507,6 +1562,7 @@ function renderQuestion(root, session, flow) {
     if (getSoundSettings().autoSpeak && !outcome.timedOut && q.answer_mode !== 'list' && fullSentence) {
       autoSpeakTimer = setTimeout(() => speak(fullSentence, { slow: true }), AUTO_SPEAK_DELAY_MS);
     }
+    startAutoNext();
   }
 
   function next() {

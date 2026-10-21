@@ -3781,9 +3781,31 @@ body:has(.card.play) .bottom-nav {
   margin: 8px 0 0;
 }
 
-.result-card .btn.primary {
-  width: 100%;
+.result-next-row {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
   margin-top: 12px;
+}
+
+.result-next-row .btn.primary {
+  flex: 1;
+  width: auto;
+  margin-top: 0;
+}
+
+.result-auto-next {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3rem;
+  padding: 0 10px;
+  border-radius: 12px;
+  background: var(--surface-2, #f1f5f9);
+  color: var(--muted, #64748b);
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
 }
 
 .fx {
