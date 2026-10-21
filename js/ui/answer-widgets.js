@@ -362,7 +362,7 @@ function tokenBuilder(tokens, { joiner = ' ', placeholder = 'Arrange the words h
     'Clear',
   );
 
-  function render() {
+  function render(notify = true) {
     answerRow.replaceChildren(
       ...(picked.length
         ? picked.map((tokenIndex, position) =>
@@ -387,10 +387,11 @@ function tokenBuilder(tokens, { joiner = ' ', placeholder = 'Arrange the words h
             ],
       ),
     );
-    onChange?.();
+    if (notify) onChange?.();
   }
 
-  render();
+  // First paint only: do not call onSubmit — play.js passes a callback that reads the widget, which is not ready yet.
+  render(false);
 
   return {
     element: h('div', { class: 'builder' }, answerRow, bankRow, h('div', { class: 'builder-actions' }, clearButton)),

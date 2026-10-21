@@ -1432,6 +1432,15 @@ function renderQuestion(root, session, flow) {
   );
   const nextRow = h('div', { class: 'result-next-row', hidden: true }, nextButton, autoNextBadge);
 
+  /** Correct answers submit on their own; wrong tries stay silent until the learner uses Submit or Skip. */
+  function submitIfCorrect() {
+    if (session.answered) return;
+    const value = String(widget.getValue()).trim();
+    if (!value) return;
+    if (!validateAnswer(q, value).correct) return;
+    finish(session.submit(value));
+  }
+
   const widget = createAnswerWidget(q, { onSubmit: submitIfCorrect });
 
   // The result pops up as a modal card: a celebration when correct, falling rain when not.
@@ -1496,15 +1505,6 @@ function renderQuestion(root, session, flow) {
     if (remaining <= 0 && !session.answered) {
       finish(session.timeout());
     }
-  }
-
-  /** Correct answers submit on their own; wrong tries stay silent until the learner uses Submit or Skip. */
-  function submitIfCorrect() {
-    if (session.answered) return;
-    const value = String(widget.getValue()).trim();
-    if (!value) return;
-    if (!validateAnswer(q, value).correct) return;
-    finish(session.submit(value));
   }
 
   function submit() {
