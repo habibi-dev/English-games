@@ -109,11 +109,14 @@ const SPEECH_ERRORS = {
 // Static SVG (no user input), so setting it as innerHTML is safe.
 const MIC_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8.5" y1="22" x2="15.5" y2="22"/></svg>`;
 
+/** Voice-only answers: start the mic without a tap so the learner can speak right away. */
+const AUTO_MIC_DELAY_MS = 2000;
+
 /**
  * Microphone button that fills `input` with the spoken English text.
  * Returns null when the browser has no speech recognition (the caller shows a fallback hint).
  */
-function createMicButton(input, question = null, onAnswerChange = null) {
+function createMicButton(input, question = null, onAnswerChange = null, onManualStart = null) {
   const Recognition = SpeechRecognitionClass();
   if (!Recognition) return null;
 
@@ -124,6 +127,17 @@ function createMicButton(input, question = null, onAnswerChange = null) {
   recognizer.maxAlternatives = 5;
 
   let button;
+
+  function startListening() {
+    if (button.disabled) return;
+    try {
+      button.classList.add('listening');
+      recognizer.start();
+    } catch {
+      button.classList.remove('listening');
+    }
+  }
+
   recognizer.onresult = (event) => {
     const alternatives = Array.from(event.results[0] ?? [], (alternative) => alternative.transcript);
     input.value = pickTranscript(alternatives, question);
@@ -149,18 +163,14 @@ function createMicButton(input, question = null, onAnswerChange = null) {
         title: 'Speak',
         'aria-label': 'Enter the answer by voice',
         onclick: () => {
-          try {
-            button.classList.add('listening');
-            recognizer.start();
-          } catch {
-            button.classList.remove('listening');
-          }
+          onManualStart?.();
+          startListening();
         },
       },
       icon,
     ),
   );
-  return button;
+  return { button, startListening };
 }
 
 /**
@@ -239,17 +249,31 @@ function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { vo
     oninput: () => tryAutoSubmit?.(),
   });
 
-  const mic = voice ? createMicButton(input, question, tryAutoSubmit) : null;
+  let autoMicTimer = null;
+  let retired = false;
+  const cancelAutoMic = () => {
+    if (autoMicTimer !== null) {
+      clearTimeout(autoMicTimer);
+      autoMicTimer = null;
+    }
+  };
+
+  const micControl = voice ? createMicButton(input, question, tryAutoSubmit, cancelAutoMic) : null;
+  const mic = micControl?.button ?? null;
   // Voice only: the answer is spoken, so the box cannot be typed in. Without speech recognition the learner can still type.
-  const voiceMode = voiceOnly && mic !== null;
+  const voiceMode = voiceOnly && micControl !== null;
   if (voiceMode) {
     input.readOnly = true;
     input.inputMode = 'none';
     input.placeholder = 'Press the mic and say the answer';
+    autoMicTimer = setTimeout(() => {
+      autoMicTimer = null;
+      if (!retired) micControl.startListening();
+    }, AUTO_MIC_DELAY_MS);
   }
 
   let note = null;
-  if (voice && !mic) {
+  if (voice && !micControl) {
     note = voiceOnly
       ? 'Speech recognition is not available in this browser, so you can type the answer instead.'
       : 'Voice typing is not available in this browser. You can use keyboard dictation instead (for example Win+H on Windows, or the keyboard microphone on a phone).';
@@ -258,6 +282,7 @@ function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { vo
   const label = h('span', { class: 'answer-label' }, voiceMode ? 'Your answer · say it' : 'Your answer');
   const typing = voiceMode
     ? typeInstead(input, placeholder, () => {
+        cancelAutoMic();
         box.classList.remove('voice-only');
         label.textContent = 'Your answer';
       })
@@ -275,6 +300,8 @@ function textAnswer(onSubmit, initial = '', placeholder = 'English answer', { vo
     element: box,
     getValue: () => input.value,
     lock() {
+      retired = true;
+      cancelAutoMic();
       input.disabled = true;
       if (mic) mic.disabled = true;
       typing?.lock();
