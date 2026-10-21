@@ -412,7 +412,6 @@ function multipleChoice(question, onSubmit) {
 
   function choose(option) {
     if (locked) return;
-    if (!validateAnswer(question, option).correct) return;
     selected = option;
     for (const button of buttons) {
       button.classList.toggle('selected', button.dataset.value === option);

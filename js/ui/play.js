@@ -1432,12 +1432,12 @@ function renderQuestion(root, session, flow) {
   );
   const nextRow = h('div', { class: 'result-next-row', hidden: true }, nextButton, autoNextBadge);
 
-  /** Correct answers submit on their own; wrong tries stay silent until the learner uses Submit or Skip. */
+  /** Multiple choice submits the picked option; other widgets auto-submit only when correct. */
   function submitIfCorrect() {
     if (session.answered) return;
     const value = String(widget.getValue()).trim();
     if (!value) return;
-    if (!validateAnswer(q, value).correct) return;
+    if (q.category !== 'multiple_choice' && !validateAnswer(q, value).correct) return;
     finish(session.submit(value));
   }
 
