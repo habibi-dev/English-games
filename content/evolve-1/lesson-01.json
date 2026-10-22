@@ -1334,6 +1334,96 @@
           "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
           "translation": "این معلم تو است."
+        },
+        {
+          "id": "evolve-1-l01-tr-137",
+          "question": "این اختراع من است.",
+          "expected_answer": "This is my invention.",
+          "explanation": "Invention یعنی اختراع.",
+          "hint": "کلمه‌ی کلیدی: «اختراع» = invention؛ تلفظ: /ɪnˈvenʃn/ (اینوِنشِن)؛ راهنما: this = این.",
+          "time_limit": 60,
+          "translation": "این اختراع من است."
+        },
+        {
+          "id": "evolve-1-l01-tr-138",
+          "question": "کلاس من کجاست؟",
+          "expected_answer": "Where is my class?",
+          "explanation": "Where یعنی کجا؛ برای پرسیدن مکان از where استفاده می‌کنیم.",
+          "hint": "کلمه‌های کلیدی: «کجا» = where؛ «کلاس» = class. راهنما: where در ابتدای سؤال می‌آید.",
+          "time_limit": 60,
+          "translation": "کلاس من کجاست؟"
+        },
+        {
+          "id": "evolve-1-l01-tr-139",
+          "question": "اینها اهداف واحد هستند.",
+          "expected_answer": "These are the unit objectives.",
+          "explanation": "Objectives یعنی اهداف؛ unit objectives یعنی اهداف واحد.",
+          "hint": "کلمه‌های کلیدی: «اینها» = these؛ «اهداف واحد» = unit objectives.",
+          "time_limit": 60,
+          "translation": "اینها اهداف واحد هستند."
+        },
+        {
+          "id": "evolve-1-l01-tr-140",
+          "question": "من اهل ایران هستم.",
+          "expected_answer": "I am from Iran.",
+          "explanation": "From یعنی «از» یا «اهل»؛ from Iran یعنی اهل ایران.",
+          "hint": "کلمه‌ی کلیدی: from = از / اهل؛ راهنما: با I از am استفاده می‌کنیم.",
+          "time_limit": 60,
+          "translation": "من اهل ایران هستم."
+        },
+        {
+          "id": "evolve-1-l01-tr-141",
+          "question": "این اطلاعات شخصی من است.",
+          "expected_answer": "This is my personal information.",
+          "explanation": "Personal یعنی شخصی و information یعنی اطلاعات.",
+          "hint": "کلمه‌های کلیدی: personal = شخصی؛ information = اطلاعات.",
+          "time_limit": 60,
+          "translation": "این اطلاعات شخصی من است."
+        },
+        {
+          "id": "evolve-1-l01-tr-142",
+          "question": "من وارد هتلم می‌شوم.",
+          "expected_answer": "I check into my hotel.",
+          "explanation": "Check into یعنی وارد هتل شدن و ثبت ورود در آن.",
+          "hint": "کلمه‌های کلیدی: hotel = هتل؛ check into = وارد هتل شدن. راهنما: فاعل I است، پس فعل بدون s می‌آید.",
+          "time_limit": 60,
+          "translation": "من وارد هتلم می‌شوم."
+        },
+        {
+          "id": "evolve-1-l01-tr-143",
+          "question": "این پروفایل من است.",
+          "expected_answer": "This is my profile.",
+          "explanation": "Profile یعنی پروفایل یا نمایه؛ اطلاعات معرفی یک نفر.",
+          "hint": "کلمه‌ی کلیدی: profile = پروفایل / نمایه.",
+          "time_limit": 60,
+          "translation": "این پروفایل من است."
+        },
+        {
+          "id": "evolve-1-l01-tr-144",
+          "question": "من معلمم را می‌بینم.",
+          "expected_answer": "I meet my teacher.",
+          "explanation": "Meet یعنی ملاقات کردن یا دیدن کسی.",
+          "hint": "کلمه‌ی کلیدی: meet = ملاقات کردن / دیدن. راهنما: با I فعل meet بدون s می‌آید.",
+          "time_limit": 60,
+          "translation": "من معلمم را می‌بینم."
+        },
+        {
+          "id": "evolve-1-l01-tr-145",
+          "question": "من در یک هتل کار می‌کنم.",
+          "expected_answer": "I work at a hotel.",
+          "explanation": "Work یعنی کار کردن؛ با I بدون s می‌آید.",
+          "hint": "کلمه‌های کلیدی: work = کار کردن؛ hotel = هتل؛ at = در.",
+          "time_limit": 60,
+          "translation": "من در یک هتل کار می‌کنم."
+        },
+        {
+          "id": "evolve-1-l01-tr-146",
+          "question": "مادرم و من اهل ایران هستیم.",
+          "expected_answer": "My mother and I are from Iran.",
+          "explanation": "در حالت محترمانه، اول شخص دیگر (مادرم) می‌آید و I در آخر: My mother and I.",
+          "hint": "کلمه‌های کلیدی: and = و؛ from = اهل / از. راهنما: در حالت محترمانه اول دیگری را بگو، بعد خودت.",
+          "time_limit": 60,
+          "translation": "مادرم و من اهل ایران هستیم."
         }
       ]
     },
@@ -3335,6 +3425,125 @@
           ],
           "time_limit": 60,
           "translation": "این معلم تو است."
+        },
+        {
+          "id": "evolve-1-l01-sb-152",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "This is my invention.",
+          "explanation": "ترتیب جمله: This + is + my + invention.",
+          "word_bank": [
+            "invention",
+            "my",
+            "This",
+            "is"
+          ],
+          "time_limit": 60,
+          "translation": "این اختراع من است."
+        },
+        {
+          "id": "evolve-1-l01-sb-153",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Where is my class?",
+          "explanation": "سؤال با where شروع می‌شود: Where + is + my + class؟",
+          "word_bank": [
+            "class",
+            "my",
+            "is",
+            "Where"
+          ],
+          "time_limit": 60,
+          "translation": "کلاس من کجاست؟"
+        },
+        {
+          "id": "evolve-1-l01-sb-154",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "These are the unit objectives.",
+          "explanation": "ترتیب جمله: These + are + the + unit objectives.",
+          "word_bank": [
+            "objectives",
+            "the",
+            "unit",
+            "are",
+            "These"
+          ],
+          "time_limit": 60,
+          "translation": "اینها اهداف واحد هستند."
+        },
+        {
+          "id": "evolve-1-l01-sb-155",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I am from Iran.",
+          "explanation": "ترتیب جمله: I + am + from + Iran.",
+          "word_bank": [
+            "Iran",
+            "am",
+            "I",
+            "from"
+          ],
+          "time_limit": 60,
+          "translation": "من اهل ایران هستم."
+        },
+        {
+          "id": "evolve-1-l01-sb-156",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I work at a hotel.",
+          "explanation": "ترتیب جمله: I + work + at + a + hotel.",
+          "word_bank": [
+            "at",
+            "work",
+            "hotel",
+            "a",
+            "I"
+          ],
+          "time_limit": 60,
+          "translation": "من در یک هتل کار می‌کنم."
+        },
+        {
+          "id": "evolve-1-l01-sb-157",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I check into my hotel.",
+          "explanation": "Check into یک عبارت است: check into = وارد هتل شدن.",
+          "word_bank": [
+            "my",
+            "check",
+            "into",
+            "hotel",
+            "I"
+          ],
+          "time_limit": 60,
+          "translation": "من وارد هتلم می‌شوم."
+        },
+        {
+          "id": "evolve-1-l01-sb-158",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "My mother and I are from Iran.",
+          "explanation": "در حالت محترمانه، My mother اول می‌آید و I در آخر: My mother and I.",
+          "word_bank": [
+            "are",
+            "I",
+            "mother",
+            "and",
+            "My",
+            "from",
+            "Iran"
+          ],
+          "time_limit": 60,
+          "translation": "مادرم و من اهل ایران هستیم."
+        },
+        {
+          "id": "evolve-1-l01-sb-159",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "This is my personal information.",
+          "explanation": "ترتیب جمله: This + is + my + personal + information.",
+          "word_bank": [
+            "information",
+            "is",
+            "my",
+            "This",
+            "personal"
+          ],
+          "time_limit": 60,
+          "translation": "این اطلاعات شخصی من است."
         }
       ]
     },
@@ -5162,6 +5371,150 @@
           "time_limit": 60,
           "translation": "این معلم تو است.",
           "hint": "به ساختار معرفی کردن فکر کن و به اینکه چیز مال مخاطب است توجه کن."
+        },
+        {
+          "id": "evolve-1-l01-wt-136",
+          "word_bank": [
+            "این",
+            "اختراع",
+            "من",
+            "است"
+          ],
+          "expected_answer": "This is my invention.",
+          "explanation": "ترتیب کلمات فارسی همان ترتیب جمله‌ی انگلیسی است.",
+          "hint": "اختراع = invention؛ به ساختار «این ... من است» فکر کن.",
+          "time_limit": 60,
+          "translation": "این اختراع من است."
+        },
+        {
+          "id": "evolve-1-l01-wt-137",
+          "word_bank": [
+            "کلاس",
+            "من",
+            "کجاست"
+          ],
+          "expected_answer": "Where is my class?",
+          "explanation": "سؤال «کجاست» با where شروع می‌شود.",
+          "hint": "کجا = where؛ کلاس = class.",
+          "time_limit": 60,
+          "translation": "کلاس من کجاست؟"
+        },
+        {
+          "id": "evolve-1-l01-wt-138",
+          "word_bank": [
+            "اینها",
+            "اهداف",
+            "واحد",
+            "هستند"
+          ],
+          "expected_answer": "These are the unit objectives.",
+          "explanation": "اینها = these؛ اهداف واحد = unit objectives.",
+          "hint": "به «the» قبل از unit objectives توجه کن.",
+          "time_limit": 60,
+          "translation": "اینها اهداف واحد هستند."
+        },
+        {
+          "id": "evolve-1-l01-wt-139",
+          "word_bank": [
+            "من",
+            "اهل",
+            "ایران",
+            "هستم"
+          ],
+          "expected_answer": "I am from Iran.",
+          "explanation": "اهل = from؛ ایران = Iran.",
+          "hint": "با I از am استفاده می‌کنیم.",
+          "time_limit": 60,
+          "translation": "من اهل ایران هستم."
+        },
+        {
+          "id": "evolve-1-l01-wt-140",
+          "word_bank": [
+            "این",
+            "اطلاعات",
+            "شخصی",
+            "من",
+            "است"
+          ],
+          "expected_answer": "This is my personal information.",
+          "explanation": "شخصی = personal؛ اطلاعات = information.",
+          "hint": "ترتیب: this + is + my + personal + information.",
+          "time_limit": 60,
+          "translation": "این اطلاعات شخصی من است."
+        },
+        {
+          "id": "evolve-1-l01-wt-141",
+          "word_bank": [
+            "من",
+            "وارد",
+            "هتلم",
+            "می‌شوم"
+          ],
+          "expected_answer": "I check into my hotel.",
+          "explanation": "وارد هتل شدن = check into.",
+          "hint": "hotel = هتل؛ check into = وارد هتل شدن.",
+          "time_limit": 60,
+          "translation": "من وارد هتلم می‌شوم."
+        },
+        {
+          "id": "evolve-1-l01-wt-142",
+          "word_bank": [
+            "این",
+            "پروفایل",
+            "من",
+            "است"
+          ],
+          "expected_answer": "This is my profile.",
+          "explanation": "پروفایل = profile.",
+          "hint": "ساختار «این ... من است» را به کار ببر.",
+          "time_limit": 60,
+          "translation": "این پروفایل من است."
+        },
+        {
+          "id": "evolve-1-l01-wt-143",
+          "word_bank": [
+            "من",
+            "معلمم",
+            "را",
+            "می‌بینم"
+          ],
+          "expected_answer": "I meet my teacher.",
+          "explanation": "می‌بینم = meet (با I).",
+          "hint": "meet = ملاقات کردن / دیدن.",
+          "time_limit": 60,
+          "translation": "من معلمم را می‌بینم."
+        },
+        {
+          "id": "evolve-1-l01-wt-144",
+          "word_bank": [
+            "من",
+            "در",
+            "یک",
+            "هتل",
+            "کار",
+            "می‌کنم"
+          ],
+          "expected_answer": "I work at a hotel.",
+          "explanation": "کار می‌کنم = work (با I).",
+          "hint": "hotel = هتل؛ at = در؛ a = یک.",
+          "time_limit": 60,
+          "translation": "من در یک هتل کار می‌کنم."
+        },
+        {
+          "id": "evolve-1-l01-wt-145",
+          "word_bank": [
+            "مادرم",
+            "و",
+            "من",
+            "اهل",
+            "ایران",
+            "هستیم"
+          ],
+          "expected_answer": "My mother and I are from Iran.",
+          "explanation": "در حالت محترمانه، اول مادرم (My mother) و در آخر I می‌آید.",
+          "hint": "و = and؛ اهل = from.",
+          "time_limit": 60,
+          "translation": "مادرم و من اهل ایران هستیم."
         }
       ]
     },
@@ -6495,6 +6848,63 @@
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "این معلم تو است."
+        },
+        {
+          "id": "evolve-1-l01-vt-137",
+          "question": "این اختراع من است.",
+          "expected_answer": "This is my invention.",
+          "explanation": "Invention یعنی اختراع.",
+          "time_limit": 60,
+          "hint": "کلمه‌ی کلیدی: «اختراع» = invention.",
+          "translation": "این اختراع من است."
+        },
+        {
+          "id": "evolve-1-l01-vt-138",
+          "question": "کلاس من کجاست؟",
+          "expected_answer": "Where is my class?",
+          "explanation": "Where یعنی کجا.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: where = کجا؛ class = کلاس.",
+          "translation": "کلاس من کجاست؟"
+        },
+        {
+          "id": "evolve-1-l01-vt-139",
+          "question": "من اهل ایران هستم.",
+          "expected_answer": "I am from Iran.",
+          "accepted_answers": [
+            "I'm from Iran."
+          ],
+          "explanation": "From یعنی از / اهل.",
+          "time_limit": 60,
+          "hint": "کلمه‌ی کلیدی: from = اهل / از.",
+          "translation": "من اهل ایران هستم."
+        },
+        {
+          "id": "evolve-1-l01-vt-140",
+          "question": "من وارد هتلم می‌شوم.",
+          "expected_answer": "I check into my hotel.",
+          "explanation": "Check into یعنی وارد هتل شدن.",
+          "time_limit": 60,
+          "hint": "کلمه‌ی کلیدی: hotel = هتل؛ check into = وارد هتل شدن.",
+          "translation": "من وارد هتلم می‌شوم."
+        },
+        {
+          "id": "evolve-1-l01-vt-141",
+          "question": "من معلمم را می‌بینم.",
+          "expected_answer": "I meet my teacher.",
+          "explanation": "Meet یعنی ملاقات کردن یا دیدن.",
+          "time_limit": 60,
+          "hint": "کلمه‌ی کلیدی: meet = ملاقات کردن / دیدن.",
+          "translation": "من معلمم را می‌بینم."
+        },
+        {
+          "id": "evolve-1-l01-vt-142",
+          "question": "مادرم و من در خانه هستیم.",
+          "expected_answer": "My mother and I are at home.",
+          "explanation": "در حالت محترمانه، اول مادرم و در آخر I می‌آید.",
+          "time_limit": 60,
+          "hint": "کلمه‌ی کلیدی: و = and؛ at home = در خانه.",
+          "translation": "مادرم و من در خانه هستیم."
         }
       ]
     },
@@ -7788,6 +8198,66 @@
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "time_limit": 60,
           "translation": "این معلم تو است."
+        },
+        {
+          "id": "evolve-1-l01-gc-121",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "This is my invention.",
+          "incorrect_sentence": "This are my invention.",
+          "explanation": "با this (مفرد) از is استفاده می‌کنیم، نه are.",
+          "hint": "this = این (مفرد)؛ is = است؛ invention = اختراع.",
+          "time_limit": 60,
+          "translation": "این اختراع من است."
+        },
+        {
+          "id": "evolve-1-l01-gc-122",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "Where is my class?",
+          "incorrect_sentence": "Where are my class?",
+          "explanation": "کلاس یکی است، پس با where از is استفاده می‌کنیم.",
+          "hint": "where = کجا؛ is = است (برای یک چیز).",
+          "time_limit": 60,
+          "translation": "کلاس من کجاست؟"
+        },
+        {
+          "id": "evolve-1-l01-gc-123",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "I work at a hotel.",
+          "incorrect_sentence": "I works at a hotel.",
+          "explanation": "با I فعل work بدون s می‌آید.",
+          "hint": "work = کار کردن؛ hotel = هتل.",
+          "time_limit": 60,
+          "translation": "من در یک هتل کار می‌کنم."
+        },
+        {
+          "id": "evolve-1-l01-gc-124",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "I meet my teacher.",
+          "incorrect_sentence": "I meets my teacher.",
+          "explanation": "با I فعل meet بدون s می‌آید.",
+          "hint": "meet = ملاقات کردن / دیدن.",
+          "time_limit": 60,
+          "translation": "من معلمم را می‌بینم."
+        },
+        {
+          "id": "evolve-1-l01-gc-125",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "My mother and I are from Iran.",
+          "incorrect_sentence": "My mother and me are from Iran.",
+          "explanation": "بعد از and هم باید ضمیر فاعلی I بیاید، نه me.",
+          "hint": "I = من (فاعل)؛ me = مرا / به من.",
+          "time_limit": 60,
+          "translation": "مادرم و من اهل ایران هستیم."
+        },
+        {
+          "id": "evolve-1-l01-gc-126",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "My mother and I are at home.",
+          "incorrect_sentence": "I and my mother are at home.",
+          "explanation": "در حالت محترمانه اول شخص دیگر (mother) می‌آید و I در آخر.",
+          "hint": "at home = در خانه؛ ترتیب: My mother and I.",
+          "time_limit": 60,
+          "translation": "مادرم و من در خانه هستیم."
         }
       ]
     },
@@ -8270,6 +8740,82 @@
           "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: not = نه.",
           "time_limit": 60,
           "translation": "این معلم تو نیست."
+        },
+        {
+          "id": "evolve-1-l01-neg-124",
+          "question": "جمله را منفی کن: This is my invention.",
+          "expected_answer": "This is not my invention.",
+          "accepted_answers": [
+            "This isn't my invention."
+          ],
+          "explanation": "برای منفی کردن is، not را بعد از آن می‌آوریم.",
+          "hint": "کلمه‌های کلیدی: invention = اختراع. راهنما: not = نه؛ isn't = نیست.",
+          "glossary": [
+            {
+              "word": "invention",
+              "meaning": "اختراع"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "این اختراع من نیست."
+        },
+        {
+          "id": "evolve-1-l01-neg-125",
+          "question": "جمله را منفی کن: I work at a hotel.",
+          "expected_answer": "I do not work at a hotel.",
+          "accepted_answers": [
+            "I don't work at a hotel."
+          ],
+          "explanation": "با I و فعل معمولی work، از do not قبل از فعل استفاده می‌کنیم.",
+          "hint": "کلمه‌های کلیدی: work = کار کردن؛ hotel = هتل. راهنما: do not = نه؛ don't شکل کوتاه آن است.",
+          "glossary": [
+            {
+              "word": "work",
+              "meaning": "کار کردن"
+            },
+            {
+              "word": "hotel",
+              "meaning": "هتل"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "من در هتل کار نمی‌کنم."
+        },
+        {
+          "id": "evolve-1-l01-neg-126",
+          "question": "جمله را منفی کن: I meet my teacher.",
+          "expected_answer": "I do not meet my teacher.",
+          "accepted_answers": [
+            "I don't meet my teacher."
+          ],
+          "explanation": "با I و فعل معمولی meet، از do not قبل از فعل استفاده می‌کنیم.",
+          "hint": "کلمه‌های کلیدی: meet = ملاقات کردن / دیدن. راهنما: do not = نه.",
+          "glossary": [
+            {
+              "word": "meet",
+              "meaning": "ملاقات کردن / دیدن"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "من معلمم را نمی‌بینم."
+        },
+        {
+          "id": "evolve-1-l01-neg-127",
+          "question": "جمله را منفی کن: This is my profile.",
+          "expected_answer": "This is not my profile.",
+          "accepted_answers": [
+            "This isn't my profile."
+          ],
+          "explanation": "برای منفی کردن is، not را بعد از آن می‌آوریم.",
+          "hint": "کلمه‌های کلیدی: profile = پروفایل. راهنما: not = نه.",
+          "glossary": [
+            {
+              "word": "profile",
+              "meaning": "پروفایل"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "این پروفایل من نیست."
         }
       ],
       "operation": "negative"
@@ -8634,6 +9180,89 @@
           "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: Is = آیا (در ابتدای سؤال).",
           "time_limit": 60,
           "translation": "آیا این معلم تو است؟"
+        },
+        {
+          "id": "evolve-1-l01-q-117",
+          "question": "جمله را سؤالی کن: This is my invention.",
+          "expected_answer": "Is this my invention?",
+          "explanation": "برای سؤالی کردن این جمله، is را به ابتدای جمله می‌آوریم.",
+          "hint": "کلمه‌های کلیدی: invention = اختراع. راهنما: Is = آیا (در ابتدای سؤال).",
+          "glossary": [
+            {
+              "word": "invention",
+              "meaning": "اختراع"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "آیا این اختراع من است؟"
+        },
+        {
+          "id": "evolve-1-l01-q-118",
+          "question": "جمله را سؤالی کن: I work at a hotel.",
+          "expected_answer": "Do I work at a hotel?",
+          "explanation": "برای سؤال بله یا خیر با فعل معمولی، Do را در ابتدای جمله می‌آوریم.",
+          "hint": "کلمه‌های کلیدی: work = کار کردن؛ hotel = هتل. راهنما: Do = آیا (در ابتدای سؤال).",
+          "glossary": [
+            {
+              "word": "work",
+              "meaning": "کار کردن"
+            },
+            {
+              "word": "hotel",
+              "meaning": "هتل"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "آیا من در هتل کار می‌کنم؟"
+        },
+        {
+          "id": "evolve-1-l01-q-119",
+          "question": "جمله را سؤالی کن: You meet your teacher.",
+          "expected_answer": "Do you meet your teacher?",
+          "explanation": "با you از Do در ابتدای سؤال استفاده می‌کنیم.",
+          "hint": "کلمه‌ی کلیدی: meet = ملاقات کردن / دیدن. راهنما: Do = آیا (در ابتدای سؤال).",
+          "glossary": [
+            {
+              "word": "meet",
+              "meaning": "ملاقات کردن / دیدن"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "آیا تو معلمت را می‌بینی؟"
+        },
+        {
+          "id": "evolve-1-l01-q-120",
+          "question": "جمله را سؤالی کن: This is my personal information.",
+          "expected_answer": "Is this my personal information?",
+          "explanation": "is را به ابتدای جمله می‌آوریم.",
+          "hint": "کلمه‌های کلیدی: personal = شخصی؛ information = اطلاعات. راهنما: Is = آیا.",
+          "glossary": [
+            {
+              "word": "personal",
+              "meaning": "شخصی"
+            },
+            {
+              "word": "information",
+              "meaning": "اطلاعات"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "آیا این اطلاعات شخصی من است؟"
+        },
+        {
+          "id": "evolve-1-l01-q-121",
+          "question": "جمله را سؤالی کن: I am from Iran.",
+          "expected_answer": "Am I from Iran?",
+          "explanation": "با I از am استفاده می‌کنیم و am را به ابتدای جمله می‌آوریم.",
+          "hint": "کلمه‌ی کلیدی: from = اهل / از. راهنما: Am = آیا (در ابتدای سؤال).",
+          "glossary": [
+            {
+              "word": "from",
+              "meaning": "از / اهل"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "آیا من اهل ایران هستم؟"
         }
       ],
       "operation": "question"
@@ -9657,6 +10286,97 @@
           "hint": "your = مال تو / تو",
           "time_limit": 60,
           "translation": "این معلم تو است."
+        },
+        {
+          "id": "evolve-1-l01-mc-076",
+          "question": "جای خالی را کامل کن: I ___ at a hotel.",
+          "expected_answer": "work",
+          "options": [
+            "work",
+            "works",
+            "working"
+          ],
+          "explanation": "با I فعل بدون s می‌آید.",
+          "time_limit": 60,
+          "translation": "من در هتل کار می‌کنم."
+        },
+        {
+          "id": "evolve-1-l01-mc-077",
+          "question": "جای خالی را کامل کن: Where ___ my class?",
+          "expected_answer": "is",
+          "options": [
+            "is",
+            "are",
+            "am"
+          ],
+          "explanation": "کلاس یکی است، پس از is استفاده می‌کنیم.",
+          "time_limit": 60,
+          "translation": "کلاس من کجاست؟"
+        },
+        {
+          "id": "evolve-1-l01-mc-078",
+          "question": "جای خالی را کامل کن: I am ___ Iran.",
+          "expected_answer": "from",
+          "options": [
+            "from",
+            "to",
+            "at"
+          ],
+          "explanation": "from Iran یعنی اهل ایران.",
+          "time_limit": 60,
+          "translation": "من اهل ایران هستم."
+        },
+        {
+          "id": "evolve-1-l01-mc-079",
+          "question": "جای خالی را کامل کن: My mother and ___ are at home.",
+          "expected_answer": "I",
+          "options": [
+            "I",
+            "me",
+            "my"
+          ],
+          "explanation": "بعد از and ضمیر فاعلی I درست است.",
+          "time_limit": 60,
+          "translation": "مادرم و من در خانه هستیم."
+        },
+        {
+          "id": "evolve-1-l01-mc-080",
+          "question": "جای خالی را کامل کن: I ___ my teacher.",
+          "expected_answer": "meet",
+          "options": [
+            "meet",
+            "meets",
+            "meeting"
+          ],
+          "explanation": "با I فعل meet بدون s می‌آید.",
+          "time_limit": 60,
+          "translation": "من معلمم را می‌بینم."
+        },
+        {
+          "id": "evolve-1-l01-mc-081",
+          "question": "جای خالی را کامل کن: I ___ into my hotel.",
+          "expected_answer": "check",
+          "options": [
+            "check",
+            "checks",
+            "checking"
+          ],
+          "explanation": "Check into یک عبارت است: وارد هتل شدن.",
+          "time_limit": 60,
+          "translation": "من وارد هتلم می‌شوم."
+        },
+        {
+          "id": "evolve-1-l01-mc-082",
+          "question": "جای خالی را کامل کن: This is my ___.",
+          "expected_answer": "invention",
+          "options": [
+            "invention",
+            "inventor",
+            "invent"
+          ],
+          "explanation": "Invention یعنی اختراع؛ inventor یعنی مخترع.",
+          "time_limit": 60,
+          "translation": "این اختراع من است."
         }
       ]
     },
@@ -9983,6 +10703,60 @@
           "hint": "this = این",
           "time_limit": 60,
           "translation": "آن"
+        },
+        {
+          "id": "evolve-1-l01-voc-34",
+          "question": "Synonym: information",
+          "expected_answer": "details",
+          "explanation": "Details و information در معنی اطلاعات به هم نزدیک‌اند.",
+          "hint": "information = اطلاعات",
+          "time_limit": 60,
+          "translation": "جزئیات"
+        },
+        {
+          "id": "evolve-1-l01-voc-35",
+          "question": "Synonym: invention",
+          "expected_answer": "creation",
+          "explanation": "Creation یعنی چیزی که ساخته یا خلق شده؛ invention هم چیزی است که ساخته شده.",
+          "hint": "invention = اختراع",
+          "time_limit": 60,
+          "translation": "آفرینش"
+        },
+        {
+          "id": "evolve-1-l01-voc-36",
+          "question": "Synonym: class",
+          "expected_answer": "lesson",
+          "explanation": "در معنی کلاس درس، lesson هم به کار می‌رود.",
+          "hint": "class = کلاس",
+          "time_limit": 60,
+          "translation": "درس"
+        },
+        {
+          "id": "evolve-1-l01-voc-37",
+          "question": "Synonym: meet",
+          "expected_answer": "see",
+          "explanation": "در جمله‌هایی مثل I will see you می‌توان به‌جای meet از see هم استفاده کرد.",
+          "hint": "meet = ملاقات کردن / دیدن",
+          "time_limit": 60,
+          "translation": "دیدن"
+        },
+        {
+          "id": "evolve-1-l01-voc-38",
+          "question": "Synonym: hotel",
+          "expected_answer": "inn",
+          "explanation": "Inn یک هتل کوچک یا مسافرخانه است.",
+          "hint": "hotel = هتل",
+          "time_limit": 60,
+          "translation": "مسافرخانه"
+        },
+        {
+          "id": "evolve-1-l01-voc-39",
+          "question": "Synonym: objectives",
+          "expected_answer": "goals",
+          "explanation": "Goals و objectives هر دو به معنی هدف هستند.",
+          "hint": "objectives = اهداف",
+          "time_limit": 60,
+          "translation": "اهداف"
         }
       ]
     },
@@ -10910,6 +11684,141 @@
           "hint": "سؤال‌ها",
           "time_limit": 60,
           "translation": "سؤال‌ها"
+        },
+        {
+          "id": "evolve-1-l01-dic-101",
+          "question": "invention",
+          "expected_answer": "invention",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "اختراع",
+          "time_limit": 60,
+          "translation": "اختراع"
+        },
+        {
+          "id": "evolve-1-l01-dic-102",
+          "question": "class",
+          "expected_answer": "class",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "کلاس",
+          "time_limit": 60,
+          "translation": "کلاس"
+        },
+        {
+          "id": "evolve-1-l01-dic-103",
+          "question": "unit objectives",
+          "expected_answer": "unit objectives",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "اهداف واحد",
+          "time_limit": 60,
+          "translation": "اهداف واحد"
+        },
+        {
+          "id": "evolve-1-l01-dic-104",
+          "question": "where",
+          "expected_answer": "where",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "کجا",
+          "time_limit": 60,
+          "translation": "کجا"
+        },
+        {
+          "id": "evolve-1-l01-dic-105",
+          "question": "from",
+          "expected_answer": "from",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "از / اهل",
+          "time_limit": 60,
+          "translation": "از / اهل"
+        },
+        {
+          "id": "evolve-1-l01-dic-106",
+          "question": "personal",
+          "expected_answer": "personal",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "شخصی",
+          "time_limit": 60,
+          "translation": "شخصی"
+        },
+        {
+          "id": "evolve-1-l01-dic-107",
+          "question": "information",
+          "expected_answer": "information",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "اطلاعات",
+          "time_limit": 60,
+          "translation": "اطلاعات"
+        },
+        {
+          "id": "evolve-1-l01-dic-108",
+          "question": "check into",
+          "expected_answer": "check into",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "وارد هتل شدن",
+          "time_limit": 60,
+          "translation": "وارد هتل شدن"
+        },
+        {
+          "id": "evolve-1-l01-dic-109",
+          "question": "hotel",
+          "expected_answer": "hotel",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "هتل",
+          "time_limit": 60,
+          "translation": "هتل"
+        },
+        {
+          "id": "evolve-1-l01-dic-110",
+          "question": "profile",
+          "expected_answer": "profile",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "پروفایل",
+          "time_limit": 60,
+          "translation": "پروفایل"
+        },
+        {
+          "id": "evolve-1-l01-dic-111",
+          "question": "meet",
+          "expected_answer": "meet",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "ملاقات کردن",
+          "time_limit": 60,
+          "translation": "ملاقات کردن"
+        },
+        {
+          "id": "evolve-1-l01-dic-112",
+          "question": "work",
+          "expected_answer": "work",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "کار کردن",
+          "time_limit": 60,
+          "translation": "کار کردن"
+        },
+        {
+          "id": "evolve-1-l01-dic-113",
+          "question": "and",
+          "expected_answer": "and",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "و",
+          "time_limit": 60,
+          "translation": "و"
+        },
+        {
+          "id": "evolve-1-l01-dic-114",
+          "question": "iran",
+          "expected_answer": "iran",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "ایران",
+          "time_limit": 60,
+          "translation": "ایران"
+        },
+        {
+          "id": "evolve-1-l01-dic-115",
+          "question": "these",
+          "expected_answer": "these",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "اینها",
+          "time_limit": 60,
+          "translation": "اینها"
         }
       ]
     },
@@ -11134,6 +12043,11 @@
         "meaning": "هستم (فعل بودن برای I)"
       },
       {
+        "word": "and",
+        "ipa": "/ænd/",
+        "meaning": "و"
+      },
+      {
         "word": "answer",
         "ipa": "/ˈænsər/",
         "meaning": "پاسخ / جواب دادن"
@@ -11214,6 +12128,11 @@
         "meaning": "ثبت ورود (در هتل)"
       },
       {
+        "word": "check into",
+        "ipa": "/tʃek ˈɪntuː/",
+        "meaning": "وارد هتل شدن / ثبت ورود در هتل"
+      },
+      {
         "word": "check out",
         "ipa": "/tʃek aʊt/",
         "meaning": "ترک هتل / ثبت خروج"
@@ -11222,6 +12141,11 @@
         "word": "checks",
         "ipa": "/tʃeks/",
         "meaning": "بررسی می‌کند"
+      },
+      {
+        "word": "class",
+        "ipa": "/klæs/",
+        "meaning": "کلاس"
       },
       {
         "word": "close",
@@ -11312,6 +12236,11 @@
         "word": "friend",
         "ipa": "/frend/",
         "meaning": "دوست"
+      },
+      {
+        "word": "from",
+        "ipa": "/frʌm/",
+        "meaning": "از / اهل"
       },
       {
         "word": "get",
@@ -11429,6 +12358,11 @@
         "meaning": "جای زندگی / خانه"
       },
       {
+        "word": "hotel",
+        "ipa": "/hoʊˈtel/",
+        "meaning": "هتل"
+      },
+      {
         "word": "house",
         "ipa": "/haʊs/",
         "meaning": "خانه (ساختمان)"
@@ -11459,6 +12393,11 @@
         "meaning": "افراد"
       },
       {
+        "word": "information",
+        "ipa": "/ˌɪnfərˈmeɪʃn/",
+        "meaning": "اطلاعات"
+      },
+      {
         "word": "inscribe",
         "ipa": "/ɪnˈskraɪb/",
         "meaning": "حک کردن"
@@ -11482,6 +12421,16 @@
         "word": "instructor",
         "ipa": "/ɪnˈstrʌktər/",
         "meaning": "مربی / مدرس"
+      },
+      {
+        "word": "invention",
+        "ipa": "/ɪnˈvenʃn/",
+        "meaning": "اختراع"
+      },
+      {
+        "word": "iran",
+        "ipa": "/ɪˈrɑːn/",
+        "meaning": "ایران"
       },
       {
         "word": "is",
@@ -11544,6 +12493,11 @@
         "meaning": "معنی دادن"
       },
       {
+        "word": "meet",
+        "ipa": "/miːt/",
+        "meaning": "ملاقات کردن / دیدن"
+      },
+      {
         "word": "mother",
         "ipa": "/ˈmʌðər/",
         "meaning": "مادر"
@@ -11557,6 +12511,11 @@
         "word": "my bad",
         "ipa": "/maɪ bæd/",
         "meaning": "ببخشید (اشتباه از من بود)"
+      },
+      {
+        "word": "my class",
+        "ipa": "/maɪ klæs/",
+        "meaning": "کلاس من"
       },
       {
         "word": "name",
@@ -11662,6 +12621,11 @@
         "word": "private",
         "ipa": "/ˈpraɪvət/",
         "meaning": "خصوصی"
+      },
+      {
+        "word": "profile",
+        "ipa": "/ˈproʊfaɪl/",
+        "meaning": "پروفایل / نمایه"
       },
       {
         "word": "public",
@@ -11904,6 +12868,11 @@
         "meaning": "حرف تعریف معین"
       },
       {
+        "word": "these",
+        "ipa": "/ðiːz/",
+        "meaning": "اینها / این‌ها"
+      },
+      {
         "word": "they",
         "ipa": "/ðeɪ/",
         "meaning": "آن‌ها"
@@ -11932,6 +12901,11 @@
         "word": "understands",
         "ipa": "/ˌʌndərˈstændz/",
         "meaning": "می‌فهمد"
+      },
+      {
+        "word": "unit objectives",
+        "ipa": "/ˈjuːnɪt əbˈdʒektɪvz/",
+        "meaning": "اهداف واحد"
       },
       {
         "word": "verb",
@@ -11969,6 +12943,11 @@
         "meaning": "چه / چی"
       },
       {
+        "word": "where",
+        "ipa": "/wer/",
+        "meaning": "کجا"
+      },
+      {
         "word": "wife",
         "ipa": "/waɪf/",
         "meaning": "زن (همسر)"
@@ -11977,6 +12956,11 @@
         "word": "word",
         "ipa": "/wɜːrd/",
         "meaning": "کلمه"
+      },
+      {
+        "word": "work",
+        "ipa": "/wɜːrk/",
+        "meaning": "کار کردن / کار"
       },
       {
         "word": "write",
@@ -12616,6 +13600,50 @@
       {
         "en": "She reads.",
         "fa": "او (زن) می‌خواند."
+      },
+      {
+        "en": "This is my invention.",
+        "fa": "این اختراع من است."
+      },
+      {
+        "en": "Where is my class?",
+        "fa": "کلاس من کجاست؟"
+      },
+      {
+        "en": "These are the unit objectives.",
+        "fa": "اینها اهداف واحد هستند."
+      },
+      {
+        "en": "I am from Iran.",
+        "fa": "من اهل ایران هستم."
+      },
+      {
+        "en": "This is my personal information.",
+        "fa": "این اطلاعات شخصی من است."
+      },
+      {
+        "en": "I check into my hotel.",
+        "fa": "من وارد هتلم می‌شوم."
+      },
+      {
+        "en": "This is my profile.",
+        "fa": "این پروفایل من است."
+      },
+      {
+        "en": "I meet my teacher.",
+        "fa": "من معلمم را می‌بینم."
+      },
+      {
+        "en": "I work at a hotel.",
+        "fa": "من در یک هتل کار می‌کنم."
+      },
+      {
+        "en": "My mother and I are from Iran.",
+        "fa": "مادرم و من اهل ایران هستیم."
+      },
+      {
+        "en": "My mother and I are at home.",
+        "fa": "مادرم و من در خانه هستیم."
       }
     ],
     "grammar": [
@@ -12720,6 +13748,20 @@
           {
             "en": "I don't understand.",
             "fa": "من نمی‌فهمم."
+          }
+        ]
+      },
+      {
+        "title": "ترتیب در جمله‌ی محترمانه (My mother and I)",
+        "explanation": "وقتی از خودت و یک نفر دیگر حرف می‌زنی، در حالت محترمانه اول شخص دیگر را می‌آوری و خودت (I) را در آخر می‌گذاری: My mother and I. به‌جای I and my mother نگو.",
+        "examples": [
+          {
+            "en": "My mother and I are from Iran.",
+            "fa": "مادرم و من اهل ایران هستیم."
+          },
+          {
+            "en": "My mother and I are at home.",
+            "fa": "مادرم و من در خانه هستیم."
           }
         ]
       }
@@ -12865,6 +13907,35 @@
           {
             "en": "I check in.",
             "fa": "من ثبت ورود می‌کنم."
+          }
+        ]
+      },
+      {
+        "title": "روز کاری من",
+        "lines": [
+          {
+            "en": "I am from Iran.",
+            "fa": "من اهل ایران هستم."
+          },
+          {
+            "en": "I work at a hotel.",
+            "fa": "من در یک هتل کار می‌کنم."
+          },
+          {
+            "en": "This is my profile.",
+            "fa": "این پروفایل من است."
+          },
+          {
+            "en": "This is my personal information.",
+            "fa": "این اطلاعات شخصی من است."
+          },
+          {
+            "en": "I check into my hotel.",
+            "fa": "من وارد هتلم می‌شوم."
+          },
+          {
+            "en": "My mother and I are at home.",
+            "fa": "مادرم و من در خانه هستیم."
           }
         ]
       }
