@@ -9358,24 +9358,6 @@
         },
         {
           "id": "evolve-1-l01-neg-128",
-          "question": "جمله را منفی کن: I visit my mother.",
-          "expected_answer": "I do not visit my mother.",
-          "accepted_answers": [
-            "I don't visit my mother."
-          ],
-          "explanation": "برای منفی کردن با I، از don't (یا do not) قبل از فعل ساده استفاده می‌کنیم.",
-          "hint": "کلمه‌های کلیدی: visit = دیدن کردن. راهنما: do not = نه؛ don't = نمی‌ (شکل کوتاه do not).",
-          "glossary": [
-            {
-              "word": "visit",
-              "meaning": "دیدن کردن"
-            }
-          ],
-          "time_limit": 60,
-          "translation": "من به دیدن مادرم نمی‌روم."
-        },
-        {
-          "id": "evolve-1-l01-neg-129",
           "question": "جمله را منفی کن: This person is my friend.",
           "expected_answer": "This person is not my friend.",
           "accepted_answers": [
@@ -9393,7 +9375,7 @@
           "translation": "این شخص دوست من نیست."
         },
         {
-          "id": "evolve-1-l01-neg-130",
+          "id": "evolve-1-l01-neg-129",
           "question": "جمله را منفی کن: The data is in this book.",
           "expected_answer": "The data is not in this book.",
           "accepted_answers": [
@@ -9409,24 +9391,6 @@
           ],
           "time_limit": 60,
           "translation": "داده‌ها در این کتاب نیست."
-        },
-        {
-          "id": "evolve-1-l01-neg-131",
-          "question": "جمله را منفی کن: I read the first chapter.",
-          "expected_answer": "I do not read the first chapter.",
-          "accepted_answers": [
-            "I don't read the first chapter."
-          ],
-          "explanation": "برای منفی کردن با I، از don't (یا do not) قبل از فعل ساده استفاده می‌کنیم.",
-          "hint": "کلمه‌های کلیدی: chapter = فصل؛ first = اول. راهنما: do not = نه؛ don't = نمی‌ (شکل کوتاه do not).",
-          "glossary": [
-            {
-              "word": "chapter",
-              "meaning": "فصل"
-            }
-          ],
-          "time_limit": 60,
-          "translation": "من فصل اول را نمی‌خوانم."
         }
       ],
       "operation": "negative"
