@@ -1424,6 +1424,81 @@
           "hint": "کلمه‌های کلیدی: and = و؛ from = اهل / از. راهنما: در حالت محترمانه اول دیگری را بگو، بعد خودت.",
           "time_limit": 60,
           "translation": "مادرم و من اهل ایران هستیم."
+        },
+        {
+          "id": "evolve-1-l01-tr-147",
+          "question": "من به دیدن مادرم می‌روم.",
+          "expected_answer": "I visit my mother.",
+          "explanation": "visit یعنی به دیدن کسی رفتن یا به او سر زدن. بعد از visit به‌طور مستقیم اسم یا کلمه‌ی ملکی می‌آید، بدون to.",
+          "hint": "کلمه‌ی کلیدی: «به دیدن رفتن» = visit؛ تلفظ: /ˈvɪzɪt/ (ویزیت)؛ نکته: visit someone یعنی به دیدن کسی رفتن.",
+          "time_limit": 60,
+          "translation": "من به دیدن مادرم می‌روم."
+        },
+        {
+          "id": "evolve-1-l01-tr-148",
+          "question": "او (مرد) به خانه‌ی من سر می‌زند.",
+          "expected_answer": "He visits my house.",
+          "explanation": "با He در جمله‌ی مثبت حال ساده، به فعل visit حرف s اضافه می‌کنیم: visits.",
+          "hint": "کلمه‌های کلیدی: visits = سر می‌زند؛ house = خانه. راهنما: He فعل را به شکل visits می‌آورد.",
+          "time_limit": 60,
+          "translation": "او (مرد) به خانه‌ی من سر می‌زند."
+        },
+        {
+          "id": "evolve-1-l01-tr-149",
+          "question": "این فصل را بخوان.",
+          "expected_answer": "Read this chapter.",
+          "explanation": "جمله‌ی امری با شکل ساده‌ی فعل شروع می‌شود و فاعل ندارد: Read this chapter.",
+          "hint": "کلمه‌های کلیدی: «فصل» = chapter؛ «بخوان» = read (امر). راهنما: جمله‌ی امری با فعل شروع می‌شود.",
+          "time_limit": 60,
+          "translation": "این فصل را بخوان."
+        },
+        {
+          "id": "evolve-1-l01-tr-150",
+          "question": "من فصل اول را می‌خوانم.",
+          "expected_answer": "I read the first chapter.",
+          "explanation": "بعد از I از شکل ساده‌ی فعل read استفاده می‌کنیم. first یعنی اول و chapter یعنی فصل.",
+          "hint": "کلمه‌های کلیدی: chapter = فصل؛ first = اول. تلفظ read در این جمله: /riːd/ (ریـد).",
+          "time_limit": 60,
+          "translation": "من فصل اول را می‌خوانم."
+        },
+        {
+          "id": "evolve-1-l01-tr-151",
+          "question": "این کتاب یک فصل جدید دارد.",
+          "expected_answer": "This book has a new chapter.",
+          "explanation": "a new chapter یعنی یک فصل جدید؛ has یعنی دارد و برای this book به کار رفته است.",
+          "hint": "کلمه‌های کلیدی: has = دارد؛ new = جدید؛ chapter = فصل. راهنما: a = یک.",
+          "time_limit": 60,
+          "translation": "این کتاب یک فصل جدید دارد."
+        },
+        {
+          "id": "evolve-1-l01-tr-152",
+          "question": "داده‌ها در این کتاب است.",
+          "expected_answer": "The data is in this book.",
+          "accepted_answers": [
+            "The data are in this book."
+          ],
+          "explanation": "Data در این جمله با is می‌آید. در حالت جمع و رسمی‌تر هم گفته می‌شود: The data are in this book.",
+          "hint": "کلمه‌های کلیدی: data = داده‌ها؛ book = کتاب. راهنما: in this book = در این کتاب.",
+          "time_limit": 60,
+          "translation": "داده‌ها در این کتاب است."
+        },
+        {
+          "id": "evolve-1-l01-tr-153",
+          "question": "این شخص دوست من است.",
+          "expected_answer": "This person is my friend.",
+          "explanation": "Person یعنی شخص یا فرد. بعد از this، is می‌آید: This person is ...",
+          "hint": "کلمه‌های کلیدی: person = شخص؛ friend = دوست. راهنما: This person = این شخص.",
+          "time_limit": 60,
+          "translation": "این شخص دوست من است."
+        },
+        {
+          "id": "evolve-1-l01-tr-154",
+          "question": "او (زن) یک فرد جوان است.",
+          "expected_answer": "She is a young person.",
+          "explanation": "a young person یعنی یک فرد جوان؛ young صفت است و قبل از person می‌آید.",
+          "hint": "کلمه‌های کلیدی: young = جوان؛ person = فرد. راهنما: a قبل از young می‌آید.",
+          "time_limit": 60,
+          "translation": "او (زن) یک فرد جوان است."
         }
       ]
     },
@@ -3544,6 +3619,124 @@
           ],
           "time_limit": 60,
           "translation": "این اطلاعات شخصی من است."
+        },
+        {
+          "id": "evolve-1-l01-sb-160",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I visit my mother.",
+          "explanation": "ترتیب جمله: I + visit + my + mother.",
+          "word_bank": [
+            "mother.",
+            "visit",
+            "I",
+            "my"
+          ],
+          "time_limit": 60,
+          "translation": "من به دیدن مادرم می‌روم."
+        },
+        {
+          "id": "evolve-1-l01-sb-161",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "He visits my house.",
+          "explanation": "ترتیب جمله: He + visits + my + house.",
+          "word_bank": [
+            "house.",
+            "He",
+            "visits",
+            "my"
+          ],
+          "time_limit": 60,
+          "translation": "او (مرد) به خانه‌ی من سر می‌زند."
+        },
+        {
+          "id": "evolve-1-l01-sb-162",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "Read this chapter.",
+          "explanation": "ترتیب جمله‌ی امری: Read + this + chapter.",
+          "word_bank": [
+            "chapter.",
+            "Read",
+            "this"
+          ],
+          "time_limit": 60,
+          "translation": "این فصل را بخوان."
+        },
+        {
+          "id": "evolve-1-l01-sb-163",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "I read the first chapter.",
+          "explanation": "ترتیب جمله: I + read + the + first + chapter.",
+          "word_bank": [
+            "chapter.",
+            "first",
+            "the",
+            "read",
+            "I"
+          ],
+          "time_limit": 60,
+          "translation": "من فصل اول را می‌خوانم."
+        },
+        {
+          "id": "evolve-1-l01-sb-164",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "This book has a new chapter.",
+          "explanation": "ترتیب جمله: This + book + has + a + new + chapter.",
+          "word_bank": [
+            "chapter.",
+            "has",
+            "new",
+            "This",
+            "a",
+            "book"
+          ],
+          "time_limit": 60,
+          "translation": "این کتاب یک فصل جدید دارد."
+        },
+        {
+          "id": "evolve-1-l01-sb-165",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "The data is in this book.",
+          "explanation": "ترتیب جمله: The + data + is + in + this + book.",
+          "word_bank": [
+            "book.",
+            "data",
+            "The",
+            "is",
+            "in",
+            "this"
+          ],
+          "time_limit": 60,
+          "translation": "داده‌ها در این کتاب است."
+        },
+        {
+          "id": "evolve-1-l01-sb-166",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "This person is my friend.",
+          "explanation": "ترتیب جمله: This + person + is + my + friend.",
+          "word_bank": [
+            "friend.",
+            "person",
+            "This",
+            "is",
+            "my"
+          ],
+          "time_limit": 60,
+          "translation": "این شخص دوست من است."
+        },
+        {
+          "id": "evolve-1-l01-sb-167",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "She is a young person.",
+          "explanation": "ترتیب جمله: She + is + a + young + person.",
+          "word_bank": [
+            "person.",
+            "young",
+            "is",
+            "a",
+            "She"
+          ],
+          "time_limit": 60,
+          "translation": "او (زن) یک فرد جوان است."
         }
       ]
     },
@@ -5516,6 +5709,119 @@
           "hint": "و = and؛ اهل = from.",
           "time_limit": 60,
           "translation": "مادرم و من اهل ایران هستیم."
+        },
+        {
+          "id": "evolve-1-l01-wt-146",
+          "word_bank": [
+            "من",
+            "به دیدن",
+            "مادرم",
+            "می‌روم"
+          ],
+          "expected_answer": "I visit my mother.",
+          "explanation": "visit یعنی به دیدن کسی رفتن یا به او سر زدن. بعد از visit به‌طور مستقیم اسم یا کلمه‌ی ملکی می‌آید، بدون to.",
+          "hint": "کلمه‌ی کلیدی: «به دیدن رفتن» = visit؛ تلفظ: /ˈvɪzɪt/ (ویزیت)؛ نکته: visit someone یعنی به دیدن کسی رفتن.",
+          "time_limit": 60,
+          "translation": "من به دیدن مادرم می‌روم."
+        },
+        {
+          "id": "evolve-1-l01-wt-147",
+          "word_bank": [
+            "او (مرد)",
+            "به خانه‌ی من",
+            "سر می‌زند"
+          ],
+          "expected_answer": "He visits my house.",
+          "explanation": "با He در جمله‌ی مثبت حال ساده، به فعل visit حرف s اضافه می‌کنیم: visits.",
+          "hint": "کلمه‌های کلیدی: visits = سر می‌زند؛ house = خانه. راهنما: He فعل را به شکل visits می‌آورد.",
+          "time_limit": 60,
+          "translation": "او (مرد) به خانه‌ی من سر می‌زند."
+        },
+        {
+          "id": "evolve-1-l01-wt-148",
+          "word_bank": [
+            "این",
+            "فصل",
+            "را",
+            "بخوان"
+          ],
+          "expected_answer": "Read this chapter.",
+          "explanation": "جمله‌ی امری با شکل ساده‌ی فعل شروع می‌شود و فاعل ندارد: Read this chapter.",
+          "hint": "کلمه‌های کلیدی: «فصل» = chapter؛ «بخوان» = read (امر). راهنما: جمله‌ی امری با فعل شروع می‌شود.",
+          "time_limit": 60,
+          "translation": "این فصل را بخوان."
+        },
+        {
+          "id": "evolve-1-l01-wt-149",
+          "word_bank": [
+            "من",
+            "فصل اول",
+            "را",
+            "می‌خوانم"
+          ],
+          "expected_answer": "I read the first chapter.",
+          "explanation": "بعد از I از شکل ساده‌ی فعل read استفاده می‌کنیم. first یعنی اول و chapter یعنی فصل.",
+          "hint": "کلمه‌های کلیدی: chapter = فصل؛ first = اول. تلفظ read در این جمله: /riːd/ (ریـد).",
+          "time_limit": 60,
+          "translation": "من فصل اول را می‌خوانم."
+        },
+        {
+          "id": "evolve-1-l01-wt-150",
+          "word_bank": [
+            "این کتاب",
+            "یک فصل جدید",
+            "دارد"
+          ],
+          "expected_answer": "This book has a new chapter.",
+          "explanation": "a new chapter یعنی یک فصل جدید؛ has یعنی دارد و برای this book به کار رفته است.",
+          "hint": "کلمه‌های کلیدی: has = دارد؛ new = جدید؛ chapter = فصل. راهنما: a = یک.",
+          "time_limit": 60,
+          "translation": "این کتاب یک فصل جدید دارد."
+        },
+        {
+          "id": "evolve-1-l01-wt-151",
+          "word_bank": [
+            "داده‌ها",
+            "در این کتاب",
+            "است"
+          ],
+          "expected_answer": "The data is in this book.",
+          "explanation": "Data در این جمله با is می‌آید. در حالت جمع و رسمی‌تر هم گفته می‌شود: The data are in this book.",
+          "hint": "کلمه‌های کلیدی: data = داده‌ها؛ book = کتاب. راهنما: in this book = در این کتاب.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "The data are in this book."
+          ],
+          "translation": "داده‌ها در این کتاب است."
+        },
+        {
+          "id": "evolve-1-l01-wt-152",
+          "word_bank": [
+            "این",
+            "شخص",
+            "دوست",
+            "من",
+            "است"
+          ],
+          "expected_answer": "This person is my friend.",
+          "explanation": "Person یعنی شخص یا فرد. بعد از this، is می‌آید: This person is ...",
+          "hint": "کلمه‌های کلیدی: person = شخص؛ friend = دوست. راهنما: This person = این شخص.",
+          "time_limit": 60,
+          "translation": "این شخص دوست من است."
+        },
+        {
+          "id": "evolve-1-l01-wt-153",
+          "word_bank": [
+            "او (زن)",
+            "یک",
+            "فرد جوان",
+            "است"
+          ],
+          "expected_answer": "She is a young person.",
+          "explanation": "a young person یعنی یک فرد جوان؛ young صفت است و قبل از person می‌آید.",
+          "hint": "کلمه‌های کلیدی: young = جوان؛ person = فرد. راهنما: a قبل از young می‌آید.",
+          "time_limit": 60,
+          "translation": "او (زن) یک فرد جوان است."
         }
       ]
     },
@@ -6906,6 +7212,81 @@
           "time_limit": 60,
           "hint": "کلمه‌ی کلیدی: و = and؛ at home = در خانه.",
           "translation": "مادرم و من در خانه هستیم."
+        },
+        {
+          "id": "evolve-1-l01-vt-143",
+          "question": "من به دیدن مادرم می‌روم.",
+          "expected_answer": "I visit my mother.",
+          "explanation": "visit یعنی به دیدن کسی رفتن یا به او سر زدن. بعد از visit به‌طور مستقیم اسم یا کلمه‌ی ملکی می‌آید، بدون to.",
+          "time_limit": 60,
+          "hint": "کلمه‌ی کلیدی: «به دیدن رفتن» = visit؛ تلفظ: /ˈvɪzɪt/ (ویزیت)؛ نکته: visit someone یعنی به دیدن کسی رفتن.",
+          "translation": "من به دیدن مادرم می‌روم."
+        },
+        {
+          "id": "evolve-1-l01-vt-144",
+          "question": "او (مرد) به خانه‌ی من سر می‌زند.",
+          "expected_answer": "He visits my house.",
+          "explanation": "با He در جمله‌ی مثبت حال ساده، به فعل visit حرف s اضافه می‌کنیم: visits.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: visits = سر می‌زند؛ house = خانه. راهنما: He فعل را به شکل visits می‌آورد.",
+          "translation": "او (مرد) به خانه‌ی من سر می‌زند."
+        },
+        {
+          "id": "evolve-1-l01-vt-145",
+          "question": "این فصل را بخوان.",
+          "expected_answer": "Read this chapter.",
+          "explanation": "جمله‌ی امری با شکل ساده‌ی فعل شروع می‌شود و فاعل ندارد: Read this chapter.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: «فصل» = chapter؛ «بخوان» = read (امر). راهنما: جمله‌ی امری با فعل شروع می‌شود.",
+          "translation": "این فصل را بخوان."
+        },
+        {
+          "id": "evolve-1-l01-vt-146",
+          "question": "من فصل اول را می‌خوانم.",
+          "expected_answer": "I read the first chapter.",
+          "explanation": "بعد از I از شکل ساده‌ی فعل read استفاده می‌کنیم. first یعنی اول و chapter یعنی فصل.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: chapter = فصل؛ first = اول. تلفظ read در این جمله: /riːd/ (ریـد).",
+          "translation": "من فصل اول را می‌خوانم."
+        },
+        {
+          "id": "evolve-1-l01-vt-147",
+          "question": "این کتاب یک فصل جدید دارد.",
+          "expected_answer": "This book has a new chapter.",
+          "explanation": "a new chapter یعنی یک فصل جدید؛ has یعنی دارد و برای this book به کار رفته است.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: has = دارد؛ new = جدید؛ chapter = فصل. راهنما: a = یک.",
+          "translation": "این کتاب یک فصل جدید دارد."
+        },
+        {
+          "id": "evolve-1-l01-vt-148",
+          "question": "داده‌ها در این کتاب است.",
+          "expected_answer": "The data is in this book.",
+          "explanation": "Data در این جمله با is می‌آید. در حالت جمع و رسمی‌تر هم گفته می‌شود: The data are in this book.",
+          "time_limit": 60,
+          "accepted_answers": [
+            "The data are in this book."
+          ],
+          "hint": "کلمه‌های کلیدی: data = داده‌ها؛ book = کتاب. راهنما: in this book = در این کتاب.",
+          "translation": "داده‌ها در این کتاب است."
+        },
+        {
+          "id": "evolve-1-l01-vt-149",
+          "question": "این شخص دوست من است.",
+          "expected_answer": "This person is my friend.",
+          "explanation": "Person یعنی شخص یا فرد. بعد از this، is می‌آید: This person is ...",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: person = شخص؛ friend = دوست. راهنما: This person = این شخص.",
+          "translation": "این شخص دوست من است."
+        },
+        {
+          "id": "evolve-1-l01-vt-150",
+          "question": "او (زن) یک فرد جوان است.",
+          "expected_answer": "She is a young person.",
+          "explanation": "a young person یعنی یک فرد جوان؛ young صفت است و قبل از person می‌آید.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: young = جوان؛ person = فرد. راهنما: a قبل از young می‌آید.",
+          "translation": "او (زن) یک فرد جوان است."
         }
       ]
     },
@@ -8259,6 +8640,16 @@
           "hint": "at home = در خانه؛ ترتیب: My mother and I.",
           "time_limit": 60,
           "translation": "مادرم و من در خانه هستیم."
+        },
+        {
+          "id": "evolve-1-l01-gc-127",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "He visits my house.",
+          "explanation": "با He در جمله‌ی مثبت حال ساده، به فعل s اضافه می‌کنیم.",
+          "hint": "He = او (مرد)؛ visits = سر می‌زند",
+          "incorrect_sentence": "He visit my house.",
+          "time_limit": 60,
+          "translation": "او (مرد) به خانه‌ی من سر می‌زند."
         }
       ]
     },
@@ -8813,6 +9204,28 @@
           ],
           "time_limit": 60,
           "translation": "این پروفایل من نیست."
+        },
+        {
+          "id": "evolve-1-l01-neg-128",
+          "question": "جمله را منفی کن: This person is my friend.",
+          "expected_answer": "This person is not my friend.",
+          "accepted_answers": [
+            "This person isn't my friend."
+          ],
+          "explanation": "برای منفی کردن is، کلمه not را بعد از آن می‌آوریم. شکل کوتاه is not برابر isn't است.",
+          "hint": "کلمه‌های کلیدی: person = شخص؛ friend = دوست. راهنما: not = نه؛ isn't = نیست.",
+          "glossary": [
+            {
+              "word": "person",
+              "meaning": "شخص"
+            },
+            {
+              "word": "friend",
+              "meaning": "دوست"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "این شخص دوست من نیست."
         }
       ],
       "operation": "negative"
@@ -9256,6 +9669,25 @@
           ],
           "time_limit": 60,
           "translation": "آیا من اهل ایران هستم؟"
+        },
+        {
+          "id": "evolve-1-l01-q-122",
+          "question": "جمله را سؤالی کن: The data is in this book.",
+          "expected_answer": "Is the data in this book?",
+          "explanation": "is را به ابتدای جمله می‌آوریم.",
+          "hint": "کلمه‌های کلیدی: data = داده‌ها؛ book = کتاب. راهنما: Is = آیا (در ابتدای سؤال).",
+          "glossary": [
+            {
+              "word": "data",
+              "meaning": "داده‌ها"
+            },
+            {
+              "word": "book",
+              "meaning": "کتاب"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "آیا داده‌ها در این کتاب است؟"
         }
       ],
       "operation": "question"
@@ -10370,6 +10802,30 @@
           "explanation": "Invention یعنی اختراع.",
           "time_limit": 60,
           "translation": "این اختراع من است."
+        },
+        {
+          "id": "evolve-1-l01-mc-083",
+          "question": "جای خالی را کامل کن: I ___ my mother.",
+          "expected_answer": "visit",
+          "explanation": "با I از شکل ساده‌ی فعل استفاده می‌کنیم.",
+          "options": [
+            "visit",
+            "visits"
+          ],
+          "time_limit": 60,
+          "translation": "من به دیدن مادرم می‌روم."
+        },
+        {
+          "id": "evolve-1-l01-mc-084",
+          "question": "جای خالی را کامل کن: This ___ is my friend.",
+          "expected_answer": "person",
+          "explanation": "بعد از this از شکل مفرد person استفاده می‌کنیم؛ people شکل جمع است.",
+          "options": [
+            "person",
+            "people"
+          ],
+          "time_limit": 60,
+          "translation": "این شخص دوست من است."
         }
       ]
     },
@@ -10750,6 +11206,15 @@
           "hint": "objectives = اهداف",
           "time_limit": 60,
           "translation": "اهداف"
+        },
+        {
+          "id": "evolve-1-l01-voc-40",
+          "question": "Synonym: data",
+          "expected_answer": "information",
+          "explanation": "Data و information در بعضی جمله‌ها به هم نزدیک‌اند، اما همیشه جای هم نمی‌نشینند.",
+          "hint": "data = داده‌ها",
+          "time_limit": 60,
+          "translation": "اطلاعات"
         }
       ]
     },
@@ -11803,6 +12268,42 @@
           "hint": "ایران",
           "time_limit": 60,
           "translation": "ایران"
+        },
+        {
+          "id": "evolve-1-l01-dic-115",
+          "question": "visit",
+          "expected_answer": "visit",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "دیدن کردن / سر زدن",
+          "time_limit": 60,
+          "translation": "دیدن کردن / سر زدن"
+        },
+        {
+          "id": "evolve-1-l01-dic-116",
+          "question": "chapter",
+          "expected_answer": "chapter",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "فصل (کتاب)",
+          "time_limit": 60,
+          "translation": "فصل (کتاب)"
+        },
+        {
+          "id": "evolve-1-l01-dic-117",
+          "question": "data",
+          "expected_answer": "data",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "داده‌ها",
+          "time_limit": 60,
+          "translation": "داده‌ها"
+        },
+        {
+          "id": "evolve-1-l01-dic-118",
+          "question": "person",
+          "expected_answer": "person",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "شخص / فرد",
+          "time_limit": 60,
+          "translation": "شخص / فرد"
         }
       ]
     },
@@ -11882,6 +12383,16 @@
           "points": 10,
           "time_limit": 60,
           "translation": "تماشا می‌کند (برای He / She / It)"
+        },
+        {
+          "id": "evolve-1-l01-vb-form-08",
+          "question": "He / She / It: visit",
+          "expected_answer": "visits",
+          "explanation": "برای he، she و it به visit حرف s اضافه می‌کنیم.",
+          "hint": "visit = دیدن کردن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 60,
+          "translation": "سر می‌زند"
         }
       ]
     },
@@ -11939,6 +12450,18 @@
           "explanation": "It سوم‌شخص مفرد است؛ فعل s می‌گیرد.",
           "time_limit": 60,
           "translation": "آن می‌خورد."
+        },
+        {
+          "id": "evolve-1-l01-va-mc-08",
+          "question": "جای خالی را کامل کن: She ___ my house.",
+          "expected_answer": "visits",
+          "options": [
+            "visit",
+            "visits"
+          ],
+          "explanation": "با She در جمله‌ی مثبت حال ساده فعل s می‌گیرد.",
+          "time_limit": 60,
+          "translation": "او (زن) به خانه‌ی من سر می‌زند."
         }
       ]
     },
@@ -11968,6 +12491,16 @@
           "hint": "She = او (زن)؛ watches = تماشا می‌کند",
           "time_limit": 60,
           "translation": "او (زن) تماشا می‌کند."
+        },
+        {
+          "id": "evolve-1-l01-va-gc-05",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "She visits my mother.",
+          "incorrect_sentence": "She visit my mother.",
+          "explanation": "She سوم‌شخص مفرد است و فعل در جمله‌ی مثبت s می‌گیرد.",
+          "hint": "She = او (زن)؛ visits = سر می‌زند",
+          "time_limit": 60,
+          "translation": "او (زن) به مادرم سر می‌زند."
         }
       ]
     },
@@ -12102,6 +12635,11 @@
         "meaning": "می‌توانم / توانستن"
       },
       {
+        "word": "chapter",
+        "ipa": "/ˈtʃæptər/",
+        "meaning": "فصل (کتاب)"
+      },
+      {
         "word": "check",
         "ipa": "/tʃek/",
         "meaning": "بررسی کردن"
@@ -12150,6 +12688,11 @@
         "word": "couple",
         "ipa": "/ˈkʌpəl/",
         "meaning": "زوج / جفت"
+      },
+      {
+        "word": "data",
+        "ipa": "/ˈdeɪtə/",
+        "meaning": "داده‌ها"
       },
       {
         "word": "do",
@@ -12592,6 +13135,11 @@
         "meaning": "مردم"
       },
       {
+        "word": "person",
+        "ipa": "/ˈpɜːrsn/",
+        "meaning": "شخص / فرد"
+      },
+      {
         "word": "personal",
         "ipa": "/ˈpɜːrsənəl/",
         "meaning": "شخصی"
@@ -12890,6 +13438,16 @@
         "word": "verb",
         "ipa": "/vɜːrb/",
         "meaning": "فعل"
+      },
+      {
+        "word": "visit",
+        "ipa": "/ˈvɪzɪt/",
+        "meaning": "دیدن کردن / سر زدن"
+      },
+      {
+        "word": "visits",
+        "ipa": "/ˈvɪzɪts/",
+        "meaning": "سر می‌زند"
       },
       {
         "word": "walk",
@@ -13623,6 +14181,38 @@
       {
         "en": "My mother and I are at home.",
         "fa": "مادرم و من در خانه هستیم."
+      },
+      {
+        "en": "I visit my mother.",
+        "fa": "من به دیدن مادرم می‌روم."
+      },
+      {
+        "en": "He visits my house.",
+        "fa": "او (مرد) به خانه‌ی من سر می‌زند."
+      },
+      {
+        "en": "Read this chapter.",
+        "fa": "این فصل را بخوان."
+      },
+      {
+        "en": "I read the first chapter.",
+        "fa": "من فصل اول را می‌خوانم."
+      },
+      {
+        "en": "This book has a new chapter.",
+        "fa": "این کتاب یک فصل جدید دارد."
+      },
+      {
+        "en": "The data is in this book.",
+        "fa": "داده‌ها در این کتاب است."
+      },
+      {
+        "en": "This person is my friend.",
+        "fa": "این شخص دوست من است."
+      },
+      {
+        "en": "She is a young person.",
+        "fa": "او (زن) یک فرد جوان است."
       }
     ],
     "grammar": [
