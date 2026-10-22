@@ -18,9 +18,9 @@
               "lessons": [
                 {
                   "id": "lesson-01",
-                  "title": "Lesson 01",
+                  "title": "Before Lesson 1",
                   "file": "content/evolve-1/lesson-01.json",
-                  "version": "35"
+                  "version": "40"
                 }
               ]
             }
