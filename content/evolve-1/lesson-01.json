@@ -8761,43 +8761,39 @@
         },
         {
           "id": "evolve-1-l01-neg-125",
-          "question": "جمله را منفی کن: I work at a hotel.",
-          "expected_answer": "I do not work at a hotel.",
+          "question": "جمله را منفی کن: I am from Iran.",
+          "expected_answer": "I am not from Iran.",
           "accepted_answers": [
-            "I don't work at a hotel."
+            "I'm not from Iran."
           ],
-          "explanation": "با I و فعل معمولی work، از do not قبل از فعل استفاده می‌کنیم.",
-          "hint": "کلمه‌های کلیدی: work = کار کردن؛ hotel = هتل. راهنما: do not = نه؛ don't شکل کوتاه آن است.",
+          "explanation": "برای منفی کردن am، not را بعد از آن می‌آوریم.",
+          "hint": "کلمه‌های کلیدی: from = اهل / از. راهنما: not = نه.",
           "glossary": [
             {
-              "word": "work",
-              "meaning": "کار کردن"
-            },
-            {
-              "word": "hotel",
-              "meaning": "هتل"
+              "word": "from",
+              "meaning": "از / اهل"
             }
           ],
           "time_limit": 60,
-          "translation": "من در هتل کار نمی‌کنم."
+          "translation": "من اهل ایران نیستم."
         },
         {
           "id": "evolve-1-l01-neg-126",
-          "question": "جمله را منفی کن: I meet my teacher.",
-          "expected_answer": "I do not meet my teacher.",
+          "question": "جمله را منفی کن: This is my class.",
+          "expected_answer": "This is not my class.",
           "accepted_answers": [
-            "I don't meet my teacher."
+            "This isn't my class."
           ],
-          "explanation": "با I و فعل معمولی meet، از do not قبل از فعل استفاده می‌کنیم.",
-          "hint": "کلمه‌های کلیدی: meet = ملاقات کردن / دیدن. راهنما: do not = نه.",
+          "explanation": "برای منفی کردن is، not را بعد از آن می‌آوریم.",
+          "hint": "کلمه‌های کلیدی: class = کلاس. راهنما: not = نه؛ isn't = نیست.",
           "glossary": [
             {
-              "word": "meet",
-              "meaning": "ملاقات کردن / دیدن"
+              "word": "class",
+              "meaning": "کلاس"
             }
           ],
           "time_limit": 60,
-          "translation": "من معلمم را نمی‌بینم."
+          "translation": "این کلاس من نیست."
         },
         {
           "id": "evolve-1-l01-neg-127",
@@ -9198,37 +9194,33 @@
         },
         {
           "id": "evolve-1-l01-q-118",
-          "question": "جمله را سؤالی کن: I work at a hotel.",
-          "expected_answer": "Do I work at a hotel?",
-          "explanation": "برای سؤال بله یا خیر با فعل معمولی، Do را در ابتدای جمله می‌آوریم.",
-          "hint": "کلمه‌های کلیدی: work = کار کردن؛ hotel = هتل. راهنما: Do = آیا (در ابتدای سؤال).",
+          "question": "جمله را سؤالی کن: This is my profile.",
+          "expected_answer": "Is this my profile?",
+          "explanation": "برای سؤالی کردن این جمله، is را به ابتدای جمله می‌آوریم.",
+          "hint": "کلمه‌ی کلیدی: profile = پروفایل. راهنما: Is = آیا (در ابتدای سؤال).",
           "glossary": [
             {
-              "word": "work",
-              "meaning": "کار کردن"
-            },
-            {
-              "word": "hotel",
-              "meaning": "هتل"
+              "word": "profile",
+              "meaning": "پروفایل"
             }
           ],
           "time_limit": 60,
-          "translation": "آیا من در هتل کار می‌کنم؟"
+          "translation": "آیا این پروفایل من است؟"
         },
         {
           "id": "evolve-1-l01-q-119",
-          "question": "جمله را سؤالی کن: You meet your teacher.",
-          "expected_answer": "Do you meet your teacher?",
-          "explanation": "با you از Do در ابتدای سؤال استفاده می‌کنیم.",
-          "hint": "کلمه‌ی کلیدی: meet = ملاقات کردن / دیدن. راهنما: Do = آیا (در ابتدای سؤال).",
+          "question": "جمله را سؤالی کن: This is my class.",
+          "expected_answer": "Is this my class?",
+          "explanation": "برای سؤالی کردن این جمله، is را به ابتدای جمله می‌آوریم.",
+          "hint": "کلمه‌ی کلیدی: class = کلاس. راهنما: Is = آیا (در ابتدای سؤال).",
           "glossary": [
             {
-              "word": "meet",
-              "meaning": "ملاقات کردن / دیدن"
+              "word": "class",
+              "meaning": "کلاس"
             }
           ],
           "time_limit": 60,
-          "translation": "آیا تو معلمت را می‌بینی؟"
+          "translation": "آیا این کلاس من است؟"
         },
         {
           "id": "evolve-1-l01-q-120",
@@ -10294,7 +10286,7 @@
           "options": [
             "work",
             "works",
-            "working"
+            "are"
           ],
           "explanation": "با I فعل بدون s می‌آید.",
           "time_limit": 60,
@@ -10346,7 +10338,7 @@
           "options": [
             "meet",
             "meets",
-            "meeting"
+            "is"
           ],
           "explanation": "با I فعل meet بدون s می‌آید.",
           "time_limit": 60,
@@ -10359,7 +10351,7 @@
           "options": [
             "check",
             "checks",
-            "checking"
+            "are"
           ],
           "explanation": "Check into یک عبارت است: وارد هتل شدن.",
           "time_limit": 60,
@@ -10371,10 +10363,10 @@
           "expected_answer": "invention",
           "options": [
             "invention",
-            "inventor",
-            "invent"
+            "profile",
+            "hotel"
           ],
-          "explanation": "Invention یعنی اختراع؛ inventor یعنی مخترع.",
+          "explanation": "Invention یعنی اختراع.",
           "time_limit": 60,
           "translation": "این اختراع من است."
         }
