@@ -1355,12 +1355,12 @@
         },
         {
           "id": "evolve-1-l01-tr-139",
-          "question": "اینها اهداف واحد هستند.",
-          "expected_answer": "These are the unit objectives.",
-          "explanation": "Objectives یعنی اهداف؛ unit objectives یعنی اهداف واحد.",
-          "hint": "کلمه‌های کلیدی: «اینها» = these؛ «اهداف واحد» = unit objectives.",
+          "question": "این هدف واحد من است.",
+          "expected_answer": "This is my unit objective.",
+          "explanation": "Objective یعنی هدف؛ unit objective یعنی هدف واحد.",
+          "hint": "کلمه‌های کلیدی: «هدف واحد» = unit objective؛ «این ... من است» = This is my ...",
           "time_limit": 60,
-          "translation": "اینها اهداف واحد هستند."
+          "translation": "این هدف واحد من است."
         },
         {
           "id": "evolve-1-l01-tr-140",
@@ -3457,17 +3457,17 @@
         {
           "id": "evolve-1-l01-sb-154",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "expected_answer": "These are the unit objectives.",
-          "explanation": "ترتیب جمله: These + are + the + unit objectives.",
+          "expected_answer": "This is my unit objective.",
+          "explanation": "ترتیب جمله: This + is + my + unit objective.",
           "word_bank": [
-            "objectives",
-            "the",
             "unit",
-            "are",
-            "These"
+            "objective",
+            "my",
+            "This",
+            "is"
           ],
           "time_limit": 60,
-          "translation": "اینها اهداف واحد هستند."
+          "translation": "این هدف واحد من است."
         },
         {
           "id": "evolve-1-l01-sb-155",
@@ -5402,16 +5402,17 @@
         {
           "id": "evolve-1-l01-wt-138",
           "word_bank": [
-            "اینها",
-            "اهداف",
+            "این",
+            "هدف",
             "واحد",
-            "هستند"
+            "من",
+            "است"
           ],
-          "expected_answer": "These are the unit objectives.",
-          "explanation": "اینها = these؛ اهداف واحد = unit objectives.",
-          "hint": "به «the» قبل از unit objectives توجه کن.",
+          "expected_answer": "This is my unit objective.",
+          "explanation": "ترتیب کلمات فارسی همان ترتیب جمله‌ی انگلیسی است.",
+          "hint": "هدف واحد = unit objective؛ به ساختار «این ... من است» فکر کن.",
           "time_limit": 60,
-          "translation": "اینها اهداف واحد هستند."
+          "translation": "این هدف واحد من است."
         },
         {
           "id": "evolve-1-l01-wt-139",
@@ -11802,15 +11803,6 @@
           "hint": "ایران",
           "time_limit": 60,
           "translation": "ایران"
-        },
-        {
-          "id": "evolve-1-l01-dic-115",
-          "question": "these",
-          "expected_answer": "these",
-          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "اینها",
-          "time_limit": 60,
-          "translation": "اینها"
         }
       ]
     },
@@ -12860,11 +12852,6 @@
         "meaning": "حرف تعریف معین"
       },
       {
-        "word": "these",
-        "ipa": "/ðiːz/",
-        "meaning": "اینها / این‌ها"
-      },
-      {
         "word": "they",
         "ipa": "/ðeɪ/",
         "meaning": "آن‌ها"
@@ -13602,8 +13589,8 @@
         "fa": "کلاس من کجاست؟"
       },
       {
-        "en": "These are the unit objectives.",
-        "fa": "اینها اهداف واحد هستند."
+        "en": "This is my unit objective.",
+        "fa": "این هدف واحد من است."
       },
       {
         "en": "I am from Iran.",
