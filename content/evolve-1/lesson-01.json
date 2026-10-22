@@ -1499,6 +1499,15 @@
           "hint": "کلمه‌های کلیدی: young = جوان؛ person = فرد. راهنما: a قبل از young می‌آید.",
           "time_limit": 60,
           "translation": "او (زن) یک فرد جوان است."
+        },
+        {
+          "id": "evolve-1-l01-tr-155",
+          "question": "او (مرد) به مادرم سر می‌زند.",
+          "expected_answer": "He visits my mother.",
+          "explanation": "با He فعل visit به visits تبدیل می‌شود.",
+          "hint": "کلمه‌های کلیدی: visits = سر می‌زند؛ mother = مادر. راهنما: He فعل را به شکل s می‌آورد.",
+          "time_limit": 60,
+          "translation": "او (مرد) به مادرم سر می‌زند."
         }
       ]
     },
@@ -3737,6 +3746,20 @@
           ],
           "time_limit": 60,
           "translation": "او (زن) یک فرد جوان است."
+        },
+        {
+          "id": "evolve-1-l01-sb-168",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "He visits my mother.",
+          "explanation": "ترتیب جمله: He + visits + my + mother.",
+          "word_bank": [
+            "mother.",
+            "visits",
+            "He",
+            "my"
+          ],
+          "time_limit": 60,
+          "translation": "او (مرد) به مادرم سر می‌زند."
         }
       ]
     },
@@ -5822,6 +5845,19 @@
           "hint": "کلمه‌های کلیدی: young = جوان؛ person = فرد. راهنما: a قبل از young می‌آید.",
           "time_limit": 60,
           "translation": "او (زن) یک فرد جوان است."
+        },
+        {
+          "id": "evolve-1-l01-wt-154",
+          "word_bank": [
+            "او (مرد)",
+            "به مادرم",
+            "سر می‌زند"
+          ],
+          "expected_answer": "He visits my mother.",
+          "explanation": "سر می‌زند = visits؛ بعد از visit به‌طور مستقیم my mother می‌آید، بدون to.",
+          "hint": "به فعل جمله‌ی انگلیسی با He دقت کن.",
+          "time_limit": 60,
+          "translation": "او (مرد) به مادرم سر می‌زند."
         }
       ]
     },
@@ -7287,6 +7323,15 @@
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: young = جوان؛ person = فرد. راهنما: a قبل از young می‌آید.",
           "translation": "او (زن) یک فرد جوان است."
+        },
+        {
+          "id": "evolve-1-l01-vt-151",
+          "question": "او (مرد) به مادرم سر می‌زند.",
+          "expected_answer": "He visits my mother.",
+          "explanation": "با He فعل visit به visits تبدیل می‌شود.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: visits = سر می‌زند؛ mother = مادر.",
+          "translation": "او (مرد) به مادرم سر می‌زند."
         }
       ]
     },
@@ -8650,6 +8695,36 @@
           "incorrect_sentence": "He visit my house.",
           "time_limit": 60,
           "translation": "او (مرد) به خانه‌ی من سر می‌زند."
+        },
+        {
+          "id": "evolve-1-l01-gc-128",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "This book has a new chapter.",
+          "explanation": "بعد از a، اسم به شکل مفرد می‌آید: a new chapter، نه chapters.",
+          "hint": "chapter = فصل؛ a new chapter = یک فصل جدید",
+          "incorrect_sentence": "This book has a new chapters.",
+          "time_limit": 60,
+          "translation": "این کتاب یک فصل جدید دارد."
+        },
+        {
+          "id": "evolve-1-l01-gc-129",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "The data is in this book.",
+          "explanation": "با The data (مفرد) فعل is می‌آید، نه am.",
+          "hint": "data = داده‌ها؛ is = است",
+          "incorrect_sentence": "The data am in this book.",
+          "time_limit": 60,
+          "translation": "داده‌ها در این کتاب است."
+        },
+        {
+          "id": "evolve-1-l01-gc-130",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "This person is my friend.",
+          "explanation": "بعد از this و person (مفرد) فعل is می‌آید، نه are.",
+          "hint": "person = شخص؛ is = است",
+          "incorrect_sentence": "This person are my friend.",
+          "time_limit": 60,
+          "translation": "این شخص دوست من است."
         }
       ]
     },
@@ -9226,6 +9301,60 @@
           ],
           "time_limit": 60,
           "translation": "این شخص دوست من نیست."
+        },
+        {
+          "id": "evolve-1-l01-neg-129",
+          "question": "جمله را منفی کن: I visit my mother.",
+          "expected_answer": "I do not visit my mother.",
+          "accepted_answers": [
+            "I don't visit my mother."
+          ],
+          "explanation": "در جمله‌ی منفی با I، قبل از فعل do not می‌آید و visit به شکل ساده باقی می‌ماند.",
+          "hint": "کلمه‌های کلیدی: visit = دیدن کردن. راهنما: do not = نه؛ don't = نمی‌ (شکل کوتاه do not).",
+          "glossary": [
+            {
+              "word": "visit",
+              "meaning": "دیدن کردن"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "من به دیدن مادرم نمی‌روم."
+        },
+        {
+          "id": "evolve-1-l01-neg-130",
+          "question": "جمله را منفی کن: I read the first chapter.",
+          "expected_answer": "I do not read the first chapter.",
+          "accepted_answers": [
+            "I don't read the first chapter."
+          ],
+          "explanation": "در جمله‌ی منفی با I، قبل از فعل do not می‌آید و read به شکل ساده باقی می‌ماند.",
+          "hint": "کلمه‌های کلیدی: chapter = فصل؛ first = اول. راهنما: do not = نه؛ don't = نمی‌ (شکل کوتاه do not).",
+          "glossary": [
+            {
+              "word": "chapter",
+              "meaning": "فصل"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "من فصل اول را نمی‌خوانم."
+        },
+        {
+          "id": "evolve-1-l01-neg-131",
+          "question": "جمله را منفی کن: The data is in this book.",
+          "expected_answer": "The data is not in this book.",
+          "accepted_answers": [
+            "The data isn't in this book."
+          ],
+          "explanation": "برای منفی کردن is، کلمه not را بعد از آن می‌آوریم. شکل کوتاه is not برابر isn't است.",
+          "hint": "کلمه‌های کلیدی: data = داده‌ها؛ book = کتاب. راهنما: not = نه؛ isn't = نیست.",
+          "glossary": [
+            {
+              "word": "data",
+              "meaning": "داده‌ها"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "داده‌ها در این کتاب نیست."
         }
       ],
       "operation": "negative"
@@ -9688,6 +9817,51 @@
           ],
           "time_limit": 60,
           "translation": "آیا داده‌ها در این کتاب است؟"
+        },
+        {
+          "id": "evolve-1-l01-q-123",
+          "question": "جمله را سؤالی کن: He visits my house.",
+          "expected_answer": "Does he visit my house?",
+          "explanation": "برای سؤالی کردن جمله‌ی حال ساده با He، سؤال را با Does شروع می‌کنیم و فعل را به شکل ساده می‌آوریم: visit.",
+          "hint": "کلمه‌های کلیدی: visit = سر زدن؛ house = خانه. راهنما: Does = آیا (در سؤال با he، she، it).",
+          "glossary": [
+            {
+              "word": "visit",
+              "meaning": "سر زدن"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "آیا او به خانه‌ی من سر می‌زند؟"
+        },
+        {
+          "id": "evolve-1-l01-q-124",
+          "question": "جمله را سؤالی کن: This book has a new chapter.",
+          "expected_answer": "Does this book have a new chapter?",
+          "explanation": "با this book در حال ساده، سؤال را با Does شروع می‌کنیم و has را به have تبدیل می‌کنیم.",
+          "hint": "کلمه‌های کلیدی: chapter = فصل؛ new = جدید. راهنما: Does = آیا؛ have = داشتن.",
+          "glossary": [
+            {
+              "word": "chapter",
+              "meaning": "فصل"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "آیا این کتاب یک فصل جدید دارد؟"
+        },
+        {
+          "id": "evolve-1-l01-q-125",
+          "question": "جمله را سؤالی کن: She is a young person.",
+          "expected_answer": "Is she a young person?",
+          "explanation": "is را به ابتدای جمله می‌آوریم.",
+          "hint": "کلمه‌های کلیدی: young = جوان؛ person = فرد. راهنما: Is = آیا (در ابتدای سؤال).",
+          "glossary": [
+            {
+              "word": "person",
+              "meaning": "فرد"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "آیا او یک فرد جوان است؟"
         }
       ],
       "operation": "question"
@@ -10826,6 +11000,30 @@
           ],
           "time_limit": 60,
           "translation": "این شخص دوست من است."
+        },
+        {
+          "id": "evolve-1-l01-mc-085",
+          "question": "جای خالی را کامل کن: This book has a new ___.",
+          "expected_answer": "chapter",
+          "explanation": "chapter یعنی فصل؛ friend یعنی دوست و در این جمله معنی ندارد.",
+          "options": [
+            "chapter",
+            "friend"
+          ],
+          "time_limit": 60,
+          "translation": "این کتاب یک فصل جدید دارد."
+        },
+        {
+          "id": "evolve-1-l01-mc-086",
+          "question": "جای خالی را کامل کن: The ___ is in this book.",
+          "expected_answer": "data",
+          "explanation": "data یعنی داده‌ها؛ در این جمله به کتاب مربوط است.",
+          "options": [
+            "data",
+            "friend"
+          ],
+          "time_limit": 60,
+          "translation": "داده‌ها در این کتاب است."
         }
       ]
     },
@@ -11215,6 +11413,15 @@
           "hint": "data = داده‌ها",
           "time_limit": 60,
           "translation": "اطلاعات"
+        },
+        {
+          "id": "evolve-1-l01-voc-41",
+          "question": "Synonym: visit",
+          "expected_answer": "see",
+          "explanation": "visit و see در معنی دیدن کسی، مثل see my mother، به یک معنی به کار می‌روند.",
+          "hint": "visit = دیدن کردن",
+          "time_limit": 60,
+          "translation": "دیدن کردن"
         }
       ]
     },
@@ -12528,6 +12735,15 @@
           "hint": "کلمه‌ی کلیدی: «می‌خواند» = read؛ تلفظ: /riːd/ (ریـد)؛ راهنما: به فاعل جمله دقت کن.",
           "time_limit": 60,
           "translation": "او (زن) می‌خواند."
+        },
+        {
+          "id": "evolve-1-l01-va-tr-03",
+          "question": "او (مرد) به مادرم سر می‌زند.",
+          "expected_answer": "He visits my mother.",
+          "explanation": "با He فعل visit به visits تبدیل می‌شود.",
+          "hint": "کلمه‌ی کلیدی: «سر می‌زند» = visits؛ تلفظ: /ˈvɪzɪts/ (ویزیتس)؛ راهنما: به فاعل جمله دقت کن.",
+          "time_limit": 60,
+          "translation": "او (مرد) به مادرم سر می‌زند."
         }
       ]
     }
@@ -14213,6 +14429,10 @@
       {
         "en": "She is a young person.",
         "fa": "او (زن) یک فرد جوان است."
+      },
+      {
+        "en": "He visits my mother.",
+        "fa": "او (مرد) به مادرم سر می‌زند."
       }
     ],
     "grammar": [
