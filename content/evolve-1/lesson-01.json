@@ -1508,6 +1508,24 @@
           "hint": "کلمه‌های کلیدی: visits = سر می‌زند؛ mother = مادر. راهنما: He فعل را به شکل s می‌آورد.",
           "time_limit": 60,
           "translation": "او (مرد) به مادرم سر می‌زند."
+        },
+        {
+          "id": "evolve-1-l01-tr-156",
+          "question": "می‌توانی مرا بهار صدا بزنی.",
+          "expected_answer": "You can call me Bahar.",
+          "explanation": "بعد از can فعل به شکل ساده می‌آید: call. مفعول را بعد از call می‌آوریم: call me.",
+          "hint": "کلمه‌های کلیدی: call = صدا زدن؛ bahar = بهار (نام). راهنما: me = مرا.",
+          "time_limit": 60,
+          "translation": "می‌توانی مرا بهار صدا بزنی."
+        },
+        {
+          "id": "evolve-1-l01-tr-157",
+          "question": "او (مرد) مرا بهار صدا می‌زند.",
+          "expected_answer": "He calls me Bahar.",
+          "explanation": "با He فعل call به calls تبدیل می‌شود.",
+          "hint": "کلمه‌های کلیدی: calls = صدا می‌زند؛ me = مرا. راهنما: He فعل را به شکل s می‌آورد.",
+          "time_limit": 60,
+          "translation": "او (مرد) مرا بهار صدا می‌زند."
         }
       ]
     },
@@ -3760,6 +3778,35 @@
           ],
           "time_limit": 60,
           "translation": "او (مرد) به مادرم سر می‌زند."
+        },
+        {
+          "id": "evolve-1-l01-sb-169",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "You can call me Bahar.",
+          "explanation": "ترتیب جمله: You + can + call + me + Bahar.",
+          "word_bank": [
+            "Bahar.",
+            "call",
+            "You",
+            "me",
+            "can"
+          ],
+          "time_limit": 60,
+          "translation": "می‌توانی مرا بهار صدا بزنی."
+        },
+        {
+          "id": "evolve-1-l01-sb-170",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "expected_answer": "He calls me Bahar.",
+          "explanation": "ترتیب جمله: He + calls + me + Bahar.",
+          "word_bank": [
+            "Bahar.",
+            "calls",
+            "He",
+            "me"
+          ],
+          "time_limit": 60,
+          "translation": "او (مرد) مرا بهار صدا می‌زند."
         }
       ]
     },
@@ -5858,6 +5905,34 @@
           "hint": "به فعل جمله‌ی انگلیسی با He دقت کن.",
           "time_limit": 60,
           "translation": "او (مرد) به مادرم سر می‌زند."
+        },
+        {
+          "id": "evolve-1-l01-wt-155",
+          "word_bank": [
+            "می‌توانی",
+            "مرا",
+            "بهار",
+            "صدا بزنی"
+          ],
+          "expected_answer": "You can call me Bahar.",
+          "explanation": "صدا بزنی = call؛ بهار = Bahar (اسم). بعد از can فعل ساده می‌آید.",
+          "hint": "به شکل فعل بعد از can دقت کن.",
+          "time_limit": 60,
+          "translation": "می‌توانی مرا بهار صدا بزنی."
+        },
+        {
+          "id": "evolve-1-l01-wt-156",
+          "word_bank": [
+            "او (مرد)",
+            "مرا",
+            "بهار",
+            "صدا می‌زند"
+          ],
+          "expected_answer": "He calls me Bahar.",
+          "explanation": "صدا می‌زند = calls؛ بهار = Bahar (اسم).",
+          "hint": "به فاعل جمله‌ی انگلیسی با He دقت کن.",
+          "time_limit": 60,
+          "translation": "او (مرد) مرا بهار صدا می‌زند."
         }
       ]
     },
@@ -7332,6 +7407,24 @@
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: visits = سر می‌زند؛ mother = مادر.",
           "translation": "او (مرد) به مادرم سر می‌زند."
+        },
+        {
+          "id": "evolve-1-l01-vt-152",
+          "question": "می‌توانی مرا بهار صدا بزنی.",
+          "expected_answer": "You can call me Bahar.",
+          "explanation": "بعد از can فعل به شکل ساده می‌آید: call. مفعول را بعد از call می‌آوریم: call me.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: call = صدا زدن؛ bahar = بهار (نام). راهنما: me = مرا.",
+          "translation": "می‌توانی مرا بهار صدا بزنی."
+        },
+        {
+          "id": "evolve-1-l01-vt-153",
+          "question": "او (مرد) مرا بهار صدا می‌زند.",
+          "expected_answer": "He calls me Bahar.",
+          "explanation": "با He فعل call به calls تبدیل می‌شود.",
+          "time_limit": 60,
+          "hint": "کلمه‌های کلیدی: calls = صدا می‌زند؛ me = مرا.",
+          "translation": "او (مرد) مرا بهار صدا می‌زند."
         }
       ]
     },
@@ -8725,6 +8818,16 @@
           "incorrect_sentence": "This person are my friend.",
           "time_limit": 60,
           "translation": "این شخص دوست من است."
+        },
+        {
+          "id": "evolve-1-l01-gc-131",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "You can call me Bahar.",
+          "explanation": "بعد از can فعل به شکل ساده می‌آید: call، نه calls.",
+          "hint": "can = می‌توانی؛ call = صدا زدن",
+          "incorrect_sentence": "You can calls me Bahar.",
+          "time_limit": 60,
+          "translation": "می‌توانی مرا بهار صدا بزنی."
         }
       ]
     },
@@ -9355,6 +9458,25 @@
           ],
           "time_limit": 60,
           "translation": "داده‌ها در این کتاب نیست."
+        },
+        {
+          "id": "evolve-1-l01-neg-132",
+          "question": "جمله را منفی کن: You can call me Bahar.",
+          "expected_answer": "You cannot call me Bahar.",
+          "accepted_answers": [
+            "You can't call me Bahar.",
+            "You can not call me Bahar."
+          ],
+          "explanation": "برای منفی کردن can، کلمه not را بعد از آن می‌آوریم: cannot. شکل کوتاه آن can't است.",
+          "hint": "کلمه‌های کلیدی: call = صدا زدن؛ can = می‌توانی. راهنما: not = نه.",
+          "glossary": [
+            {
+              "word": "call",
+              "meaning": "صدا زدن"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "نمی‌توانی مرا بهار صدا بزنی."
         }
       ],
       "operation": "negative"
@@ -9862,6 +9984,21 @@
           ],
           "time_limit": 60,
           "translation": "آیا او یک فرد جوان است؟"
+        },
+        {
+          "id": "evolve-1-l01-q-126",
+          "question": "جمله را سؤالی کن: You can call me Bahar.",
+          "expected_answer": "Can you call me Bahar?",
+          "explanation": "can را به ابتدای جمله می‌آوریم.",
+          "hint": "کلمه‌های کلیدی: call = صدا زدن. راهنما: Can = آیا می‌توانی.",
+          "glossary": [
+            {
+              "word": "call",
+              "meaning": "صدا زدن"
+            }
+          ],
+          "time_limit": 60,
+          "translation": "آیا می‌توانی مرا بهار صدا بزنی؟"
         }
       ],
       "operation": "question"
@@ -11024,6 +11161,18 @@
           ],
           "time_limit": 60,
           "translation": "داده‌ها در این کتاب است."
+        },
+        {
+          "id": "evolve-1-l01-mc-087",
+          "question": "جای خالی را کامل کن: You ___ call me Bahar.",
+          "expected_answer": "can",
+          "explanation": "برای توانایی از can استفاده می‌کنیم؛ is فعل بودن است و در این جمله درست نیست.",
+          "options": [
+            "can",
+            "is"
+          ],
+          "time_limit": 60,
+          "translation": "می‌توانی مرا بهار صدا بزنی."
         }
       ]
     },
@@ -12511,6 +12660,24 @@
           "hint": "شخص / فرد",
           "time_limit": 60,
           "translation": "شخص / فرد"
+        },
+        {
+          "id": "evolve-1-l01-dic-119",
+          "question": "call",
+          "expected_answer": "call",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "صدا زدن",
+          "time_limit": 60,
+          "translation": "صدا زدن"
+        },
+        {
+          "id": "evolve-1-l01-dic-120",
+          "question": "bahar",
+          "expected_answer": "bahar",
+          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
+          "hint": "بهار (نام)",
+          "time_limit": 60,
+          "translation": "بهار (نام)"
         }
       ]
     },
@@ -12600,6 +12767,16 @@
           "points": 10,
           "time_limit": 60,
           "translation": "سر می‌زند"
+        },
+        {
+          "id": "evolve-1-l01-vb-form-09",
+          "question": "He / She / It: call",
+          "expected_answer": "calls",
+          "explanation": "برای he، she و it به call حرف s اضافه می‌کنیم.",
+          "hint": "call = صدا زدن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 60,
+          "translation": "صدا می‌زند"
         }
       ]
     },
@@ -12669,6 +12846,18 @@
           "explanation": "با She در جمله‌ی مثبت حال ساده فعل s می‌گیرد.",
           "time_limit": 60,
           "translation": "او (زن) به خانه‌ی من سر می‌زند."
+        },
+        {
+          "id": "evolve-1-l01-va-mc-09",
+          "question": "جای خالی را کامل کن: He ___ me Bahar.",
+          "expected_answer": "calls",
+          "options": [
+            "call",
+            "calls"
+          ],
+          "explanation": "با He در جمله‌ی مثبت حال ساده فعل s می‌گیرد.",
+          "time_limit": 60,
+          "translation": "او (مرد) مرا بهار صدا می‌زند."
         }
       ]
     },
@@ -12708,6 +12897,16 @@
           "hint": "She = او (زن)؛ visits = سر می‌زند",
           "time_limit": 60,
           "translation": "او (زن) به مادرم سر می‌زند."
+        },
+        {
+          "id": "evolve-1-l01-va-gc-06",
+          "question": "جمله‌ی اشتباه را درست کن.",
+          "expected_answer": "He calls me Bahar.",
+          "incorrect_sentence": "He call me Bahar.",
+          "explanation": "He سوم‌شخص مفرد است و فعل در جمله‌ی مثبت s می‌گیرد.",
+          "hint": "He = او (مرد)؛ calls = صدا می‌زند",
+          "time_limit": 60,
+          "translation": "او (مرد) مرا بهار صدا می‌زند."
         }
       ]
     },
@@ -12744,6 +12943,15 @@
           "hint": "کلمه‌ی کلیدی: «سر می‌زند» = visits؛ تلفظ: /ˈvɪzɪts/ (ویزیتس)؛ راهنما: به فاعل جمله دقت کن.",
           "time_limit": 60,
           "translation": "او (مرد) به مادرم سر می‌زند."
+        },
+        {
+          "id": "evolve-1-l01-va-tr-04",
+          "question": "او (مرد) مرا بهار صدا می‌زند.",
+          "expected_answer": "He calls me Bahar.",
+          "explanation": "با He فعل call به calls تبدیل می‌شود.",
+          "hint": "کلمه‌ی کلیدی: «صدا می‌زند» = calls؛ راهنما: به فاعل جمله دقت کن.",
+          "time_limit": 60,
+          "translation": "او (مرد) مرا بهار صدا می‌زند."
         }
       ]
     }
@@ -12826,6 +13034,11 @@
         "meaning": "بد"
       },
       {
+        "word": "bahar",
+        "ipa": "/bəˈhɑːr/",
+        "meaning": "بهار (نام)"
+      },
+      {
         "word": "band",
         "ipa": "/bænd/",
         "meaning": "گروه موسیقی"
@@ -12844,6 +13057,16 @@
         "word": "book",
         "ipa": "/bʊk/",
         "meaning": "کتاب"
+      },
+      {
+        "word": "call",
+        "ipa": "/kɔːl/",
+        "meaning": "صدا زدن"
+      },
+      {
+        "word": "calls",
+        "ipa": "/kɔːlz/",
+        "meaning": "صدا می‌زند"
       },
       {
         "word": "can",
@@ -14433,6 +14656,14 @@
       {
         "en": "He visits my mother.",
         "fa": "او (مرد) به مادرم سر می‌زند."
+      },
+      {
+        "en": "You can call me Bahar.",
+        "fa": "می‌توانی مرا بهار صدا بزنی."
+      },
+      {
+        "en": "He calls me Bahar.",
+        "fa": "او (مرد) مرا بهار صدا می‌زند."
       }
     ],
     "grammar": [
