@@ -1,0 +1,190 @@
+---
+description: Format all Persian chat content AND Persian plans RTL; keep code LTR — every chat turn, no exceptions for technical replies
+alwaysApply: true
+---
+
+# Persian RTL Chat Responses
+
+When the user communicates in Persian, or when the assistant reply includes Persian content, render **everything Persian** RTL — paragraphs, headings, lists, tables, and blockquotes. **Only code blocks stay LTR.** This single LTR exception wins over every other rule.
+
+## Mandatory trigger (every chat, every turn)
+
+Apply RTL formatting **on every assistant turn** in **every chat session** when **any** of these is true:
+
+1. The **user message** is in Persian (or mixed with Persian).
+2. The **assistant reply** includes Persian prose — headings, bullets, explanations, summaries, troubleshooting steps, even if the topic is technical (server, 502, PHP-FPM, Livewire, deploy).
+3. The user **explicitly asks** for RTL / Persian formatting (e.g. «همیشه RTL»).
+
+**No carve-out** for “technical”, “debug”, “ops”, or “English-heavy” replies: if the body contains Persian sentences or Persian headings/lists, those parts **must** use `<div dir="rtl">` per this file. Do **not** ship bare LTR `###` / `-` Persian lines because the answer is about infrastructure.
+
+**English-only replies / English-only plans** (zero Persian prose) → no RTL wrappers.
+
+## Scope (non-negotiable)
+
+Apply this rule to **all** of the following when the content is Persian (or mixed with Persian prose):
+
+- Assistant **chat replies** — including follow-ups, re-summaries, and “repeat last answer in RTL” requests
+- **Plan mode** plans (`CreatePlan` body and plan `.md` files shown to the user)
+- Plan iterations / plan updates written back into the plan document
+
+Do **not** apply to: app UI, lang files, Filament copy, or English-only technical replies.
+
+**English-only replies / English-only plans** → no RTL wrappers.
+
+## Why code sometimes turns RTL (root cause)
+
+If a `<div dir="rtl">` is **not properly closed in markdown's view**, every block after it — including code blocks — inherits RTL. A div fails to close when there is **no blank line immediately inside it**. Markdown then treats the following content as raw HTML inside the still-open div, so the code becomes right-aligned.
+
+**The fix is mechanical and non-negotiable (see next section).**
+
+## The two blank-line rules (most important)
+
+1. **Blank line immediately AFTER `<div dir="rtl">` and immediately BEFORE `</div>`.** Always. This guarantees markdown renders the inner content and closes the div.
+2. **Blank line before AND after every code fence.** A code fence must be root-level markdown with no open RTL div above it.
+
+Correct skeleton — copy this shape exactly:
+
+    <div dir="rtl">
+
+    متن یا عنوان فارسی
+
+    </div>
+
+    ```12:15:app/Example.php
+    // code — LTR
+    ```
+
+    <div dir="rtl">
+
+    ادامهٔ فارسی
+
+    </div>
+
+Note the blank line after each `<div dir="rtl">` and before each `</div>` — without them the div stays open and code goes RTL.
+
+## Code — sacred LTR zone
+
+Never place inside `<div dir="rtl">`, `<span dir="rtl">`, or any RTL wrapper:
+
+- Fenced code blocks
+- Code citations (`startLine:endLine:filepath`)
+- Shell/command blocks
+- Mermaid / ASCII diagrams
+
+**Before typing ` ``` `:** stop, ensure the previous `<div dir="rtl">` already has its `</div>` (with a blank line before it), then add a blank line, then the fence.
+
+Inline `` `identifier` `` inside Persian prose is fine. Paths that render badly: `<span dir="ltr">modules/Order/…</span>`.
+
+## Persian prose, headings, lists — RTL
+
+Put inside `<div dir="rtl">…</div>` (with the blank lines from the rule above):
+
+- Paragraphs
+- Headings (`##`, `###`, …) — including plan title/body sections after frontmatter
+- Bullet and numbered lists
+- Persian blockquotes
+
+**Never** output Persian `###` or `-` lines **outside** an RTL div — they render LTR.
+
+### What may share one RTL div
+
+- Heading → Persian paragraph → **same** div
+- Heading → Persian list → **same** div
+- Anything → **code fence / mermaid** → **close the div first**, then the fence
+
+## Plans (Plan mode / CreatePlan)
+
+When the plan is written in Persian (or the user is working in Persian):
+
+1. Wrap every Persian section of the plan body in `<div dir="rtl">…</div>` with the blank-line rules above.
+2. Keep mermaid diagrams, code fences, and path-only technical blocks **outside** RTL divs (LTR).
+3. Do **not** ship a Persian plan as bare LTR markdown headings/lists.
+4. YAML frontmatter (`name`, `overview`, `todos`) may stay plain; the **plan markdown body** shown to the user must follow RTL rules for Persian text.
+
+## Tables — renderer limitation (important)
+
+The Cursor chat renderer wraps every table in an **LTR scroll container** and strips `style` / `align`. A markdown or raw HTML table **cannot be moved to the right edge** — `dir="rtl"` only right-aligns the *text inside cells*; the table block stays glued to the **left**. `align`, `style="margin-left:auto"`, flex containers, and raw `<table>` all fail.
+
+**Rule:** For Persian tabular data, **do not use a markdown table** when right alignment matters. Present it as an **RTL list** instead, which right-aligns correctly:
+
+    <div dir="rtl">
+
+    ### وضعیت موارد
+
+    - **بستن div قبل از کد** — درست
+    - **یک div برای کل پاسخ** — ممنوع
+
+    </div>
+
+If a real table is unavoidable, accept the block stays left; still wrap it in `<div dir="rtl">` (with blank lines) so cell text reads RTL, and mark code/path cells with `<span dir="ltr">`. English-only / technical tables → no wrapper.
+
+## Mixed Persian + English
+
+Persian → RTL div. Mostly-English technical bullets → LTR, no wrapper.
+
+## Examples
+
+### Wrong — no blank lines inside div → div stays open → code goes RTL
+
+    <div dir="rtl">
+    ### خلاصه
+    این تغییر را اعمال کردم:
+    </div>
+    ```12:15:app/OrderPolicy.php
+    public function view(): bool
+    ```
+
+### Wrong — code fence inside the RTL div
+
+    <div dir="rtl">
+
+    ### خلاصه
+
+    ```12:15:app/OrderPolicy.php
+    public function view(): bool
+    ```
+
+    </div>
+
+### Correct — blank lines inside divs, code LTR between them
+
+    <div dir="rtl">
+
+    ### خلاصه
+
+    این تغییر را در `OrderPolicy.php` اعمال کردم:
+
+    </div>
+
+    ```12:15:app/OrderPolicy.php
+    public function view(): bool
+    ```
+
+    <div dir="rtl">
+
+    ### نتیجه
+
+    - تست‌ها سبز شدند
+    - آمادهٔ مرج است
+
+    </div>
+
+### Preferred — Persian tabular data as an RTL list
+
+    <div dir="rtl">
+
+    ### فیلدها
+
+    - <span dir="ltr">`id`</span> — شناسه ULID
+    - <span dir="ltr">`status`</span> — وضعیت رکورد
+
+    </div>
+
+## Pre-send checklist
+
+- [ ] User wrote Persian or reply contains Persian → RTL applied **this turn** (not only when user reminds you).
+- [ ] Every `<div dir="rtl">` has a blank line right after it and a blank line right before its `</div>`.
+- [ ] Every ` ``` ` fence has a blank line before and after, and no open RTL div above it.
+- [ ] No single RTL div wraps the full message or spans across a code block / mermaid.
+- [ ] Persian headings and lists are inside RTL divs (not bare markdown) — including **Plan** bodies and **ops/debug** replies.
+- [ ] Persian tabular data is shown as an **RTL list**, not a markdown table.
