@@ -64,7 +64,7 @@ test('the lesson file has a word translation exercise and every item in it is va
   assert.deepEqual(result.invalid, []);
   const words = result.questions.filter((q) => q.category === 'word_translation');
   // The first 10 plus every other sentence of the lesson that has a Persian text (see the merged sentence pool).
-  assert.equal(words.length, 144);
+  assert.equal(words.length, 154);
   assert.ok(words.every((q) => q.presentation === 'text' && q.word_bank.length >= 2));
 });
 
