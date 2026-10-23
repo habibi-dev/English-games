@@ -1,44 +1,54 @@
-// Keeps the screen on while a game is being played (Screen Wake Lock API).
-// Browsers release the lock when the page is hidden, so it is requested again when the page is shown.
-// Where the API is missing (or the page is not in a secure context) nothing happens.
+// Keep the screen awake (Screen Wake Lock API) during play and lesson listen mode.
 
 let sentinel = null;
-let wanted = false;
+let gameWantsLock = false;
+let lessonWantsLock = false;
+
+function wantsLock() {
+  return gameWantsLock || lessonWantsLock;
+}
 
 async function acquire() {
-  if (!wanted || sentinel || typeof navigator === 'undefined' || !('wakeLock' in navigator)) return;
-  if (document.visibilityState !== 'visible') return;
+  if (!wantsLock() || typeof navigator === 'undefined' || !navigator.wakeLock) return;
   try {
-    const lock = await navigator.wakeLock.request('screen');
-    // The game may have ended while the request was pending.
-    if (!wanted) {
-      lock.release().catch(() => {});
-      return;
-    }
-    sentinel = lock;
-    lock.addEventListener('release', () => {
-      if (sentinel === lock) sentinel = null;
+    sentinel = await navigator.wakeLock.request('screen');
+    sentinel.addEventListener('release', () => {
+      sentinel = null;
+      if (wantsLock()) acquire();
     });
   } catch {
-    // Refused (for example battery saver): the screen will sleep as usual.
-    sentinel = null;
+    // Not allowed (battery saver, background tab, unsupported).
   }
 }
 
-/** Keeps the screen on (`on` = true) or lets it sleep again (`on` = false). */
-export function keepScreenOn(on) {
-  wanted = Boolean(on);
-  if (wanted) {
-    acquire();
-    return;
+async function release() {
+  try {
+    await sentinel?.release();
+  } catch {
+    // Already released.
   }
-  const lock = sentinel;
   sentinel = null;
-  lock?.release().catch(() => {});
+}
+
+async function sync() {
+  if (wantsLock()) return acquire();
+  return release();
+}
+
+/** Play screen and missions: keep the display on while a game is in progress. */
+export function keepScreenOn(active) {
+  gameWantsLock = Boolean(active);
+  return sync();
+}
+
+/** Lesson play-all toolbar: same lock, tracked separately from the game. */
+export function setLessonWakeLock(active) {
+  lessonWantsLock = Boolean(active);
+  return sync();
 }
 
 if (typeof document !== 'undefined') {
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible') acquire();
+    if (document.visibilityState === 'visible' && wantsLock()) acquire();
   });
 }

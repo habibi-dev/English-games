@@ -7,7 +7,7 @@ import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey, unitKey, persianSenten
 import { filterQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode, MAX_MISSION_QUESTIONS } from '../engine/game-engine.js';
 import { validateAnswer } from '../engine/validator.js';
 import { clearReviewHandoff, hasReviewIntent, requestReview, takeReview } from './review-handoff.js';
-import { lessonHub, linesPage, storiesPage, stopStoryReading } from './lesson-content.js';
+import { lessonHub, linesPage, storiesPage, stopStoryReading, stopLinesPlayback } from './lesson-content.js';
 import { lessonMaterial } from '../bank/lesson-vocabulary.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, levelStartXp, resultTier } from '../progress/player.js';
@@ -541,8 +541,9 @@ async function showSetup(root, restore = null) {
   // name is series, book, unit, lesson or settings; the entry's depth counts the steps before it in this visit.
   // So the back button (phone or in-app) returns to the step before, and the forward button goes on again.
   function show(step) {
-    // A story read aloud stops when the learner goes to another step.
+    // A story or play-all list stops when the learner goes to another step.
     stopStoryReading();
+    stopLinesPlayback();
     if (step.name === 'series') return drawSeriesStep();
     if (step.name === 'book') return drawBookStep(step.series);
     state.book = step.book;
@@ -855,6 +856,10 @@ async function showSetup(root, restore = null) {
         linesPage({
           groups: [{ rows: material.words.map((w) => ({ english: w.word, persian: w.meaning, ipa: w.ipa })) }],
           speakLabel: 'Read the word aloud',
+          playbarLabel: 'Listen to all words',
+          playTitle: 'Play all words slowly',
+          shuffle: true,
+          playbarFeatures: { autoReveal: true, listenOnly: true, dimOthers: true },
         }),
       );
     } else if (step.name === 'sentences') {
@@ -862,7 +867,19 @@ async function showSetup(root, restore = null) {
         'div',
         {},
         stepTitle('Sentences'),
-        linesPage({ groups: [{ rows: material.sentences }], speakLabel: 'Read the sentence aloud' }),
+        linesPage({
+          groups: [{ rows: material.sentences }],
+          speakLabel: 'Read the sentence aloud',
+          playbarLabel: 'Listen to all sentences',
+          playTitle: 'Play all sentences slowly',
+          shuffle: true,
+          playbarFeatures: {
+            autoReveal: true,
+            listenOnly: true,
+            dimOthers: true,
+            longSentence: true,
+          },
+        }),
       );
     } else if (step.name === 'grammar') {
       body = h(
@@ -876,6 +893,9 @@ async function showSetup(root, restore = null) {
             rows: rule.examples,
           })),
           speakLabel: 'Read the example aloud',
+          playbarLabel: 'Listen to all examples',
+          playTitle: 'Play all examples slowly',
+          playbarFeatures: { autoReveal: true, listenOnly: true },
         }),
       );
     } else {

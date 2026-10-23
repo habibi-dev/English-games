@@ -45,7 +45,19 @@ const ICONS = {
 
   // Audio
   play: '<path d="M6 4l14 8-14 8z"/>',
+  pause: '<rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/>',
   stop: '<rect x="6" y="6" width="12" height="12" rx="1"/>',
+  repeat:
+    '<path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>',
+  shuffle:
+    '<path d="M16 3h5v5"/><path d="M4 20L21 3"/><path d="M21 16v5h-5"/><path d="M15 15l6 6"/><path d="M4 4l5 5"/>',
+  eye:
+    '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/>',
+  headphones:
+    '<path d="M3 14h3v4a2 2 0 0 0 2 2h1"/><path d="M21 14h-3v4a2 2 0 0 1-2 2h-1"/><path d="M4 14a8 8 0 0 1 16 0"/>',
+  focusFrame:
+    '<path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/>',
+  textLong: '<path d="M4 6h16"/><path d="M4 12h11"/><path d="M4 18h14"/>',
 
   // Navigation, reports, header, typing
   home: '<path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
