@@ -44,6 +44,72 @@ body {
   padding-bottom: calc(96px + env(safe-area-inset-bottom));
 }
 
+/* Lesson study pages (words, sentences, …): no Home / Reports until list playback (see lesson-content.js). */
+body.lesson-step:not(.lines-playback-nav) {
+  padding-bottom: calc(24px + env(safe-area-inset-bottom));
+}
+
+body.lesson-step .bottom-nav {
+  display: none;
+}
+
+body.lesson-step.lines-playback-nav .bottom-nav {
+  display: flex;
+}
+
+body.lesson-step.lines-playback-nav .bottom-nav a[data-nav],
+body.lesson-step.lines-playback-nav .bottom-nav .bottom-again {
+  display: none;
+}
+
+body.lines-playback-nav .bottom-playback-prev,
+body.lines-playback-nav .bottom-playback-next {
+  display: inline-flex;
+}
+
+.bottom-playback-prev,
+.bottom-playback-next {
+  display: none;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 12px 4px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: var(--muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.bottom-playback-prev:disabled,
+.bottom-playback-next:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+body.lines-playback-nav .bottom-playback-prev:not(:disabled),
+body.lines-playback-nav .bottom-playback-next:not(:disabled) {
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  box-shadow: 0 6px 14px rgba(79, 70, 229, 0.3);
+}
+
+.bottom-playback-icon {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+}
+
+.bottom-playback-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
 h1,
 h2,
 h3,
@@ -5298,6 +5364,47 @@ img {
   margin: 4px 0 12px;
 }
 
+/* Search between the playbar and the list (words and sentences). */
+.lc-search {
+  margin: 0 0 14px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.lc-search-input {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font: inherit;
+  color: var(--text);
+  background: #fff;
+}
+
+.lc-search-input::placeholder {
+  color: var(--muted);
+}
+
+.lc-search-input:focus {
+  outline: 2px solid #c7d2fe;
+  outline-offset: 0;
+  border-color: #818cf8;
+}
+
+.lc-search-empty {
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.lc-page-search .lc-playbar {
+  margin-bottom: 10px;
+}
+
 /* Play-all toolbar: stays under the header while the list scrolls. */
 .lc-playbar {
   position: sticky;
@@ -5639,6 +5746,200 @@ img {
   display: none;
 }
 
+/* Words / sentences play: one card at a time — no list scrolling during playback. */
+.lc-deck {
+  margin: 0 0 14px;
+  scroll-margin-top: calc(env(safe-area-inset-top) + 88px);
+  scroll-margin-bottom: calc(env(safe-area-inset-bottom) + 96px);
+}
+
+.lc-deck-stage {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.lc-page.lc-deck-active .lc-groups {
+  display: none;
+}
+
+.lc-page.lc-deck-active .lc-search,
+.lc-page.lc-deck-active .lc-search-empty {
+  display: none;
+}
+
+.lc-deck-card {
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #c7d2fe;
+  border-radius: 18px;
+  background: linear-gradient(165deg, #ffffff 0%, #f8fafc 42%, #eef2ff 100%);
+  box-shadow:
+    0 10px 28px rgba(79, 70, 229, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.lc-deck-card-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.lc-deck-en-block {
+  padding: 18px 18px 12px;
+  text-align: left;
+}
+
+.lc-deck-card-inner:has(.lc-deck-fa-block) .lc-deck-en-block {
+  padding-bottom: 10px;
+}
+
+.lc-deck-main-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.lc-deck-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.lc-deck-eye {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  margin-top: 2px;
+  border: 0;
+  border-radius: 50%;
+  background: #fef3c7;
+  color: #b45309;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(180, 83, 9, 0.15);
+}
+
+.lc-deck-eye.on {
+  background: #b45309;
+  color: #fff;
+}
+
+.lc-deck-eye .lc-eye-glyph {
+  display: inline-flex;
+  width: 22px;
+  height: 22px;
+}
+
+.lc-deck-eye .lc-eye-glyph svg {
+  width: 100%;
+  height: 100%;
+}
+
+.lc-deck-en {
+  margin: 0;
+  font-size: clamp(1.35rem, 4.8vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.38;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  overflow-wrap: anywhere;
+}
+
+.lc-deck-card-inner:not(:has(.lc-deck-fa-block)) .lc-deck-en-block {
+  padding-bottom: 20px;
+}
+
+.lc-deck-ipa {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #f3e8ff;
+  color: #6d28d9;
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.lc-deck-fa-block {
+  padding: 12px 18px 14px;
+  text-align: right;
+  background: linear-gradient(180deg, rgba(37, 99, 235, 0.07) 0%, rgba(99, 102, 241, 0.1) 100%);
+  border-top: 1px solid rgba(99, 102, 241, 0.18);
+  border-radius: 0 0 17px 17px;
+}
+
+.lc-deck-fa {
+  margin: 0;
+  font-size: 1.12rem;
+  line-height: 1.65;
+  font-weight: 500;
+  color: #1e293b;
+  overflow-wrap: anywhere;
+}
+
+.lc-deck-hidden {
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+
+.lc-deck-card.lc-deck-enter {
+  animation: lc-deck-enter 0.32s ease both;
+}
+
+.lc-deck-card.lc-deck-enter-back {
+  animation: lc-deck-enter-back 0.32s ease both;
+}
+
+.lc-deck-card.lc-deck-exit {
+  animation: lc-deck-exit 0.32s ease both;
+}
+
+.lc-deck-card.lc-deck-exit-restore {
+  animation: lc-deck-exit-restore 0.32s ease both;
+}
+
+@keyframes lc-deck-enter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+@keyframes lc-deck-enter-back {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes lc-deck-exit {
+  to {
+    opacity: 0;
+    transform: translateY(-16px) scale(0.97);
+  }
+}
+
+@keyframes lc-deck-exit-restore {
+  to {
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lc-deck-card.lc-deck-enter,
+  .lc-deck-card.lc-deck-enter-back,
+  .lc-deck-card.lc-deck-exit,
+  .lc-deck-card.lc-deck-exit-restore {
+    animation: none;
+  }
+}
+
 .lc-eye {
   display: grid;
   place-items: center;
@@ -5703,6 +6004,11 @@ img {
 .lc-sub {
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.lc-main .lc-sub[dir='rtl'] {
+  width: 100%;
+  text-align: right;
 }
 
 .lc-ipa {

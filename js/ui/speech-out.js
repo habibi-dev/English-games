@@ -91,8 +91,9 @@ export function speak(text, { slow = false, onStart, onEnd, lang = 'en-US' } = {
   };
   utterance.onerror = (event) => {
     stopLoading();
-    onEnd?.();
+    // cancel() / skip must not run the next line — only real playback completion should call onEnd.
     if (event.error !== 'interrupted' && event.error !== 'canceled') {
+      onEnd?.();
       console.warn('Speech synthesis error:', event.error);
     }
   };

@@ -54,6 +54,29 @@ const PLAY_GAP_OFFSETS = [-1, 0, 1, 2];
 let followUiSync = () => {};
 let linesAutoplayUiSync = () => {};
 
+/** Active list playback: step by one line in the current order (see beginPlayback). */
+let playbackStepRelative = () => {};
+
+const bottomPlaybackPrev = () => document.querySelector('.bottom-playback-prev');
+const bottomPlaybackNext = () => document.querySelector('.bottom-playback-next');
+
+function syncBottomPlaybackButtons({ canPrev, canNext }) {
+  const prev = bottomPlaybackPrev();
+  const next = bottomPlaybackNext();
+  if (prev) prev.disabled = !canPrev;
+  if (next) next.disabled = !canNext;
+}
+
+function notifyLinesPlaybackUi() {
+  document.body.classList.toggle('lines-playback-nav', linesIsPlaying);
+  linesAutoplayUiSync();
+}
+
+if (typeof document !== 'undefined') {
+  bottomPlaybackPrev()?.addEventListener('click', () => playbackStepRelative(-1));
+  bottomPlaybackNext()?.addEventListener('click', () => playbackStepRelative(1));
+}
+
 function shuffleInPlace(items) {
   for (let i = items.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -63,6 +86,15 @@ function shuffleInPlace(items) {
 }
 
 const LONG_SENTENCE_MIN_WORDS = 10;
+
+/** Case-insensitive match on English or Persian row text (words and sentences search). */
+function rowMatchesLessonSearch(entry, query) {
+  const q = String(query ?? '').trim().toLowerCase();
+  if (!q) return true;
+  const english = String(entry.english ?? '').toLowerCase();
+  const persian = String(entry.persian ?? '').toLowerCase();
+  return english.includes(q) || persian.includes(q);
+}
 
 /** Heuristic clip for the second pass on long sentences (no keyword field in lesson data yet). */
 function focusPhraseForSentence(english) {
@@ -145,8 +177,11 @@ if (typeof window !== 'undefined') {
 export function stopLinesPlayback() {
   stopLinesPlaybackFn?.();
   stopLinesPlaybackFn = null;
+  playbackStepRelative = () => {};
   setLessonWakeLock(false);
   followUiSync();
+  syncBottomPlaybackButtons({ canPrev: false, canNext: false });
+  notifyLinesPlaybackUi();
 }
 
 /**
@@ -164,11 +199,13 @@ function createLessonPlaybar({
   shuffle: shuffleOption = false,
   playbarFeatures = {},
 }) {
+  const deckPlaybackBar = Boolean(playbarFeatures.deckPlayback);
   const features = {
     autoReveal: Boolean(playbarFeatures.autoReveal),
-    listenOnly: Boolean(playbarFeatures.listenOnly),
-    dimOthers: Boolean(playbarFeatures.dimOthers),
+    listenOnly: Boolean(playbarFeatures.listenOnly) && !deckPlaybackBar,
+    dimOthers: Boolean(playbarFeatures.dimOthers) && !deckPlaybackBar,
     longSentence: Boolean(playbarFeatures.longSentence),
+    deckPlayback: deckPlaybackBar,
   };
 
   const saved = loadLessonPlaybarSettings();
@@ -194,6 +231,10 @@ function createLessonPlaybar({
   let paused = false;
   let pausePoint = 'none';
   let session = null;
+  let rowsRef = [];
+  let orderRef = [];
+  let playPosRef = 0;
+  let loopEnabledRef = false;
 
   const playbarTransport = h('div', { class: 'lc-playbar-transport' });
   const playbarOptions = h('div', { class: 'lc-playbar-options' });
@@ -439,11 +480,12 @@ function createLessonPlaybar({
   );
 
   const syncFollowBtn = () => {
+    if (features.deckPlayback) return;
     followBtn.hidden = !(linesIsPlaying && !linesFollowScroll);
   };
   followUiSync = syncFollowBtn;
 
-  playbarMeta.append(playbarProgress, followBtn);
+  playbarMeta.append(playbarProgress, ...(features.deckPlayback ? [] : [followBtn]));
   playbarTop = h('div', { class: 'lc-playbar-top' }, playbarTransport, playbarMeta);
   playbarActions = h('div', { class: 'lc-playbar-actions' }, playbarTop, playbarOptions);
   dragToScroll(playbarOptions);
@@ -569,9 +611,20 @@ function createLessonPlaybar({
     syncFollowBtn();
   };
 
+  const syncPlaybackTransport = () => {
+    const atStart = playPosRef <= 0;
+    const atEnd = playPosRef >= orderRef.length - 1;
+    syncBottomPlaybackButtons({
+      canPrev: loopEnabledRef || !atStart,
+      canNext: loopEnabledRef || !atEnd,
+    });
+  };
+
+  let onPlaybackRowsChanged = () => {};
+
   const beginPlayback = (fromFlatIndex = startIndex) => {
     stopLinesPlayback();
-    const rows = getPlaybackRows();
+    let rows = getPlaybackRows();
     if (!rows.length) return;
     let startPos = rows.findIndex((row) => row.index >= fromFlatIndex);
     if (startPos < 0) startPos = 0;
@@ -580,8 +633,14 @@ function createLessonPlaybar({
 
     let order = buildPlaybackOrder(rows.length, startPos, shuffleOption && shuffleEnabled);
     let playPos = 0;
+    rowsRef = rows;
+    orderRef = order;
+    playPosRef = playPos;
+    loopEnabledRef = loopEnabled;
     let repeatsLeft = timesPerItem;
     let active = true;
+    // Bumped when the line changes or speech is cut (prev/next/stop) so stale TTS callbacks cannot advance.
+    let speakGeneration = 0;
     linesFollowScroll = true;
     syncFollowBtn();
     setLessonWakeLock(true);
@@ -589,15 +648,25 @@ function createLessonPlaybar({
     pausePoint = 'none';
     session = { gapTimer: null, next: null };
 
+    const invalidateSpeak = () => {
+      speakGeneration += 1;
+    };
+
     const stop = () => {
       active = false;
+      invalidateSpeak();
       clearTimeout(session.gapTimer);
       clearTimeout(linesScrollLockTimer);
       clearTimeout(linesScrollSpeakTimer);
       stopLinesPlaybackFn = null;
       session = null;
+      playbackStepRelative = () => {};
+      onPlaybackRowsChanged = () => {};
+      rowsRef = [];
+      orderRef = [];
+      playPosRef = 0;
       linesIsPlaying = false;
-      linesAutoplayUiSync();
+      notifyLinesPlaybackUi();
       stopSpeaking();
       playingAll = false;
       paused = false;
@@ -606,7 +675,63 @@ function createLessonPlaybar({
       onLine(null, linePlaybackContext());
       syncProgress();
       syncFollowBtn();
+      syncBottomPlaybackButtons({ canPrev: false, canNext: false });
       drawPlaybar();
+    };
+
+    const stepRelative = (delta) => {
+      if (!active || !session || !orderRef.length) return;
+      invalidateSpeak();
+      clearTimeout(session.gapTimer);
+      session.gapTimer = null;
+      stopSpeaking();
+      paused = false;
+      pausePoint = 'none';
+      let nextPos = playPos + delta;
+      if (loopEnabledRef) {
+        if (nextPos < 0) nextPos = orderRef.length - 1;
+        if (nextPos >= orderRef.length) nextPos = 0;
+      } else {
+        nextPos = Math.min(Math.max(nextPos, 0), orderRef.length - 1);
+      }
+      playPos = nextPos;
+      playPosRef = playPos;
+      repeatsLeft = timesPerItem;
+      order = orderRef;
+      rows = rowsRef;
+      const item = rows[order[playPos]];
+      startIndex = item.index;
+      onPickIndex?.(startIndex);
+      syncPlaybackTransport();
+      next();
+    };
+
+    playbackStepRelative = stepRelative;
+
+    onPlaybackRowsChanged = () => {
+      if (!active) return;
+      if (!shuffleOption || !shuffleEnabled) return;
+      rows = getPlaybackRows();
+      rowsRef = rows;
+      if (!rows.length) {
+        stop();
+        return;
+      }
+      order = buildPlaybackOrder(rows.length, 0, true);
+      orderRef = order;
+      playPos = 0;
+      playPosRef = 0;
+      repeatsLeft = timesPerItem;
+      startIndex = rows[order[0]]?.index ?? rows[0].index;
+      onPickIndex?.(startIndex);
+      invalidateSpeak();
+      clearTimeout(session.gapTimer);
+      session.gapTimer = null;
+      stopSpeaking();
+      paused = false;
+      pausePoint = 'none';
+      syncPlaybackTransport();
+      next();
     };
 
     const buildSpeakParts = (text) => {
@@ -621,54 +746,72 @@ function createLessonPlaybar({
     const finishPass = () => {
       if (loopEnabled && active) {
         order = buildPlaybackOrder(rows.length, 0, shuffleOption && shuffleEnabled);
+        orderRef = order;
         playPos = 0;
+        playPosRef = playPos;
         startIndex = rows[order[0]]?.index ?? rows[0].index;
         repeatsLeft = timesPerItem;
         onPickIndex?.(startIndex);
+        syncPlaybackTransport();
         next();
         return;
       }
       stop();
     };
 
-    const scheduleAfterLine = (advanceToNextRow) => {
-      if (!active || paused) return;
+    const scheduleAfterLine = (advanceToNextRow, gen) => {
+      if (!active || paused || gen !== speakGeneration) return;
       if (advanceToNextRow) {
         playPos += 1;
+        playPosRef = playPos;
         repeatsLeft = timesPerItem;
+        syncPlaybackTransport();
       }
       const wait = gapMs();
       if (wait <= 0) {
         session.gapTimer = null;
-        queueMicrotask(next);
+        queueMicrotask(() => {
+          if (gen !== speakGeneration) return;
+          next();
+        });
         return;
       }
-      session.gapTimer = setTimeout(next, wait);
+      session.gapTimer = setTimeout(() => {
+        if (!active || paused || gen !== speakGeneration) return;
+        next();
+      }, wait);
     };
 
     const next = () => {
       if (!active || paused) return;
       if (playPos >= order.length) return finishPass();
+      speakGeneration += 1;
+      const gen = speakGeneration;
+      playPosRef = playPos;
+      orderRef = order;
+      rowsRef = rows;
+      loopEnabledRef = loopEnabled;
       const item = rows[order[playPos]];
       session.currentLineIndex = item.index;
       syncProgress(playPos);
+      syncPlaybackTransport();
       const lineCtx = linePlaybackContext();
       onLine(item.index, lineCtx);
       const parts = buildSpeakParts(item.english);
       let partIndex = 0;
 
       const afterLineSpoken = () => {
-        if (!active || paused) return;
+        if (!active || paused || gen !== speakGeneration) return;
         repeatsLeft -= 1;
         if (repeatsLeft > 0) {
-          scheduleAfterLine(false);
+          scheduleAfterLine(false, gen);
           return;
         }
-        scheduleAfterLine(true);
+        scheduleAfterLine(true, gen);
       };
 
       const speakNextPart = () => {
-        if (!active || paused) return;
+        if (!active || paused || gen !== speakGeneration) return;
         if (partIndex >= parts.length) {
           afterLineSpoken();
           return;
@@ -679,7 +822,7 @@ function createLessonPlaybar({
           !speak(part.text, {
             slow: part.slow,
             onEnd: () => {
-              if (!active || paused) return;
+              if (!active || paused || gen !== speakGeneration) return;
               speakNextPart();
             },
           })
@@ -689,11 +832,14 @@ function createLessonPlaybar({
       };
 
       const startSpeaking = () => {
-        if (!active || paused) return;
+        if (!active || paused || gen !== speakGeneration) return;
         speakNextPart();
       };
 
-      Promise.resolve(waitBeforeSpeak?.(item.index, lineCtx)).then(startSpeaking);
+      Promise.resolve(waitBeforeSpeak?.(item.index, lineCtx)).then(() => {
+        if (gen !== speakGeneration) return;
+        startSpeaking();
+      });
     };
 
     session.next = next;
@@ -701,9 +847,10 @@ function createLessonPlaybar({
     stopLinesPlaybackFn = stop;
     playingAll = true;
     linesIsPlaying = true;
-    linesAutoplayUiSync();
+    notifyLinesPlaybackUi();
     drawPlaybar();
     syncProgress(playPos);
+    syncPlaybackTransport();
     next();
   };
 
@@ -727,7 +874,7 @@ function createLessonPlaybar({
       )
     : null;
 
-  return { element, pickLine };
+  return { element, pickLine, onPlaybackRowsChanged: () => onPlaybackRowsChanged() };
 }
 
 export function linesPage({
@@ -738,8 +885,13 @@ export function linesPage({
   playTitle = 'Play all lines slowly',
   shuffle = false,
   playbarFeatures = {},
+  search = false,
+  playbar: showPlaybar = true,
 }) {
+  const deckPlayback = Boolean(playbarFeatures.deckPlayback);
   let mode = 'english';
+  let searchQuery = '';
+  let deckLastIndex = null;
   const revealed = new Set();
   const body = h('div', { class: 'lc-groups' });
   const itemByKey = new Map();
@@ -748,7 +900,9 @@ export function linesPage({
   let pickIndex = 0;
   let lastAutoRevealedKey = null;
   let playbarPickLine = () => {};
+  let playbarOnRowsChanged = () => {};
   let playbarEl = null;
+  let playbackRowsFingerprint = '';
 
   const modeButtons = MODES.map(([value, label]) => ({
     value,
@@ -838,17 +992,16 @@ export function linesPage({
   // had when they tapped an eye or a mode.
   const shown = groups.filter((group) => group.rows.length > 0);
   const lists = shown.map(() => h('ul', { class: 'lc-list' }));
-  body.replaceChildren(
-    ...shown.map((group, groupIndex) =>
-      h(
-        'section',
-        { class: 'lc-group' },
-        group.title ? h('h4', { class: 'lc-group-title', dir: 'auto' }, group.title) : null,
-        group.explanation ? h('p', { class: 'lc-explain', dir: 'auto' }, group.explanation) : null,
-        lists[groupIndex],
-      ),
+  const groupSections = shown.map((group, groupIndex) =>
+    h(
+      'section',
+      { class: 'lc-group' },
+      group.title ? h('h4', { class: 'lc-group-title', dir: 'auto' }, group.title) : null,
+      group.explanation ? h('p', { class: 'lc-explain', dir: 'auto' }, group.explanation) : null,
+      lists[groupIndex],
     ),
   );
+  body.replaceChildren(...groupSections);
 
   const setHighlight = (key) => {
     highlightKey = key;
@@ -886,25 +1039,40 @@ export function linesPage({
     if (revealed.delete(key)) refreshRow(key);
   };
 
+  const notifyPlaybackRowsMaybeChanged = () => {
+    const fingerprint = getPlaybackRows().map((row) => row.key).join('\0');
+    if (fingerprint === playbackRowsFingerprint) return;
+    playbackRowsFingerprint = fingerprint;
+    playbarOnRowsChanged();
+  };
+
   const draw = () => {
     for (const { value, element } of modeButtons) {
       element.classList.toggle('active', value === mode);
       element.setAttribute('aria-pressed', String(value === mode));
     }
     itemByKey.clear();
+    let visibleRowCount = 0;
     shown.forEach((group, groupIndex) => {
-      lists[groupIndex].replaceChildren(
-        ...group.rows.map((entry, rowIndex) => {
-          const key = `${groupIndex}:${rowIndex}`;
-          const flatIndex = flatRows.findIndex((row) => row.key === key);
-          const li = row(entry, key, flatIndex);
-          itemByKey.set(key, li);
-          return li;
-        }),
-      );
+      const items = [];
+      group.rows.forEach((entry, rowIndex) => {
+        if (!rowMatchesLessonSearch(entry, searchQuery)) return;
+        visibleRowCount += 1;
+        const key = `${groupIndex}:${rowIndex}`;
+        const flatIndex = flatRows.findIndex((row) => row.key === key);
+        const li = row(entry, key, flatIndex);
+        itemByKey.set(key, li);
+        items.push(li);
+      });
+      lists[groupIndex].replaceChildren(...items);
+      groupSections[groupIndex].hidden = items.length === 0;
     });
+    if (searchEmpty) {
+      searchEmpty.hidden = !searchQuery.trim() || visibleRowCount > 0;
+    }
     syncPickMarkers();
     if (playbarEl) playbarEl.hidden = !getPlaybackRows().length;
+    notifyPlaybackRowsMaybeChanged();
   };
 
   const flatRows = shown.flatMap((group, groupIndex) =>
@@ -915,12 +1083,32 @@ export function linesPage({
 
   const getPlaybackRows = () =>
     flatRows
-      .map((row, flatIndex) => ({ english: row.entry.english, index: flatIndex, key: row.key }))
-      .filter((row) => isEnglishVisible(row.key));
+      .map((row, flatIndex) => ({ english: row.entry.english, index: flatIndex, key: row.key, entry: row.entry }))
+      .filter((row) => isEnglishVisible(row.key) && rowMatchesLessonSearch(row.entry, searchQuery));
+
+  let searchBar = null;
+  let searchEmpty = null;
+  if (search) {
+    const searchInput = h('input', {
+      type: 'search',
+      class: 'lc-search-input',
+      placeholder: 'Search English or Persian…',
+      'aria-label': 'Search the list',
+      autocomplete: 'off',
+      enterkeyhint: 'search',
+      oninput: (event) => {
+        searchQuery = event.target.value;
+        draw();
+      },
+    });
+    searchBar = h('div', { class: 'lc-search' }, searchInput);
+    searchEmpty = h('p', { class: 'lc-search-empty muted small', hidden: true }, 'No matches for your search.');
+  }
 
   draw();
 
   const scrollToRow = (key) => {
+    if (deckPlayback && linesIsPlaying) return;
     if (!linesFollowScroll) return;
     const li = itemByKey.get(key);
     if (!li) return;
@@ -932,6 +1120,126 @@ export function linesPage({
     }, 1000);
   };
 
+  const deckStage = h('div', { class: 'lc-deck-stage', hidden: true });
+  const deckWrap = deckPlayback ? h('div', { class: 'lc-deck' }, deckStage) : null;
+
+  const scrollDeckIntoView = () => {
+    if (!deckWrap) return;
+    window.requestAnimationFrame(() => {
+      deckWrap.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    });
+  };
+
+  const prefersReducedMotion = () =>
+    typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+
+  let refreshDeckCard = () => {};
+
+  const buildDeckCard = (entry, key, flatIndex) => {
+    const englishShown = mode !== 'persian' || revealed.has(key);
+    const persianShown = mode !== 'english' || revealed.has(key);
+    const persianHiddenByMode = Boolean(entry.persian) && mode === 'english';
+    const isRevealed = revealed.has(key);
+
+    const eyeGlyph = h('span', { class: 'lc-eye-glyph' });
+    eyeGlyph.innerHTML = isRevealed ? EYE_OFF_ICON : EYE_ICON;
+    const deckEye = persianHiddenByMode
+      ? keepFocus(
+          h(
+            'button',
+            {
+              type: 'button',
+              class: `lc-deck-eye${isRevealed ? ' on' : ''}`,
+              'aria-pressed': String(isRevealed),
+              'aria-label': isRevealed ? 'Hide translation' : 'Show translation',
+              title: isRevealed ? 'Hide translation' : 'Show translation',
+              onclick: () => {
+                if (isRevealed) revealed.delete(key);
+                else revealed.add(key);
+                refreshRow(key);
+                refreshDeckCard(flatIndex);
+              },
+            },
+            eyeGlyph,
+          ),
+        )
+      : null;
+
+    const enContent = h(
+      'div',
+      { class: 'lc-deck-content', dir: 'ltr' },
+      englishShown
+        ? h('p', { class: 'lc-deck-en' }, entry.english)
+        : h('p', { class: 'lc-deck-en lc-deck-hidden' }, '• • • • • •'),
+      englishShown && entry.ipa ? h('span', { class: 'lc-deck-ipa' }, entry.ipa) : null,
+    );
+
+    const faBlock =
+      entry.persian && persianShown
+        ? h('div', { class: 'lc-deck-fa-block', dir: 'rtl' }, h('p', { class: 'lc-deck-fa' }, entry.persian))
+        : null;
+
+    return h(
+      'div',
+      { class: 'lc-deck-card', role: 'status', 'aria-live': 'polite' },
+      h(
+        'div',
+        { class: 'lc-deck-card-inner' },
+        h('div', { class: 'lc-deck-en-block' }, h('div', { class: 'lc-deck-main-row' }, deckEye, enContent)),
+        faBlock,
+      ),
+    );
+  };
+
+  refreshDeckCard = (flatIndex) => {
+    const row = flatRows[flatIndex];
+    if (!row || !deckStage) return;
+    deckStage.replaceChildren(buildDeckCard(row.entry, row.key, flatIndex));
+  };
+
+  const clearDeckStage = () => {
+    deckStage.replaceChildren();
+    deckStage.hidden = true;
+  };
+
+  const showDeckLine = (flatIndex, motion) => {
+    const { entry, key } = flatRows[flatIndex];
+    const incoming = buildDeckCard(entry, key, flatIndex);
+    deckStage.hidden = false;
+    const current = deckStage.querySelector('.lc-deck-card');
+    const reduced = prefersReducedMotion();
+
+    if (!current || motion === 'initial' || reduced) {
+      deckStage.replaceChildren(incoming);
+      if (!reduced) incoming.classList.add('lc-deck-enter');
+      scrollDeckIntoView();
+      return;
+    }
+
+    const exitClass = motion === 'back' ? 'lc-deck-exit-restore' : 'lc-deck-exit';
+    current.classList.add(exitClass);
+    let swapped = false;
+    const swap = () => {
+      if (swapped) return;
+      swapped = true;
+      if (current.isConnected) current.remove();
+      incoming.classList.add(motion === 'back' ? 'lc-deck-enter-back' : 'lc-deck-enter');
+      deckStage.append(incoming);
+      scrollDeckIntoView();
+    };
+    current.addEventListener('animationend', swap, { once: true });
+    window.setTimeout(swap, 380);
+  };
+
+  const pickRowOnly = (flatIndex) => {
+    pickIndex = flatIndex;
+    syncPickMarkers();
+    const key = flatRows[flatIndex]?.key;
+    if (key) scrollToRow(key);
+  };
+
+  let playbar = null;
+  if (showPlaybar) {
   const playbarApi = createLessonPlaybar({
     ariaLabel: playbarLabel,
     playTitle,
@@ -948,7 +1256,16 @@ export function linesPage({
         setActivePlay(null);
         syncFocusDim(ctx, false);
         syncPickMarkers();
+        if (deckPlayback) {
+          deckLastIndex = null;
+          clearDeckStage();
+        }
         return;
+      }
+      const prevDeck = deckLastIndex;
+      let deckMotion = 'initial';
+      if (deckPlayback && prevDeck !== null && index !== prevDeck) {
+        deckMotion = index > prevDeck ? 'forward' : 'back';
       }
       const { key } = flatRows[index];
       if (ctx?.autoReveal) {
@@ -959,6 +1276,14 @@ export function linesPage({
         const had = revealed.has(key);
         revealed.add(key);
         if (!had) refreshRow(key);
+      }
+      if (deckPlayback) {
+        // Repeats (2×, 3× per line) call onLine again for the same index — keep the card, no enter animation.
+        if (index !== prevDeck) {
+          showDeckLine(index, deckMotion);
+        }
+        deckLastIndex = index;
+        return;
       }
       if (ctx?.listenOnly) {
         setHighlight(null);
@@ -972,10 +1297,12 @@ export function linesPage({
     onPickIndex: (index) => {
       pickIndex = index;
       syncPickMarkers();
+      if (deckPlayback && linesIsPlaying) return;
       const { key } = flatRows[index];
       if (key) scrollToRow(key);
     },
     waitBeforeSpeak: (index, ctx) => {
+      if (deckPlayback) return;
       if (ctx?.listenOnly || !linesFollowScroll) return;
       const key = flatRows[index]?.key;
       if (!key) return;
@@ -984,13 +1311,36 @@ export function linesPage({
   });
   playbarEl = playbarApi.element;
   playbarPickLine = playbarApi.pickLine;
+  playbarOnRowsChanged = playbarApi.onPlaybackRowsChanged;
+  playbackRowsFingerprint = getPlaybackRows().map((row) => row.key).join('\0');
   if (playbarEl) playbarEl.hidden = !getPlaybackRows().length;
-  const playbar = flatRows.length ? playbarEl : null;
+  playbar = flatRows.length ? playbarEl : null;
+  } else {
+    playbarPickLine = pickRowOnly;
+  }
 
-  const pageEl = h('div', { class: 'lc-page' });
+  const pageEl = h('div', { class: `lc-page${search ? ' lc-page-search' : ''}` });
   linesAutoplayUiSync = () => {
     pageEl.classList.toggle('lc-autoplay-active', linesIsPlaying);
+    pageEl.classList.toggle('lc-deck-active', deckPlayback && linesIsPlaying);
+    if (searchBar) searchBar.hidden = Boolean(deckPlayback && linesIsPlaying);
+    if (searchEmpty) {
+      if (deckPlayback && linesIsPlaying) searchEmpty.hidden = true;
+      else {
+        const visible = flatRows.some((row) => rowMatchesLessonSearch(row.entry, searchQuery));
+        searchEmpty.hidden = !searchQuery.trim() || visible;
+      }
+    }
+    if (deckPlayback && linesIsPlaying) {
+      linesFollowScroll = false;
+      deckStage.hidden = false;
+      scrollDeckIntoView();
+    } else if (deckPlayback) {
+      deckLastIndex = null;
+      clearDeckStage();
+    }
   };
+  notifyLinesPlaybackUi();
   pageEl.append(
     ...(note
       ? [
@@ -1003,6 +1353,9 @@ export function linesPage({
       : []),
     h('div', { class: 'chips lc-modes' }, ...modeButtons.map((entry) => entry.element)),
     ...(playbar ? [playbar] : []),
+    ...(deckWrap ? [deckWrap] : []),
+    ...(searchBar ? [searchBar] : []),
+    ...(searchEmpty ? [searchEmpty] : []),
     body,
   );
   return pageEl;

@@ -114,11 +114,13 @@ export const isGameInProgress = () => gameInProgress;
 /**
  * The bottom bar. 'play': the Difficulty step, where the bar is one "Play" button that starts the mission (Reports is hidden).
  * 'practice': the lesson's choice page, where the bar is one "Practice" button (it opens the exercise settings).
+ * 'lesson': words, sentences, grammar or stories — Home and Reports are hidden (prev/next appear only during list playback).
  * 'home': every other screen, where the first tab reads "Home" and Reports is shown next to it.
  */
 export function setTabMode(mode) {
   document.body.classList.toggle('play-step', mode === 'play');
   document.body.classList.toggle('practice-step', mode === 'practice');
+  document.body.classList.toggle('lesson-step', mode === 'lesson');
   document.querySelectorAll('[data-nav="play"]').forEach((link) => {
     link.textContent = mode === 'play' ? 'Play' : mode === 'practice' ? 'Practice' : 'Home';
   });
@@ -286,6 +288,7 @@ export async function renderPlay(root) {
     setupRoot = null;
     stopTimer();
     closeModal();
+    stopStoryReading();
     // Leaving the screen ends any study or mission time in progress.
     endMission();
     setGameRunning(false);
@@ -796,7 +799,7 @@ async function showSetup(root, restore = null) {
   function drawLessonPage(step) {
     setLessonStudy(LESSON_CONTENT_PAGES.has(step.name));
     settingsStart = null;
-    setTabMode('home');
+    setTabMode(LESSON_CONTENT_PAGES.has(step.name) ? 'lesson' : 'home');
     info = null;
     const book = allBooks.find((entry) => entry.id === state.book);
     const unit = step.unit ? book.units.find((item) => item.key === step.unit) ?? null : null;
@@ -859,7 +862,8 @@ async function showSetup(root, restore = null) {
           playbarLabel: 'Listen to all words',
           playTitle: 'Play all words slowly',
           shuffle: true,
-          playbarFeatures: { autoReveal: true, listenOnly: true, dimOthers: true },
+          search: true,
+          playbarFeatures: { autoReveal: true, deckPlayback: true },
         }),
       );
     } else if (step.name === 'sentences') {
@@ -873,11 +877,11 @@ async function showSetup(root, restore = null) {
           playbarLabel: 'Listen to all sentences',
           playTitle: 'Play all sentences slowly',
           shuffle: true,
+          search: true,
           playbarFeatures: {
             autoReveal: true,
-            listenOnly: true,
-            dimOthers: true,
             longSentence: true,
+            deckPlayback: true,
           },
         }),
       );
@@ -893,9 +897,8 @@ async function showSetup(root, restore = null) {
             rows: rule.examples,
           })),
           speakLabel: 'Read the example aloud',
-          playbarLabel: 'Listen to all examples',
-          playTitle: 'Play all examples slowly',
-          playbarFeatures: { autoReveal: true, listenOnly: true },
+          playbar: false,
+          note: 'Choose what to see. Tap the eye to show the hidden side of an example.',
         }),
       );
     } else {
