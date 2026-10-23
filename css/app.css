@@ -5635,6 +5635,10 @@ img {
   flex: 0 0 auto;
 }
 
+.lc-page.lc-autoplay-active .lc-actions {
+  display: none;
+}
+
 .lc-eye {
   display: grid;
   place-items: center;

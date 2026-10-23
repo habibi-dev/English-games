@@ -52,6 +52,7 @@ const PLAY_GAP_BASE_SEC = 1;
 const PLAY_GAP_OFFSETS = [-1, 0, 1, 2];
 
 let followUiSync = () => {};
+let linesAutoplayUiSync = () => {};
 
 function shuffleInPlace(items) {
   for (let i = items.length - 1; i > 0; i--) {
@@ -596,6 +597,7 @@ function createLessonPlaybar({
       stopLinesPlaybackFn = null;
       session = null;
       linesIsPlaying = false;
+      linesAutoplayUiSync();
       stopSpeaking();
       playingAll = false;
       paused = false;
@@ -699,6 +701,7 @@ function createLessonPlaybar({
     stopLinesPlaybackFn = stop;
     playingAll = true;
     linesIsPlaying = true;
+    linesAutoplayUiSync();
     drawPlaybar();
     syncProgress(playPos);
     next();
@@ -984,20 +987,25 @@ export function linesPage({
   if (playbarEl) playbarEl.hidden = !getPlaybackRows().length;
   const playbar = flatRows.length ? playbarEl : null;
 
-  return h(
-    'div',
-    { class: 'lc-page' },
-    note
-      ? h(
-          'p',
-          { class: 'muted small lc-note' },
-          'Choose what to see. Tap the eye to show the hidden side of a row. Tap a row to play from there. Play skips rows whose English is hidden.',
-        )
-      : null,
+  const pageEl = h('div', { class: 'lc-page' });
+  linesAutoplayUiSync = () => {
+    pageEl.classList.toggle('lc-autoplay-active', linesIsPlaying);
+  };
+  pageEl.append(
+    ...(note
+      ? [
+          h(
+            'p',
+            { class: 'muted small lc-note' },
+            'Choose what to see. Tap the eye to show the hidden side of a row. Tap a row to play from there. Play skips rows whose English is hidden.',
+          ),
+        ]
+      : []),
     h('div', { class: 'chips lc-modes' }, ...modeButtons.map((entry) => entry.element)),
-    playbar,
+    ...(playbar ? [playbar] : []),
     body,
   );
+  return pageEl;
 }
 
 /** Stops story playback (same toolbar as words and sentences). */
