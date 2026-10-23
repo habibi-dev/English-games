@@ -1002,7 +1002,8 @@ export function linesPage({
           ? h('strong', { class: 'lc-word', dir: 'ltr' }, entry.english)
           : h('span', { class: 'lc-hidden', dir: 'ltr' }, '• • • • • •'),
         englishShown && entry.ipa ? h('span', { class: 'lc-ipa', dir: 'ltr' }, entry.ipa) : null,
-        entry.persian
+        // Word rows keep the Persian meaning under the word; sentences and rules get their own box below.
+        isWordRow && entry.persian
           ? persianShown
             ? h('span', { class: 'lc-sub', dir: 'rtl' }, entry.persian)
             : h('span', { class: 'lc-hidden lc-sub', dir: 'rtl' }, '• • • • •')
@@ -1015,6 +1016,15 @@ export function linesPage({
         englishShown ? speakButtons(entry.english, { label: speakLabel }) : null,
       ),
       relations,
+      !isWordRow && entry.persian
+        ? h(
+            'div',
+            { class: 'lc-trans', dir: 'rtl' },
+            persianShown
+              ? h('span', { class: 'lc-trans-text' }, entry.persian)
+              : h('span', { class: 'lc-hidden' }, '• • • • •'),
+          )
+        : null,
     );
   };
 

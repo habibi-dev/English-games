@@ -5813,7 +5813,7 @@ body.lc-deck-session-active .step-title {
 body.lc-deck-session-active .lc-deck-session {
   position: fixed;
   z-index: 6;
-  top: calc(env(safe-area-inset-top) + 56px);
+  top: calc(env(safe-area-inset-top) + 68px);
   right: 0;
   left: 0;
   bottom: calc(env(safe-area-inset-bottom) + 72px);
@@ -5822,7 +5822,7 @@ body.lc-deck-session-active .lc-deck-session {
   gap: 0;
   max-width: 740px;
   margin: 0 auto;
-  padding: 8px 12px 0;
+  padding: 20px 16px 0;
   box-sizing: border-box;
   background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 38%, #ffffff 100%);
 }
@@ -5876,7 +5876,7 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
 }
 
 .lc-deck-card-fs .lc-deck-hero {
-  padding: 20px 18px 12px;
+  padding: 28px 24px 20px;
 }
 
 .lc-deck-en-actions {
@@ -6223,6 +6223,35 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
   align-self: start;
   justify-self: end;
   gap: 8px;
+}
+
+/* Sentence and rule rows: more height, and the Persian translation in its own box under the English. */
+.lc-item:not(.lc-item-rich) {
+  padding: 16px 18px;
+  row-gap: 12px;
+  min-height: 84px;
+}
+
+.lc-item:not(.lc-item-rich) .lc-word {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.lc-trans {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  border-inline-start: 3px solid #6366f1;
+  text-align: right;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #334155;
+}
+
+.lc-trans .lc-hidden {
+  font-size: 1rem;
 }
 
 /* Eye, speaker and slow speaker: one shape, one size, one shadow. Only the colour tells them apart. */
