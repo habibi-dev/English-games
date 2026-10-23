@@ -125,20 +125,29 @@ document.querySelectorAll('[data-nav]:not([data-nav="play"])').forEach((link) =>
   });
 });
 
-async function boot() {
-  root.replaceChildren(h('p', { class: 'loading' }, 'Preparing lessons…'));
-
+async function applyContentSync() {
   try {
-    const { loaded, errors } = await syncContent();
+    const { loaded, errors, offline } = await syncContent();
     if (loaded.length) {
       const total = loaded.reduce((sum, lesson) => sum + lesson.count, 0);
       toast(`${fa(total)} questions loaded from new lessons.`);
     }
-    errors.forEach((e) => toast(`Lesson ${e.lesson}: ${e.message}`, 'error'));
+    if (!offline) {
+      errors.forEach((e) => toast(`Lesson ${e.lesson}: ${e.message}`, 'error'));
+    }
   } catch (error) {
     console.error(error);
     toast(`Failed to load lesson content: ${error.message}`, 'error');
   }
+}
+
+async function boot() {
+  root.replaceChildren(h('p', { class: 'loading' }, 'Preparing lessons…'));
+
+  await applyContentSync();
+  window.addEventListener('online', () => {
+    applyContentSync();
+  });
 
   window.addEventListener('hashchange', route);
   window.addEventListener('egq-route', route);
@@ -162,7 +171,9 @@ async function boot() {
       .then((registration) => {
         // Check for a new version each time the app comes back to the front (a phone may have been closed for days).
         document.addEventListener('visibilitychange', () => {
-          if (document.visibilityState === 'visible') registration.update().catch(() => {});
+          if (document.visibilityState !== 'visible') return;
+          registration.update().catch(() => {});
+          if (navigator.onLine) applyContentSync();
         });
       })
       .catch((error) => console.warn('Service worker:', error));

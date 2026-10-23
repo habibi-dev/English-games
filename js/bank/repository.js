@@ -38,7 +38,16 @@ const belongsTo = (question, book, lesson) => question.book === book && question
  * Returns what was loaded and any per-lesson errors, so one broken file does not block the rest.
  */
 export async function syncContent({ force = false } = {}) {
-  const entries = indexLessons(JSON.parse(await fetchText(CONTENT_INDEX_URL)));
+  let entries;
+  try {
+    entries = indexLessons(JSON.parse(await fetchText(CONTENT_INDEX_URL)));
+  } catch (error) {
+    const stored = await db.getAllLessonMeta();
+    if (stored.length === 0) throw error;
+    // No network (or no cached index): keep lessons already in IndexedDB.
+    return { loaded: [], errors: [], offline: true };
+  }
+
   const known = new Map((await db.getAllLessonMeta()).map((meta) => [meta.key, meta]));
   const loaded = [];
   const errors = [];
@@ -86,6 +95,7 @@ export async function syncContent({ force = false } = {}) {
       loaded.push(entry);
       if (result.invalid.length) console.warn(`[lesson ${key}] invalid records:`, result.invalid);
     } catch (error) {
+      if (!force && meta) continue;
       errors.push({ lesson: key, message: error.message });
     }
   }

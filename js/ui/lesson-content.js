@@ -1307,22 +1307,37 @@ export function linesPage({
     if (manualBar) manualBar.hidden = !(inSession && manualOpen && !playing);
   };
 
-  const manualRows = () => getPlaybackRows();
+  // The card view walks every row (only the search applies), so hiding or revealing a translation never
+  // removes the current card from the walk. The learner reveals by hand inside the card.
+  const manualRows = () =>
+    flatRows
+      .map((row, flatIndex) => ({ index: flatIndex, key: row.key, entry: row.entry }))
+      .filter((row) => rowMatchesLessonSearch(row.entry, searchQuery));
+
+  // Position of the current card and the neighbouring rows. If the current card is not in the walk
+  // (for example after a search change), the neighbours are the rows just before and just after it.
+  const manualNeighbours = (rows) => {
+    const pos = rows.findIndex((row) => row.index === manualIndex);
+    if (pos >= 0) return { pos, prev: pos - 1, next: pos + 1 };
+    const after = rows.findIndex((row) => row.index > manualIndex);
+    const insertAt = after < 0 ? rows.length : after;
+    return { pos: -1, prev: insertAt - 1, next: insertAt };
+  };
 
   const syncManualButtons = () => {
     const rows = manualRows();
-    const pos = rows.findIndex((row) => row.index === manualIndex);
-    if (manualPrevBtn) manualPrevBtn.disabled = pos <= 0;
-    if (manualNextBtn) manualNextBtn.disabled = pos < 0 || pos >= rows.length - 1;
+    const { prev, next } = manualNeighbours(rows);
+    if (manualPrevBtn) manualPrevBtn.disabled = prev < 0;
+    if (manualNextBtn) manualNextBtn.disabled = next >= rows.length;
   };
 
   const manualStep = (delta) => {
     const rows = manualRows();
     if (!rows.length) return;
-    const pos = rows.findIndex((row) => row.index === manualIndex);
-    const nextPos = Math.min(Math.max((pos < 0 ? 0 : pos) + delta, 0), rows.length - 1);
-    if (nextPos === pos) return;
-    manualIndex = rows[nextPos].index;
+    const { prev, next } = manualNeighbours(rows);
+    const target = delta < 0 ? prev : next;
+    if (target < 0 || target >= rows.length) return;
+    manualIndex = rows[target].index;
     pickIndex = manualIndex;
     syncPickMarkers();
     showDeckLine(manualIndex, 'initial');
@@ -1555,7 +1570,10 @@ export function linesPage({
     // The position in the list ("3 / 170"), small, at the bottom-left of the card footer.
     let cardCount = null;
     if (enActions) {
-      const rows = getPlaybackRows();
+      // Same walk as the card view's Previous/Next (every row, only the search applies).
+      const rows = flatRows
+        .map((row, index) => ({ index, entry: row.entry }))
+        .filter((row) => rowMatchesLessonSearch(row.entry, searchQuery));
       const pos = rows.findIndex((row) => row.index === flatIndex);
       cardCount = h('span', { class: 'lc-deck-count' }, pos >= 0 ? `${pos + 1} / ${rows.length}` : '');
     }
