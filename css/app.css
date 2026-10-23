@@ -227,11 +227,19 @@ p {
 .topbar p {
   margin: 2px 0 0;
   display: inline-block;
-  padding: 1px 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 1px 8px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.16);
-  font-size: 0.8rem;
+  font-size: 0.72rem;
+  line-height: 1.5;
   opacity: 0.95;
+  /* One line only: when the header is narrow the end of the tagline is cut with "...". */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: middle;
 }
 
 /* Soft glows behind the title, so the header reads as a game banner. */
@@ -5434,6 +5442,89 @@ img {
   margin-bottom: 10px;
 }
 
+/* The play bar and the search, stuck under the header while the list scrolls. Compact, with the least space. */
+.lc-sticky-bar {
+  position: sticky;
+  top: calc(env(safe-area-inset-top) + 76px);
+  z-index: 9;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 6px;
+  margin: 0 -4px 8px;
+  padding: 6px 4px;
+  background: rgba(246, 247, 255, 0.96);
+  backdrop-filter: blur(8px);
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.lc-sticky-bar > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.lc-sticky-bar .lc-playbar {
+  position: static;
+  margin: 0;
+  padding: 4px 8px;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.lc-sticky-bar .lc-playbar-home {
+  margin: 0;
+}
+
+.lc-sticky-bar .lc-search {
+  margin: 0;
+  padding: 4px 6px;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.lc-sticky-bar .lc-search-input {
+  min-height: 36px;
+  padding: 6px 10px;
+  font-size: 0.95rem;
+}
+
+/* The search with the counter on its right side ("1 / 201"). */
+.lc-sticky-bar .lc-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lc-sticky-bar .lc-search-input {
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+}
+
+.lc-sticky-bar .lc-search .lc-playbar-meta {
+  flex: none;
+  margin: 0;
+  height: 36px;
+  display: flex;
+  align-items: stretch;
+}
+
+/* The counter is the same height as the search box, and quieter than the playbar. */
+.lc-sticky-bar .lc-search .lc-playbar-progress {
+  display: inline-grid;
+  place-items: center;
+  box-sizing: border-box;
+  height: 36px;
+  min-width: 3.6rem;
+  padding: 0 10px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: #4338ca;
+  font-size: 0.8rem;
+  box-shadow: none;
+}
+
 /* Play-all toolbar: stays under the header while the list scrolls. */
 .lc-playbar {
   position: sticky;
@@ -5453,10 +5544,12 @@ img {
   min-width: 0;
 }
 
+/* One line: the play buttons and the counter, then the options on the same line (they scroll sideways only if they cannot fit). */
 .lc-playbar-actions {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
   width: 100%;
   min-width: 0;
 }
@@ -5464,9 +5557,9 @@ img {
 .lc-playbar-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  width: 100%;
+  justify-content: flex-start;
+  gap: 6px;
+  flex: none;
   min-width: 0;
 }
 
@@ -5483,7 +5576,6 @@ img {
   justify-content: flex-end;
   gap: 6px;
   flex: none;
-  margin-inline-start: auto;
 }
 
 .lc-playbar-options {
@@ -5491,11 +5583,14 @@ img {
   align-items: center;
   justify-content: flex-start;
   flex-wrap: nowrap;
-  gap: 4px;
-  width: 100%;
+  gap: 3px;
+  /* On the right side of the line: it takes only the room it needs, and scrolls sideways if it must. */
+  flex: 0 1 auto;
+  margin-inline-start: auto;
+  width: auto;
   min-width: 0;
   box-sizing: border-box;
-  padding: 4px 6px;
+  padding: 3px 5px;
   border-radius: 12px;
   background: linear-gradient(180deg, #f8fafc, #eef2ff);
   border: 1px solid #c7d2fe;
@@ -5518,13 +5613,13 @@ img {
 .lc-playbar-options > .chip-toggle {
   flex: 0 0 auto;
   box-sizing: border-box;
-  width: 2.35rem;
-  height: 2.35rem;
-  min-width: 2.35rem;
-  min-height: 2.35rem;
-  max-height: 2.35rem;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
+  max-height: 2rem;
   padding: 0;
-  border-radius: 10px;
+  border-radius: 9px;
 }
 
 .lc-playbar-follow {
@@ -5552,8 +5647,8 @@ img {
 
 .lc-playbar-progress {
   flex: none;
-  min-width: 4.75rem;
-  padding: 5px 10px;
+  min-width: 3.3rem;
+  padding: 5px 8px;
   border-radius: 999px;
   border: 1px solid #c7d2fe;
   background: linear-gradient(180deg, #fff, #f5f7ff);
@@ -5713,9 +5808,9 @@ img {
   color: #4f46e5;
 }
 
+/* The row the learner picked: only a thin edge line, the card keeps its own colours. */
 .lc-item.is-pick:not(.is-reading) {
-  background: #eef2ff;
-  box-shadow: inset 4px 0 0 #6366f1;
+  box-shadow: inset 2px 0 0 #a5b4fc;
 }
 
 .lc-item.is-reading {
@@ -5792,6 +5887,106 @@ img {
   display: none;
 }
 
+/* Card view button, next to Play in the playbar: opens the same card page, but the learner moves by hand. */
+/* Same size and round shape as the Play button beside it. */
+.lc-playbar-card {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  box-sizing: border-box;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  max-width: 2rem;
+  min-height: 2rem;
+  max-height: 2rem;
+  padding: 0;
+  border: 1px solid #c7d2fe;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  background: #eef2ff;
+  color: #4338ca;
+  box-shadow: 0 2px 0 #c7d2fe;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+
+.lc-playbar-card:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.lc-playbar-card-icon {
+  display: grid;
+  place-items: center;
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.lc-playbar-card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Card view controls: a bar fixed to the bottom of the screen, in the same place and look as the Home / Reports bar.
+   Previous and next only; closing is done with the header back button or the phone's back button. */
+.lc-manual-bar {
+  position: fixed;
+  z-index: 10;
+  left: 10px;
+  right: 10px;
+  bottom: calc(env(safe-area-inset-bottom) + 10px);
+  max-width: 740px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
+
+.lc-manual-bar[hidden] {
+  display: none;
+}
+
+/* Neutral, like the plain tabs of the bottom bar. */
+.lc-manual-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 0;
+  padding: 12px 4px;
+  border: 0;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--muted);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lc-manual-btn:hover:not(:disabled) {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.lc-manual-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.lc-manual-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
 /* Dedicated playback screen (words / sentences deck): card only, playbar in footer. */
 body.lc-deck-session-active {
   overflow: hidden;
@@ -5827,40 +6022,44 @@ body.lc-deck-session-active .lc-deck-session {
   background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 38%, #ffffff 100%);
 }
 
+/* The whole card scrolls here (the page does, not a box inside the card). The footer below stays in place. */
 body.lc-deck-session-active .lc-deck-session-main {
   flex: 1;
   min-height: 0;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  /* Still scrolls by touch, wheel or keys, but no scrollbar is drawn. */
+  scrollbar-width: none;
+}
+
+body.lc-deck-session-active .lc-deck-session-main::-webkit-scrollbar {
+  display: none;
 }
 
 body.lc-deck-session-active .lc-deck-session-main .lc-deck-stage {
-  flex: 1;
-  min-height: 0;
+  flex: 0 0 auto;
   align-items: stretch;
 }
 
 body.lc-deck-session-active .lc-deck-session-main .lc-deck-card {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-height: 0;
-  max-height: 100%;
+  flex: 0 0 auto;
 }
 
 body.lc-deck-session-active .lc-deck-session-main .lc-deck-card-inner {
-  flex: 1;
-  min-height: 0;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
 }
 
+/* No box of its own: its content is part of the page, which scrolls (see .lc-deck-session-main). */
 body.lc-deck-session-active .lc-deck-session-main .lc-deck-card-scroll {
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
+  flex: 0 0 auto;
   padding: 0 16px 12px;
-  -webkit-overflow-scrolling: touch;
 }
 
 body.lc-deck-session-active .lc-deck-session-footer {
@@ -5885,6 +6084,106 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
   align-items: center;
   gap: 8px;
   flex: 0 0 auto;
+}
+
+/* Card view: the buttons float in the top-right corner of the card, like the rows of the list.
+   The English keeps clear of them, so a long word wraps instead of running under the buttons. */
+.lc-deck-card-fs .lc-deck-hero {
+  position: relative;
+}
+
+.lc-deck-card-fs .lc-deck-en-actions {
+  position: absolute;
+  top: 12px;
+  inset-inline-end: 12px;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Card view: the card stays at the top of the page, and the sections below it (synonyms, opposite, sentences) scroll under it. */
+.lc-deck-fs-wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.lc-deck-fs-wrap > .lc-deck-card-fs {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.lc-deck-sections {
+  padding: 14px 0 8px;
+}
+
+/* The card's buttons sit in a footer band at the bottom of the card (the English has the full width above it). */
+.lc-deck-card-fs .lc-deck-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 8px 14px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+}
+
+.lc-deck-card-fs .lc-deck-card-footer .lc-deck-en-actions {
+  position: static;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.lc-deck-card-fs .lc-deck-en-actions .lc-deck-eye,
+.lc-deck-card-fs .lc-deck-en-actions .speak-buttons .speak.speak-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+  color: #4338ca;
+  box-shadow: 0 3px 0 #c7d2fe;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.lc-deck-card-fs .lc-deck-en-actions .lc-deck-eye.on {
+  background: #4338ca;
+  border-color: #4338ca;
+  color: #fff;
+  box-shadow: 0 3px 0 #312e81;
+}
+
+.lc-deck-card-fs .lc-deck-en-actions .speak-buttons {
+  display: inline-flex;
+  gap: 8px;
+  margin: 0;
+}
+
+.lc-deck-card-fs .lc-deck-en-actions .lc-eye-glyph,
+.lc-deck-card-fs .lc-deck-en-actions .speak-glyph {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+}
+
+.lc-deck-card-fs .lc-deck-en-actions .lc-eye-glyph svg,
+.lc-deck-card-fs .lc-deck-en-actions .speak-glyph svg {
+  width: 18px;
+  height: 18px;
+}
+
+.lc-deck-card-fs .lc-deck-en-actions .lc-deck-eye:active:not(:disabled),
+.lc-deck-card-fs .lc-deck-en-actions .speak-buttons .speak.speak-icon:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
 }
 
 .lc-deck-card-fs .lc-deck-main-row {
@@ -5916,17 +6215,67 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
   gap: 8px;
 }
 
-.lc-deck-chip {
-  display: inline-flex;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: #eef2ff;
-  color: #3730a3;
-  font-size: 0.92rem;
-  font-weight: 600;
+/* Synonyms and opposites are words, so each one is a card like a word card: one row per word, the word in bold,
+   its speakers on the right. */
+.lc-deck-section .lc-deck-chips {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 8px;
 }
 
-.lc-deck-section:has(+ .lc-deck-section) .lc-deck-chip,
+.lc-deck-section .lc-deck-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 10px 8px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: #0f172a;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.lc-deck-section .lc-deck-chip-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+/* The speakers of a synonym or opposite: small round buttons, the same shape as the list's. */
+.lc-deck-section .lc-deck-chip .speak.speak-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  min-height: 28px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #c7d2fe;
+  background: #fff;
+  color: #4338ca;
+  box-shadow: 0 2px 0 #c7d2fe;
+}
+
+.lc-deck-section .lc-deck-chip .speak.speak-icon:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.lc-deck-section .lc-deck-chip .speak-glyph {
+  display: grid;
+  place-items: center;
+  width: 15px;
+  height: 15px;
+}
+
+.lc-deck-section .lc-deck-chip .speak-glyph svg {
+  width: 15px;
+  height: 15px;
+}
+
 .lc-deck-examples .lc-deck-section-title {
   color: #64748b;
 }
@@ -5939,26 +6288,75 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
   gap: 12px;
 }
 
+/* A sentence card, like a sentence row of the list: the buttons float top-right, the English keeps clear of them. */
 .lc-deck-example {
-  padding: 12px 14px;
+  position: relative;
+  padding: 14px 14px 12px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(199, 210, 254, 0.65);
+  background: #fff;
+  border: 1px solid var(--border);
+}
+
+.lc-deck-example .lc-deck-example-actions {
+  position: absolute;
+  top: 10px;
+  inset-inline-end: 10px;
+}
+
+/* The sentence buttons are smaller than the buttons of the card's own English. */
+.lc-deck-card-fs .lc-deck-example .lc-deck-example-actions {
+  top: 10px;
+  gap: 6px;
+}
+
+.lc-deck-card-fs .lc-deck-example .lc-deck-example-actions .lc-deck-eye,
+.lc-deck-card-fs .lc-deck-example .lc-deck-example-actions .speak-buttons .speak.speak-icon {
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  min-height: 28px;
+}
+
+.lc-deck-card-fs .lc-deck-example .lc-deck-example-actions .speak-buttons {
+  gap: 6px;
+}
+
+.lc-deck-card-fs .lc-deck-example .lc-deck-example-actions .lc-eye-glyph,
+.lc-deck-card-fs .lc-deck-example .lc-deck-example-actions .speak-glyph {
+  width: 14px;
+  height: 14px;
+}
+
+.lc-deck-card-fs .lc-deck-example .lc-deck-example-actions .lc-eye-glyph svg,
+.lc-deck-card-fs .lc-deck-example .lc-deck-example-actions .speak-glyph svg {
+  width: 14px;
+  height: 14px;
 }
 
 .lc-deck-example-en {
-  margin: 0 0 6px;
-  font-size: 0.98rem;
-  font-weight: 600;
-  line-height: 1.45;
+  margin: 0;
+  padding-inline-end: 108px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.5;
   color: #0f172a;
+  overflow-wrap: anywhere;
 }
 
 .lc-deck-example-fa {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  color: #475569;
+  margin: 10px 0 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  border-inline-start: 3px solid #6366f1;
+  text-align: right;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #334155;
+}
+
+.lc-deck-example .lc-deck-hidden {
+  color: #94a3b8;
 }
 
 .lc-deck-card-rich .lc-deck-fa-block {
@@ -5970,6 +6368,16 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
 
 .lc-deck-fa-hidden {
   opacity: 0.85;
+}
+
+/* In the card view the translation is a plain line inside the card: no tinted box, and no rounded bottom
+   (the card's footer band sits right under it). */
+.lc-deck-card-fs .lc-deck-card-inner .lc-deck-fa-block {
+  margin: 0;
+  padding: 12px 18px 14px;
+  border-radius: 0;
+  background: none;
+  border-top: 1px solid #e2e8f0;
 }
 
 .lc-page.lc-deck-active .lc-search,
@@ -6183,8 +6591,9 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
 
 /* Same structure for every row: text on the left, buttons in the top-right corner, optional panel below. */
 .lc-item {
+  position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
   column-gap: 10px;
   row-gap: 10px;
@@ -6208,6 +6617,7 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
 }
 
 /* Word rows with synonyms / opposites: a bigger headword and room for the relation chips. */
+/* The text takes the row's width, but stops before the floating buttons, so a long line wraps instead of running under them. */
 .lc-item .lc-main {
   grid-column: 1;
   grid-row: 1;
@@ -6217,12 +6627,32 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
   text-align: start;
 }
 
+/* The buttons sit in a footer strip at the bottom of the row, below the English and the translation,
+   so they never mix with the text. An empty footer (nothing to play or reveal) is not drawn. */
+/* The footer is a band across the bottom of the row: it reaches the row's edges (the negative margins cancel the row's padding). */
 .lc-item .lc-actions {
-  grid-column: 2;
-  grid-row: 1;
-  align-self: start;
-  justify-self: end;
+  grid-column: 1;
+  grid-row: 3;
+  justify-self: stretch;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   gap: 8px;
+  margin: 6px -14px -12px;
+  padding: 8px 14px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-radius: 0 0 13px 13px;
+}
+
+/* Sentence and rule rows have more padding, so their footer is wider too. */
+.lc-item:not(.lc-item-rich) .lc-actions {
+  margin: 6px -18px -16px;
+  padding: 8px 18px;
+}
+
+.lc-item .lc-actions:empty {
+  display: none;
 }
 
 /* Sentence and rule rows: more height, and the Persian translation in its own box under the English. */
@@ -6259,10 +6689,10 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
 .lc-item .lc-actions .speak-buttons .speak.speak-icon {
   display: inline-grid;
   place-items: center;
-  width: 36px;
-  min-width: 36px;
-  height: 36px;
-  min-height: 36px;
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  min-height: 30px;
   margin: 0;
   padding: 0;
   border-radius: 50%;
@@ -6282,7 +6712,7 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
 
 .lc-item .lc-actions .speak-buttons {
   display: inline-flex;
-  gap: 8px;
+  gap: 6px;
   margin: 0;
 }
 
@@ -6303,14 +6733,14 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
 .lc-item .lc-actions .speak-glyph {
   display: grid;
   place-items: center;
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
 }
 
 .lc-item .lc-actions .lc-eye-glyph svg,
 .lc-item .lc-actions .speak-glyph svg {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
 }
 
 /* The translation sits in the left corner, under the English. */

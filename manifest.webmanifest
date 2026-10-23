@@ -1,7 +1,7 @@
 {
-  "name": "English Grammar Quest",
-  "short_name": "Grammar Quest",
-  "description": "English grammar practice with an independent question bank",
+  "name": "English Quest",
+  "short_name": "English Quest",
+  "description": "Learn English words, sentences, grammar and stories, then practise them",
   "lang": "fa",
   "dir": "rtl",
   "start_url": "./index.html",

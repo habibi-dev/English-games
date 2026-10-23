@@ -2,7 +2,7 @@
 // Strategy: network first, so bank updates and code changes are picked up when online;
 // every successful same-origin GET is cached, and the cache is used when the network fails.
 
-const CACHE = 'grammar-quest-runtime-v1';
+const CACHE = 'english-quest-runtime-v2';
 
 self.addEventListener('install', () => {
   self.skipWaiting();

@@ -4,7 +4,15 @@ import {
   loadLessonPlaybarSettings,
   saveLessonPlaybarSettings,
 } from '../storage/lesson-playbar.js';
-import { speak, speakButtons, stopSpeaking, pauseSpeaking, resumeSpeaking, canSpeak } from './speech-out.js';
+import {
+  speak,
+  speakButtons,
+  speakActionButton,
+  stopSpeaking,
+  pauseSpeaking,
+  resumeSpeaking,
+  canSpeak,
+} from './speech-out.js';
 import { setLessonWakeLock } from './wake-lock.js';
 import { uiIcon } from './icons.js';
 import { dragToScroll } from './drag-scroll.js';
@@ -138,6 +146,40 @@ let linesScrollLock = false;
 let linesScrollLockTimer = null;
 let linesScrollSpeakTimer = null;
 let linesIsPlaying = false;
+// Closes the manual card view of the page on screen (see linesPage), or null.
+let stopManualFn = null;
+// Card view and the browser's back button: opening the card view adds one history entry, so the phone's back
+// button closes the card view instead of leaving the lesson (see handleCardViewBack, used by play.js).
+let cardViewEntry = false;
+// Set while the card view removes its own entry (closed from the header), so the popstate that follows is not a leave.
+let cardViewRemovingEntry = false;
+// The header back button while the card view is open: it closes the card view. Restored when the card view closes.
+let cardViewHeader = null;
+// Closes the card view of the page on screen with a reason (see linesPage), or null.
+let closeManualFn = null;
+
+const restoreCardViewHeader = () => {
+  if (!cardViewHeader) return;
+  const { btn, previous, handler } = cardViewHeader;
+  cardViewHeader = null;
+  // Only put the old handler back if nothing else has taken the header button since.
+  if (btn.onclick === handler) btn.onclick = previous;
+};
+
+/**
+ * Called on every popstate. Returns true when the browser's back button was used to close the card view,
+ * so the lesson screen must not also treat it as a step back.
+ */
+export function handleCardViewBack() {
+  if (cardViewRemovingEntry) {
+    cardViewRemovingEntry = false;
+    return true;
+  }
+  if (!cardViewEntry) return false;
+  cardViewEntry = false;
+  closeManualFn?.('back');
+  return true;
+}
 
 /** After scrollIntoView(smooth), wait before TTS so long lists settle on the current row. */
 const PLAY_SCROLL_SETTLE_MS = 500;
@@ -177,6 +219,7 @@ if (typeof window !== 'undefined') {
 export function stopLinesPlayback() {
   stopLinesPlaybackFn?.();
   stopLinesPlaybackFn = null;
+  stopManualFn?.();
   playbackStepRelative = () => {};
   linesIsPlaying = false;
   document.body.classList.remove('lc-deck-session-active');
@@ -200,6 +243,7 @@ function createLessonPlaybar({
   waitBeforeSpeak,
   shuffle: shuffleOption = false,
   playbarFeatures = {},
+  onCardView,
 }) {
   const deckPlaybackBar = Boolean(playbarFeatures.deckPlayback);
   const features = {
@@ -512,6 +556,27 @@ function createLessonPlaybar({
       ),
     );
 
+  // Opens the card view with the learner in control: the same card, but nothing plays or moves by itself.
+  const cardViewButton = () =>
+    keepFocus(
+      h(
+        'button',
+        {
+          type: 'button',
+          class: 'lc-playbar-card',
+          'aria-label': 'Open card view',
+          title: 'Card view: move and listen yourself',
+          onclick: () => onCardView(),
+        },
+        (() => {
+          const glyph = h('span', { class: 'lc-playbar-card-icon' });
+          glyph.innerHTML =
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>';
+          return glyph;
+        })(),
+      ),
+    );
+
   const stopAllButton = () =>
     keepFocus(
       h(
@@ -601,7 +666,7 @@ function createLessonPlaybar({
       ? paused
         ? [resumeButton(), stopAllButton()]
         : [pauseButton(), stopAllButton()]
-      : [playAllButton()];
+      : [playAllButton(), onCardView ? cardViewButton() : null];
     playbarTransport.replaceChildren(...transport.filter(Boolean));
     playbarOptions.replaceChildren(
       repeatCycleBtn,
@@ -976,14 +1041,14 @@ export function linesPage({
             )
           : h('span', { class: 'lc-rel-empty' }, '—'),
       );
+    // Only the relations this word really has are shown: no empty "Synonyms —" or "Opposite —" line.
+    const relationLines = [
+      entry.synonyms?.length ? relationLine('Synonyms', entry.synonyms, 'syn') : null,
+      entry.antonyms?.length ? relationLine('Opposite', entry.antonyms, 'ant') : null,
+    ].filter(Boolean);
     const relations =
-      isWordRow && englishShown
-        ? h(
-            'div',
-            { class: 'lc-relations' },
-            relationLine('Synonyms', entry.synonyms, 'syn'),
-            relationLine('Opposite', entry.antonyms, 'ant'),
-          )
+      isWordRow && englishShown && relationLines.length
+        ? h('div', { class: 'lc-relations' }, ...relationLines)
         : null;
 
     return h(
@@ -1165,8 +1230,33 @@ export function linesPage({
   let deckPlaybarFooter = null;
   let deckSession = null;
   let deckWrap = null;
+  // Card view: the learner opens the card and moves/listens by hand. Nothing advances by itself.
+  let manualOpen = false;
+  let manualIndex = null;
+  let manualPrevBtn = null;
+  let manualNextBtn = null;
+  let manualBar = null;
   if (deckPlayback && deckFullscreen) {
     deckPlaybarFooter = h('div', { class: 'lc-deck-session-footer' });
+    manualPrevBtn = h(
+      'button',
+      { type: 'button', class: 'lc-manual-btn', onclick: () => manualStep(-1) },
+      h('span', { class: 'lc-manual-icon' }, '‹'),
+      'Previous',
+    );
+    manualNextBtn = h(
+      'button',
+      { type: 'button', class: 'lc-manual-btn', onclick: () => manualStep(1) },
+      'Next',
+      h('span', { class: 'lc-manual-icon' }, '›'),
+    );
+    manualBar = h(
+      'div',
+      { class: 'lc-manual-bar', hidden: true },
+      manualPrevBtn,
+      manualNextBtn,
+    );
+    deckPlaybarFooter.append(manualBar);
     deckSession = h(
       'div',
       { class: 'lc-deck-session', hidden: true },
@@ -1177,11 +1267,92 @@ export function linesPage({
     deckWrap = h('div', { class: 'lc-deck' }, deckStage);
   }
 
-  const dockPlaybar = (docked) => {
-    if (!playbarEl || !deckPlaybarFooter) return;
-    (docked ? deckPlaybarFooter : playbarHome).append(playbarEl);
-    playbarEl.classList.toggle('lc-playbar-docked', docked);
+  // The footer shows the playbar while the list plays, and the manual controls in the card view.
+  // The counter ("1 / 201") lives beside the search. It moves into the playbar only while the playbar is in the footer.
+  let playbarMetaEl = null;
+
+  const dockPlaybar = (inSession) => {
+    if (!deckPlaybarFooter) return;
+    const playing = linesIsPlaying;
+    const showPlaybar = inSession && playing && playbarEl;
+    if (playbarEl) {
+      (showPlaybar ? deckPlaybarFooter : playbarHome).append(playbarEl);
+      playbarEl.classList.toggle('lc-playbar-docked', Boolean(showPlaybar));
+      if (playbarMetaEl) {
+        if (showPlaybar) playbarEl.querySelector('.lc-playbar-top')?.append(playbarMetaEl);
+        else searchBar?.append(playbarMetaEl);
+      }
+    }
+    if (manualBar) manualBar.hidden = !(inSession && manualOpen && !playing);
   };
+
+  const manualRows = () => getPlaybackRows();
+
+  const syncManualButtons = () => {
+    const rows = manualRows();
+    const pos = rows.findIndex((row) => row.index === manualIndex);
+    if (manualPrevBtn) manualPrevBtn.disabled = pos <= 0;
+    if (manualNextBtn) manualNextBtn.disabled = pos < 0 || pos >= rows.length - 1;
+  };
+
+  const manualStep = (delta) => {
+    const rows = manualRows();
+    if (!rows.length) return;
+    const pos = rows.findIndex((row) => row.index === manualIndex);
+    const nextPos = Math.min(Math.max((pos < 0 ? 0 : pos) + delta, 0), rows.length - 1);
+    if (nextPos === pos) return;
+    manualIndex = rows[nextPos].index;
+    pickIndex = manualIndex;
+    syncPickMarkers();
+    showDeckLine(manualIndex, 'initial');
+    syncManualButtons();
+  };
+
+  const openManual = () => {
+    if (linesIsPlaying || !deckFullscreen || manualOpen) return;
+    const rows = manualRows();
+    if (!rows.length) return;
+    manualIndex = rows.some((row) => row.index === pickIndex) ? pickIndex : rows[0].index;
+    manualOpen = true;
+    deckLastIndex = null;
+    if (!cardViewEntry) {
+      history.pushState({ cardView: true }, '', location.href);
+      cardViewEntry = true;
+    }
+    // While the card view is open, the header back button closes it (instead of leaving the lesson).
+    const btn = document.querySelector('.topbar-back');
+    if (btn && !btn.hidden) {
+      const handler = () => closeManual('header');
+      cardViewHeader = { btn, previous: btn.onclick, handler };
+      btn.onclick = handler;
+    }
+    showDeckLine(manualIndex, 'initial');
+    linesAutoplayUiSync();
+    syncManualButtons();
+  };
+
+  /**
+   * reason: 'header' (the header back button: the history entry is removed here), 'back' (the browser's back
+   * button already removed it), or 'leave' (the page is left: nothing in the history is touched).
+   */
+  const closeManual = (reason = 'leave') => {
+    restoreCardViewHeader();
+    const hadEntry = cardViewEntry;
+    cardViewEntry = false;
+    if (!manualOpen) return;
+    manualOpen = false;
+    manualIndex = null;
+    deckLastIndex = null;
+    clearDeckStage();
+    linesAutoplayUiSync();
+    if (reason === 'header' && hadEntry) {
+      cardViewRemovingEntry = true;
+      history.back();
+    }
+  };
+
+  stopManualFn = () => closeManual('leave');
+  closeManualFn = closeManual;
 
   const scrollDeckIntoView = () => {
     if (deckFullscreen || !deckWrap) return;
@@ -1195,21 +1366,85 @@ export function linesPage({
 
   let refreshDeckCard = () => {};
 
+  // A synonym or opposite: the word with its own speaker (normal and slow), as a sentence has in the list.
+  const deckWordChip = (word) => {
+    const chip = h('span', { class: 'lc-deck-chip' }, h('span', { class: 'lc-deck-chip-text' }, word));
+    const buttons = [
+      speakActionButton('normal', 'Read aloud', () => speak(word)),
+      speakActionButton('slow', 'Read slowly', () => speak(word, { slow: true })),
+    ].filter(Boolean);
+    chip.append(...buttons);
+    return chip;
+  };
+
   const deckChipRow = (title, items) => {
     if (!items?.length) return null;
     return h(
       'div',
       { class: 'lc-deck-section' },
       h('h5', { class: 'lc-deck-section-title' }, title),
-      h(
-        'div',
-        { class: 'lc-deck-chips', dir: 'ltr' },
-        ...items.map((label) => h('span', { class: 'lc-deck-chip' }, label)),
-      ),
+      h('div', { class: 'lc-deck-chips', dir: 'ltr' }, ...items.map((word) => deckWordChip(word))),
     );
   };
 
-  const deckExamplesBlock = (examples) => {
+  // One example sentence: the same row as a sentence in the list (English with a floating speaker and eye,
+  // the translation in its own box under it). The eye and the mode work the same way as on the list.
+  const deckExampleRow = (line, exKey) => {
+    let node = null;
+    const build = () => {
+      const englishShown = mode !== 'persian' || revealed.has(exKey);
+      const persianShown = mode !== 'english' || revealed.has(exKey);
+      const isRevealed = revealed.has(exKey);
+      const hasHidden = mode === 'persian' || (mode === 'english' && Boolean(line.persian));
+      const eyeGlyph = h('span', { class: 'lc-eye-glyph' });
+      eyeGlyph.innerHTML = isRevealed ? EYE_OFF_ICON : EYE_ICON;
+      const eye = hasHidden
+        ? keepFocus(
+            h(
+              'button',
+              {
+                type: 'button',
+                class: `lc-deck-eye${isRevealed ? ' on' : ''}`,
+                'aria-pressed': String(isRevealed),
+                'aria-label': isRevealed ? 'Hide' : 'Show the hidden text',
+                title: isRevealed ? 'Hide' : 'Show the hidden text',
+                onclick: () => {
+                  if (isRevealed) revealed.delete(exKey);
+                  else revealed.add(exKey);
+                  // Only this sentence is redrawn, so the card keeps its scroll position.
+                  const next = build();
+                  node?.replaceWith(next);
+                  node = next;
+                },
+              },
+              eyeGlyph,
+            ),
+          )
+        : null;
+      return h(
+        'li',
+        { class: 'lc-deck-example' },
+        h(
+          'div',
+          { class: 'lc-deck-en-actions lc-deck-example-actions' },
+          eye,
+          englishShown ? speakButtons(line.english, { label: speakLabel }) : null,
+        ),
+        englishShown
+          ? h('p', { class: 'lc-deck-example-en', dir: 'ltr' }, line.english)
+          : h('p', { class: 'lc-deck-example-en lc-deck-hidden', dir: 'ltr' }, '• • • • • •'),
+        line.persian
+          ? persianShown
+            ? h('div', { class: 'lc-deck-example-fa', dir: 'rtl' }, line.persian)
+            : h('div', { class: 'lc-deck-example-fa lc-deck-hidden', dir: 'rtl' }, '• • • • •')
+          : null,
+      );
+    };
+    node = build();
+    return node;
+  };
+
+  const deckExamplesBlock = (examples, key) => {
     if (!examples?.length) return null;
     return h(
       'div',
@@ -1218,14 +1453,7 @@ export function linesPage({
       h(
         'ul',
         { class: 'lc-deck-example-list' },
-        ...examples.map((line) =>
-          h(
-            'li',
-            { class: 'lc-deck-example' },
-            h('p', { class: 'lc-deck-example-en', dir: 'ltr' }, line.english),
-            line.persian ? h('p', { class: 'lc-deck-example-fa', dir: 'rtl' }, line.persian) : null,
-          ),
-        ),
+        ...examples.map((line, i) => deckExampleRow(line, `${key}#${i}`)),
       ),
     );
   };
@@ -1239,7 +1467,7 @@ export function linesPage({
     const eyeGlyph = h('span', { class: 'lc-eye-glyph' });
     eyeGlyph.innerHTML = isRevealed ? EYE_OFF_ICON : EYE_ICON;
     // The playback screen has no eye or speaker on the card: the line is read and revealed by playback itself.
-    const deckEye = persianHiddenByMode && !deckFullscreen
+    const deckEye = persianHiddenByMode && (!deckFullscreen || manualOpen)
       ? keepFocus(
           h(
             'button',
@@ -1277,7 +1505,7 @@ export function linesPage({
           ? h('div', { class: 'lc-deck-fa-block lc-deck-fa-hidden', dir: 'rtl' }, h('p', { class: 'lc-deck-fa lc-deck-hidden' }, '• • • • •'))
           : null;
 
-    const enActions = deckFullscreen
+    const enActions = deckFullscreen && !manualOpen
       ? null
       : h(
           'div',
@@ -1290,17 +1518,22 @@ export function linesPage({
       ? [
           deckChipRow('Synonyms', entry.synonyms),
           deckChipRow('Opposite', entry.antonyms),
-          deckExamplesBlock(entry.examples),
+          deckExamplesBlock(entry.examples, key),
         ].filter(Boolean)
       : [];
 
+    // In the card view the buttons sit in a footer band at the bottom of the card, apart from the English and the translation.
+    const cardFooter = enActions ? h('div', { class: 'lc-deck-card-footer' }, enActions) : null;
+    // In the card view the sections (synonyms, opposite, sentences) are not inside the card: they come below it,
+    // so the card with its buttons stays at the top and the sections scroll under it.
+    const sections = deckFullscreen && richSections.length ? h('div', { class: 'lc-deck-sections' }, ...richSections) : null;
     const inner = deckFullscreen
       ? h(
           'div',
           { class: 'lc-deck-card-inner' },
-          h('div', { class: 'lc-deck-hero' }, h('div', { class: 'lc-deck-main-row' }, enContent, enActions)),
+          h('div', { class: 'lc-deck-hero' }, h('div', { class: 'lc-deck-main-row' }, enContent)),
           faBlock,
-          richSections.length ? h('div', { class: 'lc-deck-card-scroll' }, ...richSections) : null,
+          cardFooter,
         )
       : h(
           'div',
@@ -1309,7 +1542,7 @@ export function linesPage({
           faBlock,
         );
 
-    return h(
+    const card = h(
       'div',
       {
         class: `lc-deck-card${deckRich ? ' lc-deck-card-rich' : ''}${deckFullscreen ? ' lc-deck-card-fs' : ''}`,
@@ -1318,6 +1551,8 @@ export function linesPage({
       },
       inner,
     );
+    // The wrapper carries the card-view class too: the buttons and sections are styled by it (see app.css).
+    return deckFullscreen ? h('div', { class: 'lc-deck-fs-wrap lc-deck-card-fs' }, card, sections) : card;
   };
 
   refreshDeckCard = (flatIndex) => {
@@ -1380,6 +1615,7 @@ export function linesPage({
     playTitle,
     shuffle,
     playbarFeatures,
+    onCardView: deckFullscreen ? () => openManual() : null,
     getPlaybackRows,
     onLine: (index, ctx) => {
       if (index === null) {
@@ -1445,6 +1681,9 @@ export function linesPage({
     },
   });
   playbarEl = playbarApi.element;
+  // The counter moves from the playbar to the search row (see dockPlaybar for the footer case).
+  playbarMetaEl = playbarEl?.querySelector('.lc-playbar-meta') ?? null;
+  if (playbarMetaEl && searchBar) searchBar.append(playbarMetaEl);
   playbarPickLine = playbarApi.pickLine;
   playbarOnRowsChanged = playbarApi.onPlaybackRowsChanged;
   playbackRowsFingerprint = getPlaybackRows().map((row) => row.key).join('\0');
@@ -1461,10 +1700,11 @@ export function linesPage({
   const pageEl = h('div', { class: `lc-page${search ? ' lc-page-search' : ''}` });
   linesAutoplayUiSync = () => {
     const deckPlaying = deckPlayback && linesIsPlaying;
-    const inDeckSession = deckFullscreen && deckPlaying;
+    const inDeckSession = deckFullscreen && (deckPlaying || manualOpen);
     pageEl.classList.toggle('lc-autoplay-active', linesIsPlaying);
     pageEl.classList.toggle('lc-deck-active', deckPlaying && !deckFullscreen);
     pageEl.classList.toggle('lc-deck-session-page', inDeckSession);
+    pageEl.classList.toggle('lc-deck-manual', Boolean(inDeckSession && manualOpen && !linesIsPlaying));
     document.body.classList.toggle('lc-deck-session-active', inDeckSession);
     if (deckSession) deckSession.hidden = !inDeckSession;
     if (listShell) listShell.hidden = inDeckSession;
@@ -1480,10 +1720,11 @@ export function linesPage({
     if (deckPlayback && linesIsPlaying) {
       linesFollowScroll = false;
       if (!deckFullscreen) scrollDeckIntoView();
-    } else if (deckPlayback) {
+    } else if (deckPlayback && !manualOpen) {
       deckLastIndex = null;
       clearDeckStage();
     }
+    if (manualOpen) syncManualButtons();
   };
   notifyLinesPlaybackUi();
   listShell.append(
@@ -1497,9 +1738,9 @@ export function linesPage({
         ]
       : []),
     h('div', { class: 'chips lc-modes' }, ...modeButtons.map((entry) => entry.element)),
-    ...(playbar ? [playbar] : []),
+    // The play bar and the search stay under the header while the list scrolls, in one compact strip.
+    ...(playbar || searchBar ? [h('div', { class: 'lc-sticky-bar' }, ...(playbar ? [playbar] : []), ...(searchBar ? [searchBar] : []))] : []),
     ...(deckWrap ? [deckWrap] : []),
-    ...(searchBar ? [searchBar] : []),
     ...(searchEmpty ? [searchEmpty] : []),
     body,
   );

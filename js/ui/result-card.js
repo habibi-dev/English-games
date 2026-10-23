@@ -329,7 +329,7 @@ function fileNameFor(date) {
 export function shareMessage(card) {
   const r = card.report;
   const finished = r.lessonsCompleted ? `, finished ${r.lessonsCompleted} lesson${r.lessonsCompleted === 1 ? '' : 's'}` : '';
-  return `English Grammar Quest: ${card.correct} of ${card.answered} correct (${percentOf(card.accuracy)})${finished}. Level ${card.levelAfter}.`;
+  return `English Quest: ${card.correct} of ${card.answered} correct (${percentOf(card.accuracy)})${finished}. Level ${card.levelAfter}.`;
 }
 
 function download(blob, name) {
@@ -364,7 +364,7 @@ export async function shareResultCard(card) {
     throw error;
   }
   try {
-    await navigator.share({ files: [file], title: 'English Grammar Quest', text: shareMessage(card) });
+    await navigator.share({ files: [file], title: 'English Quest', text: shareMessage(card) });
     return 'shared';
   } catch (error) {
     if (error?.name === 'AbortError') return 'cancelled';

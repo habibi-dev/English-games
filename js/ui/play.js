@@ -7,7 +7,7 @@ import { CATEGORIES, DIFFICULTIES, topicLabel, lessonKey, unitKey, persianSenten
 import { filterQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode, MAX_MISSION_QUESTIONS } from '../engine/game-engine.js';
 import { validateAnswer } from '../engine/validator.js';
 import { clearReviewHandoff, hasReviewIntent, requestReview, takeReview } from './review-handoff.js';
-import { lessonHub, linesPage, storiesPage, stopStoryReading, stopLinesPlayback } from './lesson-content.js';
+import { lessonHub, linesPage, storiesPage, stopStoryReading, stopLinesPlayback, handleCardViewBack } from './lesson-content.js';
 import { lessonMaterial, buildWordStudyIndex } from '../bank/lesson-vocabulary.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, levelStartXp, resultTier } from '../progress/player.js';
@@ -187,6 +187,8 @@ window.addEventListener('popstate', async () => {
 
 // The back and forward buttons between the setup steps (see showSetup: each step is a history entry).
 window.addEventListener('popstate', (event) => {
+  // The card view of a lesson page (words / sentences) closes on back: that is not a setup step either.
+  if (handleCardViewBack()) return;
   if (skipPop) {
     skipPop = false;
     if (pendingHome) {
