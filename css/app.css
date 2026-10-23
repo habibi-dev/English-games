@@ -6033,6 +6033,9 @@ body.lc-deck-session-active .lc-deck-session-main {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
+  /* The scroller must carry pan-y too: a child's touch-action is limited by it, and without this a sideways
+     drag over the content (not only on the footer) was not passed to the swipe to the next or previous word. */
+  touch-action: pan-y;
   /* Still scrolls by touch, wheel or keys, but no scrollbar is drawn. */
   scrollbar-width: none;
 }
