@@ -4586,6 +4586,40 @@ body.game-running .topbar-admin .icon-exit {
   height: 56px;
 }
 
+.topbar-back {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  margin-inline-end: -2px;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.topbar-back[hidden] {
+  display: none;
+}
+
+.topbar-back:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.topbar-back:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.7);
+  outline-offset: 2px;
+}
+
+.topbar-back svg {
+  width: 22px;
+  height: 22px;
+}
+
 /* The logo and title as one link back to the first screen. Keeps the look of the header. */
 .brand-home {
   display: flex;

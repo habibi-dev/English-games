@@ -108,6 +108,16 @@ let pendingHome = false;
 // While a review from reports is loading, a second router run must not open the setup on an old history step.
 let reviewLoadPromise = null;
 
+/** Same action as the in-page “← Back” button on setup screens; null on the root screen and during a game. */
+function setTopbarBack(handler) {
+  const btn = document.querySelector('.topbar-back');
+  if (!btn) return;
+  const show = typeof handler === 'function';
+  btn.hidden = !show;
+  document.body.classList.toggle('topbar-has-back', show);
+  btn.onclick = show ? handler : null;
+}
+
 /** Used by the header to ask before leaving a game. */
 export const isGameInProgress = () => gameInProgress;
 
@@ -294,6 +304,7 @@ export async function renderPlay(root) {
     setGameRunning(false);
     keepScreenOn(false);
     settingsStart = null;
+    setTopbarBack(null);
   };
 }
 
@@ -572,9 +583,7 @@ async function showSetup(root, restore = null) {
     show(step);
   }
 
-  // The "← Back to …" buttons: the step before this one. The history back is used only when the entry below really
-  // is that step. Otherwise (for example, the screen was opened fresh on top of an older entry) this entry is replaced
-  // by the parent, so the button never lands on an unrelated screen such as a unit list.
+  // Header back (setTopbarBack) uses the same rules: history back when the entry below matches, otherwise replaceState.
   function back(parent) {
     const current = history.state?.setup ?? null;
     if (current?.depth > 0 && current.from === stepKey(parent)) {
@@ -593,6 +602,7 @@ async function showSetup(root, restore = null) {
   function drawSeriesStep() {
     settingsStart = null;
     setTabMode('home');
+    setTopbarBack(null);
     info = null;
     // Tapping a series opens its books at once.
     const grid = h(
@@ -626,6 +636,7 @@ async function showSetup(root, restore = null) {
   function drawBookStep(seriesId) {
     settingsStart = null;
     setTabMode('home');
+    setTopbarBack(() => back({ name: 'series' }));
     info = null;
     const entry = series.find((item) => item.id === seriesId) ?? series[0];
     // Tapping a book opens its lessons at once. The book is remembered for the next visit.
@@ -655,11 +666,6 @@ async function showSetup(root, restore = null) {
       h(
         'section',
         { class: 'card setup game' },
-        h(
-          'div',
-          { class: 'actions' },
-          h('button', { type: 'button', class: 'btn ghost small back-btn', onclick: () => back({ name: 'series' }) }, '← Back to series'),
-        ),
         stepTitle(`Books in ${entry.title}`),
         grid,
       ),
@@ -673,6 +679,7 @@ async function showSetup(root, restore = null) {
     setTabMode('home');
     const book = allBooks.find((entry) => entry.id === state.book);
     const parent = seriesOf(book.id);
+    setTopbarBack(() => back({ name: 'book', series: parent?.id }));
     const allKeys = book.lessons.map((lesson) => lesson.key);
     const lastKey = lastPracticedKey(book);
     const unitBox = h('div', { class: 'lesson-list' });
@@ -705,15 +712,6 @@ async function showSetup(root, restore = null) {
         'section',
         { class: 'card setup game' },
         bookHeader(book, progressOfLessons(allKeys)),
-        h(
-          'div',
-          { class: 'actions' },
-          h(
-            'button',
-            { type: 'button', class: 'btn ghost small back-btn', onclick: () => back({ name: 'book', series: parent?.id }) },
-            '← Back to books',
-          ),
-        ),
         stepTitle('Units'),
         unitBox,
       ),
@@ -728,6 +726,7 @@ async function showSetup(root, restore = null) {
     const book = allBooks.find((entry) => entry.id === state.book);
     const unit = book.units.find((item) => item.key === unitKeyValue);
     if (!unit) return drawUnitStep();
+    setTopbarBack(() => back({ name: 'unit', book: state.book }));
     const allKeys = unit.lessons.map((lesson) => lesson.key);
     const lastKey = lastPracticedKey(book);
     const lessonBox = h('div', { class: 'lesson-list' });
@@ -759,15 +758,6 @@ async function showSetup(root, restore = null) {
         'section',
         { class: 'card setup game' },
         unitHeader(book, unit, progressOfLessons(allKeys)),
-        h(
-          'div',
-          { class: 'actions' },
-          h(
-            'button',
-            { type: 'button', class: 'btn ghost small back-btn', onclick: () => back({ name: 'unit', book: state.book }) },
-            '← Back to units',
-          ),
-        ),
         stepTitle(unit.title),
         lessonBox,
       ),
@@ -811,11 +801,9 @@ async function showSetup(root, restore = null) {
     );
     const hubStep = { name: 'hub', book: state.book, unit: step.unit ?? null, lessons: [...state.lessons] };
 
-    let backLabel = '← Back to options';
     let backTo = hubStep;
     let body;
     if (step.name === 'hub') {
-      backLabel = unit ? '← Back to lessons' : '← Back to books';
       backTo = unit ? { name: 'lesson', book: state.book, unit: unit.key } : { name: 'book', series: seriesOf(state.book)?.id };
       const tiles = [
         {
@@ -905,6 +893,8 @@ async function showSetup(root, restore = null) {
       body = h('div', {}, stepTitle('Stories'), storiesPage(material.stories));
     }
 
+    setTopbarBack(() => back(backTo));
+
     scrollToTop();
     root.replaceChildren(
       playerCard(profile),
@@ -912,11 +902,6 @@ async function showSetup(root, restore = null) {
         'section',
         { class: 'card setup game' },
         selectionHeader(book, unit, chosenLessons, progressOfLessons(state.lessons)),
-        h(
-          'div',
-          { class: 'actions' },
-          h('button', { type: 'button', class: 'btn ghost small back-btn', onclick: () => back(backTo) }, backLabel),
-        ),
         body,
       ),
     );
@@ -941,6 +926,9 @@ async function showSetup(root, restore = null) {
       return true;
     };
     setTabMode('play');
+    setTopbarBack(() =>
+      back({ name: 'hub', book: state.book, unit: state.unit, lessons: [...state.lessons] }),
+    );
 
     scrollToTop();
     root.replaceChildren(
@@ -953,20 +941,6 @@ async function showSetup(root, restore = null) {
           state.unit ? book.units.find((item) => item.key === state.unit) ?? null : null,
           book.lessons.filter((lesson) => state.lessons.includes(lesson.key)),
           progressOfLessons(state.lessons),
-        ),
-        h(
-          'div',
-          { class: 'actions' },
-          h(
-            'button',
-            {
-              type: 'button',
-              class: 'btn ghost small back-btn',
-              onclick: () =>
-                back({ name: 'hub', book: state.book, unit: state.unit, lessons: [...state.lessons] }),
-            },
-            '← Back to options',
-          ),
         ),
         stepTitle('Difficulty'),
         chipGroup(MODE_CHOICES, state.mode, {
@@ -1423,6 +1397,7 @@ function renderQuestion(root, session, flow) {
   keepScreenOn(true);
   settingsStart = null;
   setTabMode('home');
+  setTopbarBack(null);
   // Every new question starts at the top of the page.
   scrollToTop();
   const { question: q, index, total } = session.current;
