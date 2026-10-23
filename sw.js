@@ -2,7 +2,10 @@
 // Strategy: network first, so bank updates and code changes are picked up when online;
 // every successful same-origin GET is cached, and the cache is used when the network fails.
 
-const CACHE = 'english-quest-runtime-v2';
+// The version of the app. Change it on every release: the browser sees a new service worker (so the installed
+// app updates), and the cache of the old version is deleted when the new one activates.
+const VERSION = '2026-10-23.1';
+const CACHE = `english-quest-${VERSION}`;
 
 self.addEventListener('install', () => {
   self.skipWaiting();

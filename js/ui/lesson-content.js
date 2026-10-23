@@ -1263,6 +1263,27 @@ export function linesPage({
       h('div', { class: 'lc-deck-session-main' }, deckStage),
       deckPlaybarFooter,
     );
+    // In the card view a horizontal swipe moves to the next (swipe left) or the previous (swipe right) word.
+    // Vertical movement is left to the page's scrolling, and the buttons keep their own taps.
+    let swipeStart = null;
+    deckSession.addEventListener('pointerdown', (event) => {
+      if (!manualOpen || event.button > 0 || event.target.closest('button, a, input, textarea')) {
+        swipeStart = null;
+        return;
+      }
+      swipeStart = { x: event.clientX, y: event.clientY, id: event.pointerId };
+    });
+    deckSession.addEventListener('pointerup', (event) => {
+      if (!swipeStart || event.pointerId !== swipeStart.id) return;
+      const dx = event.clientX - swipeStart.x;
+      const dy = event.clientY - swipeStart.y;
+      swipeStart = null;
+      if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+      manualStep(dx < 0 ? 1 : -1);
+    });
+    deckSession.addEventListener('pointercancel', () => {
+      swipeStart = null;
+    });
   } else if (deckPlayback) {
     deckWrap = h('div', { class: 'lc-deck' }, deckStage);
   }
@@ -1367,14 +1388,22 @@ export function linesPage({
   let refreshDeckCard = () => {};
 
   // A synonym or opposite: the word with its own speaker (normal and slow), as a sentence has in the list.
+  // Same card as a sentence (see deckExampleRow): the word, and its speakers floating at the top-right.
   const deckWordChip = (word) => {
-    const chip = h('span', { class: 'lc-deck-chip' }, h('span', { class: 'lc-deck-chip-text' }, word));
     const buttons = [
       speakActionButton('normal', 'Read aloud', () => speak(word)),
       speakActionButton('slow', 'Read slowly', () => speak(word, { slow: true })),
     ].filter(Boolean);
-    chip.append(...buttons);
-    return chip;
+    return h(
+      'div',
+      { class: 'lc-deck-example' },
+      h(
+        'div',
+        { class: 'lc-deck-en-actions lc-deck-example-actions' },
+        h('span', { class: 'speak-buttons' }, ...buttons),
+      ),
+      h('p', { class: 'lc-deck-example-en', dir: 'ltr' }, word),
+    );
   };
 
   const deckChipRow = (title, items) => {
@@ -1523,7 +1552,14 @@ export function linesPage({
       : [];
 
     // In the card view the buttons sit in a footer band at the bottom of the card, apart from the English and the translation.
-    const cardFooter = enActions ? h('div', { class: 'lc-deck-card-footer' }, enActions) : null;
+    // The position in the list ("3 / 170"), small, at the bottom-left of the card footer.
+    let cardCount = null;
+    if (enActions) {
+      const rows = getPlaybackRows();
+      const pos = rows.findIndex((row) => row.index === flatIndex);
+      cardCount = h('span', { class: 'lc-deck-count' }, pos >= 0 ? `${pos + 1} / ${rows.length}` : '');
+    }
+    const cardFooter = enActions ? h('div', { class: 'lc-deck-card-footer' }, cardCount, enActions) : null;
     // In the card view the sections (synonyms, opposite, sentences) are not inside the card: they come below it,
     // so the card with its buttons stays at the top and the sections scroll under it.
     const sections = deckFullscreen && richSections.length ? h('div', { class: 'lc-deck-sections' }, ...richSections) : null;

@@ -147,7 +147,25 @@ async function boot() {
   // Ask the browser to keep stored progress (best effort; ignored where unsupported).
   navigator.storage?.persist?.()?.catch?.(() => {});
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch((error) => console.warn('Service worker:', error));
+    // An app that was already open runs the old code until it reloads. When a new version takes over, the page
+    // reloads once onto it (not during a game, so the learner does not lose the question on screen).
+    const hadOldVersion = Boolean(navigator.serviceWorker.controller);
+    let reloadingForUpdate = false;
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (!hadOldVersion || reloadingForUpdate) return;
+      if (isGameInProgress()) return;
+      reloadingForUpdate = true;
+      window.location.reload();
+    });
+    navigator.serviceWorker
+      .register('./sw.js')
+      .then((registration) => {
+        // Check for a new version each time the app comes back to the front (a phone may have been closed for days).
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') registration.update().catch(() => {});
+        });
+      })
+      .catch((error) => console.warn('Service worker:', error));
   }
 }
 

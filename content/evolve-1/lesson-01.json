@@ -12314,15 +12314,6 @@
           "hint": "صدا زدن",
           "time_limit": 60,
           "translation": "صدا زدن"
-        },
-        {
-          "id": "evolve-1-l01-dic-120",
-          "question": "bahar",
-          "expected_answer": "bahar",
-          "explanation": "به ترتیب حروف و فاصله‌ی بین کلمات دقت کن.",
-          "hint": "بهار (نام)",
-          "time_limit": 60,
-          "translation": "بهار (نام)"
         }
       ]
     },
@@ -12574,11 +12565,6 @@
         "meaning": "کمک کردن / مساعدت"
       },
       {
-        "word": "ali",
-        "ipa": "/ˈɑːli/",
-        "meaning": "علی (نام)"
-      },
-      {
         "word": "alley",
         "ipa": "/ˈæli/",
         "meaning": "کوچه"
@@ -12637,11 +12623,6 @@
         "word": "bad",
         "ipa": "/bæd/",
         "meaning": "بد"
-      },
-      {
-        "word": "bahar",
-        "ipa": "/bəˈhɑːr/",
-        "meaning": "بهار (نام)"
       },
       {
         "word": "band",
@@ -12867,11 +12848,6 @@
         "word": "group",
         "ipa": "/ɡruːp/",
         "meaning": "گروه"
-      },
-      {
-        "word": "habibi",
-        "ipa": "/həˈbiːbi/",
-        "meaning": "حبیبی (نام خانوادگی)"
       },
       {
         "word": "hand",

@@ -6006,6 +6006,8 @@ body.lc-deck-session-active .step-title {
 }
 
 body.lc-deck-session-active .lc-deck-session {
+  /* The page still scrolls up and down; sideways moves are left to the swipe to the next or previous word. */
+  touch-action: pan-y;
   position: fixed;
   z-index: 6;
   top: calc(env(safe-area-inset-top) + 68px);
@@ -6128,6 +6130,16 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
   border-top: 1px solid #e2e8f0;
 }
 
+/* The position in the list, small, pushed to the left of the footer. */
+.lc-deck-card-fs .lc-deck-card-footer .lc-deck-count {
+  margin-inline-end: auto;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #64748b;
+  font-variant-numeric: tabular-nums;
+}
+
 .lc-deck-card-fs .lc-deck-card-footer .lc-deck-en-actions {
   position: static;
   flex-direction: row;
@@ -6215,65 +6227,12 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
   gap: 8px;
 }
 
-/* Synonyms and opposites are words, so each one is a card like a word card: one row per word, the word in bold,
-   its speakers on the right. */
+/* A synonym or opposite is a card exactly like a sentence card (.lc-deck-example): the word, and its buttons
+   floating in the top-right corner. The list of them uses the same gap as the sentences. */
 .lc-deck-section .lc-deck-chips {
   flex-direction: column;
   flex-wrap: nowrap;
-  gap: 8px;
-}
-
-.lc-deck-section .lc-deck-chip {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 8px 10px 8px 14px;
-  border-radius: 14px;
-  border: 1px solid var(--border);
-  background: #fff;
-  color: #0f172a;
-  font-size: 1.05rem;
-  font-weight: 700;
-}
-
-.lc-deck-section .lc-deck-chip-text {
-  min-width: 0;
-  overflow-wrap: anywhere;
-}
-
-/* The speakers of a synonym or opposite: small round buttons, the same shape as the list's. */
-.lc-deck-section .lc-deck-chip .speak.speak-icon {
-  display: inline-grid;
-  place-items: center;
-  width: 28px;
-  min-width: 28px;
-  height: 28px;
-  min-height: 28px;
-  margin: 0;
-  padding: 0;
-  border-radius: 50%;
-  border: 1px solid #c7d2fe;
-  background: #fff;
-  color: #4338ca;
-  box-shadow: 0 2px 0 #c7d2fe;
-}
-
-.lc-deck-section .lc-deck-chip .speak.speak-icon:active:not(:disabled) {
-  transform: translateY(2px);
-  box-shadow: none;
-}
-
-.lc-deck-section .lc-deck-chip .speak-glyph {
-  display: grid;
-  place-items: center;
-  width: 15px;
-  height: 15px;
-}
-
-.lc-deck-section .lc-deck-chip .speak-glyph svg {
-  width: 15px;
-  height: 15px;
+  gap: 12px;
 }
 
 .lc-deck-examples .lc-deck-section-title {

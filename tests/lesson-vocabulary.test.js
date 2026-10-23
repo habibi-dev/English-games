@@ -4,6 +4,9 @@ import { readFileSync } from 'node:fs';
 import { flattenLesson } from '../js/bank/content.js';
 import { lessonWords, lessonSentences, lessonMaterial, buildWordStudyIndex } from '../js/bank/lesson-vocabulary.js';
 
+// Names of people in the lesson's sentences and stories. They are not vocabulary words, so they are not listed in it.
+const PERSON_NAMES = ['ali', 'habibi', 'bahar'];
+
 const lessonFile = JSON.parse(readFileSync(new URL('../content/evolve-1/lesson-01.json', import.meta.url), 'utf8'));
 const questions = flattenLesson(lessonFile, { book: 'evolve-1', lesson: 'lesson-01' }).questions;
 const content = lessonFile.lesson_content;
@@ -61,7 +64,7 @@ test('every vocabulary entry has an English word, a pronunciation and a Persian 
 });
 
 test('every English word of the lesson sentences is in the vocabulary', () => {
-  const known = new Set(content.vocabulary.flatMap((entry) => wordsOf(entry.word)));
+  const known = new Set([...PERSON_NAMES, ...content.vocabulary.flatMap((entry) => wordsOf(entry.word))]);
   const missing = new Set();
   for (const sentence of content.sentences) {
     for (const word of wordsOf(sentence.en)) if (!known.has(word)) missing.add(word);
@@ -70,7 +73,7 @@ test('every English word of the lesson sentences is in the vocabulary', () => {
 });
 
 test('every word of every story is in the lesson vocabulary', () => {
-  const known = new Set(content.vocabulary.flatMap((entry) => wordsOf(entry.word)));
+  const known = new Set([...PERSON_NAMES, ...content.vocabulary.flatMap((entry) => wordsOf(entry.word))]);
   for (const story of content.stories) {
     for (const line of story.lines) {
       for (const word of wordsOf(line.en)) {
