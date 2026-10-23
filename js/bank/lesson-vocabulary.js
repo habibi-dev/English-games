@@ -97,3 +97,63 @@ export function lessonMaterial(questions, contents = []) {
     ),
   };
 }
+
+const escapeRegExp = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+/**
+ * Synonyms, antonyms and example sentences for a lesson word (from vocabulary exercises + sentence bank).
+ */
+export function buildWordStudyIndex(questions, sentences, { maxExamples = 4 } = {}) {
+  const synonymOf = new Map();
+  const antonymOf = new Map();
+
+  const addRelation = (map, base, related) => {
+    const baseKey = text(base).toLowerCase();
+    const rel = text(related);
+    if (!baseKey || !rel) return;
+    if (!map.has(baseKey)) map.set(baseKey, new Set());
+    map.get(baseKey).add(rel);
+  };
+
+  for (const q of questions) {
+    if (q.category !== 'vocabulary') continue;
+    const qtext = text(q.question);
+    let kind = null;
+    let base = '';
+    if (/^synonym\b/i.test(qtext)) {
+      kind = 'synonym';
+      base = qtext.replace(/^synonym(?:\s*\([^)]*\))?:\s*/i, '');
+    } else if (/^opposite\b/i.test(qtext)) {
+      kind = 'antonym';
+      base = qtext.replace(/^opposite:\s*/i, '');
+    } else continue;
+
+    const answers = [q.expected_answer, ...(q.accepted_answers ?? [])].map((a) => text(a)).filter(Boolean);
+    const map = kind === 'synonym' ? synonymOf : antonymOf;
+    for (const answer of answers) {
+      addRelation(map, base, answer);
+      addRelation(map, answer, base);
+    }
+  }
+
+  const sentenceList = (sentences ?? []).map((entry) => ({
+    english: text(entry.english ?? entry.en),
+    persian: text(entry.persian ?? entry.fa),
+  }));
+
+  return (word) => {
+    const key = text(word).toLowerCase();
+    const pattern = new RegExp(`\\b${escapeRegExp(text(word))}\\b`, 'i');
+    const examples = [];
+    for (const line of sentenceList) {
+      if (!pattern.test(line.english)) continue;
+      examples.push(line);
+      if (examples.length >= maxExamples) break;
+    }
+    return {
+      synonyms: [...(synonymOf.get(key) ?? [])].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })),
+      antonyms: [...(antonymOf.get(key) ?? [])].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })),
+      examples,
+    };
+  };
+}

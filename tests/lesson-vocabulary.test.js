@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { flattenLesson } from '../js/bank/content.js';
-import { lessonWords, lessonSentences, lessonMaterial } from '../js/bank/lesson-vocabulary.js';
+import { lessonWords, lessonSentences, lessonMaterial, buildWordStudyIndex } from '../js/bank/lesson-vocabulary.js';
 
 const lessonFile = JSON.parse(readFileSync(new URL('../content/evolve-1/lesson-01.json', import.meta.url), 'utf8'));
 const questions = flattenLesson(lessonFile, { book: 'evolve-1', lesson: 'lesson-01' }).questions;
@@ -117,6 +117,31 @@ test('lessonMaterial gives each story line its English and Persian under english
       assert.ok(line.persian, `line without Persian in "${story.title}"`);
     }
   }
+});
+
+test('buildWordStudyIndex links synonyms, antonyms and example sentences to a word', () => {
+  const study = buildWordStudyIndex(
+    [
+      {
+        category: 'vocabulary',
+        question: 'Synonym: help',
+        expected_answer: 'assist',
+        accepted_answers: ['aid'],
+      },
+      {
+        category: 'vocabulary',
+        question: 'Opposite: open',
+        expected_answer: 'close',
+      },
+    ],
+    [{ english: 'Can you help me?', persian: 'می‌توانی کمکم کنی؟' }],
+  );
+  const help = study('help');
+  assert.deepEqual(help.synonyms.sort(), ['aid', 'assist']);
+  assert.deepEqual(help.antonyms, []);
+  assert.equal(help.examples.length, 1);
+  const open = study('open');
+  assert.deepEqual(open.antonyms, ['close']);
 });
 
 test('lessonMaterial falls back to the questions when a lesson has no content', () => {

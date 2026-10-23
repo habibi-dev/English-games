@@ -8,7 +8,7 @@ import { filterQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode, MAX_M
 import { validateAnswer } from '../engine/validator.js';
 import { clearReviewHandoff, hasReviewIntent, requestReview, takeReview } from './review-handoff.js';
 import { lessonHub, linesPage, storiesPage, stopStoryReading, stopLinesPlayback } from './lesson-content.js';
-import { lessonMaterial } from '../bank/lesson-vocabulary.js';
+import { lessonMaterial, buildWordStudyIndex } from '../bank/lesson-vocabulary.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, levelStartXp, resultTier } from '../progress/player.js';
 import { doneIds, progressOf } from '../progress/lesson-progress.js';
@@ -840,18 +840,33 @@ async function showSetup(root, restore = null) {
       settingsStart = () => go({ name: 'settings', book: state.book, unit: hubStep.unit, lessons: [...state.lessons] });
       setTabMode('practice');
     } else if (step.name === 'words') {
+      const wordStudy = buildWordStudyIndex(chosenQuestions, material.sentences);
       body = h(
         'div',
         {},
         stepTitle('Words'),
         linesPage({
-          groups: [{ rows: material.words.map((w) => ({ english: w.word, persian: w.meaning, ipa: w.ipa })) }],
+          groups: [
+            {
+              rows: material.words.map((w) => {
+                const extra = wordStudy(w.word);
+                return {
+                  english: w.word,
+                  persian: w.meaning,
+                  ipa: w.ipa,
+                  synonyms: extra.synonyms,
+                  antonyms: extra.antonyms,
+                  examples: extra.examples,
+                };
+              }),
+            },
+          ],
           speakLabel: 'Read the word aloud',
           playbarLabel: 'Listen to all words',
           playTitle: 'Play all words slowly',
           shuffle: true,
           search: true,
-          playbarFeatures: { autoReveal: true, deckPlayback: true },
+          playbarFeatures: { autoReveal: true, deckPlayback: true, deckRich: true },
         }),
       );
     } else if (step.name === 'sentences') {

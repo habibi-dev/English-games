@@ -178,6 +178,8 @@ export function stopLinesPlayback() {
   stopLinesPlaybackFn?.();
   stopLinesPlaybackFn = null;
   playbackStepRelative = () => {};
+  linesIsPlaying = false;
+  document.body.classList.remove('lc-deck-session-active');
   setLessonWakeLock(false);
   followUiSync();
   syncBottomPlaybackButtons({ canPrev: false, canNext: false });
@@ -889,6 +891,8 @@ export function linesPage({
   playbar: showPlaybar = true,
 }) {
   const deckPlayback = Boolean(playbarFeatures.deckPlayback);
+  const deckFullscreen = deckPlayback && playbarFeatures.deckFullscreen !== false;
+  const deckRich = deckPlayback && Boolean(playbarFeatures.deckRich);
   let mode = 'english';
   let searchQuery = '';
   let deckLastIndex = null;
@@ -957,10 +961,35 @@ export function linesPage({
         )
       : null;
 
+    // Word rows always get the same two lines (Synonyms, Opposite); a line with nothing in this lesson shows a dash.
+    const isWordRow = entry.synonyms !== undefined || entry.antonyms !== undefined;
+    const relationLine = (label, words, kind) =>
+      h(
+        'div',
+        { class: `lc-rel-line lc-rel-line-${kind}` },
+        h('span', { class: 'lc-rel-label' }, label),
+        words?.length
+          ? h(
+              'span',
+              { class: 'lc-rel-chips', dir: 'ltr' },
+              ...words.map((word) => h('span', { class: `lc-rel-chip lc-rel-chip-${kind}` }, word)),
+            )
+          : h('span', { class: 'lc-rel-empty' }, '—'),
+      );
+    const relations =
+      isWordRow && englishShown
+        ? h(
+            'div',
+            { class: 'lc-relations' },
+            relationLine('Synonyms', entry.synonyms, 'syn'),
+            relationLine('Opposite', entry.antonyms, 'ant'),
+          )
+        : null;
+
     return h(
       'li',
       {
-        class: `lc-item${highlightKey === key ? ' is-reading' : ''}${activePlayKey === key ? ' is-active-play' : ''}${pickIndex === flatIndex && !linesIsPlaying ? ' is-pick' : ''}`,
+        class: `lc-item${isWordRow ? ' lc-item-rich' : ''}${highlightKey === key ? ' is-reading' : ''}${activePlayKey === key ? ' is-active-play' : ''}${pickIndex === flatIndex && !linesIsPlaying ? ' is-pick' : ''}`,
         onclick: (event) => {
           if (event.target.closest('button')) return;
           playbarPickLine(flatIndex);
@@ -985,6 +1014,7 @@ export function linesPage({
         eye,
         englishShown ? speakButtons(entry.english, { label: speakLabel }) : null,
       ),
+      relations,
     );
   };
 
@@ -1121,10 +1151,30 @@ export function linesPage({
   };
 
   const deckStage = h('div', { class: 'lc-deck-stage', hidden: true });
-  const deckWrap = deckPlayback ? h('div', { class: 'lc-deck' }, deckStage) : null;
+  const playbarHome = h('div', { class: 'lc-playbar-home' });
+  let deckPlaybarFooter = null;
+  let deckSession = null;
+  let deckWrap = null;
+  if (deckPlayback && deckFullscreen) {
+    deckPlaybarFooter = h('div', { class: 'lc-deck-session-footer' });
+    deckSession = h(
+      'div',
+      { class: 'lc-deck-session', hidden: true },
+      h('div', { class: 'lc-deck-session-main' }, deckStage),
+      deckPlaybarFooter,
+    );
+  } else if (deckPlayback) {
+    deckWrap = h('div', { class: 'lc-deck' }, deckStage);
+  }
+
+  const dockPlaybar = (docked) => {
+    if (!playbarEl || !deckPlaybarFooter) return;
+    (docked ? deckPlaybarFooter : playbarHome).append(playbarEl);
+    playbarEl.classList.toggle('lc-playbar-docked', docked);
+  };
 
   const scrollDeckIntoView = () => {
-    if (!deckWrap) return;
+    if (deckFullscreen || !deckWrap) return;
     window.requestAnimationFrame(() => {
       deckWrap.scrollIntoView({ block: 'center', behavior: 'smooth' });
     });
@@ -1135,6 +1185,41 @@ export function linesPage({
 
   let refreshDeckCard = () => {};
 
+  const deckChipRow = (title, items) => {
+    if (!items?.length) return null;
+    return h(
+      'div',
+      { class: 'lc-deck-section' },
+      h('h5', { class: 'lc-deck-section-title' }, title),
+      h(
+        'div',
+        { class: 'lc-deck-chips', dir: 'ltr' },
+        ...items.map((label) => h('span', { class: 'lc-deck-chip' }, label)),
+      ),
+    );
+  };
+
+  const deckExamplesBlock = (examples) => {
+    if (!examples?.length) return null;
+    return h(
+      'div',
+      { class: 'lc-deck-section lc-deck-examples' },
+      h('h5', { class: 'lc-deck-section-title' }, 'In sentences'),
+      h(
+        'ul',
+        { class: 'lc-deck-example-list' },
+        ...examples.map((line) =>
+          h(
+            'li',
+            { class: 'lc-deck-example' },
+            h('p', { class: 'lc-deck-example-en', dir: 'ltr' }, line.english),
+            line.persian ? h('p', { class: 'lc-deck-example-fa', dir: 'rtl' }, line.persian) : null,
+          ),
+        ),
+      ),
+    );
+  };
+
   const buildDeckCard = (entry, key, flatIndex) => {
     const englishShown = mode !== 'persian' || revealed.has(key);
     const persianShown = mode !== 'english' || revealed.has(key);
@@ -1143,7 +1228,8 @@ export function linesPage({
 
     const eyeGlyph = h('span', { class: 'lc-eye-glyph' });
     eyeGlyph.innerHTML = isRevealed ? EYE_OFF_ICON : EYE_ICON;
-    const deckEye = persianHiddenByMode
+    // The playback screen has no eye or speaker on the card: the line is read and revealed by playback itself.
+    const deckEye = persianHiddenByMode && !deckFullscreen
       ? keepFocus(
           h(
             'button',
@@ -1177,17 +1263,50 @@ export function linesPage({
     const faBlock =
       entry.persian && persianShown
         ? h('div', { class: 'lc-deck-fa-block', dir: 'rtl' }, h('p', { class: 'lc-deck-fa' }, entry.persian))
-        : null;
+        : entry.persian && persianHiddenByMode && !persianShown
+          ? h('div', { class: 'lc-deck-fa-block lc-deck-fa-hidden', dir: 'rtl' }, h('p', { class: 'lc-deck-fa lc-deck-hidden' }, '• • • • •'))
+          : null;
+
+    const enActions = deckFullscreen
+      ? null
+      : h(
+          'div',
+          { class: 'lc-deck-en-actions' },
+          deckEye,
+          englishShown ? speakButtons(entry.english, { label: speakLabel }) : null,
+        );
+
+    const richSections = deckRich
+      ? [
+          deckChipRow('Synonyms', entry.synonyms),
+          deckChipRow('Opposite', entry.antonyms),
+          deckExamplesBlock(entry.examples),
+        ].filter(Boolean)
+      : [];
+
+    const inner = deckFullscreen
+      ? h(
+          'div',
+          { class: 'lc-deck-card-inner' },
+          h('div', { class: 'lc-deck-hero' }, h('div', { class: 'lc-deck-main-row' }, enContent, enActions)),
+          faBlock,
+          richSections.length ? h('div', { class: 'lc-deck-card-scroll' }, ...richSections) : null,
+        )
+      : h(
+          'div',
+          { class: 'lc-deck-card-inner' },
+          h('div', { class: 'lc-deck-en-block' }, h('div', { class: 'lc-deck-main-row' }, deckEye, enContent)),
+          faBlock,
+        );
 
     return h(
       'div',
-      { class: 'lc-deck-card', role: 'status', 'aria-live': 'polite' },
-      h(
-        'div',
-        { class: 'lc-deck-card-inner' },
-        h('div', { class: 'lc-deck-en-block' }, h('div', { class: 'lc-deck-main-row' }, deckEye, enContent)),
-        faBlock,
-      ),
+      {
+        class: `lc-deck-card${deckRich ? ' lc-deck-card-rich' : ''}${deckFullscreen ? ' lc-deck-card-fs' : ''}`,
+        role: 'status',
+        'aria-live': 'polite',
+      },
+      inner,
     );
   };
 
@@ -1206,6 +1325,12 @@ export function linesPage({
     const { entry, key } = flatRows[flatIndex];
     const incoming = buildDeckCard(entry, key, flatIndex);
     deckStage.hidden = false;
+
+    if (deckFullscreen) {
+      deckStage.replaceChildren(incoming);
+      return;
+    }
+
     const current = deckStage.querySelector('.lc-deck-card');
     const reduced = prefersReducedMotion();
 
@@ -1313,16 +1438,27 @@ export function linesPage({
   playbarPickLine = playbarApi.pickLine;
   playbarOnRowsChanged = playbarApi.onPlaybackRowsChanged;
   playbackRowsFingerprint = getPlaybackRows().map((row) => row.key).join('\0');
-  if (playbarEl) playbarEl.hidden = !getPlaybackRows().length;
-  playbar = flatRows.length ? playbarEl : null;
+  if (playbarEl) {
+    playbarHome.append(playbarEl);
+    playbarEl.hidden = !getPlaybackRows().length;
+  }
+  playbar = flatRows.length ? playbarHome : null;
   } else {
     playbarPickLine = pickRowOnly;
   }
 
+  const listShell = h('div', { class: 'lc-list-shell' });
   const pageEl = h('div', { class: `lc-page${search ? ' lc-page-search' : ''}` });
   linesAutoplayUiSync = () => {
+    const deckPlaying = deckPlayback && linesIsPlaying;
+    const inDeckSession = deckFullscreen && deckPlaying;
     pageEl.classList.toggle('lc-autoplay-active', linesIsPlaying);
-    pageEl.classList.toggle('lc-deck-active', deckPlayback && linesIsPlaying);
+    pageEl.classList.toggle('lc-deck-active', deckPlaying && !deckFullscreen);
+    pageEl.classList.toggle('lc-deck-session-page', inDeckSession);
+    document.body.classList.toggle('lc-deck-session-active', inDeckSession);
+    if (deckSession) deckSession.hidden = !inDeckSession;
+    if (listShell) listShell.hidden = inDeckSession;
+    dockPlaybar(inDeckSession);
     if (searchBar) searchBar.hidden = Boolean(deckPlayback && linesIsPlaying);
     if (searchEmpty) {
       if (deckPlayback && linesIsPlaying) searchEmpty.hidden = true;
@@ -1333,15 +1469,14 @@ export function linesPage({
     }
     if (deckPlayback && linesIsPlaying) {
       linesFollowScroll = false;
-      deckStage.hidden = false;
-      scrollDeckIntoView();
+      if (!deckFullscreen) scrollDeckIntoView();
     } else if (deckPlayback) {
       deckLastIndex = null;
       clearDeckStage();
     }
   };
   notifyLinesPlaybackUi();
-  pageEl.append(
+  listShell.append(
     ...(note
       ? [
           h(
@@ -1358,6 +1493,7 @@ export function linesPage({
     ...(searchEmpty ? [searchEmpty] : []),
     body,
   );
+  pageEl.append(...(deckSession ? [deckSession] : []), listShell);
   return pageEl;
 }
 

@@ -49,6 +49,10 @@ body.lesson-step:not(.lines-playback-nav) {
   padding-bottom: calc(24px + env(safe-area-inset-bottom));
 }
 
+body.lesson-step.lines-playback-nav {
+  padding-bottom: calc(96px + env(safe-area-inset-bottom));
+}
+
 body.lesson-step .bottom-nav {
   display: none;
 }
@@ -4728,8 +4732,7 @@ body.game-running .topbar-admin .icon-exit {
 }
 
 /* ---------- Text selection ----------
-   The app is a game, not a document: selecting UI chrome (buttons, nav, chips, badges)
-   gets in the way. Everything is non-selectable by default, and only text is selectable. */
+   The web app does not allow selecting text anywhere. Only typing fields stay usable (see the rule below). */
 *,
 *::before,
 *::after {
@@ -4737,13 +4740,7 @@ body.game-running .topbar-admin .icon-exit {
   user-select: none;
 }
 
-/* Text content stays selectable (listed with :where so these do not outrank the rules below). */
-:where(p, span, div, h1, h2, h3, h4, h5, h6, li, td, th, dt, dd, blockquote, label, bdi, strong, em, b, i, small, code, pre, section, article, main, header, footer, nav) {
-  -webkit-user-select: text;
-  user-select: text;
-}
-
-/* Typing fields and interactive controls keep their own behaviour. */
+/* Typing fields keep their own text selection, so a learner can edit what they type. */
 input,
 textarea,
 [contenteditable="true"] {
@@ -5230,9 +5227,7 @@ body {
 
 input,
 textarea,
-select,
-[contenteditable="true"],
-.lc-story-text {
+[contenteditable="true"] {
   -webkit-user-select: text;
   user-select: text;
 }
@@ -5797,6 +5792,186 @@ img {
   display: none;
 }
 
+/* Dedicated playback screen (words / sentences deck): card only, playbar in footer. */
+body.lc-deck-session-active {
+  overflow: hidden;
+}
+
+body.lc-deck-session-active .card.setup.game {
+  margin-bottom: 0;
+  padding: 0;
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.lc-deck-session-active .setup-head,
+body.lc-deck-session-active .step-title {
+  display: none;
+}
+
+body.lc-deck-session-active .lc-deck-session {
+  position: fixed;
+  z-index: 6;
+  top: calc(env(safe-area-inset-top) + 56px);
+  right: 0;
+  left: 0;
+  bottom: calc(env(safe-area-inset-bottom) + 72px);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 8px 12px 0;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 38%, #ffffff 100%);
+}
+
+body.lc-deck-session-active .lc-deck-session-main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body.lc-deck-session-active .lc-deck-session-main .lc-deck-stage {
+  flex: 1;
+  min-height: 0;
+  align-items: stretch;
+}
+
+body.lc-deck-session-active .lc-deck-session-main .lc-deck-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  max-height: 100%;
+}
+
+body.lc-deck-session-active .lc-deck-session-main .lc-deck-card-inner {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+body.lc-deck-session-active .lc-deck-session-main .lc-deck-card-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 16px 12px;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.lc-deck-session-active .lc-deck-session-footer {
+  flex: 0 0 auto;
+  padding: 6px 0 8px;
+}
+
+body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
+  position: static;
+  top: auto;
+  z-index: auto;
+  margin: 0;
+}
+
+.lc-deck-card-fs .lc-deck-hero {
+  padding: 20px 18px 12px;
+}
+
+.lc-deck-en-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.lc-deck-card-fs .lc-deck-main-row {
+  align-items: flex-start;
+}
+
+.lc-deck-card-fs .lc-deck-en {
+  font-size: clamp(1.75rem, 6vw, 2.35rem);
+}
+
+.lc-deck-section {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+.lc-deck-section-title {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.lc-deck-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lc-deck-chip {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.lc-deck-section:has(+ .lc-deck-section) .lc-deck-chip,
+.lc-deck-examples .lc-deck-section-title {
+  color: #64748b;
+}
+
+.lc-deck-example-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+}
+
+.lc-deck-example {
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(199, 210, 254, 0.65);
+}
+
+.lc-deck-example-en {
+  margin: 0 0 6px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #0f172a;
+}
+
+.lc-deck-example-fa {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #475569;
+}
+
+.lc-deck-card-rich .lc-deck-fa-block {
+  margin: 0 18px 4px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: rgba(254, 243, 199, 0.45);
+}
+
+.lc-deck-fa-hidden {
+  opacity: 0.85;
+}
+
 .lc-page.lc-deck-active .lc-search,
 .lc-page.lc-deck-active .lc-search-empty {
   display: none;
@@ -5996,27 +6171,28 @@ img {
   letter-spacing: 0.15em;
 }
 
+/* Each row is its own card, one below the other. No inner scroll: the whole page scrolls. */
 .lc-list {
   list-style: none;
   margin: 0;
   padding: 0;
-  /* No inner scroll: the whole page scrolls, so the list just grows downwards. */
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: #fff;
-}
-
-.lc-item {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   gap: 10px;
-  padding: 10px 12px;
-  border-bottom: 1px solid var(--border);
 }
 
-.lc-item:last-child {
-  border-bottom: 0;
+/* Same structure for every row: text on the left, buttons in the top-right corner, optional panel below. */
+.lc-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  column-gap: 10px;
+  row-gap: 10px;
+  padding: 12px 14px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
 }
 
 .lc-main {
@@ -6029,6 +6205,185 @@ img {
 .lc-word {
   font-size: 1.05rem;
   overflow-wrap: anywhere;
+}
+
+/* Word rows with synonyms / opposites: a bigger headword and room for the relation chips. */
+.lc-item .lc-main {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  gap: 3px;
+  align-items: flex-start;
+  text-align: start;
+}
+
+.lc-item .lc-actions {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: start;
+  justify-self: end;
+  gap: 8px;
+}
+
+/* Eye, speaker and slow speaker: one shape, one size, one shadow. Only the colour tells them apart. */
+.lc-item .lc-actions .lc-eye,
+.lc-item .lc-actions .speak-buttons .speak.speak-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  min-height: 36px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+  color: #4338ca;
+  box-shadow: 0 3px 0 #c7d2fe;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.lc-item .lc-actions .lc-eye.on {
+  background: #4338ca;
+  border-color: #4338ca;
+  color: #fff;
+  box-shadow: 0 3px 0 #312e81;
+}
+
+.lc-item .lc-actions .speak-buttons {
+  display: inline-flex;
+  gap: 8px;
+  margin: 0;
+}
+
+.lc-item .lc-actions .speak-buttons .speak.speak-icon.slow {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+  box-shadow: 0 3px 0 #c7d2fe;
+  color: #4338ca;
+}
+
+.lc-item .lc-actions .lc-eye:active:not(:disabled),
+.lc-item .lc-actions .speak-buttons .speak.speak-icon:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.lc-item .lc-actions .lc-eye-glyph,
+.lc-item .lc-actions .speak-glyph {
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+}
+
+.lc-item .lc-actions .lc-eye-glyph svg,
+.lc-item .lc-actions .speak-glyph svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* The translation sits in the left corner, under the English. */
+.lc-item-rich .lc-main .lc-sub[dir='rtl'] {
+  width: auto;
+  text-align: left;
+  margin-top: 2px;
+}
+
+.lc-item-rich .lc-relations {
+  grid-column: 1 / -1;
+  grid-row: 2;
+}
+
+.lc-item-rich .lc-word {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.lc-item-rich .lc-ipa {
+  font-size: 1rem;
+}
+
+.lc-item-rich .lc-sub {
+  font-size: 1rem;
+}
+
+/* Hidden dots on a rich row stay on one line instead of stacking. */
+.lc-item-rich .lc-hidden {
+  white-space: nowrap;
+}
+
+/* The panel under a rich word row: one line for synonyms and one for opposites, each with its own label column. */
+.lc-relations {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.lc-rel-line {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 10px;
+}
+
+.lc-rel-line + .lc-rel-line {
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.lc-rel-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.lc-rel-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lc-rel-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 11px;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.lc-rel-chip-syn {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.lc-rel-chip-ant {
+  background: #ffe4e6;
+  color: #9f1239;
+}
+
+.lc-rel-empty {
+  color: #94a3b8;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.lc-rel-line-syn .lc-rel-label {
+  color: #1d4ed8;
+}
+
+.lc-rel-line-ant .lc-rel-label {
+  color: #be123c;
 }
 
 .lc-sentence {
