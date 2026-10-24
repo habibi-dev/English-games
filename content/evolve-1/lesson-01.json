@@ -11049,11 +11049,7 @@
           "explanation": "کلمه‌ای را بنویس که معنای نزدیک یا مشابه دارد.",
           "hint": "home = جای زندگی و آرامش (حس خانه بودن)",
           "time_limit": 60,
-          "translation": "ساختمان (خانه‌ی فیزیکی)",
-          "accepted_answers": [
-            "house",
-            "residence"
-          ]
+          "translation": "ساختمان (خانه‌ی فیزیکی)"
         },
         {
           "id": "evolve-1-l01-voc-24",
@@ -13263,11 +13259,6 @@
         "word": "requests",
         "ipa": "/rɪˈkwests/",
         "meaning": "درخواست می‌کند"
-      },
-      {
-        "word": "residence",
-        "ipa": "/ˈrezɪdəns/",
-        "meaning": "محل سکونت"
       },
       {
         "word": "retell",
