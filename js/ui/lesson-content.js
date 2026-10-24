@@ -36,8 +36,9 @@ const STOP_COLORS = {
 };
 
 /**
- * The lesson's choice page as a road map: the stops in order, from top to bottom, joined by a dotted road.
- * Each tile is { kind, icon, title, subtitle, onclick }. The last tile is the finish (Practice).
+ * The lesson's choice page as a road map: the stops in order, from top to bottom, one card under the other on a
+ * dotted road that runs down the middle. Each tile is { kind, icon, title, subtitle, onclick }.
+ * The last tile is the finish (Practice).
  */
 export function lessonHub(tiles) {
   const stops = tiles.slice(0, -1);
@@ -51,25 +52,21 @@ export function lessonHub(tiles) {
   );
 }
 
-/** One stop: a tile on the left or right of a numbered node on the road (the sides alternate). */
+/** One stop: a card in the middle of the road, with its number as a label on the card's corner. */
 function roadStop(tile, index) {
-  const side = index % 2 === 0 ? 'left' : 'right';
-  const node = h(
+  const badge = h(
     'span',
-    { class: 'road-node', style: `--stop-color: ${STOP_COLORS[tile.kind] ?? '#4f46e5'}`, 'aria-hidden': 'true' },
+    { class: 'road-badge', style: `--stop-color: ${STOP_COLORS[tile.kind] ?? '#4f46e5'}`, 'aria-hidden': 'true' },
     String(index + 1),
   );
-  const tileSlot = h('div', { class: 'road-slot' }, hubTile(tile));
-  const empty = h('div', { class: 'road-slot' });
-  return h('div', { class: `road-stop ${side}` }, ...(side === 'left' ? [tileSlot, node, empty] : [empty, node, tileSlot]));
+  return h('div', { class: 'road-stop' }, h('div', { class: 'road-slot' }, hubTile(tile), badge));
 }
 
-/** The finish: a trophy node, then the Practice tile across the whole road. */
+/** The finish: the Practice card at the end of the road, with no number. */
 function roadFinish(tile) {
   return h(
     'div',
     { class: 'road-stop finish' },
-    h('span', { class: 'road-node finish-node', 'aria-hidden': 'true' }, uiIcon('trophy')),
     h('div', { class: 'road-slot road-finish' }, hubTile({ ...tile, wide: true })),
   );
 }

@@ -5598,12 +5598,13 @@ img {
   margin-inline-end: 4px;
 }
 
-/* The lesson road map: the stops in learning order, joined by a dotted road (see lessonHub in lesson-content.js). */
+/* The lesson road map: the stops in order, one under the other, in the middle of a dotted road
+   (see lessonHub in lesson-content.js). Each number is a small label on the card's top-left corner. */
 .road {
-  --road-gap: 34px;
   position: relative;
   display: grid;
-  gap: var(--road-gap);
+  justify-items: center;
+  gap: 26px;
   padding: 14px 8px 18px;
 }
 
@@ -5619,22 +5620,13 @@ img {
   text-transform: uppercase;
 }
 
-.road-stop {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 52px 1fr;
-  align-items: center;
-  gap: 6px;
-}
-
-/* One dotted road behind the nodes: a single line from the "Start here" label down to the finish.
-   Each dot is drawn once (a 4px dot every 14px, in a pale colour), so the dots never stack on each other.
-   The nodes and tiles sit above it, and the finish tile covers the end of the line. */
+/* One dotted road behind the cards: a single line through the middle, from the "Start here" label to the finish.
+   Each dot is drawn once, so the dots never stack on each other. The cards sit above the line. */
 .road::before {
   content: '';
   position: absolute;
   left: 50%;
-  top: 36px;
+  top: 40px;
   bottom: 18px;
   width: 4px;
   transform: translateX(-50%);
@@ -5643,42 +5635,17 @@ img {
   z-index: 0;
 }
 
-.road-stop.finish {
-  grid-template-columns: 1fr;
-  justify-items: center;
-  gap: 10px;
-}
-
-
-.road-node {
+.road-stop {
   position: relative;
   z-index: 1;
+  width: 100%;
   display: grid;
-  place-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 3px solid #fff;
-  background: var(--stop-color, #4f46e5);
-  color: #fff;
-  font-size: 1.05rem;
-  font-weight: 900;
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
-}
-
-.road-node.finish-node {
-  width: 54px;
-  height: 54px;
-  background: linear-gradient(135deg, #f59e0b, #f97316);
-}
-
-.road-node.finish-node .ui-icon {
-  font-size: 1.5rem;
+  justify-items: center;
 }
 
 .road-slot {
   position: relative;
-  z-index: 1;
+  width: min(170px, 100%);
   min-width: 0;
 }
 
@@ -5689,56 +5656,57 @@ img {
   scroll-snap-align: none;
 }
 
-/* A tile sits next to its node: left stops against the road on their right, right stops on their left. */
-.road-stop.left .road-slot .hub-tile {
-  margin-inline-start: auto;
+/* The number of a stop: a label on the top-left corner of its card. */
+.road-badge {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 999px;
+  border: 3px solid #ffffff;
+  background: var(--stop-color, #4f46e5);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.2);
 }
 
-.road-stop.right .road-slot .hub-tile {
-  margin-inline-end: auto;
-}
-
-/* The finish tile is wide and tall, with its icon and words in the middle. */
-.road-finish {
+/* The finish: the Practice card at the end of the road, a little wider, with no number. */
+.road-stop.finish .road-slot {
   width: 100%;
+  max-width: 340px;
 }
 
-.road-finish .hub-wide {
-  aspect-ratio: auto;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  min-height: 132px;
-  padding: 18px;
-  text-align: center;
+.road-stop.finish .road-slot .hub-tile {
+  max-width: none;
 }
 
-.road-finish .hub-wide .hub-text {
-  align-items: center;
-}
-
-/* The finish tile spans the whole road (it is not capped at the stop tiles' 150px). */
 .road-stop.finish .road-finish .hub-wide {
   max-width: none;
   margin-inline: 0;
 }
 
-
 .hub-tile {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
+  justify-content: flex-start;
+  gap: 0;
   flex: 0 0 170px;
   width: 170px;
-  min-height: 172px;
+  min-height: 150px;
   align-self: flex-start;
   scroll-snap-align: start;
   overflow: hidden;
-  padding: 18px 16px 20px;
-  position: relative;
-  background: linear-gradient(160deg, #ffffff 0%, var(--tint, #ffffff) 100%);
+  padding: 16px 14px 14px;
+  background: #ffffff;
   border: 2px solid var(--tile, #4f46e5);
   border-radius: 20px;
   color: #111827;
@@ -5748,6 +5716,8 @@ img {
   box-shadow: inset 0 -5px 0 var(--tile, #4f46e5), 0 8px 18px rgba(15, 23, 42, 0.12);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
+/* One colour per card: the coloured border and the bottom edge carry it. */
 
 .hub-tile:hover {
   transform: translateY(-3px);
@@ -5765,48 +5735,43 @@ img {
 
 .hub-words {
   --tile: #2563eb;
-  --tile-2: #3b82f6;
-  --tint: #eef5ff;
+  --tile-2: #60a5fa;
 }
 
 .hub-sentences {
   --tile: #059669;
-  --tile-2: #10b981;
-  --tint: #ecfdf6;
+  --tile-2: #34d399;
 }
 
 .hub-grammar {
   --tile: #d97706;
-  --tile-2: #f59e0b;
-  --tint: #fff8eb;
+  --tile-2: #fbbf24;
 }
 
 .hub-stories {
   --tile: #db2777;
-  --tile-2: #ec4899;
-  --tint: #fdf2f8;
+  --tile-2: #f472b6;
 }
 
 .hub-practice {
   --tile: #7c3aed;
-  --tile-2: #6d28d9;
-  --tint: #f5f3ff;
+  --tile-2: #a78bfa;
 }
 
+/* The icon: a square in the card's own colour, at the top of the card. */
 .hub-icon {
   position: relative;
   z-index: 1;
-  /* Always a square: the text below must not squeeze the icon box into a rectangle. */
   flex: none;
   display: grid;
   place-items: center;
-  width: 50px;
-  height: 50px;
+  width: 54px;
+  height: 54px;
   border-radius: 18px;
-  background: linear-gradient(135deg, var(--tile, #4f46e5), var(--tile-2, #6366f1));
-  color: #fff;
+  background: var(--tile, #4f46e5);
+  color: #ffffff;
   box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
-  font-size: 2rem;
+  font-size: 1.9rem;
 }
 
 .hub-text {
@@ -5815,23 +5780,22 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2px;
+  gap: 3px;
   min-width: 0;
-  padding-inline: 6px;
+  margin-top: 12px;
+  padding-inline: 14px;
 }
 
-/* The corner circle: a faint shape in the stop's colour, drawn behind the icon and the text. */
-.hub-tile::before {
-  content: '';
-  position: absolute;
-  top: -34px;
-  inset-inline-end: -34px;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  background: var(--tile, #4f46e5);
-  opacity: 0.08;
-  pointer-events: none;
+/* The finish tile: the same card, but wide. */
+.road-finish .hub-wide {
+  padding: 16px 14px 14px;
+  gap: 0;
+  justify-content: flex-start;
+  min-height: 150px;
+}
+
+.road-finish .hub-wide .hub-text {
+  margin-top: 12px;
 }
 
 .hub-title {
