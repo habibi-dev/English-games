@@ -12,14 +12,17 @@ their grammar rules and examples, and their sentence structures.
 
 ## 1. Words
 
-- A new lesson must not repeat a word that an earlier lesson of the same book already teaches, not even in another
-  form of the same base word (for example, if `eat` is taught, `eats` is a repeat in a later lesson). Phrases count too
-  (`first name` is a repeat if an earlier lesson has it).
+- A new lesson must not repeat a word that an earlier lesson of the same book already teaches, in its word list or in
+  its word exercises (vocabulary, dictation, synonyms and antonyms), not even in another form of the same base word
+  (for example, if `eat` is taught, `eats` is a repeat in a later lesson). Phrases count too (`first name` is a repeat
+  if an earlier lesson has it). Sentences, dialogues, stories and grammar examples may use such a word when a sentence
+  needs it (for example `I`, `you`, `am`, `are`, `from`).
 - Do not add words on your own. The new words are the lesson's planned words only.
 - Every sentence, example and exercise may use only words that the learner already knows: words from earlier lessons,
   plus this lesson's own new words. If a sentence needs another word, that word must already be in an earlier lesson.
-- No person names in the lesson: no first names, family names or nicknames (for example Ali, Habibi, Bahar, Amir),
-  in words, sentences, stories or exercises.
+- No person names in the word list or in the word exercises (vocabulary, dictation): no first names, family names or
+  nicknames (for example Ali, Habibi, Bahar, Amir). Names may appear in sentences, dialogues, stories and grammar
+  examples, because a sentence about a person needs the name to make sense.
 - Every vocabulary word has its pronunciation (IPA between slashes, like `/ˈɡɪvən/`) and its Persian meaning.
 - Synonyms and antonyms: for every word of the lesson, find its synonyms and antonyms among the words of this lesson
   and of the earlier lessons of the same book. Each one found is written down as a `Synonym: <word>` or
@@ -47,6 +50,20 @@ their grammar rules and examples, and their sentence structures.
 
 - Every new word of the lesson appears in the practice exercises.
 - Practice sentences follow the grammar of the lesson and the sentences the learner has seen in it.
+- Every answer that can be shortened has all of its forms in `accepted_answers`, so the learner can answer in any
+  correct form. The app compares the text exactly, so a form that is not listed is marked wrong.
+  - Pronoun + be: `I am` = `I'm`; `you are`, `we are`, `they are` = `you're`, `we're`, `they're`; `he is`, `she is`,
+    `it is`, `that is` = `he's`, `she's`, `it's`, `that's`. (`this's` is not a form: keep `This is`.)
+  - Negative: `is not` = `isn't`, `are not` = `aren't`, `was not` = `wasn't`, `were not` = `weren't`, `do not` =
+    `don't`, `does not` = `doesn't`, `did not` = `didn't`, `will not` = `won't`, `have not` = `haven't`,
+    `has not` = `hasn't`, `cannot` = `can't`.
+  - Several parts can be shortened: list every combination. `No, I'm not. I'm from Medellín.` has four forms:
+    `No, I am not. I am from Medellín.`, `No, I'm not. I am from Medellín.`, `No, I am not. I'm from Medellín.`,
+    `No, I'm not. I'm from Medellín.`
+  - A short form is not used at the end of a sentence where it is not allowed: `Yes, I am.` is not `Yes, I'm.`
+  - Exceptions: a sentence builder uses the words of one form only (its word bank must match `expected_answer`), and a
+    multiple choice option is one form only (an alternative form must not be a second option, because it would be a
+    second correct answer).
 - Include a few examples of every exercise type the game has, where the lesson's grammar allows it (translation, voice
   translation, word translation, sentence builder, grammar correction, negative, question, multiple choice, dictation,
   vocabulary, verb forms). The negative and question types show one example per sentence structure, not many words

@@ -27,25 +27,62 @@ const EYE_OFF_ICON =
   '<path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>' +
   '<path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>';
 
+// The colour of each stop on the road map (the tile colours in app.css).
+const STOP_COLORS = {
+  words: '#2563eb',
+  grammar: '#d97706',
+  sentences: '#059669',
+  stories: '#db2777',
+};
+
 /**
- * The lesson's choice page: one coloured tile per page. Each tile is { kind, icon, title, subtitle, onclick }.
+ * The lesson's choice page as a road map: the stops in order, from top to bottom, joined by a dotted road.
+ * Each tile is { kind, icon, title, subtitle, onclick }. The last tile is the finish (Practice).
  */
 export function lessonHub(tiles) {
-  const grid = h('div', { class: 'hub-grid' }, ...tiles.map(hubTile));
-  dragToScroll(grid);
-  return grid;
+  const stops = tiles.slice(0, -1);
+  const finish = tiles[tiles.length - 1];
+  return h(
+    'div',
+    { class: 'road' },
+    h('span', { class: 'road-start' }, 'Start here'),
+    ...stops.map(roadStop),
+    roadFinish(finish),
+  );
 }
 
-
-function hubIcon(kind) {
-  return h('span', { class: 'hub-icon', 'aria-hidden': 'true' }, uiIcon(kind));
+/** One stop: a tile on the left or right of a numbered node on the road (the sides alternate). */
+function roadStop(tile, index) {
+  const side = index % 2 === 0 ? 'left' : 'right';
+  const node = h(
+    'span',
+    { class: 'road-node', style: `--stop-color: ${STOP_COLORS[tile.kind] ?? '#4f46e5'}`, 'aria-hidden': 'true' },
+    String(index + 1),
+  );
+  const tileSlot = h('div', { class: 'road-slot' }, hubTile(tile));
+  const empty = h('div', { class: 'road-slot' });
+  return h('div', { class: `road-stop ${side}` }, ...(side === 'left' ? [tileSlot, node, empty] : [empty, node, tileSlot]));
 }
 
-function hubTile({ kind, title, subtitle, onclick }) {
+/** The finish: a trophy node, then the Practice tile across the whole road. */
+function roadFinish(tile) {
+  return h(
+    'div',
+    { class: 'road-stop finish' },
+    h('span', { class: 'road-node finish-node', 'aria-hidden': 'true' }, uiIcon('trophy')),
+    h('div', { class: 'road-slot road-finish' }, hubTile({ ...tile, wide: true })),
+  );
+}
+
+function hubIcon(icon) {
+  return h('span', { class: 'hub-icon', 'aria-hidden': 'true' }, uiIcon(icon));
+}
+
+function hubTile({ kind, icon, title, subtitle, wide = false, onclick }) {
   return h(
     'button',
-    { type: 'button', class: `hub-tile hub-${kind}`, onclick },
-    hubIcon(kind),
+    { type: 'button', class: `hub-tile hub-${kind}${wide ? ' hub-wide' : ''}`, onclick },
+    hubIcon(icon ?? kind),
     h(
       'span',
       { class: 'hub-text' },

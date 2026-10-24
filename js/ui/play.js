@@ -922,18 +922,14 @@ async function showSetup(root, restore = null) {
     let body;
     if (step.name === 'hub') {
       backTo = unit ? { name: 'lesson', book: state.book, unit: unit.key } : { name: 'book', series: seriesOf(state.book)?.id };
+      // The road, in the learning order: read the words, learn the grammar, practise the sentences, read a story,
+      // then practise the exercises (the finish).
       const tiles = [
         {
           kind: 'words',
           title: 'Words',
           subtitle: `${plural(material.words.length, 'word')} · meaning and sound`,
           onclick: () => go({ ...hubStep, name: 'words' }),
-        },
-        {
-          kind: 'sentences',
-          title: 'Sentences',
-          subtitle: `${plural(material.sentences.length, 'sentence')} · tap to translate`,
-          onclick: () => go({ ...hubStep, name: 'sentences' }),
         },
       ];
       if (material.grammar.length) {
@@ -944,6 +940,12 @@ async function showSetup(root, restore = null) {
           onclick: () => go({ ...hubStep, name: 'grammar' }),
         });
       }
+      tiles.push({
+        kind: 'sentences',
+        title: 'Sentences',
+        subtitle: `${plural(material.sentences.length, 'sentence')} · tap to translate`,
+        onclick: () => go({ ...hubStep, name: 'sentences' }),
+      });
       if (material.stories.length) {
         tiles.push({
           kind: 'stories',
@@ -952,10 +954,16 @@ async function showSetup(root, restore = null) {
           onclick: () => go({ ...hubStep, name: 'stories' }),
         });
       }
+      tiles.push({
+        kind: 'practice',
+        icon: 'trophy',
+        title: 'Practice',
+        subtitle: `${plural(chosenQuestions.length, 'question')} · the finish line`,
+        onclick: () => go({ name: 'settings', book: state.book, unit: hubStep.unit, lessons: [...state.lessons] }),
+      });
       body = h('div', {}, stepTitle('What do you want to do?'), lessonHub(tiles));
-      // Practice is not a tile: on this screen it is the bottom bar's button, in place of Home and Reports.
-      settingsStart = () => go({ name: 'settings', book: state.book, unit: hubStep.unit, lessons: [...state.lessons] });
-      setTabMode('practice');
+      // No bottom bar on the road: Home and Reports are only on the main page. Practice is the last stop of the road.
+      setTabMode('lesson');
     } else if (step.name === 'words') {
       const wordStudy = buildWordStudyIndex(chosenQuestions, material.sentences);
       body = h(
@@ -1293,7 +1301,6 @@ function setupHeader({ kicker, title, meta = '', cover = '', level = '', progres
         'div',
         { class: 'setup-head-top' },
         h('span', { class: 'setup-kicker' }, kicker),
-        status ? h('span', { class: `setup-status ${status.key}` }, status.label) : null,
       ),
       h(
         'div',
@@ -1304,7 +1311,10 @@ function setupHeader({ kicker, title, meta = '', cover = '', level = '', progres
       meta ? h('span', { class: 'setup-meta' }, meta) : null,
       progress && progress.total > 0 ? setupProgress(progress) : null,
     ),
-    progress && progress.total > 0 ? progressRing(progress) : null,
+    // The ring, with the status ("In progress", "Completed") under the percentage.
+    progress && progress.total > 0
+      ? h('div', { class: 'setup-side' }, progressRing(progress), status ? h('span', { class: `setup-status ${status.key}` }, status.label) : null)
+      : null,
   );
 }
 
