@@ -43,23 +43,45 @@ const STOP_COLORS = {
 export function lessonHub(tiles) {
   const stops = tiles.slice(0, -1);
   const finish = tiles[tiles.length - 1];
+  const xOf = (index) => ROAD_X[sideOf(index)];
   return h(
     'div',
     { class: 'road' },
-    h('span', { class: 'road-start' }, 'Start here'),
-    ...stops.map(roadStop),
+    h('span', { class: 'road-start' }, 'Start here', stops.length ? roadWire(ROAD_X.centre, xOf(0)) : null),
+    ...stops.map((tile, index) =>
+      roadStop(tile, index, index + 1 < stops.length ? xOf(index + 1) : ROAD_X.centre),
+    ),
     roadFinish(finish),
   );
 }
 
-/** One stop: a card in the middle of the road, with its number as a label on the card's corner. */
-function roadStop(tile, index) {
-  const badge = h(
-    'span',
-    { class: 'road-badge', style: `--stop-color: ${STOP_COLORS[tile.kind] ?? '#4f46e5'}`, 'aria-hidden': 'true' },
-    String(index + 1),
+/** The stops zigzag: the first is on the left, the next on the right, and so on. */
+const sideOf = (index) => (index % 2 === 0 ? 'left' : 'right');
+
+/** Where each side's card is centred on the road (the road is 360px wide, see app.css). */
+const ROAD_X = { left: 90, centre: 180, right: 270 };
+
+/**
+ * A dotted curve from the card's centre to the centre of the next card (or the finish): the road between stops.
+ * The curve is drawn in the same 360px-wide box as the road, so its ends meet the card centres.
+ */
+function roadWire(fromX, toX) {
+  const wire = h('span', { class: 'road-wire', 'aria-hidden': 'true' });
+  wire.innerHTML =
+    `<svg viewBox="0 0 360 60" fill="none" stroke="#b6c2d4" stroke-width="4" stroke-linecap="round" stroke-dasharray="0 11">` +
+    `<path d="M${fromX} 0 C${fromX} 30 ${toX} 30 ${toX} 60"/></svg>`;
+  return wire;
+}
+
+/** One stop: a card on its side of the road, with its number in the card's corner and the curve to the next stop. */
+function roadStop(tile, index, nextX) {
+  const side = sideOf(index);
+  return h(
+    'div',
+    { class: `road-stop ${side}` },
+    h('div', { class: 'road-slot' }, hubTile({ ...tile, number: index + 1 })),
+    roadWire(ROAD_X[side], nextX),
   );
-  return h('div', { class: 'road-stop' }, h('div', { class: 'road-slot' }, hubTile(tile), badge));
 }
 
 /** The finish: the Practice card at the end of the road, with no number. */
@@ -75,10 +97,11 @@ function hubIcon(icon) {
   return h('span', { class: 'hub-icon', 'aria-hidden': 'true' }, uiIcon(icon));
 }
 
-function hubTile({ kind, icon, title, subtitle, wide = false, onclick }) {
+function hubTile({ kind, icon, title, subtitle, number = null, wide = false, onclick }) {
   return h(
     'button',
     { type: 'button', class: `hub-tile hub-${kind}${wide ? ' hub-wide' : ''}`, onclick },
+    number !== null ? h('span', { class: 'hub-num', 'aria-hidden': 'true' }, String(number)) : null,
     hubIcon(icon ?? kind),
     h(
       'span',

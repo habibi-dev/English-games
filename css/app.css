@@ -5598,18 +5598,23 @@ img {
   margin-inline-end: 4px;
 }
 
-/* The lesson road map: the stops in order, one under the other, in the middle of a dotted road
-   (see lessonHub in lesson-content.js). Each number is a small label on the card's top-left corner. */
+/* The lesson road map: the stops in order, zigzagging left and right like a road. A dotted curve runs from the
+   centre of each card to the centre of the next one (see roadWire in lesson-content.js). The road is 360px wide:
+   left cards are centred at 90px, right cards at 270px, and the finish card at 180px. */
 .road {
   position: relative;
   display: grid;
   justify-items: center;
-  gap: 26px;
-  padding: 14px 8px 18px;
+  width: 360px;
+  max-width: 100%;
+  margin-inline: auto;
+  padding: 14px 0 18px;
 }
 
 .road-start {
+  position: relative;
   justify-self: center;
+  margin-bottom: 60px;
   padding: 4px 14px;
   border-radius: 999px;
   background: #e0e7ff;
@@ -5620,31 +5625,48 @@ img {
   text-transform: uppercase;
 }
 
-/* One dotted road behind the cards: a single line through the middle, from the "Start here" label to the finish.
-   Each dot is drawn once, so the dots never stack on each other. The cards sit above the line. */
-.road::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 40px;
-  bottom: 18px;
-  width: 4px;
-  transform: translateX(-50%);
-  background: radial-gradient(circle, #b6c2d4 1.8px, transparent 2.2px) center top / 4px 14px repeat-y;
-  pointer-events: none;
-  z-index: 0;
-}
-
 .road-stop {
   position: relative;
   z-index: 1;
   width: 100%;
   display: grid;
-  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 60px;
+}
+
+.road-stop.finish {
+  grid-template-columns: 1fr;
+  margin-bottom: 0;
+}
+
+.road-stop.left .road-slot {
+  grid-column: 1;
+}
+
+.road-stop.right .road-slot {
+  grid-column: 2;
+}
+
+/* The curve from one card to the next. It sits in the 60px gap under the card. */
+.road-wire {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 360px;
+  height: 60px;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.road-wire svg {
+  display: block;
+  width: 360px;
+  height: 60px;
 }
 
 .road-slot {
   position: relative;
+  justify-self: center;
   width: min(170px, 100%);
   min-width: 0;
 }
@@ -5656,28 +5678,7 @@ img {
   scroll-snap-align: none;
 }
 
-/* The number of a stop: a label on the top-left corner of its card. */
-.road-badge {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  min-width: 32px;
-  height: 32px;
-  padding: 0 8px;
-  border-radius: 999px;
-  border: 3px solid #ffffff;
-  background: var(--stop-color, #4f46e5);
-  color: #ffffff;
-  font-size: 0.9rem;
-  font-weight: 900;
-  line-height: 1;
-  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.2);
-}
-
-/* The finish: the Practice card at the end of the road, a little wider, with no number. */
+/* The finish: the Practice card at the end of the road, a little wider. */
 .road-stop.finish .road-slot {
   width: 100%;
   max-width: 340px;
@@ -5705,23 +5706,21 @@ img {
   align-self: flex-start;
   scroll-snap-align: start;
   overflow: hidden;
-  padding: 16px 14px 14px;
-  background: #ffffff;
-  border: 2px solid var(--tile, #4f46e5);
+  padding: 16px 14px 16px;
+  background: linear-gradient(135deg, var(--tile, #4f46e5), var(--tile-2, #6366f1));
+  border: 0;
   border-radius: 20px;
-  color: #111827;
+  color: #ffffff;
   font: inherit;
   text-align: center;
   cursor: pointer;
-  box-shadow: inset 0 -5px 0 var(--tile, #4f46e5), 0 8px 18px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.18);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-/* One colour per card: the coloured border and the bottom edge carry it. */
-
 .hub-tile:hover {
   transform: translateY(-3px);
-  box-shadow: inset 0 -5px 0 var(--tile, #4f46e5), 0 14px 24px rgba(15, 23, 42, 0.18);
+  box-shadow: 0 16px 26px rgba(15, 23, 42, 0.24);
 }
 
 .hub-tile:active {
@@ -5758,7 +5757,20 @@ img {
   --tile-2: #a78bfa;
 }
 
-/* The icon: a square in the card's own colour, at the top of the card. */
+/* The stop number: a large, faint figure in the card's top-right corner. */
+.hub-num {
+  position: absolute;
+  top: 6px;
+  inset-inline-end: 12px;
+  z-index: 0;
+  font-size: 2.9rem;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.24);
+  pointer-events: none;
+}
+
+/* The icon: a translucent white square at the top of the card. */
 .hub-icon {
   position: relative;
   z-index: 1;
@@ -5768,9 +5780,8 @@ img {
   width: 54px;
   height: 54px;
   border-radius: 18px;
-  background: var(--tile, #4f46e5);
+  background: rgba(255, 255, 255, 0.24);
   color: #ffffff;
-  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.2);
   font-size: 1.9rem;
 }
 
@@ -5786,9 +5797,9 @@ img {
   padding-inline: 14px;
 }
 
-/* The finish tile: the same card, but wide. */
+/* The finish card: the same card, but wide. */
 .road-finish .hub-wide {
-  padding: 16px 14px 14px;
+  padding: 16px 14px 16px;
   gap: 0;
   justify-content: flex-start;
   min-height: 150px;
@@ -5802,11 +5813,13 @@ img {
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 0.2px;
-  color: #111827;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
 }
 
 .hub-sub {
-  color: #475569;
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.14);
   font-weight: 600;
   font-size: 0.7rem;
   line-height: 1.25;
