@@ -4434,6 +4434,306 @@ body:has(.card.play) .bottom-nav {
   font-variant-numeric: tabular-nums;
 }
 
+/* Setup screen, picture style: a tip, numbered parts, picture cards and a progress ring. */
+
+.setup-tip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 4px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #fef9c3;
+  color: #713f12;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.setup-tip .ui-icon {
+  flex: none;
+  font-size: 1.35rem;
+  color: #b45309;
+}
+
+.setup-section {
+  margin-top: 20px;
+}
+
+.setup-section-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.section-badge {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 0 3px 8px rgba(79, 70, 229, 0.35);
+}
+
+.section-heading {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.section-hint {
+  margin: 0;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.setup-subsection {
+  display: grid;
+  gap: 8px;
+}
+
+.sub-title {
+  margin: 8px 0 0;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+}
+
+/* Picture cards: one tap selects one (or toggles one, for exercise types). */
+.choice-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.choice-grid.mode-grid,
+.choice-grid.list-grid {
+  grid-template-columns: 1fr;
+}
+
+.choice-grid.length-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.choice-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 64px;
+  padding: 10px 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+  box-shadow: 0 2px 0 #e2e8f0;
+  transition: border-color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+
+.choice-card:hover {
+  border-color: #a5b4fc;
+}
+
+.choice-card:active {
+  transform: scale(0.98);
+}
+
+.choice-card.active {
+  border-color: var(--primary);
+  background: linear-gradient(160deg, #dbeafe 0%, #ede9fe 100%);
+  box-shadow: 0 4px 0 rgba(37, 99, 235, 0.35);
+}
+
+.choice-visual {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: #eef2ff;
+  color: var(--primary-dark);
+}
+
+.choice-visual .ui-icon {
+  font-size: 1.4rem;
+}
+
+.choice-card.active .choice-visual {
+  background: #fff;
+  color: var(--primary);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+}
+
+.choice-text {
+  display: grid;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.choice-text strong {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.choice-sub {
+  font-size: 0.84rem;
+  line-height: 1.3;
+  color: var(--muted);
+}
+
+.choice-check {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 2px solid #cbd5e1;
+  border-radius: 50%;
+  color: transparent;
+}
+
+.choice-check .ui-icon {
+  font-size: 0.95rem;
+}
+
+.choice-card.active .choice-check {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Stars show how many points a level gives: filled stars are gold. */
+.choice-stars {
+  display: inline-flex;
+  gap: 1px;
+}
+
+.choice-star {
+  color: #cbd5e1;
+}
+
+.choice-star svg {
+  fill: none;
+}
+
+.choice-star.on {
+  color: #f59e0b;
+}
+
+.choice-star.on svg {
+  fill: currentColor;
+}
+
+.mode-grid .choice-visual {
+  width: auto;
+  min-width: 46px;
+  padding: 0 8px;
+}
+
+/* Mission length: big numbers in square cards. */
+.choice-grid.length-grid .choice-card {
+  flex-direction: column;
+  justify-content: center;
+  min-height: 102px;
+  text-align: center;
+}
+
+.choice-grid.length-grid .choice-visual {
+  width: auto;
+  height: auto;
+  background: none;
+}
+
+.choice-grid.length-grid .choice-card.active .choice-visual {
+  background: none;
+  box-shadow: none;
+}
+
+.choice-grid.length-grid .choice-text {
+  justify-items: center;
+}
+
+.choice-grid.length-grid .choice-check {
+  position: absolute;
+  top: 8px;
+  inset-inline-end: 8px;
+  width: 22px;
+  height: 22px;
+}
+
+.choice-big {
+  font-size: 1.7rem;
+  font-weight: 900;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.setup-info {
+  margin: 16px 0 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #f1f5f9;
+  color: #334155;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Round progress ring in the header: the fill follows --pct (set on the element). */
+.progress-ring {
+  flex: none;
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary) calc(var(--pct, 0) * 1%), #e2e8f0 0);
+}
+
+.progress-ring::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.progress-ring-text {
+  position: relative;
+  font-size: 0.92rem;
+  font-weight: 900;
+  color: var(--primary-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.setup-head.complete .progress-ring {
+  background: conic-gradient(#16a34a calc(var(--pct, 0) * 1%), #dcfce7 0);
+}
+
+.setup-head.complete .progress-ring-text {
+  color: #15803d;
+}
+
 /* Start the review game from the reports screen. */
 .review-start {
   display: flex;
