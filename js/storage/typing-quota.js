@@ -2,7 +2,7 @@
 // The count starts again on each local calendar day.
 
 const KEY = 'grammar-quest.typing-quota.v1';
-export const DAILY_TYPING_LIMIT = 5;
+export const DAILY_TYPING_LIMIT = 10;
 
 const pad = (n) => String(n).padStart(2, '0');
 

@@ -1,0 +1,16 @@
+---
+description: How to run, debug and test this project locally — always with docker compose on port 8080
+alwaysApply: true
+---
+
+# Running the project locally
+
+- When you need to run, debug, or test the project, bring it up with exactly this command from the project root:
+
+  ```
+  docker compose up -d --build
+  ```
+
+- The app is served at `http://localhost:8080` (see `docker-compose.yml`, `"8080:8080"`). Use that address to check it.
+- Do not invent another way to run it (no `php artisan serve`, no `npx serve`, no other port, no ad-hoc dev server). If the normal command does not work, report the error to the user instead of starting a different setup.
+- Do not change the port mapping to get around a conflict. If port 8080 is busy, tell the user.

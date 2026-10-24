@@ -48,18 +48,6 @@
           "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
         },
         {
-          "id": "evolve-1-l02-tr-004",
-          "expected_answer": "My name is Karina, and I'm from Colombia.",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "نام من کارینا است و من اهل کلمبیا هستم.",
-          "question": "نام من کارینا است و من اهل کلمبیا هستم.",
-          "accepted_answers": [
-            "My name is Karina, and I am from Colombia."
-          ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
           "id": "evolve-1-l02-tr-005",
           "expected_answer": "Are you from Bogotá?",
           "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
@@ -81,18 +69,6 @@
           "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
         },
         {
-          "id": "evolve-1-l02-tr-007",
-          "expected_answer": "My name is Antonio. I'm from Mexico City – in Mexico!",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "نام من آنتونیو است. من اهل مکزیکوسیتی در مکزیک هستم.",
-          "question": "نام من آنتونیو است. من اهل مکزیکوسیتی در مکزیک هستم.",
-          "accepted_answers": [
-            "My name is Antonio. I am from Mexico City – in Mexico!"
-          ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
           "id": "evolve-1-l02-tr-008",
           "expected_answer": "I'm Russian. I'm from Moscow.",
           "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
@@ -102,15 +78,6 @@
           "accepted_answers": [
             "I am Russian. I am from Moscow."
           ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
-          "id": "evolve-1-l02-tr-009",
-          "expected_answer": "Hi, Max. Are you a teacher?",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "سلام مکس. آیا تو معلم هستی؟",
-          "question": "سلام مکس. آیا تو معلم هستی؟",
           "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
         },
         {
@@ -135,66 +102,6 @@
           "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
         },
         {
-          "id": "evolve-1-l02-tr-012",
-          "expected_answer": "I'm Peruvian, and I'm from Callao.",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "من پرویی هستم و اهل کالائو هستم.",
-          "question": "من پرویی هستم و اهل کالائو هستم.",
-          "accepted_answers": [
-            "I am Peruvian, and I am from Callao."
-          ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
-          "id": "evolve-1-l02-tr-013",
-          "expected_answer": "I'm from Madrid, in Spain.",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "من اهل مادرید در اسپانیا هستم.",
-          "question": "من اهل مادرید در اسپانیا هستم.",
-          "accepted_answers": [
-            "I am from Madrid, in Spain."
-          ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
-          "id": "evolve-1-l02-tr-014",
-          "expected_answer": "I'm from Mexico City.",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "من اهل مکزیکوسیتی هستم.",
-          "question": "من اهل مکزیکوسیتی هستم.",
-          "accepted_answers": [
-            "I am from Mexico City."
-          ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
-          "id": "evolve-1-l02-tr-015",
-          "expected_answer": "I'm not from Lima.",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "من اهل لیما نیستم.",
-          "question": "من اهل لیما نیستم.",
-          "accepted_answers": [
-            "I am not from Lima."
-          ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
-          "id": "evolve-1-l02-tr-016",
-          "expected_answer": "You're not from Bogotá.",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "تو اهل بوگوتا نیستی.",
-          "question": "تو اهل بوگوتا نیستی.",
-          "accepted_answers": [
-            "You are not from Bogotá."
-          ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
           "id": "evolve-1-l02-tr-017",
           "expected_answer": "Am I in room 6B?",
           "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
@@ -210,48 +117,6 @@
           "time_limit": 60,
           "translation": "آیا تو اهل توکیو هستی؟",
           "question": "آیا تو اهل توکیو هستی؟",
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
-          "id": "evolve-1-l02-tr-019",
-          "expected_answer": "Are you from Quito?",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "آیا تو اهل کیتو هستی؟",
-          "question": "آیا تو اهل کیتو هستی؟",
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
-          "id": "evolve-1-l02-tr-020",
-          "expected_answer": "Are you American? Yes, I am.",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "آیا تو آمریکایی هستی؟ بله، هستم.",
-          "question": "آیا تو آمریکایی هستی؟ بله، هستم.",
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
-          "id": "evolve-1-l02-tr-021",
-          "expected_answer": "Wow! You're from Rio!",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "وای! تو اهل ریو هستی!",
-          "question": "وای! تو اهل ریو هستی!",
-          "accepted_answers": [
-            "Wow! You are from Rio!"
-          ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
-          "id": "evolve-1-l02-tr-022",
-          "expected_answer": "I'm Alex. I'm from Orlando. I'm American.",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "من الکس هستم. من اهل اورلاندو هستم. من آمریکایی هستم.",
-          "question": "من الکس هستم. من اهل اورلاندو هستم. من آمریکایی هستم.",
-          "accepted_answers": [
-            "I am Alex. I am from Orlando. I am American."
-          ],
           "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
         }
       ]
@@ -306,25 +171,6 @@
           ]
         },
         {
-          "id": "evolve-1-l02-sb-004",
-          "expected_answer": "My name is Karina, and I'm from Colombia.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "نام من کارینا است و من اهل کلمبیا هستم.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "name",
-            "Karina,",
-            "is",
-            "My",
-            "and",
-            "from",
-            "I'm",
-            "Colombia."
-          ]
-        },
-        {
           "id": "evolve-1-l02-sb-005",
           "expected_answer": "Are you from Bogotá?",
           "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
@@ -357,135 +203,6 @@
           ]
         },
         {
-          "id": "evolve-1-l02-sb-007",
-          "expected_answer": "My name is Antonio.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "جمله را با ترتیب درست بساز.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "Antonio.",
-            "name",
-            "My",
-            "is"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-008",
-          "expected_answer": "I'm from Mexico City.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "من اهل مکزیکوسیتی هستم.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "from",
-            "I'm",
-            "Mexico",
-            "City."
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-009",
-          "expected_answer": "I'm Russian.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "جمله را با ترتیب درست بساز.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "I'm",
-            "Russian."
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-010",
-          "expected_answer": "I'm from Moscow.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "جمله را با ترتیب درست بساز.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "I'm",
-            "Moscow.",
-            "from"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-011",
-          "expected_answer": "Are you a teacher?",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "جمله را با ترتیب درست بساز.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "teacher?",
-            "Are",
-            "you",
-            "a"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-012",
-          "expected_answer": "Yes, I am.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "بله، هستم.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "am.",
-            "Yes,",
-            "I"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-013",
-          "expected_answer": "And you?",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "جمله را با ترتیب درست بساز.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "you?",
-            "And"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-014",
-          "expected_answer": "No, I'm not a teacher.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "جمله را با ترتیب درست بساز.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "teacher.",
-            "a",
-            "I'm",
-            "No,",
-            "not"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-015",
-          "expected_answer": "I'm a student.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "جمله را با ترتیب درست بساز.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "student.",
-            "a",
-            "I'm"
-          ]
-        },
-        {
           "id": "evolve-1-l02-sb-016",
           "expected_answer": "Are you from Tokyo?",
           "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
@@ -514,82 +231,6 @@
             "Am",
             "I",
             "in"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-018",
-          "expected_answer": "I'm Ecuadorian.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "من اکوادوری هستم.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "I'm",
-            "Ecuadorian."
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-019",
-          "expected_answer": "You're from Rio!",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "جمله را با ترتیب درست بساز.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "from",
-            "You're",
-            "Rio!"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-020",
-          "expected_answer": "Are you from Quito?",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "آیا تو اهل کیتو هستی؟",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "you",
-            "Are",
-            "from",
-            "Quito?"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-021",
-          "expected_answer": "I'm from Madrid, in Spain.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "من اهل مادرید در اسپانیا هستم.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "Spain.",
-            "I'm",
-            "in",
-            "Madrid,",
-            "from"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-sb-022",
-          "expected_answer": "I'm Alex. I'm from Orlando. I'm American.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "من الکس هستم. من اهل اورلاندو هستم. من آمریکایی هستم.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "from",
-            "American.",
-            "I'm",
-            "I'm",
-            "Orlando.",
-            "Alex.",
-            "I'm"
           ]
         }
       ]
@@ -643,34 +284,6 @@
           ]
         },
         {
-          "id": "evolve-1-l02-wt-004",
-          "expected_answer": "My name is Karina.",
-          "explanation": "به ترتیب طبیعی جمله در انگلیسی و جایگاه فعل بودن توجه کن.",
-          "time_limit": 60,
-          "translation": "نام من کارینا است.",
-          "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "نام",
-            "من",
-            "کارینا",
-            "است"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-wt-005",
-          "expected_answer": "I'm from Colombia.",
-          "explanation": "به ترتیب طبیعی جمله در انگلیسی و جایگاه فعل بودن توجه کن.",
-          "time_limit": 60,
-          "translation": "من اهل کلمبیا هستم.",
-          "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "من",
-            "اهل",
-            "کلمبیا",
-            "هستم"
-          ]
-        },
-        {
           "id": "evolve-1-l02-wt-006",
           "expected_answer": "Are you from Bogotá?",
           "explanation": "به ترتیب طبیعی جمله در انگلیسی و جایگاه فعل بودن توجه کن.",
@@ -720,20 +333,6 @@
           ]
         },
         {
-          "id": "evolve-1-l02-wt-009",
-          "expected_answer": "Are you a teacher?",
-          "explanation": "به ترتیب طبیعی جمله در انگلیسی و جایگاه فعل بودن توجه کن.",
-          "time_limit": 60,
-          "translation": "آیا تو معلم هستی؟",
-          "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "آیا",
-            "تو",
-            "معلم",
-            "هستی؟"
-          ]
-        },
-        {
           "id": "evolve-1-l02-wt-010",
           "expected_answer": "Yes, I am. And you?",
           "explanation": "به ترتیب طبیعی جمله در انگلیسی و جایگاه فعل بودن توجه کن.",
@@ -761,22 +360,6 @@
             "نیستم.",
             "من",
             "دانش‌آموز",
-            "هستم."
-          ]
-        },
-        {
-          "id": "evolve-1-l02-wt-012",
-          "expected_answer": "I'm from Madrid, in Spain.",
-          "explanation": "به ترتیب طبیعی جمله در انگلیسی و جایگاه فعل بودن توجه کن.",
-          "time_limit": 60,
-          "translation": "من اهل مادرید در اسپانیا هستم.",
-          "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "من",
-            "اهل",
-            "مادرید",
-            "در",
-            "اسپانیا",
             "هستم."
           ]
         },
@@ -809,23 +392,6 @@
             "اهل",
             "توکیو",
             "هستی؟"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-wt-015",
-          "expected_answer": "I'm Alex. I'm from Orlando.",
-          "explanation": "به ترتیب طبیعی جمله در انگلیسی و جایگاه فعل بودن توجه کن.",
-          "time_limit": 60,
-          "translation": "من الکس هستم. من اهل اورلاندو هستم.",
-          "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "من",
-            "الکس",
-            "هستم.",
-            "من",
-            "اهل",
-            "اورلاندو",
-            "هستم."
           ]
         }
       ]
@@ -907,15 +473,6 @@
           "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
         },
         {
-          "id": "evolve-1-l02-vt-007",
-          "expected_answer": "Are you a teacher?",
-          "explanation": "جمله را با توجه به فاعل، فعل بودن و عبارت مربوط به ملیت یا محل بیان کن.",
-          "time_limit": 60,
-          "translation": "آیا تو معلم هستی؟",
-          "question": "آیا تو معلم هستی؟",
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
-        },
-        {
           "id": "evolve-1-l02-vt-008",
           "expected_answer": "Yes, I am. And you?",
           "explanation": "جمله را با توجه به فاعل، فعل بودن و عبارت مربوط به ملیت یا محل بیان کن.",
@@ -937,69 +494,12 @@
           "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
         },
         {
-          "id": "evolve-1-l02-vt-010",
-          "expected_answer": "I'm from Mexico City, in Mexico.",
-          "explanation": "جمله را با توجه به فاعل، فعل بودن و عبارت مربوط به ملیت یا محل بیان کن.",
-          "time_limit": 60,
-          "translation": "من اهل مکزیکوسیتی در مکزیک هستم.",
-          "question": "من اهل مکزیکوسیتی در مکزیک هستم.",
-          "accepted_answers": [
-            "I am from Mexico City, in Mexico."
-          ],
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
-        },
-        {
-          "id": "evolve-1-l02-vt-011",
-          "expected_answer": "I'm Peruvian, and I'm from Callao.",
-          "explanation": "جمله را با توجه به فاعل، فعل بودن و عبارت مربوط به ملیت یا محل بیان کن.",
-          "time_limit": 60,
-          "translation": "من پرویی هستم و اهل کالائو هستم.",
-          "question": "من پرویی هستم و اهل کالائو هستم.",
-          "accepted_answers": [
-            "I am Peruvian, and I am from Callao."
-          ],
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
-        },
-        {
-          "id": "evolve-1-l02-vt-012",
-          "expected_answer": "I'm from Madrid, in Spain.",
-          "explanation": "جمله را با توجه به فاعل، فعل بودن و عبارت مربوط به ملیت یا محل بیان کن.",
-          "time_limit": 60,
-          "translation": "من اهل مادرید در اسپانیا هستم.",
-          "question": "من اهل مادرید در اسپانیا هستم.",
-          "accepted_answers": [
-            "I am from Madrid, in Spain."
-          ],
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
-        },
-        {
           "id": "evolve-1-l02-vt-013",
           "expected_answer": "Are you from Tokyo?",
           "explanation": "جمله را با توجه به فاعل، فعل بودن و عبارت مربوط به ملیت یا محل بیان کن.",
           "time_limit": 60,
           "translation": "آیا تو اهل توکیو هستی؟",
           "question": "آیا تو اهل توکیو هستی؟",
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
-        },
-        {
-          "id": "evolve-1-l02-vt-014",
-          "expected_answer": "Are you American? Yes, I am.",
-          "explanation": "جمله را با توجه به فاعل، فعل بودن و عبارت مربوط به ملیت یا محل بیان کن.",
-          "time_limit": 60,
-          "translation": "آیا تو آمریکایی هستی؟ بله، هستم.",
-          "question": "آیا تو آمریکایی هستی؟ بله، هستم.",
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
-        },
-        {
-          "id": "evolve-1-l02-vt-015",
-          "expected_answer": "I'm from Orlando, and I'm American.",
-          "explanation": "جمله را با توجه به فاعل، فعل بودن و عبارت مربوط به ملیت یا محل بیان کن.",
-          "time_limit": 60,
-          "translation": "من اهل اورلاندو هستم و آمریکایی هستم.",
-          "question": "من اهل اورلاندو هستم و آمریکایی هستم.",
-          "accepted_answers": [
-            "I am from Orlando, and I am American."
-          ],
           "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
         }
       ]
@@ -1011,26 +511,6 @@
       "presentation": "text",
       "difficulty": "easy",
       "items": [
-        {
-          "id": "evolve-1-l02-gc-001",
-          "expected_answer": "I am Brazilian.",
-          "explanation": "با فاعل اول‌شخص مفرد، شکل مناسب فعل بودن را انتخاب کن.",
-          "time_limit": 60,
-          "translation": "من برزیلی هستم.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "I are Brazilian."
-        },
-        {
-          "id": "evolve-1-l02-gc-002",
-          "expected_answer": "You are from Brazil.",
-          "explanation": "به فعل بودن متناسب با فاعل توجه کن.",
-          "time_limit": 60,
-          "translation": "تو اهل برزیل هستی.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "You am from Brazil."
-        },
         {
           "id": "evolve-1-l02-gc-003",
           "expected_answer": "I'm Brazilian.",
@@ -1052,56 +532,6 @@
           "incorrect_sentence": "Are from you Bogotá?"
         },
         {
-          "id": "evolve-1-l02-gc-005",
-          "expected_answer": "Are you from Quito?",
-          "explanation": "فعل بودن باید با فاعل جمله هماهنگ باشد.",
-          "time_limit": 60,
-          "translation": "آیا تو اهل کیتو هستی؟",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "Am you from Quito?"
-        },
-        {
-          "id": "evolve-1-l02-gc-006",
-          "expected_answer": "I'm not from Lima.",
-          "explanation": "جایگاه not و فعل بودن را در جملهٔ منفی بررسی کن.",
-          "time_limit": 60,
-          "translation": "من اهل لیما نیستم.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "I not from Lima."
-        },
-        {
-          "id": "evolve-1-l02-gc-007",
-          "expected_answer": "You're not from Bogotá.",
-          "explanation": "در جملهٔ منفی، فعل بودن را حذف نکن.",
-          "time_limit": 60,
-          "translation": "تو اهل بوگوتا نیستی.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "You not from Bogotá."
-        },
-        {
-          "id": "evolve-1-l02-gc-008",
-          "expected_answer": "Yes, I am.",
-          "explanation": "پاسخ کوتاه باید با فاعل اول‌شخص هماهنگ باشد.",
-          "time_limit": 60,
-          "translation": "بله، هستم.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "Yes, I are."
-        },
-        {
-          "id": "evolve-1-l02-gc-009",
-          "expected_answer": "No, I'm not a teacher.",
-          "explanation": "به حرف تعریف پیش از اسم شغل توجه کن.",
-          "time_limit": 60,
-          "translation": "نه، من معلم نیستم.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "No, I'm not teacher."
-        },
-        {
           "id": "evolve-1-l02-gc-010",
           "expected_answer": "Are you from Tokyo?",
           "explanation": "برای سؤال بله یا خیر، جای فعل و فاعل را تغییر بده.",
@@ -1110,66 +540,6 @@
           "question": "جملهٔ اشتباه را اصلاح کن.",
           "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
           "incorrect_sentence": "You are from Tokyo?"
-        },
-        {
-          "id": "evolve-1-l02-gc-011",
-          "expected_answer": "I'm from Moscow.",
-          "explanation": "فاعل جمله را پیدا کن و فعل مناسب را به کار ببر.",
-          "time_limit": 60,
-          "translation": "من اهل مسکو هستم.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "I are from Moscow."
-        },
-        {
-          "id": "evolve-1-l02-gc-012",
-          "expected_answer": "Are you American? Yes, I am.",
-          "explanation": "در پاسخ کوتاه، فعل باید با ضمیر پاسخ هماهنگ باشد.",
-          "time_limit": 60,
-          "translation": "آیا تو آمریکایی هستی؟ بله، هستم.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "Are you American? Yes, I are."
-        },
-        {
-          "id": "evolve-1-l02-gc-013",
-          "expected_answer": "Are you from Quito?",
-          "explanation": "برای ساخت سؤال، فعل بودن را پیش از فاعل قرار بده.",
-          "time_limit": 60,
-          "translation": "آیا تو اهل کیتو هستی؟",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "You are from Quito?"
-        },
-        {
-          "id": "evolve-1-l02-gc-014",
-          "expected_answer": "You're not from Mexico City.",
-          "explanation": "جایگاه نشانهٔ منفی را در کنار فعل بودن بررسی کن.",
-          "time_limit": 60,
-          "translation": "تو اهل مکزیکوسیتی نیستی.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "You're from Mexico City not."
-        },
-        {
-          "id": "evolve-1-l02-gc-015",
-          "expected_answer": "I am Brazilian.",
-          "explanation": "برای ملیت از ساختار جملهٔ اسمی استفاده کن.",
-          "time_limit": 60,
-          "translation": "من برزیلی هستم.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "I am from Brazilian."
-        },
-        {
-          "id": "evolve-1-l02-gc-016",
-          "expected_answer": "Are you Brazilian?",
-          "explanation": "در سؤال دربارهٔ ملیت، ساختار را با سؤال دربارهٔ کشور اشتباه نگیر.",
-          "time_limit": 60,
-          "translation": "آیا تو برزیلی هستی؟",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "Are you from Brazilian?"
         }
       ]
     },
@@ -1215,19 +585,6 @@
           "question": "جمله را منفی کن: I'm from Lima.",
           "accepted_answers": [
             "I am not from Lima."
-          ],
-          "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "negative"
-        },
-        {
-          "id": "evolve-1-l02-pn-004",
-          "expected_answer": "You're not from Bogotá.",
-          "explanation": "برای منفی‌سازی، فاعل و فعل را جابه‌جا نکن.",
-          "time_limit": 60,
-          "translation": "تو اهل بوگوتا نیستی.",
-          "question": "جمله را منفی کن: You're from Bogotá.",
-          "accepted_answers": [
-            "You are not from Bogotá."
           ],
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
           "operation": "negative"
@@ -1299,16 +656,6 @@
           "operation": "question"
         },
         {
-          "id": "evolve-1-l02-pn-011",
-          "expected_answer": "Are you a teacher?",
-          "explanation": "با جابه‌جایی فعل بودن و فاعل، سؤال بساز.",
-          "time_limit": 60,
-          "translation": "آیا تو معلم هستی؟",
-          "question": "جمله را سؤالی کن: You are a teacher.",
-          "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "question"
-        },
-        {
           "id": "evolve-1-l02-pn-012",
           "expected_answer": "I'm from Lima.",
           "explanation": "برای مثبت‌کردن جمله، نشانهٔ منفی را حذف کن.",
@@ -1337,26 +684,6 @@
           "question": "جمله را مثبت کن: I'm not a teacher.",
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
           "operation": "positive"
-        },
-        {
-          "id": "evolve-1-l02-pn-015",
-          "expected_answer": "Are you from Brazil?",
-          "explanation": "به ترتیب فعل بودن و فاعل در سؤال توجه کن.",
-          "time_limit": 60,
-          "translation": "آیا تو اهل برزیل هستی؟",
-          "question": "جمله را سؤالی کن: You're from Brazil.",
-          "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "question"
-        },
-        {
-          "id": "evolve-1-l02-pn-016",
-          "expected_answer": "Are you from Quito?",
-          "explanation": "در سؤال بله یا خیر، فعل بودن را پیش از فاعل بیاور.",
-          "time_limit": 60,
-          "translation": "آیا تو اهل کیتو هستی؟",
-          "question": "جمله را سؤالی کن: You're from Quito.",
-          "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "question"
         }
       ]
     },
@@ -1421,244 +748,6 @@
             "the United States",
             "Colombia",
             "Mexico"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-005",
-          "expected_answer": "Ecuador",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "کیتو پایتخت اکوادور است.",
-          "question": "Quito پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Peru",
-            "Egypt",
-            "Ecuador"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-006",
-          "expected_answer": "France",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "پاریس پایتخت فرانسه است.",
-          "question": "Paris پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Russia",
-            "Argentina",
-            "France"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-007",
-          "expected_answer": "Honduras",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "تگوسیگالپا پایتخت هندوراس است.",
-          "question": "Tegucigalpa پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "South Korea",
-            "Morocco",
-            "Honduras"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-008",
-          "expected_answer": "Japan",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "توکیو پایتخت ژاپن است.",
-          "question": "Tokyo پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Germany",
-            "Spain",
-            "Japan"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-009",
-          "expected_answer": "Mexico",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "مکزیکوسیتی پایتخت مکزیک است.",
-          "question": "Mexico City پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Mexico",
-            "the United States",
-            "Portugal"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-010",
-          "expected_answer": "Peru",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "لیما پایتخت پرو است.",
-          "question": "Lima پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Canada",
-            "Egypt",
-            "Peru"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-011",
-          "expected_answer": "Russia",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "مسکو پایتخت روسیه است.",
-          "question": "Moscow پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Argentina",
-            "Russia",
-            "Kenya"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-012",
-          "expected_answer": "South Korea",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "سئول پایتخت کره جنوبی است.",
-          "question": "Seoul پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "South Korea",
-            "Brazil",
-            "Morocco"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-013",
-          "expected_answer": "Spain",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "مادرید پایتخت اسپانیا است.",
-          "question": "Madrid پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Spain",
-            "Germany",
-            "Chile"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-014",
-          "expected_answer": "the United States",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "واشینگتن دی‌سی پایتخت ایالات متحده است.",
-          "question": "Washington, D.C. پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "the United States",
-            "China",
-            "Portugal"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-015",
-          "expected_answer": "Egypt",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "قاهره پایتخت مصر است.",
-          "question": "Cairo پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Colombia",
-            "Canada",
-            "Egypt"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-016",
-          "expected_answer": "Argentina",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "بوئنوس آیرس پایتخت آرژانتین است.",
-          "question": "Buenos Aires پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Ecuador",
-            "Kenya",
-            "Argentina"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-017",
-          "expected_answer": "Morocco",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "رباط پایتخت مراکش است.",
-          "question": "Rabat پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "France",
-            "Brazil",
-            "Morocco"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-018",
-          "expected_answer": "Germany",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "برلین پایتخت آلمان است.",
-          "question": "Berlin پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Germany",
-            "Honduras",
-            "Chile"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-019",
-          "expected_answer": "Portugal",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "لیسبون پایتخت پرتغال است.",
-          "question": "Lisbon پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Japan",
-            "China",
-            "Portugal"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-020",
-          "expected_answer": "Canada",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "اتاوا پایتخت کانادا است.",
-          "question": "Ottawa پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Colombia",
-            "Canada",
-            "Mexico"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-021",
-          "expected_answer": "Kenya",
-          "explanation": "رابطهٔ میان نام پایتخت و نام کشور را از جدول به یاد بیاور.",
-          "time_limit": 60,
-          "translation": "نایروبی پایتخت کنیا است.",
-          "question": "Nairobi پایتخت کدام کشور است؟",
-          "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Peru",
-            "Ecuador",
-            "Kenya"
           ]
         },
         {
@@ -1743,216 +832,6 @@
             "Spanish",
             "French",
             "Canadian"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-028",
-          "expected_answer": "Honduran",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به هندوراس، هندوراسی است.",
-          "question": "ملیت مربوط به Honduras چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Honduran",
-            "Kenyan",
-            "American"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-029",
-          "expected_answer": "Japanese",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به ژاپن، ژاپنی است.",
-          "question": "ملیت مربوط به Japan چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Japanese",
-            "Brazilian",
-            "Egyptian"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-030",
-          "expected_answer": "Mexican",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به مکزیک، مکزیکی است.",
-          "question": "ملیت مربوط به Mexico چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Chilean",
-            "Mexican",
-            "Argentinian"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-031",
-          "expected_answer": "Peruvian",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به پرو، پرویی است.",
-          "question": "ملیت مربوط به Peru چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Chinese",
-            "Peruvian",
-            "Moroccan"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-032",
-          "expected_answer": "Russian",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به روسیه، روسی است.",
-          "question": "ملیت مربوط به Russia چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Russian",
-            "Colombian",
-            "German"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-033",
-          "expected_answer": "South Korean",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به کره جنوبی، اهل کره جنوبی است.",
-          "question": "ملیت مربوط به South Korea چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Portuguese",
-            "South Korean",
-            "Ecuadorian"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-034",
-          "expected_answer": "Spanish",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به اسپانیا، اسپانیایی است.",
-          "question": "ملیت مربوط به Spain چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "French",
-            "Canadian",
-            "Spanish"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-035",
-          "expected_answer": "American",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به ایالات متحده، آمریکایی است.",
-          "question": "ملیت مربوط به the United States چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Honduran",
-            "American",
-            "Kenyan"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-036",
-          "expected_answer": "Egyptian",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به مصر، مصری است.",
-          "question": "ملیت مربوط به Egypt چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Brazilian",
-            "Japanese",
-            "Egyptian"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-037",
-          "expected_answer": "Argentinian",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به آرژانتین، آرژانتینی است.",
-          "question": "ملیت مربوط به Argentina چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Argentinian",
-            "Chilean",
-            "Mexican"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-038",
-          "expected_answer": "Moroccan",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به مراکش، مراکشی است.",
-          "question": "ملیت مربوط به Morocco چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Chinese",
-            "Moroccan",
-            "Peruvian"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-039",
-          "expected_answer": "German",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به آلمان، آلمانی است.",
-          "question": "ملیت مربوط به Germany چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Russian",
-            "German",
-            "Colombian"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-040",
-          "expected_answer": "Portuguese",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به پرتغال، پرتغالی است.",
-          "question": "ملیت مربوط به Portugal چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "South Korean",
-            "Ecuadorian",
-            "Portuguese"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-041",
-          "expected_answer": "Canadian",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به کانادا، کانادایی است.",
-          "question": "ملیت مربوط به Canada چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "French",
-            "Spanish",
-            "Canadian"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-042",
-          "expected_answer": "Kenyan",
-          "explanation": "به شکل انگلیسی ملیت و ارتباط آن با نام کشور توجه کن.",
-          "time_limit": 60,
-          "translation": "ملیت مربوط به کنیا، کنیایی است.",
-          "question": "ملیت مربوط به Kenya چیست؟",
-          "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Honduran",
-            "American",
-            "Kenyan"
           ]
         },
         {
@@ -2374,118 +1253,6 @@
             "I'm Spanish.",
             "Am Spanish."
           ]
-        },
-        {
-          "id": "evolve-1-l02-mc-073",
-          "expected_answer": "Harry",
-          "explanation": "سه مشخصهٔ کارت را هم‌زمان با هم تطبیق بده.",
-          "time_limit": 60,
-          "translation": "Harry — دانش‌آموز — نیویورک — آمریکایی.",
-          "question": "کدام شخص دانش‌آموز، اهل نیویورک و آمریکایی است؟",
-          "hint": "نقش، شهر و ملیت را کنار هم بررسی کن.",
-          "options": [
-            "Mike",
-            "Barbara",
-            "Harry"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-074",
-          "expected_answer": "Barbara",
-          "explanation": "سه مشخصهٔ کارت را هم‌زمان با هم تطبیق بده.",
-          "time_limit": 60,
-          "translation": "Barbara — دانش‌آموز — نیویورک — برزیلی.",
-          "question": "کدام شخص دانش‌آموز، اهل نیویورک و برزیلی است؟",
-          "hint": "نقش، شهر و ملیت را کنار هم بررسی کن.",
-          "options": [
-            "Victor",
-            "Barbara",
-            "Kristy"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-075",
-          "expected_answer": "Mike",
-          "explanation": "سه مشخصهٔ کارت را هم‌زمان با هم تطبیق بده.",
-          "time_limit": 60,
-          "translation": "Mike — دانش‌آموز — شیکاگو — آمریکایی.",
-          "question": "کدام شخص دانش‌آموز، اهل شیکاگو و آمریکایی است؟",
-          "hint": "نقش، شهر و ملیت را کنار هم بررسی کن.",
-          "options": [
-            "Mike",
-            "Nayara",
-            "Robert"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-076",
-          "expected_answer": "Victor",
-          "explanation": "سه مشخصهٔ کارت را هم‌زمان با هم تطبیق بده.",
-          "time_limit": 60,
-          "translation": "Victor — دانش‌آموز — شیکاگو — برزیلی.",
-          "question": "کدام شخص دانش‌آموز، اهل شیکاگو و برزیلی است؟",
-          "hint": "نقش، شهر و ملیت را کنار هم بررسی کن.",
-          "options": [
-            "Harry",
-            "Victor",
-            "Barbara"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-077",
-          "expected_answer": "Kristy",
-          "explanation": "سه مشخصهٔ کارت را هم‌زمان با هم تطبیق بده.",
-          "time_limit": 60,
-          "translation": "Kristy — معلم — نیویورک — آمریکایی.",
-          "question": "کدام شخص معلم، اهل نیویورک و آمریکایی است؟",
-          "hint": "نقش، شهر و ملیت را کنار هم بررسی کن.",
-          "options": [
-            "Barbara",
-            "Harry",
-            "Kristy"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-078",
-          "expected_answer": "Nayara",
-          "explanation": "سه مشخصهٔ کارت را هم‌زمان با هم تطبیق بده.",
-          "time_limit": 60,
-          "translation": "Nayara — معلم — نیویورک — برزیلی.",
-          "question": "کدام شخص معلم، اهل نیویورک و برزیلی است؟",
-          "hint": "نقش، شهر و ملیت را کنار هم بررسی کن.",
-          "options": [
-            "Nayara",
-            "Harry",
-            "Barbara"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-079",
-          "expected_answer": "Robert",
-          "explanation": "سه مشخصهٔ کارت را هم‌زمان با هم تطبیق بده.",
-          "time_limit": 60,
-          "translation": "Robert — معلم — شیکاگو — آمریکایی.",
-          "question": "کدام شخص معلم، اهل شیکاگو و آمریکایی است؟",
-          "hint": "نقش، شهر و ملیت را کنار هم بررسی کن.",
-          "options": [
-            "Barbara",
-            "Harry",
-            "Robert"
-          ]
-        },
-        {
-          "id": "evolve-1-l02-mc-080",
-          "expected_answer": "Juliano",
-          "explanation": "سه مشخصهٔ کارت را هم‌زمان با هم تطبیق بده.",
-          "time_limit": 60,
-          "translation": "Juliano — معلم — شیکاگو — برزیلی.",
-          "question": "کدام شخص معلم، اهل شیکاگو و برزیلی است؟",
-          "hint": "نقش، شهر و ملیت را کنار هم بررسی کن.",
-          "options": [
-            "Harry",
-            "Barbara",
-            "Juliano"
-          ]
         }
       ]
     },
@@ -2506,15 +1273,6 @@
           "accepted_answers": [
             "complete کردن و پر کردن در یادداشت کنار هم آمده‌اند."
           ],
-          "hint": "به ارتباط معنایی واژه‌ها در یادداشت همان درس توجه کن."
-        },
-        {
-          "id": "evolve-1-l02-voc-002",
-          "expected_answer": "examine",
-          "explanation": "معنی و کاربرد واژه‌ها را با فهرست یادداشت مقایسه کن.",
-          "time_limit": 60,
-          "translation": "بررسی کردن",
-          "question": "یک مترادف (synonym) برای check بنویس.",
           "hint": "به ارتباط معنایی واژه‌ها در یادداشت همان درس توجه کن."
         },
         {
@@ -2572,20 +1330,6 @@
           "question": "یک مترادف (synonym) برای student بنویس.",
           "accepted_answers": [
             "learner"
-          ],
-          "hint": "به ارتباط معنایی واژه‌ها در یادداشت همان درس توجه کن.",
-          "answer_mode": "list",
-          "min_items": 1
-        },
-        {
-          "id": "evolve-1-l02-voc-008",
-          "expected_answer": "friend",
-          "explanation": "معنی و کاربرد واژه‌ها را با فهرست یادداشت مقایسه کن.",
-          "time_limit": 60,
-          "translation": "همراه / دوست / کمک‌کننده",
-          "question": "یک واژهٔ نزدیک به partner بنویس.",
-          "accepted_answers": [
-            "helper"
           ],
           "hint": "به ارتباط معنایی واژه‌ها در یادداشت همان درس توجه کن.",
           "answer_mode": "list",
@@ -3300,16 +2044,6 @@
           "presentation": "audio"
         },
         {
-          "id": "evolve-1-l02-dic-070",
-          "expected_answer": "check",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "بررسی کردن",
-          "question": "check",
-          "hint": "بررسی کردن",
-          "presentation": "audio"
-        },
-        {
           "id": "evolve-1-l02-dic-071",
           "expected_answer": "examine",
           "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
@@ -3457,36 +2191,6 @@
           "translation": "یادگیرنده",
           "question": "learner",
           "hint": "یادگیرنده",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-086",
-          "expected_answer": "partner",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "همراه / هم‌گروهی",
-          "question": "partner",
-          "hint": "همراه / هم‌گروهی",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-087",
-          "expected_answer": "friend",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "دوست",
-          "question": "friend",
-          "hint": "دوست",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-088",
-          "expected_answer": "helper",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "کمک‌کننده",
-          "question": "helper",
-          "hint": "کمک‌کننده",
           "presentation": "audio"
         },
         {
@@ -3720,26 +2424,6 @@
           "presentation": "audio"
         },
         {
-          "id": "evolve-1-l02-dic-112",
-          "expected_answer": "speaking",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "مکالمه / صحبت کردن",
-          "question": "speaking",
-          "hint": "مکالمه / صحبت کردن",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-113",
-          "expected_answer": "read",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "خواندن",
-          "question": "read",
-          "hint": "خواندن",
-          "presentation": "audio"
-        },
-        {
           "id": "evolve-1-l02-dic-114",
           "expected_answer": "message",
           "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
@@ -3780,26 +2464,6 @@
           "presentation": "audio"
         },
         {
-          "id": "evolve-1-l02-dic-118",
-          "expected_answer": "say",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "گفتن",
-          "question": "say",
-          "hint": "گفتن",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-119",
-          "expected_answer": "name",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "نام",
-          "question": "name",
-          "hint": "نام",
-          "presentation": "audio"
-        },
-        {
           "id": "evolve-1-l02-dic-120",
           "expected_answer": "different",
           "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
@@ -3807,86 +2471,6 @@
           "translation": "متفاوت",
           "question": "different",
           "hint": "متفاوت",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-121",
-          "expected_answer": "person",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "شخص",
-          "question": "person",
-          "hint": "شخص",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-122",
-          "expected_answer": "people",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "افراد",
-          "question": "people",
-          "hint": "افراد",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-123",
-          "expected_answer": "ask",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "پرسیدن",
-          "question": "ask",
-          "hint": "پرسیدن",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-124",
-          "expected_answer": "answer",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "پاسخ دادن",
-          "question": "answer",
-          "hint": "پاسخ دادن",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-125",
-          "expected_answer": "write",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "نوشتن",
-          "question": "write",
-          "hint": "نوشتن",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-126",
-          "expected_answer": "listen",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "گوش دادن",
-          "question": "listen",
-          "hint": "گوش دادن",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-127",
-          "expected_answer": "watch",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "تماشا کردن",
-          "question": "watch",
-          "hint": "تماشا کردن",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-128",
-          "expected_answer": "objective",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "هدف",
-          "question": "objective",
-          "hint": "هدف",
           "presentation": "audio"
         },
         {
@@ -3907,16 +2491,6 @@
           "translation": "صحبت کردن",
           "question": "talk",
           "hint": "صحبت کردن",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-131",
-          "expected_answer": "information",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "اطلاعات",
-          "question": "information",
-          "hint": "اطلاعات",
           "presentation": "audio"
         },
         {
@@ -3970,16 +2544,6 @@
           "presentation": "audio"
         },
         {
-          "id": "evolve-1-l02-dic-137",
-          "expected_answer": "teacher",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "معلم",
-          "question": "teacher",
-          "hint": "معلم",
-          "presentation": "audio"
-        },
-        {
           "id": "evolve-1-l02-dic-139",
           "expected_answer": "answers",
           "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
@@ -3987,16 +2551,6 @@
           "translation": "پاسخ‌ها",
           "question": "answers",
           "hint": "پاسخ‌ها",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-140",
-          "expected_answer": "new",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "جدید",
-          "question": "new",
-          "hint": "جدید",
           "presentation": "audio"
         },
         {
@@ -4120,66 +2674,6 @@
           "presentation": "audio"
         },
         {
-          "id": "evolve-1-l02-dic-153",
-          "expected_answer": "Gabi",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "گابی",
-          "question": "Gabi",
-          "hint": "گابی",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-154",
-          "expected_answer": "Karina",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "کارینا",
-          "question": "Karina",
-          "hint": "کارینا",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-155",
-          "expected_answer": "Antonio",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "آنتونیو",
-          "question": "Antonio",
-          "hint": "آنتونیو",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-156",
-          "expected_answer": "Max",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "مکس",
-          "question": "Max",
-          "hint": "مکس",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-157",
-          "expected_answer": "Yessica",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "یسیکا",
-          "question": "Yessica",
-          "hint": "یسیکا",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-158",
-          "expected_answer": "Daniel",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "دنیل",
-          "question": "Daniel",
-          "hint": "دنیل",
-          "presentation": "audio"
-        },
-        {
           "id": "evolve-1-l02-dic-159",
           "expected_answer": "Callao",
           "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
@@ -4240,96 +2734,6 @@
           "presentation": "audio"
         },
         {
-          "id": "evolve-1-l02-dic-165",
-          "expected_answer": "Harry",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "هری",
-          "question": "Harry",
-          "hint": "هری",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-166",
-          "expected_answer": "Barbara",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "باربارا",
-          "question": "Barbara",
-          "hint": "باربارا",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-167",
-          "expected_answer": "Mike",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "مایک",
-          "question": "Mike",
-          "hint": "مایک",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-168",
-          "expected_answer": "Victor",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "ویکتور",
-          "question": "Victor",
-          "hint": "ویکتور",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-169",
-          "expected_answer": "Kristy",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "کریستی",
-          "question": "Kristy",
-          "hint": "کریستی",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-170",
-          "expected_answer": "Nayara",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "نایارا",
-          "question": "Nayara",
-          "hint": "نایارا",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-171",
-          "expected_answer": "Robert",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "رابرت",
-          "question": "Robert",
-          "hint": "رابرت",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-172",
-          "expected_answer": "Juliano",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "جولیانو",
-          "question": "Juliano",
-          "hint": "جولیانو",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-173",
-          "expected_answer": "Alex",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "الکس",
-          "question": "Alex",
-          "hint": "الکس",
-          "presentation": "audio"
-        },
-        {
           "id": "evolve-1-l02-dic-174",
           "expected_answer": "tell",
           "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
@@ -4377,10 +2781,6 @@
       {
         "word": "fill in",
         "meaning": "جای خالی را پر کردن"
-      },
-      {
-        "word": "check",
-        "meaning": "بررسی کردن"
       },
       {
         "word": "examine",
@@ -4441,18 +2841,6 @@
       {
         "word": "learner",
         "meaning": "یادگیرنده"
-      },
-      {
-        "word": "partner",
-        "meaning": "همراه / هم‌گروهی"
-      },
-      {
-        "word": "friend",
-        "meaning": "دوست"
-      },
-      {
-        "word": "helper",
-        "meaning": "کمک‌کننده"
       },
       {
         "word": "universal",
@@ -4547,14 +2935,6 @@
         "meaning": "کار گروهی"
       },
       {
-        "word": "speaking",
-        "meaning": "مکالمه / صحبت کردن"
-      },
-      {
-        "word": "read",
-        "meaning": "خواندن"
-      },
-      {
         "word": "message",
         "meaning": "پیام"
       },
@@ -4571,48 +2951,8 @@
         "meaning": "مدرسه"
       },
       {
-        "word": "say",
-        "meaning": "گفتن"
-      },
-      {
-        "word": "name",
-        "meaning": "نام"
-      },
-      {
         "word": "different",
         "meaning": "متفاوت"
-      },
-      {
-        "word": "person",
-        "meaning": "شخص"
-      },
-      {
-        "word": "people",
-        "meaning": "افراد"
-      },
-      {
-        "word": "ask",
-        "meaning": "پرسیدن"
-      },
-      {
-        "word": "answer",
-        "meaning": "پاسخ دادن"
-      },
-      {
-        "word": "write",
-        "meaning": "نوشتن"
-      },
-      {
-        "word": "listen",
-        "meaning": "گوش دادن"
-      },
-      {
-        "word": "watch",
-        "meaning": "تماشا کردن"
-      },
-      {
-        "word": "objective",
-        "meaning": "هدف"
       },
       {
         "word": "where",
@@ -4621,10 +2961,6 @@
       {
         "word": "talk",
         "meaning": "صحبت کردن"
-      },
-      {
-        "word": "information",
-        "meaning": "اطلاعات"
       },
       {
         "word": "card",
@@ -4647,20 +2983,8 @@
         "meaning": "ملیت"
       },
       {
-        "word": "teacher",
-        "meaning": "معلم"
-      },
-      {
-        "word": "answer",
-        "meaning": "پاسخ"
-      },
-      {
         "word": "answers",
         "meaning": "پاسخ‌ها"
-      },
-      {
-        "word": "new",
-        "meaning": "جدید"
       },
       {
         "word": "one",
@@ -4939,32 +3263,8 @@
         "meaning": "سائوپائولو"
       },
       {
-        "word": "Gabi",
-        "meaning": "گابی"
-      },
-      {
-        "word": "Karina",
-        "meaning": "کارینا"
-      },
-      {
         "word": "Medellín",
         "meaning": "مدلین"
-      },
-      {
-        "word": "Antonio",
-        "meaning": "آنتونیو"
-      },
-      {
-        "word": "Max",
-        "meaning": "مکس"
-      },
-      {
-        "word": "Yessica",
-        "meaning": "یسیکا"
-      },
-      {
-        "word": "Daniel",
-        "meaning": "دنیل"
       },
       {
         "word": "Callao",
@@ -4985,38 +3285,6 @@
       {
         "word": "Chicago",
         "meaning": "شیکاگو"
-      },
-      {
-        "word": "Harry",
-        "meaning": "هری"
-      },
-      {
-        "word": "Barbara",
-        "meaning": "باربارا"
-      },
-      {
-        "word": "Mike",
-        "meaning": "مایک"
-      },
-      {
-        "word": "Victor",
-        "meaning": "ویکتور"
-      },
-      {
-        "word": "Kristy",
-        "meaning": "کریستی"
-      },
-      {
-        "word": "Nayara",
-        "meaning": "نایارا"
-      },
-      {
-        "word": "Robert",
-        "meaning": "رابرت"
-      },
-      {
-        "word": "Juliano",
-        "meaning": "جولیانو"
       },
       {
         "word": "yes",
@@ -5057,12 +3325,12 @@
         "fa": "سلام!"
       },
       {
-        "en": "Hi, I'm Gabi. I'm Brazilian. I'm from São Paulo.",
-        "fa": "سلام، من گابی هستم. من برزیلی هستم. اهل سائوپائولو هستم."
+        "en": "Hi, I'm Brazilian. I'm from São Paulo.",
+        "fa": "سلام، من برزیلی هستم. من اهل سائوپائولو هستم."
       },
       {
-        "en": "You're from Brazil! Wow! My name is Karina, and I'm from Colombia.",
-        "fa": "تو اهل برزیل هستی! وای! نام من کارینا است و من اهل کلمبیا هستم."
+        "en": "You're from Brazil! Wow! I'm from Colombia.",
+        "fa": "تو اهل برزیل هستی! وای! من اهل کلمبیا هستم."
       },
       {
         "en": "Are you from Bogotá?",
@@ -5073,16 +3341,16 @@
         "fa": "نه، نیستم. من اهل مدلین هستم."
       },
       {
-        "en": "My name is Antonio. I'm from Mexico City – in Mexico!",
-        "fa": "نام من آنتونیو است. من اهل مکزیکوسیتی در مکزیک هستم!"
+        "en": "Hi! I'm from Mexico City – in Mexico!",
+        "fa": "سلام! من اهل مکزیکوسیتی در مکزیک هستم!"
       },
       {
-        "en": "Hi, I'm Max. I'm Russian. I'm from Moscow.",
-        "fa": "سلام، من مکس هستم. من روس هستم. اهل مسکو هستم."
+        "en": "Hi, I'm Russian. I'm from Moscow.",
+        "fa": "سلام، من روس هستم. من اهل مسکو هستم."
       },
       {
-        "en": "Hi, Max. Are you a teacher?",
-        "fa": "سلام مکس. آیا تو معلم هستی؟"
+        "en": "Hi! Are you a teacher?",
+        "fa": "سلام! آیا تو معلم هستی؟"
       },
       {
         "en": "Yes, I am. And you?",
@@ -5093,12 +3361,12 @@
         "fa": "نه، من معلم نیستم. من دانش‌آموز هستم."
       },
       {
-        "en": "Hi! I'm Yessica. I'm Peruvian, and I'm from Callao.",
-        "fa": "سلام! من یسیکا هستم. من پرویی هستم و اهل کالائو هستم."
+        "en": "Hi! I'm Peruvian, and I'm from Callao.",
+        "fa": "سلام! من پرویی هستم و اهل کالائو هستم."
       },
       {
-        "en": "Hello! I'm Daniel. I'm from Madrid, in Spain.",
-        "fa": "سلام! من دنیل هستم. من اهل مادرید در اسپانیا هستم."
+        "en": "Hello! I'm from Madrid, in Spain.",
+        "fa": "سلام! من اهل مادرید در اسپانیا هستم."
       },
       {
         "en": "I'm Brazilian.",
@@ -5157,10 +3425,6 @@
         "fa": "آیا تو آمریکایی هستی؟"
       },
       {
-        "en": "I'm Alex.",
-        "fa": "من الکس هستم."
-      },
-      {
         "en": "I'm from Orlando.",
         "fa": "من اهل اورلاندو هستم."
       },
@@ -5193,8 +3457,8 @@
         "fa": "تو اهل برزیل هستی."
       },
       {
-        "en": "My name is Karina, and I'm from Colombia.",
-        "fa": "نام من کارینا است و من اهل کلمبیا هستم."
+        "en": "I'm from Colombia.",
+        "fa": "من اهل کلمبیا هستم."
       },
       {
         "en": "I'm Russian. I'm from Moscow.",
@@ -5217,40 +3481,8 @@
         "fa": "آیا تو آمریکایی هستی؟ بله، هستم."
       },
       {
-        "en": "I'm Alex. I'm from Orlando. I'm American.",
-        "fa": "من الکس هستم. من اهل اورلاندو هستم. من آمریکایی هستم."
-      },
-      {
-        "en": "Watch",
-        "fa": "تماشا کردن"
-      },
-      {
-        "en": "Watches",
-        "fa": "شکل سوم‌شخص watch"
-      },
-      {
-        "en": "Wash",
-        "fa": "شستن"
-      },
-      {
-        "en": "Washes",
-        "fa": "شکل سوم‌شخص wash"
-      },
-      {
-        "en": "Pass",
-        "fa": "رد شدن / پاس دادن"
-      },
-      {
-        "en": "Passes",
-        "fa": "شکل سوم‌شخص pass"
-      },
-      {
-        "en": "Books",
-        "fa": "کتاب‌ها"
-      },
-      {
-        "en": "Laughs",
-        "fa": "می‌خندد"
+        "en": "I'm from Orlando. I'm American.",
+        "fa": "من اهل اورلاندو هستم. من آمریکایی هستم."
       }
     ],
     "grammar": [
@@ -5283,7 +3515,7 @@
         ]
       },
       {
-        "title": "Nationality و محل Herkunft",
+        "title": "ملیت و محل با from",
         "explanation": "برای معرفی ملیت، نام ملیت را پس از فعل بودن می‌آوریم؛ برای گفتن شهر یا کشور مبدأ از from استفاده می‌کنیم.",
         "examples": [
           {
@@ -5359,38 +3591,6 @@
             "fa": "من دانش‌آموز هستم."
           }
         ]
-      },
-      {
-        "title": "املای پسوند s و es در یادداشت کلاس",
-        "explanation": "در یادداشت کلاس، برای پایان‌های s، ss، sh، ch، x، z و o از es استفاده شده است. نمونه‌های ثبت‌شده را با هم مقایسه کن.",
-        "examples": [
-          {
-            "en": "Watch → Watches",
-            "fa": "watch به watches تبدیل می‌شود."
-          },
-          {
-            "en": "Wash → Washes",
-            "fa": "wash به washes تبدیل می‌شود."
-          },
-          {
-            "en": "Pass → Passes",
-            "fa": "pass به passes تبدیل می‌شود."
-          }
-        ]
-      },
-      {
-        "title": "صدای پسوند s در نمونه‌های یادداشت",
-        "explanation": "در یادداشت کلاس آمده که پس از صداهای پایانی p، f، k و t، پسوند s صدای /s/ دارد. نمونه‌های ثبت‌شده را با صدای پایانی مقایسه کن.",
-        "examples": [
-          {
-            "en": "Books",
-            "fa": "کتاب‌ها"
-          },
-          {
-            "en": "Laughs",
-            "fa": "laughs"
-          }
-        ]
       }
     ],
     "stories": [
@@ -5402,12 +3602,12 @@
             "fa": "سلام!"
           },
           {
-            "en": "Hi, I'm Gabi. I'm Brazilian. I'm from São Paulo.",
-            "fa": "سلام، من گابی هستم. من برزیلی هستم. اهل سائوپائولو هستم."
+            "en": "Hi, I'm Brazilian. I'm from São Paulo.",
+            "fa": "سلام، من برزیلی هستم. من اهل سائوپائولو هستم."
           },
           {
-            "en": "You're from Brazil! Wow! My name is Karina, and I'm from Colombia.",
-            "fa": "تو اهل برزیل هستی! وای! نام من کارینا است و من اهل کلمبیا هستم."
+            "en": "You're from Brazil! Wow! I'm from Colombia.",
+            "fa": "تو اهل برزیل هستی! وای! من اهل کلمبیا هستم."
           },
           {
             "en": "Are you from Bogotá?",
@@ -5420,19 +3620,19 @@
         ]
       },
       {
-        "title": "آشنایی آنتونیو و مکس",
+        "title": "آشنایی دو هم‌کلاسی",
         "lines": [
           {
-            "en": "My name is Antonio. I'm from Mexico City – in Mexico!",
-            "fa": "نام من آنتونیو است. من اهل مکزیکوسیتی در مکزیک هستم!"
+            "en": "Hi! I'm from Mexico City – in Mexico!",
+            "fa": "سلام! من اهل مکزیکوسیتی در مکزیک هستم!"
           },
           {
-            "en": "Hi, I'm Max. I'm Russian. I'm from Moscow.",
-            "fa": "سلام، من مکس هستم. من روس هستم. اهل مسکو هستم."
+            "en": "Hi, I'm Russian. I'm from Moscow.",
+            "fa": "سلام، من روس هستم. من اهل مسکو هستم."
           },
           {
-            "en": "Hi, Max. Are you a teacher?",
-            "fa": "سلام مکس. آیا تو معلم هستی؟"
+            "en": "Hi! Are you a teacher?",
+            "fa": "سلام! آیا تو معلم هستی؟"
           },
           {
             "en": "Yes, I am. And you?",
@@ -5448,12 +3648,12 @@
         "title": "معرفی ملیت و شهر",
         "lines": [
           {
-            "en": "Hi! I'm Yessica. I'm Peruvian, and I'm from Callao.",
-            "fa": "سلام! من یسیکا هستم. من پرویی هستم و اهل کالائو هستم."
+            "en": "Hi! I'm Peruvian, and I'm from Callao.",
+            "fa": "سلام! من پرویی هستم و اهل کالائو هستم."
           },
           {
-            "en": "Hello! I'm Daniel. I'm from Madrid, in Spain.",
-            "fa": "سلام! من دنیل هستم. من اهل مادرید در اسپانیا هستم."
+            "en": "Hello! I'm from Madrid, in Spain.",
+            "fa": "سلام! من اهل مادرید در اسپانیا هستم."
           }
         ]
       },
@@ -5479,12 +3679,8 @@
         ]
       },
       {
-        "title": "معرفی الکس",
+        "title": "معرفی یک دانش‌آموز",
         "lines": [
-          {
-            "en": "I'm Alex.",
-            "fa": "من الکس هستم."
-          },
           {
             "en": "I'm from Orlando.",
             "fa": "من اهل اورلاندو هستم."

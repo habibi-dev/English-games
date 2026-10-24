@@ -1,0 +1,17 @@
+---
+description: All text the app shows to the learner is English, and plain, easy English
+alwaysApply: true
+---
+
+# English app text
+
+- Every piece of text the app itself shows is English: labels, buttons, titles, headings, tabs, menus, toasts,
+  popups and dialogs (their titles, messages and buttons), tooltips, empty-state texts, error messages and the
+  screen-reader labels. Do not add Persian to any of these.
+- Use plain, easy English. Short sentences, common words. Say what the learner must do and what happens next.
+  Avoid fancy or formal words (for example write "Finish" not "Complete the prerequisite", "Close" not "Dismiss").
+  A learner should understand every line without a dictionary.
+- Buttons and dialogs: use short English labels such as `OK`, `Close`, `Cancel`, `Start`, `Back`.
+- Learner content stays as it is: the Persian sentence to translate, Persian meanings, Persian hints and Persian
+  grammar explanations come from the lesson files and are not app text. Do not translate them into English.
+- When you add a new message or label to the app, write it in English first. Do not leave a Persian placeholder.

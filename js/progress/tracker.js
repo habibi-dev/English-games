@@ -5,6 +5,7 @@
 import * as db from '../storage/db.js';
 import { clearActivity } from './activity.js';
 import { newAttempts } from './backup.js';
+import { clearUnlockedLessons } from '../storage/lesson-unlocks.js';
 
 export async function recordOutcome(outcome) {
   const q = outcome.question;
@@ -37,5 +38,6 @@ export async function importAttempts(incoming) {
 // Clears every answer and the activity time, so the reports start again from nothing.
 export async function resetProgress() {
   clearActivity();
+  clearUnlockedLessons();
   return db.clearAttempts();
 }

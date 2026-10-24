@@ -13,13 +13,13 @@ import { scrambleLetters } from '../engine/spelling.js';
 import { typingQuota, spendTypingQuota } from '../storage/typing-quota.js';
 
 export const INSTRUCTIONS = {
-  quick_translation: 'به انگلیسی ترجمه کن',
+  quick_translation: 'Translate into English.',
   sentence_builder: 'Put the words together in the correct order.',
-  word_translation: 'این جمله‌ی فارسی را به انگلیسی ترجمه کن.',
+  word_translation: 'Translate these Persian words into one English sentence.',
   grammar_correction: 'Correct the wrong sentence and write the whole correct sentence.',
   multiple_choice: 'Choose the correct option.',
   positive_negative_question: 'Change the sentence as instructed and write the whole sentence.',
-  voice_translation: 'این جمله‌ی فارسی را به انگلیسی بگو.',
+  voice_translation: 'Say this sentence in English.',
   dictation: 'Listen to the sentence and write it exactly as you hear it.',
   vocabulary: 'Write a synonym or an antonym. If several are asked, separate them with commas.',
 };

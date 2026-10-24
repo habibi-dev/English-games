@@ -12,6 +12,8 @@ import { lessonMaterial, buildWordStudyIndex } from '../bank/lesson-vocabulary.j
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, levelStartXp, resultTier } from '../progress/player.js';
 import { doneIds, progressOf } from '../progress/lesson-progress.js';
+import { unlockedLessons, previousLesson, reachedShare } from '../progress/lesson-unlock.js';
+import { getUnlockedLessons, saveUnlockedLessons } from '../storage/lesson-unlocks.js';
 import { scheduleOf, isDue, missionQuestions, nextDueAt } from '../progress/spaced-repetition.js';
 import { getSettings, saveSettings, getSoundSettings } from '../storage/settings.js';
 import { h, toast, fa, ltr, badge, percent, keepFocus, confirmDialog, scrollToTop } from './dom.js';
@@ -70,22 +72,30 @@ const CATEGORY_ICONS = {
 
 // Presentation of the English sentence for a mission: follow each exercise, or force one mode.
 const PRESENTATION_CHOICES = [
-  ['auto', 'As in the exercise'],
-  ['text', 'Always text'],
-  ['audio', 'Audio only'],
+  { value: 'auto', title: 'As in the exercise', sub: 'Each exercise decides', icon: 'sparkles' },
+  { value: 'text', title: 'Text', sub: 'Always show the words', icon: 'textLong' },
+  { value: 'audio', title: 'Listen only', sub: 'Hear it, no text', icon: 'headphones' },
 ];
 
 // Play modes: the time of each question is split into three steps, and the points grow with the mode.
+// `stars` shows how many points the mode gives.
 const MODE_CHOICES = [
-  ['easy', 'Easy · full time · normal points'],
-  ['medium', 'Medium · ⅔ of the time · more points'],
-  ['hard', 'Hard · ⅓ of the time · most points'],
+  { value: 'easy', title: 'Easy', sub: 'Full time to answer', stars: 1 },
+  { value: 'medium', title: 'Medium', sub: 'Less time, more points', stars: 2 },
+  { value: 'hard', title: 'Hard', sub: 'Least time, most points', stars: 3 },
 ];
 
 // How the learner gives a text answer: typing (with the mic as an extra), or the mic only.
 const ANSWER_INPUT_CHOICES = [
-  ['typing', 'Type or speak'],
-  ['voice', 'Voice only'],
+  { value: 'typing', title: 'Type or speak', sub: 'Keyboard, or the mic too', icon: 'keyboard' },
+  { value: 'voice', title: 'Voice only', sub: 'Speak every answer', icon: 'mic' },
+];
+
+// How many questions one mission has, as big numbers.
+const LENGTH_CHOICES = [
+  { value: 10, title: 'Short', sub: '10 questions', big: '10' },
+  { value: 20, title: 'Medium', sub: '20 questions', big: '20' },
+  { value: MAX_MISSION_QUESTIONS, title: 'Long', sub: `${MAX_MISSION_QUESTIONS} questions`, big: String(MAX_MISSION_QUESTIONS) },
 ];
 
 let timerId = null;
@@ -343,6 +353,72 @@ function chipGroup(options, selected, { multiple = true, onChange, className = '
   return box;
 }
 
+/** Stars that show how many points a choice gives: `count` filled stars out of `total`. */
+function starRow(count, total = 3) {
+  return h(
+    'span',
+    { class: 'choice-stars', 'aria-label': `${count} of ${total} stars` },
+    Array.from({ length: total }, (_, index) => uiIcon('star', index < count ? 'choice-star on' : 'choice-star')),
+  );
+}
+
+/**
+ * Setup choices as picture cards: an icon (or stars, or a big number), a short title and one plain line.
+ * Same rules as chipGroup: `selected` is mutated in place, and onChange runs after each tap.
+ */
+function choiceCards(options, selected, { multiple = false, onChange, className = '' }) {
+  const box = h('div', { class: `choice-grid ${className}`.trim() });
+  const draw = () =>
+    box.replaceChildren(
+      ...options.map(({ value, title, sub = '', icon = null, stars = null, big = null }) => {
+        const active = selected.includes(value);
+        return h(
+          'button',
+          {
+            type: 'button',
+            class: `choice-card${active ? ' active' : ''}`,
+            'aria-pressed': active,
+            onclick: () => {
+              if (multiple) {
+                const index = selected.indexOf(value);
+                if (index >= 0) selected.splice(index, 1);
+                else selected.push(value);
+              } else {
+                selected.splice(0, selected.length, value);
+              }
+              draw();
+              onChange?.();
+            },
+          },
+          h(
+            'span',
+            { class: 'choice-visual' },
+            big ? h('span', { class: 'choice-big' }, big) : stars ? starRow(stars) : icon ? uiIcon(icon) : null,
+          ),
+          h('span', { class: 'choice-text' }, h('strong', {}, title), sub ? h('span', { class: 'choice-sub' }, sub) : null),
+          h('span', { class: 'choice-check' }, uiIcon('check')),
+        );
+      }),
+    );
+  draw();
+  return box;
+}
+
+/** A numbered part of the setup: a round number, a title, one short hint, then the choices. */
+function setupSection(number, title, hint, body) {
+  return h(
+    'section',
+    { class: 'setup-section' },
+    h(
+      'div',
+      { class: 'setup-section-head' },
+      h('span', { class: 'section-badge', 'aria-hidden': 'true' }, String(number)),
+      h('div', { class: 'section-heading' }, h('h4', { class: 'section-title' }, title), h('p', { class: 'section-hint' }, hint)),
+    ),
+    body,
+  );
+}
+
 /** Keeps only saved values that still exist; falls back when nothing was saved. */
 function restored(value, valid, fallback) {
   return Array.isArray(value) ? value.filter((item) => valid.includes(item)) : fallback;
@@ -448,6 +524,31 @@ async function showSetup(root, restore = null) {
       questions.filter((q) => keys.includes(lessonKey(q.book, q.lesson))),
       done,
     );
+  // Which lessons of a book are open (see lesson-unlock.js). The unlocks are stored, so they last.
+  const openLessonsOf = (book) => {
+    const keys = book.lessons.map((lesson) => lesson.key);
+    const stored = getUnlockedLessons();
+    const open = unlockedLessons(keys, (key) => progressOfLessons([key]), stored);
+    if (open.size !== stored.size) saveUnlockedLessons(open);
+    return { isOpen: (key) => open.has(key) };
+  };
+  // A locked lesson: a card says which lesson has to be finished first.
+  const showLocked = (book, lesson) => {
+    const previousKey = previousLesson(
+      book.lessons.map((item) => item.key),
+      lesson.key,
+    );
+    const previous = book.lessons.find((item) => item.key === previousKey);
+    return confirmDialog({
+      title: 'Lesson locked',
+      message: `Finish at least 75% of "${previous?.lessonTitle ?? ''}" first. Then "${lesson.lessonTitle}" will open.`,
+      confirmText: 'OK',
+      cancelText: 'Close',
+    });
+  };
+  // The "All lessons" rows show only when every lesson of the scope is at least 75% done and none is locked.
+  const allRowShown = (lessons, open) =>
+    lessons.every((lesson) => open.isOpen(lesson.key) && reachedShare(progressOfLessons([lesson.key])));
   const saved = getSettings();
   const series = seriesList(lessons);
   const allBooks = series.flatMap((entry) => entry.books);
@@ -465,7 +566,7 @@ async function showSetup(root, restore = null) {
     unit: savedUnit,
     lessons: savedLessons.length ? savedLessons : allLessonKeys,
     categories: restored(saved.categories, Object.keys(CATEGORIES), Object.keys(CATEGORIES)),
-    presentation: [PRESENTATION_CHOICES.some(([value]) => value === saved.presentation) ? saved.presentation : 'auto'],
+    presentation: [PRESENTATION_CHOICES.some((choice) => choice.value === saved.presentation) ? saved.presentation : 'auto'],
     input: [saved.answerInput === 'voice' ? 'voice' : 'typing'],
     mode: [Object.hasOwn(PLAY_MODES, saved.mode) ? saved.mode : 'easy'],
     count: [COUNTS.includes(savedCount(saved.count)) ? savedCount(saved.count) : 10],
@@ -684,15 +785,20 @@ async function showSetup(root, restore = null) {
     setTopbarBack(() => back({ name: 'book', series: parent?.id }));
     const allKeys = book.lessons.map((lesson) => lesson.key);
     const lastKey = lastPracticedKey(book);
+    const open = openLessonsOf(book);
     const unitBox = h('div', { class: 'lesson-list' });
     unitBox.replaceChildren(
-      lessonRow({
-        title: 'All lessons in this book',
-        subtitle: `For review · ${plural(allKeys.length, 'lesson')}`,
-        dashed: true,
-        progress: progressOfLessons(allKeys),
-        onclick: () => go({ name: 'hub', book: state.book, unit: null, lessons: [...allKeys] }),
-      }),
+      ...(allRowShown(book.lessons, open)
+        ? [
+            lessonRow({
+              title: 'All lessons in this book',
+              subtitle: `For review · ${plural(allKeys.length, 'lesson')}`,
+              dashed: true,
+              progress: progressOfLessons(allKeys),
+              onclick: () => go({ name: 'hub', book: state.book, unit: null, lessons: [...allKeys] }),
+            }),
+          ]
+        : []),
       ...book.units.map((unit) => {
         const keys = unit.lessons.map((lesson) => lesson.key);
         const progress = progressOfLessons(keys);
@@ -731,23 +837,32 @@ async function showSetup(root, restore = null) {
     setTopbarBack(() => back({ name: 'unit', book: state.book }));
     const allKeys = unit.lessons.map((lesson) => lesson.key);
     const lastKey = lastPracticedKey(book);
+    const open = openLessonsOf(book);
     const lessonBox = h('div', { class: 'lesson-list' });
     lessonBox.replaceChildren(
-      lessonRow({
-        title: `All lessons in ${unit.title}`,
-        subtitle: `For review · ${plural(allKeys.length, 'lesson')}`,
-        dashed: true,
-        progress: progressOfLessons(allKeys),
-        onclick: () => go({ name: 'hub', book: state.book, unit: unit.key, lessons: [...allKeys] }),
-      }),
+      ...(allRowShown(unit.lessons, open)
+        ? [
+            lessonRow({
+              title: `All lessons in ${unit.title}`,
+              subtitle: `For review · ${plural(allKeys.length, 'lesson')}`,
+              dashed: true,
+              progress: progressOfLessons(allKeys),
+              onclick: () => go({ name: 'hub', book: state.book, unit: unit.key, lessons: [...allKeys] }),
+            }),
+          ]
+        : []),
       ...unit.lessons.map((lesson) => {
         const progress = progressOfLessons([lesson.key]);
+        const locked = !open.isOpen(lesson.key);
         return lessonRow({
           title: lesson.lessonTitle,
           subtitle: plural(lesson.count, 'question'),
           tag: progress.complete ? 'Completed' : lesson.key === lastKey ? 'Last practised' : null,
           progress,
-          onclick: () => go({ name: 'hub', book: state.book, unit: unit.key, lessons: [lesson.key] }),
+          locked,
+          onclick: locked
+            ? () => showLocked(book, lesson)
+            : () => go({ name: 'hub', book: state.book, unit: unit.key, lessons: [lesson.key] }),
         });
       }),
     );
@@ -903,7 +1018,8 @@ async function showSetup(root, restore = null) {
           })),
           speakLabel: 'Read the example aloud',
           playbar: false,
-          note: 'Choose what to see. Tap the eye to show the hidden side of an example.',
+          modeSwitch: false,
+          note: 'Read the rule first, then its examples. Each example shows its English and its Persian together.',
         }),
       );
     } else {
@@ -936,7 +1052,7 @@ async function showSetup(root, restore = null) {
   function drawSettingsStep() {
     settingsStart = null;
     const book = allBooks.find((entry) => entry.id === state.book);
-    info = h('p', { class: 'muted small info' });
+    info = h('p', { class: 'setup-info muted small info' });
     // The Difficulty step: the bottom bar is one Play button, and it starts the mission (there is no Start button).
     settingsStart = () => {
       start();
@@ -959,47 +1075,45 @@ async function showSetup(root, restore = null) {
           book.lessons.filter((lesson) => state.lessons.includes(lesson.key)),
           progressOfLessons(state.lessons),
         ),
-        stepTitle('Difficulty'),
-        chipGroup(MODE_CHOICES, state.mode, {
-          multiple: false,
+        setupTip(),
+        setupSection(1, 'Choose your level', 'Harder levels give you less time and more points.', choiceCards(MODE_CHOICES, state.mode, {
           onChange: refresh,
-          className: 'card-options',
-        }),
-        stepTitle('Exercise types'),
-        chipGroup(
-          // Only the exercise types that have questions in the chosen lessons are offered.
-          Object.entries(CATEGORIES)
-            .map(([key, label]) => [key, label, categoryProgress(key)])
-            .filter(([, , progress]) => progress.total > 0)
-            .map(([key, label, progress]) => [
-              key,
-              categoryChip(label, progress, CATEGORY_ICONS[key]),
-            ]),
-          state.categories,
-          { onChange: refresh, className: 'card-options mission-options' },
+          className: 'mode-grid',
+        })),
+        setupSection(
+          2,
+          'Pick what to practise',
+          'Tap each exercise type you want. The bar shows how much you have done.',
+          chipGroup(
+            // Only the exercise types that have questions in the chosen lessons are offered.
+            Object.entries(CATEGORIES)
+              .map(([key, label]) => [key, label, categoryProgress(key)])
+              .filter(([, , progress]) => progress.total > 0)
+              .map(([key, label, progress]) => [
+                key,
+                categoryChip(label, progress, CATEGORY_ICONS[key]),
+              ]),
+            state.categories,
+            { onChange: refresh, className: 'card-options mission-options' },
+          ),
         ),
-        stepTitle('Sentence display'),
-        chipGroup(PRESENTATION_CHOICES, state.presentation, {
-          multiple: false,
-          onChange: refresh,
-          className: 'card-options',
-        }),
-        stepTitle('Answer input'),
-        chipGroup(ANSWER_INPUT_CHOICES, state.input, {
-          multiple: false,
-          onChange: refresh,
-          className: 'card-options',
-        }),
-        stepTitle('Mission length'),
-        chipGroup(
-          [
-            [10, `${fa(10)} questions · short`],
-            [20, `${fa(20)} questions · medium`],
-            [MAX_MISSION_QUESTIONS, `${fa(MAX_MISSION_QUESTIONS)} questions · long`],
-          ],
-          state.count,
-          { multiple: false, onChange: refresh, className: 'card-options' },
+        setupSection(
+          3,
+          'How to play',
+          'Choose how the sentence is shown and how you answer.',
+          h(
+            'div',
+            { class: 'setup-subsection' },
+            h('h5', { class: 'sub-title' }, 'Sentence display'),
+            choiceCards(PRESENTATION_CHOICES, state.presentation, { onChange: refresh, className: 'list-grid' }),
+            h('h5', { class: 'sub-title' }, 'Answer input'),
+            choiceCards(ANSWER_INPUT_CHOICES, state.input, { onChange: refresh, className: 'list-grid' }),
+          ),
         ),
+        setupSection(4, 'How many questions', 'Shorter missions are quicker to finish.', choiceCards(LENGTH_CHOICES, state.count, {
+          onChange: refresh,
+          className: 'length-grid',
+        })),
         info,
       ),
     );
@@ -1130,12 +1244,12 @@ function categoryChip(label, progress, iconName) {
  * One tile of the lesson grid: the title, a subtitle, an optional tag and the progress.
  * Tapping it chooses it.
  */
-function lessonRow({ title, subtitle, dashed = false, tag = null, progress = null, onclick }) {
+function lessonRow({ title, subtitle, dashed = false, tag = null, progress = null, locked = false, onclick }) {
   return h(
     'button',
     {
       type: 'button',
-      class: `lesson-row${dashed ? ' all-row' : ''}`,
+      class: `lesson-row${dashed ? ' all-row' : ''}${locked ? ' locked' : ''}`,
       onclick,
     },
     h(
@@ -1145,7 +1259,7 @@ function lessonRow({ title, subtitle, dashed = false, tag = null, progress = nul
       h('span', { class: 'muted small' }, subtitle),
       progress ? progressLine(progress) : null,
     ),
-    tag ? h('span', { class: 'lesson-tag' }, tag) : null,
+    locked ? uiIcon('lock', 'lesson-lock') : tag ? h('span', { class: 'lesson-tag' }, tag) : null,
   );
 }
 
@@ -1190,21 +1304,39 @@ function setupHeader({ kicker, title, meta = '', cover = '', level = '', progres
       meta ? h('span', { class: 'setup-meta' }, meta) : null,
       progress && progress.total > 0 ? setupProgress(progress) : null,
     ),
+    progress && progress.total > 0 ? progressRing(progress) : null,
   );
 }
 
-/** One line of progress: the bar, then the percentage and the done count. */
+/** The done count, in plain words: "6 of 449 questions done". */
 function setupProgress(progress) {
   return h(
-    'div',
-    { class: 'setup-progress', dir: 'ltr' },
-    h(
-      'span',
-      { class: 'progress-bar', role: 'progressbar', 'aria-valuemin': 0, 'aria-valuemax': 100, 'aria-valuenow': progress.percent },
-      h('span', { class: 'progress-fill', style: `width: ${progress.percent}%` }),
-    ),
-    h('span', { class: 'setup-progress-text' }, `${fa(progress.percent)}% · ${fa(progress.done)} of ${fa(progress.total)}`),
+    'span',
+    { class: 'setup-progress' },
+    h('span', { class: 'setup-progress-text', dir: 'ltr' }, `${fa(progress.done)} of ${fa(progress.total)} questions done`),
   );
+}
+
+/** A round progress ring with the percent in the middle. The fill follows the --pct variable in CSS. */
+function progressRing(progress) {
+  return h(
+    'span',
+    {
+      class: 'progress-ring',
+      role: 'progressbar',
+      'aria-valuemin': 0,
+      'aria-valuemax': 100,
+      'aria-valuenow': progress.percent,
+      'aria-label': `${progress.percent}% done`,
+      style: `--pct: ${progress.percent}`,
+    },
+    h('span', { class: 'progress-ring-text', dir: 'ltr' }, `${fa(progress.percent)}%`),
+  );
+}
+
+/** One line at the top of the setup: what to do, in short plain words. */
+function setupTip() {
+  return h('p', { class: 'setup-tip' }, uiIcon('lightbulb'), h('span', {}, 'Pick your settings below, then tap Play at the bottom.'));
 }
 
 /** Inside the book (its unit list): the book, how many units, lessons and questions it has, and its progress. */

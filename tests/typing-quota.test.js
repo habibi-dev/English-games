@@ -20,24 +20,24 @@ beforeEach(() => {
   globalThis.localStorage = memoryStorage();
 });
 
-test('the allowance is five typed answers a day', () => {
-  assert.equal(DAILY_TYPING_LIMIT, 5);
-  assert.deepEqual(typingQuota(noon), { limit: 5, used: 0, left: 5 });
+test('the allowance is ten typed answers a day', () => {
+  assert.equal(DAILY_TYPING_LIMIT, 10);
+  assert.deepEqual(typingQuota(noon), { limit: 10, used: 0, left: 10 });
 });
 
 test('each use takes one answer from the day, until none are left', () => {
-  assert.deepEqual(spendTypingQuota(noon), { limit: 5, used: 1, left: 4 });
-  for (let i = 0; i < 4; i += 1) spendTypingQuota(noon);
-  assert.deepEqual(typingQuota(noon), { limit: 5, used: 5, left: 0 });
+  assert.deepEqual(spendTypingQuota(noon), { limit: 10, used: 1, left: 9 });
+  for (let i = 0; i < 9; i += 1) spendTypingQuota(noon);
+  assert.deepEqual(typingQuota(noon), { limit: 10, used: 10, left: 0 });
   assert.equal(spendTypingQuota(noon), null);
-  assert.equal(typingQuota(noon).used, 5);
+  assert.equal(typingQuota(noon).used, 10);
 });
 
 test('the allowance starts again on the next day', () => {
-  for (let i = 0; i < 5; i += 1) spendTypingQuota(noon);
+  for (let i = 0; i < 10; i += 1) spendTypingQuota(noon);
   assert.equal(typingQuota(noon).left, 0);
-  assert.deepEqual(typingQuota(nextDay), { limit: 5, used: 0, left: 5 });
-  assert.deepEqual(spendTypingQuota(nextDay), { limit: 5, used: 1, left: 4 });
+  assert.deepEqual(typingQuota(nextDay), { limit: 10, used: 0, left: 10 });
+  assert.deepEqual(spendTypingQuota(nextDay), { limit: 10, used: 1, left: 9 });
 });
 
 test('the day is the local calendar day', () => {
@@ -52,11 +52,11 @@ test('a value that is not a number is treated as nothing used', () => {
 
 test('a stored count above the limit cannot go past zero left', () => {
   globalThis.localStorage.setItem(KEY, JSON.stringify({ day: dayOf(noon), used: 99 }));
-  assert.deepEqual(typingQuota(noon), { limit: 5, used: 5, left: 0 });
+  assert.deepEqual(typingQuota(noon), { limit: 10, used: 10, left: 0 });
   assert.equal(spendTypingQuota(noon), null);
 });
 
 test('an unreadable stored value counts as a fresh allowance', () => {
   globalThis.localStorage.setItem(KEY, '{not json');
-  assert.deepEqual(typingQuota(noon), { limit: 5, used: 0, left: 5 });
+  assert.deepEqual(typingQuota(noon), { limit: 10, used: 0, left: 10 });
 });

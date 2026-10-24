@@ -1,0 +1,62 @@
+---
+description: Rules for creating or changing a lesson file in content/ — checked against the earlier lessons of the same book
+alwaysApply: true
+---
+
+# New lesson content rules
+
+These rules apply every time a new lesson JSON is created (or an existing lesson gains new words, sentences or grammar).
+Before writing the file, read every earlier lesson of the same book (the order in `content/index.json`) and collect:
+their words (vocabulary, dictation words, glossary), their sentences (exercise answers and `lesson_content.sentences`),
+their grammar rules and examples, and their sentence structures.
+
+## 1. Words
+
+- A new lesson must not repeat a word that an earlier lesson of the same book already teaches, not even in another
+  form of the same base word (for example, if `eat` is taught, `eats` is a repeat in a later lesson). Phrases count too
+  (`first name` is a repeat if an earlier lesson has it).
+- Do not add words on your own. The new words are the lesson's planned words only.
+- Every sentence, example and exercise may use only words that the learner already knows: words from earlier lessons,
+  plus this lesson's own new words. If a sentence needs another word, that word must already be in an earlier lesson.
+- No person names in the lesson: no first names, family names or nicknames (for example Ali, Habibi, Bahar, Amir),
+  in words, sentences, stories or exercises.
+- Every vocabulary word has its pronunciation (IPA between slashes, like `/ˈɡɪvən/`) and its Persian meaning.
+- Synonyms and antonyms: for every word of the lesson, find its synonyms and antonyms among the words of this lesson
+  and of the earlier lessons of the same book. Each one found is written down as a `Synonym: <word>` or
+  `Opposite: <word>` vocabulary exercise item, so the study page shows it. An earlier lesson's word that is a synonym
+  or antonym of a new word is added to the new word this way, too.
+
+## 2. Sentences and grammar
+
+- A sentence structure is taught once per book. Do not repeat a structure from an earlier lesson with different words.
+  Example: if lesson 1 has `I am from Iran.`, lesson 2 must not add `I am from Germany.` The same rule applies to grammar
+  examples and to grammar rules.
+- Every sentence must be meaningful on its own. Sentences that belong together (a question and its answer, a short
+  exchange) stay together as one exercise item, in order, so the learner can read the whole exchange in one place.
+  Do not split a conversation across several items.
+- Do not add an extra sentence to help a grammar point unless a sentence with that structure already exists in an
+  earlier lesson of the same book.
+
+## 3. Grammar section
+
+- Every grammar example is a sentence of the lesson (the tests check this).
+- English and Persian are always shown together. The grammar page has no English-only or Persian-only switch.
+- Each grammar rule has a Persian explanation that points the learner to the goal of the rule.
+
+## 4. Practice (exercises)
+
+- Every new word of the lesson appears in the practice exercises.
+- Practice sentences follow the grammar of the lesson and the sentences the learner has seen in it.
+- Include a few examples of every exercise type the game has, where the lesson's grammar allows it (translation, voice
+  translation, word translation, sentence builder, grammar correction, negative, question, multiple choice, dictation,
+  vocabulary, verb forms). The negative and question types show one example per sentence structure, not many words
+  in the same structure.
+- Every practice item has a hint (راهنما). A hint is a short guide that points to the rule or to the key word of that
+  item. The same word must not be used to mean several different things in the hints.
+
+## 5. Files and checks
+
+- Add the lesson to `content/index.json`. When an existing lesson changes, bump its `version` there.
+- Lesson titles must follow the existing naming of the book.
+- Run `npm test` before finishing. A test that fails because of these rules is a real problem to fix, not a number to
+  change.

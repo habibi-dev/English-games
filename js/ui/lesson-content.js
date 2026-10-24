@@ -954,11 +954,13 @@ export function linesPage({
   playbarFeatures = {},
   search = false,
   playbar: showPlaybar = true,
+  // false: no English / Persian switch; both sides are always shown (grammar pages).
+  modeSwitch = true,
 }) {
   const deckPlayback = Boolean(playbarFeatures.deckPlayback);
   const deckFullscreen = deckPlayback && playbarFeatures.deckFullscreen !== false;
   const deckRich = deckPlayback && Boolean(playbarFeatures.deckRich);
-  let mode = 'english';
+  let mode = modeSwitch ? 'english' : 'both';
   let searchQuery = '';
   let deckLastIndex = null;
   const revealed = new Set();
@@ -1791,7 +1793,7 @@ export function linesPage({
           ),
         ]
       : []),
-    h('div', { class: 'chips lc-modes' }, ...modeButtons.map((entry) => entry.element)),
+    ...(modeSwitch ? [h('div', { class: 'chips lc-modes' }, ...modeButtons.map((entry) => entry.element))] : []),
     // The play bar and the search stay under the header while the list scrolls, in one compact strip.
     ...(playbar || searchBar ? [h('div', { class: 'lc-sticky-bar' }, ...(playbar ? [playbar] : []), ...(searchBar ? [searchBar] : []))] : []),
     ...(deckWrap ? [deckWrap] : []),

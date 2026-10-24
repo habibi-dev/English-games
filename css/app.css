@@ -3038,6 +3038,19 @@ textarea {
   min-width: 0;
 }
 
+/* A locked lesson: a lock at the right edge; tapping it shows which lesson to finish first. */
+.lesson-row.locked {
+  background: #f3f4f6;
+  border-style: dashed;
+  color: #6b7280;
+}
+
+.lesson-lock {
+  flex: none;
+  font-size: 1.4rem;
+  color: #6b7280;
+}
+
 .lesson-tag {
   flex: none;
   padding: 2px 9px;
