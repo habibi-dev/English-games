@@ -22,6 +22,15 @@ test('every country, capital city and nationality of the chart is dictated in th
   const dictated = new Set(countries.filter((q) => q.category === 'dictation').map((q) => q.expected_answer));
   for (const row of chart) {
     for (const word of [row.capital_city, row.country, row.nationality]) {
+      // Names with non-English letters (for example Bogotá) are not typed or spoken,
+      // so they are practiced in a multiple choice item of the group instead.
+      if (/[^\x00-\x7F]/.test(word)) {
+        assert.ok(
+          countries.some((q) => q.category === 'multiple_choice' && (q.expected_answer === word || (q.question ?? '').includes(word))),
+          `"${word}" is not in a multiple choice item of the Countries group`,
+        );
+        continue;
+      }
       assert.ok(dictated.has(word), `"${word}" is not a dictation item in the Countries group`);
     }
   }

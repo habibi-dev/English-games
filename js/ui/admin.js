@@ -8,6 +8,8 @@ import {
   saveSoundSettings,
   getVoicePriority,
   saveVoicePriority,
+  getHiddenVoices,
+  saveHiddenVoices,
   DEFAULT_VOICE_PRIORITY,
 } from '../storage/settings.js';
 import { canSpeak, matchesEntry, speak, voiceCandidates, voiceChain } from './speech-out.js';
@@ -147,25 +149,37 @@ function soundsSection() {
 // One short sentence, so the learner hears how each voice says English words.
 const VOICE_SAMPLE = 'The weather is nice today.';
 
-/** The voice list for the spoken English. Only the voices this browser has are shown, in the order they are tried. */
+/**
+ * The voice list for the spoken English. It shows the English voices this device has, under their real names,
+ * in the order they are tried. Removed voices are hidden and can be added back.
+ */
 function voiceCard() {
   const list = h('ol', { class: 'voice-list' });
   const addSelect = h('select', { class: 'voice-add-select', 'aria-label': 'Voice to add' });
   const addButton = h('button', { type: 'button', class: 'btn ghost small' }, 'Add voice');
   const inUse = h('p', { class: 'muted small' });
 
-  // The entries of the saved list that this browser has, in order.
-  const shownEntries = () => {
-    const candidates = voiceCandidates('en-US');
-    return getVoicePriority().filter((entry) => candidates.some((c) => matchesEntry(c, entry)));
-  };
-  // Saves a new order of the shown entries. Entries this browser does not have keep their place after them.
-  const saveShown = (order) => {
-    const candidates = voiceCandidates('en-US');
-    const hidden = getVoicePriority().filter((entry) => !candidates.some((c) => matchesEntry(c, entry)));
-    saveVoicePriority([...order, ...hidden]);
-  };
   const tagFor = (candidate) => (candidate.online ? 'Online (needs internet)' : 'On this device');
+
+  // Every English voice of this device, in the order they are tried (hidden ones are left out).
+  const visibleVoices = () => {
+    const hidden = getHiddenVoices();
+    const all = voiceCandidates('en-US');
+    const ranked = [];
+    for (const entry of getVoicePriority()) {
+      const found = all.find((c) => !ranked.includes(c) && matchesEntry(c, entry));
+      if (found) ranked.push(found);
+    }
+    return [...ranked, ...all.filter((c) => !ranked.includes(c))].filter(
+      (c) => !hidden.some((entry) => matchesEntry(c, entry)),
+    );
+  };
+  // Saves a new order of the visible voices (by name). Saved entries this device does not have keep their place.
+  const saveOrder = (names) => {
+    const all = voiceCandidates('en-US');
+    const others = getVoicePriority().filter((entry) => !all.some((c) => matchesEntry(c, entry)));
+    saveVoicePriority([...names, ...others]);
+  };
 
   // Drag a row by its handle (mouse, touch or pen). A copy of the row follows the pointer, and the row's place in
   // the list moves to where the pointer is. The new order is saved when the pointer is released.
@@ -192,7 +206,7 @@ function voiceCard() {
     document.removeEventListener('pointerup', endDrag);
     document.removeEventListener('pointercancel', endDrag);
     const order = [...list.querySelectorAll('.voice-row')].map((el) => el.dataset.name);
-    if (order.join('\n') !== shownEntries().join('\n')) saveShown(order);
+    if (order.join('\n') !== visibleVoices().map((c) => c.name).join('\n')) saveOrder(order);
     render();
   };
   const startDrag = (event) => {
@@ -214,18 +228,17 @@ function voiceCard() {
   };
 
   const render = (focusName = null) => {
-    const candidates = voiceCandidates('en-US');
-    const shown = shownEntries();
+    const shown = visibleVoices();
 
-    const rows = shown.map((entry, index) => {
-      const candidate = candidates.find((c) => matchesEntry(c, entry));
+    const rows = shown.map((candidate, index) => {
+      const name = candidate.name;
 
       const handle = h(
         'button',
         {
           type: 'button',
           class: 'voice-handle',
-          'aria-label': `Move ${entry}. Press the up or down arrow key to move it.`,
+          'aria-label': `Move ${name}. Press the up or down arrow key to move it.`,
           title: 'Drag to move',
           onpointerdown: startDrag,
           onkeydown: (event) => {
@@ -233,10 +246,10 @@ function voiceCard() {
             event.preventDefault();
             const to = index + (event.key === 'ArrowUp' ? -1 : 1);
             if (to < 0 || to >= shown.length) return;
-            const next = [...shown];
+            const next = shown.map((c) => c.name);
             [next[index], next[to]] = [next[to], next[index]];
-            saveShown(next);
-            render(entry);
+            saveOrder(next);
+            render(name);
           },
         },
         uiIcon('grip'),
@@ -244,12 +257,12 @@ function voiceCard() {
 
       return h(
         'li',
-        { class: 'voice-row', dataset: { name: entry } },
+        { class: 'voice-row', dataset: { name } },
         handle,
         h(
           'span',
           { class: 'sound-row-text' },
-          h('strong', {}, entry),
+          h('strong', {}, name),
           h('small', { class: 'muted' }, tagFor(candidate)),
         ),
         h(
@@ -257,7 +270,7 @@ function voiceCard() {
           {
             type: 'button',
             class: 'btn ghost small voice-icon-btn',
-            'aria-label': `Play a sample in ${entry}`,
+            'aria-label': `Play a sample in ${name}`,
             title: 'Play a sample in this voice',
             onclick: () => speak(VOICE_SAMPLE, { candidate }),
           },
@@ -268,18 +281,18 @@ function voiceCard() {
           {
             type: 'button',
             class: 'btn ghost small voice-icon-btn danger',
-            'aria-label': `Remove ${entry}`,
+            'aria-label': `Remove ${name}`,
             title: 'Remove',
             onclick: async () => {
               const ok = await confirmDialog({
                 title: 'Remove this voice?',
-                message: `${entry} will be taken off the list. You can add it again later.`,
+                message: `${name} will not be used. You can add it again later.`,
                 confirmText: 'Remove',
                 cancelText: 'Cancel',
                 danger: true,
               });
               if (!ok) return;
-              saveVoicePriority(getVoicePriority().filter((name) => name !== entry));
+              saveHiddenVoices([...getHiddenVoices(), name]);
               render();
             },
           },
@@ -290,21 +303,24 @@ function voiceCard() {
     list.replaceChildren(
       ...(rows.length > 0
         ? rows
-        : [h('li', { class: 'muted small' }, 'None of the voices in the list is on this browser. Any English voice is used.')]),
+        : [h('li', { class: 'muted small' }, 'No English voice was found on this device. The browser default is used.')]),
     );
     if (focusName) {
       list.querySelector(`.voice-row[data-name="${CSS.escape(focusName)}"] .voice-handle`)?.focus();
     }
 
-    // Add: the voices of this browser that are not in the list yet.
-    const available = candidates.filter((c) => !shown.some((entry) => matchesEntry(c, entry)));
-    addSelect.replaceChildren(...available.map((c) => h('option', { value: c.name }, `${c.name} (${tagFor(c)})`)));
-    addSelect.disabled = available.length === 0;
-    addButton.disabled = available.length === 0;
+    // Add: the voices that were removed from the list.
+    const hidden = getHiddenVoices();
+    const removed = voiceCandidates('en-US').filter((c) => hidden.some((entry) => matchesEntry(c, entry)));
+    addSelect.replaceChildren(...removed.map((c) => h('option', { value: c.name }, `${c.name} (${tagFor(c)})`)));
+    addSelect.disabled = removed.length === 0;
+    addButton.disabled = removed.length === 0;
     addButton.onclick = () => {
-      const picked = available.find((c) => c.name === addSelect.value);
+      const picked = removed.find((c) => c.name === addSelect.value);
       if (!picked) return;
-      saveShown([...shown, picked.name]);
+      const order = visibleVoices().map((c) => c.name);
+      saveHiddenVoices(getHiddenVoices().filter((entry) => !matchesEntry(picked, entry)));
+      saveOrder([...order, picked.name]);
       render();
     };
 
@@ -324,7 +340,7 @@ function voiceCard() {
     h(
       'p',
       { class: 'muted small' },
-      'Spoken English tries the voices in this list from the top. Only the voices this browser has are shown. Drag a voice to change its place. Slow reading uses the same order.',
+      'Spoken English tries the voices in this list from the top. These are the English voices this device has. Drag a voice to change its place. Slow reading uses the same order.',
     ),
     list,
     h('div', { class: 'voice-add' }, addSelect, addButton),
@@ -344,6 +360,7 @@ function voiceCard() {
           class: 'btn ghost',
           onclick: () => {
             saveVoicePriority([...DEFAULT_VOICE_PRIORITY]);
+            saveHiddenVoices([]);
             render();
           },
         },

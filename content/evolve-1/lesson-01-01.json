@@ -25,18 +25,6 @@
           "group": "Countries"
         },
         {
-          "id": "evolve-1-l02-tr-002",
-          "expected_answer": "I'm from São Paulo.",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "من اهل سائوپائولو هستم.",
-          "question": "من اهل سائوپائولو هستم.",
-          "accepted_answers": [
-            "I am from São Paulo."
-          ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
-        },
-        {
           "id": "evolve-1-l02-tr-003",
           "expected_answer": "You're from Brazil.",
           "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
@@ -61,30 +49,6 @@
           ],
           "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن.",
           "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-tr-005",
-          "expected_answer": "Are you from Bogotá?",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "آیا تو اهل بوگوتا هستی؟",
-          "question": "آیا تو اهل بوگوتا هستی؟",
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن.",
-          "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-tr-006",
-          "expected_answer": "No, I'm not. I'm from Medellín.",
-          "explanation": "به فاعل جمله و تفاوت معرفی ملیت با معرفی محل توجه کن.",
-          "time_limit": 60,
-          "translation": "نه، نیستم. من اهل مدلین هستم.",
-          "question": "نه، نیستم. من اهل مدلین هستم.",
-          "accepted_answers": [
-            "No, I am not. I am from Medellín.",
-            "No, I am not. I'm from Medellín.",
-            "No, I'm not. I am from Medellín."
-          ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
         },
         {
           "id": "evolve-1-l02-tr-009",
@@ -161,21 +125,6 @@
           "group": "Countries"
         },
         {
-          "id": "evolve-1-l02-sb-002",
-          "expected_answer": "I'm from São Paulo.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "من اهل سائوپائولو هستم.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "from",
-            "I'm",
-            "Paulo.",
-            "São"
-          ]
-        },
-        {
           "id": "evolve-1-l02-sb-003",
           "expected_answer": "You're from Brazil.",
           "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
@@ -209,39 +158,6 @@
             "Colombia."
           ],
           "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-sb-005",
-          "expected_answer": "Are you from Bogotá?",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "آیا تو اهل بوگوتا هستی؟",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "Bogotá?",
-            "Are",
-            "from",
-            "you"
-          ],
-          "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-sb-006",
-          "expected_answer": "No, I'm not. I'm from Medellín.",
-          "explanation": "به جایگاه فاعل و فعل بودن دقت کن؛ در جملهٔ سؤالی ترتیب متفاوت است.",
-          "time_limit": 60,
-          "translation": "نه، نیستم. من اهل مدلین هستم.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "Medellín.",
-            "I'm",
-            "No,",
-            "not.",
-            "from",
-            "I'm"
-          ]
         },
         {
           "id": "evolve-1-l02-sb-016",
@@ -302,23 +218,6 @@
           "group": "Countries"
         },
         {
-          "id": "evolve-1-l02-wt-002",
-          "expected_answer": "I'm from São Paulo.",
-          "explanation": "به ترتیب طبیعی جمله در انگلیسی و جایگاه فعل بودن توجه کن.",
-          "time_limit": 60,
-          "translation": "من اهل سائوپائولو هستم.",
-          "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "من",
-            "اهل",
-            "سائوپائولو",
-            "هستم"
-          ],
-          "accepted_answers": [
-            "I am from São Paulo."
-          ]
-        },
-        {
           "id": "evolve-1-l02-wt-003",
           "expected_answer": "You're from Brazil.",
           "explanation": "به ترتیب طبیعی جمله در انگلیسی و جایگاه فعل بودن توجه کن.",
@@ -335,44 +234,6 @@
             "You are from Brazil."
           ],
           "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-wt-006",
-          "expected_answer": "Are you from Bogotá?",
-          "explanation": "به ترتیب طبیعی جمله در انگلیسی و جایگاه فعل بودن توجه کن.",
-          "time_limit": 60,
-          "translation": "آیا تو اهل بوگوتا هستی؟",
-          "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "آیا",
-            "تو",
-            "اهل",
-            "بوگوتا",
-            "هستی؟"
-          ],
-          "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-wt-007",
-          "expected_answer": "No, I'm not. I'm from Medellín.",
-          "explanation": "به ترتیب طبیعی جمله در انگلیسی و جایگاه فعل بودن توجه کن.",
-          "time_limit": 60,
-          "translation": "نه، نیستم. من اهل مدلین هستم.",
-          "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "نه،",
-            "من",
-            "نیستم.",
-            "من",
-            "اهل",
-            "مدلین",
-            "هستم."
-          ],
-          "accepted_answers": [
-            "No, I am not. I'm from Medellín.",
-            "No, I'm not. I am from Medellín.",
-            "No, I am not. I am from Medellín."
-          ]
         },
         {
           "id": "evolve-1-l02-wt-010",
@@ -465,18 +326,6 @@
           "group": "Countries"
         },
         {
-          "id": "evolve-1-l02-vt-002",
-          "expected_answer": "I'm from São Paulo.",
-          "explanation": "جمله را با توجه به فاعل، فعل بودن و عبارت مربوط به ملیت یا محل بیان کن.",
-          "time_limit": 60,
-          "translation": "من اهل سائوپائولو هستم.",
-          "question": "من اهل سائوپائولو هستم.",
-          "accepted_answers": [
-            "I am from São Paulo."
-          ],
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
-        },
-        {
           "id": "evolve-1-l02-vt-003",
           "expected_answer": "You're from Brazil.",
           "explanation": "جمله را با توجه به فاعل، فعل بودن و عبارت مربوط به ملیت یا محل بیان کن.",
@@ -488,30 +337,6 @@
           ],
           "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن.",
           "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-vt-004",
-          "expected_answer": "Are you from Bogotá?",
-          "explanation": "جمله را با توجه به فاعل، فعل بودن و عبارت مربوط به ملیت یا محل بیان کن.",
-          "time_limit": 60,
-          "translation": "آیا تو اهل بوگوتا هستی؟",
-          "question": "آیا تو اهل بوگوتا هستی؟",
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن.",
-          "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-vt-005",
-          "expected_answer": "No, I'm not. I'm from Medellín.",
-          "explanation": "جمله را با توجه به فاعل، فعل بودن و عبارت مربوط به ملیت یا محل بیان کن.",
-          "time_limit": 60,
-          "translation": "نه، نیستم. من اهل مدلین هستم.",
-          "question": "نه، نیستم. من اهل مدلین هستم.",
-          "accepted_answers": [
-            "No, I am not. I am from Medellín.",
-            "No, I am not. I'm from Medellín.",
-            "No, I'm not. I am from Medellín."
-          ],
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
         },
         {
           "id": "evolve-1-l02-vt-008",
@@ -567,17 +392,6 @@
           "accepted_answers": [
             "I am Brazilian."
           ],
-          "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-gc-004",
-          "expected_answer": "Are you from Bogotá?",
-          "explanation": "در سؤال بله یا خیر، ترتیب فاعل و فعل را بررسی کن.",
-          "time_limit": 60,
-          "translation": "آیا تو اهل بوگوتا هستی؟",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "Are from you Bogotá?",
           "group": "Countries"
         },
         {
@@ -725,20 +539,6 @@
           "operation": "positive",
           "accepted_answers": [
             "I am from Lima."
-          ],
-          "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-pn-013",
-          "expected_answer": "You're from Bogotá.",
-          "explanation": "جمله را بدون نشانهٔ منفی بازنویسی کن.",
-          "time_limit": 60,
-          "translation": "تو اهل بوگوتا هستی.",
-          "question": "جمله را مثبت کن: You're not from Bogotá.",
-          "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "positive",
-          "accepted_answers": [
-            "You are from Bogotá."
           ],
           "group": "Countries"
         },
@@ -1456,6 +1256,34 @@
             "Barbara",
             "Juliano"
           ]
+        },
+        {
+          "id": "evolve-1-l02-mc-081",
+          "expected_answer": "Medellín",
+          "explanation": "در میان گزینه‌ها شهری را پیدا کن که در کلمبیا است ولی پایتخت نیست.",
+          "time_limit": 60,
+          "translation": "مدلین شهری در کلمبیا است، اما پایتخت نیست.",
+          "question": "کدام شهر در کلمبیا است، اما پایتخت نیست؟",
+          "hint": "به ستون پایتخت‌ها فکر کن؛ گزینه‌ای را انتخاب کن که پایتخت نیست.",
+          "options": [
+            "Lima",
+            "Medellín",
+            "Santiago"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-mc-082",
+          "expected_answer": "São Paulo",
+          "explanation": "در میان گزینه‌ها شهری را پیدا کن که در برزیل است ولی پایتخت نیست.",
+          "time_limit": 60,
+          "translation": "سائوپائولو شهری در برزیل است، اما پایتخت نیست.",
+          "question": "کدام شهر در برزیل است، اما پایتخت نیست؟",
+          "hint": "به ستون پایتخت‌ها فکر کن؛ گزینه‌ای را انتخاب کن که پایتخت نیست.",
+          "options": [
+            "Santiago",
+            "São Paulo",
+            "Lima"
+          ]
         }
       ]
     },
@@ -1698,17 +1526,6 @@
           "translation": "چینی",
           "question": "Chinese",
           "hint": "چینی",
-          "presentation": "audio",
-          "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-dic-010",
-          "expected_answer": "Bogotá",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "بوگوتا",
-          "question": "Bogotá",
-          "hint": "بوگوتا",
           "presentation": "audio",
           "group": "Countries"
         },
@@ -2947,16 +2764,6 @@
           "translation": "کالائو",
           "question": "Callao",
           "hint": "کالائو",
-          "presentation": "audio"
-        },
-        {
-          "id": "evolve-1-l02-dic-160",
-          "expected_answer": "São Paulo",
-          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
-          "time_limit": 60,
-          "translation": "سائوپائولو",
-          "question": "São Paulo",
-          "hint": "سائوپائولو",
           "presentation": "audio"
         },
         {

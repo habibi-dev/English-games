@@ -6,7 +6,7 @@
 
 import { h, keepFocus } from './dom.js';
 import { splitPrompt } from './prompt.js';
-import { getVoicePriority } from '../storage/settings.js';
+import { getHiddenVoices, getVoicePriority } from '../storage/settings.js';
 
 // Controls that read something aloud. Pressing one of them shows the loading cursor until the sound starts.
 const SPEAK_TRIGGER = '.speak, .q-speak, .gloss-word, .gloss-chip';
@@ -41,8 +41,9 @@ export function canSpeak() {
 }
 
 // True when the voice has exactly this locale (en-US), so a British en-GB voice is not an en-US voice.
+// Some phones report the locale with an underscore (en_US), so both forms are accepted.
 function sameLang(voice, lang) {
-  return (voice.lang ?? '').toLowerCase() === lang.toLowerCase();
+  return (voice.lang ?? '').replace('_', '-').toLowerCase() === lang.toLowerCase();
 }
 
 function browserVoices() {
@@ -82,7 +83,8 @@ function isUsable(candidate) {
  * (online before local). Voices that failed recently, and online voices while offline, are left out.
  */
 export function voiceChain(lang = 'en-US') {
-  const candidates = voiceCandidates(lang);
+  const hidden = getHiddenVoices();
+  const candidates = voiceCandidates(lang).filter((c) => !hidden.some((entry) => matchesEntry(c, entry)));
   const listed = [];
   for (const entry of getVoicePriority()) {
     const found = candidates.find((c) => !listed.includes(c) && matchesEntry(c, entry));

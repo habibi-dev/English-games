@@ -94,6 +94,33 @@ test('a list entry matches the full voice name without case', () => {
   assert.equal(matchesEntry(candidate, 'Microsoft Aria'), false);
 });
 
+test('phones that report en_US with an underscore are English voices too', () => {
+  const phone = { name: 'English United States', lang: 'en_US', localService: false };
+  withSavedPriority([], () => {
+    withVoices([phone], () => {
+      assert.deepEqual(names(voiceCandidates('en-US')), [phone.name]);
+      assert.deepEqual(names(voiceChain('en-US')), [phone.name]);
+    });
+  });
+});
+
+test('a hidden voice is not used', () => {
+  const store = new Map();
+  const previous = globalThis.localStorage;
+  globalThis.localStorage = {
+    getItem: (key) => (store.has(key) ? store.get(key) : null),
+    setItem: (key, value) => store.set(key, String(value)),
+  };
+  try {
+    store.set('grammar-quest.voices-hidden.v1', JSON.stringify([zira.name]));
+    withVoices([zira, google], () => {
+      assert.deepEqual(names(voiceChain('en-US')), [google.name]);
+    });
+  } finally {
+    globalThis.localStorage = previous;
+  }
+});
+
 test('with no voices at all, the browser default is the only choice', () => {
   withSavedPriority([], () => {
     withVoices([], () => {

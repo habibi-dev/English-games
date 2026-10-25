@@ -86,6 +86,27 @@ export function saveVoicePriority(names) {
   }
 }
 
+// Voices the learner removed from the list in Settings. They are not used, and they can be added back.
+const HIDDEN_VOICES_KEY = 'grammar-quest.voices-hidden.v1';
+
+export function getHiddenVoices() {
+  try {
+    const data = JSON.parse(localStorage.getItem(HIDDEN_VOICES_KEY) ?? 'null');
+    if (!Array.isArray(data)) return [];
+    return data.filter((name) => typeof name === 'string' && name.trim() !== '').map((name) => name.trim());
+  } catch {
+    return []; // unreadable value or no storage: nothing is hidden
+  }
+}
+
+export function saveHiddenVoices(names) {
+  try {
+    localStorage.setItem(HIDDEN_VOICES_KEY, JSON.stringify(names));
+  } catch {
+    // Storage full or disabled: the removal then lasts only for this visit.
+  }
+}
+
 /** Saves some of the sound settings; the others keep their stored values. */
 export function saveSoundSettings(changes) {
   const next = { ...getSoundSettings(), ...changes };
