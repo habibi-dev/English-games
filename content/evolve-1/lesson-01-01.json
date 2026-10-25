@@ -3872,6 +3872,302 @@
         "country_fa": "کنیا",
         "nationality_fa": "کنیایی"
       }
+    ],
+    "quiz": [
+      {
+        "category": "Guess the country",
+        "capital_city": "Brasilia",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Brazil"
+          },
+          {
+            "label": "Nationality",
+            "word": "Brazilian"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Santiago",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Chile"
+          },
+          {
+            "label": "Nationality",
+            "word": "Chilean"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Beijing",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "China"
+          },
+          {
+            "label": "Nationality",
+            "word": "Chinese"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Bogotá",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Colombia"
+          },
+          {
+            "label": "Nationality",
+            "word": "Colombian"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Quito",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Ecuador"
+          },
+          {
+            "label": "Nationality",
+            "word": "Ecuadorian"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Paris",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "France"
+          },
+          {
+            "label": "Nationality",
+            "word": "French"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Tegucigalpa",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Honduras"
+          },
+          {
+            "label": "Nationality",
+            "word": "Honduran"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Tokyo",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Japan"
+          },
+          {
+            "label": "Nationality",
+            "word": "Japanese"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Mexico City",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Mexico"
+          },
+          {
+            "label": "Nationality",
+            "word": "Mexican"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Lima",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Peru"
+          },
+          {
+            "label": "Nationality",
+            "word": "Peruvian"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Moscow",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Russia"
+          },
+          {
+            "label": "Nationality",
+            "word": "Russian"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Seoul",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "South Korea"
+          },
+          {
+            "label": "Nationality",
+            "word": "South Korean"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Madrid",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Spain"
+          },
+          {
+            "label": "Nationality",
+            "word": "Spanish"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Washington, D.C.",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "the United States"
+          },
+          {
+            "label": "Nationality",
+            "word": "American"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Cairo",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Egypt"
+          },
+          {
+            "label": "Nationality",
+            "word": "Egyptian"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Buenos Aires",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Argentina"
+          },
+          {
+            "label": "Nationality",
+            "word": "Argentinian"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Rabat",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Morocco"
+          },
+          {
+            "label": "Nationality",
+            "word": "Moroccan"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Berlin",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Germany"
+          },
+          {
+            "label": "Nationality",
+            "word": "German"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Lisbon",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Portugal"
+          },
+          {
+            "label": "Nationality",
+            "word": "Portuguese"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Ottawa",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Canada"
+          },
+          {
+            "label": "Nationality",
+            "word": "Canadian"
+          }
+        ]
+      },
+      {
+        "category": "Guess the country",
+        "capital_city": "Nairobi",
+        "answers": [
+          {
+            "label": "Country",
+            "word": "Kenya"
+          },
+          {
+            "label": "Nationality",
+            "word": "Kenyan"
+          }
+        ]
+      }
     ]
   }
 }

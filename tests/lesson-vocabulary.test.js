@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { flattenLesson } from '../js/bank/content.js';
-import { lessonWords, lessonSentences, lessonMaterial, buildWordStudyIndex, orderWords } from '../js/bank/lesson-vocabulary.js';
+import { lessonWords, lessonSentences, lessonMaterial, buildWordStudyIndex, orderWords, wordRows } from '../js/bank/lesson-vocabulary.js';
 
 // Names of people in the lesson's sentences and stories. They are not vocabulary words, so they are not listed in it.
 const PERSON_NAMES = ['ali', 'habibi', 'bahar'];
@@ -177,4 +177,53 @@ test('lessonMaterial falls back to the questions when a lesson has no content', 
   assert.ok(material.words.every((word) => word.ipa === ''));
   assert.deepEqual(material.grammar, []);
   assert.deepEqual(material.stories, []);
+});
+
+test('the Guess the country quiz has one row per country of the chart: capital city shown, country and nationality as answers', () => {
+  const lesson11 = JSON.parse(readFileSync(new URL('../content/evolve-1/lesson-01-01.json', import.meta.url), 'utf8'));
+  const chart = lesson11.lesson_content.country_chart;
+  const material = lessonMaterial([], [lesson11.lesson_content]);
+  assert.equal(material.quiz.length, chart.length);
+  material.quiz.forEach((row, i) => {
+    assert.equal(row.category, 'Guess the country');
+    assert.equal(row.word, chart[i].capital_city);
+    assert.deepEqual(
+      row.quiz.map((answer) => [answer.label, answer.word]),
+      [
+        ['Country', chart[i].country],
+        ['Nationality', chart[i].nationality],
+      ],
+    );
+  });
+});
+
+test('every quiz word is a vocabulary word, so it has its pronunciation, and an answer has its Persian meaning', () => {
+  const lesson11 = JSON.parse(readFileSync(new URL('../content/evolve-1/lesson-01-01.json', import.meta.url), 'utf8'));
+  const material = lessonMaterial([], [lesson11.lesson_content]);
+  for (const row of material.quiz) {
+    assert.ok(row.ipa, `pronunciation of the capital city ${row.word}`);
+    for (const answer of row.quiz) {
+      assert.ok(answer.ipa, `pronunciation of ${answer.word}`);
+      assert.ok(answer.meaning, `meaning of ${answer.word}`);
+    }
+  }
+});
+
+test('the words page lists the Countries block, then the quiz block, then the other words A to Z', () => {
+  const lesson11 = JSON.parse(readFileSync(new URL('../content/evolve-1/lesson-01-01.json', import.meta.url), 'utf8'));
+  const material = lessonMaterial([], [lesson11.lesson_content]);
+  const rows = wordRows(material);
+  const categories = rows.map((row) => row.category ?? '');
+  const firstQuiz = categories.indexOf('Guess the country');
+  const lastCountry = categories.lastIndexOf('Countries');
+  assert.ok(firstQuiz > lastCountry, 'the quiz block comes after the Countries block');
+  assert.ok(categories.slice(firstQuiz, firstQuiz + material.quiz.length).every((c) => c === 'Guess the country'));
+  const plain = rows.slice(firstQuiz + material.quiz.length).map((row) => row.word);
+  assert.ok(plain.length > 0 && plain.every((word, i) => !categories[firstQuiz + material.quiz.length + i]));
+  assert.deepEqual(
+    plain,
+    [...plain].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })),
+  );
+  // Every vocabulary word is listed once; the quiz rows are extra rows of their own.
+  assert.equal(rows.length, material.words.length + material.quiz.length);
 });

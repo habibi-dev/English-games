@@ -71,10 +71,28 @@ export function orderWords(words) {
 }
 
 /**
+ * The rows of the words page, in the order they are listed: each category as one block (its vocabulary words, then
+ * its quiz rows), the categories in the order they first appear, and then the words without a category, A to Z.
+ */
+export function wordRows(material) {
+  const all = [...material.words, ...(material.quiz ?? [])];
+  const rank = new Map();
+  for (const row of all) {
+    if (row.category && !rank.has(row.category)) rank.set(row.category, rank.size);
+  }
+  const grouped = all
+    .filter((row) => row.category)
+    .sort((a, b) => rank.get(a.category) - rank.get(b.category));
+  return [...grouped, ...material.words.filter((word) => !word.category)];
+}
+
+/**
  * Everything the lesson pages show, for the chosen lessons together.
  * `contents` is one lesson_content part per lesson (null when a lesson has none).
  * Returns:
- *   words:     [{ word, ipa, meaning }]
+ *   words:     [{ word, ipa, meaning, category }]
+ *   quiz:      [{ word, ipa, meaning, category, quiz: [{ label, word, ipa, meaning }] }]
+ *              a quiz row shows its capital city (word); its answers stay hidden until the learner checks them.
  *   sentences: [{ english, persian }]
  *   grammar:   [{ title, explanation, examples: [{ english, persian }] }]
  *   stories:   [{ title, lines: [{ english, persian }] }]
@@ -98,8 +116,28 @@ export function lessonMaterial(questions, contents = []) {
       )
     : lessonWords(questions).map((entry) => ({ ...entry, ipa: '', category: '' }));
 
+  // A quiz takes its pronunciation and meanings from the vocabulary, so each word is written only once in the lesson.
+  const known = new Map(words.map((word) => [word.word.toLowerCase(), word]));
+  const quiz = parts.flatMap((part) =>
+    (part.quiz ?? []).map((entry) => {
+      const capital = text(entry.capital_city);
+      return {
+        word: capital,
+        ipa: known.get(capital.toLowerCase())?.ipa ?? '',
+        meaning: '',
+        category: text(entry.category),
+        quiz: (entry.answers ?? []).map((answer) => {
+          const word = text(answer.word);
+          const found = known.get(word.toLowerCase());
+          return { label: text(answer.label), word, ipa: found?.ipa ?? '', meaning: found?.meaning ?? '' };
+        }),
+      };
+    }),
+  );
+
   return {
     words,
+    quiz,
     sentences: sentences.length
       ? uniqueBy(
           sentences.map((entry) => ({ english: text(entry.en), persian: text(entry.fa) })),

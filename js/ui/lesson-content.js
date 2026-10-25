@@ -298,6 +298,10 @@ function createLessonPlaybar({
   onLine,
   onPickIndex,
   waitBeforeSpeak,
+  // Quiz rows only (see linesPage): playback stops after the line is read, until the learner presses Resume.
+  // onGuessWait(index) is called when it stops; onGuessCheck(index) when the learner resumes and the answer shows.
+  onGuessWait,
+  onGuessCheck,
   shuffle: shuffleOption = false,
   playbarFeatures = {},
   onCardView,
@@ -731,7 +735,10 @@ function createLessonPlaybar({
   const resumePlayback = () => {
     if (!playingAll || !paused || !session) return;
     paused = false;
+    const check = pausePoint === 'guess' ? session.checkGuess : null;
+    session.checkGuess = null;
     if (pausePoint === 'speech') resumeSpeaking();
+    else if (check) check();
     else session.next();
     pausePoint = 'none';
     drawPlaybar();
@@ -955,6 +962,18 @@ function createLessonPlaybar({
           scheduleAfterLine(false, gen);
           return;
         }
+        // A quiz row: the capital city has been read, now the learner guesses the answers. Playback waits here.
+        if (item.entry?.quiz) {
+          paused = true;
+          pausePoint = 'guess';
+          session.checkGuess = () => {
+            onGuessCheck?.(item.index);
+            scheduleAfterLine(true, gen);
+          };
+          onGuessWait?.(item.index);
+          drawPlaybar();
+          return;
+        }
         scheduleAfterLine(true, gen);
       };
 
@@ -1061,6 +1080,8 @@ export function linesPage({
   const itemByKey = new Map();
   let highlightKey = null;
   let activePlayKey = null;
+  // The quiz row playback is waiting on (its answers are guessed, not yet checked), or null.
+  let guessKey = null;
   let pickIndex = 0;
   let lastAutoRevealedKey = null;
   let playbarPickLine = () => {};
@@ -1094,11 +1115,41 @@ export function linesPage({
     }
   };
 
+  // A quiz row (see quiz in lesson_content): its capital city is always shown. Its answers (country, nationality)
+  // stay hidden until the eye or the playback check shows them. Returns null for other rows.
+  const quizAnswers = (entry, key) => {
+    if (!entry.quiz) return null;
+    const isRevealed = revealed.has(key);
+    const guessing = guessKey === key;
+    return h(
+      'div',
+      { class: `lc-quiz${guessing ? ' is-guessing' : ''}` },
+      ...entry.quiz.map((answer) =>
+        h(
+          'div',
+          { class: 'lc-quiz-line' },
+          h('span', { class: 'lc-quiz-label' }, answer.label),
+          isRevealed
+            ? h(
+                'span',
+                { class: 'lc-quiz-answer' },
+                h('strong', { class: 'lc-word', dir: 'ltr' }, answer.word),
+                answer.ipa ? h('span', { class: 'lc-ipa', dir: 'ltr' }, answer.ipa) : null,
+                answer.meaning ? h('span', { class: 'lc-sub', dir: 'rtl' }, answer.meaning) : null,
+                speakButtons(answer.word, { label: speakLabel }),
+              )
+            : h('span', { class: 'lc-hidden', dir: 'ltr' }, '• • • • • •'),
+        ),
+      ),
+      guessing ? h('p', { class: 'lc-quiz-hint' }, 'Guess the answers, then press Play to check.') : null,
+    );
+  };
+
   const row = (entry, key, flatIndex) => {
-    const englishShown = mode !== 'persian' || revealed.has(key);
+    const englishShown = Boolean(entry.quiz) || mode !== 'persian' || revealed.has(key);
     const persianShown = mode !== 'english' || revealed.has(key);
-    // The eye is only useful when something is hidden for this row.
-    const hasHidden = mode === 'persian' || (mode === 'english' && Boolean(entry.persian));
+    // The eye is only useful when something is hidden for this row. A quiz row's eye shows its answers.
+    const hasHidden = Boolean(entry.quiz) || mode === 'persian' || (mode === 'english' && Boolean(entry.persian));
     const isRevealed = revealed.has(key);
 
     const eyeGlyph = h('span', { class: 'lc-eye-glyph' });
@@ -1177,6 +1228,7 @@ export function linesPage({
         englishShown ? speakButtons(entry.english, { label: speakLabel }) : null,
       ),
       relations,
+      quizAnswers(entry, key),
       !isWordRow && entry.persian
         ? h(
             'div',
@@ -1286,10 +1338,11 @@ export function linesPage({
 
   const isEnglishVisible = (key) => mode !== 'persian' || revealed.has(key);
 
+  // A quiz row's capital city is always shown, so it is always read (see isEnglishVisible).
   const getPlaybackRows = () =>
     flatRows
       .map((row, flatIndex) => ({ english: row.entry.english, index: flatIndex, key: row.key, entry: row.entry }))
-      .filter((row) => isEnglishVisible(row.key) && matchesFilters(row.entry));
+      .filter((row) => (row.entry.quiz || isEnglishVisible(row.key)) && matchesFilters(row.entry));
 
   // The one rule for which rows show. The category, the search and the list, the play bar and the card view all use it.
   const matchesFilters = (entry) =>
@@ -1647,7 +1700,7 @@ export function linesPage({
   };
 
   const buildDeckCard = (entry, key, flatIndex) => {
-    const englishShown = mode !== 'persian' || revealed.has(key);
+    const englishShown = Boolean(entry.quiz) || mode !== 'persian' || revealed.has(key);
     const persianShown = mode !== 'english' || revealed.has(key);
     const persianHiddenByMode = Boolean(entry.persian) && mode === 'english';
     const isRevealed = revealed.has(key);
@@ -1655,7 +1708,9 @@ export function linesPage({
     const eyeGlyph = h('span', { class: 'lc-eye-glyph' });
     eyeGlyph.innerHTML = isRevealed ? EYE_OFF_ICON : EYE_ICON;
     // The playback screen has no eye or speaker on the card: the line is read and revealed by playback itself.
-    const deckEye = persianHiddenByMode && (!deckFullscreen || manualOpen)
+    // A quiz row's eye shows its answers, not a translation.
+    const quizEye = Boolean(entry.quiz) && (!deckFullscreen || manualOpen);
+    const deckEye = quizEye || (persianHiddenByMode && (!deckFullscreen || manualOpen))
       ? keepFocus(
           h(
             'button',
@@ -1663,8 +1718,12 @@ export function linesPage({
               type: 'button',
               class: `lc-deck-eye${isRevealed ? ' on' : ''}`,
               'aria-pressed': String(isRevealed),
-              'aria-label': isRevealed ? 'Hide translation' : 'Show translation',
-              title: isRevealed ? 'Hide translation' : 'Show translation',
+              'aria-label': entry.quiz
+                ? isRevealed ? 'Hide the answers' : 'Show the answers'
+                : isRevealed ? 'Hide translation' : 'Show translation',
+              title: entry.quiz
+                ? isRevealed ? 'Hide the answers' : 'Show the answers'
+                : isRevealed ? 'Hide translation' : 'Show translation',
               onclick: () => {
                 if (isRevealed) revealed.delete(key);
                 else revealed.add(key);
@@ -1731,6 +1790,7 @@ export function linesPage({
           { class: 'lc-deck-card-inner' },
           h('div', { class: 'lc-deck-hero' }, h('div', { class: 'lc-deck-main-row' }, enContent)),
           faBlock,
+          quizAnswers(entry, key),
           cardFooter,
         )
       : h(
@@ -1738,6 +1798,7 @@ export function linesPage({
           { class: 'lc-deck-card-inner' },
           h('div', { class: 'lc-deck-en-block' }, h('div', { class: 'lc-deck-main-row' }, deckEye, enContent)),
           faBlock,
+          quizAnswers(entry, key),
         );
 
     const card = h(
@@ -1816,6 +1877,12 @@ export function linesPage({
     onCardView: deckFullscreen ? () => openManual() : null,
     getPlaybackRows,
     onLine: (index, ctx) => {
+      // A guess that is not checked any more (the playback moved on or stopped) goes back to hidden.
+      if (guessKey && (index === null || flatRows[index]?.key !== guessKey)) {
+        const stale = guessKey;
+        guessKey = null;
+        refreshRow(stale);
+      }
       if (index === null) {
         if (lastAutoRevealedKey) {
           hidePlaybackReveal(lastAutoRevealedKey);
@@ -1836,8 +1903,11 @@ export function linesPage({
       if (deckPlayback && prevDeck !== null && index !== prevDeck) {
         deckMotion = index > prevDeck ? 'forward' : 'back';
       }
-      const { key } = flatRows[index];
-      if (ctx?.autoReveal) {
+      const { key, entry } = flatRows[index];
+      // A quiz row starts with its answers hidden, even if the learner showed them before, so the guess is fair.
+      // They are shown when the playback checks them (see onGuessCheck).
+      if (entry.quiz && revealed.delete(key)) refreshRow(key);
+      if (ctx?.autoReveal && !entry.quiz) {
         if (lastAutoRevealedKey && lastAutoRevealedKey !== key) {
           hidePlaybackReveal(lastAutoRevealedKey);
         }
@@ -1862,6 +1932,22 @@ export function linesPage({
       }
       setActivePlay(key);
       syncFocusDim(ctx, true);
+    },
+    // A quiz row: the capital is read, the answers are guessed. The row says so until the learner resumes.
+    onGuessWait: (index) => {
+      const key = flatRows[index]?.key;
+      if (!key) return;
+      guessKey = key;
+      refreshRow(key);
+      if (deckPlayback) refreshDeckCard(index);
+    },
+    onGuessCheck: (index) => {
+      const key = flatRows[index]?.key;
+      if (!key) return;
+      guessKey = null;
+      revealed.add(key);
+      refreshRow(key);
+      if (deckPlayback) refreshDeckCard(index);
     },
     onPickIndex: (index) => {
       pickIndex = index;

@@ -8,7 +8,7 @@ import { filterQuestions, shuffle, GameSession, PLAY_MODES, applyPlayMode, MAX_M
 import { validateAnswer } from '../engine/validator.js';
 import { clearReviewHandoff, hasReviewIntent, requestReview, takeReview } from './review-handoff.js';
 import { lessonHub, linesPage, storiesPage, stopStoryReading, stopLinesPlayback, handleCardViewBack } from './lesson-content.js';
-import { lessonMaterial, buildWordStudyIndex } from '../bank/lesson-vocabulary.js';
+import { lessonMaterial, buildWordStudyIndex, wordRows } from '../bank/lesson-vocabulary.js';
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, levelStartXp, resultTier } from '../progress/player.js';
 import { doneIds, progressOf } from '../progress/lesson-progress.js';
@@ -981,7 +981,21 @@ async function showSetup(root, restore = null) {
         linesPage({
           groups: [
             {
-              rows: material.words.map((w) => {
+              rows: wordRows(material).map((w) => {
+                // A quiz row shows only its capital city. It has no synonyms or examples: an example sentence
+                // with the capital city would give the country away.
+                if (w.quiz) {
+                  return {
+                    english: w.word,
+                    persian: '',
+                    ipa: w.ipa,
+                    category: w.category,
+                    synonyms: [],
+                    antonyms: [],
+                    examples: [],
+                    quiz: w.quiz,
+                  };
+                }
                 const extra = wordStudy(w.word);
                 return {
                   english: w.word,

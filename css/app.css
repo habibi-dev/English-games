@@ -7321,6 +7321,134 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
   color: #be123c;
 }
 
+/* A quiz row (words page, e.g. "Guess the country"): the capital city is shown, the answers under it stay hidden. */
+.lc-quiz {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.lc-quiz.is-guessing {
+  background: #eff6ff;
+  border-color: #93c5fd;
+}
+
+.lc-quiz-line {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 10px;
+}
+
+.lc-quiz-line + .lc-quiz-line {
+  padding-top: 8px;
+  border-top: 1px dashed #cbd5e1;
+}
+
+.lc-quiz-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #64748b;
+}
+
+.lc-quiz-answer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+}
+
+/* The answer's word, pronunciation and Persian meaning are one size, so they sit in one line of text.
+   (The word is not the big headword of the row: that size is for the capital city only.) */
+.lc-quiz-answer .lc-word,
+.lc-quiz-answer .lc-ipa,
+.lc-quiz-answer .lc-sub {
+  font-size: 0.95rem;
+}
+
+.lc-quiz-answer .lc-word {
+  font-weight: 600;
+}
+
+.lc-quiz-hint {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+.lc-deck-card .lc-quiz {
+  margin: 0 18px 12px;
+}
+
+/* The answers' speakers look like the speakers of the list: one shape, one colour, small. The slow one is the same
+   as the normal one (no yellow). The list uses 26px, the card and play view a little larger (30px), as their own buttons. */
+.lc-quiz .speak-buttons {
+  display: inline-flex;
+  gap: 6px;
+  margin: 0;
+}
+
+.lc-quiz .speak-buttons .speak.speak-icon,
+.lc-quiz .speak-buttons .speak.speak-icon.slow {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  min-width: 26px;
+  height: 26px;
+  min-height: 26px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #c7d2fe;
+  background: #eef2ff;
+  color: #4338ca;
+  box-shadow: 0 3px 0 #c7d2fe;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.lc-quiz .speak-buttons .speak.speak-icon:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.lc-quiz .speak-buttons .speak-glyph {
+  display: grid;
+  place-items: center;
+  width: 12px;
+  height: 12px;
+}
+
+.lc-quiz .speak-buttons .speak-glyph svg {
+  width: 12px;
+  height: 12px;
+}
+
+.lc-deck-card .lc-quiz .speak-buttons .speak.speak-icon,
+.lc-deck-card .lc-quiz .speak-buttons .speak.speak-icon.slow {
+  width: 30px;
+  min-width: 30px;
+  height: 30px;
+  min-height: 30px;
+}
+
+.lc-deck-card .lc-quiz .speak-buttons .speak-glyph {
+  width: 16px;
+  height: 16px;
+}
+
+.lc-deck-card .lc-quiz .speak-buttons .speak-glyph svg {
+  width: 16px;
+  height: 16px;
+}
+
 .lc-sentence {
   font-weight: 500;
 }
