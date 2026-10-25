@@ -1001,7 +1001,7 @@ async function showSetup(root, restore = null) {
           shuffle: true,
           search: true,
           categories: true,
-          playbarFeatures: { autoReveal: true, deckPlayback: true, deckRich: true },
+          playbarFeatures: { autoReveal: true, autoSpeakCard: true, deckPlayback: true, deckRich: true },
         }),
       );
     } else if (step.name === 'sentences') {

@@ -19,6 +19,7 @@ export function loadLessonPlaybarSettings() {
       listenOnly: Boolean(data.listenOnly),
       dimOthersOnPlay: Boolean(data.dimOthersOnPlay),
       longSentenceFocus: Boolean(data.longSentenceFocus),
+      autoSpeakOnCard: Boolean(data.autoSpeakOnCard),
     };
   } catch {
     return null;
@@ -39,4 +40,5 @@ export const LESSON_PLAYBAR_UI_DEFAULTS = {
   listenOnly: false,
   dimOthersOnPlay: false,
   longSentenceFocus: false,
+  autoSpeakOnCard: false,
 };

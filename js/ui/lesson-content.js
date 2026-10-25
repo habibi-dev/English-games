@@ -321,6 +321,9 @@ function createLessonPlaybar({
   let listenOnly = saved?.listenOnly ?? LESSON_PLAYBAR_UI_DEFAULTS.listenOnly;
   let dimOthersOnPlay = saved?.dimOthersOnPlay ?? LESSON_PLAYBAR_UI_DEFAULTS.dimOthersOnPlay;
   let longSentenceFocus = saved?.longSentenceFocus ?? LESSON_PLAYBAR_UI_DEFAULTS.longSentenceFocus;
+  let autoSpeakOnCard = saved?.autoSpeakOnCard ?? LESSON_PLAYBAR_UI_DEFAULTS.autoSpeakOnCard;
+  // The card view reads each card aloud when it opens (only where the page asks for it, and only with a card view).
+  const autoSpeakCardFeature = Boolean(playbarFeatures.autoSpeakCard && onCardView);
 
   const linePlaybackContext = () => ({
     autoReveal: features.autoReveal && autoRevealOnPlay,
@@ -356,6 +359,7 @@ function createLessonPlaybar({
       listenOnly,
       dimOthersOnPlay,
       longSentenceFocus,
+      autoSpeakOnCard,
     });
   };
 
@@ -564,7 +568,27 @@ function createLessonPlaybar({
       })
     : null;
 
-  const featureToggles = [autoRevealToggle, listenOnlyToggle, dimOthersToggle, longSentenceToggle].filter(Boolean);
+  // Card view only: reads the card's English aloud once, when the card opens or the learner moves to it.
+  const autoSpeakToggle = autoSpeakCardFeature
+    ? makeFeatureToggle({
+        getEnabled: () => autoSpeakOnCard,
+        setEnabled: (value) => {
+          autoSpeakOnCard = value;
+        },
+        caption: 'Auto',
+        icon: 'volume',
+        label: 'Auto read: read each card aloud when it opens',
+        title: 'Read each card aloud when it opens in card view',
+      })
+    : null;
+
+  const featureToggles = [
+    autoSpeakToggle,
+    autoRevealToggle,
+    listenOnlyToggle,
+    dimOthersToggle,
+    longSentenceToggle,
+  ].filter(Boolean);
 
   const followBtn = h(
     'button',
@@ -1001,6 +1025,7 @@ function createLessonPlaybar({
   return {
     element,
     pickLine,
+    autoSpeakCardOn: () => autoSpeakCardFeature && autoSpeakOnCard,
     // The visible rows changed (a search, a category): the counter follows them. While a playback runs, its own counter stays.
     onPlaybackRowsChanged: () => {
       if (!playingAll) syncProgress();
@@ -1040,6 +1065,7 @@ export function linesPage({
   let lastAutoRevealedKey = null;
   let playbarPickLine = () => {};
   let playbarOnRowsChanged = () => {};
+  let playbarAutoSpeakCardOn = () => false;
   let playbarEl = null;
   let playbackRowsFingerprint = '';
 
@@ -1448,7 +1474,16 @@ export function linesPage({
     pickIndex = manualIndex;
     syncPickMarkers();
     showDeckLine(manualIndex, 'initial');
+    readManualCard();
     syncManualButtons();
+  };
+
+  // Auto read (card view): the card's English is read once when the learner arrives at it.
+  // Only navigation calls this, so turning the eye on or off on the same card does not read it again.
+  const readManualCard = () => {
+    if (!playbarAutoSpeakCardOn() || manualIndex === null) return;
+    const row = flatRows[manualIndex];
+    if (row) speak(row.entry.english);
   };
 
   const openManual = () => {
@@ -1470,6 +1505,7 @@ export function linesPage({
       btn.onclick = handler;
     }
     showDeckLine(manualIndex, 'initial');
+    readManualCard();
     linesAutoplayUiSync();
     syncManualButtons();
   };
@@ -1486,6 +1522,7 @@ export function linesPage({
     manualOpen = false;
     manualIndex = null;
     deckLastIndex = null;
+    stopSpeaking(); // a card still being read aloud must not go on after the card view is closed
     clearDeckStage();
     linesAutoplayUiSync();
     if (reason === 'header' && hadEntry) {
@@ -1847,6 +1884,7 @@ export function linesPage({
   if (playbarMetaEl && searchBar) searchBar.append(playbarMetaEl);
   playbarPickLine = playbarApi.pickLine;
   playbarOnRowsChanged = playbarApi.onPlaybackRowsChanged;
+  playbarAutoSpeakCardOn = playbarApi.autoSpeakCardOn;
   playbackRowsFingerprint = getPlaybackRows().map((row) => row.key).join('\0');
   if (playbarEl) {
     playbarHome.append(playbarEl);
