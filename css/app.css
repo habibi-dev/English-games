@@ -4376,6 +4376,87 @@ body:has(.card.play) .bottom-nav {
   margin: 0;
 }
 
+/* Voice order list in Settings: one row per voice name. Drag the handle to move a row. */
+.voice-list {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.voice-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 4px;
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+}
+
+/* The place where the dragged row will land. */
+.voice-row.dragging {
+  opacity: 0.35;
+  background: var(--primary-soft);
+}
+
+/* The copy that follows the pointer while dragging. */
+.voice-ghost {
+  position: fixed;
+  z-index: 1000;
+  margin: 0;
+  pointer-events: none;
+  border-radius: 10px;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.22);
+}
+
+.voice-row .sound-row-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.voice-handle {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--muted);
+  cursor: grab;
+  touch-action: none;
+  font-size: 20px;
+}
+
+.voice-handle:active {
+  cursor: grabbing;
+}
+
+.voice-icon-btn {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  font-size: 18px;
+}
+
+.voice-icon-btn:disabled {
+  opacity: 0.4;
+}
+
+.voice-add {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.voice-add-select {
+  flex: 1 1 220px;
+  min-height: 40px;
+  min-width: 0;
+}
+
 /* Exercise types: two columns, so the labels have room and fit on fewer lines. */
 .setup .card-options.mission-options {
   grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -1,9 +1,17 @@
 // Settings screen (opened from the gear in the header). Two sections:
 //   Sounds: the win and lose sound effects, each on or off, with a volume and a preview;
-//           and the spoken English that is read aloud after each answer.
+//           the spoken English that is read aloud after each answer, and the voice order for that speech.
 //   Progress: export all progress as a signed text, import it on another device, or clear it all.
 
-import { getSoundSettings, saveSoundSettings } from '../storage/settings.js';
+import {
+  getSoundSettings,
+  saveSoundSettings,
+  getVoicePriority,
+  saveVoicePriority,
+  DEFAULT_VOICE_PRIORITY,
+} from '../storage/settings.js';
+import { canSpeak, matchesEntry, speak, voiceCandidates, voiceChain } from './speech-out.js';
+import { uiIcon } from './icons.js';
 import { getUnlockedLessons, saveUnlockedLessons } from '../storage/lesson-unlocks.js';
 import { loadAttempts, importAttempts, resetProgress } from '../progress/tracker.js';
 import { loadSessions, addSessions } from '../progress/activity.js';
@@ -133,7 +141,216 @@ function soundsSection() {
     toggle('autoSpeak', 'Read the sentence after the answer', 'Plays slowly when a right or wrong answer is shown.'),
   );
 
-  return h('div', { class: 'settings-section' }, effects, spoken);
+  return h('div', { class: 'settings-section' }, effects, spoken, canSpeak() ? voiceCard() : null);
+}
+
+// One short sentence, so the learner hears how each voice says English words.
+const VOICE_SAMPLE = 'The weather is nice today.';
+
+/** The voice list for the spoken English. Only the voices this browser has are shown, in the order they are tried. */
+function voiceCard() {
+  const list = h('ol', { class: 'voice-list' });
+  const addSelect = h('select', { class: 'voice-add-select', 'aria-label': 'Voice to add' });
+  const addButton = h('button', { type: 'button', class: 'btn ghost small' }, 'Add voice');
+  const inUse = h('p', { class: 'muted small' });
+
+  // The entries of the saved list that this browser has, in order.
+  const shownEntries = () => {
+    const candidates = voiceCandidates('en-US');
+    return getVoicePriority().filter((entry) => candidates.some((c) => matchesEntry(c, entry)));
+  };
+  // Saves a new order of the shown entries. Entries this browser does not have keep their place after them.
+  const saveShown = (order) => {
+    const candidates = voiceCandidates('en-US');
+    const hidden = getVoicePriority().filter((entry) => !candidates.some((c) => matchesEntry(c, entry)));
+    saveVoicePriority([...order, ...hidden]);
+  };
+  const tagFor = (candidate) => (candidate.online ? 'Online (needs internet)' : 'On this device');
+
+  // Drag a row by its handle (mouse, touch or pen). A copy of the row follows the pointer, and the row's place in
+  // the list moves to where the pointer is. The new order is saved when the pointer is released.
+  // The listeners are on the document, so they keep working while the row moves in the list.
+  let drag = null;
+  const onDragMove = (event) => {
+    if (!drag || event.pointerId !== drag.pointerId) return;
+    drag.ghost.style.top = `${event.clientY - drag.offsetY}px`;
+    const before = [...list.querySelectorAll('.voice-row')].find((row) => {
+      if (row === drag.row) return false;
+      const box = row.getBoundingClientRect();
+      return event.clientY < box.top + box.height / 2;
+    });
+    if (before) list.insertBefore(drag.row, before);
+    else list.appendChild(drag.row);
+  };
+  const endDrag = (event) => {
+    if (!drag || event.pointerId !== drag.pointerId) return;
+    const { row, ghost } = drag;
+    drag = null;
+    ghost.remove();
+    row.classList.remove('dragging');
+    document.removeEventListener('pointermove', onDragMove);
+    document.removeEventListener('pointerup', endDrag);
+    document.removeEventListener('pointercancel', endDrag);
+    const order = [...list.querySelectorAll('.voice-row')].map((el) => el.dataset.name);
+    if (order.join('\n') !== shownEntries().join('\n')) saveShown(order);
+    render();
+  };
+  const startDrag = (event) => {
+    if (event.pointerType === 'mouse' && event.button !== 0) return;
+    event.preventDefault();
+    const row = event.currentTarget.closest('.voice-row');
+    const box = row.getBoundingClientRect();
+    const ghost = row.cloneNode(true);
+    ghost.classList.add('voice-ghost');
+    ghost.style.top = `${box.top}px`;
+    ghost.style.left = `${box.left}px`;
+    ghost.style.width = `${box.width}px`;
+    document.body.appendChild(ghost);
+    row.classList.add('dragging');
+    drag = { row, ghost, offsetY: event.clientY - box.top, pointerId: event.pointerId };
+    document.addEventListener('pointermove', onDragMove);
+    document.addEventListener('pointerup', endDrag);
+    document.addEventListener('pointercancel', endDrag);
+  };
+
+  const render = (focusName = null) => {
+    const candidates = voiceCandidates('en-US');
+    const shown = shownEntries();
+
+    const rows = shown.map((entry, index) => {
+      const candidate = candidates.find((c) => matchesEntry(c, entry));
+
+      const handle = h(
+        'button',
+        {
+          type: 'button',
+          class: 'voice-handle',
+          'aria-label': `Move ${entry}. Press the up or down arrow key to move it.`,
+          title: 'Drag to move',
+          onpointerdown: startDrag,
+          onkeydown: (event) => {
+            if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') return;
+            event.preventDefault();
+            const to = index + (event.key === 'ArrowUp' ? -1 : 1);
+            if (to < 0 || to >= shown.length) return;
+            const next = [...shown];
+            [next[index], next[to]] = [next[to], next[index]];
+            saveShown(next);
+            render(entry);
+          },
+        },
+        uiIcon('grip'),
+      );
+
+      return h(
+        'li',
+        { class: 'voice-row', dataset: { name: entry } },
+        handle,
+        h(
+          'span',
+          { class: 'sound-row-text' },
+          h('strong', {}, entry),
+          h('small', { class: 'muted' }, tagFor(candidate)),
+        ),
+        h(
+          'button',
+          {
+            type: 'button',
+            class: 'btn ghost small voice-icon-btn',
+            'aria-label': `Play a sample in ${entry}`,
+            title: 'Play a sample in this voice',
+            onclick: () => speak(VOICE_SAMPLE, { candidate }),
+          },
+          uiIcon('play'),
+        ),
+        h(
+          'button',
+          {
+            type: 'button',
+            class: 'btn ghost small voice-icon-btn danger',
+            'aria-label': `Remove ${entry}`,
+            title: 'Remove',
+            onclick: async () => {
+              const ok = await confirmDialog({
+                title: 'Remove this voice?',
+                message: `${entry} will be taken off the list. You can add it again later.`,
+                confirmText: 'Remove',
+                cancelText: 'Cancel',
+                danger: true,
+              });
+              if (!ok) return;
+              saveVoicePriority(getVoicePriority().filter((name) => name !== entry));
+              render();
+            },
+          },
+          uiIcon('trash'),
+        ),
+      );
+    });
+    list.replaceChildren(
+      ...(rows.length > 0
+        ? rows
+        : [h('li', { class: 'muted small' }, 'None of the voices in the list is on this browser. Any English voice is used.')]),
+    );
+    if (focusName) {
+      list.querySelector(`.voice-row[data-name="${CSS.escape(focusName)}"] .voice-handle`)?.focus();
+    }
+
+    // Add: the voices of this browser that are not in the list yet.
+    const available = candidates.filter((c) => !shown.some((entry) => matchesEntry(c, entry)));
+    addSelect.replaceChildren(...available.map((c) => h('option', { value: c.name }, `${c.name} (${tagFor(c)})`)));
+    addSelect.disabled = available.length === 0;
+    addButton.disabled = available.length === 0;
+    addButton.onclick = () => {
+      const picked = available.find((c) => c.name === addSelect.value);
+      if (!picked) return;
+      saveShown([...shown, picked.name]);
+      render();
+    };
+
+    inUse.textContent = `Voice in use now: ${voiceChain('en-US')[0].name}`;
+  };
+
+  if (canSpeak()) {
+    // Browsers load their voice list later, so the card is updated when the list arrives.
+    window.speechSynthesis.onvoiceschanged = () => render();
+  }
+  render();
+
+  return h(
+    'section',
+    { class: 'card admin-card' },
+    h('h3', {}, 'Voice order'),
+    h(
+      'p',
+      { class: 'muted small' },
+      'Spoken English tries the voices in this list from the top. Only the voices this browser has are shown. Drag a voice to change its place. Slow reading uses the same order.',
+    ),
+    list,
+    h('div', { class: 'voice-add' }, addSelect, addButton),
+    inUse,
+    h(
+      'div',
+      { class: 'toolbar-actions' },
+      h(
+        'button',
+        { type: 'button', class: 'btn ghost', onclick: () => speak(VOICE_SAMPLE) },
+        '▶ Play sample',
+      ),
+      h(
+        'button',
+        {
+          type: 'button',
+          class: 'btn ghost',
+          onclick: () => {
+            saveVoicePriority([...DEFAULT_VOICE_PRIORITY]);
+            render();
+          },
+        },
+        'Reset list',
+      ),
+    ),
+  );
 }
 
 /** Progress: the answers so far as one signed text, to move to another device, and the import of such a text. */

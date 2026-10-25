@@ -53,6 +53,39 @@ export function getSoundSettings() {
   }
 }
 
+// Preferred voices for the spoken English, in priority order. Each entry is part of a voice name
+// (matched without case), so "Microsoft Aria Online (Natural)" also matches the full name in Edge.
+const VOICES_KEY = 'grammar-quest.voices.v1';
+// Chrome is the reference browser: Google US English first. Then the Microsoft Natural voices (only Edge has them),
+// then the Windows voices on the device. A browser only shows the entries it has.
+export const DEFAULT_VOICE_PRIORITY = Object.freeze([
+  'Google US English',
+  'Microsoft Aria Online (Natural)',
+  'Microsoft Jenny Online (Natural)',
+  'Microsoft Guy Online (Natural)',
+  'Microsoft Zira',
+  'Microsoft David',
+  'Microsoft Mark',
+]);
+
+export function getVoicePriority() {
+  try {
+    const data = JSON.parse(localStorage.getItem(VOICES_KEY) ?? 'null');
+    if (!Array.isArray(data)) return [...DEFAULT_VOICE_PRIORITY];
+    return data.filter((name) => typeof name === 'string' && name.trim() !== '').map((name) => name.trim());
+  } catch {
+    return [...DEFAULT_VOICE_PRIORITY]; // unreadable value or no storage: use the default order
+  }
+}
+
+export function saveVoicePriority(names) {
+  try {
+    localStorage.setItem(VOICES_KEY, JSON.stringify(names));
+  } catch {
+    // Storage full or disabled: the order then lasts only for this visit.
+  }
+}
+
 /** Saves some of the sound settings; the others keep their stored values. */
 export function saveSoundSettings(changes) {
   const next = { ...getSoundSettings(), ...changes };

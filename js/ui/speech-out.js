@@ -1,11 +1,12 @@
-// Text-to-speech with the browser's built-in English voices (no server, no API key).
-// Works offline once the device has an English voice; quality depends on the device.
+// Text-to-speech for the spoken English with the browser's voices. The voices are tried in the order of the list in
+// Settings. A voice that does not start in time, or fails, hands over to the next voice in the list.
 //
 // Pronunciation depends on context: "live" is /lɪv/ in "They live here" but /laɪv/ alone.
 // So words are spoken inside their sentence whenever possible, and never cut into single words.
 
 import { h, keepFocus } from './dom.js';
 import { splitPrompt } from './prompt.js';
+import { getVoicePriority } from '../storage/settings.js';
 
 // Controls that read something aloud. Pressing one of them shows the loading cursor until the sound starts.
 const SPEAK_TRIGGER = '.speak, .q-speak, .gloss-word, .gloss-chip';
@@ -30,39 +31,94 @@ if (typeof document !== 'undefined') {
 
 const NORMAL_RATE = 0.9;
 const SLOW_RATE = 0.55;
+// A voice that fails is left out for this long before it is tried again.
+const BLOCK_MS = 5 * 60 * 1000;
+// An online voice that has not started by this time is treated as unreachable (for example, no internet).
+const ONLINE_START_LIMIT_MS = 3000;
 
 export function canSpeak() {
   return typeof window !== 'undefined' && 'speechSynthesis' in window && typeof SpeechSynthesisUtterance === 'function';
 }
 
-// Picks a voice for `lang` (for example 'en-US' or 'fa-IR'). Only voices of that language are
-// considered, so a Persian sentence is never read by an English voice. Null when none is installed.
-function pickVoice(lang = 'en-US') {
-  const prefix = lang.slice(0, 2).toLowerCase();
-  const voices = window.speechSynthesis.getVoices().filter((v) => v.lang?.toLowerCase().startsWith(prefix));
-  // Prefer an installed (local) voice of the exact locale: network voices do not always respect the speed setting.
-  return (
-    voices.find((v) => v.lang === lang && v.localService) ??
-    voices.find((v) => v.lang === lang) ??
-    voices[0] ??
-    null
-  );
+// True when the voice has exactly this locale (en-US), so a British en-GB voice is not an en-US voice.
+function sameLang(voice, lang) {
+  return (voice.lang ?? '').toLowerCase() === lang.toLowerCase();
 }
 
-/** True when the device has a voice for `lang`. Persian voices are not installed everywhere. */
-export function hasSpeechVoice(lang) {
-  return canSpeak() && pickVoice(lang) !== null;
+function browserVoices() {
+  return typeof window !== 'undefined' && window.speechSynthesis ? window.speechSynthesis.getVoices() : [];
+}
+
+/** The voices of this browser for exactly `lang` (for example 'en-US'). Empty until the browser has loaded them. */
+export function installedVoices(lang = 'en-US') {
+  return browserVoices().filter((v) => sameLang(v, lang));
+}
+
+/** Every browser voice the learner can use for `lang`. `online` voices need internet. */
+export function voiceCandidates(lang = 'en-US') {
+  return installedVoices(lang).map((voice) => ({
+    name: voice.name,
+    online: !voice.localService,
+    voice,
+  }));
+}
+
+/** True when the candidate is the entry `entry` of the priority list (names are matched without case). */
+export function matchesEntry(candidate, entry) {
+  return candidate.name.toLowerCase().includes(entry.toLowerCase());
+}
+
+// Voices that failed recently: name -> the time until they may be tried again.
+const blockedUntil = new Map();
+
+function isUsable(candidate) {
+  if (!candidate.online) return true;
+  if (typeof navigator !== 'undefined' && navigator.onLine === false) return false;
+  return Date.now() >= (blockedUntil.get(candidate.name) ?? 0);
 }
 
 /**
- * Reads `text` aloud as one utterance. `slow` lowers the speed but keeps the words together.
+ * The voices to try for `lang`, in order: the entries of the list in Settings first, then the other voices
+ * (online before local). Voices that failed recently, and online voices while offline, are left out.
+ */
+export function voiceChain(lang = 'en-US') {
+  const candidates = voiceCandidates(lang);
+  const listed = [];
+  for (const entry of getVoicePriority()) {
+    const found = candidates.find((c) => !listed.includes(c) && matchesEntry(c, entry));
+    if (found) listed.push(found);
+  }
+  const rest = candidates.filter((c) => !listed.includes(c));
+  const ordered = [...listed, ...rest.filter((c) => c.online), ...rest.filter((c) => !c.online)];
+  const usable = ordered.filter(isUsable);
+  // Nothing usable: the browser's own default voice.
+  return usable.length > 0 ? usable : [{ name: 'browser default', online: false, voice: null }];
+}
+
+/** True when the device can speak `lang`. Persian voices are not installed everywhere. */
+export function hasSpeechVoice(lang) {
+  return canSpeak() && voiceCandidates(lang).length > 0;
+}
+
+// The attempt that is running now. Stop ends it quietly (no onEnd), so the next line does not start.
+let stopCurrent = null;
+
+function stopPlayback() {
+  const stop = stopCurrent;
+  stopCurrent = null;
+  stop?.();
+  if (canSpeak()) window.speechSynthesis.cancel();
+}
+
+/**
+ * Reads `text` aloud as one utterance. The voices are tried in the order of the list (see voiceChain).
+ * `slow` lowers the speed but keeps the words together. `candidate` plays one given voice only (the Settings preview).
  * `onStart` / `onEnd` let the caller show a "speaking" state on its button.
  */
-export function speak(text, { slow = false, onStart, onEnd, lang = 'en-US' } = {}) {
+export function speak(text, { slow = false, onStart, onEnd, lang = 'en-US', candidate = null } = {}) {
   if (!canSpeak() || !text) return false;
 
-  const synth = window.speechSynthesis;
-  synth.cancel(); // do not queue several readings when the learner taps quickly
+  stopPlayback(); // do not queue several readings when the learner taps quickly
 
   // The control the learner just pressed (if any). It shows a loading cursor until the sound starts.
   const trigger = pendingTrigger;
@@ -73,38 +129,96 @@ export function speak(text, { slow = false, onStart, onEnd, lang = 'en-US' } = {
     trigger?.classList.remove('loading');
   };
   trigger?.classList.add('loading');
-  // Safety net: if the browser never reports the start, the cursor must not stay in loading state.
+  // Safety net: if nothing starts, the cursor must not stay in loading state.
   loadingTimer = setTimeout(stopLoading, LOADING_LIMIT_MS);
 
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = lang;
-  utterance.rate = slow ? SLOW_RATE : NORMAL_RATE;
-  const voice = pickVoice(lang);
-  if (voice) utterance.voice = voice;
-  utterance.onstart = () => {
-    stopLoading();
-    onStart?.();
-  };
-  utterance.onend = () => {
-    stopLoading();
-    onEnd?.();
-  };
-  utterance.onerror = (event) => {
-    stopLoading();
-    // cancel() / skip must not run the next line — only real playback completion should call onEnd.
-    if (event.error !== 'interrupted' && event.error !== 'canceled') {
+  const chain = candidate ? [candidate] : voiceChain(lang);
+
+  // Tries chain[index]. When every voice has failed, the caller still gets onEnd, and the error is logged.
+  const attempt = (index, lastError = null) => {
+    if (index >= chain.length) {
+      stopLoading();
       onEnd?.();
-      console.warn('Speech synthesis error:', event.error);
+      if (lastError) console.warn('Speech synthesis error:', lastError);
+      return;
     }
+    const current = chain[index];
+    let started = false;
+    let settled = false;
+    let startTimer = null;
+
+    const begin = () => {
+      if (settled) return;
+      started = true;
+      clearTimeout(startTimer);
+      stopLoading();
+      onStart?.();
+    };
+    const finish = () => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(startTimer);
+      stopCurrent = null;
+      stopLoading();
+      onEnd?.();
+    };
+    // Stopped from outside (cancel, skip, leaving the screen): end quietly, so the next line does not run.
+    const cancelled = () => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(startTimer);
+      stopCurrent = null;
+      stopLoading();
+    };
+    // The voice failed before it started: block it (if it is online) and try the next voice.
+    const handOver = (error) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(startTimer);
+      stopCurrent = null;
+      if (current.online) blockedUntil.set(current.name, Date.now() + BLOCK_MS);
+      window.speechSynthesis.cancel(); // the failed utterance may still be queued
+      attempt(index + 1, error);
+    };
+    // The voice failed after it had started: end as before (onEnd and a warning).
+    const failedAfterStart = (error) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(startTimer);
+      stopCurrent = null;
+      stopLoading();
+      onEnd?.();
+      console.warn('Speech synthesis error:', error);
+    };
+
+    stopCurrent = cancelled;
+
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = lang;
+    utterance.rate = slow ? SLOW_RATE : NORMAL_RATE;
+    if (current.voice) utterance.voice = current.voice;
+    utterance.onstart = begin;
+    utterance.onend = finish;
+    utterance.onerror = (event) => {
+      // cancel() / skip must not run the next line — only real playback completion should call onEnd.
+      if (event.error === 'interrupted' || event.error === 'canceled') {
+        cancelled();
+        return;
+      }
+      if (started) failedAfterStart(event.error);
+      else handOver(event.error);
+    };
+    if (current.online) startTimer = setTimeout(() => handOver('timeout'), ONLINE_START_LIMIT_MS);
+    window.speechSynthesis.speak(utterance);
   };
 
-  synth.speak(utterance);
+  attempt(0);
   return true;
 }
 
 /** Stops any reading in progress, for example when the learner leaves the result window. */
 export function stopSpeaking() {
-  if (canSpeak()) window.speechSynthesis.cancel();
+  stopPlayback();
 }
 
 export function pauseSpeaking() {
