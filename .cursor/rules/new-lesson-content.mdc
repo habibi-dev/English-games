@@ -23,6 +23,8 @@ their grammar rules and examples, and their sentence structures.
 - No person names in the word list or in the word exercises (vocabulary, dictation): no first names, family names or
   nicknames (for example Ali, Habibi, Bahar, Amir). Names may appear in sentences, dialogues, stories and grammar
   examples, because a sentence about a person needs the name to make sense.
+- Do not add a list of people (for example a `profiles` part in `lesson_content` with names, roles and cities). Such a
+  list only exists to quiz the learner on people from the book, which the rule above forbids.
 - Every vocabulary word has its pronunciation (IPA between slashes, like `/ˈɡɪvən/`) and its Persian meaning.
 - Synonyms and antonyms: for every word of the lesson, find its synonyms and antonyms among the words of this lesson
   and of the earlier lessons of the same book. Each one found is written down as a `Synonym: <word>` or
@@ -95,6 +97,14 @@ their grammar rules and examples, and their sentence structures.
   translation, word translation, sentence builder, grammar correction, negative, question, multiple choice, dictation,
   vocabulary, verb forms). The negative and question types show one example per sentence structure, not many words
   in the same structure.
+- No person names in practice: a practice item (any exercise type) never asks the learner to pick, type or find a
+ person's name, never lists people as options, and never asks a question whose answer depends on knowing a person
+ from the book (for example "Which student is from New York?", "What was the name of the Spanish teacher?", or
+ "Who is a teacher from Chicago?" with names as options). The learner has only seen the app's lessons, not the book,
+ so such a question is not fair and does not teach anything. Remove such items instead of rewording them.
+- A person's name may still appear in a practice sentence only as a plain introduction, where the grammar is the
+ point (for example "Hi, Max. Are you a teacher?" or "My name is Karina"). The name must not be the answer, a
+ choice, or the subject of the question.
 - Every practice item has a hint (راهنما). A hint is a short guide that points to the rule or to the key word of that
   item. The same word must not be used to mean several different things in the hints.
 
