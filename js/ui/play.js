@@ -979,6 +979,7 @@ async function showSetup(root, restore = null) {
                   english: w.word,
                   persian: w.meaning,
                   ipa: w.ipa,
+                  category: w.category,
                   synonyms: extra.synonyms,
                   antonyms: extra.antonyms,
                   examples: extra.examples,
@@ -991,6 +992,7 @@ async function showSetup(root, restore = null) {
           playTitle: 'Play all words slowly',
           shuffle: true,
           search: true,
+          categories: true,
           playbarFeatures: { autoReveal: true, deckPlayback: true, deckRich: true },
         }),
       );

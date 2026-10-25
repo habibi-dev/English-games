@@ -54,6 +54,23 @@ export function lessonSentences(questions) {
 }
 
 /**
+ * The order of the words list. Words with a category come first, one block per category (the categories in the
+ * order they first appear), and each block keeps the lesson's own order, so a set like capital city, country,
+ * nationality stays together. The words without a category follow, A to Z.
+ */
+export function orderWords(words) {
+  const rank = new Map();
+  for (const word of words) {
+    if (word.category && !rank.has(word.category)) rank.set(word.category, rank.size);
+  }
+  const grouped = words.filter((word) => word.category).sort((a, b) => rank.get(a.category) - rank.get(b.category));
+  const plain = words
+    .filter((word) => !word.category)
+    .sort((a, b) => a.word.localeCompare(b.word, 'en', { sensitivity: 'base' }));
+  return [...grouped, ...plain];
+}
+
+/**
  * Everything the lesson pages show, for the chosen lessons together.
  * `contents` is one lesson_content part per lesson (null when a lesson has none).
  * Returns:
@@ -68,11 +85,18 @@ export function lessonMaterial(questions, contents = []) {
   const sentences = parts.flatMap((part) => part.sentences ?? []);
 
   const words = vocabulary.length
-    ? uniqueBy(
-        vocabulary.map((entry) => ({ word: text(entry.word), ipa: text(entry.ipa), meaning: text(entry.meaning) })),
-        (entry) => entry.word.toLowerCase(),
-      ).sort((a, b) => a.word.localeCompare(b.word, 'en', { sensitivity: 'base' }))
-    : lessonWords(questions).map((entry) => ({ ...entry, ipa: '' }));
+    ? orderWords(
+        uniqueBy(
+          vocabulary.map((entry) => ({
+            word: text(entry.word),
+            ipa: text(entry.ipa),
+            meaning: text(entry.meaning),
+            category: text(entry.category),
+          })),
+          (entry) => entry.word.toLowerCase(),
+        ),
+      )
+    : lessonWords(questions).map((entry) => ({ ...entry, ipa: '', category: '' }));
 
   return {
     words,

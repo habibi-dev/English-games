@@ -29,6 +29,24 @@ their grammar rules and examples, and their sentence structures.
   `Opposite: <word>` vocabulary exercise item, so the study page shows it. An earlier lesson's word that is a synonym
   or antonym of a new word is added to the new word this way, too.
 
+### Word categories (groups of words)
+
+- A word that belongs to a topic group gets a `category` field in its vocabulary entry, with the group name in English
+ (for example `"category": "Countries"`). Reuse the exact name of an existing group. Only the groups the author asks
+ for are used; do not invent groups for other words. A word with no group has no `category` field.
+- A group is about one topic. For lesson 1.1, the Countries group holds every country, capital city and nationality
+ of the country chart, plus the general words `country`, `capital city`, `nationality` and `nationalities`. Place names
+ that are not countries or capitals (for example `New York`) are not in that group.
+- The vocabulary array keeps each group in one block, in the order the group needs: for the Countries group, `capital city`,
+ `country`, `nationality`, `nationalities`, then each country as capital city, country, nationality. The words list
+ shows the groups first (in the order they first appear in the lesson), each group in this order, and the words
+ without a group after them, A to Z.
+- The words page shows one chip per group under the search box, with `All` first. The chips filter the list, Play and
+ the card view. A lesson with no `category` on any word shows no chips.
+- A group's English words must match the `vocabulary` words exactly, so the chart and the list use the same spelling.
+- When an existing lesson gets or changes a group, bump its `version` in `content/index.json` and run `npm test`.
+ `tests/lesson-vocabulary.test.js` checks the lesson 1.1 Countries block; add the same kind of check for any new group.
+
 ## 2. Sentences and grammar
 
 - A sentence structure is taught once per book. Do not repeat a structure from an earlier lesson with different words.

@@ -998,7 +998,15 @@ function createLessonPlaybar({
       )
     : null;
 
-  return { element, pickLine, onPlaybackRowsChanged: () => onPlaybackRowsChanged() };
+  return {
+    element,
+    pickLine,
+    // The visible rows changed (a search, a category): the counter follows them. While a playback runs, its own counter stays.
+    onPlaybackRowsChanged: () => {
+      if (!playingAll) syncProgress();
+      onPlaybackRowsChanged();
+    },
+  };
 }
 
 export function linesPage({
@@ -1010,6 +1018,8 @@ export function linesPage({
   shuffle = false,
   playbarFeatures = {},
   search = false,
+  // Category chips under the search (words): a row with a `category` is filtered by its chip. "All" shows every row.
+  categories = false,
   playbar: showPlaybar = true,
   // false: no English / Persian switch; both sides are always shown (grammar pages).
   modeSwitch = true,
@@ -1019,6 +1029,7 @@ export function linesPage({
   const deckRich = deckPlayback && Boolean(playbarFeatures.deckRich);
   let mode = modeSwitch ? 'english' : 'both';
   let searchQuery = '';
+  let categoryFilter = 'all';
   let deckLastIndex = null;
   const revealed = new Set();
   const body = h('div', { class: 'lc-groups' });
@@ -1215,12 +1226,16 @@ export function linesPage({
       element.classList.toggle('active', value === mode);
       element.setAttribute('aria-pressed', String(value === mode));
     }
+    for (const { value, element } of categoryButtons) {
+      element.classList.toggle('active', value === categoryFilter);
+      element.setAttribute('aria-pressed', String(value === categoryFilter));
+    }
     itemByKey.clear();
     let visibleRowCount = 0;
     shown.forEach((group, groupIndex) => {
       const items = [];
       group.rows.forEach((entry, rowIndex) => {
-        if (!rowMatchesLessonSearch(entry, searchQuery)) return;
+        if (!matchesFilters(entry)) return;
         visibleRowCount += 1;
         const key = `${groupIndex}:${rowIndex}`;
         const flatIndex = flatRows.findIndex((row) => row.key === key);
@@ -1248,7 +1263,40 @@ export function linesPage({
   const getPlaybackRows = () =>
     flatRows
       .map((row, flatIndex) => ({ english: row.entry.english, index: flatIndex, key: row.key, entry: row.entry }))
-      .filter((row) => isEnglishVisible(row.key) && rowMatchesLessonSearch(row.entry, searchQuery));
+      .filter((row) => isEnglishVisible(row.key) && matchesFilters(row.entry));
+
+  // The one rule for which rows show. The category, the search and the list, the play bar and the card view all use it.
+  const matchesFilters = (entry) =>
+    (categoryFilter === 'all' || entry.category === categoryFilter) && rowMatchesLessonSearch(entry, searchQuery);
+
+  let categoryBar = null;
+  let categoryButtons = [];
+  const categoryNames = categories
+    ? [...new Set(groups.flatMap((group) => group.rows.map((row) => row.category)).filter(Boolean))]
+    : [];
+  if (categoryNames.length) {
+    categoryButtons = [['all', 'All'], ...categoryNames.map((name) => [name, name])].map(([value, label]) => ({
+      value,
+      element: h(
+        'button',
+        {
+          type: 'button',
+          class: 'chip-toggle lc-cat-btn',
+          onclick: () => {
+            stopLinesPlayback();
+            categoryFilter = value;
+            draw();
+          },
+        },
+        label,
+      ),
+    }));
+    categoryBar = h(
+      'div',
+      { class: 'chips lc-cats', role: 'group', 'aria-label': 'Filter the list by category' },
+      ...categoryButtons.map((entry) => entry.element),
+    );
+  }
 
   let searchBar = null;
   let searchEmpty = null;
@@ -1371,7 +1419,7 @@ export function linesPage({
   const manualRows = () =>
     flatRows
       .map((row, flatIndex) => ({ index: flatIndex, key: row.key, entry: row.entry }))
-      .filter((row) => rowMatchesLessonSearch(row.entry, searchQuery));
+      .filter((row) => matchesFilters(row.entry));
 
   // Position of the current card and the neighbouring rows. If the current card is not in the walk
   // (for example after a search change), the neighbours are the rows just before and just after it.
@@ -1632,7 +1680,7 @@ export function linesPage({
       // Same walk as the card view's Previous/Next (every row, only the search applies).
       const rows = flatRows
         .map((row, index) => ({ index, entry: row.entry }))
-        .filter((row) => rowMatchesLessonSearch(row.entry, searchQuery));
+        .filter((row) => matchesFilters(row.entry));
       const pos = rows.findIndex((row) => row.index === flatIndex);
       cardCount = h('span', { class: 'lc-deck-count' }, pos >= 0 ? `${pos + 1} / ${rows.length}` : '');
     }
@@ -1823,10 +1871,11 @@ export function linesPage({
     if (listShell) listShell.hidden = inDeckSession;
     dockPlaybar(inDeckSession);
     if (searchBar) searchBar.hidden = Boolean(deckPlayback && linesIsPlaying);
+    if (categoryBar) categoryBar.hidden = Boolean(deckPlayback && linesIsPlaying);
     if (searchEmpty) {
       if (deckPlayback && linesIsPlaying) searchEmpty.hidden = true;
       else {
-        const visible = flatRows.some((row) => rowMatchesLessonSearch(row.entry, searchQuery));
+        const visible = flatRows.some((row) => matchesFilters(row.entry));
         searchEmpty.hidden = !searchQuery.trim() || visible;
       }
     }
@@ -1852,7 +1901,17 @@ export function linesPage({
       : []),
     ...(modeSwitch ? [h('div', { class: 'chips lc-modes' }, ...modeButtons.map((entry) => entry.element))] : []),
     // The play bar and the search stay under the header while the list scrolls, in one compact strip.
-    ...(playbar || searchBar ? [h('div', { class: 'lc-sticky-bar' }, ...(playbar ? [playbar] : []), ...(searchBar ? [searchBar] : []))] : []),
+    ...(playbar || searchBar || categoryBar
+      ? [
+          h(
+            'div',
+            { class: 'lc-sticky-bar' },
+            ...(playbar ? [playbar] : []),
+            ...(searchBar ? [searchBar] : []),
+            ...(categoryBar ? [categoryBar] : []),
+          ),
+        ]
+      : []),
     ...(deckWrap ? [deckWrap] : []),
     ...(searchEmpty ? [searchEmpty] : []),
     body,

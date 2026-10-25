@@ -2892,11 +2892,6 @@
         "meaning": "نکته / نقطه"
       },
       {
-        "word": "country",
-        "ipa": "/ˈkʌntri/",
-        "meaning": "کشور"
-      },
-      {
         "word": "city",
         "ipa": "/ˈsɪti/",
         "meaning": "شهر"
@@ -2945,11 +2940,6 @@
         "word": "after",
         "ipa": "/ˈæftər/",
         "meaning": "بعد از / سپس"
-      },
-      {
-        "word": "nationalities",
-        "ipa": "/ˌnæʃəˈnælətiz/",
-        "meaning": "ملیت‌ها"
       },
       {
         "word": "now",
@@ -3010,11 +3000,6 @@
         "word": "who",
         "ipa": "/huː/",
         "meaning": "چه کسی"
-      },
-      {
-        "word": "capital city",
-        "ipa": "/ˈkæpɪtl ˈsɪti/",
-        "meaning": "شهر پایتخت"
       },
       {
         "word": "grammar",
@@ -3152,11 +3137,6 @@
         "meaning": "بررسی درستی پاسخ"
       },
       {
-        "word": "nationality",
-        "ipa": "/ˌnæʃəˈnæləti/",
-        "meaning": "ملیت"
-      },
-      {
         "word": "answers",
         "ipa": "/ˈænsərz/",
         "meaning": "پاسخ‌ها"
@@ -3177,319 +3157,406 @@
         "meaning": "صحبت کردن"
       },
       {
+        "word": "capital city",
+        "ipa": "/ˈkæpɪtl ˈsɪti/",
+        "meaning": "شهر پایتخت",
+        "category": "Countries"
+      },
+      {
+        "word": "country",
+        "ipa": "/ˈkʌntri/",
+        "meaning": "کشور",
+        "category": "Countries"
+      },
+      {
+        "word": "nationality",
+        "ipa": "/ˌnæʃəˈnæləti/",
+        "meaning": "ملیت",
+        "category": "Countries"
+      },
+      {
+        "word": "nationalities",
+        "ipa": "/ˌnæʃəˈnælətiz/",
+        "meaning": "ملیت‌ها",
+        "category": "Countries"
+      },
+      {
         "word": "Brasilia",
         "ipa": "/brəˈzɪliə/",
-        "meaning": "پایتخت برزیل"
+        "meaning": "پایتخت برزیل",
+        "category": "Countries"
       },
       {
         "word": "Brazil",
         "ipa": "/brəˈzɪl/",
-        "meaning": "برزیل"
+        "meaning": "برزیل",
+        "category": "Countries"
       },
       {
         "word": "Brazilian",
         "ipa": "/brəˈzɪliən/",
-        "meaning": "برزیلی"
+        "meaning": "برزیلی",
+        "category": "Countries"
       },
       {
         "word": "Santiago",
         "ipa": "/ˌsɑːnti ˈɑːɡoʊ/",
-        "meaning": "پایتخت شیلی"
+        "meaning": "پایتخت شیلی",
+        "category": "Countries"
       },
       {
         "word": "Chile",
         "ipa": "/ˈtʃɪli/",
-        "meaning": "شیلی"
+        "meaning": "شیلی",
+        "category": "Countries"
       },
       {
         "word": "Chilean",
         "ipa": "/ˈtʃɪliən/",
-        "meaning": "شیلیایی"
+        "meaning": "شیلیایی",
+        "category": "Countries"
       },
       {
         "word": "Beijing",
         "ipa": "/ˌbeɪˈdʒɪŋ/",
-        "meaning": "پایتخت چین"
+        "meaning": "پایتخت چین",
+        "category": "Countries"
       },
       {
         "word": "China",
         "ipa": "/ˈtʃaɪnə/",
-        "meaning": "چین"
+        "meaning": "چین",
+        "category": "Countries"
       },
       {
         "word": "Chinese",
         "ipa": "/ˌtʃaɪˈniːz/",
-        "meaning": "چینی"
+        "meaning": "چینی",
+        "category": "Countries"
       },
       {
         "word": "Bogotá",
         "ipa": "/ˌboʊɡəˈtɑː/",
-        "meaning": "پایتخت کلمبیا"
+        "meaning": "پایتخت کلمبیا",
+        "category": "Countries"
       },
       {
         "word": "Colombia",
         "ipa": "/kəˈlʌmbiə/",
-        "meaning": "کلمبیا"
+        "meaning": "کلمبیا",
+        "category": "Countries"
       },
       {
         "word": "Colombian",
         "ipa": "/kəˈlʌmbiən/",
-        "meaning": "کلمبیایی"
+        "meaning": "کلمبیایی",
+        "category": "Countries"
       },
       {
         "word": "Quito",
         "ipa": "/ˈkiːtoʊ/",
-        "meaning": "پایتخت اکوادور"
+        "meaning": "پایتخت اکوادور",
+        "category": "Countries"
       },
       {
         "word": "Ecuador",
         "ipa": "/ˈekwədɔːr/",
-        "meaning": "اکوادور"
+        "meaning": "اکوادور",
+        "category": "Countries"
       },
       {
         "word": "Ecuadorian",
         "ipa": "/ˌekwəˈdɔːriən/",
-        "meaning": "اکوادوری"
+        "meaning": "اکوادوری",
+        "category": "Countries"
       },
       {
         "word": "Paris",
         "ipa": "/ˈpærɪs/",
-        "meaning": "پایتخت فرانسه"
+        "meaning": "پایتخت فرانسه",
+        "category": "Countries"
       },
       {
         "word": "France",
         "ipa": "/fræns/",
-        "meaning": "فرانسه"
+        "meaning": "فرانسه",
+        "category": "Countries"
       },
       {
         "word": "French",
         "ipa": "/frentʃ/",
-        "meaning": "فرانسوی"
+        "meaning": "فرانسوی",
+        "category": "Countries"
       },
       {
         "word": "Tegucigalpa",
         "ipa": "/təˌɡuːsɪˈɡælpə/",
-        "meaning": "پایتخت هندوراس"
+        "meaning": "پایتخت هندوراس",
+        "category": "Countries"
       },
       {
         "word": "Honduras",
         "ipa": "/hɑːnˈdʊrəs/",
-        "meaning": "هندوراس"
+        "meaning": "هندوراس",
+        "category": "Countries"
       },
       {
         "word": "Honduran",
         "ipa": "/hɑːnˈdʊrən/",
-        "meaning": "هندوراسی"
+        "meaning": "هندوراسی",
+        "category": "Countries"
       },
       {
         "word": "Tokyo",
         "ipa": "/ˈtoʊkioʊ/",
-        "meaning": "پایتخت ژاپن"
+        "meaning": "پایتخت ژاپن",
+        "category": "Countries"
       },
       {
         "word": "Japan",
         "ipa": "/dʒəˈpæn/",
-        "meaning": "ژاپن"
+        "meaning": "ژاپن",
+        "category": "Countries"
       },
       {
         "word": "Japanese",
         "ipa": "/ˌdʒæpəˈniːz/",
-        "meaning": "ژاپنی"
+        "meaning": "ژاپنی",
+        "category": "Countries"
       },
       {
         "word": "Mexico City",
         "ipa": "/ˈmeksɪkoʊ ˈsɪti/",
-        "meaning": "پایتخت مکزیک"
+        "meaning": "پایتخت مکزیک",
+        "category": "Countries"
       },
       {
         "word": "Mexico",
         "ipa": "/ˈmeksɪkoʊ/",
-        "meaning": "مکزیک"
+        "meaning": "مکزیک",
+        "category": "Countries"
       },
       {
         "word": "Mexican",
         "ipa": "/ˈmeksɪkən/",
-        "meaning": "مکزیکی"
+        "meaning": "مکزیکی",
+        "category": "Countries"
       },
       {
         "word": "Lima",
         "ipa": "/ˈliːmə/",
-        "meaning": "پایتخت پرو"
+        "meaning": "پایتخت پرو",
+        "category": "Countries"
       },
       {
         "word": "Peru",
         "ipa": "/pəˈruː/",
-        "meaning": "پرو"
+        "meaning": "پرو",
+        "category": "Countries"
       },
       {
         "word": "Peruvian",
         "ipa": "/pəˈruːviən/",
-        "meaning": "پرویی"
+        "meaning": "پرویی",
+        "category": "Countries"
       },
       {
         "word": "Moscow",
         "ipa": "/ˈmɑːskaʊ/",
-        "meaning": "پایتخت روسیه"
+        "meaning": "پایتخت روسیه",
+        "category": "Countries"
       },
       {
         "word": "Russia",
         "ipa": "/ˈrʌʃə/",
-        "meaning": "روسیه"
+        "meaning": "روسیه",
+        "category": "Countries"
       },
       {
         "word": "Russian",
         "ipa": "/ˈrʌʃn/",
-        "meaning": "روسی"
+        "meaning": "روسی",
+        "category": "Countries"
       },
       {
         "word": "Seoul",
         "ipa": "/soʊl/",
-        "meaning": "پایتخت کره جنوبی"
+        "meaning": "پایتخت کره جنوبی",
+        "category": "Countries"
       },
       {
         "word": "South Korea",
         "ipa": "/saʊθ kəˈriːə/",
-        "meaning": "کره جنوبی"
+        "meaning": "کره جنوبی",
+        "category": "Countries"
       },
       {
         "word": "South Korean",
         "ipa": "/saʊθ kəˈriːən/",
-        "meaning": "اهل کره جنوبی"
+        "meaning": "اهل کره جنوبی",
+        "category": "Countries"
       },
       {
         "word": "Madrid",
         "ipa": "/məˈdrɪd/",
-        "meaning": "پایتخت اسپانیا"
+        "meaning": "پایتخت اسپانیا",
+        "category": "Countries"
       },
       {
         "word": "Spain",
         "ipa": "/speɪn/",
-        "meaning": "اسپانیا"
+        "meaning": "اسپانیا",
+        "category": "Countries"
       },
       {
         "word": "Spanish",
         "ipa": "/ˈspænɪʃ/",
-        "meaning": "اسپانیایی"
+        "meaning": "اسپانیایی",
+        "category": "Countries"
       },
       {
         "word": "Washington, D.C.",
         "ipa": "/ˈwɑːʃɪŋtən ˌdiː ˈsiː/",
-        "meaning": "پایتخت ایالات متحده"
+        "meaning": "پایتخت ایالات متحده",
+        "category": "Countries"
       },
       {
         "word": "the United States",
         "ipa": "/ðə juˌnaɪtɪd ˈsteɪts/",
-        "meaning": "ایالات متحده"
+        "meaning": "ایالات متحده",
+        "category": "Countries"
       },
       {
         "word": "American",
         "ipa": "/əˈmerɪkən/",
-        "meaning": "آمریکایی"
+        "meaning": "آمریکایی",
+        "category": "Countries"
       },
       {
         "word": "Cairo",
         "ipa": "/ˈkaɪroʊ/",
-        "meaning": "پایتخت مصر"
+        "meaning": "پایتخت مصر",
+        "category": "Countries"
       },
       {
         "word": "Egypt",
         "ipa": "/ˈiːdʒɪpt/",
-        "meaning": "مصر"
+        "meaning": "مصر",
+        "category": "Countries"
       },
       {
         "word": "Egyptian",
         "ipa": "/ɪˈdʒɪpʃn/",
-        "meaning": "مصری"
+        "meaning": "مصری",
+        "category": "Countries"
       },
       {
         "word": "Buenos Aires",
         "ipa": "/ˌbweɪnəs ˈaɪrɪz/",
-        "meaning": "پایتخت آرژانتین"
+        "meaning": "پایتخت آرژانتین",
+        "category": "Countries"
       },
       {
         "word": "Argentina",
         "ipa": "/ˌɑːrdʒənˈtiːnə/",
-        "meaning": "آرژانتین"
+        "meaning": "آرژانتین",
+        "category": "Countries"
       },
       {
         "word": "Argentinian",
         "ipa": "/ˌɑːrdʒənˈtɪniən/",
-        "meaning": "آرژانتینی"
+        "meaning": "آرژانتینی",
+        "category": "Countries"
       },
       {
         "word": "Rabat",
         "ipa": "/rəˈbɑːt/",
-        "meaning": "پایتخت مراکش"
+        "meaning": "پایتخت مراکش",
+        "category": "Countries"
       },
       {
         "word": "Morocco",
         "ipa": "/məˈrɑːkoʊ/",
-        "meaning": "مراکش"
+        "meaning": "مراکش",
+        "category": "Countries"
       },
       {
         "word": "Moroccan",
         "ipa": "/məˈrɑːkən/",
-        "meaning": "مراکشی"
+        "meaning": "مراکشی",
+        "category": "Countries"
       },
       {
         "word": "Berlin",
         "ipa": "/bɜːrˈlɪn/",
-        "meaning": "پایتخت آلمان"
+        "meaning": "پایتخت آلمان",
+        "category": "Countries"
       },
       {
         "word": "Germany",
         "ipa": "/ˈdʒɜːrməni/",
-        "meaning": "آلمان"
+        "meaning": "آلمان",
+        "category": "Countries"
       },
       {
         "word": "German",
         "ipa": "/ˈdʒɜːrmən/",
-        "meaning": "آلمانی"
+        "meaning": "آلمانی",
+        "category": "Countries"
       },
       {
         "word": "Lisbon",
         "ipa": "/ˈlɪzbən/",
-        "meaning": "پایتخت پرتغال"
+        "meaning": "پایتخت پرتغال",
+        "category": "Countries"
       },
       {
         "word": "Portugal",
         "ipa": "/ˈpɔːrtʃəɡl/",
-        "meaning": "پرتغال"
+        "meaning": "پرتغال",
+        "category": "Countries"
       },
       {
         "word": "Portuguese",
         "ipa": "/ˌpɔːrtʃuˈɡiːz/",
-        "meaning": "پرتغالی"
+        "meaning": "پرتغالی",
+        "category": "Countries"
       },
       {
         "word": "Ottawa",
         "ipa": "/ˈɑːtəwə/",
-        "meaning": "پایتخت کانادا"
+        "meaning": "پایتخت کانادا",
+        "category": "Countries"
       },
       {
         "word": "Canada",
         "ipa": "/ˈkænədə/",
-        "meaning": "کانادا"
+        "meaning": "کانادا",
+        "category": "Countries"
       },
       {
         "word": "Canadian",
         "ipa": "/kəˈneɪdiən/",
-        "meaning": "کانادایی"
+        "meaning": "کانادایی",
+        "category": "Countries"
       },
       {
         "word": "Nairobi",
         "ipa": "/naɪˈroʊbi/",
-        "meaning": "پایتخت کنیا"
+        "meaning": "پایتخت کنیا",
+        "category": "Countries"
       },
       {
         "word": "Kenya",
         "ipa": "/ˈkenjə/",
-        "meaning": "کنیا"
+        "meaning": "کنیا",
+        "category": "Countries"
       },
       {
         "word": "Kenyan",
         "ipa": "/ˈkenjən/",
-        "meaning": "کنیایی"
+        "meaning": "کنیایی",
+        "category": "Countries"
       },
       {
         "word": "São Paulo",

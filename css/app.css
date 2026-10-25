@@ -5863,6 +5863,18 @@ img {
   margin-bottom: 10px;
 }
 
+/* Category chips under the search (words): a space above and below, All first, wrapping on small screens. */
+.lc-cats {
+  margin: 10px 0 4px;
+}
+
+.lc-cats .chip-toggle {
+  min-height: 34px;
+  padding: 4px 12px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
 /* The play bar and the search, stuck under the header while the list scrolls. Compact, with the least space. */
 .lc-sticky-bar {
   position: sticky;

@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { flattenLesson } from '../js/bank/content.js';
-import { lessonWords, lessonSentences, lessonMaterial, buildWordStudyIndex } from '../js/bank/lesson-vocabulary.js';
+import { lessonWords, lessonSentences, lessonMaterial, buildWordStudyIndex, orderWords } from '../js/bank/lesson-vocabulary.js';
 
 // Names of people in the lesson's sentences and stories. They are not vocabulary words, so they are not listed in it.
 const PERSON_NAMES = ['ali', 'habibi', 'bahar'];
@@ -24,6 +24,30 @@ test('words come from dictation items with their meaning, sorted alphabetically'
     { word: 'Opposite', meaning: 'متضاد' },
     { word: 'synonym', meaning: 'مترادف' },
   ]);
+});
+
+test('orderWords puts each category first in lesson order, then the other words A to Z', () => {
+  const words = orderWords([
+    { word: 'zebra', category: '' },
+    { word: 'Country', category: 'Countries' },
+    { word: 'apple', category: '' },
+    { word: 'Brazil', category: 'Countries' },
+  ]);
+  assert.deepEqual(
+    words.map((word) => word.word),
+    ['Country', 'Brazil', 'apple', 'zebra'],
+  );
+});
+
+test('the country words of lesson 1.1 are one category: capital city, country, nationality for each country', () => {
+  const lesson11 = JSON.parse(readFileSync(new URL('../content/evolve-1/lesson-01-01.json', import.meta.url), 'utf8'));
+  const material = lessonMaterial([], [lesson11.lesson_content]);
+  const countries = material.words.filter((word) => word.category === 'Countries').map((word) => word.word);
+  const chart = lesson11.lesson_content.country_chart.flatMap((row) => [row.capital_city, row.country, row.nationality]);
+  assert.deepEqual(countries.slice(0, 4), ['capital city', 'country', 'nationality', 'nationalities']);
+  assert.deepEqual(countries.slice(4), chart);
+  // The category comes first in the list, so its words are next to each other when studied.
+  assert.ok(material.words.slice(0, countries.length).every((word) => word.category === 'Countries'));
 });
 
 test('a word repeated in different questions is listed once, and keeps a meaning if one has it', () => {
