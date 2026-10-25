@@ -164,11 +164,38 @@ test('buildWordStudyIndex links synonyms, antonyms and example sentences to a wo
     [{ english: 'Can you help me?', persian: 'می‌توانی کمکم کنی؟' }],
   );
   const help = study('help');
-  assert.deepEqual(help.synonyms.sort(), ['aid', 'assist']);
+  assert.deepEqual(help.synonyms.map((item) => item.word).sort(), ['aid', 'assist']);
   assert.deepEqual(help.antonyms, []);
   assert.equal(help.examples.length, 1);
   const open = study('open');
-  assert.deepEqual(open.antonyms, ['close']);
+  assert.deepEqual(open.antonyms.map((item) => item.word), ['close']);
+});
+
+test('buildWordStudyIndex gives each synonym and antonym its pronunciation and meaning', () => {
+  const study = buildWordStudyIndex(
+    [
+      { category: 'vocabulary', question: 'Synonym: help', expected_answer: 'assist' },
+      { category: 'vocabulary', question: 'Opposite: open', expected_answer: 'close' },
+    ],
+    [],
+    {
+      vocabulary: [
+        { word: 'assist', ipa: '/əˈsɪst/', meaning: 'کمک کردن' },
+        { word: 'Close', ipa: '/kloʊz/', meaning: 'بستن' },
+        { word: 'assist', ipa: '/other/', meaning: 'ignored, the first entry wins' },
+      ],
+    },
+  );
+  assert.deepEqual(study('help').synonyms, [{ word: 'assist', ipa: '/əˈsɪst/', meaning: 'کمک کردن' }]);
+  assert.deepEqual(study('open').antonyms, [{ word: 'close', ipa: '/kloʊz/', meaning: 'بستن' }]);
+});
+
+test('buildWordStudyIndex leaves ipa and meaning empty for a relation word with no entry', () => {
+  const study = buildWordStudyIndex(
+    [{ category: 'vocabulary', question: 'Synonym: big', expected_answer: 'large' }],
+    [],
+  );
+  assert.deepEqual(study('big').synonyms, [{ word: 'large', ipa: '', meaning: '' }]);
 });
 
 test('lessonMaterial falls back to the questions when a lesson has no content', () => {

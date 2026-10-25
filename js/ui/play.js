@@ -973,7 +973,15 @@ async function showSetup(root, restore = null) {
       // No bottom bar on the road: Home and Reports are only on the main page. Practice is the last stop of the road.
       setTabMode('lesson');
     } else if (step.name === 'words') {
-      const wordStudy = buildWordStudyIndex(chosenQuestions, material.sentences);
+      // A synonym or opposite can come from an earlier lesson of the book, so its pronunciation and meaning are
+      // looked up in every lesson of this book (the chosen lessons first).
+      const bookWords = lessonMaterial(
+        [],
+        lessons.filter((lesson) => book.lessons.some((entry) => entry.key === lesson.key)).map((lesson) => lesson.content),
+      ).words;
+      const wordStudy = buildWordStudyIndex(chosenQuestions, material.sentences, {
+        vocabulary: [...material.words, ...bookWords],
+      });
       body = h(
         'div',
         {},

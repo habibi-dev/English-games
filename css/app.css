@@ -6738,20 +6738,6 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
   color: #64748b;
 }
 
-.lc-deck-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-/* A synonym or opposite is a card exactly like a sentence card (.lc-deck-example): the word, and its buttons
-   floating in the top-right corner. The list of them uses the same gap as the sentences. */
-.lc-deck-section .lc-deck-chips {
-  flex-direction: column;
-  flex-wrap: nowrap;
-  gap: 12px;
-}
-
 .lc-deck-examples .lc-deck-section-title {
   color: #64748b;
 }
@@ -6833,6 +6819,11 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
 
 .lc-deck-example .lc-deck-hidden {
   color: #94a3b8;
+}
+
+/* A synonym or opposite card: the word is a little bigger, like the English of a word card. */
+.lc-deck-related .lc-deck-example-en {
+  font-size: 1.25rem;
 }
 
 .lc-deck-card-rich .lc-deck-fa-block {
@@ -7290,11 +7281,55 @@ body.lc-deck-session-active .lc-playbar.lc-playbar-docked {
 .lc-rel-chip {
   display: inline-flex;
   align-items: center;
-  padding: 4px 11px;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  max-width: 100%;
+  padding: 4px 5px 4px 11px;
   border-radius: 999px;
   font-size: 0.92rem;
   font-weight: 600;
   line-height: 1.3;
+}
+
+/* The word, its pronunciation and its Persian meaning, then the small speaker. */
+.lc-rel-ipa {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #6d28d9;
+}
+
+.lc-rel-fa {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.lc-rel-chip .speak.speak-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  min-width: 26px;
+  height: 26px;
+  min-height: 26px;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid #c7d2fe;
+  background: #fff;
+  color: #4338ca;
+  cursor: pointer;
+}
+
+.lc-rel-chip .speak-glyph {
+  display: grid;
+  place-items: center;
+  width: 13px;
+  height: 13px;
+}
+
+.lc-rel-chip .speak-glyph svg {
+  width: 13px;
+  height: 13px;
 }
 
 .lc-rel-chip-syn {

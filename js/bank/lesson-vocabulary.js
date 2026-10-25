@@ -164,10 +164,24 @@ const escapeRegExp = (value) => String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\
 
 /**
  * Synonyms, antonyms and example sentences for a lesson word (from vocabulary exercises + sentence bank).
+ * `vocabulary` is a list of { word, ipa, meaning } (the words of the lessons). A synonym or antonym that is in it
+ * comes with its pronunciation and Persian meaning; the first entry for a word wins.
+ * Synonyms and antonyms are returned as { word, ipa, meaning } (ipa and meaning are '' when not known).
  */
-export function buildWordStudyIndex(questions, sentences, { maxExamples = 4 } = {}) {
+export function buildWordStudyIndex(questions, sentences, { maxExamples = 4, vocabulary = [] } = {}) {
   const synonymOf = new Map();
   const antonymOf = new Map();
+
+  const details = new Map();
+  for (const entry of vocabulary) {
+    const key = text(entry.word).toLowerCase();
+    if (key && !details.has(key)) details.set(key, { ipa: text(entry.ipa), meaning: text(entry.meaning) });
+  }
+  const detailed = (word) => ({
+    word,
+    ipa: details.get(word.toLowerCase())?.ipa ?? '',
+    meaning: details.get(word.toLowerCase())?.meaning ?? '',
+  });
 
   const addRelation = (map, base, related) => {
     const baseKey = text(base).toLowerCase();
@@ -213,8 +227,12 @@ export function buildWordStudyIndex(questions, sentences, { maxExamples = 4 } = 
       if (examples.length >= maxExamples) break;
     }
     return {
-      synonyms: [...(synonymOf.get(key) ?? [])].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })),
-      antonyms: [...(antonymOf.get(key) ?? [])].sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })),
+      synonyms: [...(synonymOf.get(key) ?? [])]
+        .sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }))
+        .map(detailed),
+      antonyms: [...(antonymOf.get(key) ?? [])]
+        .sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' }))
+        .map(detailed),
       examples,
     };
   };

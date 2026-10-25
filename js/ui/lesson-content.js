@@ -1175,16 +1175,26 @@ export function linesPage({
 
     // Word rows always get the same two lines (Synonyms, Opposite); a line with nothing in this lesson shows a dash.
     const isWordRow = entry.synonyms !== undefined || entry.antonyms !== undefined;
-    const relationLine = (label, words, kind) =>
+    // A synonym or opposite is a chip: the word, its pronunciation, its Persian meaning and a small speaker.
+    const relationChip = (item, kind) =>
+      h(
+        'span',
+        { class: `lc-rel-chip lc-rel-chip-${kind}` },
+        h('span', { class: 'lc-rel-word' }, item.word),
+        item.ipa ? h('span', { class: 'lc-rel-ipa' }, item.ipa) : null,
+        item.meaning ? h('span', { class: 'lc-rel-fa', dir: 'rtl' }, persianShown ? item.meaning : '• • •') : null,
+        speakActionButton('normal', 'Read aloud', () => speak(item.word)),
+      );
+    const relationLine = (label, items, kind) =>
       h(
         'div',
         { class: `lc-rel-line lc-rel-line-${kind}` },
         h('span', { class: 'lc-rel-label' }, label),
-        words?.length
+        items?.length
           ? h(
               'span',
               { class: 'lc-rel-chips', dir: 'ltr' },
-              ...words.map((word) => h('span', { class: `lc-rel-chip lc-rel-chip-${kind}` }, word)),
+              ...items.map((item) => relationChip(item, kind)),
             )
           : h('span', { class: 'lc-rel-empty' }, '—'),
       );
@@ -1599,38 +1609,32 @@ export function linesPage({
 
   let refreshDeckCard = () => {};
 
-  // A synonym or opposite: the word with its own speaker (normal and slow), as a sentence has in the list.
-  // Same card as a sentence (see deckExampleRow): the word, and its speakers floating at the top-right.
-  const deckWordChip = (word) => {
-    const buttons = [
-      speakActionButton('normal', 'Read aloud', () => speak(word)),
-      speakActionButton('slow', 'Read slowly', () => speak(word, { slow: true })),
-    ].filter(Boolean);
-    return h(
-      'div',
-      { class: 'lc-deck-example' },
-      h(
-        'div',
-        { class: 'lc-deck-en-actions lc-deck-example-actions' },
-        h('span', { class: 'speak-buttons' }, ...buttons),
-      ),
-      h('p', { class: 'lc-deck-example-en', dir: 'ltr' }, word),
-    );
-  };
-
-  const deckChipRow = (title, items) => {
+  // A synonym or opposite: a card like a word card, with the word, its pronunciation and its Persian meaning
+  // (see deckExampleRow, which builds it). Its speakers, normal and slow, float at the top-right.
+  const deckChipRow = (title, items, kind, key) => {
     if (!items?.length) return null;
     return h(
       'div',
       { class: 'lc-deck-section' },
       h('h5', { class: 'lc-deck-section-title' }, title),
-      h('div', { class: 'lc-deck-chips', dir: 'ltr' }, ...items.map((word) => deckWordChip(word))),
+      h(
+        'ul',
+        { class: 'lc-deck-example-list' },
+        ...items.map((item, i) =>
+          deckExampleRow(
+            { english: item.word, ipa: item.ipa, persian: item.meaning },
+            `${key}#${kind}${i}`,
+            'lc-deck-related',
+          ),
+        ),
+      ),
     );
   };
 
-  // One example sentence: the same row as a sentence in the list (English with a floating speaker and eye,
-  // the translation in its own box under it). The eye and the mode work the same way as on the list.
-  const deckExampleRow = (line, exKey) => {
+  // One example sentence (or one synonym or opposite): the same row as in the list (English with a floating speaker
+  // and eye, the pronunciation under it, the translation in its own box under that). The eye and the mode work the
+  // same way as on the list.
+  const deckExampleRow = (line, exKey, extraClass = '') => {
     let node = null;
     const build = () => {
       const englishShown = mode !== 'persian' || revealed.has(exKey);
@@ -1664,7 +1668,7 @@ export function linesPage({
         : null;
       return h(
         'li',
-        { class: 'lc-deck-example' },
+        { class: `lc-deck-example${extraClass ? ` ${extraClass}` : ''}` },
         h(
           'div',
           { class: 'lc-deck-en-actions lc-deck-example-actions' },
@@ -1674,6 +1678,7 @@ export function linesPage({
         englishShown
           ? h('p', { class: 'lc-deck-example-en', dir: 'ltr' }, line.english)
           : h('p', { class: 'lc-deck-example-en lc-deck-hidden', dir: 'ltr' }, '• • • • • •'),
+        englishShown && line.ipa ? h('span', { class: 'lc-deck-ipa' }, line.ipa) : null,
         line.persian
           ? persianShown
             ? h('div', { class: 'lc-deck-example-fa', dir: 'rtl' }, line.persian)
@@ -1763,8 +1768,8 @@ export function linesPage({
 
     const richSections = deckRich
       ? [
-          deckChipRow('Synonyms', entry.synonyms),
-          deckChipRow('Opposite', entry.antonyms),
+          deckChipRow('Synonyms', entry.synonyms, 'syn', key),
+          deckChipRow('Opposite', entry.antonyms, 'ant', key),
           deckExamplesBlock(entry.examples, key),
         ].filter(Boolean)
       : [];
