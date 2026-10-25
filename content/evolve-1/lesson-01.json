@@ -338,7 +338,8 @@
           "time_limit": 60,
           "accepted_answers": [
             "It's my book.",
-            "That is my book."
+            "That is my book.",
+            "That's my book."
           ],
           "translation": "آن کتاب من است."
         },
@@ -454,7 +455,10 @@
           "explanation": "From یعنی «از» یا «اهل»؛ from Iran یعنی اهل ایران.",
           "hint": "کلمه‌ی کلیدی: from = از / اهل؛ راهنما: با I از am استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من اهل ایران هستم."
+          "translation": "من اهل ایران هستم.",
+          "accepted_answers": [
+            "I'm from Iran."
+          ]
         },
         {
           "id": "evolve-1-l01-tr-142",
@@ -1584,7 +1588,8 @@
           "translation": "آن کتاب من است.",
           "accepted_answers": [
             "It's my book.",
-            "That is my book."
+            "That is my book.",
+            "That's my book."
           ],
           "hint": "به این توجه کن که جمله درباره‌ی یک چیز است نه یک انسان، و به ساختار معرفی کردن فکر کن."
         },
@@ -1642,7 +1647,10 @@
           "explanation": "شکل منفی حال ساده با I: don't (do not) + فعل ساده.",
           "time_limit": 60,
           "translation": "من نمی‌فهمم.",
-          "hint": "به منفی کردن فعل در زمان حال ساده و به فاعل «من» فکر کن."
+          "hint": "به منفی کردن فعل در زمان حال ساده و به فاعل «من» فکر کن.",
+          "accepted_answers": [
+            "I do not understand."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-128",
@@ -1771,7 +1779,10 @@
           "explanation": "اهل = from؛ ایران = Iran.",
           "hint": "با I از am استفاده می‌کنیم.",
           "time_limit": 60,
-          "translation": "من اهل ایران هستم."
+          "translation": "من اهل ایران هستم.",
+          "accepted_answers": [
+            "I'm from Iran."
+          ]
         },
         {
           "id": "evolve-1-l01-wt-141",
@@ -2210,7 +2221,8 @@
           "hint": "کلمه‌های کلیدی: book = کتاب؛ it = آن (برای چیز یا حیوان).",
           "accepted_answers": [
             "It's my book.",
-            "That is my book."
+            "That is my book.",
+            "That's my book."
           ],
           "translation": "آن کتاب من است."
         },

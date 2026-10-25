@@ -20,13 +20,13 @@
                   "id": "lesson-01",
                   "title": "Before starting",
                   "file": "content/evolve-1/lesson-01.json",
-                  "version": "46"
+                  "version": "47"
                 },
                 {
                   "id": "lesson-01-01",
                   "title": "Lesson 1.1",
                   "file": "content/evolve-1/lesson-01-01.json",
-                  "version": "3"
+                  "version": "5"
                 }
               ]
             }

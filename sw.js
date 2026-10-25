@@ -4,7 +4,7 @@
 
 // The version of the app. Change it on every release: the browser sees a new service worker (so the installed
 // app updates), and the cache of the old version is deleted when the new one activates.
-const VERSION = '2026-10-24.3';
+const VERSION = '2026-10-24.23';
 const CACHE = `english-quest-${VERSION}`;
 
 /** Same-origin assets to cache on install so the shell and course files open without a live network. */
@@ -13,8 +13,16 @@ const PRECACHE = [
   './manifest.webmanifest',
   './css/app.css',
   './css/vazirmatn.css',
+  './fonts/vazirmatn/Vazirmatn-Regular.woff2',
+  './fonts/vazirmatn/Vazirmatn-Medium.woff2',
+  './fonts/vazirmatn/Vazirmatn-SemiBold.woff2',
+  './fonts/vazirmatn/Vazirmatn-Bold.woff2',
+  './fonts/vazirmatn/Vazirmatn-ExtraBold.woff2',
+  './icons/icon-192.png',
+  './icons/icon-512.png',
   './content/index.json',
   './content/evolve-1/lesson-01.json',
+  './content/evolve-1/lesson-01-01.json',
   './content/covers/evolve-1.png',
   './content/covers/evolve-logo.png',
   './js/app.js',
@@ -31,12 +39,14 @@ const PRECACHE = [
   './js/progress/activity.js',
   './js/progress/backup.js',
   './js/progress/lesson-progress.js',
+  './js/progress/lesson-unlock.js',
   './js/progress/mission-report.js',
   './js/progress/player.js',
   './js/progress/report.js',
   './js/progress/spaced-repetition.js',
   './js/progress/tracker.js',
   './js/storage/db.js',
+  './js/storage/lesson-unlocks.js',
   './js/storage/lesson-playbar.js',
   './js/storage/settings.js',
   './js/storage/typing-quota.js',
