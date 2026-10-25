@@ -4,7 +4,7 @@
 
 // The version of the app. Change it on every release: the browser sees a new service worker (so the installed
 // app updates), and the cache of the old version is deleted when the new one activates.
-const VERSION = '2026-10-24.23';
+const VERSION = '2026-10-25.1';
 const CACHE = `english-quest-${VERSION}`;
 
 /** Same-origin assets to cache on install so the shell and course files open without a live network. */
@@ -30,7 +30,6 @@ const PRECACHE = [
   './js/bank/csv.js',
   './js/bank/importer.js',
   './js/bank/lesson-vocabulary.js',
-  './js/bank/question-prompt.js',
   './js/bank/repository.js',
   './js/bank/schema.js',
   './js/engine/game-engine.js',

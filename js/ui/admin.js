@@ -2,12 +2,11 @@
 //   Sounds: the win and lose sound effects, each on or off, with a volume and a preview;
 //           and the spoken English that is read aloud after each answer.
 //   Progress: export the answers so far as a signed text, import it on another device, or clear it all.
-//   Question bank: import and export, plus a guide and prompt for writing questions with an AI.
+//   Question bank: import and export of the questions.
 // Questions are written in files and imported here. The game code is never touched here.
 
 import { listQuestions, importIntoStore } from '../bank/repository.js';
 import { serializeQuestions } from '../bank/importer.js';
-import { QUESTION_PROMPT } from '../bank/question-prompt.js';
 import { getSoundSettings, saveSoundSettings } from '../storage/settings.js';
 import { loadAttempts, importAttempts, resetProgress } from '../progress/tracker.js';
 import { loadSessions, addSessions } from '../progress/activity.js';
@@ -271,7 +270,7 @@ async function handleProgressImport(file) {
   }
 }
 
-/** Question bank: the stored count, import, export and the AI guide. */
+/** Question bank: the stored count, import and export. */
 async function questionBankSection(root) {
   const questions = await listQuestions();
 
@@ -321,33 +320,7 @@ async function questionBankSection(root) {
         h('button', { type: 'button', class: 'btn ghost', onclick: () => exportAll('csv') }, 'Export CSV'),
       ),
     ),
-
-    h(
-      'div',
-      { class: 'card admin-card' },
-      h('h3', {}, 'Guide: writing questions with AI'),
-      h(
-        'p',
-        { class: 'muted small' },
-        'Copy this prompt into an AI assistant and tell it which book, lesson and topic to write, how many questions you want and which exercise types to use. Save its answer as a .json file and import it above.',
-      ),
-      h('pre', { class: 'prompt-box' }, QUESTION_PROMPT),
-      h(
-        'div',
-        { class: 'toolbar-actions' },
-        h('button', { type: 'button', class: 'btn primary', onclick: copyPrompt }, 'Copy prompt'),
-      ),
-    ),
   );
-}
-
-async function copyPrompt() {
-  try {
-    await navigator.clipboard.writeText(QUESTION_PROMPT);
-    toast('Prompt copied.');
-  } catch {
-    toast('Copying is not available here. Select the prompt text and copy it manually.', 'warn');
-  }
 }
 
 function importReportBox(root) {
