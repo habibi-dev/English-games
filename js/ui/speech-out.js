@@ -376,9 +376,8 @@ export function speakActionButton(kind, label, onclick) {
 export function contextSentence(question) {
   const text = String(question.question ?? '');
   if (text.includes('___')) return null;
-  const start = text.search(/[A-Za-z]/);
-  if (start < 0) return null;
-  return text.slice(start).trim();
+  // Only the English part: the Persian words around it are not spoken as English.
+  return splitPrompt(text).sentence || null;
 }
 
 /**
