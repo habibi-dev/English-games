@@ -37,9 +37,22 @@ test('curly apostrophes from keyboards or speech still match straight ones', () 
   assert.equal(validateAnswer(q, 'She isn’t happy').correct, true);
 });
 
-test('normalizeAnswer strips only terminal punctuation', () => {
+test('normalizeAnswer ignores sentence marks anywhere, but keeps dots between digits', () => {
   assert.equal(normalizeAnswer(' Does she work? '), 'does she work');
-  assert.equal(normalizeAnswer('Do you know Mr. Lee'), 'do you know mr. lee');
+  assert.equal(normalizeAnswer('Do you know Mr. Lee'), 'do you know mr lee');
+  assert.equal(normalizeAnswer('It is 3.5 metres.'), 'it is 3.5 metres');
+  assert.equal(normalizeAnswer('10:30 is late'), '10:30 is late');
+});
+
+test('spoken answers match written answers with full stops in the middle', () => {
+  const twoSentences = { accepted_answers: ['Yes, I am. And you?'] };
+  assert.equal(validateAnswer(twoSentences, 'Yes I am and you').correct, true);
+  assert.equal(validateAnswer(twoSentences, 'yes, I am. And you').correct, true);
+  assert.equal(validateAnswer(twoSentences, 'Yes I am').correct, false);
+
+  const negative = { accepted_answers: ["No, I'm not a teacher. I'm a student."] };
+  assert.equal(validateAnswer(negative, "No I'm not a teacher I'm a student").correct, true);
+  assert.equal(validateAnswer(negative, "No I'm not a teacher. I am a student").correct, false);
 });
 
 test('commas do not matter, so spoken answers without them still match', () => {

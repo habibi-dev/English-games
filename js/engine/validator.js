@@ -10,8 +10,10 @@
  * - curly apostrophes/quotes -> straight ones (keyboard/speech output differences only)
  * - commas (Latin or Persian) treated as spaces, since speech input cannot type them
  *   ("Sorry, what page?" and "Sorry what page" are the same answer; digit groups such as 1,000 are kept)
+ * - sentence marks (. ! ? ; :) treated as spaces anywhere in the answer, not only at the end, since
+ *   speech input never says them ("Yes, I am. And you?" is the same as "Yes I am and you"). Dots between
+ *   digits (3.5) are kept, and "Mr. Lee" is the same as "Mr Lee".
  * - extra spaces collapsed and trimmed
- * - terminal punctuation (. ! ?) removed
  * - case-insensitive (lowercased)
  * Word order and every other character are preserved, so grammar mistakes still fail.
  * Contractions are NOT expanded: "isn't" and "is not" are different strings, so every accepted
@@ -22,10 +24,9 @@ export function normalizeAnswer(text) {
     .normalize('NFC')
     .replace(/[\u2018\u2019\u02BC]/g, "'")
     .replace(/[\u201C\u201D]/g, '"')
-    .replace(/(?<!\d),|,(?!\d)|،/g, ' ')
+    .replace(/(?<!\d),|,(?!\d)|،|؛/g, ' ')
+    .replace(/(?<!\d)[.!?;:…]|[.!?;:…](?!\d)/g, ' ')
     .replace(/\s+/g, ' ')
-    .trim()
-    .replace(/\s*[.!?]+$/, '')
     .trim()
     .toLowerCase();
 }
