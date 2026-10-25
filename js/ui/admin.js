@@ -1,13 +1,10 @@
-// Settings screen (opened from the gear in the header). Three sections:
+// Settings screen (opened from the gear in the header). Two sections:
 //   Sounds: the win and lose sound effects, each on or off, with a volume and a preview;
 //           and the spoken English that is read aloud after each answer.
-//   Progress: export the answers so far as a signed text, import it on another device, or clear it all.
-//   Question bank: import and export of the questions.
-// Questions are written in files and imported here. The game code is never touched here.
+//   Progress: export all progress as a signed text, import it on another device, or clear it all.
 
-import { listQuestions, importIntoStore } from '../bank/repository.js';
-import { serializeQuestions } from '../bank/importer.js';
 import { getSoundSettings, saveSoundSettings } from '../storage/settings.js';
+import { getUnlockedLessons, saveUnlockedLessons } from '../storage/lesson-unlocks.js';
 import { loadAttempts, importAttempts, resetProgress } from '../progress/tracker.js';
 import { loadSessions, addSessions } from '../progress/activity.js';
 import { encodeBackup, decodeBackup } from '../progress/backup.js';
@@ -17,22 +14,13 @@ import { h, fa, toast, download, confirmDialog } from './dom.js';
 const SECTIONS = [
   ['sounds', 'Sounds'],
   ['progress', 'Progress'],
-  ['questions', 'Question bank'],
 ];
 
 // The section shown on the settings screen. Kept while the app runs, so re-rendering keeps the same section.
 let activeSection = 'sounds';
 
-// Result of the last import, shown until it is closed.
-let importReport = null;
-
 export async function renderAdmin(root) {
-  const body =
-    activeSection === 'sounds'
-      ? soundsSection()
-      : activeSection === 'progress'
-        ? progressSection()
-        : await questionBankSection(root);
+  const body = activeSection === 'sounds' ? soundsSection() : progressSection();
 
   root.replaceChildren(
     h(
@@ -171,7 +159,7 @@ function progressSection() {
       h(
         'p',
         { class: 'muted small' },
-        'Save every answer and the activity time (the calendar) so far as one text file. Open the app on another device and import that file there. The file is signed, so a changed file is refused.',
+        'Save all your progress as one text file: every answer, the activity time (the calendar), and the lessons you have unlocked. Open the app on another device and import that file there. The file is signed, so a changed file is refused.',
       ),
       h(
         'div',
@@ -199,7 +187,7 @@ function progressSection() {
   );
 }
 
-/** Clears all the progress on this device, after two confirmations. The question bank is kept. */
+/** Clears all the progress on this device, after two confirmations. */
 function clearProgressCard() {
   return h(
     'div',
@@ -208,7 +196,7 @@ function clearProgressCard() {
     h(
       'p',
       { class: 'muted small' },
-      'Deletes every answer, your points, XP, level, stars, lesson progress, play time and calendar on this device. This cannot be undone. The question bank is not changed.',
+      'Deletes every answer, your points, XP, level, stars, lesson progress, unlocked lessons, play time and calendar on this device. This cannot be undone.',
     ),
     h(
       'div',
@@ -223,7 +211,7 @@ function clearProgressCard() {
             const first = await confirmDialog({
               title: 'Clear all progress?',
               message:
-                'All your history on this device will be deleted: every answer you have given, your points, XP, level, stars, lesson progress, your play time and your calendar. This cannot be undone. The question bank will not change.',
+                'All your history on this device will be deleted: every answer you have given, your points, XP, level, stars, lesson progress, unlocked lessons, your play time and your calendar. This cannot be undone.',
               confirmText: 'Continue',
               cancelText: 'Cancel',
             });
@@ -249,145 +237,37 @@ function clearProgressCard() {
 async function exportProgress() {
   const attempts = await loadAttempts();
   const sessions = loadSessions();
-  if (attempts.length === 0 && sessions.length === 0) {
+  const unlocked = [...getUnlockedLessons()];
+  if (attempts.length === 0 && sessions.length === 0 && unlocked.length === 0) {
     toast('There is no progress to export yet.', 'warn');
     return;
   }
   const stamp = new Date().toISOString().slice(0, 10);
-  download(`grammar-quest-progress-${stamp}.txt`, await encodeBackup({ attempts, sessions }), 'text/plain');
+  download(
+    `grammar-quest-progress-${stamp}.txt`,
+    await encodeBackup({ attempts, sessions, unlocked }),
+    'text/plain',
+  );
+}
+
+/** Adds the unlocked lessons of a backup to this device. Nothing that is unlocked here is lost. Returns how many were new. */
+function importUnlockedLessons(keys) {
+  const current = getUnlockedLessons();
+  const added = keys.filter((key) => !current.has(key)).length;
+  saveUnlockedLessons(new Set([...current, ...keys]));
+  return added;
 }
 
 async function handleProgressImport(file) {
   try {
-    const { attempts, sessions } = await decodeBackup(await file.text());
+    const { attempts, sessions, unlocked } = await decodeBackup(await file.text());
     const answers = await importAttempts(attempts);
     const days = addSessions(sessions);
+    const lessons = importUnlockedLessons(unlocked);
     toast(
-      `${fa(answers.added)} answers and ${fa(days)} activity sessions added. ${fa(answers.skipped)} answers were already here.`,
+      `${fa(answers.added)} answers, ${fa(days)} activity sessions and ${fa(lessons)} unlocked lessons added. ${fa(answers.skipped)} answers were already here.`,
     );
   } catch (error) {
     toast(error.message, 'error');
   }
-}
-
-/** Question bank: the stored count, import and export. */
-async function questionBankSection(root) {
-  const questions = await listQuestions();
-
-  const fileInput = h('input', {
-    type: 'file',
-    accept: '.json,.csv,application/json,text/csv',
-    class: 'hidden-input',
-    onchange: async (event) => {
-      const file = event.target.files?.[0];
-      event.target.value = '';
-      if (file) await handleImport(file, root);
-    },
-  });
-
-  return h(
-    'section',
-    { class: 'settings-section' },
-    h('p', { class: 'muted small' }, `${fa(questions.length)} questions are stored on this device.`),
-
-    h(
-      'div',
-      { class: 'card admin-card' },
-      h('h3', {}, 'Import'),
-      h(
-        'p',
-        { class: 'muted small' },
-        'Import questions from a JSON or CSV file. Questions whose id already exists are updated, and the rest are added.',
-      ),
-      h(
-        'div',
-        { class: 'toolbar-actions' },
-        h('button', { type: 'button', class: 'btn primary', onclick: () => fileInput.click() }, 'Import JSON / CSV'),
-      ),
-      importReport ? importReportBox(root) : null,
-      fileInput,
-    ),
-
-    h(
-      'div',
-      { class: 'card admin-card' },
-      h('h3', {}, 'Export'),
-      h('p', { class: 'muted small' }, 'Download every question in the bank.'),
-      h(
-        'div',
-        { class: 'toolbar-actions' },
-        h('button', { type: 'button', class: 'btn ghost', onclick: () => exportAll('json') }, 'Export JSON'),
-        h('button', { type: 'button', class: 'btn ghost', onclick: () => exportAll('csv') }, 'Export CSV'),
-      ),
-    ),
-  );
-}
-
-function importReportBox(root) {
-  const report = importReport;
-  return h(
-    'div',
-    { class: 'import-report' },
-    h('strong', {}, `Import result for "${report.fileName}"`),
-    h(
-      'p',
-      {},
-      `${fa(report.total)} records in the file; ${fa(report.added)} questions saved and ${fa(report.invalid.length)} invalid records rejected.`,
-    ),
-    report.invalid.length
-      ? h(
-          'ul',
-          { class: 'error-list' },
-          ...report.invalid
-            .slice(0, 30)
-            .map((item) =>
-              h('li', {}, `Row ${fa(item.index + 1)}${item.id ? ` (${item.id})` : ''}: ${item.errors.join(' ')}`),
-            ),
-        )
-      : null,
-    h(
-      'button',
-      {
-        type: 'button',
-        class: 'btn ghost small',
-        onclick: () => {
-          importReport = null;
-          renderAdmin(root);
-        },
-      },
-      'Close',
-    ),
-  );
-}
-
-async function handleImport(file, root) {
-  try {
-    const format = file.name.toLowerCase().endsWith('.csv') ? 'csv' : undefined;
-    const result = await importIntoStore(await file.text(), format);
-    importReport = {
-      fileName: file.name,
-      total: result.total,
-      added: result.questions.length,
-      invalid: result.invalid,
-    };
-    toast(`${fa(result.questions.length)} questions saved.`);
-  } catch (error) {
-    toast(`Could not read file: ${error.message}`, 'error');
-  }
-  await renderAdmin(root);
-}
-
-async function exportAll(format) {
-  const questions = await listQuestions();
-  if (questions.length === 0) {
-    toast('The question bank is empty.', 'warn');
-    return;
-  }
-  questions.sort((a, b) => a.id.localeCompare(b.id, 'en', { numeric: true }));
-  const stamp = new Date().toISOString().slice(0, 10);
-  download(
-    `english-grammar-questions-${stamp}.${format}`,
-    serializeQuestions(questions, format),
-    format === 'csv' ? 'text/csv' : 'application/json',
-  );
 }

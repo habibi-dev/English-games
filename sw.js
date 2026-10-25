@@ -4,7 +4,7 @@
 
 // The version of the app. Change it on every release: the browser sees a new service worker (so the installed
 // app updates), and the cache of the old version is deleted when the new one activates.
-const VERSION = '2026-10-25.2';
+const VERSION = '2026-10-25.3';
 const CACHE = `english-quest-${VERSION}`;
 
 /** Same-origin assets to cache on install so the shell and course files open without a live network. */

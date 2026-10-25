@@ -5,9 +5,10 @@
 // The key is part of the app code, so a determined person can still find it. This stops casual edits, not that.
 
 const FORMAT = 'english-grammar-quest-progress';
-// Version 2 adds the activity sessions. Version 1 files (answers only) can still be imported.
-const VERSION = 2;
-const READABLE_VERSIONS = [1, 2];
+// Version 2 adds the activity sessions. Version 3 adds the unlocked lessons.
+// Version 1 (answers only) and version 2 files can still be imported.
+const VERSION = 3;
+const READABLE_VERSIONS = [1, 2, 3];
 const SIGNING_KEY_TEXT = 'english-grammar-quest:progress-backup:v1';
 
 const encoder = new TextEncoder();
@@ -36,21 +37,22 @@ function signingKey() {
 // The id of an attempt is counted on each device, so it is left out of the backup.
 const withoutId = ({ id, ...attempt }) => attempt;
 
-/** The text to save: the attempts and the activity sessions, signed. */
-export async function encodeBackup({ attempts, sessions }, now = Date.now()) {
+/** The text to save: the attempts, the activity sessions and the unlocked lessons, signed. */
+export async function encodeBackup({ attempts, sessions, unlocked = [] }, now = Date.now()) {
   const payload = JSON.stringify({
     format: FORMAT,
     version: VERSION,
     exportedAt: now,
     attempts: attempts.map(withoutId),
     sessions,
+    unlocked: [...unlocked],
   });
   const signature = new Uint8Array(await crypto.subtle.sign('HMAC', await signingKey(), encoder.encode(payload)));
   return bytesToBase64(encoder.encode(JSON.stringify({ payload, signature: bytesToBase64(signature) })));
 }
 
 /**
- * Checks the signature and returns { attempts, sessions } of a backup text.
+ * Checks the signature and returns { attempts, sessions, unlocked } of a backup text.
  * Throws an Error with a message when the text is refused.
  */
 export async function decodeBackup(text) {
@@ -78,8 +80,9 @@ export async function decodeBackup(text) {
   }
   return {
     attempts: data.attempts,
-    // Version 1 files have no activity time.
+    // Version 1 files have no activity time, and version 1 and 2 files have no unlocked lessons.
     sessions: Array.isArray(data.sessions) ? data.sessions : [],
+    unlocked: Array.isArray(data.unlocked) ? data.unlocked.filter((key) => typeof key === 'string') : [],
   };
 }
 

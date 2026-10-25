@@ -2,7 +2,6 @@
 // The course is listed in content/index.json (series, books and lessons). Each lesson is a JSON file that is
 // loaded when it is new or its version changed. See content.js for the file format.
 
-import { importQuestions } from './importer.js';
 import { flattenLesson, indexLessons, CONTENT_INDEX_URL } from './content.js';
 import { lessonKey } from './schema.js';
 import * as db from '../storage/db.js';
@@ -12,15 +11,6 @@ export const getQuestion = (id) => db.getQuestion(id);
 export const saveQuestion = (question) => db.putQuestion(question);
 export const removeQuestion = (id) => db.deleteQuestion(id);
 export const listLessons = () => db.getAllLessonMeta();
-
-/** Imports JSON/CSV text into the store (insert or update by id). */
-export async function importIntoStore(text, format) {
-  const result = importQuestions(text, format);
-  if (result.questions.length > 0) {
-    await db.putQuestions(result.questions);
-  }
-  return result;
-}
 
 async function fetchText(url) {
   const response = await fetch(url, { cache: 'no-cache' });

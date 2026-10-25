@@ -8,6 +8,15 @@ const ATTEMPTS = [
 ];
 const SESSIONS = [{ start: 1000, end: 61000 }, { start: 90000, end: 150000 }];
 
+test('a backup keeps the unlocked lessons, and an older backup without them still imports', async () => {
+  const text = await encodeBackup({ attempts: ATTEMPTS, sessions: SESSIONS, unlocked: ['evolve-1/lesson-01-01'] });
+  const { unlocked } = await decodeBackup(text);
+  assert.deepEqual(unlocked, ['evolve-1/lesson-01-01']);
+  // A backup made without the lessons (for example by an older app) has none.
+  const older = await decodeBackup(await encodeBackup({ attempts: ATTEMPTS, sessions: SESSIONS }));
+  assert.deepEqual(older.unlocked, []);
+});
+
 test('a backup decodes to the same attempts (without device ids) and the same activity sessions', async () => {
   const text = await encodeBackup({ attempts: ATTEMPTS, sessions: SESSIONS });
   const { attempts, sessions } = await decodeBackup(text);
