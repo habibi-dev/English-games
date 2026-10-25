@@ -1416,36 +1416,131 @@
       "difficulty": "easy",
       "items": [
         {
-          "id": "evolve-1-l02-voc-005",
-          "expected_answer": "later",
-          "explanation": "معنی و کاربرد واژه‌ها را با فهرست یادداشت مقایسه کن.",
+          "id": "evolve-1-l02-voc-01",
+          "question": "Synonym: complete",
+          "expected_answer": "fill in",
+          "explanation": "Complete و fill in وقتی دربارهٔ پر کردن فرم یا جای خالی حرف می‌زنیم هم‌معنی‌اند.",
+          "hint": "complete = کامل کردن",
           "time_limit": 60,
-          "translation": "اکنون / بعداً",
-          "question": "متضاد (antonym) واژهٔ now چیست؟",
-          "hint": "به ارتباط معنایی واژه‌ها در یادداشت همان درس توجه کن."
+          "translation": "جای خالی را پر کردن"
         },
         {
-          "id": "evolve-1-l02-voc-006",
-          "expected_answer": "text",
-          "explanation": "معنی و کاربرد واژه‌ها را با فهرست یادداشت مقایسه کن.",
-          "time_limit": 60,
-          "translation": "زمینه / متن / موقعیت",
-          "question": "دو واژهٔ نزدیک به context را بنویس.",
+          "id": "evolve-1-l02-voc-02",
+          "question": "Synonym (2): chart",
+          "expected_answer": "graph",
           "accepted_answers": [
-            "situation"
+            "table"
           ],
-          "hint": "به ارتباط معنایی واژه‌ها در یادداشت همان درس توجه کن.",
           "answer_mode": "list",
-          "min_items": 2
+          "min_items": 2,
+          "explanation": "Graph و table هر دو نوعی chart هستند؛ هر دو را بنویس.",
+          "hint": "chart = جدول / نمودار",
+          "time_limit": 60,
+          "translation": "نمودار / جدول"
         },
         {
-          "id": "evolve-1-l02-voc-009",
-          "expected_answer": "negative",
-          "explanation": "معنی و کاربرد واژه‌ها را با فهرست یادداشت مقایسه کن.",
+          "id": "evolve-1-l02-voc-03",
+          "question": "Synonym: then",
+          "expected_answer": "after",
+          "explanation": "Then و after در معنی سپس یا بعد از آن هم‌معنی‌اند.",
+          "hint": "then = سپس",
           "time_limit": 60,
-          "translation": "مثبت / منفی",
-          "question": "متضاد (antonym) affirmative چیست؟",
-          "hint": "به ارتباط معنایی واژه‌ها در یادداشت همان درس توجه کن."
+          "translation": "بعد از / سپس"
+        },
+        {
+          "id": "evolve-1-l02-voc-04",
+          "question": "Opposite: now",
+          "expected_answer": "later",
+          "explanation": "Now یعنی اکنون و later یعنی بعداً؛ این دو در زمان مخالف هم‌اند.",
+          "hint": "now = اکنون",
+          "time_limit": 60,
+          "translation": "بعداً"
+        },
+        {
+          "id": "evolve-1-l02-voc-05",
+          "question": "Synonym: context",
+          "expected_answer": "situation",
+          "explanation": "Context و situation هر دو به شرایطی اشاره می‌کنند که چیزی در آن رخ می‌دهد.",
+          "hint": "context = زمینه / بافت",
+          "time_limit": 60,
+          "translation": "موقعیت / شرایط"
+        },
+        {
+          "id": "evolve-1-l02-voc-06",
+          "question": "Synonym: message",
+          "expected_answer": "text",
+          "explanation": "Message و text وقتی پیام کوتاه نوشته‌شده باشد، هم‌معنی‌اند.",
+          "hint": "message = پیام",
+          "time_limit": 60,
+          "translation": "متن"
+        },
+        {
+          "id": "evolve-1-l02-voc-07",
+          "question": "Synonym (2): student",
+          "expected_answer": "pupil",
+          "accepted_answers": [
+            "learner"
+          ],
+          "answer_mode": "list",
+          "min_items": 2,
+          "explanation": "Pupil و learner هر دو به کسی اشاره می‌کنند که یاد می‌گیرد؛ هر دو را بنویس.",
+          "hint": "student = دانش‌آموز / دانشجو",
+          "time_limit": 60,
+          "translation": "دانش‌آموز"
+        },
+        {
+          "id": "evolve-1-l02-voc-08",
+          "question": "Synonym: examine",
+          "expected_answer": "check",
+          "explanation": "Examine و check هر دو به معنی بررسی کردن هستند.",
+          "hint": "examine = بررسی کردن",
+          "time_limit": 60,
+          "translation": "بررسی کردن"
+        },
+        {
+          "id": "evolve-1-l02-voc-09",
+          "question": "Synonym: talk",
+          "expected_answer": "speak",
+          "explanation": "Talk و speak در معنی حرف زدن تقریباً به یک معنی به کار می‌روند.",
+          "hint": "talk = صحبت کردن",
+          "time_limit": 60,
+          "translation": "صحبت کردن"
+        },
+        {
+          "id": "evolve-1-l02-voc-10",
+          "question": "Synonym: universal",
+          "expected_answer": "international",
+          "explanation": "Universal و international در بعضی جمله‌ها به هم نزدیک‌اند، اما همیشه جای هم نمی‌نشینند.",
+          "hint": "universal = جهانی / همگانی",
+          "time_limit": 60,
+          "translation": "بین‌المللی"
+        },
+        {
+          "id": "evolve-1-l02-voc-11",
+          "question": "Synonym: other",
+          "expected_answer": "different",
+          "explanation": "Other و different در معنی متفاوت به هم نزدیک‌اند، اما همیشه جای هم نمی‌نشینند.",
+          "hint": "other = دیگر",
+          "time_limit": 60,
+          "translation": "متفاوت"
+        },
+        {
+          "id": "evolve-1-l02-voc-12",
+          "question": "Opposite: affirmative",
+          "expected_answer": "negative",
+          "explanation": "Affirmative یعنی مثبت و negative یعنی منفی؛ این دو در جمله‌ها مخالف هم‌اند.",
+          "hint": "affirmative = مثبت",
+          "time_limit": 60,
+          "translation": "منفی"
+        },
+        {
+          "id": "evolve-1-l02-voc-13",
+          "question": "Opposite: yes",
+          "expected_answer": "no",
+          "explanation": "Yes یعنی بله و no یعنی نه؛ این دو پاسخ مخالف هم‌اند.",
+          "hint": "yes = بله",
+          "time_limit": 60,
+          "translation": "نه"
         }
       ]
     },
@@ -2793,526 +2888,657 @@
     "vocabulary": [
       {
         "word": "point",
+        "ipa": "/pɔɪnt/",
         "meaning": "نکته / نقطه"
       },
       {
         "word": "country",
+        "ipa": "/ˈkʌntri/",
         "meaning": "کشور"
       },
       {
         "word": "city",
+        "ipa": "/ˈsɪti/",
         "meaning": "شهر"
       },
       {
         "word": "town",
+        "ipa": "/taʊn/",
         "meaning": "شهر کوچک"
       },
       {
         "word": "complete",
+        "ipa": "/kəmˈpliːt/",
         "meaning": "کامل کردن"
       },
       {
         "word": "fill in",
+        "ipa": "/fɪl ɪn/",
         "meaning": "جای خالی را پر کردن"
       },
       {
         "word": "examine",
+        "ipa": "/ɪɡˈzæmɪn/",
         "meaning": "بررسی کردن"
       },
       {
         "word": "chart",
+        "ipa": "/tʃɑːrt/",
         "meaning": "جدول / نمودار"
       },
       {
         "word": "graph",
+        "ipa": "/ɡræf/",
         "meaning": "نمودار"
       },
       {
         "word": "table",
+        "ipa": "/ˈteɪbəl/",
         "meaning": "جدول"
       },
       {
         "word": "then",
+        "ipa": "/ðen/",
         "meaning": "سپس"
       },
       {
         "word": "after",
+        "ipa": "/ˈæftər/",
         "meaning": "بعد از / سپس"
       },
       {
         "word": "nationalities",
+        "ipa": "/ˌnæʃəˈnælətiz/",
         "meaning": "ملیت‌ها"
       },
       {
         "word": "now",
+        "ipa": "/naʊ/",
         "meaning": "اکنون"
       },
       {
         "word": "later",
+        "ipa": "/ˈleɪtər/",
         "meaning": "بعداً"
       },
       {
         "word": "context",
+        "ipa": "/ˈkɑːntekst/",
         "meaning": "زمینه / بافت"
       },
       {
         "word": "text",
+        "ipa": "/tekst/",
         "meaning": "متن"
       },
       {
         "word": "situation",
+        "ipa": "/ˌsɪtʃuˈeɪʃn/",
         "meaning": "موقعیت / شرایط"
       },
       {
         "word": "student",
+        "ipa": "/ˈstuːdnt/",
         "meaning": "دانش‌آموز / دانشجو"
       },
       {
         "word": "pupil",
+        "ipa": "/ˈpjuːpəl/",
         "meaning": "دانش‌آموز"
       },
       {
         "word": "learner",
+        "ipa": "/ˈlɜːrnər/",
         "meaning": "یادگیرنده"
       },
       {
         "word": "universal",
+        "ipa": "/ˌjuːnɪˈvɜːrsl/",
         "meaning": "جهانی / همگانی"
       },
       {
         "word": "language",
+        "ipa": "/ˈlæŋɡwɪdʒ/",
         "meaning": "زبان"
       },
       {
         "word": "vocabulary",
+        "ipa": "/vəˈkæbjəleri/",
         "meaning": "واژگان"
       },
       {
         "word": "who",
+        "ipa": "/huː/",
         "meaning": "چه کسی"
       },
       {
         "word": "capital city",
+        "ipa": "/ˈkæpɪtl ˈsɪti/",
         "meaning": "شهر پایتخت"
       },
       {
         "word": "grammar",
+        "ipa": "/ˈɡræmər/",
         "meaning": "دستور زبان"
       },
       {
         "word": "circle",
+        "ipa": "/ˈsɜːrkl/",
         "meaning": "دایره کشیدن"
       },
       {
         "word": "correct",
+        "ipa": "/kəˈrekt/",
         "meaning": "درست / اصلاح کردن"
       },
       {
         "word": "sentence",
+        "ipa": "/ˈsentəns/",
         "meaning": "جمله"
       },
       {
         "word": "sentences",
+        "ipa": "/ˈsentənsɪz/",
         "meaning": "جملات"
       },
       {
         "word": "affirmative",
+        "ipa": "/əˈfɜːrmətɪv/",
         "meaning": "مثبت"
       },
       {
         "word": "negative",
+        "ipa": "/ˈneɡətɪv/",
         "meaning": "منفی"
       },
       {
         "word": "room",
+        "ipa": "/ruːm/",
         "meaning": "اتاق"
       },
       {
         "word": "four",
+        "ipa": "/fɔːr/",
         "meaning": "چهار"
       },
       {
         "word": "use",
+        "ipa": "/juːz/",
         "meaning": "استفاده کردن"
       },
       {
         "word": "find",
+        "ipa": "/faɪnd/",
         "meaning": "پیدا کردن"
       },
       {
         "word": "ideas",
+        "ipa": "/aɪˈdɪəz/",
         "meaning": "ایده‌ها"
       },
       {
         "word": "other",
+        "ipa": "/ˈʌðər/",
         "meaning": "دیگر"
       },
       {
         "word": "choose",
+        "ipa": "/tʃuːz/",
         "meaning": "انتخاب کردن"
       },
       {
         "word": "real",
+        "ipa": "/ˈriːəl/",
         "meaning": "واقعی"
       },
       {
         "word": "pair work",
+        "ipa": "/per wɜːrk/",
         "meaning": "کار دونفره"
       },
       {
         "word": "group work",
+        "ipa": "/ɡruːp wɜːrk/",
         "meaning": "کار گروهی"
       },
       {
         "word": "message",
+        "ipa": "/ˈmesɪdʒ/",
         "meaning": "پیام"
       },
       {
         "word": "project",
+        "ipa": "/ˈprɑːdʒekt/",
         "meaning": "پروژه"
       },
       {
         "word": "international",
+        "ipa": "/ˌɪntərˈnæʃnəl/",
         "meaning": "بین‌المللی"
       },
       {
         "word": "school",
+        "ipa": "/skuːl/",
         "meaning": "مدرسه"
       },
       {
         "word": "different",
+        "ipa": "/ˈdɪfrənt/",
         "meaning": "متفاوت"
       },
       {
         "word": "talk",
+        "ipa": "/tɔːk/",
         "meaning": "صحبت کردن"
       },
       {
         "word": "card",
+        "ipa": "/kɑːrd/",
         "meaning": "کارت"
       },
       {
         "word": "imagine",
+        "ipa": "/ɪˈmædʒɪn/",
         "meaning": "تصور کردن"
       },
       {
         "word": "accuracy",
+        "ipa": "/ˈækjərəsi/",
         "meaning": "دقت"
       },
       {
         "word": "accuracy check",
+        "ipa": "/ˈækjərəsi tʃek/",
         "meaning": "بررسی درستی پاسخ"
       },
       {
         "word": "nationality",
+        "ipa": "/ˌnæʃəˈnæləti/",
         "meaning": "ملیت"
       },
       {
         "word": "answers",
+        "ipa": "/ˈænsərz/",
         "meaning": "پاسخ‌ها"
       },
       {
         "word": "one",
+        "ipa": "/wʌn/",
         "meaning": "یک"
       },
       {
         "word": "international school project",
+        "ipa": "/ˌɪntərˈnæʃnəl skuːl ˈprɑːdʒekt/",
         "meaning": "پروژه مدرسه بین‌المللی"
       },
       {
         "word": "speak",
+        "ipa": "/spiːk/",
         "meaning": "صحبت کردن"
       },
       {
         "word": "Brasilia",
+        "ipa": "/brəˈzɪliə/",
         "meaning": "پایتخت برزیل"
       },
       {
         "word": "Brazil",
+        "ipa": "/brəˈzɪl/",
         "meaning": "برزیل"
       },
       {
         "word": "Brazilian",
+        "ipa": "/brəˈzɪliən/",
         "meaning": "برزیلی"
       },
       {
         "word": "Santiago",
+        "ipa": "/ˌsɑːnti ˈɑːɡoʊ/",
         "meaning": "پایتخت شیلی"
       },
       {
         "word": "Chile",
+        "ipa": "/ˈtʃɪli/",
         "meaning": "شیلی"
       },
       {
         "word": "Chilean",
+        "ipa": "/ˈtʃɪliən/",
         "meaning": "شیلیایی"
       },
       {
         "word": "Beijing",
+        "ipa": "/ˌbeɪˈdʒɪŋ/",
         "meaning": "پایتخت چین"
       },
       {
         "word": "China",
+        "ipa": "/ˈtʃaɪnə/",
         "meaning": "چین"
       },
       {
         "word": "Chinese",
+        "ipa": "/ˌtʃaɪˈniːz/",
         "meaning": "چینی"
       },
       {
         "word": "Bogotá",
+        "ipa": "/ˌboʊɡəˈtɑː/",
         "meaning": "پایتخت کلمبیا"
       },
       {
         "word": "Colombia",
+        "ipa": "/kəˈlʌmbiə/",
         "meaning": "کلمبیا"
       },
       {
         "word": "Colombian",
+        "ipa": "/kəˈlʌmbiən/",
         "meaning": "کلمبیایی"
       },
       {
         "word": "Quito",
+        "ipa": "/ˈkiːtoʊ/",
         "meaning": "پایتخت اکوادور"
       },
       {
         "word": "Ecuador",
+        "ipa": "/ˈekwədɔːr/",
         "meaning": "اکوادور"
       },
       {
         "word": "Ecuadorian",
+        "ipa": "/ˌekwəˈdɔːriən/",
         "meaning": "اکوادوری"
       },
       {
         "word": "Paris",
+        "ipa": "/ˈpærɪs/",
         "meaning": "پایتخت فرانسه"
       },
       {
         "word": "France",
+        "ipa": "/fræns/",
         "meaning": "فرانسه"
       },
       {
         "word": "French",
+        "ipa": "/frentʃ/",
         "meaning": "فرانسوی"
       },
       {
         "word": "Tegucigalpa",
+        "ipa": "/təˌɡuːsɪˈɡælpə/",
         "meaning": "پایتخت هندوراس"
       },
       {
         "word": "Honduras",
+        "ipa": "/hɑːnˈdʊrəs/",
         "meaning": "هندوراس"
       },
       {
         "word": "Honduran",
+        "ipa": "/hɑːnˈdʊrən/",
         "meaning": "هندوراسی"
       },
       {
         "word": "Tokyo",
+        "ipa": "/ˈtoʊkioʊ/",
         "meaning": "پایتخت ژاپن"
       },
       {
         "word": "Japan",
+        "ipa": "/dʒəˈpæn/",
         "meaning": "ژاپن"
       },
       {
         "word": "Japanese",
+        "ipa": "/ˌdʒæpəˈniːz/",
         "meaning": "ژاپنی"
       },
       {
         "word": "Mexico City",
+        "ipa": "/ˈmeksɪkoʊ ˈsɪti/",
         "meaning": "پایتخت مکزیک"
       },
       {
         "word": "Mexico",
+        "ipa": "/ˈmeksɪkoʊ/",
         "meaning": "مکزیک"
       },
       {
         "word": "Mexican",
+        "ipa": "/ˈmeksɪkən/",
         "meaning": "مکزیکی"
       },
       {
         "word": "Lima",
+        "ipa": "/ˈliːmə/",
         "meaning": "پایتخت پرو"
       },
       {
         "word": "Peru",
+        "ipa": "/pəˈruː/",
         "meaning": "پرو"
       },
       {
         "word": "Peruvian",
+        "ipa": "/pəˈruːviən/",
         "meaning": "پرویی"
       },
       {
         "word": "Moscow",
+        "ipa": "/ˈmɑːskaʊ/",
         "meaning": "پایتخت روسیه"
       },
       {
         "word": "Russia",
+        "ipa": "/ˈrʌʃə/",
         "meaning": "روسیه"
       },
       {
         "word": "Russian",
+        "ipa": "/ˈrʌʃn/",
         "meaning": "روسی"
       },
       {
         "word": "Seoul",
+        "ipa": "/soʊl/",
         "meaning": "پایتخت کره جنوبی"
       },
       {
         "word": "South Korea",
+        "ipa": "/saʊθ kəˈriːə/",
         "meaning": "کره جنوبی"
       },
       {
         "word": "South Korean",
+        "ipa": "/saʊθ kəˈriːən/",
         "meaning": "اهل کره جنوبی"
       },
       {
         "word": "Madrid",
+        "ipa": "/məˈdrɪd/",
         "meaning": "پایتخت اسپانیا"
       },
       {
         "word": "Spain",
+        "ipa": "/speɪn/",
         "meaning": "اسپانیا"
       },
       {
         "word": "Spanish",
+        "ipa": "/ˈspænɪʃ/",
         "meaning": "اسپانیایی"
       },
       {
         "word": "Washington, D.C.",
+        "ipa": "/ˈwɑːʃɪŋtən ˌdiː ˈsiː/",
         "meaning": "پایتخت ایالات متحده"
       },
       {
         "word": "the United States",
+        "ipa": "/ðə juˌnaɪtɪd ˈsteɪts/",
         "meaning": "ایالات متحده"
       },
       {
         "word": "American",
+        "ipa": "/əˈmerɪkən/",
         "meaning": "آمریکایی"
       },
       {
         "word": "Cairo",
+        "ipa": "/ˈkaɪroʊ/",
         "meaning": "پایتخت مصر"
       },
       {
         "word": "Egypt",
+        "ipa": "/ˈiːdʒɪpt/",
         "meaning": "مصر"
       },
       {
         "word": "Egyptian",
+        "ipa": "/ɪˈdʒɪpʃn/",
         "meaning": "مصری"
       },
       {
         "word": "Buenos Aires",
+        "ipa": "/ˌbweɪnəs ˈaɪrɪz/",
         "meaning": "پایتخت آرژانتین"
       },
       {
         "word": "Argentina",
+        "ipa": "/ˌɑːrdʒənˈtiːnə/",
         "meaning": "آرژانتین"
       },
       {
         "word": "Argentinian",
+        "ipa": "/ˌɑːrdʒənˈtɪniən/",
         "meaning": "آرژانتینی"
       },
       {
         "word": "Rabat",
+        "ipa": "/rəˈbɑːt/",
         "meaning": "پایتخت مراکش"
       },
       {
         "word": "Morocco",
+        "ipa": "/məˈrɑːkoʊ/",
         "meaning": "مراکش"
       },
       {
         "word": "Moroccan",
+        "ipa": "/məˈrɑːkən/",
         "meaning": "مراکشی"
       },
       {
         "word": "Berlin",
+        "ipa": "/bɜːrˈlɪn/",
         "meaning": "پایتخت آلمان"
       },
       {
         "word": "Germany",
+        "ipa": "/ˈdʒɜːrməni/",
         "meaning": "آلمان"
       },
       {
         "word": "German",
+        "ipa": "/ˈdʒɜːrmən/",
         "meaning": "آلمانی"
       },
       {
         "word": "Lisbon",
+        "ipa": "/ˈlɪzbən/",
         "meaning": "پایتخت پرتغال"
       },
       {
         "word": "Portugal",
+        "ipa": "/ˈpɔːrtʃəɡl/",
         "meaning": "پرتغال"
       },
       {
         "word": "Portuguese",
+        "ipa": "/ˌpɔːrtʃuˈɡiːz/",
         "meaning": "پرتغالی"
       },
       {
         "word": "Ottawa",
+        "ipa": "/ˈɑːtəwə/",
         "meaning": "پایتخت کانادا"
       },
       {
         "word": "Canada",
+        "ipa": "/ˈkænədə/",
         "meaning": "کانادا"
       },
       {
         "word": "Canadian",
+        "ipa": "/kəˈneɪdiən/",
         "meaning": "کانادایی"
       },
       {
         "word": "Nairobi",
+        "ipa": "/naɪˈroʊbi/",
         "meaning": "پایتخت کنیا"
       },
       {
         "word": "Kenya",
+        "ipa": "/ˈkenjə/",
         "meaning": "کنیا"
       },
       {
         "word": "Kenyan",
+        "ipa": "/ˈkenjən/",
         "meaning": "کنیایی"
       },
       {
         "word": "São Paulo",
+        "ipa": "/ˌsaʊ ˈpaʊloʊ/",
         "meaning": "سائوپائولو"
       },
       {
         "word": "Medellín",
+        "ipa": "/ˌmedəˈjiːn/",
         "meaning": "مدلین"
       },
       {
         "word": "Callao",
+        "ipa": "/kəˈjaʊ/",
         "meaning": "کالائو"
       },
       {
         "word": "Rio",
+        "ipa": "/ˈriːoʊ/",
         "meaning": "ریو"
       },
       {
         "word": "Orlando",
+        "ipa": "/ɔːrˈlændoʊ/",
         "meaning": "اورلاندو"
       },
       {
         "word": "New York",
+        "ipa": "/nuː ˈjɔːrk/",
         "meaning": "نیویورک"
       },
       {
         "word": "Chicago",
+        "ipa": "/ʃɪˈkɑːɡoʊ/",
         "meaning": "شیکاگو"
       },
       {
         "word": "yes",
+        "ipa": "/jes/",
         "meaning": "بله"
       },
       {
         "word": "no",
+        "ipa": "/noʊ/",
         "meaning": "نه"
       },
       {
         "word": "wow",
+        "ipa": "/waʊ/",
         "meaning": "وای"
       }
     ],
