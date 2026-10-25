@@ -14,7 +14,7 @@ const allows = (list, value) => list === undefined || list.includes(value);
  */
 export function filterQuestions(
   questions,
-  { books, lessons, topics, categories, difficulties, includeDisabled = false } = {},
+  { books, lessons, topics, groups, categories, difficulties, includeDisabled = false } = {},
 ) {
   return questions.filter(
     (q) =>
@@ -23,6 +23,8 @@ export function filterQuestions(
       // lessons are "book/lesson" keys (see lessonKey), so the same lesson number in two books stays apart.
       allows(lessons, lessonKey(q.book, q.lesson)) &&
       allows(topics, q.topic) &&
+      // A practice group (e.g. "Countries"). With a group list, a question without a group is left out.
+      allows(groups, q.group) &&
       allows(categories, q.category) &&
       allows(difficulties, q.difficulty),
   );

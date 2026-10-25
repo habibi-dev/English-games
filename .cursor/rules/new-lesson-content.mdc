@@ -47,6 +47,15 @@ their grammar rules and examples, and their sentence structures.
 - When an existing lesson gets or changes a group, bump its `version` in `content/index.json` and run `npm test`.
  `tests/lesson-vocabulary.test.js` checks the lesson 1.1 Countries block; add the same kind of check for any new group.
 
+### Practice groups (the Practice page)
+
+- Every practice item (any exercise type) that uses a word of a group gets a `group` field with the group's name, the
+ same name as its vocabulary `category` (for example `"group": "Countries"`). It is `group` and not `category`, because
+ `category` on a practice item is its exercise type. An item with no group has no `group` field.
+- The Practice page shows one chip per group under "Group" (with `All` first), and the mission only asks the questions of
+ the chosen group. The group must cover every word of the group: a country word with no practice item is a gap.
+- `tests/lesson-practice-groups.test.js` checks the lesson 1.1 Countries group; add the same kind of check for any new group.
+
 ## 2. Sentences and grammar
 
 - A sentence structure is taught once per book. Do not repeat a structure from an earlier lesson with different words.

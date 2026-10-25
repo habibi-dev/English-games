@@ -31,6 +31,13 @@ test('filters ignore disabled questions and respect each filter', () => {
   assert.deepEqual(filterQuestions(bank, { categories: ['multiple_choice'] }).map((q) => q.id), ['b']);
 });
 
+test('a practice group filter keeps only the questions of that group', () => {
+  const grouped = [make('g1', { group: 'Countries' }), make('g2', { group: 'Food' }), make('g3')];
+  assert.deepEqual(filterQuestions(grouped, { groups: ['Countries'] }).map((q) => q.id), ['g1']);
+  assert.deepEqual(filterQuestions(grouped, { groups: ['Countries', 'Food'] }).map((q) => q.id), ['g1', 'g2']);
+  assert.deepEqual(filterQuestions(grouped).map((q) => q.id), ['g1', 'g2', 'g3']);
+});
+
 test('pickQuestions honours count and returns a shuffled copy', () => {
   const picked = pickQuestions(bank, {}, { count: 2, random: () => 0 });
   assert.equal(picked.length, 2);

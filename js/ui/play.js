@@ -566,6 +566,8 @@ async function showSetup(root, restore = null) {
     unit: savedUnit,
     lessons: savedLessons.length ? savedLessons : allLessonKeys,
     categories: restored(saved.categories, Object.keys(CATEGORIES), Object.keys(CATEGORIES)),
+    // One practice group ('all' for every question). A group that the chosen lessons do not have is reset in the settings step.
+    group: [typeof saved.group === 'string' && saved.group ? saved.group : 'all'],
     presentation: [PRESENTATION_CHOICES.some((choice) => choice.value === saved.presentation) ? saved.presentation : 'auto'],
     input: [saved.answerInput === 'voice' ? 'voice' : 'typing'],
     mode: [Object.hasOwn(PLAY_MODES, saved.mode) ? saved.mode : 'easy'],
@@ -577,7 +579,12 @@ async function showSetup(root, restore = null) {
 
   // Questions of the chosen book, lessons and exercise types (enabled ones).
   function selectedQuestions() {
-    return filterQuestions(questions, { books: [state.book], lessons: state.lessons, categories: state.categories });
+    return filterQuestions(questions, {
+      books: [state.book],
+      lessons: state.lessons,
+      groups: state.group[0] === 'all' ? undefined : [state.group[0]],
+      categories: state.categories,
+    });
   }
 
   // Questions the mission can offer now: the selected ones that are due.
@@ -591,6 +598,7 @@ async function showSetup(root, restore = null) {
       unit: state.unit,
       lessons: state.lessons,
       categories: state.categories,
+      group: state.group[0],
       presentation: state.presentation[0],
       answerInput: state.input[0],
       mode: state.mode[0],
@@ -1050,10 +1058,29 @@ async function showSetup(root, restore = null) {
     );
   }
 
-  // Done / total of one exercise type in the chosen lessons, counted the same way as the lesson tiles.
+  // Done / total of one exercise type in the chosen lessons and the chosen group, counted the same way as the lesson tiles.
+  const inChosenLessons = (q) => state.lessons.includes(lessonKey(q.book, q.lesson));
+  const inChosenGroup = (q) => state.group[0] === 'all' || q.group === state.group[0];
   function categoryProgress(category) {
     return progressOf(
-      questions.filter((q) => q.category === category && state.lessons.includes(lessonKey(q.book, q.lesson))),
+      questions.filter((q) => q.category === category && inChosenLessons(q) && inChosenGroup(q)),
+      done,
+    );
+  }
+
+  // The practice groups of the chosen lessons (e.g. "Countries"), in the order they first appear in the lesson files.
+  function groupNames() {
+    const names = [];
+    for (const q of questions) {
+      if (q.group && inChosenLessons(q) && !names.includes(q.group)) names.push(q.group);
+    }
+    return names;
+  }
+
+  // Done / total of one group ('all' for every question) in the chosen lessons.
+  function groupProgress(group) {
+    return progressOf(
+      questions.filter((q) => inChosenLessons(q) && (group === 'all' || q.group === group)),
       done,
     );
   }
@@ -1062,6 +1089,27 @@ async function showSetup(root, restore = null) {
   function drawSettingsStep() {
     settingsStart = null;
     const book = allBooks.find((entry) => entry.id === state.book);
+    // A group the chosen lessons do not have (for example after the lessons changed) goes back to All.
+    const names = groupNames();
+    if (state.group[0] !== 'all' && !names.includes(state.group[0])) state.group.splice(0, 1, 'all');
+    // The exercise types and their counts follow the chosen group, so only this part is drawn again on a change.
+    const typeChips = h('div', {});
+    const drawTypeChips = () =>
+      typeChips.replaceChildren(
+        chipGroup(
+          // Only the exercise types that have questions in the chosen lessons and group are offered.
+          Object.entries(CATEGORIES)
+            .map(([key, label]) => [key, label, categoryProgress(key)])
+            .filter(([, , progress]) => progress.total > 0)
+            .map(([key, label, progress]) => [
+              key,
+              categoryChip(label, progress, CATEGORY_ICONS[key]),
+            ]),
+          state.categories,
+          { onChange: refresh, className: 'card-options mission-options' },
+        ),
+      );
+    drawTypeChips();
     info = h('p', { class: 'setup-info muted small info' });
     // The Difficulty step: the bottom bar is one Play button, and it starts the mission (there is no Start button).
     settingsStart = () => {
@@ -1094,17 +1142,30 @@ async function showSetup(root, restore = null) {
           2,
           'Pick what to practise',
           'Tap each exercise type you want. The bar shows how much you have done.',
-          chipGroup(
-            // Only the exercise types that have questions in the chosen lessons are offered.
-            Object.entries(CATEGORIES)
-              .map(([key, label]) => [key, label, categoryProgress(key)])
-              .filter(([, , progress]) => progress.total > 0)
-              .map(([key, label, progress]) => [
-                key,
-                categoryChip(label, progress, CATEGORY_ICONS[key]),
-              ]),
-            state.categories,
-            { onChange: refresh, className: 'card-options mission-options' },
+          h(
+            'div',
+            { class: 'setup-subsection' },
+            // The group (e.g. Countries) practises one part of the lessons on its own. Shown only when the lessons have groups.
+            names.length ? h('h5', { class: 'sub-title' }, 'Group') : null,
+            names.length
+              ? chipGroup(
+                  [
+                    ['all', categoryChip('All', groupProgress('all'))],
+                    ...names.map((name) => [name, categoryChip(name, groupProgress(name))]),
+                  ],
+                  state.group,
+                  {
+                    multiple: false,
+                    onChange: () => {
+                      drawTypeChips();
+                      refresh();
+                    },
+                    className: 'card-options mission-options',
+                  },
+                )
+              : null,
+            names.length ? h('h5', { class: 'sub-title' }, 'Exercise type') : null,
+            typeChips,
           ),
         ),
         setupSection(

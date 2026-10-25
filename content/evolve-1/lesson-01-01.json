@@ -21,7 +21,8 @@
           "accepted_answers": [
             "I am Brazilian."
           ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
+          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن.",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-tr-002",
@@ -45,7 +46,8 @@
           "accepted_answers": [
             "You are from Brazil."
           ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
+          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن.",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-tr-004",
@@ -57,7 +59,8 @@
           "accepted_answers": [
             "My name is Karina, and I am from Colombia."
           ],
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
+          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن.",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-tr-005",
@@ -66,7 +69,8 @@
           "time_limit": 60,
           "translation": "آیا تو اهل بوگوتا هستی؟",
           "question": "آیا تو اهل بوگوتا هستی؟",
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
+          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن.",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-tr-006",
@@ -130,7 +134,8 @@
           "time_limit": 60,
           "translation": "آیا تو اهل توکیو هستی؟",
           "question": "آیا تو اهل توکیو هستی؟",
-          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن."
+          "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن.",
+          "group": "Countries"
         }
       ]
     },
@@ -152,7 +157,8 @@
           "word_bank": [
             "I'm",
             "Brazilian."
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-sb-002",
@@ -181,7 +187,8 @@
             "from",
             "Brazil.",
             "You're"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-sb-004",
@@ -200,7 +207,8 @@
             "from",
             "I'm",
             "Colombia."
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-sb-005",
@@ -215,7 +223,8 @@
             "Are",
             "from",
             "you"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-sb-006",
@@ -247,7 +256,8 @@
             "Are",
             "you",
             "Tokyo?"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-sb-017",
@@ -288,7 +298,8 @@
           ],
           "accepted_answers": [
             "I am Brazilian."
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-wt-002",
@@ -322,7 +333,8 @@
           ],
           "accepted_answers": [
             "You are from Brazil."
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-wt-006",
@@ -337,7 +349,8 @@
             "اهل",
             "بوگوتا",
             "هستی؟"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-wt-007",
@@ -426,7 +439,8 @@
             "اهل",
             "توکیو",
             "هستی؟"
-          ]
+          ],
+          "group": "Countries"
         }
       ]
     },
@@ -447,7 +461,8 @@
           "accepted_answers": [
             "I am Brazilian."
           ],
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
+          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن.",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-vt-002",
@@ -471,7 +486,8 @@
           "accepted_answers": [
             "You are from Brazil."
           ],
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
+          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن.",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-vt-004",
@@ -480,7 +496,8 @@
           "time_limit": 60,
           "translation": "آیا تو اهل بوگوتا هستی؟",
           "question": "آیا تو اهل بوگوتا هستی؟",
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
+          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن.",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-vt-005",
@@ -526,7 +543,8 @@
           "time_limit": 60,
           "translation": "آیا تو اهل توکیو هستی؟",
           "question": "آیا تو اهل توکیو هستی؟",
-          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن."
+          "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن.",
+          "group": "Countries"
         }
       ]
     },
@@ -548,7 +566,8 @@
           "incorrect_sentence": "I'm from Brazilian.",
           "accepted_answers": [
             "I am Brazilian."
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-gc-004",
@@ -558,7 +577,8 @@
           "translation": "آیا تو اهل بوگوتا هستی؟",
           "question": "جملهٔ اشتباه را اصلاح کن.",
           "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "Are from you Bogotá?"
+          "incorrect_sentence": "Are from you Bogotá?",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-gc-010",
@@ -568,7 +588,8 @@
           "translation": "آیا تو اهل توکیو هستی؟",
           "question": "جملهٔ اشتباه را اصلاح کن.",
           "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
-          "incorrect_sentence": "You are from Tokyo?"
+          "incorrect_sentence": "You are from Tokyo?",
+          "group": "Countries"
         }
       ]
     },
@@ -590,7 +611,8 @@
             "I am not Brazilian."
           ],
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "negative"
+          "operation": "negative",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-pn-002",
@@ -604,7 +626,8 @@
             "You aren't from Mexico City."
           ],
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "negative"
+          "operation": "negative",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-pn-003",
@@ -617,7 +640,8 @@
             "I am not from Lima."
           ],
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "negative"
+          "operation": "negative",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-pn-005",
@@ -631,7 +655,8 @@
             "You aren't American."
           ],
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "negative"
+          "operation": "negative",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-pn-006",
@@ -654,7 +679,8 @@
           "translation": "آیا تو اهل توکیو هستی؟",
           "question": "جمله را سؤالی کن: You're from Tokyo.",
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "question"
+          "operation": "question",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-pn-008",
@@ -664,7 +690,8 @@
           "translation": "آیا تو اهل مکزیکوسیتی هستی؟",
           "question": "جمله را سؤالی کن: You're from Mexico City.",
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "question"
+          "operation": "question",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-pn-009",
@@ -674,7 +701,8 @@
           "translation": "آیا تو آمریکایی هستی؟",
           "question": "جمله را سؤالی کن: You are American.",
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "question"
+          "operation": "question",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-pn-010",
@@ -697,7 +725,8 @@
           "operation": "positive",
           "accepted_answers": [
             "I am from Lima."
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-pn-013",
@@ -710,7 +739,8 @@
           "operation": "positive",
           "accepted_answers": [
             "You are from Bogotá."
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-pn-014",
@@ -746,7 +776,8 @@
             "France",
             "Brazil",
             "Russia"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-002",
@@ -760,7 +791,8 @@
             "Honduras",
             "Chile",
             "South Korea"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-003",
@@ -774,7 +806,8 @@
             "Spain",
             "Japan",
             "China"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-004",
@@ -788,7 +821,8 @@
             "the United States",
             "Colombia",
             "Mexico"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-022",
@@ -802,7 +836,8 @@
             "Egyptian",
             "Japanese",
             "Brazilian"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-023",
@@ -816,7 +851,8 @@
             "Argentinian",
             "Mexican",
             "Chilean"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-024",
@@ -830,7 +866,8 @@
             "Chinese",
             "Peruvian",
             "Moroccan"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-025",
@@ -844,7 +881,8 @@
             "German",
             "Colombian",
             "Russian"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-026",
@@ -858,7 +896,8 @@
             "Portuguese",
             "South Korean",
             "Ecuadorian"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-027",
@@ -872,7 +911,8 @@
             "Spanish",
             "French",
             "Canadian"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-043",
@@ -886,7 +926,8 @@
             "I'm Brazil.",
             "I'm from Brazilian.",
             "I'm Brazilian."
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-044",
@@ -900,7 +941,8 @@
             "is",
             "am",
             "are"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-045",
@@ -914,7 +956,8 @@
             "is",
             "am",
             "are"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-046",
@@ -928,7 +971,8 @@
             "You are from Tokyo?",
             "Am you from Tokyo?",
             "Are you from Tokyo?"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-047",
@@ -970,7 +1014,8 @@
             "Am",
             "Are",
             "Is"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-050",
@@ -984,7 +1029,8 @@
             "You",
             "Am",
             "I"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-051",
@@ -1012,7 +1058,8 @@
             "Yes, I am.",
             "No, I am.",
             "Yes, you are."
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-053",
@@ -1040,7 +1087,8 @@
             "Brazil",
             "Brasilia",
             "Brazilian"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-055",
@@ -1096,7 +1144,8 @@
             "I'm from Mexican.",
             "I'm Mexico City.",
             "I'm from Mexico City."
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-059",
@@ -1236,7 +1285,8 @@
             "ملیت",
             "شهر پایتخت",
             "شهر کوچک"
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-069",
@@ -1292,7 +1342,8 @@
             "I Spanish.",
             "I'm Spanish.",
             "Am Spanish."
-          ]
+          ],
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-mc-073",
@@ -1559,7 +1610,8 @@
           "translation": "برازیلیا",
           "question": "Brasilia",
           "hint": "برازیلیا",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-002",
@@ -1569,7 +1621,8 @@
           "translation": "برزیل",
           "question": "Brazil",
           "hint": "برزیل",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-003",
@@ -1579,7 +1632,8 @@
           "translation": "برزیلی",
           "question": "Brazilian",
           "hint": "برزیلی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-004",
@@ -1589,7 +1643,8 @@
           "translation": "سانتیاگو",
           "question": "Santiago",
           "hint": "سانتیاگو",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-005",
@@ -1599,7 +1654,8 @@
           "translation": "شیلی",
           "question": "Chile",
           "hint": "شیلی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-006",
@@ -1609,7 +1665,8 @@
           "translation": "شیلیایی",
           "question": "Chilean",
           "hint": "شیلیایی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-007",
@@ -1619,7 +1676,8 @@
           "translation": "پکن",
           "question": "Beijing",
           "hint": "پکن",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-008",
@@ -1629,7 +1687,8 @@
           "translation": "چین",
           "question": "China",
           "hint": "چین",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-009",
@@ -1639,7 +1698,8 @@
           "translation": "چینی",
           "question": "Chinese",
           "hint": "چینی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-010",
@@ -1649,7 +1709,8 @@
           "translation": "بوگوتا",
           "question": "Bogotá",
           "hint": "بوگوتا",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-011",
@@ -1659,7 +1720,8 @@
           "translation": "کلمبیا",
           "question": "Colombia",
           "hint": "کلمبیا",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-012",
@@ -1669,7 +1731,8 @@
           "translation": "کلمبیایی",
           "question": "Colombian",
           "hint": "کلمبیایی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-013",
@@ -1679,7 +1742,8 @@
           "translation": "کیتو",
           "question": "Quito",
           "hint": "کیتو",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-014",
@@ -1689,7 +1753,8 @@
           "translation": "اکوادور",
           "question": "Ecuador",
           "hint": "اکوادور",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-015",
@@ -1699,7 +1764,8 @@
           "translation": "اکوادوری",
           "question": "Ecuadorian",
           "hint": "اکوادوری",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-016",
@@ -1709,7 +1775,8 @@
           "translation": "پاریس",
           "question": "Paris",
           "hint": "پاریس",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-017",
@@ -1719,7 +1786,8 @@
           "translation": "فرانسه",
           "question": "France",
           "hint": "فرانسه",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-018",
@@ -1729,7 +1797,8 @@
           "translation": "فرانسوی",
           "question": "French",
           "hint": "فرانسوی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-019",
@@ -1739,7 +1808,8 @@
           "translation": "تگوسیگالپا",
           "question": "Tegucigalpa",
           "hint": "تگوسیگالپا",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-020",
@@ -1749,7 +1819,8 @@
           "translation": "هندوراس",
           "question": "Honduras",
           "hint": "هندوراس",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-021",
@@ -1759,7 +1830,8 @@
           "translation": "هندوراسی",
           "question": "Honduran",
           "hint": "هندوراسی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-022",
@@ -1769,7 +1841,8 @@
           "translation": "توکیو",
           "question": "Tokyo",
           "hint": "توکیو",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-023",
@@ -1779,7 +1852,8 @@
           "translation": "ژاپن",
           "question": "Japan",
           "hint": "ژاپن",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-024",
@@ -1789,7 +1863,8 @@
           "translation": "ژاپنی",
           "question": "Japanese",
           "hint": "ژاپنی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-025",
@@ -1799,7 +1874,8 @@
           "translation": "مکزیکوسیتی",
           "question": "Mexico City",
           "hint": "مکزیکوسیتی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-026",
@@ -1809,7 +1885,8 @@
           "translation": "مکزیک",
           "question": "Mexico",
           "hint": "مکزیک",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-027",
@@ -1819,7 +1896,8 @@
           "translation": "مکزیکی",
           "question": "Mexican",
           "hint": "مکزیکی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-028",
@@ -1829,7 +1907,8 @@
           "translation": "لیما",
           "question": "Lima",
           "hint": "لیما",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-029",
@@ -1839,7 +1918,8 @@
           "translation": "پرو",
           "question": "Peru",
           "hint": "پرو",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-030",
@@ -1849,7 +1929,8 @@
           "translation": "پرویی",
           "question": "Peruvian",
           "hint": "پرویی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-031",
@@ -1859,7 +1940,8 @@
           "translation": "مسکو",
           "question": "Moscow",
           "hint": "مسکو",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-032",
@@ -1869,7 +1951,8 @@
           "translation": "روسیه",
           "question": "Russia",
           "hint": "روسیه",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-033",
@@ -1879,7 +1962,8 @@
           "translation": "روسی",
           "question": "Russian",
           "hint": "روسی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-034",
@@ -1889,7 +1973,8 @@
           "translation": "سئول",
           "question": "Seoul",
           "hint": "سئول",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-035",
@@ -1899,7 +1984,8 @@
           "translation": "کره جنوبی",
           "question": "South Korea",
           "hint": "کره جنوبی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-036",
@@ -1909,7 +1995,8 @@
           "translation": "اهل کره جنوبی",
           "question": "South Korean",
           "hint": "اهل کره جنوبی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-037",
@@ -1919,7 +2006,8 @@
           "translation": "مادرید",
           "question": "Madrid",
           "hint": "مادرید",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-038",
@@ -1929,7 +2017,8 @@
           "translation": "اسپانیا",
           "question": "Spain",
           "hint": "اسپانیا",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-039",
@@ -1939,7 +2028,8 @@
           "translation": "اسپانیایی",
           "question": "Spanish",
           "hint": "اسپانیایی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-040",
@@ -1949,7 +2039,8 @@
           "translation": "واشینگتن دی‌سی",
           "question": "Washington, D.C.",
           "hint": "واشینگتن دی‌سی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-041",
@@ -1959,7 +2050,8 @@
           "translation": "ایالات متحده",
           "question": "the United States",
           "hint": "ایالات متحده",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-042",
@@ -1969,7 +2061,8 @@
           "translation": "آمریکایی",
           "question": "American",
           "hint": "آمریکایی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-043",
@@ -1979,7 +2072,8 @@
           "translation": "قاهره",
           "question": "Cairo",
           "hint": "قاهره",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-044",
@@ -1989,7 +2083,8 @@
           "translation": "مصر",
           "question": "Egypt",
           "hint": "مصر",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-045",
@@ -1999,7 +2094,8 @@
           "translation": "مصری",
           "question": "Egyptian",
           "hint": "مصری",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-046",
@@ -2009,7 +2105,8 @@
           "translation": "بوئنوس آیرس",
           "question": "Buenos Aires",
           "hint": "بوئنوس آیرس",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-047",
@@ -2019,7 +2116,8 @@
           "translation": "آرژانتین",
           "question": "Argentina",
           "hint": "آرژانتین",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-048",
@@ -2029,7 +2127,8 @@
           "translation": "آرژانتینی",
           "question": "Argentinian",
           "hint": "آرژانتینی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-049",
@@ -2039,7 +2138,8 @@
           "translation": "رباط",
           "question": "Rabat",
           "hint": "رباط",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-050",
@@ -2049,7 +2149,8 @@
           "translation": "مراکش",
           "question": "Morocco",
           "hint": "مراکش",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-051",
@@ -2059,7 +2160,8 @@
           "translation": "مراکشی",
           "question": "Moroccan",
           "hint": "مراکشی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-052",
@@ -2069,7 +2171,8 @@
           "translation": "برلین",
           "question": "Berlin",
           "hint": "برلین",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-053",
@@ -2079,7 +2182,8 @@
           "translation": "آلمان",
           "question": "Germany",
           "hint": "آلمان",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-054",
@@ -2089,7 +2193,8 @@
           "translation": "آلمانی",
           "question": "German",
           "hint": "آلمانی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-055",
@@ -2099,7 +2204,8 @@
           "translation": "لیسبون",
           "question": "Lisbon",
           "hint": "لیسبون",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-056",
@@ -2109,7 +2215,8 @@
           "translation": "پرتغال",
           "question": "Portugal",
           "hint": "پرتغال",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-057",
@@ -2119,7 +2226,8 @@
           "translation": "پرتغالی",
           "question": "Portuguese",
           "hint": "پرتغالی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-058",
@@ -2129,7 +2237,8 @@
           "translation": "اتاوا",
           "question": "Ottawa",
           "hint": "اتاوا",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-059",
@@ -2139,7 +2248,8 @@
           "translation": "کانادا",
           "question": "Canada",
           "hint": "کانادا",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-060",
@@ -2149,7 +2259,8 @@
           "translation": "کانادایی",
           "question": "Canadian",
           "hint": "کانادایی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-061",
@@ -2159,7 +2270,8 @@
           "translation": "نایروبی",
           "question": "Nairobi",
           "hint": "نایروبی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-062",
@@ -2169,7 +2281,8 @@
           "translation": "کنیا",
           "question": "Kenya",
           "hint": "کنیا",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-063",
@@ -2179,7 +2292,8 @@
           "translation": "کنیایی",
           "question": "Kenyan",
           "hint": "کنیایی",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-064",
@@ -2199,7 +2313,8 @@
           "translation": "کشور",
           "question": "country",
           "hint": "کشور",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-066",
@@ -2309,7 +2424,8 @@
           "translation": "ملیت‌ها",
           "question": "nationalities",
           "hint": "ملیت‌ها",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-078",
@@ -2439,7 +2555,8 @@
           "translation": "شهر پایتخت",
           "question": "capital city",
           "hint": "شهر پایتخت",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-095",
@@ -2719,7 +2836,8 @@
           "translation": "ملیت",
           "question": "nationality",
           "hint": "ملیت",
-          "presentation": "audio"
+          "presentation": "audio",
+          "group": "Countries"
         },
         {
           "id": "evolve-1-l02-dic-139",
