@@ -1,0 +1,445 @@
+{
+  "schema_version": "2.0",
+  "book": "evolve-1",
+  "lesson": "lesson-01-02",
+  "title": "Lesson 1.2 – Personal information",
+  "exercises": [
+    {
+      "id": "evolve-1-l01-02-translation",
+      "type": "quick_translation",
+      "title": "ترجمه عبارت‌ها",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-02-tr-01",
+          "expected_answer": "personal information",
+          "explanation": "Personal یعنی شخصی و information یعنی اطلاعات.",
+          "time_limit": 60,
+          "translation": "اطلاعات شخصی",
+          "question": "اطلاعات شخصی",
+          "hint": "personal = شخصی؛ information = اطلاعات",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-tr-02",
+          "expected_answer": "email address",
+          "explanation": "Email address یعنی آدرس ایمیل.",
+          "time_limit": 60,
+          "translation": "آدرس ایمیل",
+          "question": "آدرس ایمیل",
+          "hint": "email = ایمیل؛ address = آدرس",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-tr-03",
+          "expected_answer": "What's the name of your college?",
+          "accepted_answers": [
+            "What is the name of your college?"
+          ],
+          "explanation": "What’s یعنی What is؛ of را بین the name و your بگذار.",
+          "time_limit": 60,
+          "translation": "نام کالج شما چیست؟",
+          "question": "نام کالج شما چیست؟",
+          "hint": "ابتدا What’s را بگذار؛ سپس the name of و your و کالج را بیاور.",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-tr-04",
+          "expected_answer": "What's the name of your company?",
+          "accepted_answers": [
+            "What is the name of your company?"
+          ],
+          "explanation": "What’s یعنی What is؛ of را بین the name و your بگذار.",
+          "time_limit": 60,
+          "translation": "نام شرکت شما چیست؟",
+          "question": "نام شرکت شما چیست؟",
+          "hint": "ابتدا What’s را بگذار؛ سپس the name of و your و شرکت را بیاور.",
+          "group": "Personal Information"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-02-builder",
+      "type": "sentence_builder",
+      "title": "جمله‌سازی",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-02-sb-01",
+          "expected_answer": "What's the name of your college?",
+          "explanation": "بعد از What’s، عبارت the name of و سپس your و نام مؤسسه می‌آید.",
+          "time_limit": 60,
+          "translation": "نام کالج شما چیست؟",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "ابتدا What’s را بگذار؛ سپس the name of و your را بچین.",
+          "word_bank": [
+            "college?",
+            "of",
+            "What's",
+            "the",
+            "name",
+            "your"
+          ],
+          "group": "Personal Information"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-02-correction",
+      "type": "grammar_correction",
+      "title": "اصلاح جمله",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-02-gc-01",
+          "expected_answer": "What's the name of your company?",
+          "explanation": "آپاستروف را در What’s بگذار؛ این شکل کوتاه What is است.",
+          "time_limit": 60,
+          "translation": "نام شرکت شما چیست؟",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "به آپاستروف در شکل کوتاه What is توجه کن.",
+          "incorrect_sentence": "Whats the name of your company?",
+          "group": "Personal Information"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-02-choice",
+      "type": "multiple_choice",
+      "title": "سؤالات چندگزینه‌ای",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-02-mc-01",
+          "expected_answer": "کالج / دانشکده",
+          "explanation": "College یعنی کالج یا دانشکده.",
+          "time_limit": 60,
+          "translation": "کالج / دانشکده",
+          "question": "معنی college چیست؟",
+          "hint": "college = کالج / دانشکده",
+          "options": [
+            "شرکت",
+            "کالج / دانشکده",
+            "کنفرانس / همایش"
+          ],
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-mc-02",
+          "expected_answer": "شرکت",
+          "explanation": "Company یعنی شرکت.",
+          "time_limit": 60,
+          "translation": "شرکت",
+          "question": "معنی company چیست؟",
+          "hint": "company = شرکت",
+          "options": [
+            "الفبا",
+            "شرکت",
+            "آدرس"
+          ],
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-mc-03",
+          "expected_answer": "الفبا",
+          "explanation": "Alphabet یعنی الفبا؛ همهٔ حروفی که برای نوشتن استفاده می‌شوند.",
+          "time_limit": 60,
+          "translation": "الفبا",
+          "question": "معنی alphabet چیست؟",
+          "hint": "alphabet = الفبا",
+          "options": [
+            "آدرس",
+            "کنفرانس / همایش",
+            "الفبا"
+          ],
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-mc-04",
+          "expected_answer": "کنفرانس / همایش",
+          "explanation": "Conference یعنی کنفرانس یا همایش.",
+          "time_limit": 60,
+          "translation": "کنفرانس / همایش",
+          "question": "معنی conference چیست؟",
+          "hint": "conference = کنفرانس / همایش",
+          "options": [
+            "کالج / دانشکده",
+            "کنفرانس / همایش",
+            "اطلاعات شخصی"
+          ],
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-mc-05",
+          "expected_answer": "uh-huh",
+          "explanation": "Uh-huh نشانهٔ موافقت یا گوش دادن است؛ مثل yes ولی غیررسمی.",
+          "time_limit": 60,
+          "translation": "آها / اوهوم",
+          "question": "کدام واژه به معنی «آها / اوهوم» است؟",
+          "hint": "uh-huh = آها / اوهوم",
+          "options": [
+            "sorry",
+            "uh-huh",
+            "please"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-02-vocabulary",
+      "type": "vocabulary",
+      "title": "علامت‌های ایمیل",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-02-voc-01",
+          "question": "Symbol: .",
+          "expected_answer": "dot",
+          "explanation": "علامت . در آدرس ایمیل را dot می‌خوانیم.",
+          "hint": ". = نقطه",
+          "time_limit": 60,
+          "translation": "نقطه",
+          "group": "Email Vocabulary"
+        },
+        {
+          "id": "evolve-1-l01-02-voc-02",
+          "question": "Symbol: _",
+          "expected_answer": "underscore",
+          "explanation": "علامت _ را underscore می‌خوانیم.",
+          "hint": "_ = خط زیر",
+          "time_limit": 60,
+          "translation": "خط زیر",
+          "group": "Email Vocabulary"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-02-spelling",
+      "type": "dictation",
+      "title": "املای واژه‌ها و عبارت‌ها",
+      "presentation": "audio",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-02-dic-001",
+          "expected_answer": "personal information",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "اطلاعات شخصی",
+          "question": "personal information",
+          "hint": "اطلاعات شخصی",
+          "presentation": "audio",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-002",
+          "expected_answer": "email address",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "آدرس ایمیل",
+          "question": "email address",
+          "hint": "آدرس ایمیل",
+          "presentation": "audio",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-003",
+          "expected_answer": "address",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "آدرس / نشانی",
+          "question": "address",
+          "hint": "آدرس / نشانی",
+          "presentation": "audio",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-004",
+          "expected_answer": "college",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "کالج / دانشکده",
+          "question": "college",
+          "hint": "کالج / دانشکده",
+          "presentation": "audio",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-005",
+          "expected_answer": "company",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "شرکت",
+          "question": "company",
+          "hint": "شرکت",
+          "presentation": "audio",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-006",
+          "expected_answer": "alphabet",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "الفبا",
+          "question": "alphabet",
+          "hint": "الفبا",
+          "presentation": "audio",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-007",
+          "expected_answer": "conference",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "کنفرانس / همایش",
+          "question": "conference",
+          "hint": "کنفرانس / همایش",
+          "presentation": "audio",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-008",
+          "expected_answer": "dot",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "نقطه (.)",
+          "question": "dot",
+          "hint": "نقطه (.)",
+          "presentation": "audio",
+          "group": "Email Vocabulary"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-009",
+          "expected_answer": "underscore",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "خط زیر (_)",
+          "question": "underscore",
+          "hint": "خط زیر (_)",
+          "presentation": "audio",
+          "group": "Email Vocabulary"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-010",
+          "expected_answer": "uh-huh",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "آها / اوهوم (نشانهٔ موافقت)",
+          "question": "uh-huh",
+          "hint": "آها / اوهوم (نشانهٔ موافقت)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-011",
+          "expected_answer": "of",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "از / متعلق به",
+          "question": "of",
+          "hint": "از / متعلق به",
+          "presentation": "audio"
+        }
+      ]
+    }
+  ],
+  "lesson_content": {
+    "vocabulary": [
+      {
+        "word": "personal information",
+        "ipa": "/ˈpɜːrsənl ˌɪnfərˈmeɪʃn/",
+        "meaning": "اطلاعات شخصی",
+        "category": "Personal Information"
+      },
+      {
+        "word": "email address",
+        "ipa": "/ˈiːmeɪl əˈdres/",
+        "meaning": "آدرس ایمیل",
+        "category": "Personal Information"
+      },
+      {
+        "word": "address",
+        "ipa": "/əˈdres/",
+        "meaning": "آدرس / نشانی",
+        "category": "Personal Information"
+      },
+      {
+        "word": "college",
+        "ipa": "/ˈkɑːlɪdʒ/",
+        "meaning": "کالج / دانشکده",
+        "category": "Personal Information"
+      },
+      {
+        "word": "company",
+        "ipa": "/ˈkʌmpəni/",
+        "meaning": "شرکت",
+        "category": "Personal Information"
+      },
+      {
+        "word": "alphabet",
+        "ipa": "/ˈælfəbet/",
+        "meaning": "الفبا",
+        "category": "Personal Information"
+      },
+      {
+        "word": "conference",
+        "ipa": "/ˈkɑːnfərəns/",
+        "meaning": "کنفرانس / همایش",
+        "category": "Personal Information"
+      },
+      {
+        "word": "dot",
+        "ipa": "/dɑːt/",
+        "meaning": "نقطه (.)",
+        "category": "Email Vocabulary"
+      },
+      {
+        "word": "underscore",
+        "ipa": "/ˌʌndərˈskɔːr/",
+        "meaning": "خط زیر (_)",
+        "category": "Email Vocabulary"
+      },
+      {
+        "word": "uh-huh",
+        "ipa": "/ʌˈhʌ/",
+        "meaning": "آها / اوهوم (نشانهٔ موافقت)"
+      },
+      {
+        "word": "of",
+        "ipa": "/ʌv/",
+        "meaning": "از / متعلق به"
+      }
+    ],
+    "sentences": [
+      {
+        "en": "What's the name of your college?",
+        "fa": "نام کالج شما چیست؟"
+      },
+      {
+        "en": "What's the name of your company?",
+        "fa": "نام شرکت شما چیست؟"
+      }
+    ],
+    "grammar": [
+      {
+        "title": "What’s = What is",
+        "explanation": "What’s شکل کوتاه What is است. برای پرسیدن نام یک کالج یا شرکت از الگوی What’s the name of your … استفاده می‌کنیم. آپاستروف (’) نشان می‌دهد که بخشی از عبارت حذف شده است؛ پس بنویس What’s، نه Whats.",
+        "examples": [
+          {
+            "en": "What's the name of your college?",
+            "fa": "نام کالج شما چیست؟"
+          },
+          {
+            "en": "What's the name of your company?",
+            "fa": "نام شرکت شما چیست؟"
+          }
+        ]
+      }
+    ],
+    "stories": []
+  }
+}

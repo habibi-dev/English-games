@@ -27,6 +27,12 @@
                   "title": "Lesson 1.1",
                   "file": "content/evolve-1/lesson-01-01.json",
                   "version": "13"
+                },
+                {
+                  "id": "lesson-01-02",
+                  "title": "Lesson 1.2",
+                  "file": "content/evolve-1/lesson-01-02.json",
+                  "version": "1"
                 }
               ]
             }
