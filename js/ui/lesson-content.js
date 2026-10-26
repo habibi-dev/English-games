@@ -122,6 +122,10 @@ let linesAutoplayUiSync = () => {};
 /** Active list playback: step by one line in the current order (see beginPlayback). */
 let playbackStepRelative = () => {};
 
+// A quiz row (Guess the country): after the capital city is read, the learner has this long to guess.
+// Then the answers show and playback goes on by itself.
+const GUESS_MS = 4000;
+
 const bottomPlaybackPrev = () => document.querySelector('.bottom-playback-prev');
 const bottomPlaybackNext = () => document.querySelector('.bottom-playback-next');
 
@@ -728,7 +732,7 @@ function createLessonPlaybar({
     clearTimeout(session.gapTimer);
     session.gapTimer = null;
     if (pauseSpeaking()) pausePoint = 'speech';
-    else pausePoint = 'gap';
+    else pausePoint = session.checkGuess ? 'guess' : 'gap';
     drawPlaybar();
   };
 
@@ -962,16 +966,20 @@ function createLessonPlaybar({
           scheduleAfterLine(false, gen);
           return;
         }
-        // A quiz row: the capital city has been read, now the learner guesses the answers. Playback waits here.
+        // A quiz row: the capital city has been read, now the learner guesses the answers for GUESS_MS.
+        // Then the answers show and playback goes on. Pause during the guess resumes by showing them (see resumePlayback).
         if (item.entry?.quiz) {
-          paused = true;
-          pausePoint = 'guess';
           session.checkGuess = () => {
+            session.checkGuess = null;
             onGuessCheck?.(item.index);
             scheduleAfterLine(true, gen);
           };
           onGuessWait?.(item.index);
-          drawPlaybar();
+          session.gapTimer = setTimeout(() => {
+            session.gapTimer = null;
+            if (!active || paused || gen !== speakGeneration || !session?.checkGuess) return;
+            session.checkGuess();
+          }, GUESS_MS);
           return;
         }
         scheduleAfterLine(true, gen);
@@ -1141,7 +1149,7 @@ export function linesPage({
             : h('span', { class: 'lc-hidden', dir: 'ltr' }, '• • • • • •'),
         ),
       ),
-      guessing ? h('p', { class: 'lc-quiz-hint' }, 'Guess the answers, then press Play to check.') : null,
+      guessing ? h('p', { class: 'lc-quiz-hint' }, 'Guess the answers. They show in a few seconds.') : null,
     );
   };
 

@@ -186,6 +186,76 @@
             "uh-huh",
             "please"
           ]
+        },
+        {
+          "id": "evolve-1-l01-02-mc-06",
+          "expected_answer": "hide",
+          "explanation": "Show یعنی نشان دادن و hide یعنی پنهان کردن؛ این دو مخالف هم‌اند.",
+          "time_limit": 60,
+          "translation": "پنهان کردن",
+          "question": "کدام واژه مخالف show است؟",
+          "hint": "show = نشان دادن",
+          "options": [
+            "demonstrate",
+            "hide",
+            "firm"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-02-mc-07",
+          "expected_answer": "outsider",
+          "explanation": "Insider یعنی فرد درونی و outsider یعنی فرد بیرونی.",
+          "time_limit": 60,
+          "translation": "فرد بیرونی",
+          "question": "کدام واژه مخالف insider است؟",
+          "hint": "insider = فرد درونی",
+          "options": [
+            "firm",
+            "outsider",
+            "script"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-02-mc-08",
+          "expected_answer": "university",
+          "explanation": "University یعنی دانشگاه.",
+          "time_limit": 60,
+          "translation": "دانشگاه",
+          "question": "کدام واژه به معنی «دانشگاه» است؟",
+          "hint": "university = دانشگاه",
+          "options": [
+            "script",
+            "university",
+            "again"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-02-mc-09",
+          "expected_answer": "again",
+          "explanation": "Again یعنی دوباره.",
+          "time_limit": 60,
+          "translation": "دوباره",
+          "question": "کدام واژه به معنی «دوباره» است؟",
+          "hint": "again = دوباره",
+          "options": [
+            "again",
+            "hide",
+            "show"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-02-mc-10",
+          "expected_answer": "فوق‌العاده",
+          "explanation": "Wonderful یعنی فوق‌العاده و بسیار خوب.",
+          "time_limit": 60,
+          "translation": "فوق‌العاده",
+          "question": "معنی wonderful چیست؟",
+          "hint": "wonderful = فوق‌العاده",
+          "options": [
+            "فوق‌العاده",
+            "شرکت / مؤسسه",
+            "متن (نمایشنامه / فیلمنامه)"
+          ]
         }
       ]
     },
@@ -215,6 +285,124 @@
           "time_limit": 60,
           "translation": "خط زیر",
           "group": "Email Vocabulary"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-02-synonyms",
+      "type": "vocabulary",
+      "title": "مترادف و متضاد",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-02-voc-03",
+          "question": "Synonym: conversation",
+          "expected_answer": "dialog",
+          "explanation": "Conversation و dialog هر دو به گفت‌وگو بین دو نفر یا بیشتر اشاره می‌کنند.",
+          "hint": "conversation = گفت‌وگو",
+          "time_limit": 60,
+          "translation": "گفت‌وگو / دیالوگ"
+        },
+        {
+          "id": "evolve-1-l01-02-voc-04",
+          "question": "Synonym: full stop",
+          "expected_answer": "period",
+          "explanation": "Full stop و period هر دو نام علامت نقطه در پایان جمله هستند.",
+          "hint": "full stop = نقطه (پایان جمله)",
+          "time_limit": 60,
+          "translation": "نقطه (پایان جمله)"
+        },
+        {
+          "id": "evolve-1-l01-02-voc-05",
+          "question": "Synonym (2): again",
+          "expected_answer": "anew",
+          "explanation": "Anew و re هر دو به معنی دوباره هستند. هر دو را بنویس.",
+          "hint": "again = دوباره",
+          "time_limit": 60,
+          "translation": "دوباره، از نو",
+          "accepted_answers": [
+            "re"
+          ],
+          "answer_mode": "list",
+          "min_items": 2
+        },
+        {
+          "id": "evolve-1-l01-02-voc-06",
+          "question": "Synonym: script",
+          "expected_answer": "text",
+          "explanation": "Script و text هر دو به متنی که خوانده یا نوشته می‌شود اشاره دارند.",
+          "hint": "script = متن",
+          "time_limit": 60,
+          "translation": "متن"
+        },
+        {
+          "id": "evolve-1-l01-02-voc-07",
+          "question": "Synonym: articulate",
+          "expected_answer": "spell",
+          "explanation": "Articulate و spell هر دو به معنی کلمه را حرف به حرف یا واضح گفتن و نوشتن هستند.",
+          "hint": "articulate = واضح ادا کردن",
+          "time_limit": 60,
+          "translation": "هجی کردن"
+        },
+        {
+          "id": "evolve-1-l01-02-voc-08",
+          "question": "Synonym: college",
+          "expected_answer": "university",
+          "explanation": "College و university هر دو مؤسسهٔ آموزش عالی هستند.",
+          "hint": "college = کالج / دانشکده",
+          "time_limit": 60,
+          "translation": "دانشگاه"
+        },
+        {
+          "id": "evolve-1-l01-02-voc-09",
+          "question": "Synonym: great",
+          "expected_answer": "wonderful",
+          "explanation": "Great و wonderful هر دو برای توصیف چیز خوب و عالی به کار می‌روند.",
+          "hint": "great = عالی",
+          "time_limit": 60,
+          "translation": "فوق‌العاده"
+        },
+        {
+          "id": "evolve-1-l01-02-voc-10",
+          "question": "Synonym (2): company",
+          "expected_answer": "firm",
+          "explanation": "Firm و Inc. هر دو هم‌معنی company هستند. هر دو را بنویس.",
+          "hint": "company = شرکت",
+          "time_limit": 60,
+          "translation": "شرکت / مؤسسه",
+          "accepted_answers": [
+            "Inc."
+          ],
+          "answer_mode": "list",
+          "min_items": 2
+        },
+        {
+          "id": "evolve-1-l01-02-voc-11",
+          "question": "Synonym: show",
+          "expected_answer": "demonstrate",
+          "explanation": "Show و demonstrate هر دو به معنی نشان دادن هستند.",
+          "hint": "show = نشان دادن",
+          "time_limit": 60,
+          "translation": "نشان دادن (با عمل)"
+        },
+        {
+          "id": "evolve-1-l01-02-voc-12",
+          "question": "Opposite: show",
+          "expected_answer": "hide",
+          "explanation": "Hide یعنی پنهان کردن و مخالف show است.",
+          "hint": "show = نشان دادن",
+          "time_limit": 60,
+          "translation": "پنهان کردن"
+        },
+        {
+          "id": "evolve-1-l01-02-voc-13",
+          "question": "Opposite: insider",
+          "expected_answer": "outsider",
+          "explanation": "Outsider یعنی فردی که بیرون از یک گروه یا سازمان است؛ مخالف insider.",
+          "hint": "insider = فرد درونی",
+          "time_limit": 60,
+          "translation": "فرد بیرونی / غریبه"
         }
       ]
     },
@@ -343,6 +531,196 @@
           "question": "of",
           "hint": "از / متعلق به",
           "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-012",
+          "expected_answer": "conversation",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "گفت‌وگو",
+          "question": "conversation",
+          "hint": "گفت‌وگو",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-013",
+          "expected_answer": "dialog",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "گفت‌وگو / دیالوگ",
+          "question": "dialog",
+          "hint": "گفت‌وگو / دیالوگ",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-014",
+          "expected_answer": "full stop",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "نقطه (پایان جمله)",
+          "question": "full stop",
+          "hint": "نقطه (پایان جمله)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-015",
+          "expected_answer": "period",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "نقطه (پایان جمله)",
+          "question": "period",
+          "hint": "نقطه (پایان جمله)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-016",
+          "expected_answer": "again",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "دوباره",
+          "question": "again",
+          "hint": "دوباره",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-017",
+          "expected_answer": "anew",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "دوباره، از نو",
+          "question": "anew",
+          "hint": "دوباره، از نو",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-018",
+          "expected_answer": "re",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "دوباره (پیشوند)",
+          "question": "re",
+          "hint": "دوباره (پیشوند)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-019",
+          "expected_answer": "script",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "متن (نمایشنامه / فیلمنامه)",
+          "question": "script",
+          "hint": "متن (نمایشنامه / فیلمنامه)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-020",
+          "expected_answer": "articulate",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "واضح ادا کردن",
+          "question": "articulate",
+          "hint": "واضح ادا کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-021",
+          "expected_answer": "university",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "دانشگاه",
+          "question": "university",
+          "hint": "دانشگاه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-022",
+          "expected_answer": "great",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "بزرگ / عالی",
+          "question": "great",
+          "hint": "بزرگ / عالی",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-023",
+          "expected_answer": "wonderful",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "فوق‌العاده",
+          "question": "wonderful",
+          "hint": "فوق‌العاده",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-024",
+          "expected_answer": "firm",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "شرکت / مؤسسه",
+          "question": "firm",
+          "hint": "شرکت / مؤسسه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-025",
+          "expected_answer": "Inc.",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "شرکت (مخفف Incorporated)",
+          "question": "Inc.",
+          "hint": "شرکت (مخفف Incorporated)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-026",
+          "expected_answer": "show",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "نشان دادن",
+          "question": "show",
+          "hint": "نشان دادن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-027",
+          "expected_answer": "demonstrate",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "نشان دادن (با عمل)",
+          "question": "demonstrate",
+          "hint": "نشان دادن (با عمل)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-028",
+          "expected_answer": "hide",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پنهان کردن",
+          "question": "hide",
+          "hint": "پنهان کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-029",
+          "expected_answer": "insider",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "فرد درونی / عضو داخلی",
+          "question": "insider",
+          "hint": "فرد درونی / عضو داخلی",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-030",
+          "expected_answer": "outsider",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "فرد بیرونی / غریبه",
+          "question": "outsider",
+          "hint": "فرد بیرونی / غریبه",
+          "presentation": "audio"
         }
       ]
     }
@@ -412,6 +790,101 @@
         "word": "of",
         "ipa": "/ʌv/",
         "meaning": "از / متعلق به"
+      },
+      {
+        "word": "conversation",
+        "ipa": "/ˌkɑːnvərˈseɪʃn/",
+        "meaning": "گفت‌وگو"
+      },
+      {
+        "word": "dialog",
+        "ipa": "/ˈdaɪəlɔːɡ/",
+        "meaning": "گفت‌وگو / دیالوگ"
+      },
+      {
+        "word": "full stop",
+        "ipa": "/fʊl stɑːp/",
+        "meaning": "نقطه (پایان جمله)"
+      },
+      {
+        "word": "period",
+        "ipa": "/ˈpɪriəd/",
+        "meaning": "نقطه (پایان جمله)"
+      },
+      {
+        "word": "again",
+        "ipa": "/əˈɡen/",
+        "meaning": "دوباره"
+      },
+      {
+        "word": "anew",
+        "ipa": "/əˈnuː/",
+        "meaning": "دوباره، از نو"
+      },
+      {
+        "word": "re",
+        "ipa": "/riː/",
+        "meaning": "دوباره (پیشوند)"
+      },
+      {
+        "word": "script",
+        "ipa": "/skrɪpt/",
+        "meaning": "متن (نمایشنامه / فیلمنامه)"
+      },
+      {
+        "word": "articulate",
+        "ipa": "/ɑːrˈtɪkjuleɪt/",
+        "meaning": "واضح ادا کردن"
+      },
+      {
+        "word": "university",
+        "ipa": "/ˌjuːnɪˈvɜːrsəti/",
+        "meaning": "دانشگاه"
+      },
+      {
+        "word": "great",
+        "ipa": "/ɡreɪt/",
+        "meaning": "بزرگ / عالی"
+      },
+      {
+        "word": "wonderful",
+        "ipa": "/ˈwʌndərfl/",
+        "meaning": "فوق‌العاده"
+      },
+      {
+        "word": "firm",
+        "ipa": "/fɜːrm/",
+        "meaning": "شرکت / مؤسسه"
+      },
+      {
+        "word": "Inc.",
+        "ipa": "/ɪŋk/",
+        "meaning": "شرکت (مخفف Incorporated)"
+      },
+      {
+        "word": "show",
+        "ipa": "/ʃoʊ/",
+        "meaning": "نشان دادن"
+      },
+      {
+        "word": "demonstrate",
+        "ipa": "/ˈdemənstreɪt/",
+        "meaning": "نشان دادن (با عمل)"
+      },
+      {
+        "word": "hide",
+        "ipa": "/haɪd/",
+        "meaning": "پنهان کردن"
+      },
+      {
+        "word": "insider",
+        "ipa": "/ɪnˈsaɪdər/",
+        "meaning": "فرد درونی / عضو داخلی"
+      },
+      {
+        "word": "outsider",
+        "ipa": "/ˌaʊtˈsaɪdər/",
+        "meaning": "فرد بیرونی / غریبه"
       }
     ],
     "sentences": [
