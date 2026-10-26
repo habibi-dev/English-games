@@ -100,6 +100,46 @@
           "question": "آیا تو اهل توکیو هستی؟",
           "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن.",
           "group": "Countries"
+        },
+        {
+          "id": "evolve-1-l02-tr-201",
+          "expected_answer": "He usually wears a coat in winter.",
+          "explanation": "قید usually قبل از فعل wears می‌آید و in winter در آخر جمله است.",
+          "time_limit": 60,
+          "translation": "او در زمستان معمولاً کت می‌پوشد.",
+          "question": "او در زمستان معمولاً کت می‌پوشد.",
+          "hint": "قید تکرار را پیدا کن؛ آن قبل از فعل اصلی می‌آید."
+        },
+        {
+          "id": "evolve-1-l02-tr-202",
+          "expected_answer": "I never wear a coat.",
+          "explanation": "قید never قبل از فعل wear می‌آید.",
+          "time_limit": 60,
+          "translation": "من هرگز کت نمی‌پوشم.",
+          "question": "من هرگز کت نمی‌پوشم.",
+          "hint": "قید never را پیش از فعل wear بگذار."
+        },
+        {
+          "id": "evolve-1-l02-tr-203",
+          "expected_answer": "I always wear a coat in winter.",
+          "explanation": "قید always قبل از فعل wear می‌آید و in winter در آخر جمله است.",
+          "time_limit": 60,
+          "translation": "من در زمستان همیشه کت می‌پوشم.",
+          "question": "من در زمستان همیشه کت می‌پوشم.",
+          "hint": "قید always را پیش از فعل wear بگذار."
+        },
+        {
+          "id": "evolve-1-l02-tr-204",
+          "expected_answer": "I'm from Madrid, in Spain.",
+          "accepted_answers": [
+            "I am from Madrid, in Spain."
+          ],
+          "explanation": "شهر را بعد از from و کشور را بعد از ویرگول و in بیاور.",
+          "time_limit": 60,
+          "translation": "من اهل مادرید، در اسپانیا هستم.",
+          "question": "من اهل مادرید، در اسپانیا هستم.",
+          "hint": "ابتدا from و شهر را بگذار؛ سپس ویرگول و in و نام کشور را بیاور.",
+          "group": "Countries"
         }
       ]
     },
@@ -190,6 +230,75 @@
             "I",
             "in"
           ]
+        },
+        {
+          "id": "evolve-1-l02-sb-201",
+          "expected_answer": "He usually wears a coat in winter.",
+          "explanation": "قید تکرار را قبل از فعل بگذار و in winter را در آخر جمله بچین.",
+          "time_limit": 60,
+          "translation": "او در زمستان معمولاً کت می‌پوشد.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "ابتدا فاعل را پیدا کن؛ سپس قید usually را پیش از فعل بگذار.",
+          "word_bank": [
+            "in",
+            "winter.",
+            "usually",
+            "a",
+            "He",
+            "coat",
+            "wears"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-sb-202",
+          "expected_answer": "I never wear a coat.",
+          "explanation": "قید never پیش از فعل wear می‌آید.",
+          "time_limit": 60,
+          "translation": "من هرگز کت نمی‌پوشم.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "ابتدا فاعل را پیدا کن؛ سپس never را پیش از فعل بگذار.",
+          "word_bank": [
+            "coat.",
+            "wear",
+            "I",
+            "never",
+            "a"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-sb-203",
+          "expected_answer": "I always wear a coat in winter.",
+          "explanation": "قید always پیش از فعل wear می‌آید و in winter در آخر جمله است.",
+          "time_limit": 60,
+          "translation": "من در زمستان همیشه کت می‌پوشم.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "قید always را پیش از فعل بگذار و جای in winter را مشخص کن.",
+          "word_bank": [
+            "always",
+            "I",
+            "coat",
+            "in",
+            "winter.",
+            "a",
+            "wear"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-sb-204",
+          "expected_answer": "I'm from Madrid, in Spain.",
+          "explanation": "بعد از نام شهر ویرگول می‌آید و in پیش از نام کشور.",
+          "time_limit": 60,
+          "translation": "من اهل مادرید، در اسپانیا هستم.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "ابتدا from را پیش از شهر بگذار؛ in پیش از نام کشور می‌آید.",
+          "word_bank": [
+            "in",
+            "Spain.",
+            "I'm",
+            "from",
+            "Madrid,"
+          ],
+          "group": "Countries"
         }
       ]
     },
@@ -302,6 +411,36 @@
             "هستی؟"
           ],
           "group": "Countries"
+        },
+        {
+          "id": "evolve-1-l02-wt-201",
+          "expected_answer": "He usually wears a coat in winter.",
+          "explanation": "جای قید تکرار قبل از فعل است؛ in winter در آخر جمله می‌آید.",
+          "time_limit": 60,
+          "translation": "او در زمستان معمولاً کت می‌پوشد.",
+          "hint": "عبارت‌ها را از فاعل شروع کن و قید معمولاً را پیش از فعل بچین.",
+          "word_bank": [
+            "او",
+            "در",
+            "زمستان",
+            "معمولاً",
+            "کت",
+            "می‌پوشد"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-wt-202",
+          "expected_answer": "I never wear a coat.",
+          "explanation": "قید هرگز قبل از فعل می‌آید.",
+          "time_limit": 60,
+          "translation": "من هرگز کت نمی‌پوشم.",
+          "hint": "قید هرگز را قبل از فعل wear بچین.",
+          "word_bank": [
+            "من",
+            "هرگز",
+            "کت",
+            "نمی‌پوشم."
+          ]
         }
       ]
     },
@@ -370,6 +509,24 @@
           "question": "آیا تو اهل توکیو هستی؟",
           "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن.",
           "group": "Countries"
+        },
+        {
+          "id": "evolve-1-l02-vt-201",
+          "expected_answer": "He usually wears a coat in winter.",
+          "explanation": "جمله را با توجه به فاعل، قید تکرار و فعل سوم‌شخص بیان کن.",
+          "time_limit": 60,
+          "translation": "او در زمستان معمولاً کت می‌پوشد.",
+          "question": "او در زمستان معمولاً کت می‌پوشد.",
+          "hint": "به فعل سوم‌شخص با he و جای قید usually توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-vt-202",
+          "expected_answer": "I never wear a coat.",
+          "explanation": "جمله را با قید منفی‌ساز تکرار بیان کن.",
+          "time_limit": 60,
+          "translation": "من هرگز کت نمی‌پوشم.",
+          "question": "من هرگز کت نمی‌پوشم.",
+          "hint": "قید never را پیش از فعل بگذار."
         }
       ]
     },
@@ -404,6 +561,26 @@
           "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
           "incorrect_sentence": "You are from Tokyo?",
           "group": "Countries"
+        },
+        {
+          "id": "evolve-1-l02-gc-201",
+          "expected_answer": "He usually wears a coat in winter.",
+          "explanation": "با he فعل باید s بگیرد: wears.",
+          "time_limit": 60,
+          "translation": "او در زمستان معمولاً کت می‌پوشد.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "به فعل سوم‌شخص با he توجه کن.",
+          "incorrect_sentence": "He usually wear a coat in winter."
+        },
+        {
+          "id": "evolve-1-l02-gc-202",
+          "expected_answer": "I never wear a coat.",
+          "explanation": "قید تکرار قبل از فعل اصلی می‌آید، نه بعد از آن.",
+          "time_limit": 60,
+          "translation": "من هرگز کت نمی‌پوشم.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "جای قید never را نسبت به فعل wear بررسی کن.",
+          "incorrect_sentence": "I wear never a coat."
         }
       ]
     },
@@ -554,6 +731,29 @@
           "accepted_answers": [
             "I am a teacher."
           ]
+        },
+        {
+          "id": "evolve-1-l02-pn-201",
+          "expected_answer": "He doesn't usually wear a coat in winter.",
+          "explanation": "در منفی با he از doesn't استفاده می‌کنیم و فعل اصلی بدون s می‌آید.",
+          "time_limit": 60,
+          "translation": "او در زمستان معمولاً کت نمی‌پوشد.",
+          "question": "جمله را منفی کن: He usually wears a coat in winter.",
+          "accepted_answers": [
+            "He does not usually wear a coat in winter."
+          ],
+          "hint": "برای منفی از doesn't استفاده کن و فعل را به شکل ساده بنویس.",
+          "operation": "negative"
+        },
+        {
+          "id": "evolve-1-l02-pn-202",
+          "expected_answer": "Does he usually wear a coat in winter?",
+          "explanation": "در سؤال بله یا خیر، Does پیش از فاعل می‌آید و فعل بدون s می‌آید.",
+          "time_limit": 60,
+          "translation": "آیا او در زمستان معمولاً کت می‌پوشد؟",
+          "question": "جمله را سؤالی کن: He usually wears a coat in winter.",
+          "hint": "برای سؤال با he از Does استفاده کن و فعل را ساده بنویس.",
+          "operation": "question"
         }
       ]
     },
@@ -1172,6 +1372,118 @@
             "São Paulo",
             "Lima"
           ]
+        },
+        {
+          "id": "evolve-1-l02-mc-201",
+          "expected_answer": "زمستان",
+          "explanation": "Winter یعنی زمستان، فصل سرد سال.",
+          "time_limit": 60,
+          "translation": "زمستان",
+          "question": "معنی winter چیست؟",
+          "hint": "کلیدی: winter = زمستان",
+          "options": [
+            "تابستان",
+            "زمستان",
+            "بهار"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-mc-202",
+          "expected_answer": "پاییز",
+          "explanation": "Autumn نام فصل پاییز است و معادل fall است.",
+          "time_limit": 60,
+          "translation": "پاییز",
+          "question": "معنی autumn چیست؟",
+          "hint": "autumn هم‌معنی fall است.",
+          "options": [
+            "بهار",
+            "پاییز",
+            "تابستان"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-mc-203",
+          "expected_answer": "never",
+          "explanation": "Always یعنی همیشه و never مخالف آن است.",
+          "time_limit": 60,
+          "translation": "هرگز",
+          "question": "کدام واژه مخالف always است؟",
+          "hint": "always = همیشه؛ مخالف آن را پیدا کن.",
+          "options": [
+            "usually",
+            "never",
+            "generally"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-mc-204",
+          "expected_answer": "put on",
+          "explanation": "Wear و put on هر دو به معنی پوشیدن لباس هستند.",
+          "time_limit": 60,
+          "translation": "پوشیدن (لباس)",
+          "question": "کدام عبارت هم‌معنی wear است؟",
+          "hint": "wear = پوشیدن (لباس)",
+          "options": [
+            "lost",
+            "discover",
+            "put on"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-mc-205",
+          "expected_answer": "usually",
+          "explanation": "Usually یعنی معمولاً؛ این قید تکرار است.",
+          "time_limit": 60,
+          "translation": "معمولاً",
+          "question": "کدام قید به معنی «معمولاً» است؟",
+          "hint": "به قیدهای تکرار در بخش گرامر توجه کن.",
+          "options": [
+            "never",
+            "usually",
+            "coat"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-mc-206",
+          "expected_answer": "wears",
+          "explanation": "با فاعل he، فعل wear به wears تبدیل می‌شود.",
+          "time_limit": 60,
+          "translation": "او در زمستان کت می‌پوشد.",
+          "question": "جای خالی را کامل کن: He ___ a coat in winter.",
+          "hint": "به فاعل he و شکل فعل توجه کن.",
+          "options": [
+            "wear",
+            "wears",
+            "am"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-mc-207",
+          "expected_answer": "never",
+          "explanation": "Never یعنی هرگز و پیش از فعل wear می‌آید.",
+          "time_limit": 60,
+          "translation": "من هرگز کت نمی‌پوشم.",
+          "question": "جای خالی را کامل کن: I ___ wear a coat.",
+          "hint": "به قید تکرار که معنی «هرگز» دارد فکر کن.",
+          "options": [
+            "never",
+            "winter",
+            "coat"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-mc-208",
+          "expected_answer": "the same",
+          "explanation": "The same یعنی یکسان و مخالف different است.",
+          "time_limit": 60,
+          "translation": "یکسان",
+          "question": "کدام عبارت مخالف different است؟",
+          "hint": "different = متفاوت",
+          "options": [
+            "else",
+            "the same",
+            "lost"
+          ]
         }
       ]
     },
@@ -1284,12 +1596,17 @@
         },
         {
           "id": "evolve-1-l02-voc-11",
-          "question": "Synonym: other",
+          "question": "Synonym (2): other",
           "expected_answer": "different",
-          "explanation": "Other و different در معنی متفاوت به هم نزدیک‌اند، اما همیشه جای هم نمی‌نشینند.",
+          "explanation": "Other و different در معنی متفاوت به هم نزدیک‌اند، و else هم معنی «دیگر» می‌دهد. هر دو را بنویس.",
           "hint": "other = دیگر",
           "time_limit": 60,
-          "translation": "متفاوت"
+          "translation": "متفاوت / دیگر",
+          "accepted_answers": [
+            "else"
+          ],
+          "answer_mode": "list",
+          "min_items": 2
         },
         {
           "id": "evolve-1-l02-voc-12",
@@ -1308,6 +1625,207 @@
           "hint": "yes = بله",
           "time_limit": 60,
           "translation": "نه"
+        },
+        {
+          "id": "evolve-1-l02-voc-14",
+          "question": "Synonym: correct",
+          "expected_answer": "true",
+          "explanation": "Correct و true هر دو به معنی درست یا راست هستند.",
+          "hint": "correct = درست",
+          "time_limit": 60,
+          "translation": "درست"
+        },
+        {
+          "id": "evolve-1-l02-voc-15",
+          "question": "Synonym: use",
+          "expected_answer": "utilize",
+          "explanation": "Use و utilize هر دو به معنی استفاده کردن هستند؛ utilize رسمی‌تر است.",
+          "hint": "use = استفاده کردن",
+          "time_limit": 60,
+          "translation": "استفاده کردن (رسمی)"
+        },
+        {
+          "id": "evolve-1-l02-voc-16",
+          "question": "Opposite: use",
+          "expected_answer": "nonuse",
+          "explanation": "Nonuse یعنی استفاده نکردن و مخالف use است.",
+          "hint": "use = استفاده کردن",
+          "time_limit": 60,
+          "translation": "عدم استفاده"
+        },
+        {
+          "id": "evolve-1-l02-voc-17",
+          "question": "Synonym (2): sentences",
+          "expected_answer": "statements",
+          "explanation": "Statements و phrase در معنی جمله یا عبارت به sentences نزدیک‌اند. هر دو را بنویس.",
+          "hint": "sentences = جمله‌ها",
+          "time_limit": 60,
+          "translation": "جمله‌های خبری / عبارت‌ها",
+          "accepted_answers": [
+            "phrase"
+          ],
+          "answer_mode": "list",
+          "min_items": 2
+        },
+        {
+          "id": "evolve-1-l02-voc-18",
+          "question": "Synonym (2): match",
+          "expected_answer": "connect",
+          "explanation": "Connect، join و link هر سه به معنی وصل کردن هستند. هر دو مورد را بنویس.",
+          "hint": "match = وصل کردن",
+          "time_limit": 60,
+          "translation": "وصل کردن / پیوستن",
+          "accepted_answers": [
+            "join",
+            "link"
+          ],
+          "answer_mode": "list",
+          "min_items": 2
+        },
+        {
+          "id": "evolve-1-l02-voc-19",
+          "question": "Synonym (2): make",
+          "expected_answer": "create",
+          "explanation": "Create و generate هر دو به معنی ساختن یا ایجاد کردن هستند. هر دو را بنویس.",
+          "hint": "make = ساختن",
+          "time_limit": 60,
+          "translation": "ساختن / ایجاد کردن",
+          "accepted_answers": [
+            "generate"
+          ],
+          "answer_mode": "list",
+          "min_items": 2
+        },
+        {
+          "id": "evolve-1-l02-voc-20",
+          "question": "Synonym: accuracy",
+          "expected_answer": "correctness",
+          "explanation": "Accuracy و correctness هر دو به درست بودن یک پاسخ یا جمله اشاره دارند.",
+          "hint": "accuracy = دقت",
+          "time_limit": 60,
+          "translation": "درستی"
+        },
+        {
+          "id": "evolve-1-l02-voc-21",
+          "question": "Synonym: find",
+          "expected_answer": "discover",
+          "explanation": "Find و discover هر دو به معنی پیدا کردن هستند.",
+          "hint": "find = پیدا کردن",
+          "time_limit": 60,
+          "translation": "کشف کردن"
+        },
+        {
+          "id": "evolve-1-l02-voc-22",
+          "question": "Opposite: find",
+          "expected_answer": "lost",
+          "explanation": "Lost یعنی گم‌شده؛ مخالف find است.",
+          "hint": "find = پیدا کردن",
+          "time_limit": 60,
+          "translation": "گم‌شده"
+        },
+        {
+          "id": "evolve-1-l02-voc-23",
+          "question": "Synonym (2): imagine",
+          "expected_answer": "picture",
+          "explanation": "Picture و photo به تصور کردن یا ساختن یک تصویر ذهنی نزدیک‌اند. هر دو را بنویس.",
+          "hint": "imagine = تصور کردن",
+          "time_limit": 60,
+          "translation": "تصویر / عکس",
+          "accepted_answers": [
+            "photo"
+          ],
+          "answer_mode": "list",
+          "min_items": 2
+        },
+        {
+          "id": "evolve-1-l02-voc-24",
+          "question": "Opposite: different",
+          "expected_answer": "the same",
+          "explanation": "The same یعنی یکسان؛ مخالف different است.",
+          "hint": "different = متفاوت",
+          "time_limit": 60,
+          "translation": "یکسان"
+        },
+        {
+          "id": "evolve-1-l02-voc-25",
+          "question": "Synonym: fall",
+          "expected_answer": "autumn",
+          "explanation": "Fall و autumn هر دو نام فصل پاییز هستند.",
+          "hint": "fall = پاییز",
+          "time_limit": 60,
+          "translation": "پاییز"
+        },
+        {
+          "id": "evolve-1-l02-voc-26",
+          "question": "Synonym: usually",
+          "expected_answer": "generally",
+          "explanation": "Usually و generally هر دو به معنی معمولاً هستند.",
+          "hint": "usually = معمولاً",
+          "time_limit": 60,
+          "translation": "به‌طور کلی"
+        },
+        {
+          "id": "evolve-1-l02-voc-27",
+          "question": "Synonym: wear",
+          "expected_answer": "put on",
+          "explanation": "Wear و put on هر دو به معنی پوشیدن لباس هستند.",
+          "hint": "wear = پوشیدن",
+          "time_limit": 60,
+          "translation": "پوشیدن (لباس)"
+        },
+        {
+          "id": "evolve-1-l02-voc-28",
+          "question": "Opposite: always",
+          "expected_answer": "never",
+          "explanation": "Never یعنی هرگز؛ مخالف always است.",
+          "hint": "always = همیشه",
+          "time_limit": 60,
+          "translation": "هرگز"
+        },
+        {
+          "id": "evolve-1-l02-voc-29",
+          "question": "Opposite: winter",
+          "expected_answer": "summer",
+          "explanation": "Summer یعنی تابستان؛ مخالف زمستان است.",
+          "hint": "winter = زمستان",
+          "time_limit": 60,
+          "translation": "تابستان"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-verb-forms",
+      "type": "vocabulary",
+      "title": "شکل فعل با فاعل مفرد",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-vf-001",
+          "question": "He / She / It: wear",
+          "expected_answer": "wears",
+          "explanation": "با he، she و it به فعل s اضافه می‌کنیم.",
+          "hint": "wear = پوشیدن؛ این تمرین درباره‌ی شکل فعل با he، she و it در زمان حال ساده است.",
+          "time_limit": 60,
+          "translation": "می‌پوشد"
+        },
+        {
+          "id": "evolve-1-l02-vf-002",
+          "question": "He / She / It: match",
+          "expected_answer": "matches",
+          "explanation": "فعلی که به ch ختم می‌شود با he، she و it به es ختم می‌شود.",
+          "hint": "match = وصل کردن؛ این تمرین درباره‌ی شکل فعل با he، she و it در زمان حال ساده است.",
+          "time_limit": 60,
+          "translation": "وصل می‌کند"
+        },
+        {
+          "id": "evolve-1-l02-vf-003",
+          "question": "He / She / It: make",
+          "expected_answer": "makes",
+          "explanation": "با he، she و it به فعل s اضافه می‌کنیم.",
+          "hint": "make = ساختن؛ این تمرین درباره‌ی شکل فعل با he، she و it در زمان حال ساده است.",
+          "time_limit": 60,
+          "translation": "می‌سازد"
         }
       ]
     },
@@ -2693,6 +3211,316 @@
           "question": "Chicago",
           "hint": "شیکاگو",
           "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-165",
+          "expected_answer": "winter",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "زمستان",
+          "question": "winter",
+          "hint": "زمستان",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-166",
+          "expected_answer": "spring",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "بهار",
+          "question": "spring",
+          "hint": "بهار",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-167",
+          "expected_answer": "fall",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پاییز",
+          "question": "fall",
+          "hint": "پاییز",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-168",
+          "expected_answer": "autumn",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پاییز",
+          "question": "autumn",
+          "hint": "پاییز",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-169",
+          "expected_answer": "summer",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "تابستان",
+          "question": "summer",
+          "hint": "تابستان",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-170",
+          "expected_answer": "usually",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "معمولاً",
+          "question": "usually",
+          "hint": "معمولاً",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-171",
+          "expected_answer": "generally",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "به‌طور کلی / معمولاً",
+          "question": "generally",
+          "hint": "به‌طور کلی / معمولاً",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-172",
+          "expected_answer": "wear",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پوشیدن (لباس)",
+          "question": "wear",
+          "hint": "پوشیدن (لباس)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-173",
+          "expected_answer": "put on",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پوشیدن (لباس)",
+          "question": "put on",
+          "hint": "پوشیدن (لباس)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-174",
+          "expected_answer": "coat",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "کت / پالتو",
+          "question": "coat",
+          "hint": "کت / پالتو",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-175",
+          "expected_answer": "always",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "همیشه",
+          "question": "always",
+          "hint": "همیشه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-176",
+          "expected_answer": "never",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "هرگز",
+          "question": "never",
+          "hint": "هرگز",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-177",
+          "expected_answer": "match",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "وصل کردن / جور کردن",
+          "question": "match",
+          "hint": "وصل کردن / جور کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-178",
+          "expected_answer": "connect",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "وصل کردن",
+          "question": "connect",
+          "hint": "وصل کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-179",
+          "expected_answer": "join",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پیوستن / وصل کردن",
+          "question": "join",
+          "hint": "پیوستن / وصل کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-180",
+          "expected_answer": "link",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پیوند دادن / وصل کردن",
+          "question": "link",
+          "hint": "پیوند دادن / وصل کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-181",
+          "expected_answer": "make",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "ساختن",
+          "question": "make",
+          "hint": "ساختن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-182",
+          "expected_answer": "create",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "ایجاد کردن",
+          "question": "create",
+          "hint": "ایجاد کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-183",
+          "expected_answer": "generate",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "تولید کردن",
+          "question": "generate",
+          "hint": "تولید کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-184",
+          "expected_answer": "true",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "درست / راست",
+          "question": "true",
+          "hint": "درست / راست",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-185",
+          "expected_answer": "utilize",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "استفاده کردن (رسمی)",
+          "question": "utilize",
+          "hint": "استفاده کردن (رسمی)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-186",
+          "expected_answer": "nonuse",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "عدم استفاده",
+          "question": "nonuse",
+          "hint": "عدم استفاده",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-187",
+          "expected_answer": "statements",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "جمله‌های خبری / گزاره‌ها",
+          "question": "statements",
+          "hint": "جمله‌های خبری / گزاره‌ها",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-188",
+          "expected_answer": "phrase",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "عبارت",
+          "question": "phrase",
+          "hint": "عبارت",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-189",
+          "expected_answer": "correctness",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "درستی",
+          "question": "correctness",
+          "hint": "درستی",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-190",
+          "expected_answer": "discover",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "کشف کردن / پیدا کردن",
+          "question": "discover",
+          "hint": "کشف کردن / پیدا کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-191",
+          "expected_answer": "lost",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "گم‌شده",
+          "question": "lost",
+          "hint": "گم‌شده",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-192",
+          "expected_answer": "picture",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "تصویر",
+          "question": "picture",
+          "hint": "تصویر",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-193",
+          "expected_answer": "photo",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "عکس",
+          "question": "photo",
+          "hint": "عکس",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-194",
+          "expected_answer": "the same",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "یکسان / همان",
+          "question": "the same",
+          "hint": "یکسان / همان",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-195",
+          "expected_answer": "else",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "دیگر (غیر از آن)",
+          "question": "else",
+          "hint": "دیگر (غیر از آن)",
+          "presentation": "audio"
         }
       ]
     }
@@ -3420,6 +4248,161 @@
         "word": "wow",
         "ipa": "/waʊ/",
         "meaning": "وای"
+      },
+      {
+        "word": "winter",
+        "ipa": "/ˈwɪntər/",
+        "meaning": "زمستان"
+      },
+      {
+        "word": "spring",
+        "ipa": "/sprɪŋ/",
+        "meaning": "بهار"
+      },
+      {
+        "word": "fall",
+        "ipa": "/fɔːl/",
+        "meaning": "پاییز"
+      },
+      {
+        "word": "autumn",
+        "ipa": "/ˈɔːtəm/",
+        "meaning": "پاییز"
+      },
+      {
+        "word": "summer",
+        "ipa": "/ˈsʌmər/",
+        "meaning": "تابستان"
+      },
+      {
+        "word": "usually",
+        "ipa": "/ˈjuːʒuəli/",
+        "meaning": "معمولاً"
+      },
+      {
+        "word": "generally",
+        "ipa": "/ˈdʒenrəli/",
+        "meaning": "به‌طور کلی / معمولاً"
+      },
+      {
+        "word": "wear",
+        "ipa": "/wer/",
+        "meaning": "پوشیدن (لباس)"
+      },
+      {
+        "word": "put on",
+        "ipa": "/pʊt ɑːn/",
+        "meaning": "پوشیدن (لباس)"
+      },
+      {
+        "word": "coat",
+        "ipa": "/koʊt/",
+        "meaning": "کت / پالتو"
+      },
+      {
+        "word": "always",
+        "ipa": "/ˈɔːlweɪz/",
+        "meaning": "همیشه"
+      },
+      {
+        "word": "never",
+        "ipa": "/ˈnevər/",
+        "meaning": "هرگز"
+      },
+      {
+        "word": "match",
+        "ipa": "/mætʃ/",
+        "meaning": "وصل کردن / جور کردن"
+      },
+      {
+        "word": "connect",
+        "ipa": "/kəˈnekt/",
+        "meaning": "وصل کردن"
+      },
+      {
+        "word": "join",
+        "ipa": "/dʒɔɪn/",
+        "meaning": "پیوستن / وصل کردن"
+      },
+      {
+        "word": "link",
+        "ipa": "/lɪŋk/",
+        "meaning": "پیوند دادن / وصل کردن"
+      },
+      {
+        "word": "make",
+        "ipa": "/meɪk/",
+        "meaning": "ساختن"
+      },
+      {
+        "word": "create",
+        "ipa": "/kriˈeɪt/",
+        "meaning": "ایجاد کردن"
+      },
+      {
+        "word": "generate",
+        "ipa": "/ˈdʒenəreɪt/",
+        "meaning": "تولید کردن"
+      },
+      {
+        "word": "true",
+        "ipa": "/truː/",
+        "meaning": "درست / راست"
+      },
+      {
+        "word": "utilize",
+        "ipa": "/ˈjuːtəlaɪz/",
+        "meaning": "استفاده کردن (رسمی)"
+      },
+      {
+        "word": "nonuse",
+        "ipa": "/ˌnɑːnˈjuːs/",
+        "meaning": "عدم استفاده"
+      },
+      {
+        "word": "statements",
+        "ipa": "/ˈsteɪtmənts/",
+        "meaning": "جمله‌های خبری / گزاره‌ها"
+      },
+      {
+        "word": "phrase",
+        "ipa": "/freɪz/",
+        "meaning": "عبارت"
+      },
+      {
+        "word": "correctness",
+        "ipa": "/kəˈrektnəs/",
+        "meaning": "درستی"
+      },
+      {
+        "word": "discover",
+        "ipa": "/dɪˈskʌvər/",
+        "meaning": "کشف کردن / پیدا کردن"
+      },
+      {
+        "word": "lost",
+        "ipa": "/lɔːst/",
+        "meaning": "گم‌شده"
+      },
+      {
+        "word": "picture",
+        "ipa": "/ˈpɪktʃər/",
+        "meaning": "تصویر"
+      },
+      {
+        "word": "photo",
+        "ipa": "/ˈfoʊtoʊ/",
+        "meaning": "عکس"
+      },
+      {
+        "word": "the same",
+        "ipa": "/ðə seɪm/",
+        "meaning": "یکسان / همان"
+      },
+      {
+        "word": "else",
+        "ipa": "/els/",
+        "meaning": "دیگر (غیر از آن)"
       }
     ],
     "sentences": [
@@ -3486,6 +4469,26 @@
       {
         "en": "I'm from Mexico City.",
         "fa": "من اهل مکزیکوسیتی هستم."
+      },
+      {
+        "en": "He usually wears a coat in winter.",
+        "fa": "او در زمستان معمولاً کت می‌پوشد."
+      },
+      {
+        "en": "I never wear a coat.",
+        "fa": "من هرگز کت نمی‌پوشم."
+      },
+      {
+        "en": "I always wear a coat in winter.",
+        "fa": "من در زمستان همیشه کت می‌پوشم."
+      },
+      {
+        "en": "Are you Amir?",
+        "fa": "آیا تو امیر هستی؟"
+      },
+      {
+        "en": "I'm from Madrid, in Spain.",
+        "fa": "من اهل مادرید، در اسپانیا هستم."
       }
     ],
     "grammar": [
@@ -3592,6 +4595,30 @@
           {
             "en": "I'm a student.",
             "fa": "من دانش‌آموز هستم."
+          }
+        ]
+      },
+      {
+        "title": "قیدهای تکرار (Adverbs of Frequency)",
+        "explanation": "قید تکرار نشان می‌دهد یک کار چند وقت یک‌بار انجام می‌شود، مثل always (همیشه)، usually (معمولاً) و never (هرگز). این قیدها قبل از فعل اصلی می‌آیند؛ هدف این است که جای قید را درست بگذاری: I never wear، نه I wear never.",
+        "examples": [
+          {
+            "en": "He usually wears a coat in winter.",
+            "fa": "او در زمستان معمولاً کت می‌پوشد."
+          },
+          {
+            "en": "I never wear a coat.",
+            "fa": "من هرگز کت نمی‌پوشم."
+          }
+        ]
+      },
+      {
+        "title": "شهر و کشور با from و in",
+        "explanation": "برای معرفی شهر و کشور، بعد از from نام شهر را می‌آوریم، سپس ویرگول می‌گذاریم و با in نام کشور را اضافه می‌کنیم. هدف این است که شهر و کشور را در یک جمله درست بیان کنی.",
+        "examples": [
+          {
+            "en": "I'm from Madrid, in Spain.",
+            "fa": "من اهل مادرید، در اسپانیا هستم."
           }
         ]
       }
