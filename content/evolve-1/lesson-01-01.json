@@ -731,29 +731,6 @@
           "accepted_answers": [
             "I am a teacher."
           ]
-        },
-        {
-          "id": "evolve-1-l02-pn-201",
-          "expected_answer": "He doesn't usually wear a coat in winter.",
-          "explanation": "در منفی با he از doesn't استفاده می‌کنیم و فعل اصلی بدون s می‌آید.",
-          "time_limit": 60,
-          "translation": "او در زمستان معمولاً کت نمی‌پوشد.",
-          "question": "جمله را منفی کن: He usually wears a coat in winter.",
-          "accepted_answers": [
-            "He does not usually wear a coat in winter."
-          ],
-          "hint": "برای منفی از doesn't استفاده کن و فعل را به شکل ساده بنویس.",
-          "operation": "negative"
-        },
-        {
-          "id": "evolve-1-l02-pn-202",
-          "expected_answer": "Does he usually wear a coat in winter?",
-          "explanation": "در سؤال بله یا خیر، Does پیش از فاعل می‌آید و فعل بدون s می‌آید.",
-          "time_limit": 60,
-          "translation": "آیا او در زمستان معمولاً کت می‌پوشد؟",
-          "question": "جمله را سؤالی کن: He usually wears a coat in winter.",
-          "hint": "برای سؤال با he از Does استفاده کن و فعل را ساده بنویس.",
-          "operation": "question"
         }
       ]
     },
