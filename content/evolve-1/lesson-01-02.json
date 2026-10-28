@@ -41,7 +41,7 @@
           "time_limit": 60,
           "translation": "نام کالج شما چیست؟",
           "question": "نام کالج شما چیست؟",
-          "hint": "ابتدا What’s را بگذار؛ سپس the name of و your و کالج را بیاور.",
+          "hint": "college = کالج / دانشکده. راهنما: سؤال دربارهٔ نام مؤسسهٔ تحصیلی — همان بخش اطلاعات شخصی.",
           "group": "Personal Information"
         },
         {
@@ -54,7 +54,43 @@
           "time_limit": 60,
           "translation": "نام شرکت شما چیست؟",
           "question": "نام شرکت شما چیست؟",
-          "hint": "ابتدا What’s را بگذار؛ سپس the name of و your و شرکت را بیاور.",
+          "hint": "company = شرکت. راهنما: مثل سؤال نام کالج، ولی موضوع محل کار است.",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-tr-05",
+          "expected_answer": "So, your first name is Juana.",
+          "accepted_answers": [
+            "So, your first name's Juana."
+          ],
+          "explanation": "So در ابتدای جمله یعنی «پس / بنابراین»؛ بعد your first name is و نام را می‌آوری.",
+          "time_limit": 60,
+          "translation": "پس، اسم کوچک تو خوانا است.",
+          "question": "پس، اسم کوچک تو خوانا است.",
+          "hint": "first name = نام کوچک (درس قبل). راهنما: تأیید بعد از شنیدن اسم؛ «پس» در ابتدا با ویرگول.",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-tr-06",
+          "expected_answer": "I'm a student at Hunter College in New York City.",
+          "accepted_answers": [
+            "I am a student at Hunter College in New York City."
+          ],
+          "explanation": "I'm = I am؛ بعد a student و at و نام کالج و in و شهر را می‌آوری.",
+          "time_limit": 60,
+          "translation": "من دانش‌آموز Hunter College در شهر نیویورک هستم.",
+          "question": "من دانش‌آموز Hunter College در شهر نیویورک هستم.",
+          "hint": "student = دانش‌آموز؛ college = کالج. راهنما: نقش + محل تحصیل؛ از حرف اضافه‌های مکان درس قبل (مثل hotel) کمک بگیر.",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-tr-07",
+          "expected_answer": "How do you spell your first name?",
+          "explanation": "از الگوی How do you spell …? استفاده می‌کنی؛ در انتها your first name را بگذار.",
+          "time_limit": 60,
+          "translation": "اسم کوچک تو را چطور هجی می‌کنی؟",
+          "question": "اسم کوچک تو را چطور هجی می‌کنی؟",
+          "hint": "spell = هجی کردن (Before starting). راهنما: همان نوع سؤال spell؛ موضوع دربارهٔ طرف مقابل است.",
           "group": "Personal Information"
         }
       ]
@@ -73,7 +109,7 @@
           "time_limit": 60,
           "translation": "نام کالج شما چیست؟",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "ابتدا What’s را بگذار؛ سپس the name of و your را بچین.",
+          "hint": "college = کالج. راهنما: سؤال با What is؛ کلمات word bank را مرتب کن، نه از حفظ.",
           "word_bank": [
             "college?",
             "of",
@@ -895,6 +931,18 @@
       {
         "en": "What's the name of your company?",
         "fa": "نام شرکت شما چیست؟"
+      },
+      {
+        "en": "So, your first name is Juana.",
+        "fa": "پس، اسم کوچک تو خوانا است."
+      },
+      {
+        "en": "I'm a student at Hunter College in New York City.",
+        "fa": "من دانش‌آموز Hunter College در شهر نیویورک هستم."
+      },
+      {
+        "en": "How do you spell your first name?",
+        "fa": "اسم کوچک تو را چطور هجی می‌کنی؟"
       }
     ],
     "grammar": [
