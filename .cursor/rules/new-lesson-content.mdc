@@ -107,6 +107,15 @@ their grammar rules and examples, and their sentence structures.
  choice, or the subject of the question.
 - Every practice item has a hint (راهنما). A hint is a short guide that points to the rule or to the key word of that
   item. The same word must not be used to mean several different things in the hints.
+- **Hints must not give the answer.** Under no circumstances may a hint spell out the English answer, reconstruct it
+  step by step, or list the English chunks of the sentence in order (for example «first write What’s, then the name of
+  …»). Do not copy half of `expected_answer` into the hint. If English appears at all, it may only be one or two
+  **vocabulary** words the item is about (for example `college = کالج`), never phrases from the answer sentence.
+- The hint may name the **grammar rule** or **sentence type** in Persian (سؤال، تأیید، منفی، …), point to an **earlier
+  pattern** the learner already saw («مثل سؤال spell در Before starting»), or give the Persian meaning of a **new or
+  tricky word** in that item. Keep it general: one small clue, not a recipe to type the line.
+- Dictation and vocabulary items that ask for a single word or phrase may still use `word = meaning` style hints; that
+  is not the same as a full-sentence translation item.
 
 ## 5. Files and checks
 
