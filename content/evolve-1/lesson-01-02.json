@@ -92,6 +92,24 @@
           "question": "اسم کوچک تو را چطور هجی می‌کنی؟",
           "hint": "spell = هجی کردن (Before starting). راهنما: همان نوع سؤال spell؛ موضوع دربارهٔ طرف مقابل است.",
           "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-tr-08",
+          "expected_answer": "put",
+          "explanation": "Put یعنی گذاشتن یا قرار دادن.",
+          "time_limit": 60,
+          "translation": "گذاشتن / قرار دادن",
+          "question": "گذاشتن / قرار دادن",
+          "hint": "put = گذاشتن / قرار دادن"
+        },
+        {
+          "id": "evolve-1-l01-02-tr-09",
+          "expected_answer": "order",
+          "explanation": "Order یعنی ترتیب یا نظم.",
+          "time_limit": 60,
+          "translation": "ترتیب / نظم",
+          "question": "ترتیب / نظم",
+          "hint": "order = ترتیب / نظم"
         }
       ]
     },
@@ -291,6 +309,34 @@
             "فوق‌العاده",
             "شرکت / مؤسسه",
             "متن (نمایشنامه / فیلمنامه)"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-02-mc-11",
+          "expected_answer": "گذاشتن / قرار دادن",
+          "explanation": "Put یعنی گذاشتن یا قرار دادن.",
+          "time_limit": 60,
+          "translation": "گذاشتن / قرار دادن",
+          "question": "معنی put چیست؟",
+          "hint": "put = گذاشتن / قرار دادن",
+          "options": [
+            "پنهان کردن",
+            "گذاشتن / قرار دادن",
+            "دوباره"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-02-mc-12",
+          "expected_answer": "ترتیب / نظم",
+          "explanation": "Order یعنی ترتیب یا نظم.",
+          "time_limit": 60,
+          "translation": "ترتیب / نظم",
+          "question": "معنی order چیست؟",
+          "hint": "order = ترتیب / نظم",
+          "options": [
+            "الفبا",
+            "ترتیب / نظم",
+            "خط زیر (_)"
           ]
         }
       ]
@@ -757,6 +803,26 @@
           "question": "outsider",
           "hint": "فرد بیرونی / غریبه",
           "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-031",
+          "expected_answer": "put",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "گذاشتن / قرار دادن",
+          "question": "put",
+          "hint": "گذاشتن / قرار دادن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-02-dic-032",
+          "expected_answer": "order",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "ترتیب / نظم",
+          "question": "order",
+          "hint": "ترتیب / نظم",
+          "presentation": "audio"
         }
       ]
     }
@@ -826,6 +892,16 @@
         "word": "of",
         "ipa": "/ʌv/",
         "meaning": "از / متعلق به"
+      },
+      {
+        "word": "order",
+        "ipa": "/ˈɔːrdər/",
+        "meaning": "ترتیب / نظم"
+      },
+      {
+        "word": "put",
+        "ipa": "/pʊt/",
+        "meaning": "گذاشتن / قرار دادن"
       },
       {
         "word": "conversation",
