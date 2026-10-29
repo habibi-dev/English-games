@@ -60,9 +60,24 @@ their grammar rules and examples, and their sentence structures.
 
 ## 2. Sentences and grammar
 
-- A sentence structure is taught once per book. Do not repeat a structure from an earlier lesson with different words.
+- A sentence structure is taught once per book. Do not repeat a structure from an earlier lesson with different words,
+  unless this lesson practises it, within the limits in the next bullets.
   Example: if lesson 1 has `I am from Iran.`, lesson 2 must not add `I am from Germany.` The same rule applies to grammar
   examples and to grammar rules.
+- **Practised repeats (the limit).** A structure already taught in an earlier lesson may come back in this lesson when the
+  lesson practises it. The limit follows the book's own standard, measured by the opening (the first two words) of the
+  sentences of each lesson: lesson 1.1 has four sentences that start with `Are you`, and lesson 1.2 has four that start
+  with `What's your`. So, for a repeated structure:
+  - at most **3** sentences in `lesson_content.sentences` use it;
+  - at most **3** practice items use it;
+  - a sentence word for word from an earlier lesson is not added to the sentence list again;
+  - it has at least one practice item. A repeated structure with no practice item is not added.
+- **New structures** of the lesson may have up to **4** sentences with the same opening, which is the book's own maximum.
+- **Grammar section**: explains only the structures that are new in this lesson. A repeated structure is practised, not
+  explained again.
+- **Stories and dialogues** follow the word rules in section 1. The limits in this section do not apply to them, because
+  dialogues repeat the lesson's frames by nature (as the stories of lesson 1.1 do).
+- Names are still never the answer of a practice item, even in a repeated structure (see section 4).
 - Every sentence must be meaningful on its own. Sentences that belong together (a question and its answer, a short
   exchange) stay together as one exercise item, in order, so the learner can read the whole exchange in one place.
   Do not split a conversation across several items.

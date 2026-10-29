@@ -1,0 +1,1188 @@
+{
+  "schema_version": "2.0",
+  "book": "evolve-1",
+  "lesson": "lesson-01-03",
+  "title": "Lesson 1.3 – This Is the Key",
+  "exercises": [
+    {
+      "id": "evolve-1-l01-03-translation",
+      "type": "quick_translation",
+      "title": "ترجمه جمله‌ها و عبارت‌ها",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-03-tr-01",
+          "expected_answer": "For 0, say zero or oh.",
+          "accepted_answers": [
+            "For 0, say oh or zero."
+          ],
+          "explanation": "عدد ۰ را در شماره‌ی تلفن یا اتاق می‌توانی zero یا oh بگویی.",
+          "time_limit": 60,
+          "translation": "برای عدد ۰، بگو zero یا oh.",
+          "question": "برای عدد ۰، بگو zero یا oh.",
+          "hint": "zero = صفر؛ oh = صفر (تلفظ دیگر). راهنما: یک جملهٔ امری با say بساز."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-02",
+          "expected_answer": "Your room number is two-zero-one.",
+          "accepted_answers": [
+            "Your room number is two zero one."
+          ],
+          "explanation": "هر رقم را جدا می‌خوانیم و بین آن‌ها خط تیره می‌گذاریم.",
+          "time_limit": 60,
+          "translation": "شمارهٔ اتاق تو دو-صفر-یک است.",
+          "question": "شمارهٔ اتاق تو دو-صفر-یک است.",
+          "hint": "room number = شمارهٔ اتاق. راهنما: هر رقم را جدا بخوان و با خط تیره به هم وصل کن."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-03",
+          "expected_answer": "My address is seven-oh-nine.",
+          "accepted_answers": [
+            "My address is seven-zero-nine.",
+            "My address is seven oh nine.",
+            "My address is seven zero nine."
+          ],
+          "explanation": "برای صفر می‌توانی oh یا zero بگویی؛ هر دو درست است.",
+          "time_limit": 60,
+          "translation": "آدرس من هفت-صفر-نه است.",
+          "question": "آدرس من هفت-صفر-نه است.",
+          "hint": "seven = هفت؛ nine = نه. راهنما: برای صفر یکی از دو تلفظ zero یا oh را بنویس."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-04",
+          "expected_answer": "Paulo is at a hotel.",
+          "explanation": "برای جای کلی مثل هتل از at استفاده می‌کنیم.",
+          "time_limit": 60,
+          "translation": "پائولو در یک هتل است.",
+          "question": "پائولو در یک هتل است.",
+          "hint": "hotel = هتل؛ at = در (محل). راهنما: الگوی is + at + محل را به کار ببر."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-05",
+          "expected_answer": "You're in room 6A.",
+          "accepted_answers": [
+            "You are in room 6A."
+          ],
+          "explanation": "برای جای داخلی مثل اتاق از in استفاده می‌کنیم.",
+          "time_limit": 60,
+          "translation": "تو در اتاق ۶A هستی.",
+          "question": "تو در اتاق ۶A هستی.",
+          "hint": "in = داخل. راهنما: you are را به شکل کوتاه بنویس."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-06",
+          "expected_answer": "No, it's the key for room three.",
+          "accepted_answers": [
+            "No, it is the key for room three."
+          ],
+          "explanation": "بعد از No، شکل کوتاه it is یعنی it's را می‌آوریم.",
+          "time_limit": 60,
+          "translation": "نه، این کلید اتاق سه است.",
+          "question": "نه، این کلید اتاق سه است.",
+          "hint": "key = کلید؛ three = سه. راهنما: جواب منفی با No شروع می‌شود؛ it is را کوتاه کن."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-07",
+          "expected_answer": "I'm here for two nights.",
+          "accepted_answers": [
+            "I am here for two nights."
+          ],
+          "explanation": "بعد از for، تعداد شب‌ها را می‌گوییم و اسم شب را جمع می‌بندیم.",
+          "time_limit": 60,
+          "translation": "من برای دو شب اینجا هستم.",
+          "question": "من برای دو شب اینجا هستم.",
+          "hint": "night = شب؛ here = اینجا. راهنما: بیش از یک شب یعنی اسم جمع."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-08",
+          "expected_answer": "Here's a pen.",
+          "accepted_answers": [
+            "Here is a pen."
+          ],
+          "explanation": "Here's شکل کوتاه Here is است.",
+          "time_limit": 60,
+          "translation": "اینجا یک خودکار است.",
+          "question": "اینجا یک خودکار است.",
+          "hint": "pen = خودکار؛ here = اینجا. راهنما: here is را کوتاه کن."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-09",
+          "expected_answer": "Please sign here.",
+          "explanation": "Please یعنی لطفاً و قبل از فعل امری می‌آید.",
+          "time_limit": 60,
+          "translation": "لطفاً اینجا امضا کن.",
+          "question": "لطفاً اینجا امضا کن.",
+          "hint": "sign = امضا کردن؛ please = لطفاً. راهنما: جملهٔ درخواست مؤدبانه با فعل امری."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-10",
+          "expected_answer": "Thank you.",
+          "accepted_answers": [
+            "Thanks."
+          ],
+          "explanation": "Thank you یک عبارت تشکر است؛ Thanks شکل کوتاه‌تر آن است.",
+          "time_limit": 60,
+          "translation": "خیلی ممنون.",
+          "question": "خیلی ممنون.",
+          "hint": "راهنما: عبارت رایج تشکر کردن را بنویس."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-11",
+          "expected_answer": "One moment.",
+          "explanation": "One moment یعنی یک لحظه؛ وقتی از کسی می‌خواهیم کمی صبر کند.",
+          "time_limit": 60,
+          "translation": "یک لحظه.",
+          "question": "یک لحظه.",
+          "hint": "moment = لحظه. راهنما: عبارت کوتاه برای کمی صبر کردن."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-12",
+          "expected_answer": "You're welcome.",
+          "accepted_answers": [
+            "You are welcome."
+          ],
+          "explanation": "You're welcome جواب عبارت تشکر است.",
+          "time_limit": 60,
+          "translation": "خواهش می‌کنم.",
+          "question": "خواهش می‌کنم.",
+          "hint": "welcome = خوش‌آمد. راهنما: جواب عبارت Thank you است."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-13",
+          "expected_answer": "Welcome to the International Hotel.",
+          "accepted_answers": [
+            "Welcome to International Hotel."
+          ],
+          "explanation": "Welcome to یعنی به … خوش آمدید؛ International Hotel نام هتل است.",
+          "time_limit": 60,
+          "translation": "به هتل بین‌المللی خوش آمدید.",
+          "question": "به هتل بین‌المللی خوش آمدید.",
+          "hint": "welcome = خوش‌آمد گفتن؛ hotel = هتل. راهنما: بعد از welcome حرف اضافهٔ to می‌آید."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-14",
+          "expected_answer": "What's your Instagram name?",
+          "accepted_answers": ["What is your Instagram name?"],
+          "explanation": "Instagram name یعنی نام اینستاگرام؛ سؤال را با What's your می‌سازیم.",
+          "time_limit": 60,
+          "translation": "نام اینستاگرام تو چیست؟",
+          "question": "نام اینستاگرام تو چیست؟",
+          "hint": "Instagram name = نام اینستاگرام. راهنما: سؤال با الگوی What's your، مثل سؤال درس قبل."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-15",
+          "expected_answer": "What's your company email address?",
+          "accepted_answers": ["What is your company email address?"],
+          "explanation": "company یعنی شرکت؛ الگوی سؤال همان What's your است.",
+          "time_limit": 60,
+          "translation": "آدرس ایمیل شرکت تو چیست؟",
+          "question": "آدرس ایمیل شرکت تو چیست؟",
+          "hint": "company = شرکت. راهنما: الگوی What's your همان سؤال‌های قبلی است؛ فقط اسم را عوض کن."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-16",
+          "expected_answer": "Is this your key?",
+          "explanation": "برای پرسیدن دربارهٔ یک چیز از Is this استفاده می‌کنیم.",
+          "time_limit": 60,
+          "translation": "آیا این کلید توست؟",
+          "question": "آیا این کلید توست؟",
+          "hint": "key = کلید. راهنما: سؤال با Is this، مثل سؤال درس قبل."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-17",
+          "expected_answer": "My name is Paulo Vasques.",
+          "accepted_answers": ["My name's Paulo Vasques."],
+          "explanation": "my یعنی «مال من» و قبل از اسم می‌آید؛ در معرفی خود از My name is استفاده می‌کنیم.",
+          "time_limit": 60,
+          "translation": "اسم من پائولو وازکز است.",
+          "question": "اسم من پائولو وازکز است.",
+          "hint": "my = مال من. راهنما: معرفی خود با صفت ملکی my."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-18",
+          "expected_answer": "This is the key.",
+          "explanation": "برای معرفی یا نشان دادن یک چیز از This is استفاده می‌کنیم.",
+          "time_limit": 60,
+          "translation": "این کلید است.",
+          "question": "این کلید است.",
+          "hint": "key = کلید. راهنما: برای نشان دادن چیزی از الگوی This is + اسم استفاده کن."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-19",
+          "expected_answer": "How do you spell your last name?",
+          "explanation": "از الگوی How do you spell استفاده می‌کنیم و در انتها your last name را می‌گذاریم.",
+          "time_limit": 60,
+          "translation": "نام خانوادگی تو را چطور هجی می‌کنی؟",
+          "question": "نام خانوادگی تو را چطور هجی می‌کنی؟",
+          "hint": "spell = هجی کردن. راهنما: مثل سؤال spell در درس ۱.۲."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-03-voice",
+      "type": "voice_translation",
+      "title": "ترجمه با صدا",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-03-vt-01",
+          "expected_answer": "You're in room 3A.",
+          "accepted_answers": [
+            "You are in room 3A."
+          ],
+          "explanation": "three را با صدای /i/ بگو؛ در six صدای /ɪ/ است.",
+          "time_limit": 60,
+          "translation": "تو در اتاق ۳A هستی.",
+          "question": "تو در اتاق ۳A هستی.",
+          "hint": "three = سه (صدای /i/). راهنما: آن را با six (صدای /ɪ/) مقایسه کن."
+        },
+        {
+          "id": "evolve-1-l01-03-vt-02",
+          "expected_answer": "I'm here for three nights.",
+          "accepted_answers": [
+            "I am here for three nights."
+          ],
+          "explanation": "عدد را عوض کن و شب‌ها را جمع بگذار.",
+          "time_limit": 60,
+          "translation": "من برای سه شب اینجا هستم.",
+          "question": "من برای سه شب اینجا هستم.",
+          "hint": "three nights = سه شب. راهنما: همان الگوی جملهٔ قبل را با عدد دیگر بساز."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-03-word-translation",
+      "type": "word_translation",
+      "title": "ترجمه با کلمات فارسی",
+      "difficulty": "easy",
+      "presentation": "text",
+      "items": [
+        {
+          "id": "evolve-1-l01-03-wt-01",
+          "word_bank": [
+            "اینجا",
+            "یک",
+            "خودکار",
+            "است"
+          ],
+          "expected_answer": "Here's a pen.",
+          "explanation": "ترتیب کلمات فارسی همان ترتیب جمله‌ی انگلیسی است.",
+          "time_limit": 60,
+          "translation": "اینجا یک خودکار است.",
+          "hint": "pen = خودکار. راهنما: here is را به شکل کوتاه بنویس."
+        },
+        {
+          "id": "evolve-1-l01-03-wt-02",
+          "word_bank": [
+            "شمارهٔ",
+            "اتاق",
+            "تو",
+            "دو-صفر-یک",
+            "است"
+          ],
+          "expected_answer": "Your room number is two-zero-one.",
+          "explanation": "صفت ملکی تو همان your است و قبل از اسم می‌آید.",
+          "time_limit": 60,
+          "translation": "شمارهٔ اتاق تو دو-صفر-یک است.",
+          "hint": "room number = شمارهٔ اتاق. راهنما: تو را با your بیان کن و قبل از اسم بگذار."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-03-builder",
+      "type": "sentence_builder",
+      "title": "جمله‌سازی",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-03-sb-01",
+          "expected_answer": "Welcome to the International Hotel.",
+          "explanation": "بعد از Welcome حرف اضافهٔ to و بعد the می‌آید.",
+          "time_limit": 60,
+          "translation": "به هتل بین‌المللی خوش آمدید.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "welcome = خوش‌آمد گفتن. راهنما: جملهٔ خوش‌آمدگویی با حرف اضافهٔ to.",
+          "word_bank": [
+            "Hotel.",
+            "the",
+            "International",
+            "to",
+            "Welcome"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-sb-02",
+          "expected_answer": "Please sign here.",
+          "explanation": "Please در ابتدای جمله می‌آید و بعد از آن فعل امری.",
+          "time_limit": 60,
+          "translation": "لطفاً اینجا امضا کن.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "sign = امضا کردن. راهنما: please = لطفاً؛ بعد از آن فعل امری می‌آید.",
+          "word_bank": [
+            "here.",
+            "sign",
+            "Please"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-sb-03",
+          "expected_answer": "You're in room 6A.",
+          "explanation": "برای جای داخلی از in استفاده می‌کنیم.",
+          "time_limit": 60,
+          "translation": "تو در اتاق ۶A هستی.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "in = داخل. راهنما: you're شکل کوتاه you are است.",
+          "word_bank": [
+            "6A.",
+            "room",
+            "in",
+            "You're"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-sb-04",
+          "expected_answer": "For 0, say zero or oh.",
+          "explanation": "جمله با For شروع می‌شود، بعد say و دو تلفظ صفر می‌آید.",
+          "time_limit": 60,
+          "translation": "برای عدد ۰، بگو zero یا oh.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "oh = صفر (تلفظ دیگر). راهنما: یک جملهٔ امری با say بساز.",
+          "word_bank": [
+            "For",
+            "0,",
+            "say",
+            "zero",
+            "or",
+            "oh."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-03-correction",
+      "type": "grammar_correction",
+      "title": "اصلاح جمله",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-03-gc-01",
+          "expected_answer": "Your room number is two-zero-one.",
+          "explanation": "room number یک اسم مفرد است، پس با is می‌آید.",
+          "time_limit": 60,
+          "translation": "شمارهٔ اتاق تو دو-صفر-یک است.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "number = شماره. راهنما: فعل را با یک شماره هماهنگ کن.",
+          "incorrect_sentence": "Your room number are two-zero-one."
+        },
+        {
+          "id": "evolve-1-l01-03-gc-02",
+          "expected_answer": "I'm here for two nights.",
+          "explanation": "برای بیش از یک شب، اسم night را جمع می‌بندیم.",
+          "time_limit": 60,
+          "translation": "من برای دو شب اینجا هستم.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "night = شب. راهنما: بیش از یک شب یعنی اسم جمع.",
+          "incorrect_sentence": "I'm here for two night."
+        },
+        {
+          "id": "evolve-1-l01-03-gc-03",
+          "expected_answer": "Here's a pen.",
+          "explanation": "Here's مخفف Here is است و آپاستروف آن را می‌آورد.",
+          "time_limit": 60,
+          "translation": "اینجا یک خودکار است.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "pen = خودکار. راهنما: در شکل کوتاه here is آپاستروف لازم است.",
+          "incorrect_sentence": "Heres a pen."
+        },
+        {
+          "id": "evolve-1-l01-03-gc-04",
+          "expected_answer": "Welcome to the International Hotel.",
+          "explanation": "بعد از Welcome حرف اضافهٔ to می‌آید، نه in.",
+          "time_limit": 60,
+          "translation": "به هتل بین‌المللی خوش آمدید.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "welcome = خوش‌آمد گفتن. راهنما: حرف اضافهٔ درست بعد از welcome را انتخاب کن.",
+          "incorrect_sentence": "Welcome in the International Hotel."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-03-negative",
+      "type": "positive_negative_question",
+      "title": "تبدیل جمله به منفی",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-03-neg-01",
+          "operation": "negative",
+          "expected_answer": "You're not in room 6A.",
+          "accepted_answers": [
+            "You are not in room 6A.",
+            "You aren't in room 6A."
+          ],
+          "explanation": "برای منفی کردن، not را بعد از are می‌گذاریم. are not شکل کوتاه aren't را دارد.",
+          "time_limit": 60,
+          "translation": "تو در اتاق ۶A نیستی.",
+          "question": "جمله را منفی کن: You're in room 6A.",
+          "hint": "not = نه؛ aren't = نیستی (شکل کوتاه are not). راهنما: کلمهٔ منفی را بعد از فعل بگذار."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-03-question",
+      "type": "positive_negative_question",
+      "title": "تبدیل جمله به سؤالی",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-03-q-01",
+          "operation": "question",
+          "expected_answer": "Are you in room 6A?",
+          "explanation": "برای سؤالی کردن، are را به ابتدای جمله می‌آوریم.",
+          "time_limit": 60,
+          "translation": "آیا تو در اتاق ۶A هستی؟",
+          "question": "جمله را سؤالی کن: You're in room 6A.",
+          "hint": "are = هستی (در سؤال). راهنما: فعل be را قبل از you بگذار."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-03-choice",
+      "type": "multiple_choice",
+      "title": "سؤالات چندگزینه‌ای",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-03-mc-01",
+          "expected_answer": "cell phone number",
+          "explanation": "شمارهٔ تلفن همراه را با cell phone number می‌گوییم.",
+          "time_limit": 60,
+          "translation": "شمارهٔ تلفن همراه",
+          "question": "جای خالی را کامل کن: A: What's your ___? B: It's (593) 555-3194.",
+          "hint": "cell phone number = شمارهٔ تلفن همراه. راهنما: جواب شماره است، نه اتاق یا نام.",
+          "options": [
+            "room number",
+            "cell phone number",
+            "Instagram name"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-mc-02",
+          "expected_answer": "sign",
+          "explanation": "sign یعنی امضا کردن؛ بعد از Please فعل امری می‌آید.",
+          "time_limit": 60,
+          "translation": "امضا کن",
+          "question": "جای خالی را کامل کن: Please ___ here.",
+          "hint": "sign = امضا کردن. راهنما: کاری که روی کاغذ با اسمت انجام می‌دهی.",
+          "options": [
+            "sign",
+            "key",
+            "clerk"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-mc-03",
+          "expected_answer": "pen",
+          "explanation": "Here's a pen یعنی اینجا یک خودکار است.",
+          "time_limit": 60,
+          "translation": "خودکار",
+          "question": "جای خالی را کامل کن: Here's a ___.",
+          "hint": "pen = خودکار. راهنما: چیزی که با آن می‌نویسی.",
+          "options": [
+            "pen",
+            "morning",
+            "one moment"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-mc-04",
+          "expected_answer": "کارمند پذیرش",
+          "explanation": "Clerk کارمندی است که در میز پذیرش هتل کار می‌کند.",
+          "time_limit": 60,
+          "translation": "کارمند پذیرش",
+          "question": "معنی clerk چیست؟",
+          "hint": "clerk = کارمند پذیرش",
+          "options": [
+            "کارمند پذیرش",
+            "کلید",
+            "مهمان"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-mc-05",
+          "expected_answer": "مهمان",
+          "explanation": "Guest یعنی کسی که در هتل اقامت دارد.",
+          "time_limit": 60,
+          "translation": "مهمان",
+          "question": "معنی guest چیست؟",
+          "hint": "guest = مهمان",
+          "options": [
+            "مهمان",
+            "کلید",
+            "تمرین کردن"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-mc-06",
+          "expected_answer": "three",
+          "explanation": "three یعنی سه.",
+          "time_limit": 60,
+          "translation": "سه",
+          "question": "کدام واژه به معنی «سه» است؟",
+          "hint": "three = سه",
+          "options": [
+            "three",
+            "zero",
+            "nine"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-mc-07",
+          "expected_answer": "night",
+          "explanation": "night یعنی شب.",
+          "time_limit": 60,
+          "translation": "شب",
+          "question": "کدام واژه به معنی «شب» است؟",
+          "hint": "night = شب",
+          "options": [
+            "night",
+            "morning",
+            "pen"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-mc-08",
+          "expected_answer": "تغییر دادن",
+          "explanation": "Change یعنی تغییر دادن.",
+          "time_limit": 60,
+          "translation": "تغییر دادن",
+          "question": "معنی change چیست؟",
+          "hint": "change = تغییر دادن",
+          "options": [
+            "تغییر دادن",
+            "امضا کردن",
+            "تمرین کردن"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-mc-09",
+          "expected_answer": "اینجا",
+          "explanation": "Here یعنی اینجا؛ There یعنی آنجا.",
+          "time_limit": 60,
+          "translation": "اینجا",
+          "question": "معنی here چیست؟",
+          "hint": "here = اینجا",
+          "options": [
+            "اینجا",
+            "آنجا",
+            "صبح"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-03-synonyms",
+      "type": "vocabulary",
+      "title": "مترادف و متضاد",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-03-voc-01",
+          "question": "Synonym: thanks",
+          "expected_answer": "thank you",
+          "explanation": "Thanks و thank you هر دو یعنی ممنون و متشکرم.",
+          "hint": "thanks = ممنون",
+          "time_limit": 60,
+          "translation": "متشکرم"
+        },
+        {
+          "id": "evolve-1-l01-03-voc-02",
+          "question": "Synonym: zero",
+          "expected_answer": "oh",
+          "explanation": "Zero و oh هر دو برای عدد صفر به کار می‌روند.",
+          "hint": "zero = صفر",
+          "time_limit": 60,
+          "translation": "صفر (تلفظ دیگر)"
+        },
+        {
+          "id": "evolve-1-l01-03-voc-03",
+          "question": "Opposite: here",
+          "expected_answer": "there",
+          "explanation": "Here یعنی اینجا و there یعنی آنجا؛ این دو مخالف هم‌اند.",
+          "hint": "here = اینجا",
+          "time_limit": 60,
+          "translation": "آنجا"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-03-verb-forms",
+      "type": "vocabulary",
+      "title": "شکل فعل با فاعل مفرد",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-03-vb-form-01",
+          "question": "He / She / It: sign",
+          "expected_answer": "signs",
+          "explanation": "برای he، she و it به فعل sign حرف s اضافه می‌کنیم.",
+          "hint": "sign = امضا کردن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 60,
+          "translation": "امضا می‌کند"
+        },
+        {
+          "id": "evolve-1-l01-03-vb-form-02",
+          "question": "He / She / It: welcome",
+          "expected_answer": "welcomes",
+          "explanation": "برای he، she و it به welcome حرف s اضافه می‌کنیم.",
+          "hint": "welcome = خوش‌آمد گفتن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 60,
+          "translation": "خوش‌آمد می‌گوید"
+        },
+        {
+          "id": "evolve-1-l01-03-vb-form-03",
+          "question": "He / She / It: change",
+          "expected_answer": "changes",
+          "explanation": "برای he، she و it به change حرف s اضافه می‌کنیم.",
+          "hint": "change = تغییر دادن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 60,
+          "translation": "تغییر می‌دهد"
+        },
+        {
+          "id": "evolve-1-l01-03-vb-form-04",
+          "question": "He / She / It: practice",
+          "expected_answer": "practices",
+          "explanation": "برای he، she و it به practice حرف s اضافه می‌کنیم.",
+          "hint": "practice = تمرین کردن؛ این تمرین درباره‌ی شکل مثبت فعل در زمان حال ساده است.",
+          "points": 10,
+          "time_limit": 60,
+          "translation": "تمرین می‌کند"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-03-spelling",
+      "type": "dictation",
+      "title": "املای واژه‌ها و عبارت‌ها",
+      "presentation": "audio",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-03-dic-001",
+          "expected_answer": "zero",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "صفر",
+          "question": "zero",
+          "hint": "صفر",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-002",
+          "expected_answer": "oh",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "صفر (تلفظ دیگر)",
+          "question": "oh",
+          "hint": "صفر (تلفظ دیگر)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-003",
+          "expected_answer": "two",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "دو",
+          "question": "two",
+          "hint": "دو",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-004",
+          "expected_answer": "three",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "سه",
+          "question": "three",
+          "hint": "سه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-005",
+          "expected_answer": "five",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پنج",
+          "question": "five",
+          "hint": "پنج",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-006",
+          "expected_answer": "six",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "شش",
+          "question": "six",
+          "hint": "شش",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-007",
+          "expected_answer": "seven",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "هفت",
+          "question": "seven",
+          "hint": "هفت",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-008",
+          "expected_answer": "eight",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "هشت",
+          "question": "eight",
+          "hint": "هشت",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-009",
+          "expected_answer": "nine",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "نه",
+          "question": "nine",
+          "hint": "نه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-010",
+          "expected_answer": "ten",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "ده",
+          "question": "ten",
+          "hint": "ده",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-011",
+          "expected_answer": "clerk",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "کارمند پذیرش",
+          "question": "clerk",
+          "hint": "کارمند پذیرش",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-012",
+          "expected_answer": "key",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "کلید",
+          "question": "key",
+          "hint": "کلید",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-013",
+          "expected_answer": "cell phone",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "تلفن همراه",
+          "question": "cell phone",
+          "hint": "تلفن همراه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-014",
+          "expected_answer": "cell phone number",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "شمارهٔ تلفن همراه",
+          "question": "cell phone number",
+          "hint": "شمارهٔ تلفن همراه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-015",
+          "expected_answer": "number",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "شماره / عدد",
+          "question": "number",
+          "hint": "شماره / عدد",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-016",
+          "expected_answer": "room number",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "شمارهٔ اتاق",
+          "question": "room number",
+          "hint": "شمارهٔ اتاق",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-017",
+          "expected_answer": "pen",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "خودکار",
+          "question": "pen",
+          "hint": "خودکار",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-018",
+          "expected_answer": "guest",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مهمان",
+          "question": "guest",
+          "hint": "مهمان",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-019",
+          "expected_answer": "change",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "تغییر دادن",
+          "question": "change",
+          "hint": "تغییر دادن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-020",
+          "expected_answer": "practice",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "تمرین کردن",
+          "question": "practice",
+          "hint": "تمرین کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-021",
+          "expected_answer": "sign",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "امضا کردن",
+          "question": "sign",
+          "hint": "امضا کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-022",
+          "expected_answer": "welcome",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "خوش‌آمد گفتن",
+          "question": "welcome",
+          "hint": "خوش‌آمد گفتن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-023",
+          "expected_answer": "here",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "اینجا",
+          "question": "here",
+          "hint": "اینجا",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-024",
+          "expected_answer": "there",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "آنجا",
+          "question": "there",
+          "hint": "آنجا",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-025",
+          "expected_answer": "thanks",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "ممنون",
+          "question": "thanks",
+          "hint": "ممنون",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-026",
+          "expected_answer": "thank you",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "متشکرم",
+          "question": "thank you",
+          "hint": "متشکرم",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-027",
+          "expected_answer": "you're welcome",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "خواهش می‌کنم",
+          "question": "you're welcome",
+          "hint": "خواهش می‌کنم",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-028",
+          "expected_answer": "one moment",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "یک لحظه",
+          "question": "one moment",
+          "hint": "یک لحظه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-029",
+          "expected_answer": "OK",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "باشه",
+          "question": "OK",
+          "hint": "باشه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-030",
+          "expected_answer": "morning",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "صبح",
+          "question": "morning",
+          "hint": "صبح",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-031",
+          "expected_answer": "night",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "شب",
+          "question": "night",
+          "hint": "شب",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-032",
+          "expected_answer": "two nights",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "دو شب",
+          "question": "two nights",
+          "hint": "دو شب",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-033",
+          "expected_answer": "three nights",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "سه شب",
+          "question": "three nights",
+          "hint": "سه شب",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-03-dic-034",
+          "expected_answer": "Instagram name",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "نام اینستاگرام",
+          "question": "Instagram name",
+          "hint": "نام اینستاگرام",
+          "presentation": "audio"
+        }
+      ]
+    }
+  ],
+  "lesson_content": {
+    "vocabulary": [
+      { "word": "zero", "ipa": "/ˈzɪroʊ/", "meaning": "صفر" },
+      { "word": "oh", "ipa": "/oʊ/", "meaning": "صفر (تلفظ دیگر)" },
+      { "word": "two", "ipa": "/tuː/", "meaning": "دو" },
+      { "word": "three", "ipa": "/θriː/", "meaning": "سه" },
+      { "word": "five", "ipa": "/faɪv/", "meaning": "پنج" },
+      { "word": "six", "ipa": "/sɪks/", "meaning": "شش" },
+      { "word": "seven", "ipa": "/ˈsevn/", "meaning": "هفت" },
+      { "word": "eight", "ipa": "/eɪt/", "meaning": "هشت" },
+      { "word": "nine", "ipa": "/naɪn/", "meaning": "نه" },
+      { "word": "ten", "ipa": "/ten/", "meaning": "ده" },
+      { "word": "clerk", "ipa": "/klɜːrk/", "meaning": "کارمند پذیرش" },
+      { "word": "key", "ipa": "/kiː/", "meaning": "کلید" },
+      { "word": "cell phone", "ipa": "/ˈsel foʊn/", "meaning": "تلفن همراه" },
+      { "word": "cell phone number", "ipa": "/ˈsel foʊn ˈnʌmbər/", "meaning": "شمارهٔ تلفن همراه" },
+      { "word": "number", "ipa": "/ˈnʌmbər/", "meaning": "شماره / عدد" },
+      { "word": "room number", "ipa": "/ruːm ˈnʌmbər/", "meaning": "شمارهٔ اتاق" },
+      { "word": "pen", "ipa": "/pen/", "meaning": "خودکار" },
+      { "word": "guest", "ipa": "/ɡest/", "meaning": "مهمان" },
+      { "word": "change", "ipa": "/tʃeɪndʒ/", "meaning": "تغییر دادن" },
+      { "word": "practice", "ipa": "/ˈpræktɪs/", "meaning": "تمرین کردن" },
+      { "word": "sign", "ipa": "/saɪn/", "meaning": "امضا کردن" },
+      { "word": "welcome", "ipa": "/ˈwelkəm/", "meaning": "خوش‌آمد گفتن" },
+      { "word": "here", "ipa": "/hɪr/", "meaning": "اینجا" },
+      { "word": "there", "ipa": "/ðer/", "meaning": "آنجا" },
+      { "word": "thanks", "ipa": "/θæŋks/", "meaning": "ممنون" },
+      { "word": "thank you", "ipa": "/θæŋk juː/", "meaning": "متشکرم" },
+      { "word": "you're welcome", "ipa": "/jʊr ˈwelkəm/", "meaning": "خواهش می‌کنم" },
+      { "word": "one moment", "ipa": "/wʌn ˈmoʊmənt/", "meaning": "یک لحظه" },
+      { "word": "OK", "ipa": "/ˌoʊˈkeɪ/", "meaning": "باشه" },
+      { "word": "morning", "ipa": "/ˈmɔːrnɪŋ/", "meaning": "صبح" },
+      { "word": "night", "ipa": "/naɪt/", "meaning": "شب" },
+      { "word": "two nights", "ipa": "/tuː naɪts/", "meaning": "دو شب" },
+      { "word": "three nights", "ipa": "/θriː naɪts/", "meaning": "سه شب" },
+      { "word": "Instagram name", "ipa": "/ˈɪnstəɡræm neɪm/", "meaning": "نام اینستاگرام" }
+    ],
+    "sentences": [
+      { "en": "For 0, say zero or oh.", "fa": "برای عدد ۰، بگو zero یا oh." },
+      { "en": "Your room number is two-zero-one.", "fa": "شمارهٔ اتاق تو دو-صفر-یک است." },
+      { "en": "My address is seven-oh-nine.", "fa": "آدرس من هفت-صفر-نه است." },
+      { "en": "Paulo is at a hotel.", "fa": "پائولو در یک هتل است." },
+      { "en": "You're in room 6A.", "fa": "تو در اتاق ۶A هستی." },
+      { "en": "You're in room 3A.", "fa": "تو در اتاق ۳A هستی." },
+      { "en": "No, it's the key for room three.", "fa": "نه، این کلید اتاق سه است." },
+      { "en": "Welcome to the International Hotel.", "fa": "به هتل بین‌المللی خوش آمدید." },
+      { "en": "I'm here for two nights.", "fa": "من برای دو شب اینجا هستم." },
+      { "en": "Here's a pen.", "fa": "اینجا یک خودکار است." },
+      { "en": "Please sign here.", "fa": "لطفاً اینجا امضا کن." },
+      { "en": "Thank you.", "fa": "متشکرم." },
+      { "en": "You're welcome.", "fa": "خواهش می‌کنم." },
+      { "en": "One moment.", "fa": "یک لحظه." },
+      { "en": "My name is Paulo Vasques.", "fa": "اسم من پائولو وازکز است." },
+      { "en": "Is this your key?", "fa": "آیا این کلید توست؟" },
+      { "en": "What's your company email address?", "fa": "آدرس ایمیل شرکت تو چیست؟" },
+      { "en": "What's your Instagram name?", "fa": "نام اینستاگرام تو چیست؟" },
+      { "en": "It's c.b.smith@wallis.com.", "fa": "c.b.smith@wallis.com است." },
+      { "en": "It's SusieSix.", "fa": "SusieSix است." },
+      { "en": "This is the key.", "fa": "این کلید است." },
+      { "en": "How do you spell your last name?", "fa": "نام خانوادگی تو را چطور هجی می‌کنی؟" }
+    ],
+    "grammar": [
+      {
+        "title": "خواندن شماره‌ها (تلفن و اتاق)",
+        "explanation": "شماره‌ی تلفن و شماره‌ی اتاق را رقم به رقم می‌خوانیم. عدد صفر را دو جور می‌گوییم: zero یا oh. بین رقم‌ها خط تیره می‌گذاریم تا معلوم باشد هر رقم جداست. مثلاً 201 را two-zero-one می‌خوانیم.",
+        "examples": [
+          { "en": "For 0, say zero or oh.", "fa": "برای عدد ۰، بگو zero یا oh." },
+          { "en": "Your room number is two-zero-one.", "fa": "شمارهٔ اتاق تو دو-صفر-یک است." }
+        ]
+      },
+      {
+        "title": "صفت ملکی: my و your",
+        "explanation": "صفت ملکی قبل از اسم می‌آید و به فاعل جمله بستگی دارد: my یعنی «مال من» و your یعنی «مال تو». در این درس your room number و my address را می‌بینیم. هدف این است که کلمهٔ درست را بر اساس فاعل انتخاب کنی.",
+        "examples": [
+          { "en": "Your room number is two-zero-one.", "fa": "شمارهٔ اتاق تو دو-صفر-یک است." },
+          { "en": "My address is seven-oh-nine.", "fa": "آدرس من هفت-صفر-نه است." }
+        ]
+      },
+      {
+        "title": "I'm here for + عدد + nights",
+        "explanation": "برای گفتن مدت اقامت در هتل، بعد از I'm here for عدد و سپس اسم شب را می‌آوریم. اگر یک شب باشد night است و اگر بیشتر باشد به nights تبدیل می‌شود (two nights، three nights).",
+        "examples": [
+          { "en": "I'm here for two nights.", "fa": "من برای دو شب اینجا هستم." }
+        ]
+      },
+      {
+        "title": "حرف اضافه‌ی at و in",
+        "explanation": "برای گفتن محل، at را برای جای کلی مثل هتل و in را برای جای داخلی مثل اتاق به کار می‌بریم. هدف این است که بدانی کدام حرف اضافه را برای کدام محل می‌گذاری.",
+        "examples": [
+          { "en": "Paulo is at a hotel.", "fa": "پائولو در یک هتل است." },
+          { "en": "You're in room 6A.", "fa": "تو در اتاق ۶A هستی." },
+          { "en": "You're in room 3A.", "fa": "تو در اتاق ۳A هستی." }
+        ]
+      },
+      {
+        "title": "Here's (Here is)",
+        "explanation": "برای نشان دادن چیزی که نزدیک ماست از Here's استفاده می‌کنیم؛ این شکل کوتاه Here is است. بعد از آن a و اسم می‌آید: Here's a pen.",
+        "examples": [
+          { "en": "Here's a pen.", "fa": "اینجا یک خودکار است." }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "title": "گفت‌وگو ۱: ورود به هتل",
+        "lines": [
+          { "en": "Clerk: Welcome to New York! What's your name?", "fa": "کارمند: به نیویورک خوش آمدی! اسم تو چیست؟" },
+          { "en": "Paulo: I'm Paulo Vasques. I'm here for three nights.", "fa": "پائولو: من پائولو وازکز هستم. من برای سه شب اینجا هستم." },
+          { "en": "Clerk: Oh, yes. What's your cell phone number?", "fa": "کارمند: اوه، بله. شمارهٔ تلفن همراه تو چیست؟" },
+          { "en": "Paulo: It's (593) 555-2192.", "fa": "پائولو: (593) 555-2192 است." },
+          { "en": "Clerk: Thanks. And what's your email address?", "fa": "کارمند: ممنون. و آدرس ایمیل تو چیست؟" },
+          { "en": "Paulo: It's pvasques89@travelmail.org.", "fa": "پائولو: pvasques89@travelmail.org است." },
+          { "en": "Clerk: Thanks. One moment. Please sign here. Here's a pen.", "fa": "کارمند: ممنون. یک لحظه. لطفاً اینجا امضا کن. اینجا یک خودکار است." },
+          { "en": "Paulo: OK.", "fa": "پائولو: باشه." },
+          { "en": "Clerk: Thank you. This is the key. It's room 6B.", "fa": "کارمند: متشکرم. این کلید است. اتاق ۶B است." },
+          { "en": "Paulo: 6D. Thanks.", "fa": "پائولو: ۶D. ممنون." },
+          { "en": "Clerk: No, you're not in 6D. You're in room 6B.", "fa": "کارمند: نه، تو در ۶D نیستی. تو در اتاق ۶B هستی." },
+          { "en": "Paulo: Oh, OK. Thank you.", "fa": "پائولو: اوه، باشه. متشکرم." },
+          { "en": "Clerk: You're welcome.", "fa": "کارمند: خواهش می‌کنم." }
+        ]
+      },
+      {
+        "title": "گفت‌وگو ۲: هجی کردن نام خانوادگی",
+        "lines": [
+          { "en": "Person A: My name is Paulo Vasques.", "fa": "نفر A: نام من پائولو وازکز است." },
+          { "en": "Person A: How do you spell your last name?", "fa": "نفر A: نام خانوادگی تو را چطور هجی می‌کنی؟" },
+          { "en": "Person B: V-A-S-Q-U-E-S.", "fa": "نفر B: V-A-S-Q-U-E-S." }
+        ]
+      },
+      {
+        "title": "گفت‌وگو ۳: کلید و اطلاعات تماس",
+        "lines": [
+          { "en": "A: Is this your key?", "fa": "A: آیا این کلید توست؟" },
+          { "en": "B: No, it's the key for room three.", "fa": "B: نه، این کلید اتاق سه است." },
+          { "en": "A: What's your company email address?", "fa": "A: آدرس ایمیل شرکت تو چیست؟" },
+          { "en": "B: It's c.b.smith@wallis.com.", "fa": "B: c.b.smith@wallis.com است." },
+          { "en": "A: What's your Instagram name?", "fa": "A: نام اینستاگرام تو چیست؟" },
+          { "en": "B: It's SusieSix.", "fa": "B: SusieSix است." }
+        ]
+      },
+      {
+        "title": "گفت‌وگو ۴: پذیرش در هتل",
+        "lines": [
+          { "en": "Clerk: Hi. Welcome to the Tree House Hotel! What's your name?", "fa": "کارمند: سلام. به هتل Tree House خوش آمدی! اسم تو چیست؟" },
+          { "en": "Marie: I'm Marie Bernard. I'm here for two nights.", "fa": "ماری: من ماری برنارد هستم. من برای دو شب اینجا هستم." },
+          { "en": "Clerk: Oh, yes, two nights. What's your cell phone number?", "fa": "کارمند: اوه، بله، دو شب. شمارهٔ تلفن همراه تو چیست؟" },
+          { "en": "Marie: It's (298) 555-1257.", "fa": "ماری: (298) 555-1257 است." },
+          { "en": "Clerk: Great. Thank you. And what's your email address?", "fa": "کارمند: عالی. متشکرم. و آدرس ایمیل تو چیست؟" },
+          { "en": "Marie: It's mbernard87@mymail.org.", "fa": "ماری: mbernard87@mymail.org است." },
+          { "en": "Clerk: Thanks. One moment. Please sign here.", "fa": "کارمند: ممنون. یک لحظه. لطفاً اینجا امضا کن." },
+          { "en": "Marie: OK.", "fa": "ماری: باشه." },
+          { "en": "Clerk: Thank you. This is the key. It's for room 7C.", "fa": "کارمند: متشکرم. این کلید است. برای اتاق ۷C است." }
+        ]
+      },
+      {
+        "title": "گفت‌وگو ۵: نقش‌آفرینی",
+        "lines": [
+          { "en": "Clerk: Hi. Welcome to the International Hotel. What's your name?", "fa": "کارمند: سلام. به هتل بین‌المللی خوش آمدید. اسم تو چیست؟" },
+          { "en": "Guest: I'm Jae-hoon Park. I'm here for two nights.", "fa": "مهمان: من جِه‌هون پارک هستم. من برای دو شب اینجا هستم." }
+        ]
+      }
+    ]
+  }
+}
