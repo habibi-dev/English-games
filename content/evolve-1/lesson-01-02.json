@@ -925,6 +925,38 @@
     ],
     "sentences": [
       {
+        "en": "What is your name?",
+        "fa": "اسم تو چیست؟"
+      },
+      {
+        "en": "What's your name?",
+        "fa": "اسم تو چیست؟"
+      },
+      {
+        "en": "What's your first name?",
+        "fa": "اسم کوچک تو چیست؟"
+      },
+      {
+        "en": "What's your last name?",
+        "fa": "نام خانوادگی تو چیست؟"
+      },
+      {
+        "en": "What's your email address?",
+        "fa": "آدرس ایمیل تو چیست؟"
+      },
+      {
+        "en": "It's Juana.",
+        "fa": "خوانا است."
+      },
+      {
+        "en": "It's Garcia College.",
+        "fa": "Garcia College است."
+      },
+      {
+        "en": "It's Warton Homes.",
+        "fa": "Warton Homes است."
+      },
+      {
         "en": "What's the name of your college?",
         "fa": "نام کالج شما چیست؟"
       },
@@ -947,9 +979,35 @@
     ],
     "grammar": [
       {
-        "title": "What’s = What is",
-        "explanation": "What’s شکل کوتاه What is است. برای پرسیدن نام یک کالج یا شرکت از الگوی What’s the name of your … استفاده می‌کنیم. آپاستروف (’) نشان می‌دهد که بخشی از عبارت حذف شده است؛ پس بنویس What’s، نه Whats.",
+        "title": "What's و It's یعنی چه؟",
+        "explanation": "در انگلیسی برای کوتاه کردن بعضی عبارت‌ها از علامت آپاستروف (') استفاده می‌کنیم. شکل کامل What is با What's (چیست؟) و It is با It's (این است / آن است) کوتاه می‌شود. مثلاً What is your name? و What's your name? هر دو یک معنی دارند: اسم تو چیست؟",
         "examples": [
+          {
+            "en": "What is your name?",
+            "fa": "اسم تو چیست؟"
+          },
+          {
+            "en": "What's your name?",
+            "fa": "اسم تو چیست؟"
+          }
+        ]
+      },
+      {
+        "title": "ساختار سؤال با What's",
+        "explanation": "در این درس دو الگوی اصلی داریم. الگوی اول: What's + your + noun? — یعنی اسم، آدرس یا اطلاعات تو چیست؟ (مثل What's your first name?). الگوی دوم: What's + the name of + noun? — یعنی نامِ … چیست؟ (مثل What's the name of your college?). در الگوی دوم از the name of استفاده می‌کنیم؛ یعنی «نامِ …».",
+        "examples": [
+          {
+            "en": "What's your first name?",
+            "fa": "اسم کوچک تو چیست؟"
+          },
+          {
+            "en": "What's your last name?",
+            "fa": "نام خانوادگی تو چیست؟"
+          },
+          {
+            "en": "What's your email address?",
+            "fa": "آدرس ایمیل تو چیست؟"
+          },
           {
             "en": "What's the name of your college?",
             "fa": "نام کالج شما چیست؟"
@@ -959,6 +1017,43 @@
             "fa": "نام شرکت شما چیست؟"
           }
         ]
+      },
+      {
+        "title": "ساختار جواب با It's",
+        "explanation": "برای پاسخ دادن به سؤال‌هایی که با What's پرسیده می‌شوند، در این درس از It's استفاده می‌کنیم: It's + جواب. در واقع It's مخفف It is است.",
+        "examples": [
+          {
+            "en": "It's Juana.",
+            "fa": "خوانا است."
+          },
+          {
+            "en": "It's Garcia College.",
+            "fa": "Garcia College است."
+          },
+          {
+            "en": "It's Warton Homes.",
+            "fa": "Warton Homes است."
+          }
+        ]
+      },
+      {
+        "title": "علامت آپاستروف (')",
+        "explanation": "یکی از نکات مهم این صفحه استفاده صحیح از آپاستروف است. What's your name? درست است؛ Whats your name? غلط است. It's Juana. درست است؛ Its Juana. غلط است. دقت کن: What's = What + is و It's = It + is.",
+        "examples": [
+          {
+            "en": "What's your name?",
+            "fa": "اسم تو چیست؟"
+          },
+          {
+            "en": "It's Juana.",
+            "fa": "خوانا است."
+          }
+        ]
+      },
+      {
+        "title": "جمع‌بندی گرامر این درس",
+        "explanation": "این ساختارها را فعلاً یاد بگیر: برای پرسیدن اطلاعات — What's + your + noun?؛ برای پرسیدن نام یک مکان یا شرکت — What's the name of + noun?؛ برای پاسخ دادن — It's + جواب. در این مرحله لازم نیست وارد گرامرهای پیچیده‌تر شوی؛ فقط باید بتوانی با What's سؤال بسازی و با It's پاسخ بدهی.",
+        "examples": []
       }
     ],
     "stories": []

@@ -1267,8 +1267,10 @@ export function linesPage({
     h(
       'section',
       { class: 'lc-group' },
-      group.title ? h('h4', { class: 'lc-group-title', dir: 'auto' }, group.title) : null,
-      group.explanation ? h('p', { class: 'lc-explain', dir: 'auto' }, group.explanation) : null,
+      group.title
+        ? h('h4', { class: 'lc-group-title', dir: group.explanation ? 'rtl' : 'auto' }, group.title)
+        : null,
+      group.explanation ? h('p', { class: 'lc-explain', dir: 'rtl' }, group.explanation) : null,
       lists[groupIndex],
     ),
   );
