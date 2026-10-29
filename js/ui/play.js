@@ -12,8 +12,7 @@ import { lessonMaterial, buildWordStudyIndex, wordRows } from '../bank/lesson-vo
 import { recordOutcome, loadAttempts } from '../progress/tracker.js';
 import { playerProfile, levelFor, starsFor, levelStartXp, resultTier } from '../progress/player.js';
 import { doneIds, progressOf } from '../progress/lesson-progress.js';
-import { unlockedLessons, previousLesson, reachedShare } from '../progress/lesson-unlock.js';
-import { getUnlockedLessons, saveUnlockedLessons } from '../storage/lesson-unlocks.js';
+import { reachedShare } from '../progress/lesson-unlock.js';
 import { scheduleOf, isDue, missionQuestions, nextDueAt } from '../progress/spaced-repetition.js';
 import { getSettings, saveSettings, getSoundSettings } from '../storage/settings.js';
 import { h, toast, fa, ltr, badge, percent, keepFocus, confirmDialog, scrollToTop } from './dom.js';
@@ -524,31 +523,9 @@ async function showSetup(root, restore = null) {
       questions.filter((q) => keys.includes(lessonKey(q.book, q.lesson))),
       done,
     );
-  // Which lessons of a book are open (see lesson-unlock.js). The unlocks are stored, so they last.
-  const openLessonsOf = (book) => {
-    const keys = book.lessons.map((lesson) => lesson.key);
-    const stored = getUnlockedLessons();
-    const open = unlockedLessons(keys, (key) => progressOfLessons([key]), stored);
-    if (open.size !== stored.size) saveUnlockedLessons(open);
-    return { isOpen: (key) => open.has(key) };
-  };
-  // A locked lesson: a card says which lesson has to be finished first.
-  const showLocked = (book, lesson) => {
-    const previousKey = previousLesson(
-      book.lessons.map((item) => item.key),
-      lesson.key,
-    );
-    const previous = book.lessons.find((item) => item.key === previousKey);
-    return confirmDialog({
-      title: 'Lesson locked',
-      message: `Finish at least 75% of "${previous?.lessonTitle ?? ''}" first. Then "${lesson.lessonTitle}" will open.`,
-      confirmText: 'OK',
-      cancelText: 'Close',
-    });
-  };
-  // The "All lessons" rows show only when every lesson of the scope is at least 75% done and none is locked.
-  const allRowShown = (lessons, open) =>
-    lessons.every((lesson) => open.isOpen(lesson.key) && reachedShare(progressOfLessons([lesson.key])));
+  // The "All lessons" rows show when every lesson of the scope is at least 75% done.
+  const allRowShown = (lessons) =>
+    lessons.every((lesson) => reachedShare(progressOfLessons([lesson.key])));
   const saved = getSettings();
   const series = seriesList(lessons);
   const allBooks = series.flatMap((entry) => entry.books);
@@ -793,10 +770,9 @@ async function showSetup(root, restore = null) {
     setTopbarBack(() => back({ name: 'book', series: parent?.id }));
     const allKeys = book.lessons.map((lesson) => lesson.key);
     const lastKey = lastPracticedKey(book);
-    const open = openLessonsOf(book);
     const unitBox = h('div', { class: 'lesson-list' });
     unitBox.replaceChildren(
-      ...(allRowShown(book.lessons, open)
+      ...(allRowShown(book.lessons)
         ? [
             lessonRow({
               title: 'All lessons in this book',
@@ -845,10 +821,9 @@ async function showSetup(root, restore = null) {
     setTopbarBack(() => back({ name: 'unit', book: state.book }));
     const allKeys = unit.lessons.map((lesson) => lesson.key);
     const lastKey = lastPracticedKey(book);
-    const open = openLessonsOf(book);
     const lessonBox = h('div', { class: 'lesson-list' });
     lessonBox.replaceChildren(
-      ...(allRowShown(unit.lessons, open)
+      ...(allRowShown(unit.lessons)
         ? [
             lessonRow({
               title: `All lessons in ${unit.title}`,
@@ -861,16 +836,12 @@ async function showSetup(root, restore = null) {
         : []),
       ...unit.lessons.map((lesson) => {
         const progress = progressOfLessons([lesson.key]);
-        const locked = !open.isOpen(lesson.key);
         return lessonRow({
           title: lesson.lessonTitle,
           subtitle: plural(lesson.count, 'question'),
           tag: progress.complete ? 'Completed' : lesson.key === lastKey ? 'Last practised' : null,
           progress,
-          locked,
-          onclick: locked
-            ? () => showLocked(book, lesson)
-            : () => go({ name: 'hub', book: state.book, unit: unit.key, lessons: [lesson.key] }),
+          onclick: () => go({ name: 'hub', book: state.book, unit: unit.key, lessons: [lesson.key] }),
         });
       }),
     );
@@ -1337,12 +1308,12 @@ function categoryChip(label, progress, iconName) {
  * One tile of the lesson grid: the title, a subtitle, an optional tag and the progress.
  * Tapping it chooses it.
  */
-function lessonRow({ title, subtitle, dashed = false, tag = null, progress = null, locked = false, onclick }) {
+function lessonRow({ title, subtitle, dashed = false, tag = null, progress = null, onclick }) {
   return h(
     'button',
     {
       type: 'button',
-      class: `lesson-row${dashed ? ' all-row' : ''}${locked ? ' locked' : ''}`,
+      class: `lesson-row${dashed ? ' all-row' : ''}`,
       onclick,
     },
     h(
@@ -1352,7 +1323,7 @@ function lessonRow({ title, subtitle, dashed = false, tag = null, progress = nul
       h('span', { class: 'muted small' }, subtitle),
       progress ? progressLine(progress) : null,
     ),
-    locked ? uiIcon('lock', 'lesson-lock') : tag ? h('span', { class: 'lesson-tag' }, tag) : null,
+    tag ? h('span', { class: 'lesson-tag' }, tag) : null,
   );
 }
 

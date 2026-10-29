@@ -1,5 +1,4 @@
-// Lessons the learner has unlocked on this device. Kept in localStorage, like the play settings.
-// Reset progress clears it, so the lessons lock again.
+// Legacy unlocked-lesson keys from backups and older app versions. Lessons are no longer locked in the UI.
 
 const KEY = 'grammar-quest.unlocked.v1';
 
