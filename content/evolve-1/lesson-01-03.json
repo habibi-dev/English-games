@@ -72,15 +72,12 @@
         },
         {
           "id": "evolve-1-l01-03-tr-06",
-          "expected_answer": "No, it's the key for room three.",
-          "accepted_answers": [
-            "No, it is the key for room three."
-          ],
-          "explanation": "بعد از No، شکل کوتاه it is یعنی it's را می‌آوریم.",
+          "expected_answer": "No, this is the key for room three.",
+          "explanation": "بعد از No، برای نشان دادن همان کلید از this is استفاده می‌کنیم؛ مثل This is the key.",
           "time_limit": 60,
           "translation": "نه، این کلید اتاق سه است.",
           "question": "نه، این کلید اتاق سه است.",
-          "hint": "key = کلید؛ three = سه. راهنما: جواب منفی با No شروع می‌شود؛ it is را کوتاه کن."
+          "hint": "key = کلید؛ three = سه. راهنما: جواب منفی با No؛ برای «این» از this is استفاده کن."
         },
         {
           "id": "evolve-1-l01-03-tr-07",
@@ -1066,7 +1063,7 @@
       { "en": "Paulo is at a hotel.", "fa": "پائولو در یک هتل است." },
       { "en": "You're in room 6A.", "fa": "تو در اتاق ۶A هستی." },
       { "en": "You're in room 3A.", "fa": "تو در اتاق ۳A هستی." },
-      { "en": "No, it's the key for room three.", "fa": "نه، این کلید اتاق سه است." },
+      { "en": "No, this is the key for room three.", "fa": "نه، این کلید اتاق سه است." },
       { "en": "Welcome to the International Hotel.", "fa": "به هتل بین‌المللی خوش آمدید." },
       { "en": "I'm here for two nights.", "fa": "من برای دو شب اینجا هستم." },
       { "en": "Here's a pen.", "fa": "اینجا یک خودکار است." },
@@ -1155,7 +1152,7 @@
         "title": "گفت‌وگو ۳: کلید و اطلاعات تماس",
         "lines": [
           { "en": "A: Is this your key?", "fa": "A: آیا این کلید توست؟" },
-          { "en": "B: No, it's the key for room three.", "fa": "B: نه، این کلید اتاق سه است." },
+          { "en": "B: No, this is the key for room three.", "fa": "B: نه، این کلید اتاق سه است." },
           { "en": "A: What's your company email address?", "fa": "A: آدرس ایمیل شرکت تو چیست؟" },
           { "en": "B: It's c.b.smith@wallis.com.", "fa": "B: c.b.smith@wallis.com است." },
           { "en": "A: What's your Instagram name?", "fa": "A: نام اینستاگرام تو چیست؟" },
