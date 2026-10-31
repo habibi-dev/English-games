@@ -78,6 +78,8 @@ their grammar rules and examples, and their sentence structures.
 - **Stories and dialogues** follow the word rules in section 1. The limits in this section do not apply to them, because
   dialogues repeat the lesson's frames by nature (as the stories of lesson 1.1 do).
 - Names are still never the answer of a practice item, even in a repeated structure (see section 4).
+- Do not add to `lesson_content.sentences` a line whose job is to state a character's full name (for example
+  `My name is Paulo Vasques.`). The sentence list is for patterns the learner practises, not for memorizing book names.
 - Every sentence must be meaningful on its own. Sentences that belong together (a question and its answer, a short
   exchange) stay together as one exercise item, in order, so the learner can read the whole exchange in one place.
   Do not split a conversation across several items.
@@ -117,9 +119,16 @@ their grammar rules and examples, and their sentence structures.
  from the book (for example "Which student is from New York?", "What was the name of the Spanish teacher?", or
  "Who is a teacher from Chicago?" with names as options). The learner has only seen the app's lessons, not the book,
  so such a question is not fair and does not teach anything. Remove such items instead of rewording them.
-- A person's name may still appear in a practice sentence only as a plain introduction, where the grammar is the
- point (for example "Hi, Max. Are you a teacher?" or "My name is Karina"). The name must not be the answer, a
- choice, or the subject of the question.
+- **No full-name self-introduction as practice or as a lesson sentence.** Do not add a translation, voice translation,
+ sentence builder, or any other exercise whose `expected_answer` (or main accepted answer) is a self-introduction that
+ includes a person's first name, last name, or both (`My name is …`, `My name's …`, `I'm First Last.`). Do not add the
+ same line to `lesson_content.sentences`. Book character names are not vocabulary the learner must recall; forcing them
+ into typed answers only wastes effort. Teach `My name is` / `I'm` in earlier lessons with simple patterns; in later
+ lessons, use other grammar in practice instead. A name may still appear inside a **story or dialogue line** when the
+ scene needs it (for example a guest at check-in), but that line must not become a practice item or a sentence-list entry.
+- A person's name may still appear in a practice sentence when the **grammar point is something else** and the name is
+ incidental (for example "Hi, Max. Are you a teacher?"). The name must not be the answer, a choice, or what the learner
+ must type or translate in full.
 - Every practice item has a hint (راهنما). A hint is a short guide that points to the rule or to the key word of that
   item. The same word must not be used to mean several different things in the hints.
 - **Hints must not give the answer.** Under no circumstances may a hint spell out the English answer, reconstruct it

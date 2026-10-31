@@ -187,16 +187,6 @@
           "hint": "key = کلید. راهنما: سؤال با Is this، مثل سؤال درس قبل."
         },
         {
-          "id": "evolve-1-l01-03-tr-17",
-          "expected_answer": "My name is Paulo Vasques.",
-          "accepted_answers": ["My name's Paulo Vasques."],
-          "explanation": "my یعنی «مال من» و قبل از اسم می‌آید؛ در معرفی خود از My name is استفاده می‌کنیم.",
-          "time_limit": 60,
-          "translation": "اسم من پائولو وازکز است.",
-          "question": "اسم من پائولو وازکز است.",
-          "hint": "my = مال من. راهنما: معرفی خود با صفت ملکی my."
-        },
-        {
           "id": "evolve-1-l01-03-tr-18",
           "expected_answer": "This is the key.",
           "explanation": "برای معرفی یا نشان دادن یک چیز از This is استفاده می‌کنیم.",
@@ -1071,7 +1061,6 @@
       { "en": "Thank you.", "fa": "متشکرم." },
       { "en": "You're welcome.", "fa": "خواهش می‌کنم." },
       { "en": "One moment.", "fa": "یک لحظه." },
-      { "en": "My name is Paulo Vasques.", "fa": "اسم من پائولو وازکز است." },
       { "en": "Is this your key?", "fa": "آیا این کلید توست؟" },
       { "en": "What's your company email address?", "fa": "آدرس ایمیل شرکت تو چیست؟" },
       { "en": "What's your Instagram name?", "fa": "نام اینستاگرام تو چیست؟" },
@@ -1143,7 +1132,6 @@
       {
         "title": "گفت‌وگو ۲: هجی کردن نام خانوادگی",
         "lines": [
-          { "en": "Person A: My name is Paulo Vasques.", "fa": "نفر A: نام من پائولو وازکز است." },
           { "en": "Person A: How do you spell your last name?", "fa": "نفر A: نام خانوادگی تو را چطور هجی می‌کنی؟" },
           { "en": "Person B: V-A-S-Q-U-E-S.", "fa": "نفر B: V-A-S-Q-U-E-S." }
         ]
