@@ -440,6 +440,14 @@
           "explanation": "hey و hi هر دو سلام غیررسمی هستند.",
           "hint": "hey = سلام (خیلی صمیمی)",
           "translation": "سلام"
+        },
+        {
+          "id": "evolve-1-l01-04-rel-04",
+          "question": "Synonym: too",
+          "expected_answer": "also",
+          "explanation": "too و also تقریباً هم‌معنی هستند.",
+          "hint": "too = هم، همچنین",
+          "translation": "همچنین"
         }
       ]
     },
@@ -785,6 +793,11 @@
         "word": "art",
         "ipa": "/ɑːrt/",
         "meaning": "هنر"
+      },
+      {
+        "word": "also",
+        "ipa": "/ˈɔːlsoʊ/",
+        "meaning": "همچنین"
       }
     ],
     "sentences": [

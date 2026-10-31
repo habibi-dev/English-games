@@ -45,9 +45,7 @@
           "time_limit": 60,
           "translation": "من خوبم.",
           "question": "من خوبم.",
-          "accepted_answers": [
-            "I am fine."
-          ],
+          "accepted_answers": ["I am fine."],
           "hint": "fine = خوب"
         },
         {
@@ -57,9 +55,7 @@
           "time_limit": 60,
           "translation": "خوبم، ممنون. تو چطوری؟",
           "question": "خوبم، ممنون. تو چطوری؟",
-          "accepted_answers": [
-            "I am fine, thanks. And you?"
-          ],
+          "accepted_answers": ["I am fine, thanks. And you?"],
           "hint": "thanks = ممنون؛ and you = تو چطوری"
         },
         {
@@ -96,16 +92,8 @@
           "time_limit": 60,
           "translation": "از آشنایی با تو خوشحالم.",
           "hint": "nice to meet you",
-          "word_bank": [
-            "از",
-            "آشنایی",
-            "با",
-            "تو",
-            "خوشحالم"
-          ],
-          "accepted_answers": [
-            "Nice to meet you."
-          ]
+          "word_bank": ["از", "آشنایی", "با", "تو", "خوشحالم"],
+          "accepted_answers": ["Nice to meet you."]
         }
       ]
     },
@@ -142,11 +130,7 @@
           "translation": "بعداً می‌بینمت.",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "later = بعداً",
-          "word_bank": [
-            "you",
-            "later.",
-            "See"
-          ]
+          "word_bank": ["you", "later.", "See"]
         }
       ]
     },
@@ -184,11 +168,7 @@
           "translation": "احوالپرسی",
           "question": "این عبارت از کدام نوع مکالمه است؟ «Good evening.»",
           "hint": "عبارتی برای سلام کردن",
-          "options": [
-            "Greeting",
-            "Introduction",
-            "Goodbye"
-          ]
+          "options": ["Greeting", "Introduction", "Goodbye"]
         },
         {
           "id": "evolve-1-l01-05-mc-02",
@@ -198,11 +178,7 @@
           "translation": "معرفی",
           "question": "این عبارت از کدام نوع مکالمه است؟ «Gabi, this is Caio.»",
           "hint": "this is = این است",
-          "options": [
-            "Greeting",
-            "Introduction",
-            "Goodbye"
-          ]
+          "options": ["Greeting", "Introduction", "Goodbye"]
         },
         {
           "id": "evolve-1-l01-05-mc-03",
@@ -212,11 +188,7 @@
           "translation": "خداحافظی",
           "question": "این عبارت از کدام نوع مکالمه است؟ «See you later.»",
           "hint": "later = بعداً",
-          "options": [
-            "Greeting",
-            "Introduction",
-            "Goodbye"
-          ]
+          "options": ["Greeting", "Introduction", "Goodbye"]
         },
         {
           "id": "evolve-1-l01-05-mc-04",
@@ -226,11 +198,7 @@
           "translation": "خوب",
           "question": "معنی fine چیست؟",
           "hint": "fine = خوب",
-          "options": [
-            "خوب",
-            "شب",
-            "کلید"
-          ]
+          "options": ["خوب", "شب", "کلید"]
         },
         {
           "id": "evolve-1-l01-05-mc-05",
@@ -240,11 +208,7 @@
           "translation": "خداحافظ",
           "question": "کدام واژه به معنی «خداحافظ» است؟",
           "hint": "goodbye = خداحافظ",
-          "options": [
-            "goodbye",
-            "favorite",
-            "nice"
-          ]
+          "options": ["goodbye", "favorite", "nice"]
         }
       ]
     },
@@ -262,6 +226,22 @@
           "explanation": "bye و goodbye هر دو یعنی خداحافظ.",
           "hint": "bye = خداحافظ",
           "translation": "خداحافظ"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-02",
+          "question": "Opposite: nice",
+          "expected_answer": "mean",
+          "explanation": "nice و mean متضاد یکدیگرند.",
+          "hint": "nice = خوب، دلپذیر",
+          "translation": "معنی دادن"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-03",
+          "question": "Synonym: fine",
+          "expected_answer": "OK",
+          "explanation": "fine و OK تقریباً هم‌معنی هستند.",
+          "hint": "fine = خوب",
+          "translation": "باشه"
         }
       ]
     },

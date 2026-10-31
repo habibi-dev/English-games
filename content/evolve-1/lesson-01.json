@@ -15,11 +15,7 @@
           "id": "evolve-1-l01-tr-01",
           "question": "نام کوچک من علی است.",
           "expected_answer": "My first name is Ali.",
-          "accepted_answers": [
-            "My first name's Ali.",
-            "My given name is Ali.",
-            "My given name's Ali."
-          ],
+          "accepted_answers": ["My first name's Ali.", "My given name is Ali.", "My given name's Ali."],
           "explanation": "First name یعنی نام کوچک. شکل کوتاه is در این جمله به صورت 's نوشته می‌شود.",
           "hint": "کلمه‌ی کلیدی: «نام کوچک» = first name؛ تلفظ: /fɜːrst neɪm/ (فِرست نِیم)؛ نکته: given name هم همین معنی را دارد.",
           "time_limit": 60,
@@ -29,11 +25,7 @@
           "id": "evolve-1-l01-tr-02",
           "question": "نام خانوادگی من حبیبی است.",
           "expected_answer": "My last name is Habibi.",
-          "accepted_answers": [
-            "My family name is Habibi.",
-            "My last name's Habibi.",
-            "My family name's Habibi."
-          ],
+          "accepted_answers": ["My family name is Habibi.", "My last name's Habibi.", "My family name's Habibi."],
           "explanation": "Last name و family name هر دو برای نام خانوادگی به کار می‌روند.",
           "hint": "کلمه‌ی کلیدی: «نام خانوادگی» = last name؛ تلفظ: /læst neɪm/ (لَست نِیم)؛ نکته: family name هم همین معنی را دارد.",
           "time_limit": 60,
@@ -43,11 +35,7 @@
           "id": "evolve-1-l01-tr-03",
           "question": "اسم کوچک تو چیست؟",
           "expected_answer": "What is your first name?",
-          "accepted_answers": [
-            "What's your first name?",
-            "What is your given name?",
-            "What's your given name?"
-          ],
+          "accepted_answers": ["What's your first name?", "What is your given name?", "What's your given name?"],
           "explanation": "What's شکل کوتاه What is است.",
           "hint": "کلمه‌ی کلیدی: «اسم کوچک» = first name؛ تلفظ: /fɜːrst neɪm/ (فِرست نِیم)؛ نکته: «تو» در انگلیسی your است.",
           "time_limit": 60,
@@ -57,11 +45,7 @@
           "id": "evolve-1-l01-tr-04",
           "question": "نام خانوادگی تو چیست؟",
           "expected_answer": "What is your last name?",
-          "accepted_answers": [
-            "What's your last name?",
-            "What is your family name?",
-            "What's your family name?"
-          ],
+          "accepted_answers": ["What's your last name?", "What is your family name?", "What's your family name?"],
           "explanation": "می‌توانی از last name یا family name استفاده کنی؛ What's هم شکل کوتاه What is است.",
           "hint": "کلمه‌ی کلیدی: «نام خانوادگی» = last name؛ تلفظ: /læst neɪm/ (لَست نِیم)؛ نکته: family name هم درست است.",
           "time_limit": 60,
@@ -92,18 +76,14 @@
           "explanation": "Question یعنی سؤال.",
           "hint": "کلمه‌ی کلیدی: «سؤال» = question؛ تلفظ: /ˈkwestʃən/ (کوئِستشِن)؛ نکته: فعل پرسیدن ask است.",
           "time_limit": 60,
-          "accepted_answers": [
-            "I've a question."
-          ],
+          "accepted_answers": ["I've a question."],
           "translation": "من یک سؤال دارم."
         },
         {
           "id": "evolve-1-l01-tr-11",
           "question": "به من کمک کن.",
           "expected_answer": "Help me.",
-          "accepted_answers": [
-            "Please help me."
-          ],
+          "accepted_answers": ["Please help me."],
           "explanation": "Help یعنی کمک کردن.",
           "hint": "کلمه‌ی کلیدی: «کمک کن» = help؛ تلفظ: /help/ (هِلپ)؛ نکته: «به من» در انگلیسی me است؛ راهنما: به نوع جمله (امری) دقت کن.",
           "time_limit": 60,
@@ -125,19 +105,14 @@
           "explanation": "از الگوی How do you say ... in English? برای پرسیدن معادل انگلیسی استفاده می‌کنیم.",
           "hint": "کلمه‌ی کلیدی: «کمک» = help؛ تلفظ: /help/ (هِلپ)؛ راهنما: به شکل پرسشی جمله دقت کن.",
           "time_limit": 60,
-          "accepted_answers": [
-            "How do you say help in English?",
-            "How do you say 'help' in English?"
-          ],
+          "accepted_answers": ["How do you say help in English?", "How do you say 'help' in English?"],
           "translation": "چطور به انگلیسی می‌گویی «کمک»؟"
         },
         {
           "id": "evolve-1-l01-tr-14",
           "question": "کلمه teacher چه معنی‌ای می‌دهد؟",
           "expected_answer": "What does teacher mean?",
-          "accepted_answers": [
-            "What does the word teacher mean?"
-          ],
+          "accepted_answers": ["What does the word teacher mean?"],
           "explanation": "برای پرسیدن معنی کلمه از الگوی What does ... mean? استفاده می‌کنیم.",
           "hint": "کلمه‌ی کلیدی: «معنی» = mean؛ تلفظ: /miːn/ (مین)؛ راهنما: به شکل پرسشی جمله دقت کن.",
           "time_limit": 60,
@@ -150,9 +125,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60,
-          "accepted_answers": [
-            "We've a teacher."
-          ],
+          "accepted_answers": ["We've a teacher."],
           "translation": "ما یک معلم داریم."
         },
         {
@@ -180,9 +153,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: partner = شریک / همراه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60,
-          "accepted_answers": [
-            "I'm a partner."
-          ],
+          "accepted_answers": ["I'm a partner."],
           "translation": "من یک شریک هستم."
         },
         {
@@ -192,9 +163,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی؛ that = آن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60,
-          "accepted_answers": [
-            "That's my tutor."
-          ],
+          "accepted_answers": ["That's my tutor."],
           "translation": "آن مدرس خصوصی من است."
         },
         {
@@ -312,9 +281,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60,
-          "accepted_answers": [
-            "You've a question."
-          ],
+          "accepted_answers": ["You've a question."],
           "translation": "تو یک سؤال داری."
         },
         {
@@ -324,9 +291,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "time_limit": 60,
-          "accepted_answers": [
-            "They've a question."
-          ],
+          "accepted_answers": ["They've a question."],
           "translation": "آن‌ها یک سؤال دارند."
         },
         {
@@ -336,11 +301,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: book = کتاب؛ it = آن (برای چیز یا حیوان).",
           "time_limit": 60,
-          "accepted_answers": [
-            "It's my book.",
-            "That is my book.",
-            "That's my book."
-          ],
+          "accepted_answers": ["It's my book.", "That is my book.", "That's my book."],
           "translation": "آن کتاب من است."
         },
         {
@@ -350,9 +311,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
-          "accepted_answers": [
-            "I do not understand."
-          ],
+          "accepted_answers": ["I do not understand."],
           "translation": "من نمی‌فهمم."
         },
         {
@@ -371,9 +330,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "hint": "کلمه‌های کلیدی: can = می‌توانم / توانستن؛ repeat = تکرار کردن. راهنما: به نوع جمله دقت کن.",
           "time_limit": 60,
-          "accepted_answers": [
-            "Can you repeat that please?"
-          ],
+          "accepted_answers": ["Can you repeat that please?"],
           "translation": "می‌توانی آن را تکرار کنی، لطفاً؟"
         },
         {
@@ -456,9 +413,7 @@
           "hint": "کلمه‌ی کلیدی: from = از / اهل؛ راهنما: با I از am استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "من اهل ایران هستم.",
-          "accepted_answers": [
-            "I'm from Iran."
-          ]
+          "accepted_answers": ["I'm from Iran."]
         },
         {
           "id": "evolve-1-l01-tr-142",
@@ -537,13 +492,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "My first name is Ali.",
           "explanation": "ترتیب جمله: My + first name + is + نام.",
-          "word_bank": [
-            "name",
-            "Ali.",
-            "My",
-            "first",
-            "is"
-          ],
+          "word_bank": ["name", "Ali.", "My", "first", "is"],
           "time_limit": 60,
           "translation": "نام کوچک من علی است."
         },
@@ -552,12 +501,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "This is my teacher.",
           "explanation": "This is my ... برای معرفی یک شخص یا چیز استفاده می‌شود.",
-          "word_bank": [
-            "teacher.",
-            "This",
-            "my",
-            "is"
-          ],
+          "word_bank": ["teacher.", "This", "my", "is"],
           "time_limit": 60,
           "translation": "این معلم من است."
         },
@@ -566,12 +510,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "This is my friend.",
           "explanation": "به ترتیب This + is + my + اسم توجه کن.",
-          "word_bank": [
-            "my",
-            "friend.",
-            "is",
-            "This"
-          ],
+          "word_bank": ["my", "friend.", "is", "This"],
           "time_limit": 60,
           "translation": "این دوست من است."
         },
@@ -580,12 +519,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I have a question.",
           "explanation": "ترتیب جمله: فاعل + فعل + a + اسم.",
-          "word_bank": [
-            "question.",
-            "have",
-            "I",
-            "a"
-          ],
+          "word_bank": ["question.", "have", "I", "a"],
           "time_limit": 60,
           "translation": "من یک سؤال دارم."
         },
@@ -594,12 +528,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "That is my tutor.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "is",
-            "my",
-            "tutor.",
-            "That"
-          ],
+          "word_bank": ["is", "my", "tutor.", "That"],
           "time_limit": 60,
           "translation": "آن مدرس خصوصی من است."
         },
@@ -608,10 +537,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I eat.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "eat.",
-            "I"
-          ],
+          "word_bank": ["eat.", "I"],
           "time_limit": 60,
           "translation": "من می‌خورم."
         },
@@ -620,10 +546,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I read.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "read.",
-            "I"
-          ],
+          "word_bank": ["read.", "I"],
           "time_limit": 60,
           "translation": "من می‌خوانم."
         },
@@ -632,10 +555,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I write.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "write.",
-            "I"
-          ],
+          "word_bank": ["write.", "I"],
           "time_limit": 60,
           "translation": "من می‌نویسم."
         },
@@ -644,10 +564,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I watch.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "watch.",
-            "I"
-          ],
+          "word_bank": ["watch.", "I"],
           "time_limit": 60,
           "translation": "من تماشا می‌کنم."
         },
@@ -656,10 +573,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Ask me.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "me.",
-            "Ask"
-          ],
+          "word_bank": ["me.", "Ask"],
           "time_limit": 60,
           "translation": "از من بپرس."
         },
@@ -668,10 +582,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Tell me.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "me.",
-            "Tell"
-          ],
+          "word_bank": ["me.", "Tell"],
           "time_limit": 60,
           "translation": "به من بگو."
         },
@@ -680,10 +591,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Give me.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "me.",
-            "Give"
-          ],
+          "word_bank": ["me.", "Give"],
           "time_limit": 60,
           "translation": "به من بده."
         },
@@ -692,10 +600,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Assist me.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "me.",
-            "Assist"
-          ],
+          "word_bank": ["me.", "Assist"],
           "time_limit": 60,
           "translation": "به من یاری کن."
         },
@@ -704,13 +609,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "My last name is Habibi.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "last",
-            "name",
-            "is",
-            "Habibi.",
-            "My"
-          ],
+          "word_bank": ["last", "name", "is", "Habibi.", "My"],
           "time_limit": 60,
           "translation": "نام خانوادگی من حبیبی است."
         },
@@ -719,13 +618,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "What is your last name?",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "is",
-            "your",
-            "last",
-            "name?",
-            "What"
-          ],
+          "word_bank": ["is", "your", "last", "name?", "What"],
           "time_limit": 60,
           "translation": "نام خانوادگی تو چیست؟"
         },
@@ -734,12 +627,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I shut the door.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "I",
-            "shut",
-            "the",
-            "door."
-          ],
+          "word_bank": ["I", "shut", "the", "door."],
           "time_limit": 60,
           "translation": "من در را می‌بندم."
         },
@@ -748,11 +636,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I check in.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "check",
-            "in.",
-            "I"
-          ],
+          "word_bank": ["check", "in.", "I"],
           "time_limit": 60,
           "translation": "من ثبت ورود می‌کنم."
         },
@@ -761,11 +645,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I check out.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "check",
-            "out.",
-            "I"
-          ],
+          "word_bank": ["check", "out.", "I"],
           "time_limit": 60,
           "translation": "من ترک هتل می‌کنم."
         },
@@ -774,12 +654,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Give me a hand.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "me",
-            "a",
-            "hand.",
-            "Give"
-          ],
+          "word_bank": ["me", "a", "hand.", "Give"],
           "time_limit": 60,
           "translation": "به من کمک کن (اصطلاح)"
         },
@@ -788,10 +663,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Aid me.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "me.",
-            "Aid"
-          ],
+          "word_bank": ["me.", "Aid"],
           "time_limit": 60,
           "translation": "به من مساعدت کن."
         },
@@ -800,12 +672,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "You have a question.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "have",
-            "a",
-            "question.",
-            "You"
-          ],
+          "word_bank": ["have", "a", "question.", "You"],
           "time_limit": 60,
           "translation": "تو یک سؤال داری."
         },
@@ -814,12 +681,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "They have a question.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "have",
-            "a",
-            "question.",
-            "They"
-          ],
+          "word_bank": ["have", "a", "question.", "They"],
           "time_limit": 60,
           "translation": "آن‌ها یک سؤال دارند."
         },
@@ -828,13 +690,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "What is your first name?",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "is",
-            "your",
-            "first",
-            "name?",
-            "What"
-          ],
+          "word_bank": ["is", "your", "first", "name?", "What"],
           "time_limit": 60,
           "translation": "اسم کوچک تو چیست؟"
         },
@@ -843,10 +699,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Help me.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "me.",
-            "Help"
-          ],
+          "word_bank": ["me.", "Help"],
           "time_limit": 60,
           "translation": "به من کمک کن."
         },
@@ -855,15 +708,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "How do you say help in English?",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "do",
-            "you",
-            "say",
-            "help",
-            "in",
-            "English?",
-            "How"
-          ],
+          "word_bank": ["do", "you", "say", "help", "in", "English?", "How"],
           "time_limit": 60,
           "translation": "چطور به انگلیسی می‌گویی «کمک»؟"
         },
@@ -872,12 +717,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "What does teacher mean?",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "does",
-            "teacher",
-            "mean?",
-            "What"
-          ],
+          "word_bank": ["does", "teacher", "mean?", "What"],
           "time_limit": 60,
           "translation": "کلمه teacher چه معنی‌ای می‌دهد؟"
         },
@@ -886,12 +726,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "We have a teacher.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "have",
-            "a",
-            "teacher.",
-            "We"
-          ],
+          "word_bank": ["have", "a", "teacher.", "We"],
           "time_limit": 60,
           "translation": "ما یک معلم داریم."
         },
@@ -900,10 +735,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "He reads.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "reads.",
-            "He"
-          ],
+          "word_bank": ["reads.", "He"],
           "time_limit": 60,
           "translation": "او (مرد) می‌خواند."
         },
@@ -912,10 +744,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "She walks.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "walks.",
-            "She"
-          ],
+          "word_bank": ["walks.", "She"],
           "time_limit": 60,
           "translation": "او (زن) راه می‌رود."
         },
@@ -924,12 +753,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I am a partner.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "am",
-            "a",
-            "partner.",
-            "I"
-          ],
+          "word_bank": ["am", "a", "partner.", "I"],
           "time_limit": 60,
           "translation": "من یک شریک هستم."
         },
@@ -938,11 +762,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I don't understand.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "understand.",
-            "don't",
-            "I"
-          ],
+          "word_bank": ["understand.", "don't", "I"],
           "time_limit": 60,
           "translation": "من نمی‌فهمم."
         },
@@ -951,12 +771,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "How do you spell?",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "spell?",
-            "you",
-            "do",
-            "How"
-          ],
+          "word_bank": ["spell?", "you", "do", "How"],
           "time_limit": 60,
           "translation": "چطور هجی می‌کنی؟"
         },
@@ -965,13 +780,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Can you repeat that, please?",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "please?",
-            "that,",
-            "repeat",
-            "you",
-            "Can"
-          ],
+          "word_bank": ["please?", "that,", "repeat", "you", "Can"],
           "time_limit": 60,
           "translation": "می‌توانی آن را تکرار کنی، لطفاً؟"
         },
@@ -980,11 +789,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Sorry, what page?",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "page?",
-            "what",
-            "Sorry,"
-          ],
+          "word_bank": ["page?", "what", "Sorry,"],
           "time_limit": 60,
           "translation": "ببخشید، کدام صفحه؟"
         },
@@ -993,13 +798,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Do you have any questions?",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "questions?",
-            "any",
-            "have",
-            "you",
-            "Do"
-          ],
+          "word_bank": ["questions?", "any", "have", "you", "Do"],
           "time_limit": 60,
           "translation": "آیا سؤالی داری؟"
         },
@@ -1008,11 +807,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Close your book.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "book.",
-            "your",
-            "Close"
-          ],
+          "word_bank": ["book.", "your", "Close"],
           "time_limit": 60,
           "translation": "کتابت را ببند."
         },
@@ -1021,11 +816,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Open your book.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "book.",
-            "your",
-            "Open"
-          ],
+          "word_bank": ["book.", "your", "Open"],
           "time_limit": 60,
           "translation": "کتابت را باز کن."
         },
@@ -1034,11 +825,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Go to page.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "page.",
-            "to",
-            "Go"
-          ],
+          "word_bank": ["page.", "to", "Go"],
           "time_limit": 60,
           "translation": "به صفحه برو."
         },
@@ -1047,10 +834,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Your teacher.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "teacher.",
-            "Your"
-          ],
+          "word_bank": ["teacher.", "Your"],
           "time_limit": 60,
           "translation": "معلم تو."
         },
@@ -1059,12 +843,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "This is your teacher.",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "teacher.",
-            "your",
-            "is",
-            "This"
-          ],
+          "word_bank": ["teacher.", "your", "is", "This"],
           "time_limit": 60,
           "translation": "این معلم تو است."
         },
@@ -1073,12 +852,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Where is my class?",
           "explanation": "سؤال با where شروع می‌شود: Where + is + my + class؟",
-          "word_bank": [
-            "class",
-            "my",
-            "is",
-            "Where"
-          ],
+          "word_bank": ["class", "my", "is", "Where"],
           "time_limit": 60,
           "translation": "کلاس من کجاست؟"
         },
@@ -1087,12 +861,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I am from Iran.",
           "explanation": "ترتیب جمله: I + am + from + Iran.",
-          "word_bank": [
-            "Iran",
-            "am",
-            "I",
-            "from"
-          ],
+          "word_bank": ["Iran", "am", "I", "from"],
           "time_limit": 60,
           "translation": "من اهل ایران هستم."
         },
@@ -1101,13 +870,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I work at a hotel.",
           "explanation": "ترتیب جمله: I + work + at + a + hotel.",
-          "word_bank": [
-            "at",
-            "work",
-            "hotel",
-            "a",
-            "I"
-          ],
+          "word_bank": ["at", "work", "hotel", "a", "I"],
           "time_limit": 60,
           "translation": "من در یک هتل کار می‌کنم."
         },
@@ -1116,13 +879,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I check into my hotel.",
           "explanation": "Check into یک عبارت است: check into = وارد هتل شدن.",
-          "word_bank": [
-            "my",
-            "check",
-            "into",
-            "hotel",
-            "I"
-          ],
+          "word_bank": ["my", "check", "into", "hotel", "I"],
           "time_limit": 60,
           "translation": "من وارد هتلم می‌شوم."
         },
@@ -1131,15 +888,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "My mother and I are from Iran.",
           "explanation": "در حالت محترمانه، My mother اول می‌آید و I در آخر: My mother and I.",
-          "word_bank": [
-            "are",
-            "I",
-            "mother",
-            "and",
-            "My",
-            "from",
-            "Iran"
-          ],
+          "word_bank": ["are", "I", "mother", "and", "My", "from", "Iran"],
           "time_limit": 60,
           "translation": "مادرم و من اهل ایران هستیم."
         },
@@ -1148,12 +897,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "I visit my teacher.",
           "explanation": "ترتیب جمله: I + visit + my + teacher.",
-          "word_bank": [
-            "teacher.",
-            "visit",
-            "I",
-            "my"
-          ],
+          "word_bank": ["teacher.", "visit", "I", "my"],
           "time_limit": 60,
           "translation": "من به دیدن معلمم می‌روم."
         },
@@ -1162,13 +906,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "Do you have any data?",
           "explanation": "ترتیب کلمات را در جمله‌ی انگلیسی به خاطر بسپار.",
-          "word_bank": [
-            "data?",
-            "any",
-            "have",
-            "you",
-            "Do"
-          ],
+          "word_bank": ["data?", "any", "have", "you", "Do"],
           "time_limit": 60,
           "translation": "آیا داده‌ای داری؟"
         },
@@ -1177,13 +915,7 @@
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "expected_answer": "You can call me Bahar.",
           "explanation": "ترتیب جمله: You + can + call + me + Bahar.",
-          "word_bank": [
-            "Bahar.",
-            "call",
-            "You",
-            "me",
-            "can"
-          ],
+          "word_bank": ["Bahar.", "call", "You", "me", "can"],
           "time_limit": 60,
           "translation": "می‌توانی مرا بهار صدا بزنی."
         }
@@ -1198,12 +930,7 @@
       "items": [
         {
           "id": "evolve-1-l01-wt-01",
-          "word_bank": [
-            "این",
-            "معلم",
-            "من",
-            "است"
-          ],
+          "word_bank": ["این", "معلم", "من", "است"],
           "expected_answer": "This is my teacher.",
           "explanation": "ترتیب کلمات فارسی همان ترتیب جمله‌ی انگلیسی است.",
           "hint": "به ساختار معرفی کردن کسی یا چیزی و به اینکه این چیز مال چه کسی است فکر کن.",
@@ -1212,31 +939,17 @@
         },
         {
           "id": "evolve-1-l01-wt-02",
-          "word_bank": [
-            "نام کوچک",
-            "من",
-            "علی",
-            "است"
-          ],
+          "word_bank": ["نام کوچک", "من", "علی", "است"],
           "expected_answer": "My first name is Ali.",
           "explanation": "نام کوچک = first name؛ جمله با My شروع می‌شود.",
           "hint": "به نوع نامی که گفته می‌شود و به کلمه‌ای که جمله با آن شروع می‌شود فکر کن.",
           "time_limit": 60,
-          "accepted_answers": [
-            "My first name's Ali.",
-            "My given name is Ali.",
-            "My given name's Ali."
-          ],
+          "accepted_answers": ["My first name's Ali.", "My given name is Ali.", "My given name's Ali."],
           "translation": "نام کوچک من علی است."
         },
         {
           "id": "evolve-1-l01-wt-03",
-          "word_bank": [
-            "این",
-            "دوست",
-            "من",
-            "است"
-          ],
+          "word_bank": ["این", "دوست", "من", "است"],
           "expected_answer": "This is my friend.",
           "explanation": "دوست = friend.",
           "hint": "به ساختار معرفی کردن کسی یا چیزی و به اینکه این چیز مال چه کسی است فکر کن.",
@@ -1245,44 +958,27 @@
         },
         {
           "id": "evolve-1-l01-wt-04",
-          "word_bank": [
-            "من",
-            "یک",
-            "سؤال",
-            "دارم"
-          ],
+          "word_bank": ["من", "یک", "سؤال", "دارم"],
           "expected_answer": "I have a question.",
           "explanation": "دارم = have؛ یک = a.",
           "hint": "به فعل داشتن و شکل آن برای فاعل جمله، و به حرف «یک» در جمله فکر کن.",
           "time_limit": 60,
-          "accepted_answers": [
-            "I've a question."
-          ],
+          "accepted_answers": ["I've a question."],
           "translation": "من یک سؤال دارم."
         },
         {
           "id": "evolve-1-l01-wt-05",
-          "word_bank": [
-            "ما",
-            "یک",
-            "معلم",
-            "داریم"
-          ],
+          "word_bank": ["ما", "یک", "معلم", "داریم"],
           "expected_answer": "We have a teacher.",
           "explanation": "داریم = have (برای We).",
           "hint": "به فعل داشتن و شکل آن برای فاعل جمله، و به حرف «یک» در جمله فکر کن.",
           "time_limit": 60,
-          "accepted_answers": [
-            "We've a teacher."
-          ],
+          "accepted_answers": ["We've a teacher."],
           "translation": "ما یک معلم داریم."
         },
         {
           "id": "evolve-1-l01-wt-06",
-          "word_bank": [
-            "او (مرد)",
-            "می‌خواند"
-          ],
+          "word_bank": ["او (مرد)", "می‌خواند"],
           "expected_answer": "He reads.",
           "explanation": "برای He فعل read به reads تبدیل می‌شود.",
           "hint": "زمان جمله حال ساده است؛ به فاعل جمله (او) و تغییری که فعل برای او پیدا می‌کند دقت کن.",
@@ -1291,11 +987,7 @@
         },
         {
           "id": "evolve-1-l01-wt-07",
-          "word_bank": [
-            "او (زن)",
-            "راه",
-            "می‌رود"
-          ],
+          "word_bank": ["او (زن)", "راه", "می‌رود"],
           "expected_answer": "She walks.",
           "explanation": "برای She فعل walk به walks تبدیل می‌شود.",
           "hint": "زمان جمله حال ساده است؛ به فاعل جمله (او) و تغییری که فعل برای او پیدا می‌کند دقت کن.",
@@ -1304,58 +996,37 @@
         },
         {
           "id": "evolve-1-l01-wt-08",
-          "word_bank": [
-            "به من",
-            "کمک کن"
-          ],
+          "word_bank": ["به من", "کمک کن"],
           "expected_answer": "Help me.",
           "explanation": "جمله‌ی امر با فعل help شروع می‌شود.",
           "hint": "این جمله یک دستور یا درخواست است؛ به جای فعل و به اینکه کار برای چه کسی انجام می‌شود دقت کن.",
           "time_limit": 60,
-          "accepted_answers": [
-            "Please help me."
-          ],
+          "accepted_answers": ["Please help me."],
           "translation": "به من کمک کن."
         },
         {
           "id": "evolve-1-l01-wt-10",
-          "word_bank": [
-            "من",
-            "یک شریک",
-            "هستم"
-          ],
+          "word_bank": ["من", "یک شریک", "هستم"],
           "expected_answer": "I am a partner.",
           "explanation": "هستم = am (برای I).",
           "hint": "به فعل بودن و شکل آن برای فاعل «من» فکر کن؛ به حرف «یک» هم توجه کن.",
           "time_limit": 60,
-          "accepted_answers": [
-            "I'm a partner."
-          ],
+          "accepted_answers": ["I'm a partner."],
           "translation": "من یک شریک هستم."
         },
         {
           "id": "evolve-1-l01-wt-32",
-          "word_bank": [
-            "آن",
-            "مدرس خصوصی",
-            "من",
-            "است"
-          ],
+          "word_bank": ["آن", "مدرس خصوصی", "من", "است"],
           "expected_answer": "That is my tutor.",
           "explanation": "برای معرفی چیزی یا کسی دورتر: That is my + اسم.",
           "time_limit": 60,
           "translation": "آن مدرس خصوصی من است.",
-          "accepted_answers": [
-            "That's my tutor."
-          ],
+          "accepted_answers": ["That's my tutor."],
           "hint": "به ساختار معرفی کردن فکر کن؛ کلمه‌ی اشاره‌ی جمله برای چیزی دورتر به کار می‌رود."
         },
         {
           "id": "evolve-1-l01-wt-53",
-          "word_bank": [
-            "من",
-            "می‌خورم"
-          ],
+          "word_bank": ["من", "می‌خورم"],
           "expected_answer": "I eat.",
           "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
@@ -1364,10 +1035,7 @@
         },
         {
           "id": "evolve-1-l01-wt-54",
-          "word_bank": [
-            "من",
-            "می‌خوانم"
-          ],
+          "word_bank": ["من", "می‌خوانم"],
           "expected_answer": "I read.",
           "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
@@ -1376,10 +1044,7 @@
         },
         {
           "id": "evolve-1-l01-wt-55",
-          "word_bank": [
-            "من",
-            "می‌نویسم"
-          ],
+          "word_bank": ["من", "می‌نویسم"],
           "expected_answer": "I write.",
           "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
@@ -1388,10 +1053,7 @@
         },
         {
           "id": "evolve-1-l01-wt-56",
-          "word_bank": [
-            "من",
-            "تماشا می‌کنم"
-          ],
+          "word_bank": ["من", "تماشا می‌کنم"],
           "expected_answer": "I watch.",
           "explanation": "با I از شکل ساده‌ی فعل (بدون s) استفاده می‌کنیم.",
           "time_limit": 60,
@@ -1400,10 +1062,7 @@
         },
         {
           "id": "evolve-1-l01-wt-101",
-          "word_bank": [
-            "از من",
-            "بپرس"
-          ],
+          "word_bank": ["از من", "بپرس"],
           "expected_answer": "Ask me.",
           "explanation": "در جمله‌ی امر فعل اول می‌آید و me (به من) بعد از آن.",
           "time_limit": 60,
@@ -1412,10 +1071,7 @@
         },
         {
           "id": "evolve-1-l01-wt-102",
-          "word_bank": [
-            "به من",
-            "بگو"
-          ],
+          "word_bank": ["به من", "بگو"],
           "expected_answer": "Tell me.",
           "explanation": "در جمله‌ی امر فعل اول می‌آید و me (به من) بعد از آن.",
           "time_limit": 60,
@@ -1424,10 +1080,7 @@
         },
         {
           "id": "evolve-1-l01-wt-103",
-          "word_bank": [
-            "به من",
-            "بده"
-          ],
+          "word_bank": ["به من", "بده"],
           "expected_answer": "Give me.",
           "explanation": "در جمله‌ی امر فعل اول می‌آید و me (به من) بعد از آن.",
           "time_limit": 60,
@@ -1436,10 +1089,7 @@
         },
         {
           "id": "evolve-1-l01-wt-104",
-          "word_bank": [
-            "به من",
-            "یاری کن"
-          ],
+          "word_bank": ["به من", "یاری کن"],
           "expected_answer": "Assist me.",
           "explanation": "در جمله‌ی امر فعل اول می‌آید و me (به من) بعد از آن.",
           "time_limit": 60,
@@ -1448,12 +1098,7 @@
         },
         {
           "id": "evolve-1-l01-wt-108",
-          "word_bank": [
-            "نام خانوادگی",
-            "من",
-            "حبیبی",
-            "است"
-          ],
+          "word_bank": ["نام خانوادگی", "من", "حبیبی", "است"],
           "expected_answer": "My last name is Habibi.",
           "explanation": "برای گفتن نام خانوادگی: My last name is + نام خانوادگی. (last name = نام خانوادگی)",
           "time_limit": 60,
@@ -1462,29 +1107,17 @@
         },
         {
           "id": "evolve-1-l01-wt-109",
-          "word_bank": [
-            "نام خانوادگی",
-            "تو",
-            "چیست؟"
-          ],
+          "word_bank": ["نام خانوادگی", "تو", "چیست؟"],
           "expected_answer": "What is your last name?",
           "explanation": "در سؤال با What، ابتدا What و بعد is و فاعل می‌آیند.",
           "time_limit": 60,
-          "accepted_answers": [
-            "What is your family name?",
-            "What's your family name?",
-            "What's your last name?"
-          ],
+          "accepted_answers": ["What is your family name?", "What's your family name?", "What's your last name?"],
           "translation": "نام خانوادگی تو چیست؟",
           "hint": "به کلمه‌ی پرسشی جمله و جای فعل کمکی در سؤال فکر کن."
         },
         {
           "id": "evolve-1-l01-wt-114",
-          "word_bank": [
-            "من",
-            "در را",
-            "می‌بندم"
-          ],
+          "word_bank": ["من", "در را", "می‌بندم"],
           "expected_answer": "I shut the door.",
           "explanation": "در را = the door و می‌بندم = shut. فعل shut قبل از the door می‌آید.",
           "time_limit": 60,
@@ -1493,10 +1126,7 @@
         },
         {
           "id": "evolve-1-l01-wt-116",
-          "word_bank": [
-            "من",
-            "ثبت ورود می‌کنم"
-          ],
+          "word_bank": ["من", "ثبت ورود می‌کنم"],
           "expected_answer": "I check in.",
           "explanation": "check in یک فعل دو کلمه‌ای است (ثبت ورود کردن) و با I بدون s به کار می‌رود.",
           "time_limit": 60,
@@ -1505,10 +1135,7 @@
         },
         {
           "id": "evolve-1-l01-wt-117",
-          "word_bank": [
-            "من",
-            "ترک هتل می‌کنم"
-          ],
+          "word_bank": ["من", "ترک هتل می‌کنم"],
           "expected_answer": "I check out.",
           "explanation": "check out یک فعل دو کلمه‌ای است (ترک هتل کردن) و با I بدون s به کار می‌رود.",
           "time_limit": 60,
@@ -1517,11 +1144,7 @@
         },
         {
           "id": "evolve-1-l01-wt-118",
-          "word_bank": [
-            "به من",
-            "یک دست",
-            "بده"
-          ],
+          "word_bank": ["به من", "یک دست", "بده"],
           "expected_answer": "Give me a hand.",
           "explanation": "اصطلاح give someone a hand یعنی به کسی کمک کردن. در جمله‌ی امر، give اول می‌آید و me بعد از آن.",
           "time_limit": 60,
@@ -1530,10 +1153,7 @@
         },
         {
           "id": "evolve-1-l01-wt-119",
-          "word_bank": [
-            "به من",
-            "مساعدت کن"
-          ],
+          "word_bank": ["به من", "مساعدت کن"],
           "expected_answer": "Aid me.",
           "explanation": "در جمله‌ی امر فعل اول می‌آید و me (به من) بعد از آن.",
           "time_limit": 60,
@@ -1542,82 +1162,47 @@
         },
         {
           "id": "evolve-1-l01-wt-120",
-          "word_bank": [
-            "تو",
-            "یک",
-            "سؤال",
-            "داری"
-          ],
+          "word_bank": ["تو", "یک", "سؤال", "داری"],
           "expected_answer": "You have a question.",
           "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "تو یک سؤال داری.",
-          "accepted_answers": [
-            "You've a question."
-          ],
+          "accepted_answers": ["You've a question."],
           "hint": "به فعل داشتن و شکل آن برای فاعل جمله، و به حرف «یک» در جمله فکر کن."
         },
         {
           "id": "evolve-1-l01-wt-121",
-          "word_bank": [
-            "آن‌ها",
-            "یک",
-            "سؤال",
-            "دارند"
-          ],
+          "word_bank": ["آن‌ها", "یک", "سؤال", "دارند"],
           "expected_answer": "They have a question.",
           "explanation": "برای داشتن یک چیز: have a + اسم. برای I، We، You و They از have استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "آن‌ها یک سؤال دارند.",
-          "accepted_answers": [
-            "They've a question."
-          ],
+          "accepted_answers": ["They've a question."],
           "hint": "به فعل داشتن و شکل آن برای فاعل جمله، و به حرف «یک» در جمله فکر کن."
         },
         {
           "id": "evolve-1-l01-wt-122",
-          "word_bank": [
-            "آن",
-            "کتاب",
-            "من",
-            "است"
-          ],
+          "word_bank": ["آن", "کتاب", "من", "است"],
           "expected_answer": "It is my book.",
           "explanation": "برای چیز یا حیوان از it استفاده می‌کنیم (به جای this یا that).",
           "time_limit": 60,
           "translation": "آن کتاب من است.",
-          "accepted_answers": [
-            "It's my book.",
-            "That is my book.",
-            "That's my book."
-          ],
+          "accepted_answers": ["It's my book.", "That is my book.", "That's my book."],
           "hint": "به این توجه کن که جمله درباره‌ی یک چیز است نه یک انسان، و به ساختار معرفی کردن فکر کن."
         },
         {
           "id": "evolve-1-l01-wt-123",
-          "word_bank": [
-            "اسم",
-            "کوچک",
-            "تو",
-            "چیست"
-          ],
+          "word_bank": ["اسم", "کوچک", "تو", "چیست"],
           "expected_answer": "What is your first name?",
           "explanation": "در سؤال با What، ابتدا What و بعد is و فاعل می‌آیند.",
           "time_limit": 60,
           "translation": "اسم کوچک تو چیست؟",
-          "accepted_answers": [
-            "What's your first name?"
-          ],
+          "accepted_answers": ["What's your first name?"],
           "hint": "به کلمه‌ی پرسشی جمله و جای فعل کمکی در سؤال فکر کن."
         },
         {
           "id": "evolve-1-l01-wt-125",
-          "word_bank": [
-            "چطور",
-            "«کمک»",
-            "را به انگلیسی",
-            "می‌گویی؟"
-          ],
+          "word_bank": ["چطور", "«کمک»", "را به انگلیسی", "می‌گویی؟"],
           "expected_answer": "How do you say help in English?",
           "explanation": "در سؤال‌های How از do و فاعل (you) استفاده می‌کنیم.",
           "time_limit": 60,
@@ -1626,11 +1211,7 @@
         },
         {
           "id": "evolve-1-l01-wt-126",
-          "word_bank": [
-            "کلمه‌ی",
-            "«teacher»",
-            "چه معنی‌ای می‌دهد؟"
-          ],
+          "word_bank": ["کلمه‌ی", "«teacher»", "چه معنی‌ای می‌دهد؟"],
           "expected_answer": "What does teacher mean?",
           "explanation": "در سؤال با What، ابتدا What و بعد is و فاعل می‌آیند.",
           "time_limit": 60,
@@ -1639,25 +1220,17 @@
         },
         {
           "id": "evolve-1-l01-wt-127",
-          "word_bank": [
-            "من",
-            "نمی‌فهمم"
-          ],
+          "word_bank": ["من", "نمی‌فهمم"],
           "expected_answer": "I don't understand.",
           "explanation": "شکل منفی حال ساده با I: don't (do not) + فعل ساده.",
           "time_limit": 60,
           "translation": "من نمی‌فهمم.",
           "hint": "به منفی کردن فعل در زمان حال ساده و به فاعل «من» فکر کن.",
-          "accepted_answers": [
-            "I do not understand."
-          ]
+          "accepted_answers": ["I do not understand."]
         },
         {
           "id": "evolve-1-l01-wt-128",
-          "word_bank": [
-            "چطور",
-            "هجی می‌کنی؟"
-          ],
+          "word_bank": ["چطور", "هجی می‌کنی؟"],
           "expected_answer": "How do you spell?",
           "explanation": "در سؤال‌های How از do و فاعل (you) استفاده می‌کنیم.",
           "time_limit": 60,
@@ -1666,12 +1239,7 @@
         },
         {
           "id": "evolve-1-l01-wt-129",
-          "word_bank": [
-            "می‌توانی",
-            "لطفاً",
-            "آن را",
-            "تکرار کنی؟"
-          ],
+          "word_bank": ["می‌توانی", "لطفاً", "آن را", "تکرار کنی؟"],
           "expected_answer": "Can you repeat that, please?",
           "explanation": "برای درخواست مؤدبانه از can you استفاده می‌کنیم.",
           "time_limit": 60,
@@ -1680,11 +1248,7 @@
         },
         {
           "id": "evolve-1-l01-wt-130",
-          "word_bank": [
-            "ببخشید،",
-            "کدام",
-            "صفحه؟"
-          ],
+          "word_bank": ["ببخشید،", "کدام", "صفحه؟"],
           "expected_answer": "Sorry, what page?",
           "explanation": "Sorry برای عذرخواهی یا توجه گرفتن است و با کاما از ادامه‌ی جمله جدا می‌شود.",
           "time_limit": 60,
@@ -1693,11 +1257,7 @@
         },
         {
           "id": "evolve-1-l01-wt-131",
-          "word_bank": [
-            "آیا",
-            "سؤالی",
-            "داری؟"
-          ],
+          "word_bank": ["آیا", "سؤالی", "داری؟"],
           "expected_answer": "Do you have any questions?",
           "explanation": "در سؤال‌های Do، ابتدا do و بعد فاعل (you) و سپس فعل می‌آید.",
           "time_limit": 60,
@@ -1706,10 +1266,7 @@
         },
         {
           "id": "evolve-1-l01-wt-132",
-          "word_bank": [
-            "کتابت را",
-            "ببند"
-          ],
+          "word_bank": ["کتابت را", "ببند"],
           "expected_answer": "Close your book.",
           "explanation": "در جمله‌ی امر، فعل اول جمله می‌آید و فاعل نمی‌خواهد.",
           "time_limit": 60,
@@ -1718,10 +1275,7 @@
         },
         {
           "id": "evolve-1-l01-wt-133",
-          "word_bank": [
-            "کتابت را",
-            "باز کن"
-          ],
+          "word_bank": ["کتابت را", "باز کن"],
           "expected_answer": "Open your book.",
           "explanation": "در جمله‌ی امر، فعل اول جمله می‌آید و فاعل نمی‌خواهد.",
           "time_limit": 60,
@@ -1730,10 +1284,7 @@
         },
         {
           "id": "evolve-1-l01-wt-134",
-          "word_bank": [
-            "به صفحه",
-            "برو"
-          ],
+          "word_bank": ["به صفحه", "برو"],
           "expected_answer": "Go to page.",
           "explanation": "در جمله‌ی امر، فعل اول جمله می‌آید و فاعل نمی‌خواهد.",
           "time_limit": 60,
@@ -1742,12 +1293,7 @@
         },
         {
           "id": "evolve-1-l01-wt-135",
-          "word_bank": [
-            "این",
-            "معلم",
-            "تو",
-            "است"
-          ],
+          "word_bank": ["این", "معلم", "تو", "است"],
           "expected_answer": "This is your teacher.",
           "explanation": "برای معرفی چیزی یا کسی که مال مخاطب است: This is your + اسم.",
           "time_limit": 60,
@@ -1756,11 +1302,7 @@
         },
         {
           "id": "evolve-1-l01-wt-137",
-          "word_bank": [
-            "کلاس",
-            "من",
-            "کجاست"
-          ],
+          "word_bank": ["کلاس", "من", "کجاست"],
           "expected_answer": "Where is my class?",
           "explanation": "سؤال «کجاست» با where شروع می‌شود.",
           "hint": "کجا = where؛ کلاس = class.",
@@ -1769,29 +1311,17 @@
         },
         {
           "id": "evolve-1-l01-wt-139",
-          "word_bank": [
-            "من",
-            "اهل",
-            "ایران",
-            "هستم"
-          ],
+          "word_bank": ["من", "اهل", "ایران", "هستم"],
           "expected_answer": "I am from Iran.",
           "explanation": "اهل = from؛ ایران = Iran.",
           "hint": "با I از am استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "من اهل ایران هستم.",
-          "accepted_answers": [
-            "I'm from Iran."
-          ]
+          "accepted_answers": ["I'm from Iran."]
         },
         {
           "id": "evolve-1-l01-wt-141",
-          "word_bank": [
-            "من",
-            "وارد",
-            "هتلم",
-            "می‌شوم"
-          ],
+          "word_bank": ["من", "وارد", "هتلم", "می‌شوم"],
           "expected_answer": "I check into my hotel.",
           "explanation": "وارد هتل شدن = check into.",
           "hint": "hotel = هتل؛ check into = وارد هتل شدن.",
@@ -1800,12 +1330,7 @@
         },
         {
           "id": "evolve-1-l01-wt-143",
-          "word_bank": [
-            "من",
-            "معلمم",
-            "را",
-            "می‌بینم"
-          ],
+          "word_bank": ["من", "معلمم", "را", "می‌بینم"],
           "expected_answer": "I meet my teacher.",
           "explanation": "می‌بینم = meet (با I).",
           "hint": "meet = ملاقات کردن / دیدن.",
@@ -1814,14 +1339,7 @@
         },
         {
           "id": "evolve-1-l01-wt-144",
-          "word_bank": [
-            "من",
-            "در",
-            "یک",
-            "هتل",
-            "کار",
-            "می‌کنم"
-          ],
+          "word_bank": ["من", "در", "یک", "هتل", "کار", "می‌کنم"],
           "expected_answer": "I work at a hotel.",
           "explanation": "کار می‌کنم = work (با I).",
           "hint": "hotel = هتل؛ at = در؛ a = یک.",
@@ -1830,14 +1348,7 @@
         },
         {
           "id": "evolve-1-l01-wt-145",
-          "word_bank": [
-            "مادرم",
-            "و",
-            "من",
-            "اهل",
-            "ایران",
-            "هستیم"
-          ],
+          "word_bank": ["مادرم", "و", "من", "اهل", "ایران", "هستیم"],
           "expected_answer": "My mother and I are from Iran.",
           "explanation": "در حالت محترمانه، اول مادرم (My mother) و در آخر I می‌آید.",
           "hint": "و = and؛ اهل = from.",
@@ -1846,12 +1357,7 @@
         },
         {
           "id": "evolve-1-l01-wt-146",
-          "word_bank": [
-            "من",
-            "به دیدن",
-            "معلمم",
-            "می‌روم"
-          ],
+          "word_bank": ["من", "به دیدن", "معلمم", "می‌روم"],
           "expected_answer": "I visit my teacher.",
           "explanation": "visit = به دیدن رفتن؛ با I فعل بدون s می‌آید.",
           "hint": "visit = به دیدن رفتن / دیدن کردن.",
@@ -1860,11 +1366,7 @@
         },
         {
           "id": "evolve-1-l01-wt-150",
-          "word_bank": [
-            "آیا",
-            "داده‌ای",
-            "داری؟"
-          ],
+          "word_bank": ["آیا", "داده‌ای", "داری؟"],
           "expected_answer": "Do you have any data?",
           "explanation": "در سؤال‌های Do، ابتدا do و بعد فاعل (you) و سپس فعل می‌آید.",
           "time_limit": 60,
@@ -1873,12 +1375,7 @@
         },
         {
           "id": "evolve-1-l01-wt-151",
-          "word_bank": [
-            "می‌توانی",
-            "مرا",
-            "بهار",
-            "صدا بزنی"
-          ],
+          "word_bank": ["می‌توانی", "مرا", "بهار", "صدا بزنی"],
           "expected_answer": "You can call me Bahar.",
           "explanation": "صدا بزنی = call؛ بهار = Bahar (اسم). بعد از can فعل ساده می‌آید.",
           "hint": "به شکل فعل بعد از can دقت کن.",
@@ -1900,11 +1397,7 @@
           "expected_answer": "My first name is Ali.",
           "explanation": "First name یعنی نام کوچک. شکل کوتاه is در این جمله به صورت 's نوشته می‌شود.",
           "time_limit": 60,
-          "accepted_answers": [
-            "My first name's Ali.",
-            "My given name is Ali.",
-            "My given name's Ali."
-          ],
+          "accepted_answers": ["My first name's Ali.", "My given name is Ali.", "My given name's Ali."],
           "hint": "کلمه‌ی کلیدی: «نام کوچک» = first name؛ تلفظ: /fɜːrst neɪm/ (فِرست نِیم)؛ نکته: given name هم همین معنی را دارد.",
           "translation": "نام کوچک من علی است."
         },
@@ -1914,11 +1407,7 @@
           "expected_answer": "My last name is Habibi.",
           "explanation": "Last name و family name هر دو برای نام خانوادگی به کار می‌روند.",
           "time_limit": 60,
-          "accepted_answers": [
-            "My family name is Habibi.",
-            "My last name's Habibi.",
-            "My family name's Habibi."
-          ],
+          "accepted_answers": ["My family name is Habibi.", "My last name's Habibi.", "My family name's Habibi."],
           "hint": "کلمه‌ی کلیدی: «نام خانوادگی» = last name؛ تلفظ: /læst neɪm/ (لَست نِیم)؛ نکته: family name هم همین معنی را دارد.",
           "translation": "نام خانوادگی من حبیبی است."
         },
@@ -1928,11 +1417,7 @@
           "expected_answer": "What is your first name?",
           "explanation": "What's شکل کوتاه What is است.",
           "time_limit": 60,
-          "accepted_answers": [
-            "What's your first name?",
-            "What is your given name?",
-            "What's your given name?"
-          ],
+          "accepted_answers": ["What's your first name?", "What is your given name?", "What's your given name?"],
           "hint": "کلمه‌ی کلیدی: «اسم کوچک» = first name؛ تلفظ: /fɜːrst neɪm/ (فِرست نِیم)؛ نکته: «تو» در انگلیسی your است.",
           "translation": "اسم کوچک تو چیست؟"
         },
@@ -1942,11 +1427,7 @@
           "expected_answer": "What is your last name?",
           "explanation": "می‌توانی از last name یا family name استفاده کنی؛ What's هم شکل کوتاه What is است.",
           "time_limit": 60,
-          "accepted_answers": [
-            "What's your last name?",
-            "What is your family name?",
-            "What's your family name?"
-          ],
+          "accepted_answers": ["What's your last name?", "What is your family name?", "What's your family name?"],
           "hint": "کلمه‌ی کلیدی: «نام خانوادگی» = last name؛ تلفظ: /læst neɪm/ (لَست نِیم)؛ نکته: family name هم درست است.",
           "translation": "نام خانوادگی تو چیست؟"
         },
@@ -1974,9 +1455,7 @@
           "expected_answer": "I have a question.",
           "explanation": "Question یعنی سؤال.",
           "time_limit": 60,
-          "accepted_answers": [
-            "I've a question."
-          ],
+          "accepted_answers": ["I've a question."],
           "hint": "کلمه‌ی کلیدی: «سؤال» = question؛ تلفظ: /ˈkwestʃən/ (کوئِستشِن)؛ نکته: فعل پرسیدن ask است.",
           "translation": "من یک سؤال دارم."
         },
@@ -1986,9 +1465,7 @@
           "expected_answer": "Help me.",
           "explanation": "Help یعنی کمک کردن.",
           "time_limit": 60,
-          "accepted_answers": [
-            "Please help me."
-          ],
+          "accepted_answers": ["Please help me."],
           "hint": "کلمه‌ی کلیدی: «کمک کن» = help؛ تلفظ: /help/ (هِلپ)؛ نکته: «به من» در انگلیسی me است؛ راهنما: به نوع جمله (امری) دقت کن.",
           "translation": "به من کمک کن."
         },
@@ -2007,10 +1484,7 @@
           "expected_answer": "How do you say help in English?",
           "explanation": "از الگوی How do you say ... in English? برای پرسیدن معادل انگلیسی استفاده می‌کنیم.",
           "time_limit": 60,
-          "accepted_answers": [
-            "How do you say help in English?",
-            "How do you say 'help' in English?"
-          ],
+          "accepted_answers": ["How do you say help in English?", "How do you say 'help' in English?"],
           "hint": "کلمه‌ی کلیدی: «کمک» = help؛ تلفظ: /help/ (هِلپ)؛ راهنما: به شکل پرسشی جمله دقت کن.",
           "translation": "چطور به انگلیسی می‌گویی «کمک»؟"
         },
@@ -2020,9 +1494,7 @@
           "expected_answer": "What does teacher mean?",
           "explanation": "برای پرسیدن معنی کلمه از الگوی What does ... mean? استفاده می‌کنیم.",
           "time_limit": 60,
-          "accepted_answers": [
-            "What does the word teacher mean?"
-          ],
+          "accepted_answers": ["What does the word teacher mean?"],
           "hint": "کلمه‌ی کلیدی: «معنی» = mean؛ تلفظ: /miːn/ (مین)؛ راهنما: به شکل پرسشی جمله دقت کن.",
           "translation": "کلمه teacher چه معنی‌ای می‌دهد؟"
         },
@@ -2033,9 +1505,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "accepted_answers": [
-            "We've a teacher."
-          ],
+          "accepted_answers": ["We've a teacher."],
           "translation": "ما یک معلم داریم."
         },
         {
@@ -2063,9 +1533,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: partner = شریک / همراه. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "accepted_answers": [
-            "I'm a partner."
-          ],
+          "accepted_answers": ["I'm a partner."],
           "translation": "من یک شریک هستم."
         },
         {
@@ -2075,9 +1543,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی؛ that = آن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "accepted_answers": [
-            "That's my tutor."
-          ],
+          "accepted_answers": ["That's my tutor."],
           "translation": "آن مدرس خصوصی من است."
         },
         {
@@ -2195,9 +1661,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "accepted_answers": [
-            "You've a question."
-          ],
+          "accepted_answers": ["You've a question."],
           "translation": "تو یک سؤال داری."
         },
         {
@@ -2207,9 +1671,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: question = سؤال. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "accepted_answers": [
-            "They've a question."
-          ],
+          "accepted_answers": ["They've a question."],
           "translation": "آن‌ها یک سؤال دارند."
         },
         {
@@ -2219,11 +1681,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: book = کتاب؛ it = آن (برای چیز یا حیوان).",
-          "accepted_answers": [
-            "It's my book.",
-            "That is my book.",
-            "That's my book."
-          ],
+          "accepted_answers": ["It's my book.", "That is my book.", "That's my book."],
           "translation": "آن کتاب من است."
         },
         {
@@ -2233,9 +1691,7 @@
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: understand = فهمیدن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
-          "accepted_answers": [
-            "I do not understand."
-          ],
+          "accepted_answers": ["I do not understand."],
           "translation": "من نمی‌فهمم."
         },
         {
@@ -2252,9 +1708,7 @@
           "question": "می‌توانی آن را تکرار کنی، لطفاً؟",
           "expected_answer": "Can you repeat that, please?",
           "explanation": "جمله‌ی فارسی را با صدا یا تایپ به انگلیسی بگو.",
-          "accepted_answers": [
-            "Can you repeat that please?"
-          ],
+          "accepted_answers": ["Can you repeat that please?"],
           "time_limit": 60,
           "hint": "کلمه‌های کلیدی: can = می‌توانم / توانستن؛ repeat = تکرار کردن. راهنما: جمله‌ی فارسی را بشنو و بعد آن را با صدای بلند به انگلیسی بگو.",
           "translation": "می‌توانی آن را تکرار کنی، لطفاً؟"
@@ -2335,9 +1789,7 @@
           "id": "evolve-1-l01-vt-139",
           "question": "من اهل ایران هستم.",
           "expected_answer": "I am from Iran.",
-          "accepted_answers": [
-            "I'm from Iran."
-          ],
+          "accepted_answers": ["I'm from Iran."],
           "explanation": "From یعنی از / اهل.",
           "time_limit": 60,
           "hint": "کلمه‌ی کلیدی: from = اهل / از.",
@@ -2455,9 +1907,7 @@
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I has a question.",
           "time_limit": 60,
-          "accepted_answers": [
-            "I've a question."
-          ],
+          "accepted_answers": ["I've a question."],
           "translation": "من یک سؤال دارم."
         },
         {
@@ -2468,9 +1918,7 @@
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "That are my tutor.",
           "time_limit": 60,
-          "accepted_answers": [
-            "That's my tutor."
-          ],
+          "accepted_answers": ["That's my tutor."],
           "translation": "آن مدرس خصوصی من است."
         },
         {
@@ -2551,9 +1999,7 @@
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "You has a question.",
           "time_limit": 60,
-          "accepted_answers": [
-            "You've a question."
-          ],
+          "accepted_answers": ["You've a question."],
           "translation": "تو یک سؤال داری."
         },
         {
@@ -2564,9 +2010,7 @@
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "They has a question.",
           "time_limit": 60,
-          "accepted_answers": [
-            "They've a question."
-          ],
+          "accepted_answers": ["They've a question."],
           "translation": "آن‌ها یک سؤال دارند."
         },
         {
@@ -2577,9 +2021,7 @@
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "We has a teacher.",
           "time_limit": 60,
-          "accepted_answers": [
-            "We've a teacher."
-          ],
+          "accepted_answers": ["We've a teacher."],
           "translation": "ما یک معلم داریم."
         },
         {
@@ -2600,9 +2042,7 @@
           "hint": "راهنما: به فعل و فاعل جمله دقت کن.",
           "incorrect_sentence": "I is a partner.",
           "time_limit": 60,
-          "accepted_answers": [
-            "I'm a partner."
-          ],
+          "accepted_answers": ["I'm a partner."],
           "translation": "من یک شریک هستم."
         },
         {
@@ -2698,9 +2138,7 @@
           "id": "evolve-1-l01-neg-01",
           "question": "جمله را منفی کن: This is my teacher.",
           "expected_answer": "This is not my teacher.",
-          "accepted_answers": [
-            "This isn't my teacher."
-          ],
+          "accepted_answers": ["This isn't my teacher."],
           "explanation": "برای منفی کردن is، کلمه not را بعد از آن می‌آوریم. شکل کوتاه is not برابر isn't است.",
           "hint": "کلمه‌های کلیدی: teacher = معلم. راهنما: not = نه؛ isn't = نیست (شکل کوتاه is not).",
           "glossary": [
@@ -2716,9 +2154,7 @@
           "id": "evolve-1-l01-neg-03",
           "question": "جمله را منفی کن: My first name is Ali.",
           "expected_answer": "My first name is not Ali.",
-          "accepted_answers": [
-            "My first name isn't Ali."
-          ],
+          "accepted_answers": ["My first name isn't Ali."],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
           "hint": "کلمه‌های کلیدی: first name = نام کوچک. راهنما: not = نه.",
           "time_limit": 60,
@@ -2728,10 +2164,7 @@
           "id": "evolve-1-l01-neg-27",
           "question": "جمله را منفی کن: That is my tutor.",
           "expected_answer": "That is not my tutor.",
-          "accepted_answers": [
-            "That isn't my tutor.",
-            "That's not my tutor."
-          ],
+          "accepted_answers": ["That isn't my tutor.", "That's not my tutor."],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
           "hint": "کلمه‌های کلیدی: tutor = مدرس خصوصی. راهنما: not = نه.",
           "time_limit": 60,
@@ -2741,9 +2174,7 @@
           "id": "evolve-1-l01-neg-102",
           "question": "جمله را منفی کن: My last name is Habibi.",
           "expected_answer": "My last name is not Habibi.",
-          "accepted_answers": [
-            "My last name isn't Habibi."
-          ],
+          "accepted_answers": ["My last name isn't Habibi."],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
           "hint": "کلمه‌های کلیدی: last name = نام خانوادگی. راهنما: not = نه.",
           "time_limit": 60,
@@ -2753,9 +2184,7 @@
           "id": "evolve-1-l01-neg-122",
           "question": "جمله را منفی کن: I am a partner.",
           "expected_answer": "I am not a partner.",
-          "accepted_answers": [
-            "I'm not a partner."
-          ],
+          "accepted_answers": ["I'm not a partner."],
           "explanation": "برای منفی کردن، not را بعد از فعل کمکی یا is می‌آوریم.",
           "hint": "کلمه‌های کلیدی: partner = شریک / همراه. راهنما: not = نه.",
           "time_limit": 60,
@@ -2837,11 +2266,7 @@
           "question": "جای خالی را کامل کن: You ___.",
           "expected_answer": "eat",
           "explanation": "با You شکل ساده فعل، بدون s، می‌آید.",
-          "options": [
-            "eats",
-            "eat",
-            "eating"
-          ],
+          "options": ["eats", "eat", "eating"],
           "time_limit": 60,
           "translation": "تو می‌خوری."
         },
@@ -2850,11 +2275,7 @@
           "question": "جای خالی را کامل کن: She ___.",
           "expected_answer": "watches",
           "explanation": "فعل watch برای She به watches تبدیل می‌شود.",
-          "options": [
-            "watch",
-            "watchs",
-            "watches"
-          ],
+          "options": ["watch", "watchs", "watches"],
           "time_limit": 60,
           "translation": "او (زن) تماشا می‌کند."
         },
@@ -2863,11 +2284,7 @@
           "question": "برای گوش دادن با تمرکز و توجه کدام فعل مناسب است؟",
           "expected_answer": "Listen",
           "explanation": "Listen یعنی عمداً گوش دادن؛ hear یعنی شنیدن صدا.",
-          "options": [
-            "Hear",
-            "Listen",
-            "Read"
-          ],
+          "options": ["Hear", "Listen", "Read"],
           "time_limit": 60,
           "translation": "گوش دادن"
         },
@@ -2876,11 +2293,7 @@
           "question": "کدام فعل به معنی مشاهده کردن با دقت است؟",
           "expected_answer": "Observe",
           "explanation": "Observe یعنی با دقت نگاه یا بررسی کردن.",
-          "options": [
-            "Observe",
-            "Say",
-            "Get"
-          ],
+          "options": ["Observe", "Say", "Get"],
           "time_limit": 60,
           "translation": "مشاهده کردن / با دقت نگاه کردن"
         },
@@ -2889,11 +2302,7 @@
           "question": "برای ساختمان محل زندگی، کدام کلمه مناسب‌تر است؟",
           "expected_answer": "House",
           "explanation": "House بیشتر به ساختمان اشاره دارد؛ home بیشتر به محل زندگی و حس تعلق اشاره می‌کند.",
-          "options": [
-            "House",
-            "Home",
-            "People"
-          ],
+          "options": ["House", "Home", "People"],
           "time_limit": 60,
           "translation": "ساختمان (خانه‌ی فیزیکی)"
         },
@@ -2902,11 +2311,7 @@
           "question": "برای «قفل کردن در» کدام فعل مناسب است؟",
           "expected_answer": "Lock",
           "explanation": "Lock یعنی قفل کردن؛ close یعنی بستن.",
-          "options": [
-            "Close",
-            "Lock",
-            "Open"
-          ],
+          "options": ["Close", "Lock", "Open"],
           "time_limit": 60,
           "translation": "قفل کردن"
         },
@@ -2915,11 +2320,7 @@
           "question": "کدام عبارت معمولاً برای ورود به هتل استفاده می‌شود؟",
           "expected_answer": "Check in",
           "explanation": "Check in یعنی ثبت ورود؛ check out یعنی ثبت خروج.",
-          "options": [
-            "Check out",
-            "Check in",
-            "Check"
-          ],
+          "options": ["Check out", "Check in", "Check"],
           "time_limit": 60,
           "translation": "ثبت ورود (در هتل)"
         },
@@ -2928,11 +2329,7 @@
           "question": "کدام کلمه معمولاً به گروه موسیقی اشاره می‌کند؟",
           "expected_answer": "Band",
           "explanation": "Band معمولاً گروه موسیقی است؛ team گروهی از افراد برای انجام کاری مشترک است.",
-          "options": [
-            "Team",
-            "Band",
-            "Individuals"
-          ],
+          "options": ["Team", "Band", "Individuals"],
           "time_limit": 60,
           "translation": "گروه موسیقی"
         },
@@ -2940,11 +2337,7 @@
           "id": "evolve-1-l01-mc-11",
           "question": "جای خالی را کامل کن: My first name ___ Ali.",
           "expected_answer": "is",
-          "options": [
-            "is",
-            "are",
-            "am"
-          ],
+          "options": ["is", "are", "am"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "is = است",
           "time_limit": 60,
@@ -2954,11 +2347,7 @@
           "id": "evolve-1-l01-mc-12",
           "question": "جای خالی را کامل کن: This ___ my teacher.",
           "expected_answer": "is",
-          "options": [
-            "is",
-            "are",
-            "am"
-          ],
+          "options": ["is", "are", "am"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "is = است",
           "time_limit": 60,
@@ -2968,11 +2357,7 @@
           "id": "evolve-1-l01-mc-13",
           "question": "جای خالی را کامل کن: This ___ my friend.",
           "expected_answer": "is",
-          "options": [
-            "is",
-            "are",
-            "am"
-          ],
+          "options": ["is", "are", "am"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "is = است",
           "time_limit": 60,
@@ -2982,11 +2367,7 @@
           "id": "evolve-1-l01-mc-14",
           "question": "جای خالی را کامل کن: I ___ a question.",
           "expected_answer": "have",
-          "options": [
-            "have",
-            "has",
-            "having"
-          ],
+          "options": ["have", "has", "having"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "have = داشتن",
           "time_limit": 60,
@@ -2996,11 +2377,7 @@
           "id": "evolve-1-l01-mc-15",
           "question": "جای خالی را کامل کن: He ___.",
           "expected_answer": "eats",
-          "options": [
-            "eats",
-            "eat",
-            "is"
-          ],
+          "options": ["eats", "eat", "is"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "time_limit": 60,
           "translation": "او (مرد) می‌خورد."
@@ -3009,11 +2386,7 @@
           "id": "evolve-1-l01-mc-37",
           "question": "جای خالی را کامل کن: That ___ my tutor.",
           "expected_answer": "is",
-          "options": [
-            "is",
-            "are",
-            "am"
-          ],
+          "options": ["is", "are", "am"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "is = است",
           "time_limit": 60,
@@ -3023,11 +2396,7 @@
           "id": "evolve-1-l01-mc-41",
           "question": "جای خالی را کامل کن: I ___ a goal.",
           "expected_answer": "have",
-          "options": [
-            "have",
-            "has",
-            "having"
-          ],
+          "options": ["have", "has", "having"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "have = داشتن",
           "time_limit": 60,
@@ -3037,11 +2406,7 @@
           "id": "evolve-1-l01-mc-56",
           "question": "جای خالی را کامل کن: I ___.",
           "expected_answer": "eat",
-          "options": [
-            "eat",
-            "eats",
-            "is"
-          ],
+          "options": ["eat", "eats", "is"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "eat = خوردن",
           "time_limit": 60,
@@ -3051,11 +2416,7 @@
           "id": "evolve-1-l01-mc-57",
           "question": "جای خالی را کامل کن: My given name ___ Ali.",
           "expected_answer": "is",
-          "options": [
-            "is",
-            "are",
-            "am"
-          ],
+          "options": ["is", "are", "am"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "is = است",
           "time_limit": 60,
@@ -3065,11 +2426,7 @@
           "id": "evolve-1-l01-mc-59",
           "question": "جای خالی را کامل کن: My last name ___ Habibi.",
           "expected_answer": "is",
-          "options": [
-            "is",
-            "are",
-            "am"
-          ],
+          "options": ["is", "are", "am"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "is = است",
           "time_limit": 60,
@@ -3079,11 +2436,7 @@
           "id": "evolve-1-l01-mc-60",
           "question": "جای خالی را کامل کن: I ___ in.",
           "expected_answer": "check",
-          "options": [
-            "check",
-            "checks",
-            "is"
-          ],
+          "options": ["check", "checks", "is"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "check = بررسی کردن / چک کردن",
           "time_limit": 60,
@@ -3093,11 +2446,7 @@
           "id": "evolve-1-l01-mc-61",
           "question": "جای خالی را کامل کن: I ___ out.",
           "expected_answer": "check",
-          "options": [
-            "check",
-            "checks",
-            "is"
-          ],
+          "options": ["check", "checks", "is"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "check = بررسی کردن / چک کردن",
           "time_limit": 60,
@@ -3107,11 +2456,7 @@
           "id": "evolve-1-l01-mc-62",
           "question": "جای خالی را کامل کن: You ___ a question.",
           "expected_answer": "have",
-          "options": [
-            "have",
-            "has",
-            "having"
-          ],
+          "options": ["have", "has", "having"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "have = داشتن",
           "time_limit": 60,
@@ -3121,11 +2466,7 @@
           "id": "evolve-1-l01-mc-63",
           "question": "جای خالی را کامل کن: They ___ a question.",
           "expected_answer": "have",
-          "options": [
-            "have",
-            "has",
-            "having"
-          ],
+          "options": ["have", "has", "having"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "have = داشتن",
           "time_limit": 60,
@@ -3135,11 +2476,7 @@
           "id": "evolve-1-l01-mc-64",
           "question": "جای خالی را کامل کن: It ___ my house.",
           "expected_answer": "is",
-          "options": [
-            "is",
-            "are",
-            "am"
-          ],
+          "options": ["is", "are", "am"],
           "explanation": "شکل درست فعل را با فاعل جمله انتخاب کن.",
           "hint": "is = است",
           "time_limit": 60,
@@ -3149,11 +2486,7 @@
           "id": "evolve-1-l01-mc-070",
           "question": "جای خالی را کامل کن: How ___ you spell?",
           "expected_answer": "do",
-          "options": [
-            "do",
-            "does",
-            "is"
-          ],
+          "options": ["do", "does", "is"],
           "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
           "hint": "راهنما: با you از do استفاده می‌کنیم.",
           "time_limit": 60,
@@ -3163,11 +2496,7 @@
           "id": "evolve-1-l01-mc-071",
           "question": "جای خالی را کامل کن: Can you ___ that, please?",
           "expected_answer": "repeat",
-          "options": [
-            "repeat",
-            "repeats",
-            "repeating"
-          ],
+          "options": ["repeat", "repeats", "repeating"],
           "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
           "hint": "repeat = تکرار کردن",
           "time_limit": 60,
@@ -3177,11 +2506,7 @@
           "id": "evolve-1-l01-mc-072",
           "question": "جای خالی را کامل کن: Sorry, what ___?",
           "expected_answer": "page",
-          "options": [
-            "page",
-            "pages",
-            "book"
-          ],
+          "options": ["page", "pages", "book"],
           "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
           "hint": "page = صفحه",
           "time_limit": 60,
@@ -3191,11 +2516,7 @@
           "id": "evolve-1-l01-mc-073",
           "question": "جای خالی را کامل کن: Close ___ book.",
           "expected_answer": "your",
-          "options": [
-            "your",
-            "my",
-            "this"
-          ],
+          "options": ["your", "my", "this"],
           "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
           "hint": "your = مال تو / تو",
           "time_limit": 60,
@@ -3205,11 +2526,7 @@
           "id": "evolve-1-l01-mc-074",
           "question": "جای خالی را کامل کن: Open ___ book.",
           "expected_answer": "your",
-          "options": [
-            "your",
-            "my",
-            "this"
-          ],
+          "options": ["your", "my", "this"],
           "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
           "hint": "your = مال تو / تو",
           "time_limit": 60,
@@ -3219,11 +2536,7 @@
           "id": "evolve-1-l01-mc-075",
           "question": "جای خالی را کامل کن: This is ___ teacher.",
           "expected_answer": "your",
-          "options": [
-            "your",
-            "my",
-            "this"
-          ],
+          "options": ["your", "my", "this"],
           "explanation": "شکل درست را با توجه به جمله انتخاب کن.",
           "hint": "your = مال تو / تو",
           "time_limit": 60,
@@ -3233,11 +2546,7 @@
           "id": "evolve-1-l01-mc-076",
           "question": "جای خالی را کامل کن: I ___ at a hotel.",
           "expected_answer": "work",
-          "options": [
-            "work",
-            "works",
-            "are"
-          ],
+          "options": ["work", "works", "are"],
           "explanation": "با I فعل بدون s می‌آید.",
           "time_limit": 60,
           "translation": "من در هتل کار می‌کنم."
@@ -3246,11 +2555,7 @@
           "id": "evolve-1-l01-mc-077",
           "question": "جای خالی را کامل کن: Where ___ my class?",
           "expected_answer": "is",
-          "options": [
-            "is",
-            "are",
-            "am"
-          ],
+          "options": ["is", "are", "am"],
           "explanation": "کلاس یکی است، پس از is استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "کلاس من کجاست؟"
@@ -3259,11 +2564,7 @@
           "id": "evolve-1-l01-mc-078",
           "question": "جای خالی را کامل کن: I am ___ Iran.",
           "expected_answer": "from",
-          "options": [
-            "from",
-            "to",
-            "at"
-          ],
+          "options": ["from", "to", "at"],
           "explanation": "from Iran یعنی اهل ایران.",
           "time_limit": 60,
           "translation": "من اهل ایران هستم."
@@ -3272,11 +2573,7 @@
           "id": "evolve-1-l01-mc-079",
           "question": "جای خالی را کامل کن: My mother and ___ are at home.",
           "expected_answer": "I",
-          "options": [
-            "I",
-            "me",
-            "my"
-          ],
+          "options": ["I", "me", "my"],
           "explanation": "بعد از and ضمیر فاعلی I درست است.",
           "time_limit": 60,
           "translation": "مادرم و من در خانه هستیم."
@@ -3285,11 +2582,7 @@
           "id": "evolve-1-l01-mc-080",
           "question": "جای خالی را کامل کن: I ___ my teacher.",
           "expected_answer": "meet",
-          "options": [
-            "meet",
-            "meets",
-            "is"
-          ],
+          "options": ["meet", "meets", "is"],
           "explanation": "با I فعل meet بدون s می‌آید.",
           "time_limit": 60,
           "translation": "من معلمم را می‌بینم."
@@ -3298,11 +2591,7 @@
           "id": "evolve-1-l01-mc-081",
           "question": "جای خالی را کامل کن: I ___ into my hotel.",
           "expected_answer": "check",
-          "options": [
-            "check",
-            "checks",
-            "are"
-          ],
+          "options": ["check", "checks", "are"],
           "explanation": "Check into یک عبارت است: وارد هتل شدن.",
           "time_limit": 60,
           "translation": "من وارد هتلم می‌شوم."
@@ -3311,11 +2600,7 @@
           "id": "evolve-1-l01-mc-083",
           "question": "جای خالی را کامل کن: I ___ my teacher.",
           "expected_answer": "visit",
-          "options": [
-            "visit",
-            "visits",
-            "is"
-          ],
+          "options": ["visit", "visits", "is"],
           "explanation": "با I فعل visit بدون s می‌آید.",
           "time_limit": 60,
           "translation": "من به دیدن معلمم می‌روم."
@@ -3351,9 +2636,7 @@
           "id": "evolve-1-l01-voc-03",
           "question": "Synonym: teacher",
           "expected_answer": "tutor",
-          "accepted_answers": [
-            "instructor"
-          ],
+          "accepted_answers": ["instructor"],
           "explanation": "Tutor و instructor هر دو به فرد آموزش‌دهنده اشاره می‌کنند؛ کاربردشان بسته به موقعیت فرق دارد.",
           "hint": "teacher = معلم",
           "answer_mode": "list",
@@ -3365,9 +2648,7 @@
           "id": "evolve-1-l01-voc-04",
           "question": "Synonym: help",
           "expected_answer": "assist",
-          "accepted_answers": [
-            "aid"
-          ],
+          "accepted_answers": ["aid"],
           "explanation": "Assist و aid هر دو به معنی کمک کردن هستند.",
           "hint": "help = کمک",
           "answer_mode": "list",
@@ -3433,10 +2714,7 @@
           "id": "evolve-1-l01-voc-11",
           "question": "Synonym (2): goal",
           "expected_answer": "objective",
-          "accepted_answers": [
-            "purpose",
-            "target"
-          ],
+          "accepted_answers": ["purpose", "target"],
           "explanation": "Objective، purpose، target و aim بسته به جمله می‌توانند به مفهوم هدف اشاره کنند.",
           "hint": "goal = هدف",
           "answer_mode": "list",
@@ -3713,6 +2991,78 @@
           "hint": "data = داده‌ها",
           "time_limit": 60,
           "translation": "اطلاعات"
+        },
+        {
+          "id": "evolve-1-l01-rel-42",
+          "question": "Synonym: answer",
+          "expected_answer": "reply",
+          "explanation": "answer و reply تقریباً هم‌معنی هستند.",
+          "hint": "answer = پاسخ / جواب دادن",
+          "translation": "پاسخ دادن"
+        },
+        {
+          "id": "evolve-1-l01-rel-43",
+          "question": "Opposite: first",
+          "expected_answer": "last",
+          "explanation": "first و last متضاد یکدیگرند.",
+          "hint": "first = اول / نخست",
+          "translation": "آخر (در نام خانوادگی)"
+        },
+        {
+          "id": "evolve-1-l01-rel-44",
+          "question": "Opposite: friend",
+          "expected_answer": "enemy",
+          "explanation": "friend و enemy متضاد یکدیگرند.",
+          "hint": "friend = دوست",
+          "translation": "دشمن"
+        },
+        {
+          "id": "evolve-1-l01-rel-45",
+          "question": "Opposite: go",
+          "expected_answer": "come",
+          "explanation": "go و come متضاد یکدیگرند.",
+          "hint": "go = رفتن",
+          "translation": "آمدن"
+        },
+        {
+          "id": "evolve-1-l01-rel-46",
+          "question": "Opposite: husband",
+          "expected_answer": "wife",
+          "explanation": "husband و wife متضاد یکدیگرند.",
+          "hint": "husband = شوهر",
+          "translation": "زن (همسر)"
+        },
+        {
+          "id": "evolve-1-l01-rel-47",
+          "question": "Synonym: mother",
+          "expected_answer": "mom",
+          "explanation": "mother و mom تقریباً هم‌معنی هستند.",
+          "hint": "mother = مادر",
+          "translation": "مامان"
+        },
+        {
+          "id": "evolve-1-l01-rel-48",
+          "question": "Opposite: out",
+          "expected_answer": "in",
+          "explanation": "out و in متضاد یکدیگرند.",
+          "hint": "out = بیرون",
+          "translation": "در / داخل"
+        },
+        {
+          "id": "evolve-1-l01-rel-49",
+          "question": "Synonym: tell",
+          "expected_answer": "say",
+          "explanation": "tell و say تقریباً هم‌معنی هستند.",
+          "hint": "tell = گفتن (به کسی)",
+          "translation": "گفتن"
+        },
+        {
+          "id": "evolve-1-l01-rel-50",
+          "question": "Synonym: work",
+          "expected_answer": "job",
+          "explanation": "work و job تقریباً هم‌معنی هستند.",
+          "hint": "work = کار کردن / کار",
+          "translation": "شغل"
         }
       ]
     },
@@ -4924,10 +4274,7 @@
           "id": "evolve-1-l01-va-mc-01",
           "question": "جای خالی را کامل کن: I ___ .",
           "expected_answer": "eat",
-          "options": [
-            "eat",
-            "eats"
-          ],
+          "options": ["eat", "eats"],
           "explanation": "با I از شکل ساده‌ی فعل استفاده می‌کنیم.",
           "time_limit": 60,
           "translation": "من می‌خورم."
@@ -4936,10 +4283,7 @@
           "id": "evolve-1-l01-va-mc-02",
           "question": "جای خالی را کامل کن: He ___ .",
           "expected_answer": "walks",
-          "options": [
-            "walk",
-            "walks"
-          ],
+          "options": ["walk", "walks"],
           "explanation": "با He در جمله‌ی مثبت حال ساده فعل s می‌گیرد.",
           "time_limit": 60,
           "translation": "او راه می‌رود."
@@ -4948,10 +4292,7 @@
           "id": "evolve-1-l01-va-mc-04",
           "question": "جای خالی را کامل کن: She ___ .",
           "expected_answer": "watches",
-          "options": [
-            "watch",
-            "watches"
-          ],
+          "options": ["watch", "watches"],
           "explanation": "Watch برای She به watches تبدیل می‌شود.",
           "time_limit": 60,
           "translation": "او (زن) تماشا می‌کند."
@@ -4960,10 +4301,7 @@
           "id": "evolve-1-l01-va-mc-07",
           "question": "جای خالی را کامل کن: It ___ .",
           "expected_answer": "eats",
-          "options": [
-            "eat",
-            "eats"
-          ],
+          "options": ["eat", "eats"],
           "explanation": "It سوم‌شخص مفرد است؛ فعل s می‌گیرد.",
           "time_limit": 60,
           "translation": "آن می‌خورد."
@@ -4972,10 +4310,7 @@
           "id": "evolve-1-l01-va-mc-08",
           "question": "جای خالی را کامل کن: He ___ .",
           "expected_answer": "visits",
-          "options": [
-            "visit",
-            "visits"
-          ],
+          "options": ["visit", "visits"],
           "explanation": "با He در جمله‌ی مثبت حال ساده فعل s می‌گیرد.",
           "time_limit": 60,
           "translation": "او (مرد) سر می‌زند."
@@ -6035,6 +5370,31 @@
         "word": "your",
         "ipa": "/jʊr/",
         "meaning": "تو (مال تو)"
+      },
+      {
+        "word": "reply",
+        "ipa": "/rɪˈplaɪ/",
+        "meaning": "پاسخ دادن"
+      },
+      {
+        "word": "enemy",
+        "ipa": "/ˈenəmi/",
+        "meaning": "دشمن"
+      },
+      {
+        "word": "come",
+        "ipa": "/kʌm/",
+        "meaning": "آمدن"
+      },
+      {
+        "word": "mom",
+        "ipa": "/mɑːm/",
+        "meaning": "مامان"
+      },
+      {
+        "word": "job",
+        "ipa": "/dʒɑːb/",
+        "meaning": "شغل"
       }
     ],
     "sentences": [

@@ -18,9 +18,7 @@
           "time_limit": 60,
           "translation": "من برزیلی هستم.",
           "question": "من برزیلی هستم.",
-          "accepted_answers": [
-            "I am Brazilian."
-          ],
+          "accepted_answers": ["I am Brazilian."],
           "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن.",
           "group": "Countries"
         },
@@ -31,9 +29,7 @@
           "time_limit": 60,
           "translation": "تو اهل برزیل هستی.",
           "question": "تو اهل برزیل هستی.",
-          "accepted_answers": [
-            "You are from Brazil."
-          ],
+          "accepted_answers": ["You are from Brazil."],
           "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن.",
           "group": "Countries"
         },
@@ -44,9 +40,7 @@
           "time_limit": 60,
           "translation": "نام من کارینا است و من اهل کلمبیا هستم.",
           "question": "نام من کارینا است و من اهل کلمبیا هستم.",
-          "accepted_answers": [
-            "My name is Karina, and I am from Colombia."
-          ],
+          "accepted_answers": ["My name is Karina, and I am from Colombia."],
           "hint": "ابتدا مشخص کن دربارهٔ ملیت صحبت می‌کنی یا محل زندگی و سپس ساختار مناسب را انتخاب کن.",
           "group": "Countries"
         },
@@ -131,9 +125,7 @@
         {
           "id": "evolve-1-l02-tr-204",
           "expected_answer": "I'm from Madrid, in Spain.",
-          "accepted_answers": [
-            "I am from Madrid, in Spain."
-          ],
+          "accepted_answers": ["I am from Madrid, in Spain."],
           "explanation": "شهر را بعد از from و کشور را بعد از ویرگول و in بیاور.",
           "time_limit": 60,
           "translation": "من اهل مادرید، در اسپانیا هستم.",
@@ -158,10 +150,7 @@
           "translation": "من برزیلی هستم.",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "I'm",
-            "Brazilian."
-          ],
+          "word_bank": ["I'm", "Brazilian."],
           "group": "Countries"
         },
         {
@@ -172,11 +161,7 @@
           "translation": "تو اهل برزیل هستی.",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "from",
-            "Brazil.",
-            "You're"
-          ],
+          "word_bank": ["from", "Brazil.", "You're"],
           "group": "Countries"
         },
         {
@@ -187,16 +172,7 @@
           "translation": "نام من کارینا است و من اهل کلمبیا هستم.",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "name",
-            "Karina,",
-            "is",
-            "My",
-            "and",
-            "from",
-            "I'm",
-            "Colombia."
-          ],
+          "word_bank": ["name", "Karina,", "is", "My", "and", "from", "I'm", "Colombia."],
           "group": "Countries"
         },
         {
@@ -207,12 +183,7 @@
           "translation": "آیا تو اهل توکیو هستی؟",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "from",
-            "Are",
-            "you",
-            "Tokyo?"
-          ],
+          "word_bank": ["from", "Are", "you", "Tokyo?"],
           "group": "Countries"
         },
         {
@@ -223,13 +194,7 @@
           "translation": "آیا من در اتاق ۶B هستم؟",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "ابتدا فاعل یا واژهٔ پرسشی را پیدا کن و سپس جای فعل بودن را مشخص کن.",
-          "word_bank": [
-            "6B?",
-            "room",
-            "Am",
-            "I",
-            "in"
-          ]
+          "word_bank": ["6B?", "room", "Am", "I", "in"]
         },
         {
           "id": "evolve-1-l02-sb-201",
@@ -239,15 +204,7 @@
           "translation": "او در زمستان معمولاً کت می‌پوشد.",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "ابتدا فاعل را پیدا کن؛ سپس قید usually را پیش از فعل بگذار.",
-          "word_bank": [
-            "in",
-            "winter.",
-            "usually",
-            "a",
-            "He",
-            "coat",
-            "wears"
-          ]
+          "word_bank": ["in", "winter.", "usually", "a", "He", "coat", "wears"]
         },
         {
           "id": "evolve-1-l02-sb-202",
@@ -257,13 +214,7 @@
           "translation": "من هرگز کت نمی‌پوشم.",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "ابتدا فاعل را پیدا کن؛ سپس never را پیش از فعل بگذار.",
-          "word_bank": [
-            "coat.",
-            "wear",
-            "I",
-            "never",
-            "a"
-          ]
+          "word_bank": ["coat.", "wear", "I", "never", "a"]
         },
         {
           "id": "evolve-1-l02-sb-203",
@@ -273,15 +224,7 @@
           "translation": "من در زمستان همیشه کت می‌پوشم.",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "قید always را پیش از فعل بگذار و جای in winter را مشخص کن.",
-          "word_bank": [
-            "always",
-            "I",
-            "coat",
-            "in",
-            "winter.",
-            "a",
-            "wear"
-          ]
+          "word_bank": ["always", "I", "coat", "in", "winter.", "a", "wear"]
         },
         {
           "id": "evolve-1-l02-sb-204",
@@ -291,13 +234,7 @@
           "translation": "من اهل مادرید، در اسپانیا هستم.",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "ابتدا from را پیش از شهر بگذار؛ in پیش از نام کشور می‌آید.",
-          "word_bank": [
-            "in",
-            "Spain.",
-            "I'm",
-            "from",
-            "Madrid,"
-          ],
+          "word_bank": ["in", "Spain.", "I'm", "from", "Madrid,"],
           "group": "Countries"
         }
       ]
@@ -316,14 +253,8 @@
           "time_limit": 60,
           "translation": "من برزیلی هستم.",
           "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "من",
-            "برزیلی",
-            "هستم"
-          ],
-          "accepted_answers": [
-            "I am Brazilian."
-          ],
+          "word_bank": ["من", "برزیلی", "هستم"],
+          "accepted_answers": ["I am Brazilian."],
           "group": "Countries"
         },
         {
@@ -333,15 +264,8 @@
           "time_limit": 60,
           "translation": "تو اهل برزیل هستی.",
           "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "تو",
-            "اهل",
-            "برزیل",
-            "هستی"
-          ],
-          "accepted_answers": [
-            "You are from Brazil."
-          ],
+          "word_bank": ["تو", "اهل", "برزیل", "هستی"],
+          "accepted_answers": ["You are from Brazil."],
           "group": "Countries"
         },
         {
@@ -351,12 +275,7 @@
           "time_limit": 60,
           "translation": "بله، هستم. تو چطور؟",
           "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "بله،",
-            "هستم.",
-            "تو",
-            "چطور؟"
-          ]
+          "word_bank": ["بله،", "هستم.", "تو", "چطور؟"]
         },
         {
           "id": "evolve-1-l02-wt-011",
@@ -365,15 +284,7 @@
           "time_limit": 60,
           "translation": "نه، من معلم نیستم. من دانش‌آموز هستم.",
           "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "نه،",
-            "من",
-            "معلم",
-            "نیستم.",
-            "من",
-            "دانش‌آموز",
-            "هستم."
-          ],
+          "word_bank": ["نه،", "من", "معلم", "نیستم.", "من", "دانش‌آموز", "هستم."],
           "accepted_answers": [
             "No, I am not a teacher. I'm a student.",
             "No, I'm not a teacher. I am a student.",
@@ -387,14 +298,7 @@
           "time_limit": 60,
           "translation": "آیا من در اتاق ۶B هستم؟",
           "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "آیا",
-            "من",
-            "در",
-            "اتاق",
-            "۶B",
-            "هستم؟"
-          ]
+          "word_bank": ["آیا", "من", "در", "اتاق", "۶B", "هستم؟"]
         },
         {
           "id": "evolve-1-l02-wt-014",
@@ -403,13 +307,7 @@
           "time_limit": 60,
           "translation": "آیا تو اهل توکیو هستی؟",
           "hint": "عبارت‌ها را از فاعل شروع کن و سپس فعل و اطلاعات تکمیلی را بچین.",
-          "word_bank": [
-            "آیا",
-            "تو",
-            "اهل",
-            "توکیو",
-            "هستی؟"
-          ],
+          "word_bank": ["آیا", "تو", "اهل", "توکیو", "هستی؟"],
           "group": "Countries"
         },
         {
@@ -419,14 +317,7 @@
           "time_limit": 60,
           "translation": "او در زمستان معمولاً کت می‌پوشد.",
           "hint": "عبارت‌ها را از فاعل شروع کن و قید معمولاً را پیش از فعل بچین.",
-          "word_bank": [
-            "او",
-            "در",
-            "زمستان",
-            "معمولاً",
-            "کت",
-            "می‌پوشد"
-          ]
+          "word_bank": ["او", "در", "زمستان", "معمولاً", "کت", "می‌پوشد"]
         },
         {
           "id": "evolve-1-l02-wt-202",
@@ -435,12 +326,7 @@
           "time_limit": 60,
           "translation": "من هرگز کت نمی‌پوشم.",
           "hint": "قید هرگز را قبل از فعل wear بچین.",
-          "word_bank": [
-            "من",
-            "هرگز",
-            "کت",
-            "نمی‌پوشم."
-          ]
+          "word_bank": ["من", "هرگز", "کت", "نمی‌پوشم."]
         }
       ]
     },
@@ -458,9 +344,7 @@
           "time_limit": 60,
           "translation": "من برزیلی هستم.",
           "question": "من برزیلی هستم.",
-          "accepted_answers": [
-            "I am Brazilian."
-          ],
+          "accepted_answers": ["I am Brazilian."],
           "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن.",
           "group": "Countries"
         },
@@ -471,9 +355,7 @@
           "time_limit": 60,
           "translation": "تو اهل برزیل هستی.",
           "question": "تو اهل برزیل هستی.",
-          "accepted_answers": [
-            "You are from Brazil."
-          ],
+          "accepted_answers": ["You are from Brazil."],
           "hint": "به تفاوت صفت ملیت و عبارت معرفی محل توجه کن.",
           "group": "Countries"
         },
@@ -546,9 +428,7 @@
           "question": "جملهٔ اشتباه را اصلاح کن.",
           "hint": "به هماهنگی فاعل و فعل و ترتیب واژه‌ها توجه کن.",
           "incorrect_sentence": "I'm from Brazilian.",
-          "accepted_answers": [
-            "I am Brazilian."
-          ],
+          "accepted_answers": ["I am Brazilian."],
           "group": "Countries"
         },
         {
@@ -598,9 +478,7 @@
           "time_limit": 60,
           "translation": "من برزیلی نیستم.",
           "question": "جمله را منفی کن: I'm Brazilian.",
-          "accepted_answers": [
-            "I am not Brazilian."
-          ],
+          "accepted_answers": ["I am not Brazilian."],
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
           "operation": "negative",
           "group": "Countries"
@@ -612,10 +490,7 @@
           "time_limit": 60,
           "translation": "تو اهل مکزیکوسیتی نیستی.",
           "question": "جمله را منفی کن: You're from Mexico City.",
-          "accepted_answers": [
-            "You are not from Mexico City.",
-            "You aren't from Mexico City."
-          ],
+          "accepted_answers": ["You are not from Mexico City.", "You aren't from Mexico City."],
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
           "operation": "negative",
           "group": "Countries"
@@ -627,9 +502,7 @@
           "time_limit": 60,
           "translation": "من اهل لیما نیستم.",
           "question": "جمله را منفی کن: I'm from Lima.",
-          "accepted_answers": [
-            "I am not from Lima."
-          ],
+          "accepted_answers": ["I am not from Lima."],
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
           "operation": "negative",
           "group": "Countries"
@@ -641,10 +514,7 @@
           "time_limit": 60,
           "translation": "تو آمریکایی نیستی.",
           "question": "جمله را منفی کن: You're American.",
-          "accepted_answers": [
-            "You are not American.",
-            "You aren't American."
-          ],
+          "accepted_answers": ["You are not American.", "You aren't American."],
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
           "operation": "negative",
           "group": "Countries"
@@ -656,9 +526,7 @@
           "time_limit": 60,
           "translation": "من معلم نیستم.",
           "question": "جمله را منفی کن: I'm a teacher.",
-          "accepted_answers": [
-            "I am not a teacher."
-          ],
+          "accepted_answers": ["I am not a teacher."],
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
           "operation": "negative"
         },
@@ -714,9 +582,7 @@
           "question": "جمله را مثبت کن: I'm not from Lima.",
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
           "operation": "positive",
-          "accepted_answers": [
-            "I am from Lima."
-          ],
+          "accepted_answers": ["I am from Lima."],
           "group": "Countries"
         },
         {
@@ -728,9 +594,7 @@
           "question": "جمله را مثبت کن: I'm not a teacher.",
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
           "operation": "positive",
-          "accepted_answers": [
-            "I am a teacher."
-          ]
+          "accepted_answers": ["I am a teacher."]
         }
       ]
     },
@@ -749,11 +613,7 @@
           "translation": "برازیلیا پایتخت برزیل است.",
           "question": "Brasilia پایتخت کدام کشور است؟",
           "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "France",
-            "Brazil",
-            "Russia"
-          ],
+          "options": ["France", "Brazil", "Russia"],
           "group": "Countries"
         },
         {
@@ -764,11 +624,7 @@
           "translation": "سانتیاگو پایتخت شیلی است.",
           "question": "Santiago پایتخت کدام کشور است؟",
           "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Honduras",
-            "Chile",
-            "South Korea"
-          ],
+          "options": ["Honduras", "Chile", "South Korea"],
           "group": "Countries"
         },
         {
@@ -779,11 +635,7 @@
           "translation": "پکن پایتخت چین است.",
           "question": "Beijing پایتخت کدام کشور است؟",
           "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "Spain",
-            "Japan",
-            "China"
-          ],
+          "options": ["Spain", "Japan", "China"],
           "group": "Countries"
         },
         {
@@ -794,11 +646,7 @@
           "translation": "بوگوتا پایتخت کلمبیا است.",
           "question": "Bogotá پایتخت کدام کشور است؟",
           "hint": "به ستون پایتخت‌ها و کشورها رجوع ذهنی کن.",
-          "options": [
-            "the United States",
-            "Colombia",
-            "Mexico"
-          ],
+          "options": ["the United States", "Colombia", "Mexico"],
           "group": "Countries"
         },
         {
@@ -809,11 +657,7 @@
           "translation": "ملیت مربوط به برزیل، برزیلی است.",
           "question": "ملیت مربوط به Brazil چیست؟",
           "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Egyptian",
-            "Japanese",
-            "Brazilian"
-          ],
+          "options": ["Egyptian", "Japanese", "Brazilian"],
           "group": "Countries"
         },
         {
@@ -824,11 +668,7 @@
           "translation": "ملیت مربوط به شیلی، شیلیایی است.",
           "question": "ملیت مربوط به Chile چیست؟",
           "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Argentinian",
-            "Mexican",
-            "Chilean"
-          ],
+          "options": ["Argentinian", "Mexican", "Chilean"],
           "group": "Countries"
         },
         {
@@ -839,11 +679,7 @@
           "translation": "ملیت مربوط به چین، چینی است.",
           "question": "ملیت مربوط به China چیست؟",
           "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Chinese",
-            "Peruvian",
-            "Moroccan"
-          ],
+          "options": ["Chinese", "Peruvian", "Moroccan"],
           "group": "Countries"
         },
         {
@@ -854,11 +690,7 @@
           "translation": "ملیت مربوط به کلمبیا، کلمبیایی است.",
           "question": "ملیت مربوط به Colombia چیست؟",
           "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "German",
-            "Colombian",
-            "Russian"
-          ],
+          "options": ["German", "Colombian", "Russian"],
           "group": "Countries"
         },
         {
@@ -869,11 +701,7 @@
           "translation": "ملیت مربوط به اکوادور، اکوادوری است.",
           "question": "ملیت مربوط به Ecuador چیست؟",
           "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Portuguese",
-            "South Korean",
-            "Ecuadorian"
-          ],
+          "options": ["Portuguese", "South Korean", "Ecuadorian"],
           "group": "Countries"
         },
         {
@@ -884,11 +712,7 @@
           "translation": "ملیت مربوط به فرانسه، فرانسوی است.",
           "question": "ملیت مربوط به France چیست؟",
           "hint": "ستون ملیت‌ها را با ستون کشورها مقایسه کن.",
-          "options": [
-            "Spanish",
-            "French",
-            "Canadian"
-          ],
+          "options": ["Spanish", "French", "Canadian"],
           "group": "Countries"
         },
         {
@@ -899,11 +723,7 @@
           "translation": "من برزیلی هستم.",
           "question": "کدام جمله برای معرفی ملیت درست است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "I'm Brazil.",
-            "I'm from Brazilian.",
-            "I'm Brazilian."
-          ],
+          "options": ["I'm Brazil.", "I'm from Brazilian.", "I'm Brazilian."],
           "group": "Countries"
         },
         {
@@ -914,11 +734,7 @@
           "translation": "من اهل برزیل هستم.",
           "question": "جای خالی را کامل کن: I ___ from Brazil.",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "is",
-            "am",
-            "are"
-          ],
+          "options": ["is", "am", "are"],
           "group": "Countries"
         },
         {
@@ -929,11 +745,7 @@
           "translation": "تو اهل مکزیکوسیتی هستی.",
           "question": "جای خالی را کامل کن: You ___ from Mexico City.",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "is",
-            "am",
-            "are"
-          ],
+          "options": ["is", "am", "are"],
           "group": "Countries"
         },
         {
@@ -944,11 +756,7 @@
           "translation": "آیا تو اهل توکیو هستی؟",
           "question": "کدام جمله سؤالی درست است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "You are from Tokyo?",
-            "Am you from Tokyo?",
-            "Are you from Tokyo?"
-          ],
+          "options": ["You are from Tokyo?", "Am you from Tokyo?", "Are you from Tokyo?"],
           "group": "Countries"
         },
         {
@@ -959,11 +767,7 @@
           "translation": "نه، نیستم.",
           "question": "کدام پاسخ منفی درست است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "No, you are.",
-            "No, I am.",
-            "No, I'm not."
-          ]
+          "options": ["No, you are.", "No, I am.", "No, I'm not."]
         },
         {
           "id": "evolve-1-l02-mc-048",
@@ -973,11 +777,7 @@
           "translation": "بله، هستم.",
           "question": "کدام پاسخ مثبت درست است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "Yes, I are.",
-            "Yes, I am.",
-            "Yes, you am."
-          ]
+          "options": ["Yes, I are.", "Yes, I am.", "Yes, you am."]
         },
         {
           "id": "evolve-1-l02-mc-049",
@@ -987,11 +787,7 @@
           "translation": "آیا تو اهل کیتو هستی؟",
           "question": "جای خالی را کامل کن: ___ you from Quito?",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "Am",
-            "Are",
-            "Is"
-          ],
+          "options": ["Am", "Are", "Is"],
           "group": "Countries"
         },
         {
@@ -1002,11 +798,7 @@
           "translation": "من اکوادوری هستم.",
           "question": "جای خالی را کامل کن: ___'m Ecuadorian.",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "You",
-            "Am",
-            "I"
-          ],
+          "options": ["You", "Am", "I"],
           "group": "Countries"
         },
         {
@@ -1017,11 +809,7 @@
           "translation": "وای! تو اهل ریو هستی!",
           "question": "جای خالی را کامل کن: Wow! ___'re from Rio!",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "You",
-            "I",
-            "Am"
-          ]
+          "options": ["You", "I", "Am"]
         },
         {
           "id": "evolve-1-l02-mc-052",
@@ -1031,11 +819,7 @@
           "translation": "بله، هستم.",
           "question": "پاسخ درست به Are you American? کدام است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "Yes, I am.",
-            "No, I am.",
-            "Yes, you are."
-          ],
+          "options": ["Yes, I am.", "No, I am.", "Yes, you are."],
           "group": "Countries"
         },
         {
@@ -1046,11 +830,7 @@
           "translation": "منفی‌ساز.",
           "question": "در جملهٔ منفی، کدام واژه برای منفی‌سازی به کار می‌رود؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "not",
-            "and",
-            "from"
-          ]
+          "options": ["not", "and", "from"]
         },
         {
           "id": "evolve-1-l02-mc-054",
@@ -1060,11 +840,7 @@
           "translation": "برزیلی.",
           "question": "کدام واژه ملیت است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "Brazil",
-            "Brasilia",
-            "Brazilian"
-          ],
+          "options": ["Brazil", "Brasilia", "Brazilian"],
           "group": "Countries"
         },
         {
@@ -1075,11 +851,7 @@
           "translation": "از / اهل.",
           "question": "برای گفتن «اهل یک شهر بودن» کدام کلمه را به کار می‌بریم؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "and",
-            "from",
-            "am"
-          ]
+          "options": ["and", "from", "am"]
         },
         {
           "id": "evolve-1-l02-mc-056",
@@ -1089,11 +861,7 @@
           "translation": "شکل کوتاه you are.",
           "question": "کدام گزینه شکل کوتاه you are است?",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "are",
-            "you're",
-            "I'm"
-          ]
+          "options": ["are", "you're", "I'm"]
         },
         {
           "id": "evolve-1-l02-mc-057",
@@ -1103,11 +871,7 @@
           "translation": "شکل کوتاه I am.",
           "question": "کدام گزینه شکل کوتاه I am است?",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "are",
-            "you're",
-            "I'm"
-          ]
+          "options": ["are", "you're", "I'm"]
         },
         {
           "id": "evolve-1-l02-mc-058",
@@ -1117,11 +881,7 @@
           "translation": "من اهل مکزیکوسیتی هستم.",
           "question": "کدام جمله از نظر کاربرد حرف اضافه درست است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "I'm from Mexican.",
-            "I'm Mexico City.",
-            "I'm from Mexico City."
-          ],
+          "options": ["I'm from Mexican.", "I'm Mexico City.", "I'm from Mexico City."],
           "group": "Countries"
         },
         {
@@ -1132,11 +892,7 @@
           "translation": "آیا تو معلم هستی؟",
           "question": "برای شغل در جملهٔ پرسشی کدام گزینه درست است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "Are you a teacher?",
-            "Are you teacher?",
-            "Am you a teacher?"
-          ]
+          "options": ["Are you a teacher?", "Are you teacher?", "Am you a teacher?"]
         },
         {
           "id": "evolve-1-l02-mc-060",
@@ -1146,11 +902,7 @@
           "translation": "تو چطور؟",
           "question": "کدام پاسخ ادامهٔ طبیعی مکالمه است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "And city?",
-            "And you?",
-            "And from?"
-          ]
+          "options": ["And city?", "And you?", "And from?"]
         },
         {
           "id": "evolve-1-l02-mc-061",
@@ -1160,11 +912,7 @@
           "translation": "اکنون / بعداً.",
           "question": "کدام دو واژه معنی مخالف هم دارند؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "city / town",
-            "now / later",
-            "student / pupil"
-          ]
+          "options": ["city / town", "now / later", "student / pupil"]
         },
         {
           "id": "evolve-1-l02-mc-062",
@@ -1174,11 +922,7 @@
           "translation": "دانش‌آموز / شاگرد.",
           "question": "کدام دو واژه هم‌معنی هستند؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "now / later",
-            "country / city",
-            "student / pupil"
-          ]
+          "options": ["now / later", "country / city", "student / pupil"]
         },
         {
           "id": "evolve-1-l02-mc-063",
@@ -1188,11 +932,7 @@
           "translation": "پر کردن.",
           "question": "کدام عبارت با complete هم‌معنی است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "fill in",
-            "who",
-            "later"
-          ]
+          "options": ["fill in", "who", "later"]
         },
         {
           "id": "evolve-1-l02-mc-064",
@@ -1202,11 +942,7 @@
           "translation": "بررسی کردن.",
           "question": "کدام واژه نزدیک به check است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "language",
-            "examine",
-            "universal"
-          ]
+          "options": ["language", "examine", "universal"]
         },
         {
           "id": "evolve-1-l02-mc-065",
@@ -1216,11 +952,7 @@
           "translation": "نمودار / جدول.",
           "question": "کدام گزینه با chart هم‌معنی است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "now / later",
-            "student / pupil",
-            "graph / table"
-          ]
+          "options": ["now / later", "student / pupil", "graph / table"]
         },
         {
           "id": "evolve-1-l02-mc-066",
@@ -1230,11 +962,7 @@
           "translation": "منفی.",
           "question": "کدام گزینه مخالف affirmative است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "positive",
-            "correct",
-            "negative"
-          ]
+          "options": ["positive", "correct", "negative"]
         },
         {
           "id": "evolve-1-l02-mc-067",
@@ -1244,11 +972,7 @@
           "translation": "چه کسی.",
           "question": "معنی who چیست؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "چه کسی",
-            "چه زمانی",
-            "کجا"
-          ]
+          "options": ["چه کسی", "چه زمانی", "کجا"]
         },
         {
           "id": "evolve-1-l02-mc-068",
@@ -1258,11 +982,7 @@
           "translation": "شهر پایتخت.",
           "question": "معنی capital city چیست؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "ملیت",
-            "شهر پایتخت",
-            "شهر کوچک"
-          ],
+          "options": ["ملیت", "شهر پایتخت", "شهر کوچک"],
           "group": "Countries"
         },
         {
@@ -1273,11 +993,7 @@
           "translation": "حرف پایانی در گروه افزودن es.",
           "question": "کدام پایان فعل با افزودن es همراه است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "n",
-            "sh",
-            "m"
-          ]
+          "options": ["n", "sh", "m"]
         },
         {
           "id": "evolve-1-l02-mc-070",
@@ -1287,11 +1003,7 @@
           "translation": "شکل سوم‌شخص فعل watch.",
           "question": "شکل درست سوم‌شخص مفرد فعل watch کدام است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "watchies",
-            "watches",
-            "watchs"
-          ]
+          "options": ["watchies", "watches", "watchs"]
         },
         {
           "id": "evolve-1-l02-mc-071",
@@ -1301,11 +1013,7 @@
           "translation": "کتاب‌ها.",
           "question": "کدام واژه با صدای /s/ تمام می‌شود؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "watches",
-            "washes",
-            "books"
-          ]
+          "options": ["watches", "washes", "books"]
         },
         {
           "id": "evolve-1-l02-mc-072",
@@ -1315,11 +1023,7 @@
           "translation": "من اسپانیایی هستم.",
           "question": "کدام جمله درست است؟",
           "hint": "به الگوهای تکرارشده در مثال‌های درس توجه کن.",
-          "options": [
-            "I Spanish.",
-            "I'm Spanish.",
-            "Am Spanish."
-          ],
+          "options": ["I Spanish.", "I'm Spanish.", "Am Spanish."],
           "group": "Countries"
         },
         {
@@ -1330,11 +1034,7 @@
           "translation": "مدلین شهری در کلمبیا است، اما پایتخت نیست.",
           "question": "کدام شهر در کلمبیا است، اما پایتخت نیست؟",
           "hint": "به ستون پایتخت‌ها فکر کن؛ گزینه‌ای را انتخاب کن که پایتخت نیست.",
-          "options": [
-            "Lima",
-            "Medellín",
-            "Santiago"
-          ]
+          "options": ["Lima", "Medellín", "Santiago"]
         },
         {
           "id": "evolve-1-l02-mc-082",
@@ -1344,11 +1044,7 @@
           "translation": "سائوپائولو شهری در برزیل است، اما پایتخت نیست.",
           "question": "کدام شهر در برزیل است، اما پایتخت نیست؟",
           "hint": "به ستون پایتخت‌ها فکر کن؛ گزینه‌ای را انتخاب کن که پایتخت نیست.",
-          "options": [
-            "Santiago",
-            "São Paulo",
-            "Lima"
-          ]
+          "options": ["Santiago", "São Paulo", "Lima"]
         },
         {
           "id": "evolve-1-l02-mc-201",
@@ -1358,11 +1054,7 @@
           "translation": "زمستان",
           "question": "معنی winter چیست؟",
           "hint": "کلیدی: winter = زمستان",
-          "options": [
-            "تابستان",
-            "زمستان",
-            "بهار"
-          ]
+          "options": ["تابستان", "زمستان", "بهار"]
         },
         {
           "id": "evolve-1-l02-mc-202",
@@ -1372,11 +1064,7 @@
           "translation": "پاییز",
           "question": "معنی autumn چیست؟",
           "hint": "autumn هم‌معنی fall است.",
-          "options": [
-            "بهار",
-            "پاییز",
-            "تابستان"
-          ]
+          "options": ["بهار", "پاییز", "تابستان"]
         },
         {
           "id": "evolve-1-l02-mc-203",
@@ -1386,11 +1074,7 @@
           "translation": "هرگز",
           "question": "کدام واژه مخالف always است؟",
           "hint": "always = همیشه؛ مخالف آن را پیدا کن.",
-          "options": [
-            "usually",
-            "never",
-            "generally"
-          ]
+          "options": ["usually", "never", "generally"]
         },
         {
           "id": "evolve-1-l02-mc-204",
@@ -1400,11 +1084,7 @@
           "translation": "پوشیدن (لباس)",
           "question": "کدام عبارت هم‌معنی wear است؟",
           "hint": "wear = پوشیدن (لباس)",
-          "options": [
-            "lost",
-            "discover",
-            "put on"
-          ]
+          "options": ["lost", "discover", "put on"]
         },
         {
           "id": "evolve-1-l02-mc-205",
@@ -1414,11 +1094,7 @@
           "translation": "معمولاً",
           "question": "کدام قید به معنی «معمولاً» است؟",
           "hint": "به قیدهای تکرار در بخش گرامر توجه کن.",
-          "options": [
-            "never",
-            "usually",
-            "coat"
-          ]
+          "options": ["never", "usually", "coat"]
         },
         {
           "id": "evolve-1-l02-mc-206",
@@ -1428,11 +1104,7 @@
           "translation": "او در زمستان کت می‌پوشد.",
           "question": "جای خالی را کامل کن: He ___ a coat in winter.",
           "hint": "به فاعل he و شکل فعل توجه کن.",
-          "options": [
-            "wear",
-            "wears",
-            "am"
-          ]
+          "options": ["wear", "wears", "am"]
         },
         {
           "id": "evolve-1-l02-mc-207",
@@ -1442,11 +1114,7 @@
           "translation": "من هرگز کت نمی‌پوشم.",
           "question": "جای خالی را کامل کن: I ___ wear a coat.",
           "hint": "به قید تکرار که معنی «هرگز» دارد فکر کن.",
-          "options": [
-            "never",
-            "winter",
-            "coat"
-          ]
+          "options": ["never", "winter", "coat"]
         },
         {
           "id": "evolve-1-l02-mc-208",
@@ -1456,11 +1124,7 @@
           "translation": "یکسان",
           "question": "کدام عبارت مخالف different است؟",
           "hint": "different = متفاوت",
-          "options": [
-            "else",
-            "the same",
-            "lost"
-          ]
+          "options": ["else", "the same", "lost"]
         }
       ]
     },
@@ -1484,9 +1148,7 @@
           "id": "evolve-1-l02-voc-02",
           "question": "Synonym (2): chart",
           "expected_answer": "graph",
-          "accepted_answers": [
-            "table"
-          ],
+          "accepted_answers": ["table"],
           "answer_mode": "list",
           "min_items": 2,
           "explanation": "Graph و table هر دو نوعی chart هستند؛ هر دو را بنویس.",
@@ -1534,9 +1196,7 @@
           "id": "evolve-1-l02-voc-07",
           "question": "Synonym (2): student",
           "expected_answer": "pupil",
-          "accepted_answers": [
-            "learner"
-          ],
+          "accepted_answers": ["learner"],
           "answer_mode": "list",
           "min_items": 2,
           "explanation": "Pupil و learner هر دو به کسی اشاره می‌کنند که یاد می‌گیرد؛ هر دو را بنویس.",
@@ -1579,9 +1239,7 @@
           "hint": "other = دیگر",
           "time_limit": 60,
           "translation": "متفاوت / دیگر",
-          "accepted_answers": [
-            "else"
-          ],
+          "accepted_answers": ["else"],
           "answer_mode": "list",
           "min_items": 2
         },
@@ -1638,9 +1296,7 @@
           "hint": "sentences = جمله‌ها",
           "time_limit": 60,
           "translation": "جمله‌های خبری / عبارت‌ها",
-          "accepted_answers": [
-            "phrase"
-          ],
+          "accepted_answers": ["phrase"],
           "answer_mode": "list",
           "min_items": 2
         },
@@ -1652,10 +1308,7 @@
           "hint": "match = وصل کردن",
           "time_limit": 60,
           "translation": "وصل کردن / پیوستن",
-          "accepted_answers": [
-            "join",
-            "link"
-          ],
+          "accepted_answers": ["join", "link"],
           "answer_mode": "list",
           "min_items": 2
         },
@@ -1667,9 +1320,7 @@
           "hint": "make = ساختن",
           "time_limit": 60,
           "translation": "ساختن / ایجاد کردن",
-          "accepted_answers": [
-            "generate"
-          ],
+          "accepted_answers": ["generate"],
           "answer_mode": "list",
           "min_items": 2
         },
@@ -1708,9 +1359,7 @@
           "hint": "imagine = تصور کردن",
           "time_limit": 60,
           "translation": "تصویر / عکس",
-          "accepted_answers": [
-            "photo"
-          ],
+          "accepted_answers": ["photo"],
           "answer_mode": "list",
           "min_items": 2
         },
@@ -1767,6 +1416,46 @@
           "hint": "winter = زمستان",
           "time_limit": 60,
           "translation": "تابستان"
+        },
+        {
+          "id": "evolve-1-l01-01-rel-30",
+          "question": "Synonym: city",
+          "expected_answer": "town",
+          "explanation": "city و town تقریباً هم‌معنی هستند.",
+          "hint": "city = شهر",
+          "translation": "شهر کوچک"
+        },
+        {
+          "id": "evolve-1-l01-01-rel-31",
+          "question": "Synonym: choose",
+          "expected_answer": "pick",
+          "explanation": "choose و pick تقریباً هم‌معنی هستند.",
+          "hint": "choose = انتخاب کردن",
+          "translation": "انتخاب کردن"
+        },
+        {
+          "id": "evolve-1-l01-01-rel-32",
+          "question": "Opposite: real",
+          "expected_answer": "fake",
+          "explanation": "real و fake متضاد یکدیگرند.",
+          "hint": "real = واقعی",
+          "translation": "جعلی / ساختگی"
+        },
+        {
+          "id": "evolve-1-l01-01-rel-33",
+          "question": "Synonym: coat",
+          "expected_answer": "jacket",
+          "explanation": "coat و jacket تقریباً هم‌معنی هستند.",
+          "hint": "coat = کت / پالتو",
+          "translation": "ژاکت"
+        },
+        {
+          "id": "evolve-1-l01-01-rel-34",
+          "question": "Opposite: correct",
+          "expected_answer": "wrong",
+          "explanation": "correct و wrong متضاد یکدیگرند.",
+          "hint": "correct = درست / اصلاح کردن",
+          "translation": "اشتباه / غلط"
         }
       ]
     },
@@ -4425,6 +4114,26 @@
         "word": "or",
         "ipa": "/ɔːr/",
         "meaning": "یا"
+      },
+      {
+        "word": "pick",
+        "ipa": "/pɪk/",
+        "meaning": "انتخاب کردن"
+      },
+      {
+        "word": "fake",
+        "ipa": "/feɪk/",
+        "meaning": "جعلی / ساختگی"
+      },
+      {
+        "word": "jacket",
+        "ipa": "/ˈdʒækɪt/",
+        "meaning": "ژاکت"
+      },
+      {
+        "word": "wrong",
+        "ipa": "/rɔːŋ/",
+        "meaning": "اشتباه / غلط"
       }
     ],
     "sentences": [
@@ -4648,9 +4357,18 @@
         "title": "ملیت، کشور یا شهر؟",
         "explanation": "ملیت، کشور و شهر سه چیز متفاوت‌اند. بعد از فعل be ملیت می‌آید: I'm Brazilian یعنی من برزیلی هستم. بعد از from کشور یا شهر می‌آید: You're from Brazil یعنی تو اهل برزیل هستی، و I'm from São Paulo یعنی من اهل سائوپائولو هستم. هدف این است که این سه را با هم اشتباه نگیری.",
         "examples": [
-          { "en": "I'm Brazilian.", "fa": "من برزیلی هستم." },
-          { "en": "You're from Brazil.", "fa": "تو اهل برزیل هستی." },
-          { "en": "I'm from São Paulo.", "fa": "من اهل سائوپائولو هستم." }
+          {
+            "en": "I'm Brazilian.",
+            "fa": "من برزیلی هستم."
+          },
+          {
+            "en": "You're from Brazil.",
+            "fa": "تو اهل برزیل هستی."
+          },
+          {
+            "en": "I'm from São Paulo.",
+            "fa": "من اهل سائوپائولو هستم."
+          }
         ]
       }
     ],
@@ -4763,49 +4481,133 @@
       {
         "title": "گفت‌وگو: تونی و آنا",
         "lines": [
-          { "en": "Tony: Are you Ana?", "fa": "تونی: تو آنا هستی؟" },
-          { "en": "Ana: Yes, I am.", "fa": "آنا: بله، من هستم." },
-          { "en": "Tony: Hi, I'm Tony. I'm from Lima.", "fa": "تونی: سلام، من تونی هستم. اهل لیما هستم." },
-          { "en": "Ana: You're Peruvian. I'm Brazilian.", "fa": "آنا: تو اهل پرو هستی. من برزیلی هستم." },
-          { "en": "Tony: Are you from Rio?", "fa": "تونی: اهل ریو هستی؟" },
-          { "en": "Ana: No, I'm not. I'm not from Rio or São Paulo.", "fa": "آنا: نه، نیستم. من اهل ریو یا سائوپائولو نیستم." },
-          { "en": "Tony: Are you from Brasilia?", "fa": "تونی: اهل برازیلیا هستی؟" },
-          { "en": "Ana: Yes.", "fa": "آنا: بله." }
+          {
+            "en": "Tony: Are you Ana?",
+            "fa": "تونی: تو آنا هستی؟"
+          },
+          {
+            "en": "Ana: Yes, I am.",
+            "fa": "آنا: بله، من هستم."
+          },
+          {
+            "en": "Tony: Hi, I'm Tony. I'm from Lima.",
+            "fa": "تونی: سلام، من تونی هستم. اهل لیما هستم."
+          },
+          {
+            "en": "Ana: You're Peruvian. I'm Brazilian.",
+            "fa": "آنا: تو اهل پرو هستی. من برزیلی هستم."
+          },
+          {
+            "en": "Tony: Are you from Rio?",
+            "fa": "تونی: اهل ریو هستی؟"
+          },
+          {
+            "en": "Ana: No, I'm not. I'm not from Rio or São Paulo.",
+            "fa": "آنا: نه، نیستم. من اهل ریو یا سائوپائولو نیستم."
+          },
+          {
+            "en": "Tony: Are you from Brasilia?",
+            "fa": "تونی: اهل برازیلیا هستی؟"
+          },
+          {
+            "en": "Ana: Yes.",
+            "fa": "آنا: بله."
+          }
         ]
       },
       {
         "title": "افراد مشهور: لیونل مسی",
         "lines": [
-          { "en": "Hi. I'm Lionel Messi.", "fa": "سلام. من لیونل مسی هستم." },
-          { "en": "I'm not from Spain.", "fa": "من اهل اسپانیا نیستم." },
-          { "en": "I'm Argentinian.", "fa": "من آرژانتینی هستم." }
+          {
+            "en": "Hi. I'm Lionel Messi.",
+            "fa": "سلام. من لیونل مسی هستم."
+          },
+          {
+            "en": "I'm not from Spain.",
+            "fa": "من اهل اسپانیا نیستم."
+          },
+          {
+            "en": "I'm Argentinian.",
+            "fa": "من آرژانتینی هستم."
+          }
         ]
       },
       {
         "title": "افراد مشهور: میشل اوباما",
         "lines": [
-          { "en": "Hi. I'm Michelle Obama.", "fa": "سلام. من میشل اوباما هستم." },
-          { "en": "I'm American.", "fa": "من آمریکایی هستم." },
-          { "en": "I'm not from Washington, D.C. I'm from Chicago.", "fa": "من اهل واشنگتن دی‌سی نیستم. من اهل شیکاگو هستم." }
+          {
+            "en": "Hi. I'm Michelle Obama.",
+            "fa": "سلام. من میشل اوباما هستم."
+          },
+          {
+            "en": "I'm American.",
+            "fa": "من آمریکایی هستم."
+          },
+          {
+            "en": "I'm not from Washington, D.C. I'm from Chicago.",
+            "fa": "من اهل واشنگتن دی‌سی نیستم. من اهل شیکاگو هستم."
+          }
         ]
       },
       {
         "title": "جمله‌های کامل‌شدهٔ تمرین: ملیت و شهر",
         "lines": [
-          { "en": "I'm Peruvian. I'm from Lima in Peru.", "fa": "من پرویی هستم. اهل لیما در پرو هستم." },
-          { "en": "I'm Japanese. I'm from Tokyo in Japan.", "fa": "من ژاپنی هستم. اهل توکیو در ژاپن هستم." },
-          { "en": "I'm from Tegucigalpa in Honduras. I'm Honduran.", "fa": "اهل تگوسیگالپا در هندوراس هستم. من هندوراسی هستم." },
-          { "en": "I'm Spanish. I'm from Madrid in Spain.", "fa": "من اسپانیایی هستم. اهل مادرید در اسپانیا هستم." },
-          { "en": "I'm from Medellín in Colombia. I'm Colombian.", "fa": "اهل مدلین در کلمبیا هستم. من کلمبیایی هستم." },
-          { "en": "I'm Brazilian. I'm from Rio de Janeiro in Brazil.", "fa": "من برزیلی هستم. اهل ریو دو ژانیرو در برزیل هستم." },
-          { "en": "I'm from Beijing in China. I'm Chinese.", "fa": "اهل پکن در چین هستم. من چینی هستم." },
-          { "en": "I'm Russian. I'm from Moscow in Russia.", "fa": "من روسی هستم. اهل مسکو در روسیه هستم." },
-          { "en": "I'm from Miami in the United States. I'm American.", "fa": "اهل میامی در ایالات متحده هستم. من آمریکایی هستم." },
-          { "en": "I'm from Seoul in South Korea. I'm South Korean.", "fa": "اهل سئول در کره جنوبی هستم. من اهل کره جنوبی هستم." },
-          { "en": "I'm Chilean. I'm from Santiago in Chile.", "fa": "من شیلیایی هستم. اهل سانتیاگو در شیلی هستم." },
-          { "en": "I'm Mexican. I'm from Mexico City in Mexico.", "fa": "من مکزیکی هستم. اهل مکزیکوسیتی در مکزیک هستم." },
-          { "en": "I'm from Quito in Ecuador. I'm Ecuadorian.", "fa": "اهل کیتو در اکوادور هستم. من اکوادوری هستم." },
-          { "en": "I'm French. I'm from Paris in France.", "fa": "من فرانسوی هستم. اهل پاریس در فرانسه هستم." }
+          {
+            "en": "I'm Peruvian. I'm from Lima in Peru.",
+            "fa": "من پرویی هستم. اهل لیما در پرو هستم."
+          },
+          {
+            "en": "I'm Japanese. I'm from Tokyo in Japan.",
+            "fa": "من ژاپنی هستم. اهل توکیو در ژاپن هستم."
+          },
+          {
+            "en": "I'm from Tegucigalpa in Honduras. I'm Honduran.",
+            "fa": "اهل تگوسیگالپا در هندوراس هستم. من هندوراسی هستم."
+          },
+          {
+            "en": "I'm Spanish. I'm from Madrid in Spain.",
+            "fa": "من اسپانیایی هستم. اهل مادرید در اسپانیا هستم."
+          },
+          {
+            "en": "I'm from Medellín in Colombia. I'm Colombian.",
+            "fa": "اهل مدلین در کلمبیا هستم. من کلمبیایی هستم."
+          },
+          {
+            "en": "I'm Brazilian. I'm from Rio de Janeiro in Brazil.",
+            "fa": "من برزیلی هستم. اهل ریو دو ژانیرو در برزیل هستم."
+          },
+          {
+            "en": "I'm from Beijing in China. I'm Chinese.",
+            "fa": "اهل پکن در چین هستم. من چینی هستم."
+          },
+          {
+            "en": "I'm Russian. I'm from Moscow in Russia.",
+            "fa": "من روسی هستم. اهل مسکو در روسیه هستم."
+          },
+          {
+            "en": "I'm from Miami in the United States. I'm American.",
+            "fa": "اهل میامی در ایالات متحده هستم. من آمریکایی هستم."
+          },
+          {
+            "en": "I'm from Seoul in South Korea. I'm South Korean.",
+            "fa": "اهل سئول در کره جنوبی هستم. من اهل کره جنوبی هستم."
+          },
+          {
+            "en": "I'm Chilean. I'm from Santiago in Chile.",
+            "fa": "من شیلیایی هستم. اهل سانتیاگو در شیلی هستم."
+          },
+          {
+            "en": "I'm Mexican. I'm from Mexico City in Mexico.",
+            "fa": "من مکزیکی هستم. اهل مکزیکوسیتی در مکزیک هستم."
+          },
+          {
+            "en": "I'm from Quito in Ecuador. I'm Ecuadorian.",
+            "fa": "اهل کیتو در اکوادور هستم. من اکوادوری هستم."
+          },
+          {
+            "en": "I'm French. I'm from Paris in France.",
+            "fa": "من فرانسوی هستم. اهل پاریس در فرانسه هستم."
+          }
         ]
       }
     ],

@@ -615,6 +615,14 @@
           "hint": "insider = فرد درونی",
           "time_limit": 60,
           "translation": "فرد بیرونی / غریبه"
+        },
+        {
+          "id": "evolve-1-l01-02-rel-12",
+          "question": "Synonym: put",
+          "expected_answer": "place",
+          "explanation": "put و place تقریباً هم‌معنی هستند.",
+          "hint": "put = گذاشتن / قرار دادن",
+          "translation": "گذاشتن / جا دادن"
         }
       ]
     },
@@ -1127,6 +1135,11 @@
         "word": "outsider",
         "ipa": "/ˌaʊtˈsaɪdər/",
         "meaning": "فرد بیرونی / غریبه"
+      },
+      {
+        "word": "place",
+        "ipa": "/pleɪs/",
+        "meaning": "گذاشتن / جا دادن"
       }
     ],
     "sentences": [

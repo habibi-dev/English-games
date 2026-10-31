@@ -1254,6 +1254,70 @@
           "translation": "به‌آرامی",
           "question": "Opposite: quickly",
           "hint": "quickly = سریع (قید)"
+        },
+        {
+          "id": "evolve-1-l01-03-rel-07",
+          "question": "Opposite: easy",
+          "expected_answer": "hard",
+          "explanation": "easy و hard متضاد یکدیگرند.",
+          "hint": "easy = آسان",
+          "translation": "سخت"
+        },
+        {
+          "id": "evolve-1-l01-03-rel-08",
+          "question": "Opposite: neat",
+          "expected_answer": "messy",
+          "explanation": "neat و messy متضاد یکدیگرند.",
+          "hint": "neat = مرتب",
+          "translation": "نامرتب / به‌هم‌ریخته"
+        },
+        {
+          "id": "evolve-1-l01-03-rel-09",
+          "question": "Opposite: often",
+          "expected_answer": "rarely",
+          "explanation": "often و rarely متضاد یکدیگرند.",
+          "hint": "often = اغلب",
+          "translation": "به‌ندرت"
+        },
+        {
+          "id": "evolve-1-l01-03-rel-10",
+          "question": "Opposite: girl",
+          "expected_answer": "boy",
+          "explanation": "girl و boy متضاد یکدیگرند.",
+          "hint": "girl = دختر",
+          "translation": "پسر"
+        },
+        {
+          "id": "evolve-1-l01-03-rel-11",
+          "question": "Synonym: practice",
+          "expected_answer": "exercise",
+          "explanation": "practice و exercise تقریباً هم‌معنی هستند.",
+          "hint": "practice = تمرین کردن",
+          "translation": "تمرین"
+        },
+        {
+          "id": "evolve-1-l01-03-rel-12",
+          "question": "Opposite: guest",
+          "expected_answer": "host",
+          "explanation": "guest و host متضاد یکدیگرند.",
+          "hint": "guest = مهمان",
+          "translation": "میزبان"
+        },
+        {
+          "id": "evolve-1-l01-03-rel-13",
+          "question": "Opposite: morning",
+          "expected_answer": "night",
+          "explanation": "morning و night متضاد یکدیگرند.",
+          "hint": "morning = صبح",
+          "translation": "شب"
+        },
+        {
+          "id": "evolve-1-l01-03-rel-14",
+          "question": "Opposite: welcome",
+          "expected_answer": "goodbye",
+          "explanation": "welcome و goodbye متضاد یکدیگرند.",
+          "hint": "welcome = خوش‌آمد گفتن",
+          "translation": "خداحافظ"
         }
       ]
     },
@@ -2277,6 +2341,36 @@
         "word": "checking spelling",
         "ipa": "/ˈtʃekɪŋ ˈspelɪŋ/",
         "meaning": "بررسی املای کلمات"
+      },
+      {
+        "word": "hard",
+        "ipa": "/hɑːrd/",
+        "meaning": "سخت"
+      },
+      {
+        "word": "messy",
+        "ipa": "/ˈmesi/",
+        "meaning": "نامرتب / به‌هم‌ریخته"
+      },
+      {
+        "word": "rarely",
+        "ipa": "/ˈrerli/",
+        "meaning": "به‌ندرت"
+      },
+      {
+        "word": "boy",
+        "ipa": "/bɔɪ/",
+        "meaning": "پسر"
+      },
+      {
+        "word": "exercise",
+        "ipa": "/ˈeksərsaɪz/",
+        "meaning": "تمرین"
+      },
+      {
+        "word": "host",
+        "ipa": "/hoʊst/",
+        "meaning": "میزبان"
       }
     ],
     "sentences": [
