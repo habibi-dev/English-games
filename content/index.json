@@ -26,19 +26,31 @@
                   "id": "lesson-01-01",
                   "title": "Lesson 1.1",
                   "file": "content/evolve-1/lesson-01-01.json",
-                  "version": "15"
+                  "version": "17"
                 },
                 {
                   "id": "lesson-01-02",
                   "title": "Lesson 1.2",
                   "file": "content/evolve-1/lesson-01-02.json",
-                  "version": "5"
+                  "version": "8"
                 },
                 {
                   "id": "lesson-01-03",
                   "title": "Lesson 1.3",
                   "file": "content/evolve-1/lesson-01-03.json",
-                  "version": "3"
+                  "version": "7"
+                },
+                {
+                  "id": "lesson-01-04",
+                  "title": "Lesson 1.4",
+                  "file": "content/evolve-1/lesson-01-04.json",
+                  "version": "2"
+                },
+                {
+                  "id": "lesson-01-05",
+                  "title": "Lesson 1.5",
+                  "file": "content/evolve-1/lesson-01-05.json",
+                  "version": "1"
                 }
               ]
             }

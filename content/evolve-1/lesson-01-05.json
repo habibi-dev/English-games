@@ -1,0 +1,550 @@
+{
+  "schema_version": "2.0",
+  "book": "evolve-1",
+  "lesson": "lesson-01-05",
+  "title": "Lesson 1.5 – Time to Speak",
+  "exercises": [
+    {
+      "id": "evolve-1-l01-05-translation",
+      "type": "quick_translation",
+      "title": "ترجمه جمله‌ها و عبارت‌ها",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-05-tr-01",
+          "expected_answer": "Good evening.",
+          "explanation": "عبارت احوالپرسی در عصر است.",
+          "time_limit": 60,
+          "translation": "عصر بخیر.",
+          "question": "عصر بخیر.",
+          "hint": "evening = عصر"
+        },
+        {
+          "id": "evolve-1-l01-05-tr-02",
+          "expected_answer": "Nice to meet you.",
+          "explanation": "این عبارت را هنگام آشنایی می‌گوییم.",
+          "time_limit": 60,
+          "translation": "از آشنایی با تو خوشحالم.",
+          "question": "از آشنایی با تو خوشحالم.",
+          "hint": "nice to meet you = از آشنایی با تو خوشحالم"
+        },
+        {
+          "id": "evolve-1-l01-05-tr-03",
+          "expected_answer": "See you later.",
+          "explanation": "این عبارت را هنگام خداحافظی می‌گوییم.",
+          "time_limit": 60,
+          "translation": "بعداً می‌بینمت.",
+          "question": "بعداً می‌بینمت.",
+          "hint": "later = بعداً"
+        },
+        {
+          "id": "evolve-1-l01-05-tr-04",
+          "expected_answer": "I'm fine.",
+          "explanation": "I’m شکل کوتاه I am است.",
+          "time_limit": 60,
+          "translation": "من خوبم.",
+          "question": "من خوبم.",
+          "accepted_answers": [
+            "I am fine."
+          ],
+          "hint": "fine = خوب"
+        },
+        {
+          "id": "evolve-1-l01-05-tr-05",
+          "expected_answer": "I'm fine, thanks. And you?",
+          "explanation": "برای پاسخ به How are you? از I’m fine استفاده می‌کنیم.",
+          "time_limit": 60,
+          "translation": "خوبم، ممنون. تو چطوری؟",
+          "question": "خوبم، ممنون. تو چطوری؟",
+          "accepted_answers": [
+            "I am fine, thanks. And you?"
+          ],
+          "hint": "thanks = ممنون؛ and you = تو چطوری"
+        },
+        {
+          "id": "evolve-1-l01-05-tr-06",
+          "expected_answer": "Who is your favorite person?",
+          "explanation": "برای پرسیدن شخص موردعلاقه از Who is استفاده می‌کنیم.",
+          "time_limit": 60,
+          "translation": "شخص موردعلاقه تو کیست؟",
+          "question": "شخص موردعلاقه تو کیست؟",
+          "hint": "favorite = موردعلاقه"
+        },
+        {
+          "id": "evolve-1-l01-05-tr-07",
+          "expected_answer": "Me, too.",
+          "explanation": "too یعنی هم یا همچنین.",
+          "time_limit": 60,
+          "translation": "من هم همین‌طور.",
+          "question": "من هم همین‌طور.",
+          "hint": "too = هم"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-05-word-translation",
+      "type": "word_translation",
+      "title": "ترجمه با کلمات فارسی",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-05-wt-01",
+          "expected_answer": "Nice to meet you.",
+          "explanation": "به ترتیب طبیعی جمله در انگلیسی توجه کن.",
+          "time_limit": 60,
+          "translation": "از آشنایی با تو خوشحالم.",
+          "hint": "nice to meet you",
+          "word_bank": [
+            "از",
+            "آشنایی",
+            "با",
+            "تو",
+            "خوشحالم"
+          ],
+          "accepted_answers": [
+            "Nice to meet you."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-05-voice",
+      "type": "voice_translation",
+      "title": "ترجمه با صدا",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-05-vt-01",
+          "expected_answer": "See you later.",
+          "explanation": "این عبارت را هنگام خداحافظی می‌گوییم.",
+          "time_limit": 60,
+          "translation": "بعداً می‌بینمت.",
+          "question": "بعداً می‌بینمت.",
+          "hint": "see you later = بعداً می‌بینمت"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-05-builder",
+      "type": "sentence_builder",
+      "title": "جمله‌سازی",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-05-sb-01",
+          "expected_answer": "See you later.",
+          "explanation": "See you later یک عبارت ثابت است.",
+          "time_limit": 60,
+          "translation": "بعداً می‌بینمت.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "later = بعداً",
+          "word_bank": [
+            "you",
+            "later.",
+            "See"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-05-correction",
+      "type": "grammar_correction",
+      "title": "اصلاح جمله",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-05-gc-01",
+          "expected_answer": "Nice to meet you.",
+          "explanation": "بعد از nice، حرف اضافهٔ to می‌آید.",
+          "time_limit": 60,
+          "translation": "از آشنایی با تو خوشحالم.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "به حرف اضافهٔ بعد از nice توجه کن.",
+          "incorrect_sentence": "Nice meet you."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-05-choice",
+      "type": "multiple_choice",
+      "title": "سؤالات چندگزینه‌ای",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-05-mc-01",
+          "expected_answer": "Greeting",
+          "explanation": "Good evening برای احوالپرسی است.",
+          "time_limit": 60,
+          "translation": "احوالپرسی",
+          "question": "این عبارت از کدام نوع مکالمه است؟ «Good evening.»",
+          "hint": "عبارتی برای سلام کردن",
+          "options": [
+            "Greeting",
+            "Introduction",
+            "Goodbye"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-05-mc-02",
+          "expected_answer": "Introduction",
+          "explanation": "this is برای معرفی به کار می‌رود.",
+          "time_limit": 60,
+          "translation": "معرفی",
+          "question": "این عبارت از کدام نوع مکالمه است؟ «Gabi, this is Caio.»",
+          "hint": "this is = این است",
+          "options": [
+            "Greeting",
+            "Introduction",
+            "Goodbye"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-05-mc-03",
+          "expected_answer": "Goodbye",
+          "explanation": "See you later هنگام خداحافظی گفته می‌شود.",
+          "time_limit": 60,
+          "translation": "خداحافظی",
+          "question": "این عبارت از کدام نوع مکالمه است؟ «See you later.»",
+          "hint": "later = بعداً",
+          "options": [
+            "Greeting",
+            "Introduction",
+            "Goodbye"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-05-mc-04",
+          "expected_answer": "خوب",
+          "explanation": "fine یعنی خوب.",
+          "time_limit": 60,
+          "translation": "خوب",
+          "question": "معنی fine چیست؟",
+          "hint": "fine = خوب",
+          "options": [
+            "خوب",
+            "شب",
+            "کلید"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-05-mc-05",
+          "expected_answer": "goodbye",
+          "explanation": "goodbye یعنی خداحافظ.",
+          "time_limit": 60,
+          "translation": "خداحافظ",
+          "question": "کدام واژه به معنی «خداحافظ» است؟",
+          "hint": "goodbye = خداحافظ",
+          "options": [
+            "goodbye",
+            "favorite",
+            "nice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-05-synonyms",
+      "type": "vocabulary",
+      "title": "مترادف و متضاد",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-05-voc-01",
+          "question": "Synonym: bye",
+          "expected_answer": "goodbye",
+          "explanation": "bye و goodbye هر دو یعنی خداحافظ.",
+          "hint": "bye = خداحافظ",
+          "translation": "خداحافظ"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-05-spelling",
+      "type": "dictation",
+      "title": "املای واژه‌ها و عبارت‌ها",
+      "presentation": "audio",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-05-dic-01",
+          "expected_answer": "good evening",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "عصر بخیر",
+          "question": "good evening",
+          "hint": "عصر بخیر",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-02",
+          "expected_answer": "fine",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "خوب",
+          "question": "fine",
+          "hint": "خوب",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-03",
+          "expected_answer": "nice",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "خوب، دلپذیر",
+          "question": "nice",
+          "hint": "خوب، دلپذیر",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-04",
+          "expected_answer": "see you later",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "بعداً می‌بینمت",
+          "question": "see you later",
+          "hint": "بعداً می‌بینمت",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-05",
+          "expected_answer": "bye",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "خداحافظ",
+          "question": "bye",
+          "hint": "خداحافظ",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-06",
+          "expected_answer": "goodbye",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "خداحافظ",
+          "question": "goodbye",
+          "hint": "خداحافظ",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-07",
+          "expected_answer": "introduction",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "معرفی",
+          "question": "introduction",
+          "hint": "معرفی",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-08",
+          "expected_answer": "greeting",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "احوالپرسی",
+          "question": "greeting",
+          "hint": "احوالپرسی",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-09",
+          "expected_answer": "favorite",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "موردعلاقه",
+          "question": "favorite",
+          "hint": "موردعلاقه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-10",
+          "expected_answer": "nice to meet you",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "از آشنایی با تو خوشحالم",
+          "question": "nice to meet you",
+          "hint": "از آشنایی با تو خوشحالم",
+          "presentation": "audio"
+        }
+      ]
+    }
+  ],
+  "lesson_content": {
+    "vocabulary": [
+      {
+        "word": "good evening",
+        "ipa": "/ɡʊd ˈiːvnɪŋ/",
+        "meaning": "عصر بخیر"
+      },
+      {
+        "word": "fine",
+        "ipa": "/faɪn/",
+        "meaning": "خوب"
+      },
+      {
+        "word": "nice",
+        "ipa": "/naɪs/",
+        "meaning": "خوب، دلپذیر"
+      },
+      {
+        "word": "nice to meet you",
+        "ipa": "/naɪs tuː miːt juː/",
+        "meaning": "از آشنایی با تو خوشحالم"
+      },
+      {
+        "word": "see you later",
+        "ipa": "/siː juː ˈleɪtər/",
+        "meaning": "بعداً می‌بینمت"
+      },
+      {
+        "word": "bye",
+        "ipa": "/baɪ/",
+        "meaning": "خداحافظ (غیررسمی)"
+      },
+      {
+        "word": "goodbye",
+        "ipa": "/ˌɡʊdˈbaɪ/",
+        "meaning": "خداحافظ"
+      },
+      {
+        "word": "introduction",
+        "ipa": "/ˌɪntrəˈdʌkʃn/",
+        "meaning": "معرفی"
+      },
+      {
+        "word": "greeting",
+        "ipa": "/ˈɡriːtɪŋ/",
+        "meaning": "احوالپرسی"
+      },
+      {
+        "word": "favorite",
+        "ipa": "/ˈfeɪvərɪt/",
+        "meaning": "موردعلاقه"
+      }
+    ],
+    "sentences": [
+      {
+        "en": "Good evening.",
+        "fa": "عصر بخیر."
+      },
+      {
+        "en": "Hello. How are you?",
+        "fa": "سلام. حالت چطور است؟"
+      },
+      {
+        "en": "I'm fine, thanks. And you?",
+        "fa": "خوبم، ممنون. تو چطوری؟"
+      },
+      {
+        "en": "I'm fine.",
+        "fa": "من خوبم."
+      },
+      {
+        "en": "Nice to meet you.",
+        "fa": "از آشنایی با تو خوشحالم."
+      },
+      {
+        "en": "See you later.",
+        "fa": "بعداً می‌بینمت."
+      }
+    ],
+    "grammar": [],
+    "stories": [
+      {
+        "title": "احوالپرسی: عصر بخیر",
+        "lines": [
+          {
+            "en": "A: Good evening.",
+            "fa": "الف: عصر بخیر."
+          },
+          {
+            "en": "B: Hello. How are you?",
+            "fa": "ب: سلام. حالت چطور است؟"
+          },
+          {
+            "en": "A: I'm fine, thanks. And you?",
+            "fa": "الف: خوبم، ممنون. تو چطوری؟"
+          },
+          {
+            "en": "B: I'm fine.",
+            "fa": "ب: من خوبم."
+          }
+        ]
+      },
+      {
+        "title": "معرفی: گابی و کایو",
+        "lines": [
+          {
+            "en": "A: Gabi, this is Caio.",
+            "fa": "الف: گابی، این کایو است."
+          },
+          {
+            "en": "B: Hi, Gabi. Nice to meet you.",
+            "fa": "ب: سلام گابی. از آشنایی با تو خوشحالم."
+          },
+          {
+            "en": "C: Nice to meet you, Caio.",
+            "fa": "ج: از آشنایی با تو خوشحالم، کایو."
+          }
+        ]
+      },
+      {
+        "title": "خداحافظی",
+        "lines": [
+          {
+            "en": "A: See you later.",
+            "fa": "الف: بعداً می‌بینمت."
+          },
+          {
+            "en": "B: Bye.",
+            "fa": "ب: خداحافظ."
+          }
+        ]
+      },
+      {
+        "title": "گفت‌وگو: شخص موردعلاقه",
+        "lines": [
+          {
+            "en": "A: Who is your favorite person?",
+            "fa": "الف: شخص موردعلاقه تو کیست؟"
+          },
+          {
+            "en": "B: My favorite person is Nelson Mandela.",
+            "fa": "ب: شخص موردعلاقه من نلسون ماندلا است."
+          },
+          {
+            "en": "C: Me, too.",
+            "fa": "ج: من هم همین‌طور."
+          }
+        ]
+      },
+      {
+        "title": "نقش‌آفرینی: ملیت و شماره تلفن",
+        "lines": [
+          {
+            "en": "A: Are you American?",
+            "fa": "الف: آیا تو آمریکایی هستی؟"
+          },
+          {
+            "en": "B: No, I'm not.",
+            "fa": "ب: نه، نیستم."
+          },
+          {
+            "en": "A: What's your cell phone number?",
+            "fa": "الف: شماره تلفن همراه تو چیست؟"
+          },
+          {
+            "en": "B: It's (962) 555-3198.",
+            "fa": "ب: (962) 555-3198 است."
+          }
+        ]
+      }
+    ]
+  }
+}

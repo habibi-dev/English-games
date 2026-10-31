@@ -34,9 +34,7 @@
         {
           "id": "evolve-1-l01-02-tr-03",
           "expected_answer": "What's the name of your college?",
-          "accepted_answers": [
-            "What is the name of your college?"
-          ],
+          "accepted_answers": ["What is the name of your college?"],
           "explanation": "What’s یعنی What is؛ of را بین the name و your بگذار.",
           "time_limit": 60,
           "translation": "نام کالج شما چیست؟",
@@ -47,9 +45,7 @@
         {
           "id": "evolve-1-l01-02-tr-04",
           "expected_answer": "What's the name of your company?",
-          "accepted_answers": [
-            "What is the name of your company?"
-          ],
+          "accepted_answers": ["What is the name of your company?"],
           "explanation": "What’s یعنی What is؛ of را بین the name و your بگذار.",
           "time_limit": 60,
           "translation": "نام شرکت شما چیست؟",
@@ -60,9 +56,7 @@
         {
           "id": "evolve-1-l01-02-tr-05",
           "expected_answer": "So, your first name is Juana.",
-          "accepted_answers": [
-            "So, your first name's Juana."
-          ],
+          "accepted_answers": ["So, your first name's Juana."],
           "explanation": "So در ابتدای جمله یعنی «پس / بنابراین»؛ بعد your first name is و نام را می‌آوری.",
           "time_limit": 60,
           "translation": "پس، اسم کوچک تو خوانا است.",
@@ -73,9 +67,7 @@
         {
           "id": "evolve-1-l01-02-tr-06",
           "expected_answer": "I'm a student at Hunter College in New York City.",
-          "accepted_answers": [
-            "I am a student at Hunter College in New York City."
-          ],
+          "accepted_answers": ["I am a student at Hunter College in New York City."],
           "explanation": "I'm = I am؛ بعد a student و at و نام کالج و in و شهر را می‌آوری.",
           "time_limit": 60,
           "translation": "من دانش‌آموز Hunter College در شهر نیویورک هستم.",
@@ -110,6 +102,88 @@
           "translation": "ترتیب / نظم",
           "question": "ترتیب / نظم",
           "hint": "order = ترتیب / نظم"
+        },
+        {
+          "id": "evolve-1-l01-02-tr-10",
+          "expected_answer": "My college is Harvard University.",
+          "explanation": "My یعنی «مال من» و college یعنی کالج.",
+          "time_limit": 60,
+          "translation": "کالج من دانشگاه هاروارد است.",
+          "question": "کالج من دانشگاه هاروارد است.",
+          "hint": "college = کالج؛ my = من",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-tr-11",
+          "expected_answer": "My company is Toyota.",
+          "explanation": "در این جمله company یعنی شرکت و My قبل از آن می‌آید.",
+          "time_limit": 60,
+          "translation": "شرکت من تویوتا است.",
+          "question": "شرکت من تویوتا است.",
+          "hint": "company = شرکت؛ my = من",
+          "group": "Personal Information"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-02-word-translation",
+      "type": "word_translation",
+      "title": "ترجمه با کلمات فارسی",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-02-wt-01",
+          "expected_answer": "What's your last name?",
+          "explanation": "به ترتیب طبیعی جمله در انگلیسی توجه کن.",
+          "time_limit": 60,
+          "translation": "نام خانوادگی تو چیست؟",
+          "hint": "last name = نام خانوادگی",
+          "word_bank": ["نام", "خانوادگی", "تو", "چیست؟"],
+          "accepted_answers": ["What is your last name?"],
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-wt-02",
+          "expected_answer": "What's your first name?",
+          "explanation": "به ترتیب طبیعی جمله در انگلیسی توجه کن.",
+          "time_limit": 60,
+          "translation": "اسم کوچک تو چیست؟",
+          "hint": "first name = اسم کوچک",
+          "word_bank": ["اسم", "کوچک", "تو", "چیست؟"],
+          "accepted_answers": ["What is your first name?"],
+          "group": "Personal Information"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-02-voice",
+      "type": "voice_translation",
+      "title": "ترجمه با صدا",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-02-vt-01",
+          "expected_answer": "What's your last name?",
+          "explanation": "جمله را با What’s شروع کن و last name را بعد از your بگو.",
+          "time_limit": 60,
+          "translation": "نام خانوادگی تو چیست؟",
+          "question": "نام خانوادگی تو چیست؟",
+          "accepted_answers": ["What is your last name?"],
+          "hint": "last name = نام خانوادگی؛ آپاستروف را در What’s فراموش نکن",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-vt-02",
+          "expected_answer": "It's Garcia College.",
+          "explanation": "It’s پاسخ کوتاه It is است.",
+          "time_limit": 60,
+          "translation": "Garcia College است.",
+          "question": "Garcia College است.",
+          "accepted_answers": ["It is Garcia College."],
+          "hint": "College = کالج؛ It’s = این است",
+          "group": "Personal Information"
         }
       ]
     },
@@ -128,14 +202,18 @@
           "translation": "نام کالج شما چیست؟",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "college = کالج. راهنما: سؤال با What is؛ کلمات word bank را مرتب کن، نه از حفظ.",
-          "word_bank": [
-            "college?",
-            "of",
-            "What's",
-            "the",
-            "name",
-            "your"
-          ],
+          "word_bank": ["college?", "of", "What's", "the", "name", "your"],
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-sb-02",
+          "expected_answer": "My company is Toyota.",
+          "explanation": "My قبل از اسم می‌آید و is بعد از اسم می‌آید.",
+          "time_limit": 60,
+          "translation": "شرکت من تویوتا است.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "company = شرکت. صفت My قبل از اسم می‌آید.",
+          "word_bank": ["is", "My", "Toyota.", "company"],
           "group": "Personal Information"
         }
       ]
@@ -157,6 +235,28 @@
           "hint": "به آپاستروف در شکل کوتاه What is توجه کن.",
           "incorrect_sentence": "Whats the name of your company?",
           "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-gc-02",
+          "expected_answer": "What's your last name?",
+          "explanation": "What’s شکل کوتاه What is است و آپاستروف باید آنجا باشد.",
+          "time_limit": 60,
+          "translation": "نام خانوادگی تو چیست؟",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "به شکل کوتاه What is توجه کن؛ یک کلمه جا افتاده است.",
+          "incorrect_sentence": "What your last name?",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-gc-03",
+          "expected_answer": "It's Garcia College.",
+          "explanation": "It’s شکل کوتاه It is است و آپاستروف باید بین It و s باشد.",
+          "time_limit": 60,
+          "translation": "Garcia College است.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "به آپاستروف در شکل کوتاه It is توجه کن.",
+          "incorrect_sentence": "Its Garcia College.",
+          "group": "Personal Information"
         }
       ]
     },
@@ -175,11 +275,7 @@
           "translation": "کالج / دانشکده",
           "question": "معنی college چیست؟",
           "hint": "college = کالج / دانشکده",
-          "options": [
-            "شرکت",
-            "کالج / دانشکده",
-            "کنفرانس / همایش"
-          ],
+          "options": ["شرکت", "کالج / دانشکده", "کنفرانس / همایش"],
           "group": "Personal Information"
         },
         {
@@ -190,11 +286,7 @@
           "translation": "شرکت",
           "question": "معنی company چیست؟",
           "hint": "company = شرکت",
-          "options": [
-            "الفبا",
-            "شرکت",
-            "آدرس"
-          ],
+          "options": ["الفبا", "شرکت", "آدرس"],
           "group": "Personal Information"
         },
         {
@@ -205,11 +297,7 @@
           "translation": "الفبا",
           "question": "معنی alphabet چیست؟",
           "hint": "alphabet = الفبا",
-          "options": [
-            "آدرس",
-            "کنفرانس / همایش",
-            "الفبا"
-          ],
+          "options": ["آدرس", "کنفرانس / همایش", "الفبا"],
           "group": "Personal Information"
         },
         {
@@ -220,11 +308,7 @@
           "translation": "کنفرانس / همایش",
           "question": "معنی conference چیست؟",
           "hint": "conference = کنفرانس / همایش",
-          "options": [
-            "کالج / دانشکده",
-            "کنفرانس / همایش",
-            "اطلاعات شخصی"
-          ],
+          "options": ["کالج / دانشکده", "کنفرانس / همایش", "اطلاعات شخصی"],
           "group": "Personal Information"
         },
         {
@@ -235,11 +319,7 @@
           "translation": "آها / اوهوم",
           "question": "کدام واژه به معنی «آها / اوهوم» است؟",
           "hint": "uh-huh = آها / اوهوم",
-          "options": [
-            "sorry",
-            "uh-huh",
-            "please"
-          ]
+          "options": ["sorry", "uh-huh", "please"]
         },
         {
           "id": "evolve-1-l01-02-mc-06",
@@ -249,11 +329,7 @@
           "translation": "پنهان کردن",
           "question": "کدام واژه مخالف show است؟",
           "hint": "show = نشان دادن",
-          "options": [
-            "demonstrate",
-            "hide",
-            "firm"
-          ]
+          "options": ["demonstrate", "hide", "firm"]
         },
         {
           "id": "evolve-1-l01-02-mc-07",
@@ -263,11 +339,7 @@
           "translation": "فرد بیرونی",
           "question": "کدام واژه مخالف insider است؟",
           "hint": "insider = فرد درونی",
-          "options": [
-            "firm",
-            "outsider",
-            "script"
-          ]
+          "options": ["firm", "outsider", "script"]
         },
         {
           "id": "evolve-1-l01-02-mc-08",
@@ -277,11 +349,7 @@
           "translation": "دانشگاه",
           "question": "کدام واژه به معنی «دانشگاه» است؟",
           "hint": "university = دانشگاه",
-          "options": [
-            "script",
-            "university",
-            "again"
-          ]
+          "options": ["script", "university", "again"]
         },
         {
           "id": "evolve-1-l01-02-mc-09",
@@ -291,11 +359,7 @@
           "translation": "دوباره",
           "question": "کدام واژه به معنی «دوباره» است؟",
           "hint": "again = دوباره",
-          "options": [
-            "again",
-            "hide",
-            "show"
-          ]
+          "options": ["again", "hide", "show"]
         },
         {
           "id": "evolve-1-l01-02-mc-10",
@@ -305,11 +369,7 @@
           "translation": "فوق‌العاده",
           "question": "معنی wonderful چیست؟",
           "hint": "wonderful = فوق‌العاده",
-          "options": [
-            "فوق‌العاده",
-            "شرکت / مؤسسه",
-            "متن (نمایشنامه / فیلمنامه)"
-          ]
+          "options": ["فوق‌العاده", "شرکت / مؤسسه", "متن (نمایشنامه / فیلمنامه)"]
         },
         {
           "id": "evolve-1-l01-02-mc-11",
@@ -319,11 +379,7 @@
           "translation": "گذاشتن / قرار دادن",
           "question": "معنی put چیست؟",
           "hint": "put = گذاشتن / قرار دادن",
-          "options": [
-            "پنهان کردن",
-            "گذاشتن / قرار دادن",
-            "دوباره"
-          ]
+          "options": ["پنهان کردن", "گذاشتن / قرار دادن", "دوباره"]
         },
         {
           "id": "evolve-1-l01-02-mc-12",
@@ -333,11 +389,89 @@
           "translation": "ترتیب / نظم",
           "question": "معنی order چیست؟",
           "hint": "order = ترتیب / نظم",
-          "options": [
-            "الفبا",
-            "ترتیب / نظم",
-            "خط زیر (_)"
-          ]
+          "options": ["الفبا", "ترتیب / نظم", "خط زیر (_)"]
+        },
+        {
+          "id": "evolve-1-l01-02-mc-13",
+          "expected_answer": "سؤال",
+          "explanation": "جملهٔ سؤالی با علامت سؤال (?) تمام می‌شود.",
+          "time_limit": 60,
+          "translation": "سؤال",
+          "question": "«What's your last name?» یک ... است؟",
+          "hint": "به علامت ؟ در آخر جمله توجه کن",
+          "options": ["سؤال", "جواب"],
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-mc-14",
+          "expected_answer": "جواب",
+          "explanation": "It’s در این جمله پاسخ کوتاه است و علامت سؤال ندارد.",
+          "time_limit": 60,
+          "translation": "جواب",
+          "question": "«It's Garcia College.» یک ... است؟",
+          "hint": "به ساختار It’s در پاسخ توجه کن",
+          "options": ["سؤال", "جواب"],
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-alpha-01",
+          "expected_answer": "W",
+          "explanation": "حرف W را با تلفظ آن در جدول الفبا مقایسه کن.",
+          "time_limit": 60,
+          "translation": "W",
+          "question": "کدام حرف با تلفظ «دابل‌یو» است؟",
+          "hint": "به تلفظ حرف در جدول الفبا توجه کن.",
+          "options": ["V", "W", "Y"]
+        },
+        {
+          "id": "evolve-1-l01-02-alpha-02",
+          "expected_answer": "Y",
+          "explanation": "حرف Y را با تلفظ آن در جدول الفبا مقایسه کن.",
+          "time_limit": 60,
+          "translation": "Y",
+          "question": "کدام حرف با تلفظ «وای» است؟",
+          "hint": "به تلفظ حرف در جدول الفبا توجه کن.",
+          "options": ["V", "W", "Y"]
+        },
+        {
+          "id": "evolve-1-l01-02-alpha-03",
+          "expected_answer": "V",
+          "explanation": "حرف V را با تلفظ آن در جدول الفبا مقایسه کن.",
+          "time_limit": 60,
+          "translation": "V",
+          "question": "کدام حرف با تلفظ «وی» است؟",
+          "hint": "به تلفظ حرف در جدول الفبا توجه کن.",
+          "options": ["B", "D", "V"]
+        },
+        {
+          "id": "evolve-1-l01-02-alpha-04",
+          "expected_answer": "X",
+          "explanation": "حرف X را با تلفظ آن در جدول الفبا مقایسه کن.",
+          "time_limit": 60,
+          "translation": "X",
+          "question": "کدام حرف با تلفظ «اِکس» است؟",
+          "hint": "به تلفظ حرف در جدول الفبا توجه کن.",
+          "options": ["S", "X", "Z"]
+        },
+        {
+          "id": "evolve-1-l01-02-alpha-05",
+          "expected_answer": "Q",
+          "explanation": "حرف Q را با تلفظ آن در جدول الفبا مقایسه کن.",
+          "time_limit": 60,
+          "translation": "Q",
+          "question": "کدام حرف با تلفظ «کیو» است؟",
+          "hint": "به تلفظ حرف در جدول الفبا توجه کن.",
+          "options": ["C", "K", "Q"]
+        },
+        {
+          "id": "evolve-1-l01-02-alpha-06",
+          "expected_answer": "F",
+          "explanation": "حرف F را با تلفظ آن در جدول الفبا مقایسه کن.",
+          "time_limit": 60,
+          "translation": "F",
+          "question": "کدام حرف با تلفظ «اِف» است؟",
+          "hint": "به تلفظ حرف در جدول الفبا توجه کن.",
+          "options": ["F", "P", "S"]
         }
       ]
     },
@@ -403,9 +537,7 @@
           "hint": "again = دوباره",
           "time_limit": 60,
           "translation": "دوباره، از نو",
-          "accepted_answers": [
-            "re"
-          ],
+          "accepted_answers": ["re"],
           "answer_mode": "list",
           "min_items": 2
         },
@@ -453,9 +585,7 @@
           "hint": "company = شرکت",
           "time_limit": 60,
           "translation": "شرکت / مؤسسه",
-          "accepted_answers": [
-            "Inc."
-          ],
+          "accepted_answers": ["Inc."],
           "answer_mode": "list",
           "min_items": 2
         },
@@ -1051,6 +1181,14 @@
       {
         "en": "How do you spell your first name?",
         "fa": "اسم کوچک تو را چطور هجی می‌کنی؟"
+      },
+      {
+        "en": "My college is Harvard University.",
+        "fa": "کالج من دانشگاه هاروارد است."
+      },
+      {
+        "en": "My company is Toyota.",
+        "fa": "شرکت من تویوتا است."
       }
     ],
     "grammar": [
@@ -1127,11 +1265,102 @@
         ]
       },
       {
+        "title": "First name و Last name",
+        "explanation": "first name یعنی اسم کوچک و last name یعنی نام خانوادگی. برای پرسیدن اسم کوچک از What’s your first name? و برای پرسیدن نام خانوادگی از What’s your last name? استفاده می‌کنیم.",
+        "examples": [
+          {
+            "en": "What's your first name?",
+            "fa": "اسم کوچک تو چیست؟"
+          },
+          {
+            "en": "What's your last name?",
+            "fa": "نام خانوادگی تو چیست؟"
+          }
+        ]
+      },
+      {
+        "title": "الفبای انگلیسی",
+        "explanation": "نام هر حرف انگلیسی با تلفظ آن فرق دارد: Aa = اِی، Bb = بی، Cc = سی، Dd = دی، Ee = ای، Ff = اِف، Gg = جی، Hh = اِیچ، Ii = آی، Jj = جِی، Kk = کِی، Ll = اِل، Mm = اِم، Nn = اِن، Oo = اُو، Pp = پی، Qq = کیو، Rr = آر، Ss = اِس، Tt = تی، Uu = یو، Vv = وی، Ww = دابل‌یو، Xx = اِکس، Yy = وای، Zz = زی (در انگلیسی آمریکایی). وقتی یک کلمه را هجی می‌کنی، حرف‌ها را یکی‌یکی با همین نام‌ها می‌گویی.",
+        "examples": [
+          {
+            "en": "How do you spell your first name?",
+            "fa": "اسم کوچک تو را چطور هجی می‌کنی؟"
+          },
+          {
+            "en": "What's your last name?",
+            "fa": "نام خانوادگی تو چیست؟"
+          }
+        ]
+      },
+      {
         "title": "جمع‌بندی گرامر این درس",
         "explanation": "این ساختارها را فعلاً یاد بگیر: برای پرسیدن اطلاعات — What's + your + noun?؛ برای پرسیدن نام یک مکان یا شرکت — What's the name of + noun?؛ برای پاسخ دادن — It's + جواب. در این مرحله لازم نیست وارد گرامرهای پیچیده‌تر شوی؛ فقط باید بتوانی با What's سؤال بسازی و با It's پاسخ بدهی.",
         "examples": []
       }
     ],
-    "stories": []
+    "stories": [
+      {
+        "title": "گفت‌وگو ۱: رودی و خوانا",
+        "lines": [
+          {
+            "en": "Rudy: So, your first name is Juana. H-U-...",
+            "fa": "رودی: پس اسم کوچک تو Juana است. H-U-..."
+          },
+          {
+            "en": "Juana: No. J-U-A-N-A. My last name is Garcia. G-A-R-C-I-A.",
+            "fa": "خوانا: نه. J-U-A-N-A. نام خانوادگی من Garcia است. G-A-R-C-I-A."
+          },
+          {
+            "en": "Rudy: Uh-huh. What's your email address?",
+            "fa": "رودی: آها. آدرس ایمیلت چیست؟"
+          },
+          {
+            "en": "Juana: It's juanagarcia@bestmail.com.",
+            "fa": "خوانا: آدرس ایمیلم juanagarcia@bestmail.com است."
+          },
+          {
+            "en": "Rudy: And what's the name of your college?",
+            "fa": "رودی: اسم کالجت چیست؟"
+          },
+          {
+            "en": "Juana: It's Garcia College. I'm Juana Garcia from Garcia College!",
+            "fa": "خوانا: اسمش Garcia College است. من Juana Garcia از کالج Garcia هستم!"
+          }
+        ]
+      },
+      {
+        "title": "گفت‌وگو ۲: رودی و خوانا (ایمیل Jones)",
+        "lines": [
+          {
+            "en": "Rudy: Great! OK, my last name is Jones.",
+            "fa": "رودی: عالی! خب، نام خانوادگی من Jones است."
+          },
+          {
+            "en": "Juana: OK. What's your email address?",
+            "fa": "خوانا: باشه. آدرس ایمیلت چیست؟"
+          },
+          {
+            "en": "Rudy: It's rudythejones@kmail.com.",
+            "fa": "رودی: آدرس ایمیلم rudythejones@kmail.com است."
+          },
+          {
+            "en": "Juana: Rudythejones! The? T-H-E?",
+            "fa": "خوانا: Rudythejones! کلمه The؟ یعنی T-H-E؟"
+          },
+          {
+            "en": "Rudy: Yes. R-U-D-Y-T-H-E-J-O-N-E-S.",
+            "fa": "رودی: بله. R-U-D-Y-T-H-E-J-O-N-E-S."
+          },
+          {
+            "en": "Juana: From Jones College?",
+            "fa": "خوانا: از کالج Jones؟"
+          },
+          {
+            "en": "Rudy: No! From Miami Dade College.",
+            "fa": "رودی: نه! از کالج Miami Dade."
+          }
+        ]
+      }
+    ]
   }
 }

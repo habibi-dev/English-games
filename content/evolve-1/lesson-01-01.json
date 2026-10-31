@@ -3498,6 +3498,36 @@
           "question": "else",
           "hint": "دیگر (غیر از آن)",
           "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-196",
+          "expected_answer": "Miami",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "میامی",
+          "question": "Miami",
+          "hint": "میامی",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-197",
+          "expected_answer": "Rio de Janeiro",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "ریو دو ژانیرو",
+          "question": "Rio de Janeiro",
+          "hint": "ریو دو ژانیرو",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l02-dic-198",
+          "expected_answer": "or",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "یا",
+          "question": "or",
+          "hint": "یا",
+          "presentation": "audio"
         }
       ]
     }
@@ -4380,6 +4410,21 @@
         "word": "else",
         "ipa": "/els/",
         "meaning": "دیگر (غیر از آن)"
+      },
+      {
+        "word": "Miami",
+        "ipa": "/maɪˈæmi/",
+        "meaning": "میامی"
+      },
+      {
+        "word": "Rio de Janeiro",
+        "ipa": "/ˌriːoʊ deɪ ʒəˈner.oʊ/",
+        "meaning": "ریو دو ژانیرو"
+      },
+      {
+        "word": "or",
+        "ipa": "/ɔːr/",
+        "meaning": "یا"
       }
     ],
     "sentences": [
@@ -4598,6 +4643,15 @@
             "fa": "من اهل مادرید، در اسپانیا هستم."
           }
         ]
+      },
+      {
+        "title": "ملیت، کشور یا شهر؟",
+        "explanation": "ملیت، کشور و شهر سه چیز متفاوت‌اند. بعد از فعل be ملیت می‌آید: I'm Brazilian یعنی من برزیلی هستم. بعد از from کشور یا شهر می‌آید: You're from Brazil یعنی تو اهل برزیل هستی، و I'm from São Paulo یعنی من اهل سائوپائولو هستم. هدف این است که این سه را با هم اشتباه نگیری.",
+        "examples": [
+          { "en": "I'm Brazilian.", "fa": "من برزیلی هستم." },
+          { "en": "You're from Brazil.", "fa": "تو اهل برزیل هستی." },
+          { "en": "I'm from São Paulo.", "fa": "من اهل سائوپائولو هستم." }
+        ]
       }
     ],
     "stories": [
@@ -4704,6 +4758,54 @@
             "en": "I'm from the United States.",
             "fa": "من اهل ایالات متحده هستم."
           }
+        ]
+      },
+      {
+        "title": "گفت‌وگو: تونی و آنا",
+        "lines": [
+          { "en": "Tony: Are you Ana?", "fa": "تونی: تو آنا هستی؟" },
+          { "en": "Ana: Yes, I am.", "fa": "آنا: بله، من هستم." },
+          { "en": "Tony: Hi, I'm Tony. I'm from Lima.", "fa": "تونی: سلام، من تونی هستم. اهل لیما هستم." },
+          { "en": "Ana: You're Peruvian. I'm Brazilian.", "fa": "آنا: تو اهل پرو هستی. من برزیلی هستم." },
+          { "en": "Tony: Are you from Rio?", "fa": "تونی: اهل ریو هستی؟" },
+          { "en": "Ana: No, I'm not. I'm not from Rio or São Paulo.", "fa": "آنا: نه، نیستم. من اهل ریو یا سائوپائولو نیستم." },
+          { "en": "Tony: Are you from Brasilia?", "fa": "تونی: اهل برازیلیا هستی؟" },
+          { "en": "Ana: Yes.", "fa": "آنا: بله." }
+        ]
+      },
+      {
+        "title": "افراد مشهور: لیونل مسی",
+        "lines": [
+          { "en": "Hi. I'm Lionel Messi.", "fa": "سلام. من لیونل مسی هستم." },
+          { "en": "I'm not from Spain.", "fa": "من اهل اسپانیا نیستم." },
+          { "en": "I'm Argentinian.", "fa": "من آرژانتینی هستم." }
+        ]
+      },
+      {
+        "title": "افراد مشهور: میشل اوباما",
+        "lines": [
+          { "en": "Hi. I'm Michelle Obama.", "fa": "سلام. من میشل اوباما هستم." },
+          { "en": "I'm American.", "fa": "من آمریکایی هستم." },
+          { "en": "I'm not from Washington, D.C. I'm from Chicago.", "fa": "من اهل واشنگتن دی‌سی نیستم. من اهل شیکاگو هستم." }
+        ]
+      },
+      {
+        "title": "جمله‌های کامل‌شدهٔ تمرین: ملیت و شهر",
+        "lines": [
+          { "en": "I'm Peruvian. I'm from Lima in Peru.", "fa": "من پرویی هستم. اهل لیما در پرو هستم." },
+          { "en": "I'm Japanese. I'm from Tokyo in Japan.", "fa": "من ژاپنی هستم. اهل توکیو در ژاپن هستم." },
+          { "en": "I'm from Tegucigalpa in Honduras. I'm Honduran.", "fa": "اهل تگوسیگالپا در هندوراس هستم. من هندوراسی هستم." },
+          { "en": "I'm Spanish. I'm from Madrid in Spain.", "fa": "من اسپانیایی هستم. اهل مادرید در اسپانیا هستم." },
+          { "en": "I'm from Medellín in Colombia. I'm Colombian.", "fa": "اهل مدلین در کلمبیا هستم. من کلمبیایی هستم." },
+          { "en": "I'm Brazilian. I'm from Rio de Janeiro in Brazil.", "fa": "من برزیلی هستم. اهل ریو دو ژانیرو در برزیل هستم." },
+          { "en": "I'm from Beijing in China. I'm Chinese.", "fa": "اهل پکن در چین هستم. من چینی هستم." },
+          { "en": "I'm Russian. I'm from Moscow in Russia.", "fa": "من روسی هستم. اهل مسکو در روسیه هستم." },
+          { "en": "I'm from Miami in the United States. I'm American.", "fa": "اهل میامی در ایالات متحده هستم. من آمریکایی هستم." },
+          { "en": "I'm from Seoul in South Korea. I'm South Korean.", "fa": "اهل سئول در کره جنوبی هستم. من اهل کره جنوبی هستم." },
+          { "en": "I'm Chilean. I'm from Santiago in Chile.", "fa": "من شیلیایی هستم. اهل سانتیاگو در شیلی هستم." },
+          { "en": "I'm Mexican. I'm from Mexico City in Mexico.", "fa": "من مکزیکی هستم. اهل مکزیکوسیتی در مکزیک هستم." },
+          { "en": "I'm from Quito in Ecuador. I'm Ecuadorian.", "fa": "اهل کیتو در اکوادور هستم. من اکوادوری هستم." },
+          { "en": "I'm French. I'm from Paris in France.", "fa": "من فرانسوی هستم. اهل پاریس در فرانسه هستم." }
         ]
       }
     ],

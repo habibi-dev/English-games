@@ -1,0 +1,1117 @@
+{
+  "schema_version": "2.0",
+  "book": "evolve-1",
+  "lesson": "lesson-01-04",
+  "title": "Lesson 1.4 – My Profile",
+  "exercises": [
+    {
+      "id": "evolve-1-l01-04-translation",
+      "type": "quick_translation",
+      "title": "ترجمه جمله‌ها و عبارت‌ها",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-04-tr-01",
+          "expected_answer": "I'm a salesperson in Mexico.",
+          "explanation": "به ترتیب کلمات و شکل کوتاه فعل‌ها توجه کن.",
+          "time_limit": 60,
+          "translation": "من در مکزیک فروشنده هستم.",
+          "question": "من در مکزیک فروشنده هستم.",
+          "accepted_answers": ["I am a salesperson in Mexico."],
+          "hint": "salesperson = فروشنده؛ in = در",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-tr-02",
+          "expected_answer": "I'm an English student at a school in Texas.",
+          "explanation": "به ترتیب کلمات و شکل کوتاه فعل‌ها توجه کن.",
+          "time_limit": 60,
+          "translation": "من در یک مدرسه در تگزاس دانشجوی زبان انگلیسی هستم.",
+          "question": "من در یک مدرسه در تگزاس دانشجوی زبان انگلیسی هستم.",
+          "accepted_answers": ["I am an English student at a school in Texas."],
+          "hint": "English student = زبان‌آموز انگلیسی"
+        },
+        {
+          "id": "evolve-1-l01-04-tr-03",
+          "expected_answer": "Are you a salesperson?",
+          "explanation": "به ترتیب کلمات و شکل کوتاه فعل‌ها توجه کن.",
+          "time_limit": 60,
+          "translation": "آیا شما فروشنده هستید؟",
+          "question": "آیا شما فروشنده هستید؟",
+          "hint": "salesperson = فروشنده؛ برای سؤال از Are you استفاده کن.",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-tr-04",
+          "expected_answer": "Are you an artist?",
+          "explanation": "به ترتیب کلمات و شکل کوتاه فعل‌ها توجه کن.",
+          "time_limit": 60,
+          "translation": "آیا شما هنرمند هستید؟",
+          "question": "آیا شما هنرمند هستید؟",
+          "hint": "artist = هنرمند؛ قبل از واژه‌ای که با صدای خاصی شروع می‌شود an می‌آید.",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-tr-05",
+          "expected_answer": "Are you a teacher?",
+          "explanation": "به ترتیب کلمات و شکل کوتاه فعل‌ها توجه کن.",
+          "time_limit": 60,
+          "translation": "آیا شما معلم هستید؟",
+          "question": "آیا شما معلم هستید؟",
+          "hint": "teacher = معلم؛ برای سؤال از Are you استفاده کن."
+        },
+        {
+          "id": "evolve-1-l01-04-tr-06",
+          "expected_answer": "She's American.",
+          "explanation": "به ترتیب کلمات و شکل کوتاه فعل‌ها توجه کن.",
+          "time_limit": 60,
+          "translation": "او آمریکایی است.",
+          "question": "او آمریکایی است.",
+          "accepted_answers": ["She is American."],
+          "hint": "American = آمریکایی"
+        },
+        {
+          "id": "evolve-1-l01-04-tr-07",
+          "expected_answer": "My home is in New York.",
+          "explanation": "به ترتیب کلمات و شکل کوتاه فعل‌ها توجه کن.",
+          "time_limit": 60,
+          "translation": "خانهٔ من در نیویورک است.",
+          "question": "خانهٔ من در نیویورک است.",
+          "accepted_answers": ["My home is in New York."],
+          "hint": "home = خانه؛ in = در"
+        },
+        {
+          "id": "evolve-1-l01-04-tr-08",
+          "expected_answer": "My teacher is from Austin, Texas.",
+          "explanation": "به ترتیب کلمات و شکل کوتاه فعل‌ها توجه کن.",
+          "time_limit": 60,
+          "translation": "معلم من اهل آستین، تگزاس است.",
+          "question": "معلم من اهل آستین، تگزاس است.",
+          "accepted_answers": ["My teacher is from Austin, Texas."],
+          "hint": "teacher = معلم؛ from = اهل"
+        },
+        {
+          "id": "evolve-1-l01-04-tr-09",
+          "expected_answer": "I'm a French chef.",
+          "explanation": "به ترتیب کلمات و شکل کوتاه فعل‌ها توجه کن.",
+          "time_limit": 60,
+          "translation": "من یک سرآشپز فرانسوی هستم.",
+          "question": "من یک سرآشپز فرانسوی هستم.",
+          "accepted_answers": ["I am a French chef."],
+          "hint": "chef = سرآشپز؛ French = فرانسوی",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-nb2-tr-01",
+          "expected_answer": "I'm from Paris, but I live in New York.",
+          "explanation": "But دو ایدهٔ متفاوت را وصل می‌کند.",
+          "time_limit": 60,
+          "translation": "من اهل پاریس هستم، اما در نیویورک زندگی می‌کنم.",
+          "question": "من اهل پاریس هستم، اما در نیویورک زندگی می‌کنم.",
+          "accepted_answers": ["I am from Paris, but I live in New York."],
+          "hint": "but = اما؛ live = زندگی کردن"
+        },
+        {
+          "id": "evolve-1-l01-04-nb2-tr-02",
+          "expected_answer": "I'm Peruvian, but my home is in the United States.",
+          "explanation": "But دو ایدهٔ متفاوت را وصل می‌کند.",
+          "time_limit": 60,
+          "translation": "من اهل پرو هستم، اما خانه‌ام در ایالات متحده است.",
+          "question": "من اهل پرو هستم، اما خانه‌ام در ایالات متحده است.",
+          "accepted_answers": ["I am Peruvian, but my home is in the United States."],
+          "hint": "home = خانه؛ but = اما"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-04-word-translation",
+      "type": "word_translation",
+      "title": "ترجمه با کلمات فارسی",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-04-wt-01",
+          "expected_answer": "I'm from Mexico City.",
+          "explanation": "ترتیب فاعل، فعل بودن و شغل را در انگلیسی نگه دار.",
+          "time_limit": 60,
+          "translation": "من اهل مکزیکوسیتی هستم.",
+          "hint": "Mexico City = مکزیکوسیتی",
+          "word_bank": ["من", "اهل", "مکزیکوسیتی", "هستم"],
+          "accepted_answers": ["I am from Mexico City."]
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-04-voice",
+      "type": "voice_translation",
+      "title": "ترجمه با صدا",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-04-vt-01",
+          "expected_answer": "My home is in New York.",
+          "explanation": "برای She از is استفاده می‌کنیم و شکل کوتاه She’s است.",
+          "time_limit": 60,
+          "translation": "خانهٔ من در نیویورک است.",
+          "question": "خانهٔ من در نیویورک است.",
+          "accepted_answers": ["My home is in New York."],
+          "hint": "home = خانه؛ in = در"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-04-builder",
+      "type": "sentence_builder",
+      "title": "جمله‌سازی",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-04-sb-01",
+          "expected_answer": "I'm a salesperson in Mexico.",
+          "explanation": "بعد از I’m a، شغل و سپس حرف اضافهٔ in و نام کشور می‌آید.",
+          "time_limit": 60,
+          "translation": "من در مکزیک فروشنده هستم.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "salesperson = فروشنده. راهنما: مثل جملهٔ I’m a teacher بساز.",
+          "word_bank": ["in", "Mexico.", "I'm", "salesperson", "a"],
+          "group": "Jobs"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-04-correction",
+      "type": "grammar_correction",
+      "title": "اصلاح جمله",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-04-gc-01",
+          "expected_answer": "She is American.",
+          "explanation": "بعد از She فعل is می‌آید، نه are.",
+          "time_limit": 60,
+          "translation": "او آمریکایی است.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "به فعل بعد از She توجه کن.",
+          "incorrect_sentence": "She are American."
+        },
+        {
+          "id": "evolve-1-l01-04-gc-02",
+          "expected_answer": "My teacher is from Austin, Texas.",
+          "explanation": "teacher یک اسم مفرد است، پس با is می‌آید.",
+          "time_limit": 60,
+          "translation": "معلم من اهل آستین، تگزاس است.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "teacher = معلم؛ به فعل بعد از اسم مفرد توجه کن.",
+          "incorrect_sentence": "My teacher are from Austin, Texas."
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-04-negative",
+      "type": "positive_negative_question",
+      "title": "تبدیل جمله به منفی",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-04-neg-01",
+          "operation": "negative",
+          "expected_answer": "I'm not a chef.",
+          "accepted_answers": ["I am not a chef."],
+          "explanation": "برای منفی کردن، not را بعد از am می‌گذاریم.",
+          "time_limit": 60,
+          "translation": "من سرآشپز نیستم.",
+          "question": "جمله را منفی کن: I'm a chef.",
+          "hint": "not = نه؛ راهنما: کلمهٔ منفی را بعد از فعل بودن بگذار.",
+          "group": "Jobs"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-04-choice",
+      "type": "multiple_choice",
+      "title": "سؤالات چندگزینه‌ای",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-04-mc-01",
+          "expected_answer": "فروشنده",
+          "explanation": "salesperson یعنی فروشنده.",
+          "time_limit": 60,
+          "translation": "فروشنده",
+          "question": "معنی salesperson چیست؟",
+          "hint": "sales = فروش؛ person = فرد",
+          "options": ["فروشنده", "هنرمند", "پزشک"],
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-mc-02",
+          "expected_answer": "هنرمند",
+          "explanation": "artist یعنی هنرمند.",
+          "time_limit": 60,
+          "translation": "هنرمند",
+          "question": "معنی artist چیست؟",
+          "hint": "کسی که کار هنری می‌کند",
+          "options": ["سرآشپز", "هنرمند", "داروساز"],
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-mc-03",
+          "expected_answer": "داروساز",
+          "explanation": "pharmacist یعنی داروساز.",
+          "time_limit": 60,
+          "translation": "داروساز",
+          "question": "معنی pharmacist چیست؟",
+          "hint": "کسی که در داروخانه کار می‌کند",
+          "options": ["داروساز", "معلم", "پیشخدمت زن"],
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-mc-04",
+          "expected_answer": "پزشک",
+          "explanation": "doctor یعنی پزشک.",
+          "time_limit": 60,
+          "translation": "پزشک",
+          "question": "معنی doctor چیست؟",
+          "hint": "کسی که بیماران را درمان می‌کند",
+          "options": ["پزشک", "فروشنده", "سرآشپز"],
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-mc-05",
+          "expected_answer": "سرآشپز",
+          "explanation": "chef یعنی سرآشپز.",
+          "time_limit": 60,
+          "translation": "سرآشپز",
+          "question": "معنی chef چیست؟",
+          "hint": "کسی که در آشپزخانهٔ رستوران غذا درست می‌کند",
+          "options": ["هنرمند", "سرآشپز", "گارسون / مسئول سرو غذا"],
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-mc-06",
+          "expected_answer": "پیشخدمت مرد",
+          "explanation": "waiter یعنی پیشخدمت مرد.",
+          "time_limit": 60,
+          "translation": "پیشخدمت مرد",
+          "question": "معنی waiter چیست؟",
+          "hint": "کسی (مرد) که غذا را به میز می‌آورد",
+          "options": ["پیشخدمت مرد", "پیشخدمت زن", "داروساز"],
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-mc-07",
+          "expected_answer": "پیشخدمت زن",
+          "explanation": "waitress یعنی پیشخدمت زن.",
+          "time_limit": 60,
+          "translation": "پیشخدمت زن",
+          "question": "معنی waitress چیست؟",
+          "hint": "مثل waiter، ولی برای زن",
+          "options": ["پیشخدمت مرد", "پیشخدمت زن", "فروشنده"],
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-mc-08",
+          "expected_answer": "گارسون / مسئول سرو غذا",
+          "explanation": "server یعنی گارسون / مسئول سرو غذا.",
+          "time_limit": 60,
+          "translation": "گارسون / مسئول سرو غذا",
+          "question": "معنی server چیست؟",
+          "hint": "کسی که غذا را در رستوران سرو می‌کند",
+          "options": ["پیشخدمت زن", "گارسون / مسئول سرو غذا", "پزشک"],
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-mc-09",
+          "expected_answer": "Texas",
+          "explanation": "Texas نام یک ایالت در آمریکا است.",
+          "time_limit": 60,
+          "translation": "Texas",
+          "question": "کدام واژه نام یک ایالت در آمریکا است؟",
+          "hint": "یک ایالت آمریکا",
+          "options": ["Texas", "Paris", "Austin"]
+        },
+        {
+          "id": "evolve-1-l01-04-mc-10",
+          "expected_answer": "حرف بزرگ",
+          "explanation": "capital letter یعنی حرف بزرگ.",
+          "time_limit": 60,
+          "translation": "حرف بزرگ",
+          "question": "معنی capital letter چیست؟",
+          "hint": "حرف اول اسم‌های خاص و جمله‌ها",
+          "options": ["حرف بزرگ", "نقطه", "کلید"]
+        },
+        {
+          "id": "evolve-1-l01-04-mc-11",
+          "expected_answer": "پروفایل شخصی",
+          "explanation": "personal profile یعنی پروفایل شخصی.",
+          "time_limit": 60,
+          "translation": "پروفایل شخصی",
+          "question": "معنی personal profile چیست؟",
+          "hint": "نوشتن اطلاعات درباره‌ی خودت",
+          "options": ["پروفایل شخصی", "شماره اتاق", "کلید"]
+        },
+        {
+          "id": "evolve-1-l01-04-mc-12",
+          "expected_answer": "United States",
+          "explanation": "United States یعنی ایالات متحده.",
+          "time_limit": 60,
+          "translation": "United States",
+          "question": "کدام واژه به معنی «ایالات متحده» است؟",
+          "hint": "یک کشور در آمریکای شمالی",
+          "options": ["United States", "Mexico", "Canada"]
+        },
+        {
+          "id": "evolve-1-l01-04-nb2-mc-01",
+          "expected_answer": "اما",
+          "explanation": "but یعنی اما.",
+          "time_limit": 60,
+          "translation": "اما",
+          "question": "معنی but چیست؟",
+          "hint": "but = اما",
+          "options": ["اما", "هم، همچنین", "هنر"]
+        },
+        {
+          "id": "evolve-1-l01-04-nb2-mc-02",
+          "expected_answer": "زندگی کردن",
+          "explanation": "live یعنی زندگی کردن.",
+          "time_limit": 60,
+          "translation": "زندگی کردن",
+          "question": "معنی live چیست؟",
+          "hint": "live = زندگی کردن",
+          "options": ["زندگی کردن", "کلید", "خانه"]
+        },
+        {
+          "id": "evolve-1-l01-04-nb2-mc-03",
+          "expected_answer": "هنر",
+          "explanation": "art یعنی هنر.",
+          "time_limit": 60,
+          "translation": "هنر",
+          "question": "معنی art چیست؟",
+          "hint": "art = هنر",
+          "options": ["هنر", "شغل", "شهر"]
+        },
+        {
+          "id": "evolve-1-l01-04-nb2-mc-04",
+          "expected_answer": "هم، همچنین",
+          "explanation": "too یعنی هم یا همچنین.",
+          "time_limit": 60,
+          "translation": "هم، همچنین",
+          "question": "معنی too چیست؟",
+          "hint": "too = هم",
+          "options": ["اما", "هم، همچنین", "آهسته"]
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-04-synonyms",
+      "type": "vocabulary",
+      "title": "مترادف و متضاد",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-04-voc-01",
+          "question": "Synonym: waiter",
+          "expected_answer": "server",
+          "explanation": "waiter و server هر دو در رستوران غذا را سرو می‌کنند.",
+          "hint": "waiter = پیشخدمت مرد",
+          "translation": "گارسون",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-voc-02",
+          "question": "Synonym: hi",
+          "expected_answer": "hello",
+          "explanation": "hi و hello هر دو یعنی سلام.",
+          "hint": "hi = سلام (غیررسمی)",
+          "translation": "سلام"
+        },
+        {
+          "id": "evolve-1-l01-04-voc-03",
+          "question": "Synonym: hey",
+          "expected_answer": "hi",
+          "explanation": "hey و hi هر دو سلام غیررسمی هستند.",
+          "hint": "hey = سلام (خیلی صمیمی)",
+          "translation": "سلام"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l01-04-spelling",
+      "type": "dictation",
+      "title": "املای واژه‌ها و عبارت‌ها",
+      "presentation": "audio",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l01-04-dic-01",
+          "expected_answer": "salesperson",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "فروشنده",
+          "question": "salesperson",
+          "hint": "فروشنده",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-02",
+          "expected_answer": "artist",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "هنرمند",
+          "question": "artist",
+          "hint": "هنرمند",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-03",
+          "expected_answer": "pharmacist",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "داروساز",
+          "question": "pharmacist",
+          "hint": "داروساز",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-04",
+          "expected_answer": "doctor",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پزشک",
+          "question": "doctor",
+          "hint": "پزشک",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-05",
+          "expected_answer": "chef",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "سرآشپز",
+          "question": "chef",
+          "hint": "سرآشپز",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-06",
+          "expected_answer": "waiter",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پیشخدمت مرد",
+          "question": "waiter",
+          "hint": "پیشخدمت مرد",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-07",
+          "expected_answer": "waitress",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پیشخدمت زن",
+          "question": "waitress",
+          "hint": "پیشخدمت زن",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-08",
+          "expected_answer": "server",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "گارسون / مسئول سرو غذا",
+          "question": "server",
+          "hint": "گارسون / مسئول سرو غذا",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-09",
+          "expected_answer": "Texas",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "تگزاس",
+          "question": "Texas",
+          "hint": "تگزاس",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-10",
+          "expected_answer": "Austin",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "آستین",
+          "question": "Austin",
+          "hint": "آستین",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-11",
+          "expected_answer": "United States",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "ایالات متحده",
+          "question": "United States",
+          "hint": "ایالات متحده",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-12",
+          "expected_answer": "English student",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "زبان‌آموز انگلیسی",
+          "question": "English student",
+          "hint": "زبان‌آموز انگلیسی",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-13",
+          "expected_answer": "hello",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "سلام (خنثی)",
+          "question": "hello",
+          "hint": "سلام (خنثی)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-14",
+          "expected_answer": "hi",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "سلام (غیررسمی)",
+          "question": "hi",
+          "hint": "سلام (غیررسمی)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-15",
+          "expected_answer": "hey",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "سلام (خیلی صمیمی)",
+          "question": "hey",
+          "hint": "سلام (خیلی صمیمی)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-16",
+          "expected_answer": "capital letter",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "حرف بزرگ",
+          "question": "capital letter",
+          "hint": "حرف بزرگ",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-04-dic-17",
+          "expected_answer": "personal profile",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پروفایل شخصی",
+          "question": "personal profile",
+          "hint": "پروفایل شخصی",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-04-nb2-dic-live",
+          "expected_answer": "live",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "زندگی کردن",
+          "question": "live",
+          "hint": "زندگی کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-04-nb2-dic-but",
+          "expected_answer": "but",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "اما",
+          "question": "but",
+          "hint": "اما",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-04-nb2-dic-too",
+          "expected_answer": "too",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "هم، همچنین",
+          "question": "too",
+          "hint": "هم، همچنین",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-04-nb2-dic-art",
+          "expected_answer": "art",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "هنر",
+          "question": "art",
+          "hint": "هنر",
+          "presentation": "audio"
+        }
+      ]
+    }
+  ],
+  "lesson_content": {
+    "vocabulary": [
+      {
+        "word": "salesperson",
+        "ipa": "/ˈseɪlzpɜːrsn/",
+        "meaning": "فروشنده",
+        "category": "Jobs"
+      },
+      {
+        "word": "artist",
+        "ipa": "/ˈɑːrtɪst/",
+        "meaning": "هنرمند",
+        "category": "Jobs"
+      },
+      {
+        "word": "pharmacist",
+        "ipa": "/ˈfɑːrməsɪst/",
+        "meaning": "داروساز",
+        "category": "Jobs"
+      },
+      {
+        "word": "doctor",
+        "ipa": "/ˈdɑːktər/",
+        "meaning": "پزشک",
+        "category": "Jobs"
+      },
+      {
+        "word": "chef",
+        "ipa": "/ʃef/",
+        "meaning": "سرآشپز",
+        "category": "Jobs"
+      },
+      {
+        "word": "waiter",
+        "ipa": "/ˈweɪtər/",
+        "meaning": "پیشخدمت مرد",
+        "category": "Jobs"
+      },
+      {
+        "word": "waitress",
+        "ipa": "/ˈweɪtrəs/",
+        "meaning": "پیشخدمت زن",
+        "category": "Jobs"
+      },
+      {
+        "word": "server",
+        "ipa": "/ˈsɜːrvər/",
+        "meaning": "گارسون / مسئول سرو غذا",
+        "category": "Jobs"
+      },
+      {
+        "word": "Texas",
+        "ipa": "/ˈteksəs/",
+        "meaning": "تگزاس"
+      },
+      {
+        "word": "Austin",
+        "ipa": "/ˈɔːstɪn/",
+        "meaning": "آستین"
+      },
+      {
+        "word": "United States",
+        "ipa": "/juˈnaɪtɪd ˈsteɪts/",
+        "meaning": "ایالات متحده"
+      },
+      {
+        "word": "English student",
+        "ipa": "/ˈɪŋɡlɪʃ ˈstuːdnt/",
+        "meaning": "زبان‌آموز انگلیسی"
+      },
+      {
+        "word": "hello",
+        "ipa": "/həˈloʊ/",
+        "meaning": "سلام (خنثی)"
+      },
+      {
+        "word": "hi",
+        "ipa": "/haɪ/",
+        "meaning": "سلام (غیررسمی)"
+      },
+      {
+        "word": "hey",
+        "ipa": "/heɪ/",
+        "meaning": "سلام (خیلی صمیمی)"
+      },
+      {
+        "word": "capital letter",
+        "ipa": "/ˈkæpɪtl ˈletər/",
+        "meaning": "حرف بزرگ"
+      },
+      {
+        "word": "personal profile",
+        "ipa": "/ˈpɜːrsənl ˈproʊfaɪl/",
+        "meaning": "پروفایل شخصی"
+      },
+      {
+        "word": "live",
+        "ipa": "/lɪv/",
+        "meaning": "زندگی کردن"
+      },
+      {
+        "word": "but",
+        "ipa": "/bʌt/",
+        "meaning": "اما"
+      },
+      {
+        "word": "too",
+        "ipa": "/tuː/",
+        "meaning": "هم، همچنین"
+      },
+      {
+        "word": "art",
+        "ipa": "/ɑːrt/",
+        "meaning": "هنر"
+      }
+    ],
+    "sentences": [
+      {
+        "en": "I'm a salesperson in Mexico.",
+        "fa": "من در مکزیک فروشنده هستم."
+      },
+      {
+        "en": "I'm from Mexico City.",
+        "fa": "من اهل مکزیکوسیتی هستم."
+      },
+      {
+        "en": "I'm an English student at a school in Texas.",
+        "fa": "من در یک مدرسه در تگزاس دانشجوی زبان انگلیسی هستم."
+      },
+      {
+        "en": "The name of the school is Texas International Language School.",
+        "fa": "نام مدرسه Texas International Language School است."
+      },
+      {
+        "en": "My teacher is from Austin, Texas.",
+        "fa": "معلم من اهل آستین، تگزاس است."
+      },
+      {
+        "en": "She is American.",
+        "fa": "او آمریکایی است."
+      },
+      {
+        "en": "Are you a salesperson?",
+        "fa": "آیا شما فروشنده هستید؟"
+      },
+      {
+        "en": "Are you an artist?",
+        "fa": "آیا شما هنرمند هستید؟"
+      },
+      {
+        "en": "Are you a teacher?",
+        "fa": "آیا شما معلم هستید؟"
+      },
+      {
+        "en": "I'm a French chef.",
+        "fa": "من یک سرآشپز فرانسوی هستم."
+      },
+      {
+        "en": "My home is in New York.",
+        "fa": "خانهٔ من در نیویورک است."
+      },
+      {
+        "en": "I'm from Paris in France.",
+        "fa": "من اهل پاریس در فرانسه هستم."
+      },
+      {
+        "en": "My students are from the United States, Canada, Mexico, and Japan.",
+        "fa": "شاگردان من اهل ایالات متحده، کانادا، مکزیک و ژاپن هستند."
+      },
+      {
+        "en": "I'm from Paris, but I live in New York.",
+        "fa": "من اهل پاریس هستم، اما در نیویورک زندگی می‌کنم."
+      },
+      {
+        "en": "I'm Peruvian, but my home is in the United States.",
+        "fa": "من اهل پرو هستم، اما خانه‌ام در ایالات متحده است."
+      }
+    ],
+    "grammar": [
+      {
+        "title": "حروف بزرگ و نقطه",
+        "explanation": "جمله با حرف بزرگ شروع می‌شود و در پایان آن نقطه می‌گذاریم. ضمیر I همیشه حرف بزرگ دارد. نام کشور، شهر، ملیت و مدرسه هم با حرف بزرگ نوشته می‌شود.",
+        "examples": [
+          {
+            "en": "I'm a French chef.",
+            "fa": "من یک سرآشپز فرانسوی هستم."
+          },
+          {
+            "en": "My home is in New York.",
+            "fa": "خانهٔ من در نیویورک است."
+          },
+          {
+            "en": "I'm from Paris in France.",
+            "fa": "من اهل پاریس در فرانسه هستم."
+          }
+        ]
+      },
+      {
+        "title": "استفاده از But",
+        "explanation": "از But برای وصل کردن دو ایدهٔ متفاوت یا متضاد استفاده می‌کنیم. قبل از But معمولاً کاما می‌گذاریم.",
+        "examples": [
+          {
+            "en": "I'm from Paris, but I live in New York.",
+            "fa": "من اهل پاریس هستم، اما در نیویورک زندگی می‌کنم."
+          },
+          {
+            "en": "I'm Peruvian, but my home is in the United States.",
+            "fa": "من اهل پرو هستم، اما خانه‌ام در ایالات متحده است."
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "title": "متن خواندن: پروفایل من",
+        "lines": [
+          {
+            "en": "My name is David Pérez Delgado.",
+            "fa": "اسم من دیوید پرز دلگادو است."
+          },
+          {
+            "en": "David is my first name.",
+            "fa": "دیوید نام کوچک من است."
+          },
+          {
+            "en": "Pérez and Delgado are my last names.",
+            "fa": "پرز و دلگادو نام‌های خانوادگی من هستند."
+          },
+          {
+            "en": "In the United States my last name is Pérez.",
+            "fa": "در ایالات متحده، نام خانوادگی من پرز است."
+          },
+          {
+            "en": "I'm a salesperson in Mexico.",
+            "fa": "من در مکزیک فروشنده هستم."
+          },
+          {
+            "en": "I'm from Mexico City.",
+            "fa": "من اهل مکزیکوسیتی هستم."
+          },
+          {
+            "en": "I'm an English student at a school in Texas.",
+            "fa": "من در یک مدرسه در تگزاس دانشجوی زبان انگلیسی هستم."
+          },
+          {
+            "en": "The name of the school is Texas International Language School.",
+            "fa": "نام مدرسه Texas International Language School است."
+          },
+          {
+            "en": "My teacher is from Austin, Texas.",
+            "fa": "معلم من اهل آستین، تگزاس است."
+          },
+          {
+            "en": "She is American.",
+            "fa": "او آمریکایی است."
+          }
+        ]
+      },
+      {
+        "title": "نوشتن: گفت‌وگوی معلم و دانش‌آموز جدید",
+        "lines": [
+          {
+            "en": "Teacher: Hello. My name is Mr. Hewson. You're new here.",
+            "fa": "معلم: سلام. اسم من آقای هوسون است. تو اینجا تازه‌وارد هستی."
+          },
+          {
+            "en": "Student: Hello. Yes. I'm a new student. My name is Yasuhiro Momoto.",
+            "fa": "دانش‌آموز: سلام. بله، من دانش‌آموز جدید هستم. اسم من یاسوهیرو موموتو است."
+          }
+        ]
+      },
+      {
+        "title": "نوشتن: گفت‌وگوی یاسو و جیمی",
+        "lines": [
+          {
+            "en": "Student: Hi, Yasu. How are you? Are you a student here?",
+            "fa": "دانش‌آموز: سلام یاسو. حالت چطوره؟ آیا اینجا دانش‌آموز هستی؟"
+          },
+          {
+            "en": "Student: Hey, Jaime. Yes, I am. How are you?",
+            "fa": "دانش‌آموز: سلام جیمی. بله، هستم. تو چطوری؟"
+          }
+        ]
+      },
+      {
+        "title": "متن خواندن: پروفایل Akemi",
+        "lines": [
+          {
+            "en": "I'm Akemi Tanaka. I live in San Diego, but I'm not American.",
+            "fa": "من Akemi Tanaka هستم. در San Diego زندگی می‌کنم، اما آمریکایی نیستم."
+          },
+          {
+            "en": "I'm Japanese.",
+            "fa": "ژاپنی هستم."
+          },
+          {
+            "en": "My company is Tanaka Paints.",
+            "fa": "نام شرکت من Tanaka Paints است."
+          },
+          {
+            "en": "My phone number is (324) 555-6053, and my email is akemit2000@tanakapaints.com.",
+            "fa": "شماره تلفن من (324) 555-6053 است و ایمیلم akemit2000@tanakapaints.com است."
+          },
+          {
+            "en": "I'm an artist, and I'm a student, too.",
+            "fa": "من هنرمند هستم و همچنین دانشجو هستم."
+          },
+          {
+            "en": "The name of my school is The Art Institute.",
+            "fa": "نام مدرسه من The Art Institute است."
+          },
+          {
+            "en": "It's in California.",
+            "fa": "این مدرسه در کالیفرنیا قرار دارد."
+          }
+        ]
+      },
+      {
+        "title": "متن خواندن: پروفایل Frank",
+        "lines": [
+          {
+            "en": "My name is Frank Silva.",
+            "fa": "نام من Frank Silva است."
+          },
+          {
+            "en": "I live in Austin, Texas, in the United States.",
+            "fa": "در آستین، تگزاس، در ایالات متحده زندگی می‌کنم."
+          },
+          {
+            "en": "I'm American and Brazilian.",
+            "fa": "من آمریکایی و برزیلی هستم."
+          },
+          {
+            "en": "The name of my company is Designs by Frank.",
+            "fa": "نام شرکت من Designs by Frank است."
+          },
+          {
+            "en": "It's in my home in Austin.",
+            "fa": "این شرکت در خانه‌ام در آستین قرار دارد."
+          },
+          {
+            "en": "I'm an art teacher, too.",
+            "fa": "من همچنین معلم هنر هستم."
+          },
+          {
+            "en": "The classes are in my home.",
+            "fa": "کلاس‌ها در خانه من برگزار می‌شوند."
+          },
+          {
+            "en": "My phone number is (780) 555-5230, and my email is designsbyfrank@blinknet.com.",
+            "fa": "شماره تلفن من (780) 555-5230 است و ایمیلم designsbyfrank@blinknet.com است."
+          }
+        ]
+      },
+      {
+        "title": "متن خواندن: Business Weekly – Juan Carlos",
+        "lines": [
+          {
+            "en": "Hello.",
+            "fa": "سلام."
+          },
+          {
+            "en": "My name is Juan Carlos Fernandez.",
+            "fa": "نام من Juan Carlos Fernandez است."
+          },
+          {
+            "en": "I am Peruvian. I am from Trujillo, but I live in Lima now.",
+            "fa": "من اهل پرو هستم. اهل شهر Trujillo هستم، اما اکنون در Lima زندگی می‌کنم."
+          },
+          {
+            "en": "I am a salesperson. The name of my company is Omega Sales.",
+            "fa": "من فروشنده هستم. نام شرکت من Omega Sales است."
+          },
+          {
+            "en": "My email is jcfernandez_511@omsmail.com, and my cell phone number is (962) 555-3198.",
+            "fa": "ایمیل من jcfernandez_511@omsmail.com و شماره تلفن همراهم (962) 555-3198 است."
+          }
+        ]
+      },
+      {
+        "title": "متن خواندن: Class Connect – Katya",
+        "lines": [
+          {
+            "en": "Hi! I'm Katya Ivanova. I'm from Russia.",
+            "fa": "سلام! من Katya Ivanova هستم. اهل روسیه هستم."
+          },
+          {
+            "en": "My home is in St. Petersburg. It's a great city.",
+            "fa": "محل زندگی من در سن‌پترزبورگ است. شهر فوق‌العاده‌ای است."
+          },
+          {
+            "en": "I'm an English student. The name of my school is Popov College of English.",
+            "fa": "من دانشجوی زبان انگلیسی هستم. نام مدرسه من Popov College of English است."
+          },
+          {
+            "en": "Email: katyivanova@popovnet.ru",
+            "fa": "ایمیل: katyivanova@popovnet.ru"
+          },
+          {
+            "en": "Twitter: katy_ivanova98",
+            "fa": "توییتر: katy_ivanova98"
+          }
+        ]
+      },
+      {
+        "title": "تمرین کتاب کار: شغل‌ها",
+        "lines": [
+          {
+            "en": "A: Are you a salesperson?",
+            "fa": "الف: آیا شما فروشنده هستید؟"
+          },
+          {
+            "en": "B: No, I'm not. I'm a pharmacist.",
+            "fa": "ب: نه، نیستم. من داروساز هستم."
+          },
+          {
+            "en": "A: Are you an artist?",
+            "fa": "الف: آیا شما هنرمند هستید؟"
+          },
+          {
+            "en": "B: No, I'm not. I'm a doctor.",
+            "fa": "ب: نه، نیستم. من پزشک هستم."
+          },
+          {
+            "en": "A: Are you a teacher?",
+            "fa": "الف: آیا شما معلم هستید؟"
+          },
+          {
+            "en": "B: No, I'm not. I'm a chef.",
+            "fa": "ب: نه، نیستم. من سرآشپز هستم."
+          },
+          {
+            "en": "A: Are you a hotel clerk?",
+            "fa": "الف: آیا شما متصدی پذیرش هتل هستید؟"
+          },
+          {
+            "en": "B: No, I'm not. I'm a server.",
+            "fa": "ب: نه، نیستم. من گارسون هستم."
+          }
+        ]
+      }
+    ]
+  }
+}
