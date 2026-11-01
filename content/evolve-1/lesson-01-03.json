@@ -834,16 +834,6 @@
           "hint": "are = هستی (در سؤال). راهنما: فعل be را قبل از you بگذار."
         },
         {
-          "id": "evolve-1-l01-03-q-02",
-          "expected_answer": "Does she sometimes write the name neatly?",
-          "operation": "question",
-          "explanation": "با she از does استفاده می‌کنیم و فعل را به شکل ساده برمی‌گردانیم.",
-          "time_limit": 60,
-          "translation": "آیا او گاهی نام را مرتب می‌نویسد؟",
-          "question": "جمله را سؤالی کن: She sometimes writes the name neatly.",
-          "hint": "راهنما: با she فعل کمکی سؤال می‌آید و فعل اصلی ساده می‌شود."
-        },
-        {
           "id": "evolve-1-l01-03-q-03",
           "expected_answer": "Is the girl always beautiful?",
           "operation": "question",
