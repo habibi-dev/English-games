@@ -24,32 +24,6 @@
           "hint": "zero = صفر؛ oh = صفر (تلفظ دیگر). راهنما: یک جملهٔ امری با say بساز."
         },
         {
-          "id": "evolve-1-l01-03-tr-02",
-          "expected_answer": "Your room number is two-zero-one.",
-          "accepted_answers": [
-            "Your room number is two zero one."
-          ],
-          "explanation": "هر رقم را جدا می‌خوانیم و بین آن‌ها خط تیره می‌گذاریم.",
-          "time_limit": 60,
-          "translation": "شمارهٔ اتاق تو دو-صفر-یک است.",
-          "question": "شمارهٔ اتاق تو دو-صفر-یک است.",
-          "hint": "room number = شمارهٔ اتاق. راهنما: هر رقم را جدا بخوان و با خط تیره به هم وصل کن."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-03",
-          "expected_answer": "My address is seven-oh-nine.",
-          "accepted_answers": [
-            "My address is seven-zero-nine.",
-            "My address is seven oh nine.",
-            "My address is seven zero nine."
-          ],
-          "explanation": "برای صفر می‌توانی oh یا zero بگویی؛ هر دو درست است.",
-          "time_limit": 60,
-          "translation": "آدرس من هفت-صفر-نه است.",
-          "question": "آدرس من هفت-صفر-نه است.",
-          "hint": "seven = هفت؛ nine = نه. راهنما: برای صفر یکی از دو تلفظ zero یا oh را بنویس."
-        },
-        {
           "id": "evolve-1-l01-03-tr-05",
           "expected_answer": "You're in room 6A.",
           "accepted_answers": [
@@ -155,189 +129,6 @@
           "hint": "walk = راه رفتن. راهنما: قید تکرار قبل از فعل اصلی می‌آید و قید حالت در آخر جمله است."
         },
         {
-          "id": "evolve-1-l01-03-tr-21",
-          "expected_answer": "I often read a book quickly.",
-          "explanation": "مفعول book بین فعل و قید حالت قرار می‌گیرد.",
-          "time_limit": 60,
-          "translation": "من اغلب یک کتاب را سریع می‌خوانم.",
-          "question": "من اغلب یک کتاب را سریع می‌خوانم.",
-          "hint": "often = اغلب. راهنما: قید حالت بعد از مفعول می‌آید."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-22",
-          "expected_answer": "She sometimes writes the name neatly.",
-          "explanation": "با she فعل writes می‌آید و قید حالت در آخر جمله است.",
-          "time_limit": 60,
-          "translation": "او گاهی نام را مرتب می‌نویسد.",
-          "question": "او گاهی نام را مرتب می‌نویسد.",
-          "hint": "sometimes = گاهی. راهنما: با she فعل s می‌گیرد و قید حالت آخر جمله است."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-23",
-          "expected_answer": "We often spell the name correctly.",
-          "explanation": "correctly قید حالت است و بعد از مفعول می‌آید.",
-          "time_limit": 60,
-          "translation": "ما اغلب نام را به‌درستی هجی می‌کنیم.",
-          "question": "ما اغلب نام را به‌درستی هجی می‌کنیم.",
-          "hint": "correctly = به‌درستی. راهنما: قید حالت بعد از مفعول می‌آید."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-24",
-          "expected_answer": "They sometimes read a book easily.",
-          "explanation": "easily از easy ساخته می‌شود و بعد از مفعول می‌آید.",
-          "time_limit": 60,
-          "translation": "آن‌ها گاهی یک کتاب را به‌آسانی می‌خوانند.",
-          "question": "آن‌ها گاهی یک کتاب را به‌آسانی می‌خوانند.",
-          "hint": "easily = به‌آسانی. راهنما: قید حالت بعد از مفعول می‌آید."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-25",
-          "expected_answer": "The girl is always beautiful.",
-          "explanation": "با فعل be قید تکرار بعد از is می‌آید.",
-          "time_limit": 60,
-          "translation": "دختر همیشه زیبا است.",
-          "question": "دختر همیشه زیبا است.",
-          "hint": "girl = دختر. راهنما: قید تکرار بعد از فعل be می‌آید."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-26",
-          "expected_answer": "She is usually neat.",
-          "accepted_answers": [
-            "She's usually neat."
-          ],
-          "explanation": "قید usually بعد از is می‌آید، نه قبل از آن.",
-          "time_limit": 60,
-          "translation": "او معمولاً مرتب است.",
-          "question": "او معمولاً مرتب است.",
-          "hint": "neat = مرتب. راهنما: قید تکرار بعد از is می‌آید."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-27",
-          "expected_answer": "It is never ugly.",
-          "accepted_answers": [
-            "It's never ugly."
-          ],
-          "explanation": "never بعد از is می‌آید و معنی جمله را منفی می‌کند.",
-          "time_limit": 60,
-          "translation": "آن هرگز زشت نیست.",
-          "question": "آن هرگز زشت نیست.",
-          "hint": "ugly = زشت. راهنما: قید تکرار بعد از is می‌آید."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-28",
-          "expected_answer": "He is often quick.",
-          "accepted_answers": [
-            "He's often quick."
-          ],
-          "explanation": "often بعد از is می‌آید.",
-          "time_limit": 60,
-          "translation": "او اغلب سریع است.",
-          "question": "او اغلب سریع است.",
-          "hint": "quick = سریع. راهنما: قید تکرار بعد از is می‌آید."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-29",
-          "expected_answer": "She is sometimes slow.",
-          "accepted_answers": [
-            "She's sometimes slow."
-          ],
-          "explanation": "sometimes بعد از is می‌آید.",
-          "time_limit": 60,
-          "translation": "او گاهی آهسته است.",
-          "question": "او گاهی آهسته است.",
-          "hint": "slow = آهسته. راهنما: قید تکرار بعد از is می‌آید."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-30",
-          "expected_answer": "The book is always easy.",
-          "explanation": "always بعد از is می‌آید و easy صفت است.",
-          "time_limit": 60,
-          "translation": "کتاب همیشه آسان است.",
-          "question": "کتاب همیشه آسان است.",
-          "hint": "easy = آسان. راهنما: قید تکرار بعد از is می‌آید."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-31",
-          "expected_answer": "Here's a chair.",
-          "accepted_answers": [
-            "Here is a chair."
-          ],
-          "explanation": "قبل از صدای بی‌صدای اولِ chair از a استفاده می‌کنیم.",
-          "time_limit": 60,
-          "translation": "اینجا یک صندلی است.",
-          "question": "اینجا یک صندلی است.",
-          "hint": "chair = صندلی. راهنما: صدای اول کلمه بی‌صدا است؛ here is را کوتاه کن."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-32",
-          "expected_answer": "Here's an apple.",
-          "accepted_answers": [
-            "Here is an apple."
-          ],
-          "explanation": "قبل از صدای صدادار اولِ apple از an استفاده می‌کنیم.",
-          "time_limit": 60,
-          "translation": "اینجا یک سیب است.",
-          "question": "اینجا یک سیب است.",
-          "hint": "apple = سیب. راهنما: صدای اول کلمه صدادار است."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-33",
-          "expected_answer": "Here's an orange.",
-          "accepted_answers": [
-            "Here is an orange."
-          ],
-          "explanation": "orange هم با صدای صدادار شروع می‌شود، پس an می‌آید.",
-          "time_limit": 60,
-          "translation": "اینجا یک پرتقال است.",
-          "question": "اینجا یک پرتقال است.",
-          "hint": "orange = پرتقال. راهنما: صدای اول کلمه صدادار است."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-34",
-          "expected_answer": "His key is here.",
-          "explanation": "برای he صفت ملکی his قبل از اسم می‌آید.",
-          "time_limit": 60,
-          "translation": "کلید او اینجاست.",
-          "question": "کلید او اینجاست.",
-          "hint": "key = کلید. راهنما: صفت ملکی مذکر را قبل از اسم بگذار."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-35",
-          "expected_answer": "Her pen is here.",
-          "explanation": "برای she صفت ملکی her قبل از اسم می‌آید.",
-          "time_limit": 60,
-          "translation": "خودکار او اینجاست.",
-          "question": "خودکار او اینجاست.",
-          "hint": "pen = خودکار. راهنما: صفت ملکی مونث را قبل از اسم بگذار."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-36",
-          "expected_answer": "Its number is two-zero-one.",
-          "explanation": "برای it صفت ملکی its است و آپاستروف ندارد.",
-          "time_limit": 60,
-          "translation": "شمارهٔ آن دو-صفر-یک است.",
-          "question": "شمارهٔ آن دو-صفر-یک است.",
-          "hint": "number = شماره. راهنما: صفت ملکی «آن» آپاستروف ندارد و رقم‌ها را جدا بخوان."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-37",
-          "expected_answer": "Our room number is two-zero-one.",
-          "explanation": "برای we صفت ملکی our قبل از اسم می‌آید.",
-          "time_limit": 60,
-          "translation": "شمارهٔ اتاق ما دو-صفر-یک است.",
-          "question": "شمارهٔ اتاق ما دو-صفر-یک است.",
-          "hint": "room number = شمارهٔ اتاق. راهنما: صفت ملکی «ما» را قبل از اسم بگذار."
-        },
-        {
-          "id": "evolve-1-l01-03-tr-38",
-          "expected_answer": "Their key is here.",
-          "explanation": "برای they صفت ملکی their قبل از اسم می‌آید.",
-          "time_limit": 60,
-          "translation": "کلید آن‌ها اینجاست.",
-          "question": "کلید آن‌ها اینجاست.",
-          "hint": "key = کلید. راهنما: صفت ملکی «آن‌ها» را قبل از اسم بگذار."
-        },
-        {
           "id": "evolve-1-l01-03-tr-39",
           "expected_answer": "What's the meaning of this?",
           "accepted_answers": [
@@ -414,6 +205,41 @@
             "You are in room 6B."
           ],
           "hint": "room = اتاق؛ in = در"
+        },
+        {
+          "id": "evolve-1-l01-03-tr-02",
+          "expected_answer": "Your room number is two-zero-one.",
+          "accepted_answers": [
+            "Your room number is two zero one."
+          ],
+          "explanation": "هر رقم را جدا می‌خوانیم و بین آن‌ها خط تیره می‌گذاریم.",
+          "time_limit": 60,
+          "translation": "شمارهٔ اتاق تو دو-صفر-یک است.",
+          "question": "شمارهٔ اتاق تو دو-صفر-یک است.",
+          "hint": "room number = شمارهٔ اتاق. راهنما: هر رقم را جدا بخوان و با خط تیره به هم وصل کن."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-03",
+          "expected_answer": "My address is seven-oh-nine.",
+          "accepted_answers": [
+            "My address is seven-zero-nine.",
+            "My address is seven oh nine.",
+            "My address is seven zero nine."
+          ],
+          "explanation": "برای صفر می‌توانی oh یا zero بگویی؛ هر دو درست است.",
+          "time_limit": 60,
+          "translation": "آدرس من هفت-صفر-نه است.",
+          "question": "آدرس من هفت-صفر-نه است.",
+          "hint": "seven = هفت؛ nine = نه. راهنما: برای صفر یکی از دو تلفظ zero یا oh را بنویس."
+        },
+        {
+          "id": "evolve-1-l01-03-tr-37",
+          "expected_answer": "Our room number is two-zero-one.",
+          "explanation": "برای we صفت ملکی our قبل از اسم می‌آید.",
+          "time_limit": 60,
+          "translation": "شمارهٔ اتاق ما دو-صفر-یک است.",
+          "question": "شمارهٔ اتاق ما دو-صفر-یک است.",
+          "hint": "room number = شمارهٔ اتاق. راهنما: صفت ملکی «ما» را قبل از اسم بگذار."
         }
       ]
     },
@@ -456,30 +282,6 @@
           "translation": "من معمولاً آهسته راه می‌روم.",
           "question": "من معمولاً آهسته راه می‌روم.",
           "hint": "walk = راه رفتن. راهنما: قید تکرار قبل از فعل اصلی می‌آید و قید حالت در آخر جمله است."
-        },
-        {
-          "id": "evolve-1-l01-03-vt-04",
-          "expected_answer": "Here's an orange.",
-          "accepted_answers": [
-            "Here is an orange."
-          ],
-          "explanation": "orange هم با صدای صدادار شروع می‌شود، پس an می‌آید.",
-          "time_limit": 60,
-          "translation": "اینجا یک پرتقال است.",
-          "question": "اینجا یک پرتقال است.",
-          "hint": "orange = پرتقال. راهنما: صدای اول کلمه صدادار است."
-        },
-        {
-          "id": "evolve-1-l01-03-vt-05",
-          "expected_answer": "She is usually neat.",
-          "accepted_answers": [
-            "She's usually neat."
-          ],
-          "explanation": "قید usually بعد از is می‌آید، نه قبل از آن.",
-          "time_limit": 60,
-          "translation": "او معمولاً مرتب است.",
-          "question": "او معمولاً مرتب است.",
-          "hint": "neat = مرتب. راهنما: قید تکرار بعد از is می‌آید."
         }
       ]
     },
@@ -505,21 +307,6 @@
           "hint": "pen = خودکار. راهنما: here is را به شکل کوتاه بنویس."
         },
         {
-          "id": "evolve-1-l01-03-wt-02",
-          "word_bank": [
-            "شمارهٔ",
-            "اتاق",
-            "تو",
-            "دو-صفر-یک",
-            "است"
-          ],
-          "expected_answer": "Your room number is two-zero-one.",
-          "explanation": "صفت ملکی تو همان your است و قبل از اسم می‌آید.",
-          "time_limit": 60,
-          "translation": "شمارهٔ اتاق تو دو-صفر-یک است.",
-          "hint": "room number = شمارهٔ اتاق. راهنما: تو را با your بیان کن و قبل از اسم بگذار."
-        },
-        {
           "id": "evolve-1-l01-03-wt-03",
           "expected_answer": "I usually walk slowly.",
           "explanation": "قید تکرار قبل از فعل می‌آید و قید حالت در آخر است.",
@@ -534,35 +321,19 @@
           ]
         },
         {
-          "id": "evolve-1-l01-03-wt-04",
-          "expected_answer": "Here's an apple.",
-          "accepted_answers": [
-            "Here is an apple."
+          "id": "evolve-1-l01-03-wt-02",
+          "word_bank": [
+            "شمارهٔ",
+            "اتاق",
+            "تو",
+            "دو-صفر-یک",
+            "است"
           ],
-          "explanation": "قبل از صدای صدادار از an استفاده می‌کنیم.",
+          "expected_answer": "Your room number is two-zero-one.",
+          "explanation": "صفت ملکی تو همان your است و قبل از اسم می‌آید.",
           "time_limit": 60,
-          "translation": "اینجا یک سیب است.",
-          "hint": "apple = سیب. راهنما: صدای اول کلمه صدادار است.",
-          "word_bank": [
-            "اینجا",
-            "یک",
-            "سیب",
-            "است"
-          ]
-        },
-        {
-          "id": "evolve-1-l01-03-wt-05",
-          "expected_answer": "The book is always easy.",
-          "explanation": "قید always بعد از is می‌آید.",
-          "time_limit": 60,
-          "translation": "کتاب همیشه آسان است.",
-          "hint": "easy = آسان. راهنما: قید تکرار بعد از is می‌آید.",
-          "word_bank": [
-            "کتاب",
-            "همیشه",
-            "آسان",
-            "است"
-          ]
+          "translation": "شمارهٔ اتاق تو دو-صفر-یک است.",
+          "hint": "room number = شمارهٔ اتاق. راهنما: تو را با your بیان کن و قبل از اسم بگذار."
         }
       ]
     },
@@ -651,36 +422,6 @@
           ]
         },
         {
-          "id": "evolve-1-l01-03-sb-07",
-          "expected_answer": "Here's an apple.",
-          "explanation": "قبل از apple از an استفاده می‌کنیم.",
-          "time_limit": 60,
-          "translation": "اینجا یک سیب است.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "apple = سیب. راهنما: صدای اول کلمه صدادار است.",
-          "word_bank": [
-            "Here's",
-            "an",
-            "apple."
-          ]
-        },
-        {
-          "id": "evolve-1-l01-03-sb-08",
-          "expected_answer": "The girl is always beautiful.",
-          "explanation": "قید always بعد از is می‌آید.",
-          "time_limit": 60,
-          "translation": "دختر همیشه زیبا است.",
-          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
-          "hint": "girl = دختر. راهنما: قید تکرار بعد از is می‌آید.",
-          "word_bank": [
-            "The",
-            "girl",
-            "is",
-            "always",
-            "beautiful."
-          ]
-        },
-        {
           "id": "evolve-1-l01-03-nb-sb-01",
           "expected_answer": "I'm here for one night.",
           "explanation": "I’m here for و بعد عدد و night می‌آید.",
@@ -705,16 +446,6 @@
       "presentation": "text",
       "difficulty": "easy",
       "items": [
-        {
-          "id": "evolve-1-l01-03-gc-01",
-          "expected_answer": "Your room number is two-zero-one.",
-          "explanation": "room number یک اسم مفرد است، پس با is می‌آید.",
-          "time_limit": 60,
-          "translation": "شمارهٔ اتاق تو دو-صفر-یک است.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "number = شماره. راهنما: فعل را با یک شماره هماهنگ کن.",
-          "incorrect_sentence": "Your room number are two-zero-one."
-        },
         {
           "id": "evolve-1-l01-03-gc-02",
           "expected_answer": "I'm here for two nights.",
@@ -746,42 +477,6 @@
           "incorrect_sentence": "I walk usually slowly."
         },
         {
-          "id": "evolve-1-l01-03-gc-06",
-          "expected_answer": "She is usually neat.",
-          "accepted_answers": [
-            "She's usually neat."
-          ],
-          "explanation": "با فعل be قید تکرار بعد از is می‌آید.",
-          "time_limit": 60,
-          "translation": "او معمولاً مرتب است.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "neat = مرتب. راهنما: قید تکرار بعد از فعل be می‌آید.",
-          "incorrect_sentence": "She usually is neat."
-        },
-        {
-          "id": "evolve-1-l01-03-gc-07",
-          "expected_answer": "Here's an apple.",
-          "accepted_answers": [
-            "Here is an apple."
-          ],
-          "explanation": "apple با صدای صدادار شروع می‌شود، پس an می‌آید.",
-          "time_limit": 60,
-          "translation": "اینجا یک سیب است.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "apple = سیب. راهنما: حرف تعریف را با صدای اول کلمه هماهنگ کن.",
-          "incorrect_sentence": "Here's a apple."
-        },
-        {
-          "id": "evolve-1-l01-03-gc-08",
-          "expected_answer": "They sometimes read a book easily.",
-          "explanation": "برای چگونگی کار قید می‌آید. easy به y ختم می‌شود، پس easily.",
-          "time_limit": 60,
-          "translation": "آن‌ها گاهی یک کتاب را به‌آسانی می‌خوانند.",
-          "question": "جملهٔ اشتباه را اصلاح کن.",
-          "hint": "easy = آسان. راهنما: چگونگی کار را با قید بگو، نه با صفت.",
-          "incorrect_sentence": "They sometimes read a book easy."
-        },
-        {
           "id": "evolve-1-l01-03-gc-09",
           "expected_answer": "I usually walk slowly.",
           "explanation": "slow صفت است. برای چگونگی راه رفتن قید slowly می‌آید.",
@@ -810,6 +505,16 @@
           "question": "جملهٔ اشتباه را اصلاح کن.",
           "hint": "به فعل بودن بعد از You توجه کن.",
           "incorrect_sentence": "You in room 316."
+        },
+        {
+          "id": "evolve-1-l01-03-gc-01",
+          "expected_answer": "Your room number is two-zero-one.",
+          "explanation": "room number یک اسم مفرد است، پس با is می‌آید.",
+          "time_limit": 60,
+          "translation": "شمارهٔ اتاق تو دو-صفر-یک است.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "number = شماره. راهنما: فعل را با یک شماره هماهنگ کن.",
+          "incorrect_sentence": "Your room number are two-zero-one."
         }
       ]
     },
@@ -819,48 +524,7 @@
       "title": "تبدیل جمله به منفی",
       "presentation": "text",
       "difficulty": "easy",
-      "items": [
-        {
-          "id": "evolve-1-l01-03-neg-01",
-          "operation": "negative",
-          "expected_answer": "You're not in room 6A.",
-          "accepted_answers": [
-            "You are not in room 6A.",
-            "You aren't in room 6A."
-          ],
-          "explanation": "برای منفی کردن، not را بعد از are می‌گذاریم. are not شکل کوتاه aren't را دارد.",
-          "time_limit": 60,
-          "translation": "تو در اتاق ۶A نیستی.",
-          "question": "جمله را منفی کن: You're in room 6A.",
-          "hint": "not = نه؛ aren't = نیستی (شکل کوتاه are not). راهنما: کلمهٔ منفی را بعد از فعل بگذار."
-        },
-        {
-          "id": "evolve-1-l01-03-neg-02",
-          "expected_answer": "I don't usually walk slowly.",
-          "accepted_answers": [
-            "I do not usually walk slowly."
-          ],
-          "operation": "negative",
-          "explanation": "برای منفی کردن، do not قبل از قید تکرار می‌آید.",
-          "time_limit": 60,
-          "translation": "من معمولاً آهسته راه نمی‌روم.",
-          "question": "جمله را منفی کن: I usually walk slowly.",
-          "hint": "راهنما: فعل کمکی منفی قبل از قید تکرار می‌آید."
-        },
-        {
-          "id": "evolve-1-l01-03-neg-03",
-          "expected_answer": "The girl is not always beautiful.",
-          "accepted_answers": [
-            "The girl isn't always beautiful."
-          ],
-          "operation": "negative",
-          "explanation": "not بعد از is می‌آید و قید always سر جایش می‌ماند.",
-          "time_limit": 60,
-          "translation": "دختر همیشه زیبا نیست.",
-          "question": "جمله را منفی کن: The girl is always beautiful.",
-          "hint": "راهنما: کلمهٔ منفی را بعد از is بگذار."
-        }
-      ]
+      "items": []
     },
     {
       "id": "evolve-1-l01-03-question",
@@ -868,28 +532,7 @@
       "title": "تبدیل جمله به سؤالی",
       "presentation": "text",
       "difficulty": "easy",
-      "items": [
-        {
-          "id": "evolve-1-l01-03-q-01",
-          "operation": "question",
-          "expected_answer": "Are you in room 6A?",
-          "explanation": "برای سؤالی کردن، are را به ابتدای جمله می‌آوریم.",
-          "time_limit": 60,
-          "translation": "آیا تو در اتاق ۶A هستی؟",
-          "question": "جمله را سؤالی کن: You're in room 6A.",
-          "hint": "are = هستی (در سؤال). راهنما: فعل be را قبل از you بگذار."
-        },
-        {
-          "id": "evolve-1-l01-03-q-03",
-          "expected_answer": "Is the girl always beautiful?",
-          "operation": "question",
-          "explanation": "برای سؤال، is به ابتدای جمله می‌آید و always بعد از فاعل می‌ماند.",
-          "time_limit": 60,
-          "translation": "آیا دختر همیشه زیبا است؟",
-          "question": "جمله را سؤالی کن: The girl is always beautiful.",
-          "hint": "راهنما: فعل be را به ابتدای جمله ببر."
-        }
-      ]
+      "items": []
     },
     {
       "id": "evolve-1-l01-03-choice",
@@ -1137,20 +780,6 @@
           ]
         },
         {
-          "id": "evolve-1-l01-03-mc-19",
-          "expected_answer": "She is usually neat.",
-          "explanation": "با فعل be قید تکرار بعد از is می‌آید.",
-          "time_limit": 60,
-          "translation": "او معمولاً مرتب است.",
-          "question": "کدام جمله جای قید تکرار را با فعل be درست نشان می‌دهد؟",
-          "hint": "neat = مرتب. راهنما: قید تکرار بعد از فعل be می‌آید.",
-          "options": [
-            "She is usually neat.",
-            "She usually is neat.",
-            "Usually is she neat."
-          ]
-        },
-        {
           "id": "evolve-1-l01-03-nb-mc-01",
           "expected_answer": "متصدی",
           "explanation": "به معنی جمله و کاری که انجام می‌دهد توجه کن.",
@@ -1335,6 +964,76 @@
             "Six",
             "Is",
             "Please"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-poss-01",
+          "expected_answer": "او (مال او، مذکر)",
+          "explanation": "his صفت ملکی است و معنی آن «او (مال او، مذکر)» است.",
+          "time_limit": 60,
+          "translation": "او (مال او، مذکر)",
+          "question": "معنی his چیست؟",
+          "hint": "صفت ملکی برای مرد (ضمیر he)",
+          "options": [
+            "او (مال او، مونث)",
+            "آن (مال آن)",
+            "او (مال او، مذکر)"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-poss-02",
+          "expected_answer": "او (مال او، مونث)",
+          "explanation": "her صفت ملکی است و معنی آن «او (مال او، مونث)» است.",
+          "time_limit": 60,
+          "translation": "او (مال او، مونث)",
+          "question": "معنی her چیست؟",
+          "hint": "صفت ملکی برای زن (ضمیر she)",
+          "options": [
+            "او (مال او، مذکر)",
+            "آن (مال آن)",
+            "او (مال او، مونث)"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-poss-03",
+          "expected_answer": "آن (مال آن)",
+          "explanation": "its صفت ملکی است و معنی آن «آن (مال آن)» است.",
+          "time_limit": 60,
+          "translation": "آن (مال آن)",
+          "question": "معنی its چیست؟",
+          "hint": "صفت ملکی برای چیز یا حیوان (ضمیر it)",
+          "options": [
+            "او (مال او، مذکر)",
+            "او (مال او، مونث)",
+            "آن (مال آن)"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-poss-04",
+          "expected_answer": "ما (مال ما)",
+          "explanation": "our صفت ملکی است و معنی آن «ما (مال ما)» است.",
+          "time_limit": 60,
+          "translation": "ما (مال ما)",
+          "question": "معنی our چیست؟",
+          "hint": "صفت ملکی برای ما (ضمیر we)",
+          "options": [
+            "او (مال او، مذکر)",
+            "او (مال او، مونث)",
+            "ما (مال ما)"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-03-poss-05",
+          "expected_answer": "آن‌ها (مال آن‌ها)",
+          "explanation": "their صفت ملکی است و معنی آن «آن‌ها (مال آن‌ها)» است.",
+          "time_limit": 60,
+          "translation": "آن‌ها (مال آن‌ها)",
+          "question": "معنی their چیست؟",
+          "hint": "صفت ملکی برای آن‌ها (ضمیر they)",
+          "options": [
+            "او (مال او، مذکر)",
+            "او (مال او، مونث)",
+            "آن‌ها (مال آن‌ها)"
           ]
         }
       ]
@@ -2509,14 +2208,6 @@
         "fa": "برای عدد ۰، بگو zero یا oh."
       },
       {
-        "en": "Your room number is two-zero-one.",
-        "fa": "شمارهٔ اتاق تو دو-صفر-یک است."
-      },
-      {
-        "en": "My address is seven-oh-nine.",
-        "fa": "آدرس من هفت-صفر-نه است."
-      },
-      {
         "en": "You're in room 6A.",
         "fa": "تو در اتاق ۶A هستی."
       },
@@ -2561,78 +2252,6 @@
         "fa": "من معمولاً آهسته راه می‌روم."
       },
       {
-        "en": "I often read a book quickly.",
-        "fa": "من اغلب یک کتاب را سریع می‌خوانم."
-      },
-      {
-        "en": "She sometimes writes the name neatly.",
-        "fa": "او گاهی نام را مرتب می‌نویسد."
-      },
-      {
-        "en": "We often spell the name correctly.",
-        "fa": "ما اغلب نام را به‌درستی هجی می‌کنیم."
-      },
-      {
-        "en": "They sometimes read a book easily.",
-        "fa": "آن‌ها گاهی یک کتاب را به‌آسانی می‌خوانند."
-      },
-      {
-        "en": "The girl is always beautiful.",
-        "fa": "دختر همیشه زیبا است."
-      },
-      {
-        "en": "She is usually neat.",
-        "fa": "او معمولاً مرتب است."
-      },
-      {
-        "en": "It is never ugly.",
-        "fa": "آن هرگز زشت نیست."
-      },
-      {
-        "en": "He is often quick.",
-        "fa": "او اغلب سریع است."
-      },
-      {
-        "en": "She is sometimes slow.",
-        "fa": "او گاهی آهسته است."
-      },
-      {
-        "en": "The book is always easy.",
-        "fa": "کتاب همیشه آسان است."
-      },
-      {
-        "en": "Here's a chair.",
-        "fa": "اینجا یک صندلی است."
-      },
-      {
-        "en": "Here's an apple.",
-        "fa": "اینجا یک سیب است."
-      },
-      {
-        "en": "Here's an orange.",
-        "fa": "اینجا یک پرتقال است."
-      },
-      {
-        "en": "His key is here.",
-        "fa": "کلید او اینجاست."
-      },
-      {
-        "en": "Her pen is here.",
-        "fa": "خودکار او اینجاست."
-      },
-      {
-        "en": "Its number is two-zero-one.",
-        "fa": "شمارهٔ آن دو-صفر-یک است."
-      },
-      {
-        "en": "Our room number is two-zero-one.",
-        "fa": "شمارهٔ اتاق ما دو-صفر-یک است."
-      },
-      {
-        "en": "Their key is here.",
-        "fa": "کلید آن‌ها اینجاست."
-      },
-      {
         "en": "What's the meaning of this?",
         "fa": "معنی این چیست؟"
       },
@@ -2655,6 +2274,86 @@
       {
         "en": "I'm here for three nights.",
         "fa": "من برای سه شب اینجا هستم."
+      },
+      {
+        "en": "Your room number is two-zero-one.",
+        "fa": "شمارهٔ اتاق تو دو-صفر-یک است."
+      },
+      {
+        "en": "My address is seven-oh-nine.",
+        "fa": "آدرس من هفت-صفر-نه است."
+      },
+      {
+        "en": "Our room number is two-zero-one.",
+        "fa": "شمارهٔ اتاق ما دو-صفر-یک است."
+      },
+      {
+        "en": "Hello. Welcome to the Garden Hotel.",
+        "fa": "سلام. به هتل گاردن خوش آمدید."
+      },
+      {
+        "en": "Welcome to the International Hotel.",
+        "fa": "به هتل اینترنشنال خوش آمدید."
+      },
+      {
+        "en": "Welcome to the Tree House Hotel!",
+        "fa": "به هتل تری‌هاوس خوش آمدید!"
+      },
+      {
+        "en": "Hi. Welcome to the International Hotel. What's your name?",
+        "fa": "سلام. به هتل اینترنشنال خوش آمدید. اسمت چیست؟"
+      },
+      {
+        "en": "Is this your key?",
+        "fa": "آیا این کلید توست؟"
+      },
+      {
+        "en": "No, it's the key for room three.",
+        "fa": "نه، این کلید اتاق سه است."
+      },
+      {
+        "en": "What's your company email address?",
+        "fa": "آدرس ایمیل شرکتی‌ات چیست؟"
+      },
+      {
+        "en": "It's c.b.smith@wallis.com.",
+        "fa": "آدرس c.b.smith@wallis.com است."
+      },
+      {
+        "en": "What's your Instagram name?",
+        "fa": "اسم اینستاگرام تو چیست؟"
+      },
+      {
+        "en": "It's SusieSix.",
+        "fa": "SusieSix است."
+      },
+      {
+        "en": "Ah, yes, two nights. What's your cell phone number?",
+        "fa": "آه بله، دو شب. شماره موبایل تو چیست؟"
+      },
+      {
+        "en": "It's (298) 555-1257.",
+        "fa": "شماره‌ام (298) 555-1257 است."
+      },
+      {
+        "en": "Great. Thank you. And what's your email address?",
+        "fa": "عالی. متشکرم. و آدرس ایمیلت چیست؟"
+      },
+      {
+        "en": "It's mbernard87@mymail.org.",
+        "fa": "آدرس mbernard87@mymail.org است."
+      },
+      {
+        "en": "Thank you. This is the key. It's for room 7C.",
+        "fa": "متشکرم. این کلید است. برای اتاق 7C است."
+      },
+      {
+        "en": "The woman is at a hotel.",
+        "fa": "آن زن در هتل است."
+      },
+      {
+        "en": "She says her room number.",
+        "fa": "او شماره اتاقش را می‌گوید."
       }
     ],
     "grammar": [
@@ -2685,24 +2384,8 @@
             "fa": "آدرس من هفت-صفر-نه است."
           },
           {
-            "en": "His key is here.",
-            "fa": "کلید او اینجاست."
-          },
-          {
-            "en": "Her pen is here.",
-            "fa": "خودکار او اینجاست."
-          },
-          {
-            "en": "Its number is two-zero-one.",
-            "fa": "شمارهٔ آن دو-صفر-یک است."
-          },
-          {
             "en": "Our room number is two-zero-one.",
             "fa": "شمارهٔ اتاق ما دو-صفر-یک است."
-          },
-          {
-            "en": "Their key is here.",
-            "fa": "کلید آن‌ها اینجاست."
           }
         ]
       },
@@ -2743,48 +2426,15 @@
       {
         "title": "حرف تعریف a و an",
         "explanation": "a و an هر دو به معنی «یک» هستند و پیش از اسم مفرد می‌آیند. اسم مفرد تعداد می‌گیرد: a یا an، و می‌تواند یک عدد هم باشد. قبل از صدای بی‌صدا a می‌آید، مثل a chair. قبل از صدای صدادار an می‌آید، مثل an apple و an orange. معیار، صدای اول کلمه است، نه فقط حرف اول آن. هدف این است که برای هر اسم مفرد، a یا an را از روی صدا انتخاب کنی.",
-        "examples": [
-          {
-            "en": "Here's a chair.",
-            "fa": "اینجا یک صندلی است."
-          },
-          {
-            "en": "Here's an apple.",
-            "fa": "اینجا یک سیب است."
-          },
-          {
-            "en": "Here's an orange.",
-            "fa": "اینجا یک پرتقال است."
-          }
-        ]
+        "examples": []
       },
       {
         "title": "قید حالت و ly",
         "explanation": "قید حالت می‌گوید یک کار چگونه انجام می‌شود و معمولاً بعد از فعل یا بعد از مفعول می‌آید. معمولاً ly به آخر صفت اضافه می‌کنیم: quick به quickly، slow به slowly، neat به neatly و correct به correctly. اگر صفت به y ختم شود، y را به i تبدیل می‌کنیم و بعد ly می‌گذاریم: easy به easily. هدف این است که صفت را به قید حالت تبدیل کنی و آن را بعد از فعل یا مفعول بگذاری.",
         "examples": [
           {
-            "en": "I often read a book quickly.",
-            "fa": "من اغلب یک کتاب را سریع می‌خوانم."
-          },
-          {
             "en": "I usually walk slowly.",
             "fa": "من معمولاً آهسته راه می‌روم."
-          },
-          {
-            "en": "She sometimes writes the name neatly.",
-            "fa": "او گاهی نام را مرتب می‌نویسد."
-          },
-          {
-            "en": "We often spell the name correctly.",
-            "fa": "ما اغلب نام را به‌درستی هجی می‌کنیم."
-          },
-          {
-            "en": "They sometimes read a book easily.",
-            "fa": "آن‌ها گاهی یک کتاب را به‌آسانی می‌خوانند."
-          },
-          {
-            "en": "The book is always easy.",
-            "fa": "کتاب همیشه آسان است."
           }
         ]
       },
@@ -2795,26 +2445,6 @@
           {
             "en": "I usually walk slowly.",
             "fa": "من معمولاً آهسته راه می‌روم."
-          },
-          {
-            "en": "I often read a book quickly.",
-            "fa": "من اغلب یک کتاب را سریع می‌خوانم."
-          },
-          {
-            "en": "The girl is always beautiful.",
-            "fa": "دختر همیشه زیبا است."
-          },
-          {
-            "en": "She is usually neat.",
-            "fa": "او معمولاً مرتب است."
-          },
-          {
-            "en": "It is never ugly.",
-            "fa": "آن هرگز زشت نیست."
-          },
-          {
-            "en": "He is often quick.",
-            "fa": "او اغلب سریع است."
           }
         ]
       },
@@ -2861,7 +2491,7 @@
             "fa": "پائولو: من پائولو وازکز هستم. من برای سه شب اینجا هستم."
           },
           {
-            "en": "Clerk: Oh, yes. What's your cell phone number?",
+            "en": "Clerk: Ah, yes. What's your cell phone number?",
             "fa": "کارمند: اوه، بله. شمارهٔ تلفن همراه تو چیست؟"
           },
           {
@@ -3055,6 +2685,23 @@
           {
             "en": "Clerk: You're welcome.",
             "fa": "متصدی: خواهش می‌کنم."
+          }
+        ]
+      },
+      {
+        "title": "گفت‌وگو: هتل تری‌هاوس",
+        "lines": [
+          {
+            "en": "Clerk: Hi. Welcome to the Tree House Hotel! What's your name?",
+            "fa": "کارمند: سلام. به هتل تری‌هاوس خوش آمدید! اسمت چیست؟"
+          },
+          {
+            "en": "Guest: Great. Thank you. And what's your email address?",
+            "fa": "مهمان: عالی. متشکرم. و آدرس ایمیلت چیست؟"
+          },
+          {
+            "en": "Clerk: It's mbernard87@mymail.org.",
+            "fa": "کارمند: آدرس mbernard87@mymail.org است."
           }
         ]
       }

@@ -72,6 +72,19 @@ their grammar rules and examples, and their sentence structures.
 
 ## 2. Sentences and grammar
 
+- **Only sentences from the book.** Every English sentence in a lesson must be a sentence that is in the book's own
+  material (the notebook text the author gives). This covers `lesson_content.sentences`, grammar examples, stories and
+  dialogues, and every practice item whose answer is a sentence (translation, voice translation, word translation,
+  sentence builder, grammar correction, negative, question, multiple choice with sentence options).
+  - Do not write a new sentence, even if it uses only words the learner knows and follows a book structure. Changing a
+    city, a name, a pronoun, a verb or an adverb in a book sentence makes a new sentence, and that is not allowed.
+  - Allowed: the book sentence itself, and forms of that same sentence that the app accepts (contractions such as
+    `I'm` for `I am`, and the accepted answers listed in section 4), because they are the same sentence.
+  - If a book sentence has no practice item, use that book sentence in another exercise type. Do not invent a sentence
+    to fill an exercise type.
+  - A grammar rule with no book sentence has no example. Leave its `examples` empty instead of inventing one.
+  - This rule is about sentences only. Words are handled by the word rules in section 1.
+
 - A sentence structure is taught once per book. Do not repeat a structure from an earlier lesson with different words,
   unless this lesson practises it, within the limits in the next bullets.
   Example: if lesson 1 has `I am from Iran.`, lesson 2 must not add `I am from Germany.` The same rule applies to grammar
@@ -87,27 +100,26 @@ their grammar rules and examples, and their sentence structures.
 - **New structures** of the lesson may have up to **4** sentences with the same opening, which is the book's own maximum.
 - **Grammar section**: explains only the structures that are new in this lesson. A repeated structure is practised, not
   explained again.
-- **Stories and dialogues** follow the word rules in section 1. The limits in this section do not apply to them, because
-  dialogues repeat the lesson's frames by nature (as the stories of lesson 1.1 do).
+- **Stories and dialogues** follow the word rules in section 1 and must be book text (see "Only sentences from the book").
+  The limits in this section do not apply to them, because dialogues repeat the lesson's frames by nature.
 - Names are still never the answer of a practice item, even in a repeated structure (see section 4).
 - Do not add to `lesson_content.sentences` a line whose job is to state a character's full name (for example
   `My name is Paulo Vasques.`). The sentence list is for patterns the learner practises, not for memorizing book names.
 - Every sentence must be meaningful on its own. Sentences that belong together (a question and its answer, a short
   exchange) stay together as one exercise item, in order, so the learner can read the whole exchange in one place.
   Do not split a conversation across several items.
-- Do not add an extra sentence to help a grammar point unless a sentence with that structure already exists in an
-  earlier lesson of the same book.
+- Do not add an extra sentence to help a grammar point. Use only book sentences (see the first bullet of this section).
 
 ## 3. Grammar section
 
-- Every grammar example is a sentence of the lesson (the tests check this).
+- Every grammar example is a sentence from the book (see section 2, "Only sentences from the book").
 - English and Persian are always shown together. The grammar page has no English-only or Persian-only switch.
 - Each grammar rule has a Persian explanation that points the learner to the goal of the rule.
 
 ## 4. Practice (exercises)
 
 - Every new word of the lesson appears in the practice exercises.
-- Practice sentences follow the grammar of the lesson and the sentences the learner has seen in it.
+- Practice sentences are book sentences only (see section 2, "Only sentences from the book").
 - Every answer that can be shortened has all of its forms in `accepted_answers`, so the learner can answer in any
   correct form. The app compares the text exactly, so a form that is not listed is marked wrong.
   - Pronoun + be: `I am` = `I'm`; `you are`, `we are`, `they are` = `you're`, `we're`, `they're`; `he is`, `she is`,
@@ -122,10 +134,10 @@ their grammar rules and examples, and their sentence structures.
   - Exceptions: a sentence builder uses the words of one form only (its word bank must match `expected_answer`), and a
     multiple choice option is one form only (an alternative form must not be a second option, because it would be a
     second correct answer).
-- Include a few examples of every exercise type the game has, where the lesson's grammar allows it (translation, voice
-  translation, word translation, sentence builder, grammar correction, negative, question, multiple choice, dictation,
-  vocabulary, verb forms). The negative and question types show one example per sentence structure, not many words
-  in the same structure.
+- Use book sentences for every sentence-based exercise type (translation, voice translation, word translation, sentence
+  builder, grammar correction, negative, question, multiple choice). If the book has no sentence that fits a type, leave
+  that type out for the sentence part instead of inventing one. Word-only types (dictation, vocabulary, verb forms) are
+  not limited by this.
 - No person names in practice: a practice item (any exercise type) never asks the learner to pick, type or find a
  person's name, never lists people as options, and never asks a question whose answer depends on knowing a person
  from the book (for example "Which student is from New York?", "What was the name of the Spanish teacher?", or

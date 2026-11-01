@@ -45,7 +45,9 @@
           "time_limit": 60,
           "translation": "من خوبم.",
           "question": "من خوبم.",
-          "accepted_answers": ["I am fine."],
+          "accepted_answers": [
+            "I am fine."
+          ],
           "hint": "fine = خوب"
         },
         {
@@ -55,7 +57,9 @@
           "time_limit": 60,
           "translation": "خوبم، ممنون. تو چطوری؟",
           "question": "خوبم، ممنون. تو چطوری؟",
-          "accepted_answers": ["I am fine, thanks. And you?"],
+          "accepted_answers": [
+            "I am fine, thanks. And you?"
+          ],
           "hint": "thanks = ممنون؛ and you = تو چطوری"
         },
         {
@@ -92,8 +96,16 @@
           "time_limit": 60,
           "translation": "از آشنایی با تو خوشحالم.",
           "hint": "nice to meet you",
-          "word_bank": ["از", "آشنایی", "با", "تو", "خوشحالم"],
-          "accepted_answers": ["Nice to meet you."]
+          "word_bank": [
+            "از",
+            "آشنایی",
+            "با",
+            "تو",
+            "خوشحالم"
+          ],
+          "accepted_answers": [
+            "Nice to meet you."
+          ]
         }
       ]
     },
@@ -130,7 +142,11 @@
           "translation": "بعداً می‌بینمت.",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "later = بعداً",
-          "word_bank": ["you", "later.", "See"]
+          "word_bank": [
+            "you",
+            "later.",
+            "See"
+          ]
         }
       ]
     },
@@ -168,7 +184,11 @@
           "translation": "احوالپرسی",
           "question": "این عبارت از کدام نوع مکالمه است؟ «Good evening.»",
           "hint": "عبارتی برای سلام کردن",
-          "options": ["Greeting", "Introduction", "Goodbye"]
+          "options": [
+            "Greeting",
+            "Introduction",
+            "Goodbye"
+          ]
         },
         {
           "id": "evolve-1-l01-05-mc-02",
@@ -178,7 +198,11 @@
           "translation": "معرفی",
           "question": "این عبارت از کدام نوع مکالمه است؟ «Gabi, this is Caio.»",
           "hint": "this is = این است",
-          "options": ["Greeting", "Introduction", "Goodbye"]
+          "options": [
+            "Greeting",
+            "Introduction",
+            "Goodbye"
+          ]
         },
         {
           "id": "evolve-1-l01-05-mc-03",
@@ -188,7 +212,11 @@
           "translation": "خداحافظی",
           "question": "این عبارت از کدام نوع مکالمه است؟ «See you later.»",
           "hint": "later = بعداً",
-          "options": ["Greeting", "Introduction", "Goodbye"]
+          "options": [
+            "Greeting",
+            "Introduction",
+            "Goodbye"
+          ]
         },
         {
           "id": "evolve-1-l01-05-mc-04",
@@ -198,7 +226,11 @@
           "translation": "خوب",
           "question": "معنی fine چیست؟",
           "hint": "fine = خوب",
-          "options": ["خوب", "شب", "کلید"]
+          "options": [
+            "خوب",
+            "شب",
+            "کلید"
+          ]
         },
         {
           "id": "evolve-1-l01-05-mc-05",
@@ -208,7 +240,11 @@
           "translation": "خداحافظ",
           "question": "کدام واژه به معنی «خداحافظ» است؟",
           "hint": "goodbye = خداحافظ",
-          "options": ["goodbye", "favorite", "nice"]
+          "options": [
+            "goodbye",
+            "favorite",
+            "nice"
+          ]
         }
       ]
     },
@@ -432,6 +468,26 @@
       {
         "en": "See you later.",
         "fa": "بعداً می‌بینمت."
+      },
+      {
+        "en": "The person is from Tehran.",
+        "fa": "آن شخص اهل تهران است."
+      },
+      {
+        "en": "How do you spell it?",
+        "fa": "آن را چطور هجی می‌کنی؟"
+      },
+      {
+        "en": "It's Nelson Mandela.",
+        "fa": "این نلسون ماندلا است."
+      },
+      {
+        "en": "I'm Iranian.",
+        "fa": "من ایرانی هستم."
+      },
+      {
+        "en": "I'm from Gilan.",
+        "fa": "من اهل گیلان هستم."
       }
     ],
     "grammar": [],
@@ -495,7 +551,7 @@
             "fa": "الف: شخص موردعلاقه تو کیست؟"
           },
           {
-            "en": "B: My favorite person is Nelson Mandela.",
+            "en": "B: My favorite person is ...",
             "fa": "ب: شخص موردعلاقه من نلسون ماندلا است."
           },
           {
@@ -520,7 +576,7 @@
             "fa": "الف: شماره تلفن همراه تو چیست؟"
           },
           {
-            "en": "B: It's (962) 555-3198.",
+            "en": "B: It's ...",
             "fa": "ب: (962) 555-3198 است."
           }
         ]

@@ -71,16 +71,6 @@
           "group": "Personal Information"
         },
         {
-          "id": "evolve-1-l01-02-tr-07",
-          "expected_answer": "How do you spell your first name?",
-          "explanation": "از الگوی How do you spell …? استفاده می‌کنی؛ در انتها your first name را بگذار.",
-          "time_limit": 60,
-          "translation": "اسم کوچک تو را چطور هجی می‌کنی؟",
-          "question": "اسم کوچک تو را چطور هجی می‌کنی؟",
-          "hint": "spell = هجی کردن (Before starting). راهنما: همان نوع سؤال spell؛ موضوع دربارهٔ طرف مقابل است.",
-          "group": "Personal Information"
-        },
-        {
           "id": "evolve-1-l01-02-tr-08",
           "expected_answer": "put",
           "explanation": "Put یعنی گذاشتن یا قرار دادن.",
@@ -116,6 +106,16 @@
           "translation": "شرکت من تویوتا است.",
           "question": "شرکت من تویوتا است.",
           "hint": "company = شرکت؛ my = من",
+          "group": "Personal Information"
+        },
+        {
+          "id": "evolve-1-l01-02-tr-07",
+          "expected_answer": "How do you spell your first name?",
+          "explanation": "از الگوی How do you spell …? استفاده می‌کنی؛ در انتها your first name را بگذار.",
+          "time_limit": 60,
+          "translation": "اسم کوچک تو را چطور هجی می‌کنی؟",
+          "question": "اسم کوچک تو را چطور هجی می‌کنی؟",
+          "hint": "spell = هجی کردن (Before starting). راهنما: همان نوع سؤال spell؛ موضوع دربارهٔ طرف مقابل است.",
           "group": "Personal Information"
         }
       ]
@@ -1251,10 +1251,6 @@
     ],
     "sentences": [
       {
-        "en": "What is your name?",
-        "fa": "اسم تو چیست؟"
-      },
-      {
         "en": "What's your name?",
         "fa": "اسم تو چیست؟"
       },
@@ -1295,16 +1291,32 @@
         "fa": "پس، اسم کوچک تو خوانا است."
       },
       {
-        "en": "How do you spell your first name?",
-        "fa": "اسم کوچک تو را چطور هجی می‌کنی؟"
-      },
-      {
         "en": "My college is Harvard University.",
         "fa": "کالج من دانشگاه هاروارد است."
       },
       {
         "en": "My company is Toyota.",
         "fa": "شرکت من تویوتا است."
+      },
+      {
+        "en": "How do you spell your first name?",
+        "fa": "اسم کوچک تو را چطور هجی می‌کنی؟"
+      },
+      {
+        "en": "Say Uh-huh to show you are listening.",
+        "fa": "برای نشان دادن اینکه داری گوش می‌دهی، بگو Uh-huh."
+      },
+      {
+        "en": "It's Mendes.",
+        "fa": "Mendes است."
+      },
+      {
+        "en": "It's luzmendes@xyz.com.",
+        "fa": "luzmendes@xyz.com است."
+      },
+      {
+        "en": "It's Wallace College.",
+        "fa": "کالج Wallace است."
       }
     ],
     "grammar": [
@@ -1312,10 +1324,6 @@
         "title": "What's و It's یعنی چه؟",
         "explanation": "در انگلیسی برای کوتاه کردن بعضی عبارت‌ها از علامت آپاستروف (') استفاده می‌کنیم. شکل کامل What is با What's (چیست؟) و It is با It's (این است / آن است) کوتاه می‌شود. مثلاً What is your name? و What's your name? هر دو یک معنی دارند: اسم تو چیست؟",
         "examples": [
-          {
-            "en": "What is your name?",
-            "fa": "اسم تو چیست؟"
-          },
           {
             "en": "What's your name?",
             "fa": "اسم تو چیست؟"
@@ -1399,12 +1407,12 @@
         "explanation": "نام هر حرف انگلیسی با تلفظ آن فرق دارد: Aa = اِی، Bb = بی، Cc = سی، Dd = دی، Ee = ای، Ff = اِف، Gg = جی، Hh = اِیچ، Ii = آی، Jj = جِی، Kk = کِی، Ll = اِل، Mm = اِم، Nn = اِن، Oo = اُو، Pp = پی، Qq = کیو، Rr = آر، Ss = اِس، Tt = تی، Uu = یو، Vv = وی، Ww = دابل‌یو، Xx = اِکس، Yy = وای، Zz = زی (در انگلیسی آمریکایی). وقتی یک کلمه را هجی می‌کنی، حرف‌ها را یکی‌یکی با همین نام‌ها می‌گویی.",
         "examples": [
           {
-            "en": "How do you spell your first name?",
-            "fa": "اسم کوچک تو را چطور هجی می‌کنی؟"
-          },
-          {
             "en": "What's your last name?",
             "fa": "نام خانوادگی تو چیست؟"
+          },
+          {
+            "en": "How do you spell your first name?",
+            "fa": "اسم کوچک تو را چطور هجی می‌کنی؟"
           }
         ]
       },

@@ -18,7 +18,9 @@
           "time_limit": 60,
           "translation": "من در مکزیک فروشنده هستم.",
           "question": "من در مکزیک فروشنده هستم.",
-          "accepted_answers": ["I am a salesperson in Mexico."],
+          "accepted_answers": [
+            "I am a salesperson in Mexico."
+          ],
           "hint": "salesperson = فروشنده؛ in = در",
           "group": "Jobs"
         },
@@ -29,7 +31,9 @@
           "time_limit": 60,
           "translation": "من در یک مدرسه در تگزاس دانشجوی زبان انگلیسی هستم.",
           "question": "من در یک مدرسه در تگزاس دانشجوی زبان انگلیسی هستم.",
-          "accepted_answers": ["I am an English student at a school in Texas."],
+          "accepted_answers": [
+            "I am an English student at a school in Texas."
+          ],
           "hint": "English student = زبان‌آموز انگلیسی"
         },
         {
@@ -68,7 +72,9 @@
           "time_limit": 60,
           "translation": "او آمریکایی است.",
           "question": "او آمریکایی است.",
-          "accepted_answers": ["She is American."],
+          "accepted_answers": [
+            "She is American."
+          ],
           "hint": "American = آمریکایی"
         },
         {
@@ -78,7 +84,9 @@
           "time_limit": 60,
           "translation": "خانهٔ من در نیویورک است.",
           "question": "خانهٔ من در نیویورک است.",
-          "accepted_answers": ["My home is in New York."],
+          "accepted_answers": [
+            "My home is in New York."
+          ],
           "hint": "home = خانه؛ in = در"
         },
         {
@@ -88,7 +96,9 @@
           "time_limit": 60,
           "translation": "معلم من اهل آستین، تگزاس است.",
           "question": "معلم من اهل آستین، تگزاس است.",
-          "accepted_answers": ["My teacher is from Austin, Texas."],
+          "accepted_answers": [
+            "My teacher is from Austin, Texas."
+          ],
           "hint": "teacher = معلم؛ from = اهل"
         },
         {
@@ -98,7 +108,9 @@
           "time_limit": 60,
           "translation": "من یک سرآشپز فرانسوی هستم.",
           "question": "من یک سرآشپز فرانسوی هستم.",
-          "accepted_answers": ["I am a French chef."],
+          "accepted_answers": [
+            "I am a French chef."
+          ],
           "hint": "chef = سرآشپز؛ French = فرانسوی",
           "group": "Jobs"
         },
@@ -109,7 +121,9 @@
           "time_limit": 60,
           "translation": "من اهل پاریس هستم، اما در نیویورک زندگی می‌کنم.",
           "question": "من اهل پاریس هستم، اما در نیویورک زندگی می‌کنم.",
-          "accepted_answers": ["I am from Paris, but I live in New York."],
+          "accepted_answers": [
+            "I am from Paris, but I live in New York."
+          ],
           "hint": "but = اما؛ live = زندگی کردن"
         },
         {
@@ -119,7 +133,9 @@
           "time_limit": 60,
           "translation": "من اهل پرو هستم، اما خانه‌ام در ایالات متحده است.",
           "question": "من اهل پرو هستم، اما خانه‌ام در ایالات متحده است.",
-          "accepted_answers": ["I am Peruvian, but my home is in the United States."],
+          "accepted_answers": [
+            "I am Peruvian, but my home is in the United States."
+          ],
           "hint": "home = خانه؛ but = اما"
         }
       ]
@@ -138,8 +154,15 @@
           "time_limit": 60,
           "translation": "من اهل مکزیکوسیتی هستم.",
           "hint": "Mexico City = مکزیکوسیتی",
-          "word_bank": ["من", "اهل", "مکزیکوسیتی", "هستم"],
-          "accepted_answers": ["I am from Mexico City."]
+          "word_bank": [
+            "من",
+            "اهل",
+            "مکزیکوسیتی",
+            "هستم"
+          ],
+          "accepted_answers": [
+            "I am from Mexico City."
+          ]
         }
       ]
     },
@@ -157,7 +180,9 @@
           "time_limit": 60,
           "translation": "خانهٔ من در نیویورک است.",
           "question": "خانهٔ من در نیویورک است.",
-          "accepted_answers": ["My home is in New York."],
+          "accepted_answers": [
+            "My home is in New York."
+          ],
           "hint": "home = خانه؛ in = در"
         }
       ]
@@ -177,7 +202,13 @@
           "translation": "من در مکزیک فروشنده هستم.",
           "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
           "hint": "salesperson = فروشنده. راهنما: مثل جملهٔ I’m a teacher بساز.",
-          "word_bank": ["in", "Mexico.", "I'm", "salesperson", "a"],
+          "word_bank": [
+            "in",
+            "Mexico.",
+            "I'm",
+            "salesperson",
+            "a"
+          ],
           "group": "Jobs"
         }
       ]
@@ -222,7 +253,9 @@
           "id": "evolve-1-l01-04-neg-01",
           "operation": "negative",
           "expected_answer": "I'm not a chef.",
-          "accepted_answers": ["I am not a chef."],
+          "accepted_answers": [
+            "I am not a chef."
+          ],
           "explanation": "برای منفی کردن، not را بعد از am می‌گذاریم.",
           "time_limit": 60,
           "translation": "من سرآشپز نیستم.",
@@ -247,7 +280,11 @@
           "translation": "فروشنده",
           "question": "معنی salesperson چیست؟",
           "hint": "sales = فروش؛ person = فرد",
-          "options": ["فروشنده", "هنرمند", "پزشک"],
+          "options": [
+            "فروشنده",
+            "هنرمند",
+            "پزشک"
+          ],
           "group": "Jobs"
         },
         {
@@ -258,7 +295,11 @@
           "translation": "هنرمند",
           "question": "معنی artist چیست؟",
           "hint": "کسی که کار هنری می‌کند",
-          "options": ["سرآشپز", "هنرمند", "داروساز"],
+          "options": [
+            "سرآشپز",
+            "هنرمند",
+            "داروساز"
+          ],
           "group": "Jobs"
         },
         {
@@ -269,7 +310,11 @@
           "translation": "داروساز",
           "question": "معنی pharmacist چیست؟",
           "hint": "کسی که در داروخانه کار می‌کند",
-          "options": ["داروساز", "معلم", "پیشخدمت زن"],
+          "options": [
+            "داروساز",
+            "معلم",
+            "پیشخدمت زن"
+          ],
           "group": "Jobs"
         },
         {
@@ -280,7 +325,11 @@
           "translation": "پزشک",
           "question": "معنی doctor چیست؟",
           "hint": "کسی که بیماران را درمان می‌کند",
-          "options": ["پزشک", "فروشنده", "سرآشپز"],
+          "options": [
+            "پزشک",
+            "فروشنده",
+            "سرآشپز"
+          ],
           "group": "Jobs"
         },
         {
@@ -291,7 +340,11 @@
           "translation": "سرآشپز",
           "question": "معنی chef چیست؟",
           "hint": "کسی که در آشپزخانهٔ رستوران غذا درست می‌کند",
-          "options": ["هنرمند", "سرآشپز", "گارسون / مسئول سرو غذا"],
+          "options": [
+            "هنرمند",
+            "سرآشپز",
+            "گارسون / مسئول سرو غذا"
+          ],
           "group": "Jobs"
         },
         {
@@ -302,7 +355,11 @@
           "translation": "پیشخدمت مرد",
           "question": "معنی waiter چیست؟",
           "hint": "کسی (مرد) که غذا را به میز می‌آورد",
-          "options": ["پیشخدمت مرد", "پیشخدمت زن", "داروساز"],
+          "options": [
+            "پیشخدمت مرد",
+            "پیشخدمت زن",
+            "داروساز"
+          ],
           "group": "Jobs"
         },
         {
@@ -313,7 +370,11 @@
           "translation": "پیشخدمت زن",
           "question": "معنی waitress چیست؟",
           "hint": "مثل waiter، ولی برای زن",
-          "options": ["پیشخدمت مرد", "پیشخدمت زن", "فروشنده"],
+          "options": [
+            "پیشخدمت مرد",
+            "پیشخدمت زن",
+            "فروشنده"
+          ],
           "group": "Jobs"
         },
         {
@@ -324,7 +385,11 @@
           "translation": "گارسون / مسئول سرو غذا",
           "question": "معنی server چیست؟",
           "hint": "کسی که غذا را در رستوران سرو می‌کند",
-          "options": ["پیشخدمت زن", "گارسون / مسئول سرو غذا", "پزشک"],
+          "options": [
+            "پیشخدمت زن",
+            "گارسون / مسئول سرو غذا",
+            "پزشک"
+          ],
           "group": "Jobs"
         },
         {
@@ -335,7 +400,11 @@
           "translation": "Texas",
           "question": "کدام واژه نام یک ایالت در آمریکا است؟",
           "hint": "یک ایالت آمریکا",
-          "options": ["Texas", "Paris", "Austin"]
+          "options": [
+            "Texas",
+            "Paris",
+            "Austin"
+          ]
         },
         {
           "id": "evolve-1-l01-04-mc-10",
@@ -345,7 +414,11 @@
           "translation": "حرف بزرگ",
           "question": "معنی capital letter چیست؟",
           "hint": "حرف اول اسم‌های خاص و جمله‌ها",
-          "options": ["حرف بزرگ", "نقطه", "کلید"]
+          "options": [
+            "حرف بزرگ",
+            "نقطه",
+            "کلید"
+          ]
         },
         {
           "id": "evolve-1-l01-04-mc-11",
@@ -355,7 +428,11 @@
           "translation": "پروفایل شخصی",
           "question": "معنی personal profile چیست؟",
           "hint": "نوشتن اطلاعات درباره‌ی خودت",
-          "options": ["پروفایل شخصی", "شماره اتاق", "کلید"]
+          "options": [
+            "پروفایل شخصی",
+            "شماره اتاق",
+            "کلید"
+          ]
         },
         {
           "id": "evolve-1-l01-04-mc-12",
@@ -365,7 +442,11 @@
           "translation": "United States",
           "question": "کدام واژه به معنی «ایالات متحده» است؟",
           "hint": "یک کشور در آمریکای شمالی",
-          "options": ["United States", "Mexico", "Canada"]
+          "options": [
+            "United States",
+            "Mexico",
+            "Canada"
+          ]
         },
         {
           "id": "evolve-1-l01-04-nb2-mc-01",
@@ -375,7 +456,11 @@
           "translation": "اما",
           "question": "معنی but چیست؟",
           "hint": "but = اما",
-          "options": ["اما", "هم، همچنین", "هنر"]
+          "options": [
+            "اما",
+            "هم، همچنین",
+            "هنر"
+          ]
         },
         {
           "id": "evolve-1-l01-04-nb2-mc-02",
@@ -385,7 +470,11 @@
           "translation": "زندگی کردن",
           "question": "معنی live چیست؟",
           "hint": "live = زندگی کردن",
-          "options": ["زندگی کردن", "کلید", "خانه"]
+          "options": [
+            "زندگی کردن",
+            "کلید",
+            "خانه"
+          ]
         },
         {
           "id": "evolve-1-l01-04-nb2-mc-03",
@@ -395,7 +484,11 @@
           "translation": "هنر",
           "question": "معنی art چیست؟",
           "hint": "art = هنر",
-          "options": ["هنر", "شغل", "شهر"]
+          "options": [
+            "هنر",
+            "شغل",
+            "شهر"
+          ]
         },
         {
           "id": "evolve-1-l01-04-nb2-mc-04",
@@ -405,7 +498,11 @@
           "translation": "هم، همچنین",
           "question": "معنی too چیست؟",
           "hint": "too = هم",
-          "options": ["اما", "هم، همچنین", "آهسته"]
+          "options": [
+            "اما",
+            "هم، همچنین",
+            "آهسته"
+          ]
         }
       ]
     },
@@ -860,6 +957,30 @@
       {
         "en": "I'm Peruvian, but my home is in the United States.",
         "fa": "من اهل پرو هستم، اما خانه‌ام در ایالات متحده است."
+      },
+      {
+        "en": "I'm from Paris. I live in Paris.",
+        "fa": "من اهل پاریس هستم. من در پاریس زندگی می‌کنم."
+      },
+      {
+        "en": "I'm Akemi. I'm a student.",
+        "fa": "من آکمی هستم. من دانشجو هستم."
+      },
+      {
+        "en": "I'm Frank. I'm not a student. I live in Texas.",
+        "fa": "من فرانک هستم. من دانشجو نیستم. من در تگزاس زندگی می‌کنم."
+      },
+      {
+        "en": "Hey! How are you?",
+        "fa": "سلام! حالت چطور است؟"
+      },
+      {
+        "en": "People say, I'm from Paris.",
+        "fa": "مردم می‌گویند: من اهل پاریس هستم."
+      },
+      {
+        "en": "People also say, I live in Paris.",
+        "fa": "مردم همچنین می‌گویند: من در پاریس زندگی می‌کنم."
       }
     ],
     "grammar": [

@@ -385,21 +385,6 @@
           "group": "Countries"
         },
         {
-          "id": "evolve-1-l02-pn-002",
-          "expected_answer": "You're not from Mexico City.",
-          "explanation": "در منفی‌سازی، ساختار فعل بودن را حفظ کن.",
-          "time_limit": 60,
-          "translation": "تو اهل مکزیکوسیتی نیستی.",
-          "question": "جمله را منفی کن: You're from Mexico City.",
-          "accepted_answers": [
-            "You are not from Mexico City.",
-            "You aren't from Mexico City."
-          ],
-          "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "negative",
-          "group": "Countries"
-        },
-        {
           "id": "evolve-1-l02-pn-003",
           "expected_answer": "I'm not from Lima.",
           "explanation": "جایگاه not را در جملهٔ منفی پیدا کن.",
@@ -408,21 +393,6 @@
           "question": "جمله را منفی کن: I'm from Lima.",
           "accepted_answers": [
             "I am not from Lima."
-          ],
-          "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "negative",
-          "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-pn-005",
-          "expected_answer": "You're not American.",
-          "explanation": "فعل بودن باید در جمله باقی بماند.",
-          "time_limit": 60,
-          "translation": "تو آمریکایی نیستی.",
-          "question": "جمله را منفی کن: You're American.",
-          "accepted_answers": [
-            "You are not American.",
-            "You aren't American."
           ],
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
           "operation": "negative",
@@ -448,17 +418,6 @@
           "time_limit": 60,
           "translation": "آیا تو اهل توکیو هستی؟",
           "question": "جمله را سؤالی کن: You're from Tokyo.",
-          "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
-          "operation": "question",
-          "group": "Countries"
-        },
-        {
-          "id": "evolve-1-l02-pn-008",
-          "expected_answer": "Are you from Mexico City?",
-          "explanation": "برای ساخت سؤال، جای فعل بودن و فاعل را تغییر بده.",
-          "time_limit": 60,
-          "translation": "آیا تو اهل مکزیکوسیتی هستی؟",
-          "question": "جمله را سؤالی کن: You're from Mexico City.",
           "hint": "به نوع تغییری که خواسته شده و جایگاه فعل بودن توجه کن.",
           "operation": "question",
           "group": "Countries"
@@ -4312,6 +4271,70 @@
       {
         "en": "I'm from Madrid, in Spain.",
         "fa": "من اهل مادرید، در اسپانیا هستم."
+      },
+      {
+        "en": "Are you from Quito?",
+        "fa": "آیا تو اهل کیتو هستی؟"
+      },
+      {
+        "en": "Wow! You're from Rio!",
+        "fa": "وای! تو اهل ریو هستی!"
+      },
+      {
+        "en": "Are you from New York?",
+        "fa": "آیا تو اهل نیویورک هستی؟"
+      },
+      {
+        "en": "No, I'm not. I'm from Chicago.",
+        "fa": "نه، نیستم. من اهل شیکاگو هستم."
+      },
+      {
+        "en": "I'm from the United States.",
+        "fa": "من اهل ایالات متحده هستم."
+      },
+      {
+        "en": "I'm Alex.",
+        "fa": "من الکس هستم."
+      },
+      {
+        "en": "I'm from Orlando.",
+        "fa": "من اهل اورلاندو هستم."
+      },
+      {
+        "en": "I'm Spanish.",
+        "fa": "من اسپانیایی هستم."
+      },
+      {
+        "en": "Are you a student?",
+        "fa": "آیا تو دانشجو هستی؟"
+      },
+      {
+        "en": "Am I in room 6B?",
+        "fa": "آیا من در اتاق 6B هستم؟"
+      },
+      {
+        "en": "Hi, I'm Gabi. I'm Brazilian. I'm from São Paulo.",
+        "fa": "سلام، من گابی هستم. من برزیلی هستم. من اهل سائوپائولو هستم."
+      },
+      {
+        "en": "Hi! I'm Yessica. I'm Peruvian, and I'm from Callao.",
+        "fa": "سلام! من یسیکا هستم. من پرویی هستم و اهل کایائو هستم."
+      },
+      {
+        "en": "Hello! I'm Daniel. I'm from Madrid, in Spain.",
+        "fa": "سلام! من دانیل هستم. من اهل مادرید، در اسپانیا هستم."
+      },
+      {
+        "en": "You're from Brazil! Wow! My name is Karina, and I'm from Colombia.",
+        "fa": "تو اهل برزیل هستی! وای! اسم من کارینا است و من اهل کلمبیا هستم."
+      },
+      {
+        "en": "My name is Antonio. I'm from Mexico City – in Mexico!",
+        "fa": "اسم من آنتونیو است. من اهل مکزیکوسیتی هستم، در مکزیک!"
+      },
+      {
+        "en": "Hi, I'm Max. I'm Russian. I'm from Moscow.",
+        "fa": "سلام، من مکس هستم. من روسی هستم. من اهل مسکو هستم."
       }
     ],
     "grammar": [
@@ -4378,6 +4401,10 @@
           {
             "en": "Are you from Tokyo?",
             "fa": "آیا تو اهل توکیو هستی؟"
+          },
+          {
+            "en": "Am I in room 6B?",
+            "fa": "آیا من در اتاق 6B هستم؟"
           }
         ]
       },
@@ -4468,7 +4495,7 @@
             "fa": "تونی: سلام، من تونی هستم. اهل لیما هستم."
           },
           {
-            "en": "Ana: You're Peruvian. I'm Brazilian.",
+            "en": "Ana: Oh, you're Peruvian. I'm Brazilian.",
             "fa": "آنا: تو اهل پرو هستی. من برزیلی هستم."
           },
           {
@@ -4480,7 +4507,7 @@
             "fa": "آنا: نه، نیستم. من اهل ریو یا سائوپائولو نیستم."
           },
           {
-            "en": "Tony: Are you from Brasilia?",
+            "en": "Tony: Are you from Brasília?",
             "fa": "تونی: اهل برازیلیا هستی؟"
           },
           {
@@ -4563,7 +4590,7 @@
             "fa": "اهل میامی در ایالات متحده هستم. من آمریکایی هستم."
           },
           {
-            "en": "I'm from Seoul in South Korea. I'm South Korean.",
+            "en": "I'm from Seoul in South Korea. I'm Korean.",
             "fa": "اهل سئول در کره جنوبی هستم. من اهل کره جنوبی هستم."
           },
           {
@@ -4581,6 +4608,43 @@
           {
             "en": "I'm French. I'm from Paris in France.",
             "fa": "من فرانسوی هستم. اهل پاریس در فرانسه هستم."
+          }
+        ]
+      },
+      {
+        "title": "گفت‌وگو: چت پروژهٔ مدرسهٔ بین‌المللی",
+        "lines": [
+          {
+            "en": "Gabi: Hi, I'm Gabi. I'm Brazilian. I'm from São Paulo.",
+            "fa": "گابی: سلام، من گابی هستم. من برزیلی هستم. من اهل سائوپائولو هستم."
+          },
+          {
+            "en": "Karina: You're from Brazil! Wow! My name is Karina, and I'm from Colombia.",
+            "fa": "کارینا: تو اهل برزیل هستی! وای! اسم من کارینا است و من اهل کلمبیا هستم."
+          },
+          {
+            "en": "Gabi: Are you from Bogotá?",
+            "fa": "گابی: آیا تو اهل بوگوتا هستی؟"
+          },
+          {
+            "en": "Karina: No, I'm not. I'm from Medellín.",
+            "fa": "کارینا: نه، نیستم. من اهل مدلین هستم."
+          },
+          {
+            "en": "Antonio: My name is Antonio. I'm from Mexico City – in Mexico!",
+            "fa": "آنتونیو: اسم من آنتونیو است. من اهل مکزیکوسیتی هستم، در مکزیک!"
+          },
+          {
+            "en": "Max: Hi, I'm Max. I'm Russian. I'm from Moscow.",
+            "fa": "مکس: سلام، من مکس هستم. من روسی هستم. من اهل مسکو هستم."
+          },
+          {
+            "en": "Antonio: Hi, Max. Are you a teacher?",
+            "fa": "آنتونیو: سلام، مکس. آیا تو معلم هستی؟"
+          },
+          {
+            "en": "Max: No, I'm not a teacher! I'm a student.",
+            "fa": "مکس: نه، من معلم نیستم! من دانشجو هستم."
           }
         ]
       }
