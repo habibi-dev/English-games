@@ -69,7 +69,10 @@
           "time_limit": 60,
           "translation": "شخص موردعلاقه تو کیست؟",
           "question": "شخص موردعلاقه تو کیست؟",
-          "hint": "favorite = موردعلاقه"
+          "hint": "favorite = موردعلاقه",
+          "accepted_answers": [
+            "who's your favorite person?"
+          ]
         },
         {
           "id": "evolve-1-l01-05-tr-07",

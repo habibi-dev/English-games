@@ -20,7 +20,7 @@
                   "id": "lesson-01",
                   "title": "Before starting",
                   "file": "content/evolve-1/lesson-01.json",
-                  "version": "50"
+                  "version": "51"
                 },
                 {
                   "id": "lesson-01-01",
@@ -44,13 +44,13 @@
                   "id": "lesson-01-04",
                   "title": "Lesson 1.4",
                   "file": "content/evolve-1/lesson-01-04.json",
-                  "version": "4"
+                  "version": "5"
                 },
                 {
                   "id": "lesson-01-05",
                   "title": "Lesson 1.5",
                   "file": "content/evolve-1/lesson-01-05.json",
-                  "version": "3"
+                  "version": "4"
                 }
               ]
             }

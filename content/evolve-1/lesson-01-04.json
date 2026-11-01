@@ -228,7 +228,10 @@
           "translation": "او آمریکایی است.",
           "question": "جملهٔ اشتباه را اصلاح کن.",
           "hint": "به فعل بعد از She توجه کن.",
-          "incorrect_sentence": "She are American."
+          "incorrect_sentence": "She are American.",
+          "accepted_answers": [
+            "she's American."
+          ]
         },
         {
           "id": "evolve-1-l01-04-gc-02",
