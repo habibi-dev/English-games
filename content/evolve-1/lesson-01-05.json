@@ -82,6 +82,15 @@
           "translation": "من هم همین‌طور.",
           "question": "من هم همین‌طور.",
           "hint": "too = هم"
+        },
+        {
+          "id": "evolve-1-l01-05-tr-08",
+          "expected_answer": "I also speak English.",
+          "explanation": "also قبل از فعل اصلی speak می‌آید.",
+          "time_limit": 60,
+          "translation": "من انگلیسی هم صحبت می‌کنم.",
+          "question": "من انگلیسی هم صحبت می‌کنم.",
+          "hint": "speak = صحبت کردن؛ راهنما: also قبل از فعل اصلی می‌آید."
         }
       ]
     },
@@ -150,6 +159,39 @@
             "later.",
             "See"
           ]
+        },
+        {
+          "id": "evolve-1-l01-05-sb-02",
+          "expected_answer": "She is also a student.",
+          "explanation": "also بعد از فعل be می‌آید: She is also a student.",
+          "time_limit": 60,
+          "translation": "او هم دانشجو است.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "student = دانشجو. راهنما: also بعد از فعل be می‌آید.",
+          "word_bank": [
+            "a",
+            "student.",
+            "is",
+            "also",
+            "She"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-05-sb-03",
+          "expected_answer": "He is also an actor.",
+          "explanation": "also بعد از فعل be می‌آید: He is also an actor.",
+          "time_limit": 60,
+          "translation": "او هم بازیگر است.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "actor = بازیگر. راهنما: also بعد از فعل be می‌آید.",
+          "word_bank": [
+            "an",
+            "actor.",
+            "also",
+            "He",
+            "is"
+          ],
+          "group": "Jobs"
         }
       ]
     },
@@ -248,6 +290,34 @@
             "favorite",
             "nice"
           ]
+        },
+        {
+          "id": "evolve-1-l01-05-mc-06",
+          "expected_answer": "کنار در",
+          "explanation": "By the door یعنی کنار در؛ by برای گفتن جای چیزی به کار می‌رود.",
+          "time_limit": 60,
+          "translation": "کنار در",
+          "question": "معنی «By the door» چیست؟",
+          "hint": "by = حرف اضافهٔ مکان؛ معنی آن نزدیک بودن است.",
+          "options": [
+            "پشت در",
+            "کنار در",
+            "داخل در"
+          ]
+        },
+        {
+          "id": "evolve-1-l01-05-mc-07",
+          "expected_answer": "She is also a student.",
+          "explanation": "also بعد از فعل be می‌آید: She is also a student.",
+          "time_limit": 60,
+          "translation": "او هم دانشجو است.",
+          "question": "کدام جمله درست است؟",
+          "hint": "also بعد از فعل be می‌آید.",
+          "options": [
+            "She also is a student.",
+            "She is also a student.",
+            "She is a also student."
+          ]
         }
       ]
     },
@@ -281,6 +351,260 @@
           "explanation": "fine و OK تقریباً هم‌معنی هستند.",
           "hint": "fine = خوب",
           "translation": "باشه"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-10",
+          "question": "Synonym: front desk clerk",
+          "expected_answer": "receptionist",
+          "explanation": "front desk clerk و receptionist هر دو مسئول پذیرش هستند.",
+          "hint": "front desk clerk = مسئول پذیرش",
+          "translation": "مسئول پذیرش",
+          "time_limit": 60,
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-11",
+          "question": "Synonym: receptionist",
+          "expected_answer": "front desk clerk",
+          "explanation": "receptionist و front desk clerk هر دو مسئول پذیرش هستند.",
+          "hint": "receptionist = مسئول پذیرش",
+          "translation": "مسئول پذیرش",
+          "time_limit": 60,
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-12",
+          "question": "Synonym: seller",
+          "expected_answer": "salesperson",
+          "explanation": "seller و salesperson هر دو به فروشنده گفته می‌شود.",
+          "hint": "seller = فروشنده",
+          "translation": "فروشنده",
+          "time_limit": 60,
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-13",
+          "question": "Opposite: seller",
+          "expected_answer": "buyer",
+          "explanation": "فروشنده و خریدار نقش‌های مقابل در یک معامله‌اند، نه متضاد دقیق لغوی.",
+          "hint": "seller = فروشنده",
+          "translation": "خریدار",
+          "time_limit": 60,
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-14",
+          "question": "Opposite: buyer",
+          "expected_answer": "seller",
+          "explanation": "خریدار و فروشنده نقش‌های مقابل در یک معامله‌اند، نه متضاد دقیق لغوی.",
+          "hint": "buyer = خریدار",
+          "translation": "فروشنده",
+          "time_limit": 60,
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-15",
+          "question": "Synonym: occupation",
+          "expected_answer": "job",
+          "explanation": "occupation و job هر دو به معنی شغل هستند.",
+          "hint": "occupation = شغل / حرفه",
+          "translation": "شغل",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-16",
+          "question": "Synonym: snap a picture",
+          "expected_answer": "take a picture",
+          "explanation": "snap a picture و take a picture هر دو یعنی عکس گرفتن.",
+          "hint": "snap a picture = عکس گرفتن",
+          "translation": "عکس گرفتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-17",
+          "question": "Synonym: take a picture",
+          "expected_answer": "snap a picture",
+          "explanation": "take a picture و snap a picture هر دو یعنی عکس گرفتن.",
+          "hint": "take a picture = عکس گرفتن",
+          "translation": "عکس گرفتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-18",
+          "question": "Synonym: inhabit",
+          "expected_answer": "live in",
+          "explanation": "inhabit و live in هر دو یعنی جایی زندگی کردن.",
+          "hint": "inhabit = سکونت داشتن",
+          "translation": "سکونت داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-19",
+          "question": "Synonym: live in",
+          "expected_answer": "inhabit",
+          "explanation": "live in و inhabit هر دو یعنی جایی زندگی کردن.",
+          "hint": "live in = سکونت داشتن",
+          "translation": "سکونت داشتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-20",
+          "question": "Synonym: draw",
+          "expected_answer": "sketch",
+          "explanation": "draw و sketch هر دو به کشیدن تصویر اشاره دارند.",
+          "hint": "draw = نقاشی کشیدن",
+          "translation": "طرح اولیه کشیدن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-21",
+          "question": "Synonym: sketch",
+          "expected_answer": "draw",
+          "explanation": "sketch و draw هر دو به کشیدن تصویر اشاره دارند.",
+          "hint": "sketch = طرح اولیه کشیدن",
+          "translation": "نقاشی کشیدن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-22",
+          "question": "Synonym: say again",
+          "expected_answer": "repeat",
+          "explanation": "say again و repeat هر دو یعنی دوباره گفتن چیزی.",
+          "hint": "say again = دوباره گفتن",
+          "translation": "تکرار کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-23",
+          "question": "Synonym: hold on",
+          "expected_answer": "wait",
+          "explanation": "hold on و wait هر دو یعنی کمی صبر کردن.",
+          "hint": "hold on = صبر کن",
+          "translation": "صبر کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-24",
+          "question": "Synonym: wait",
+          "expected_answer": "hold on",
+          "explanation": "wait و hold on هر دو یعنی کمی صبر کردن.",
+          "hint": "wait = صبر کردن",
+          "translation": "صبر کن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-25",
+          "question": "Synonym: a moment",
+          "expected_answer": "one moment",
+          "explanation": "a moment و one moment هر دو یعنی یک لحظه.",
+          "hint": "a moment = یک لحظه",
+          "translation": "یک لحظه",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-26",
+          "question": "Synonym: however",
+          "expected_answer": "but",
+          "explanation": "however و but هر دو برای نشان دادن تفاوت دو ایده به کار می‌روند.",
+          "hint": "however = با این حال",
+          "translation": "اما",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-27",
+          "question": "Synonym: similar",
+          "expected_answer": "the same",
+          "explanation": "similar و the same نزدیک‌اند، اما کاملاً یکی نیستند.",
+          "hint": "similar = مشابه",
+          "translation": "یکسان / همان",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-28",
+          "question": "Synonym: institute",
+          "expected_answer": "college",
+          "explanation": "institute و college هر دو یک مؤسسهٔ آموزشی هستند.",
+          "hint": "institute = مؤسسه",
+          "translation": "کالج / دانشکده",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-29",
+          "question": "Synonym: writer",
+          "expected_answer": "author",
+          "explanation": "writer و author هر دو به معنی نویسنده هستند.",
+          "hint": "writer = نویسنده",
+          "translation": "نویسنده",
+          "time_limit": 60,
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-30",
+          "question": "Synonym: author",
+          "expected_answer": "writer",
+          "explanation": "author و writer هر دو به معنی نویسنده هستند.",
+          "hint": "author = نویسنده",
+          "translation": "نویسنده",
+          "time_limit": 60,
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-31",
+          "question": "Synonym: actor",
+          "expected_answer": "performer",
+          "explanation": "actor و performer هر دو کسی هستند که روی صحنه اجرا می‌کند.",
+          "hint": "actor = بازیگر",
+          "translation": "اجراکننده",
+          "time_limit": 60,
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-32",
+          "question": "Synonym: performer",
+          "expected_answer": "actor",
+          "explanation": "performer و actor هر دو کسی هستند که روی صحنه اجرا می‌کند.",
+          "hint": "performer = اجراکننده",
+          "translation": "بازیگر",
+          "time_limit": 60,
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-33",
+          "question": "Synonym: cook",
+          "expected_answer": "chef",
+          "explanation": "cook و chef هر دو کسی هستند که غذا درست می‌کند.",
+          "hint": "cook = آشپز",
+          "translation": "سرآشپز",
+          "time_limit": 60,
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-34",
+          "question": "Synonym: cooker",
+          "expected_answer": "stove",
+          "explanation": "cooker و stove هر دو وسیله‌ای برای پختن غذا هستند.",
+          "hint": "cooker = وسیله آشپزی",
+          "translation": "اجاق گاز",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-35",
+          "question": "Synonym: stove",
+          "expected_answer": "cooker",
+          "explanation": "stove و cooker هر دو وسیله‌ای برای پختن غذا هستند.",
+          "hint": "stove = اجاق گاز",
+          "translation": "وسیله آشپزی",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-36",
+          "question": "Synonym: visitor",
+          "expected_answer": "guest",
+          "explanation": "visitor و guest هر دو کسی هستند که به جایی می‌آید.",
+          "hint": "visitor = بازدیدکننده",
+          "translation": "مهمان",
+          "time_limit": 60,
+          "group": "Jobs"
         }
       ]
     },
@@ -390,6 +714,297 @@
           "question": "nice to meet you",
           "hint": "از آشنایی با تو خوشحالم",
           "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-11",
+          "expected_answer": "front desk clerk",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مسئول پذیرش",
+          "question": "front desk clerk",
+          "hint": "مسئول پذیرش",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-12",
+          "expected_answer": "receptionist",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مسئول پذیرش",
+          "question": "receptionist",
+          "hint": "مسئول پذیرش",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-13",
+          "expected_answer": "seller",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "فروشنده",
+          "question": "seller",
+          "hint": "فروشنده",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-14",
+          "expected_answer": "buyer",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "خریدار",
+          "question": "buyer",
+          "hint": "خریدار",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-15",
+          "expected_answer": "writer",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "نویسنده",
+          "question": "writer",
+          "hint": "نویسنده",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-16",
+          "expected_answer": "author",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "نویسنده",
+          "question": "author",
+          "hint": "نویسنده",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-17",
+          "expected_answer": "visitor",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "بازدیدکننده",
+          "question": "visitor",
+          "hint": "بازدیدکننده",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-18",
+          "expected_answer": "actor",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "بازیگر",
+          "question": "actor",
+          "hint": "بازیگر",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-19",
+          "expected_answer": "performer",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "اجراکننده",
+          "question": "performer",
+          "hint": "اجراکننده",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-20",
+          "expected_answer": "banker",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "بانکدار",
+          "question": "banker",
+          "hint": "بانکدار",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-21",
+          "expected_answer": "cook",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "آشپز",
+          "question": "cook",
+          "hint": "آشپز",
+          "presentation": "audio",
+          "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-22",
+          "expected_answer": "cooker",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "وسیله آشپزی",
+          "question": "cooker",
+          "hint": "وسیله آشپزی",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-23",
+          "expected_answer": "stove",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "اجاق گاز",
+          "question": "stove",
+          "hint": "اجاق گاز",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-24",
+          "expected_answer": "snap a picture",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "عکس گرفتن",
+          "question": "snap a picture",
+          "hint": "عکس گرفتن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-25",
+          "expected_answer": "take a picture",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "عکس گرفتن",
+          "question": "take a picture",
+          "hint": "عکس گرفتن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-26",
+          "expected_answer": "inhabit",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "سکونت داشتن",
+          "question": "inhabit",
+          "hint": "سکونت داشتن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-27",
+          "expected_answer": "live in",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "سکونت داشتن",
+          "question": "live in",
+          "hint": "سکونت داشتن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-28",
+          "expected_answer": "draw",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "نقاشی کشیدن",
+          "question": "draw",
+          "hint": "نقاشی کشیدن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-29",
+          "expected_answer": "sketch",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "طرح اولیه کشیدن / طرح اولیه",
+          "question": "sketch",
+          "hint": "طرح اولیه کشیدن / طرح اولیه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-30",
+          "expected_answer": "say again",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "دوباره گفتن",
+          "question": "say again",
+          "hint": "دوباره گفتن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-31",
+          "expected_answer": "hold on",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "صبر کن",
+          "question": "hold on",
+          "hint": "صبر کن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-32",
+          "expected_answer": "wait",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "صبر کردن",
+          "question": "wait",
+          "hint": "صبر کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-33",
+          "expected_answer": "a moment",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "یک لحظه",
+          "question": "a moment",
+          "hint": "یک لحظه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-34",
+          "expected_answer": "by",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "کنار / در نزدیکی",
+          "question": "by",
+          "hint": "کنار / در نزدیکی",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-35",
+          "expected_answer": "similar",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مشابه",
+          "question": "similar",
+          "hint": "مشابه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-36",
+          "expected_answer": "however",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "با این حال",
+          "question": "however",
+          "hint": "با این حال",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-37",
+          "expected_answer": "institute",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مؤسسه",
+          "question": "institute",
+          "hint": "مؤسسه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-38",
+          "expected_answer": "occupation",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "شغل / حرفه",
+          "question": "occupation",
+          "hint": "شغل / حرفه",
+          "presentation": "audio"
         }
       ]
     }
@@ -445,6 +1060,157 @@
         "word": "favorite",
         "ipa": "/ˈfeɪvərɪt/",
         "meaning": "موردعلاقه"
+      },
+      {
+        "word": "front desk clerk",
+        "ipa": "/ˌfrʌnt ˈdesk klɜːrk/",
+        "meaning": "مسئول پذیرش",
+        "category": "Jobs"
+      },
+      {
+        "word": "receptionist",
+        "ipa": "/rɪˈsepʃənɪst/",
+        "meaning": "مسئول پذیرش",
+        "category": "Jobs"
+      },
+      {
+        "word": "seller",
+        "ipa": "/ˈselər/",
+        "meaning": "فروشنده",
+        "category": "Jobs"
+      },
+      {
+        "word": "buyer",
+        "ipa": "/ˈbaɪər/",
+        "meaning": "خریدار",
+        "category": "Jobs"
+      },
+      {
+        "word": "writer",
+        "ipa": "/ˈraɪtər/",
+        "meaning": "نویسنده",
+        "category": "Jobs"
+      },
+      {
+        "word": "author",
+        "ipa": "/ˈɔːθər/",
+        "meaning": "نویسنده",
+        "category": "Jobs"
+      },
+      {
+        "word": "visitor",
+        "ipa": "/ˈvɪzɪtər/",
+        "meaning": "بازدیدکننده",
+        "category": "Jobs"
+      },
+      {
+        "word": "actor",
+        "ipa": "/ˈæktər/",
+        "meaning": "بازیگر",
+        "category": "Jobs"
+      },
+      {
+        "word": "performer",
+        "ipa": "/pərˈfɔːrmər/",
+        "meaning": "اجراکننده",
+        "category": "Jobs"
+      },
+      {
+        "word": "banker",
+        "ipa": "/ˈbæŋkər/",
+        "meaning": "بانکدار",
+        "category": "Jobs"
+      },
+      {
+        "word": "cook",
+        "ipa": "/kʊk/",
+        "meaning": "آشپز",
+        "category": "Jobs"
+      },
+      {
+        "word": "cooker",
+        "ipa": "/ˈkʊkər/",
+        "meaning": "وسیله آشپزی"
+      },
+      {
+        "word": "stove",
+        "ipa": "/stoʊv/",
+        "meaning": "اجاق گاز"
+      },
+      {
+        "word": "snap a picture",
+        "ipa": "/snæp ə ˈpɪktʃər/",
+        "meaning": "عکس گرفتن"
+      },
+      {
+        "word": "take a picture",
+        "ipa": "/teɪk ə ˈpɪktʃər/",
+        "meaning": "عکس گرفتن"
+      },
+      {
+        "word": "inhabit",
+        "ipa": "/ɪnˈhæbɪt/",
+        "meaning": "سکونت داشتن"
+      },
+      {
+        "word": "live in",
+        "ipa": "/lɪv ɪn/",
+        "meaning": "سکونت داشتن"
+      },
+      {
+        "word": "draw",
+        "ipa": "/drɔː/",
+        "meaning": "نقاشی کشیدن"
+      },
+      {
+        "word": "sketch",
+        "ipa": "/sketʃ/",
+        "meaning": "طرح اولیه کشیدن / طرح اولیه"
+      },
+      {
+        "word": "say again",
+        "ipa": "/seɪ əˈɡen/",
+        "meaning": "دوباره گفتن"
+      },
+      {
+        "word": "hold on",
+        "ipa": "/hoʊld ɑːn/",
+        "meaning": "صبر کن"
+      },
+      {
+        "word": "wait",
+        "ipa": "/weɪt/",
+        "meaning": "صبر کردن"
+      },
+      {
+        "word": "a moment",
+        "ipa": "/ə ˈmoʊmənt/",
+        "meaning": "یک لحظه"
+      },
+      {
+        "word": "by",
+        "ipa": "/baɪ/",
+        "meaning": "کنار / در نزدیکی"
+      },
+      {
+        "word": "similar",
+        "ipa": "/ˈsɪmələr/",
+        "meaning": "مشابه"
+      },
+      {
+        "word": "however",
+        "ipa": "/haʊˈevər/",
+        "meaning": "با این حال"
+      },
+      {
+        "word": "institute",
+        "ipa": "/ˈɪnstɪtuːt/",
+        "meaning": "مؤسسه"
+      },
+      {
+        "word": "occupation",
+        "ipa": "/ˌɑːkjuˈpeɪʃn/",
+        "meaning": "شغل / حرفه"
       }
     ],
     "sentences": [
@@ -491,9 +1257,50 @@
       {
         "en": "I'm from Gilan.",
         "fa": "من اهل گیلان هستم."
+      },
+      {
+        "en": "She is also a student.",
+        "fa": "او هم دانشجو است."
+      },
+      {
+        "en": "He is also an actor.",
+        "fa": "او هم بازیگر است."
+      },
+      {
+        "en": "I also speak English.",
+        "fa": "من انگلیسی هم صحبت می‌کنم."
       }
     ],
-    "grammar": [],
+    "grammar": [
+      {
+        "title": "اسم‌های ساخته‌شده با -er و -or",
+        "explanation": "با اضافه کردن -er یا -or به بعضی فعل‌ها، اسم کسی ساخته می‌شود که آن کار را انجام می‌دهد: visit → visitor (بازدیدکننده)، act → actor (بازیگر)، bank → banker (بانکدار)، write → writer (نویسنده). این یک الگوی رایج است، نه قانونی که بتوان آن را بدون استثنا برای همه فعل‌ها به کار برد؛ پس هر اسم را جداگانه یاد بگیر. توجه: cooker یعنی «وسیله آشپزی»، نه شخص آشپز؛ برای شخص آشپز از cook استفاده می‌کنیم.",
+        "examples": []
+      },
+      {
+        "title": "کاربرد also",
+        "explanation": "also یعنی «هم» یا «همچنین». جایگاه آن به نوع فعل بستگی دارد: قبل از فعل اصلی می‌آید (I also speak English.) و بعد از فعل to be می‌آید (She is also a student.).",
+        "examples": [
+          {
+            "en": "I also speak English.",
+            "fa": "من انگلیسی هم صحبت می‌کنم."
+          },
+          {
+            "en": "She is also a student.",
+            "fa": "او هم دانشجو است."
+          },
+          {
+            "en": "He is also an actor.",
+            "fa": "او هم بازیگر است."
+          }
+        ]
+      },
+      {
+        "title": "کاربرد by (کنار / نزدیک)",
+        "explanation": "by یعنی «کنار» یا «نزدیک» و برای گفتن محل یک چیز به کار می‌رود. مثلاً By the door یعنی «کنار در». بعد از by جای چیزی را می‌گوییم که به آن نزدیک است.",
+        "examples": []
+      }
+    ],
     "stories": [
       {
         "title": "احوالپرسی: عصر بخیر",
