@@ -605,6 +605,420 @@
           "translation": "مهمان",
           "time_limit": 60,
           "group": "Jobs"
+        },
+        {
+          "id": "evolve-1-l01-05-rel-31",
+          "question": "Synonym: locate",
+          "expected_answer": "find",
+          "explanation": "locate و find هر دو به معنی پیدا کردن هستند.",
+          "hint": "locate = مکان‌یابی، پیدا کردن",
+          "translation": "پیدا کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-32",
+          "question": "Synonym: world",
+          "expected_answer": "globe",
+          "explanation": "world و globe نزدیک‌اند، اما کاملاً یکی نیستند.",
+          "hint": "world = جهان، دنیا",
+          "translation": "کره زمین",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-33",
+          "question": "Synonym: globe",
+          "expected_answer": "world",
+          "explanation": "globe و world نزدیک‌اند، اما کاملاً یکی نیستند.",
+          "hint": "globe = کره زمین",
+          "translation": "جهان، دنیا",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-34",
+          "question": "Synonym: universe",
+          "expected_answer": "world",
+          "explanation": "universe و world مرتبط‌اند، اما universe یعنی کل هستی.",
+          "hint": "universe = کیهان",
+          "translation": "جهان، دنیا",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-35",
+          "question": "Synonym: path",
+          "expected_answer": "road",
+          "explanation": "path و road هر دو به مسیر اشاره دارند.",
+          "hint": "path = مسیر، راه",
+          "translation": "جاده، راه",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-36",
+          "question": "Synonym: saint",
+          "expected_answer": "sacred",
+          "explanation": "saint اسم است؛ sacred صفت مرتبط است، نه مترادف دقیق.",
+          "hint": "saint = قدیس",
+          "translation": "مقدس، متبرک",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-37",
+          "question": "Synonym: holy",
+          "expected_answer": "sacred",
+          "explanation": "holy و sacred نزدیک‌اند و هر دو به معنی مقدس به کار می‌روند.",
+          "hint": "holy = مقدس",
+          "translation": "مقدس، متبرک",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-38",
+          "question": "Opposite: awful",
+          "expected_answer": "great",
+          "explanation": "awful و great متضاد یکدیگرند.",
+          "hint": "awful = وحشتناک",
+          "translation": "عالی، بزرگ",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-39",
+          "question": "Synonym: sales",
+          "expected_answer": "seller",
+          "explanation": "sales و seller به فروش مربوط‌اند، اما مترادف دقیق نیستند.",
+          "hint": "sales = فروش",
+          "translation": "فروشنده",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-40",
+          "question": "Synonym: discount",
+          "expected_answer": "reduction",
+          "explanation": "discount و reduction نزدیک‌اند؛ هر دو به کاهش قیمت اشاره دارند.",
+          "hint": "discount = تخفیف",
+          "translation": "کاهش، تخفیف",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-41",
+          "question": "Synonym: discuss",
+          "expected_answer": "talk",
+          "explanation": "discuss و talk هر دو به گفتگو مربوط‌اند.",
+          "hint": "discuss = بحث کردن",
+          "translation": "صحبت کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-42",
+          "question": "Synonym: debate",
+          "expected_answer": "discuss",
+          "explanation": "debate و discuss هر دو به بحث اشاره دارند.",
+          "hint": "debate = مناظره",
+          "translation": "بحث کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-43",
+          "question": "Synonym: argue",
+          "expected_answer": "debate",
+          "explanation": "argue و debate نزدیک‌اند، اما argue معمولاً بار مشاجره دارد.",
+          "hint": "argue = مشاجره کردن",
+          "translation": "مناظره، بحث",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-44",
+          "question": "Opposite: agree",
+          "expected_answer": "disagree",
+          "explanation": "agree و disagree متضاد یکدیگرند.",
+          "hint": "agree = موافق بودن",
+          "translation": "مخالف بودن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-45",
+          "question": "Opposite: disagree",
+          "expected_answer": "agree",
+          "explanation": "disagree و agree متضاد یکدیگرند.",
+          "hint": "disagree = مخالف بودن",
+          "translation": "موافق بودن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-46",
+          "question": "Synonym: rules",
+          "expected_answer": "regulation",
+          "explanation": "rules و regulation نزدیک‌اند؛ regulation رسمی‌تر است.",
+          "hint": "rules = قوانین",
+          "translation": "مقررات",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-47",
+          "question": "Synonym: regulation",
+          "expected_answer": "rules",
+          "explanation": "regulation و rules نزدیک‌اند؛ rules عمومی‌تر است.",
+          "hint": "regulation = مقررات",
+          "translation": "قوانین",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-48",
+          "question": "Synonym: note",
+          "expected_answer": "comment",
+          "explanation": "note و comment در بعضی کاربردها نزدیک‌اند.",
+          "hint": "note = یادداشت",
+          "translation": "نظر، اظهار نظر",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-49",
+          "question": "Synonym: comment",
+          "expected_answer": "note",
+          "explanation": "comment و note در بعضی کاربردها نزدیک‌اند.",
+          "hint": "comment = نظر",
+          "translation": "یادداشت",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-50",
+          "question": "Synonym: express",
+          "expected_answer": "say",
+          "explanation": "express و say نزدیک‌اند؛ express بیشتر به معنی ابراز کردن است.",
+          "hint": "express = بیان کردن",
+          "translation": "گفتن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-51",
+          "question": "Synonym: learning",
+          "expected_answer": "study",
+          "explanation": "learning و study هر دو به یادگیری مربوط‌اند.",
+          "hint": "learning = یادگیری",
+          "translation": "مطالعه کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-52",
+          "question": "Synonym: environment",
+          "expected_answer": "surroundings",
+          "explanation": "environment و surroundings نزدیک‌اند.",
+          "hint": "environment = محیط",
+          "translation": "محیط اطراف",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-53",
+          "question": "Synonym: surroundings",
+          "expected_answer": "environment",
+          "explanation": "surroundings و environment نزدیک‌اند.",
+          "hint": "surroundings = محیط اطراف",
+          "translation": "محیط",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-54",
+          "question": "Synonym: commence",
+          "expected_answer": "begin",
+          "explanation": "commence و begin مترادف خوبی هستند؛ commence رسمی‌تر است.",
+          "hint": "commence = آغاز کردن",
+          "translation": "آغاز کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-55",
+          "question": "Synonym: progress",
+          "expected_answer": "develop",
+          "explanation": "progress و develop مرتبط‌اند، اما معنای یکسان ندارند.",
+          "hint": "progress = پیشرفت",
+          "translation": "توسعه دادن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-56",
+          "question": "Synonym: develop",
+          "expected_answer": "progress",
+          "explanation": "develop و progress مرتبط‌اند، اما معنای یکسان ندارند.",
+          "hint": "develop = توسعه دادن",
+          "translation": "پیشرفت",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-57",
+          "question": "Synonym: related",
+          "expected_answer": "similar",
+          "explanation": "related و similar نزدیک‌اند، اما معنای یکسان ندارند.",
+          "hint": "related = مرتبط",
+          "translation": "مشابه",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-58",
+          "question": "Synonym: beloved",
+          "expected_answer": "favorite",
+          "explanation": "beloved و favorite نزدیک‌اند؛ beloved بار عاطفی بیشتری دارد.",
+          "hint": "beloved = محبوب",
+          "translation": "موردعلاقه",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-59",
+          "question": "Synonym: role",
+          "expected_answer": "job",
+          "explanation": "role و job نزدیک‌اند، اما مترادف کامل نیستند.",
+          "hint": "role = نقش",
+          "translation": "شغل",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-60",
+          "question": "Synonym: task",
+          "expected_answer": "duty",
+          "explanation": "task و duty نزدیک‌اند، اما معنای یکسان ندارند.",
+          "hint": "task = وظیفه",
+          "translation": "مسئولیت، وظیفه",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-61",
+          "question": "Synonym: duty",
+          "expected_answer": "task",
+          "explanation": "duty و task نزدیک‌اند، اما معنای یکسان ندارند.",
+          "hint": "duty = مسئولیت",
+          "translation": "وظیفه، کار",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-62",
+          "question": "Synonym: past",
+          "expected_answer": "history",
+          "explanation": "past و history مرتبط‌اند، اما history یعنی تاریخ و past یعنی گذشته.",
+          "hint": "past = گذشته",
+          "translation": "تاریخ، تاریخچه",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-63",
+          "question": "Synonym: history",
+          "expected_answer": "past",
+          "explanation": "history و past مرتبط‌اند، اما معنای یکسان ندارند.",
+          "hint": "history = تاریخ",
+          "translation": "گذشته",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-64",
+          "question": "Opposite: useful",
+          "expected_answer": "useless",
+          "explanation": "useful و useless متضاد یکدیگرند.",
+          "hint": "useful = مفید",
+          "translation": "بی‌فایده",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-65",
+          "question": "Opposite: useless",
+          "expected_answer": "useful",
+          "explanation": "useless و useful متضاد یکدیگرند.",
+          "hint": "useless = بی‌فایده",
+          "translation": "مفید",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-66",
+          "question": "Synonym: alter",
+          "expected_answer": "change",
+          "explanation": "alter و change مترادف‌های نزدیک هستند.",
+          "hint": "alter = تغییر دادن",
+          "translation": "تغییر",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-67",
+          "question": "Synonym: research",
+          "expected_answer": "investigation",
+          "explanation": "research و investigation هر دو تحقیق هستند.",
+          "hint": "research = تحقیق",
+          "translation": "بررسی، تحقیق",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-68",
+          "question": "Synonym: investigation",
+          "expected_answer": "research",
+          "explanation": "investigation و research هر دو تحقیق هستند.",
+          "hint": "investigation = بررسی",
+          "translation": "تحقیق، پژوهش",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-69",
+          "question": "Synonym: envision",
+          "expected_answer": "imagine",
+          "explanation": "envision و imagine نزدیک‌اند.",
+          "hint": "envision = مجسم کردن",
+          "translation": "تصور کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-70",
+          "question": "Synonym: party",
+          "expected_answer": "celebration",
+          "explanation": "party و celebration در بعضی کاربردها نزدیک‌اند.",
+          "hint": "party = مهمانی",
+          "translation": "جشن، مراسم",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-71",
+          "question": "Synonym: celebration",
+          "expected_answer": "party",
+          "explanation": "celebration و party در بعضی کاربردها نزدیک‌اند.",
+          "hint": "celebration = جشن",
+          "translation": "مهمانی",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-72",
+          "question": "Synonym: nation",
+          "expected_answer": "country",
+          "explanation": "nation و country نزدیک‌اند، اما مترادف دقیق نیستند.",
+          "hint": "nation = ملت",
+          "translation": "کشور",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-73",
+          "question": "Synonym: home city",
+          "expected_answer": "hometown",
+          "explanation": "home city و hometown نزدیک‌اند؛ hometown رایج‌تر است.",
+          "hint": "home city = شهر اصلی",
+          "translation": "زادگاه",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-74",
+          "question": "Synonym: hometown",
+          "expected_answer": "home city",
+          "explanation": "hometown و home city نزدیک‌اند.",
+          "hint": "hometown = زادگاه",
+          "translation": "شهر اصلی",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-75",
+          "question": "Synonym: invent",
+          "expected_answer": "create",
+          "explanation": "invent و create مرتبط‌اند، اما معنای یکسان ندارند.",
+          "hint": "invent = اختراع کردن",
+          "translation": "خلق کردن",
+          "time_limit": 60
+        },
+        {
+          "id": "evolve-1-l01-05-rel-76",
+          "question": "Synonym: coin",
+          "expected_answer": "invent",
+          "explanation": "coin و invent مرتبط‌اند، اما معنای یکسان ندارند.",
+          "hint": "coin = ابداع واژه",
+          "translation": "اختراع کردن",
+          "time_limit": 60
         }
       ]
     },
@@ -1005,6 +1419,516 @@
           "question": "occupation",
           "hint": "شغل / حرفه",
           "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-39",
+          "expected_answer": "locate",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مکان‌یابی",
+          "question": "locate",
+          "hint": "مکان‌یابی، پیدا کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-40",
+          "expected_answer": "world",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "جهان",
+          "question": "world",
+          "hint": "جهان، دنیا",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-41",
+          "expected_answer": "universe",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "کیهان",
+          "question": "universe",
+          "hint": "کیهان، جهان هستی",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-42",
+          "expected_answer": "globe",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "کره زمین",
+          "question": "globe",
+          "hint": "کره زمین",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-43",
+          "expected_answer": "path",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مسیر",
+          "question": "path",
+          "hint": "مسیر، راه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-44",
+          "expected_answer": "saint",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "قدیس",
+          "question": "saint",
+          "hint": "قدیس",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-45",
+          "expected_answer": "holy",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مقدس",
+          "question": "holy",
+          "hint": "مقدس",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-46",
+          "expected_answer": "sacred",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مقدس",
+          "question": "sacred",
+          "hint": "مقدس، متبرک",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-47",
+          "expected_answer": "awful",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "وحشتناک",
+          "question": "awful",
+          "hint": "وحشتناک، افتضاح",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-48",
+          "expected_answer": "sales",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "فروش",
+          "question": "sales",
+          "hint": "فروش",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-49",
+          "expected_answer": "discount",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "تخفیف",
+          "question": "discount",
+          "hint": "تخفیف",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-50",
+          "expected_answer": "reduction",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "کاهش",
+          "question": "reduction",
+          "hint": "کاهش، تخفیف",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-51",
+          "expected_answer": "discuss",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "بحث کردن",
+          "question": "discuss",
+          "hint": "بحث کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-52",
+          "expected_answer": "debate",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مناظره",
+          "question": "debate",
+          "hint": "مناظره، بحث",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-53",
+          "expected_answer": "argue",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مشاجره کردن",
+          "question": "argue",
+          "hint": "مشاجره کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-54",
+          "expected_answer": "agree",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "موافق بودن",
+          "question": "agree",
+          "hint": "موافق بودن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-55",
+          "expected_answer": "disagree",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مخالف بودن",
+          "question": "disagree",
+          "hint": "مخالف بودن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-56",
+          "expected_answer": "rules",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "قوانین",
+          "question": "rules",
+          "hint": "قوانین",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-57",
+          "expected_answer": "regulation",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مقررات",
+          "question": "regulation",
+          "hint": "مقررات",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-58",
+          "expected_answer": "note",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "یادداشت",
+          "question": "note",
+          "hint": "یادداشت",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-59",
+          "expected_answer": "comment",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "نظر",
+          "question": "comment",
+          "hint": "نظر، اظهار نظر",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-60",
+          "expected_answer": "express",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "بیان کردن",
+          "question": "express",
+          "hint": "بیان کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-61",
+          "expected_answer": "learning",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "یادگیری",
+          "question": "learning",
+          "hint": "یادگیری",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-62",
+          "expected_answer": "environment",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "محیط",
+          "question": "environment",
+          "hint": "محیط",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-63",
+          "expected_answer": "learning environment",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "محیط یادگیری",
+          "question": "learning environment",
+          "hint": "محیط یادگیری",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-64",
+          "expected_answer": "surroundings",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "محیط اطراف",
+          "question": "surroundings",
+          "hint": "محیط اطراف",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-65",
+          "expected_answer": "commence",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "آغاز کردن",
+          "question": "commence",
+          "hint": "آغاز کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-66",
+          "expected_answer": "progress",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "پیشرفت (اسم)",
+          "question": "progress",
+          "hint": "پیشرفت (اسم)",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-67",
+          "expected_answer": "develop",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "توسعه دادن",
+          "question": "develop",
+          "hint": "توسعه دادن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-68",
+          "expected_answer": "about",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "درباره",
+          "question": "about",
+          "hint": "درباره",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-69",
+          "expected_answer": "related",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مرتبط",
+          "question": "related",
+          "hint": "مرتبط",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-70",
+          "expected_answer": "beloved",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "محبوب",
+          "question": "beloved",
+          "hint": "محبوب، عزیز",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-71",
+          "expected_answer": "role",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "نقش",
+          "question": "role",
+          "hint": "نقش",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-72",
+          "expected_answer": "task",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "وظیفه",
+          "question": "task",
+          "hint": "وظیفه، کار",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-73",
+          "expected_answer": "duty",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مسئولیت",
+          "question": "duty",
+          "hint": "مسئولیت، وظیفه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-74",
+          "expected_answer": "past",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "گذشته",
+          "question": "past",
+          "hint": "گذشته",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-75",
+          "expected_answer": "the past",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "گذشته",
+          "question": "the past",
+          "hint": "گذشته",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-76",
+          "expected_answer": "history",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "تاریخ",
+          "question": "history",
+          "hint": "تاریخ، تاریخچه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-77",
+          "expected_answer": "useful",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مفید",
+          "question": "useful",
+          "hint": "مفید",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-78",
+          "expected_answer": "useless",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "بی‌فایده",
+          "question": "useless",
+          "hint": "بی‌فایده",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-79",
+          "expected_answer": "alter",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "تغییر دادن",
+          "question": "alter",
+          "hint": "تغییر دادن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-80",
+          "expected_answer": "research",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "تحقیق",
+          "question": "research",
+          "hint": "تحقیق، پژوهش",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-81",
+          "expected_answer": "investigation",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "بررسی",
+          "question": "investigation",
+          "hint": "بررسی، تحقیق",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-82",
+          "expected_answer": "envision",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مجسم کردن",
+          "question": "envision",
+          "hint": "مجسم کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-83",
+          "expected_answer": "party",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "مهمانی",
+          "question": "party",
+          "hint": "مهمانی، جشن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-84",
+          "expected_answer": "celebration",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "جشن",
+          "question": "celebration",
+          "hint": "جشن، مراسم",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-85",
+          "expected_answer": "nation",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "ملت",
+          "question": "nation",
+          "hint": "ملت، کشور",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-86",
+          "expected_answer": "home city",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "شهر اصلی",
+          "question": "home city",
+          "hint": "شهر اصلی، شهر محل سکونت",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-87",
+          "expected_answer": "hometown",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "زادگاه",
+          "question": "hometown",
+          "hint": "زادگاه",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-88",
+          "expected_answer": "invent",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "اختراع کردن",
+          "question": "invent",
+          "hint": "اختراع کردن",
+          "presentation": "audio"
+        },
+        {
+          "id": "evolve-1-l01-05-dic-89",
+          "expected_answer": "coin",
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه با دقت توجه کن.",
+          "time_limit": 60,
+          "translation": "سکه",
+          "question": "coin",
+          "hint": "سکه",
+          "presentation": "audio"
         }
       ]
     }
@@ -1211,6 +2135,261 @@
         "word": "occupation",
         "ipa": "/ˌɑːkjuˈpeɪʃn/",
         "meaning": "شغل / حرفه"
+      },
+      {
+        "word": "locate",
+        "ipa": "/ˈloʊkeɪt/",
+        "meaning": "مکان‌یابی، پیدا کردن"
+      },
+      {
+        "word": "world",
+        "ipa": "/wɜːrld/",
+        "meaning": "جهان، دنیا"
+      },
+      {
+        "word": "universe",
+        "ipa": "/ˈjuːnɪvɜːrs/",
+        "meaning": "کیهان، جهان هستی"
+      },
+      {
+        "word": "globe",
+        "ipa": "/ɡloʊb/",
+        "meaning": "کره زمین"
+      },
+      {
+        "word": "path",
+        "ipa": "/pæθ/",
+        "meaning": "مسیر، راه"
+      },
+      {
+        "word": "saint",
+        "ipa": "/seɪnt/",
+        "meaning": "قدیس"
+      },
+      {
+        "word": "holy",
+        "ipa": "/ˈhoʊli/",
+        "meaning": "مقدس"
+      },
+      {
+        "word": "sacred",
+        "ipa": "/ˈseɪkrɪd/",
+        "meaning": "مقدس، متبرک"
+      },
+      {
+        "word": "awful",
+        "ipa": "/ˈɔːfəl/",
+        "meaning": "وحشتناک، افتضاح"
+      },
+      {
+        "word": "sales",
+        "ipa": "/seɪlz/",
+        "meaning": "فروش"
+      },
+      {
+        "word": "discount",
+        "ipa": "/ˈdɪskaʊnt/",
+        "meaning": "تخفیف"
+      },
+      {
+        "word": "reduction",
+        "ipa": "/rɪˈdʌkʃn/",
+        "meaning": "کاهش، تخفیف"
+      },
+      {
+        "word": "discuss",
+        "ipa": "/dɪˈskʌs/",
+        "meaning": "بحث کردن"
+      },
+      {
+        "word": "debate",
+        "ipa": "/dɪˈbeɪt/",
+        "meaning": "مناظره، بحث"
+      },
+      {
+        "word": "argue",
+        "ipa": "/ˈɑːrɡjuː/",
+        "meaning": "مشاجره کردن"
+      },
+      {
+        "word": "agree",
+        "ipa": "/əˈɡriː/",
+        "meaning": "موافق بودن"
+      },
+      {
+        "word": "disagree",
+        "ipa": "/ˌdɪsəˈɡriː/",
+        "meaning": "مخالف بودن"
+      },
+      {
+        "word": "rules",
+        "ipa": "/ruːlz/",
+        "meaning": "قوانین"
+      },
+      {
+        "word": "regulation",
+        "ipa": "/ˌreɡjəˈleɪʃn/",
+        "meaning": "مقررات"
+      },
+      {
+        "word": "note",
+        "ipa": "/noʊt/",
+        "meaning": "یادداشت"
+      },
+      {
+        "word": "comment",
+        "ipa": "/ˈkɑːment/",
+        "meaning": "نظر، اظهار نظر"
+      },
+      {
+        "word": "express",
+        "ipa": "/ɪkˈspres/",
+        "meaning": "بیان کردن"
+      },
+      {
+        "word": "learning",
+        "ipa": "/ˈlɜːrnɪŋ/",
+        "meaning": "یادگیری"
+      },
+      {
+        "word": "environment",
+        "ipa": "/ɪnˈvaɪrənmənt/",
+        "meaning": "محیط"
+      },
+      {
+        "word": "learning environment",
+        "ipa": "/ˈlɜːrnɪŋ ɪnˈvaɪrənmənt/",
+        "meaning": "محیط یادگیری"
+      },
+      {
+        "word": "surroundings",
+        "ipa": "/səˈraʊndɪŋz/",
+        "meaning": "محیط اطراف"
+      },
+      {
+        "word": "commence",
+        "ipa": "/kəˈmens/",
+        "meaning": "آغاز کردن"
+      },
+      {
+        "word": "progress",
+        "ipa": "/ˈprɑːɡres/",
+        "meaning": "پیشرفت (اسم)"
+      },
+      {
+        "word": "develop",
+        "ipa": "/dɪˈveləp/",
+        "meaning": "توسعه دادن"
+      },
+      {
+        "word": "about",
+        "ipa": "/əˈbaʊt/",
+        "meaning": "درباره"
+      },
+      {
+        "word": "related",
+        "ipa": "/rɪˈleɪtɪd/",
+        "meaning": "مرتبط"
+      },
+      {
+        "word": "beloved",
+        "ipa": "/bɪˈlʌvɪd/",
+        "meaning": "محبوب، عزیز"
+      },
+      {
+        "word": "role",
+        "ipa": "/roʊl/",
+        "meaning": "نقش"
+      },
+      {
+        "word": "task",
+        "ipa": "/tæsk/",
+        "meaning": "وظیفه، کار"
+      },
+      {
+        "word": "duty",
+        "ipa": "/ˈduːti/",
+        "meaning": "مسئولیت، وظیفه"
+      },
+      {
+        "word": "past",
+        "ipa": "/pæst/",
+        "meaning": "گذشته"
+      },
+      {
+        "word": "the past",
+        "ipa": "/ðə pæst/",
+        "meaning": "گذشته"
+      },
+      {
+        "word": "history",
+        "ipa": "/ˈhɪstəri/",
+        "meaning": "تاریخ، تاریخچه"
+      },
+      {
+        "word": "useful",
+        "ipa": "/ˈjuːsfəl/",
+        "meaning": "مفید"
+      },
+      {
+        "word": "useless",
+        "ipa": "/ˈjuːsləs/",
+        "meaning": "بی‌فایده"
+      },
+      {
+        "word": "alter",
+        "ipa": "/ˈɔːltər/",
+        "meaning": "تغییر دادن"
+      },
+      {
+        "word": "research",
+        "ipa": "/ˈriːsɜːrtʃ/",
+        "meaning": "تحقیق، پژوهش"
+      },
+      {
+        "word": "investigation",
+        "ipa": "/ɪnˌvestɪˈɡeɪʃn/",
+        "meaning": "بررسی، تحقیق"
+      },
+      {
+        "word": "envision",
+        "ipa": "/ɪnˈvɪʒn/",
+        "meaning": "مجسم کردن"
+      },
+      {
+        "word": "party",
+        "ipa": "/ˈpɑːrti/",
+        "meaning": "مهمانی، جشن"
+      },
+      {
+        "word": "celebration",
+        "ipa": "/ˌseləˈbreɪʃn/",
+        "meaning": "جشن، مراسم"
+      },
+      {
+        "word": "nation",
+        "ipa": "/ˈneɪʃn/",
+        "meaning": "ملت، کشور"
+      },
+      {
+        "word": "home city",
+        "ipa": "/ˌhoʊm ˈsɪti/",
+        "meaning": "شهر اصلی، شهر محل سکونت"
+      },
+      {
+        "word": "hometown",
+        "ipa": "/ˈhoʊmtaʊn/",
+        "meaning": "زادگاه"
+      },
+      {
+        "word": "invent",
+        "ipa": "/ɪnˈvent/",
+        "meaning": "اختراع کردن"
+      },
+      {
+        "word": "coin",
+        "ipa": "/kɔɪn/",
+        "meaning": "سکه؛ ابداع واژه"
       }
     ],
     "sentences": [
@@ -1298,6 +2477,16 @@
       {
         "title": "کاربرد by (کنار / نزدیک)",
         "explanation": "by یعنی «کنار» یا «نزدیک» و برای گفتن محل یک چیز به کار می‌رود. مثلاً By the door یعنی «کنار در». بعد از by جای چیزی را می‌گوییم که به آن نزدیک است.",
+        "examples": []
+      },
+      {
+        "title": "تلفظ Progress",
+        "explanation": "کلمهٔ progress بسته به نقش دستوری تلفظ متفاوتی دارد: به‌عنوان اسم روی هجای اول تکیه دارد (/ˈprɑːɡres/) و به‌عنوان فعل روی هجای دوم (/prəˈɡres/). در این درس آن را به‌صورت اسم «پیشرفت» می‌بینیم.",
+        "examples": []
+      },
+      {
+        "title": "مخفف St.: Saint و Street",
+        "explanation": "در انگلیسی مخفف St. بسته به متن می‌تواند Saint (قدیس) یا Street (خیابان) باشد. معنی را از جمله یا زمینه بفهم، نه فقط از حروف.",
         "examples": []
       }
     ],
