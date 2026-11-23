@@ -236,6 +236,15 @@ test('every quiz word is a vocabulary word, so it has its pronunciation, and an 
   }
 });
 
+test('the Family words of lesson 2.1 are one category block in vocabulary order', () => {
+  const lesson201 = JSON.parse(readFileSync(new URL('../content/evolve-1/lesson-02-01.json', import.meta.url), 'utf8'));
+  const material = lessonMaterial([], [lesson201.lesson_content]);
+  const family = material.words.filter((word) => word.category === 'Family').map((word) => word.word);
+  const expected = lesson201.lesson_content.vocabulary.filter((w) => w.category === 'Family').map((w) => w.word);
+  assert.deepEqual(family, expected);
+  assert.ok(material.words.slice(0, family.length).every((word) => word.category === 'Family'));
+});
+
 test('the words page lists the Countries block, then the quiz block, then the other words A to Z', () => {
   const lesson11 = JSON.parse(readFileSync(new URL('../content/evolve-1/lesson-01-01.json', import.meta.url), 'utf8'));
   const material = lessonMaterial([], [lesson11.lesson_content]);

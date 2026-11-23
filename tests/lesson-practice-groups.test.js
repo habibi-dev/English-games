@@ -70,3 +70,46 @@ test('a question keeps its practice group when it is normalized, and a question 
   assert.equal(normalizeQuestion({ category: 'dictation', expected_answer: 'Chile', group: 'Countries' }).group, 'Countries');
   assert.equal(normalizeQuestion({ category: 'dictation', expected_answer: 'Chile' }).group, undefined);
 });
+
+const lesson201 = JSON.parse(readFileSync(new URL('../content/evolve-1/lesson-02-01.json', import.meta.url), 'utf8'));
+const questions201 = flattenLesson(lesson201, { book: 'evolve-1', lesson: 'lesson-02-01' }).questions;
+const family = questions201.filter((q) => q.group === 'Family');
+const familyVocab = lesson201.lesson_content.vocabulary.filter((w) => w.category === 'Family').map((w) => w.word);
+
+test('lesson 2.1 has a Family practice group, and only its items carry the group', () => {
+  assert.ok(family.length >= 20, `only ${family.length} questions in the Family group`);
+  assert.ok(questions201.some((q) => !q.group), 'every question is in a group, so Family cannot be told apart');
+});
+
+test('every Family vocabulary word is dictated in the Family group', () => {
+  const dictated = new Set(family.filter((q) => q.category === 'dictation').map((q) => q.expected_answer));
+  for (const word of familyVocab) {
+    assert.ok(dictated.has(word), `"${word}" is not a dictation item in the Family group`);
+  }
+});
+
+test('every Family question mentions a Family vocabulary word', () => {
+  const words = familyVocab.map((word) => word.toLowerCase());
+  for (const q of family) {
+    const text = [q.question, q.expected_answer, q.translation, ...(q.accepted_answers ?? [])]
+      .join(' ')
+      .toLowerCase();
+    assert.ok(
+      words.some((word) => text.includes(word)),
+      `question ${q.id} is in the Family group but has no Family word: "${q.question}"`,
+    );
+  }
+});
+
+const numbers = questions201.filter((q) => q.group === 'Numbers');
+const numberVocab = lesson201.lesson_content.vocabulary
+  .filter((w) => w.category === 'Numbers')
+  .map((w) => w.word);
+
+test('lesson 2.1 has a Numbers practice group with dictation for every number word', () => {
+  assert.ok(numbers.length >= 20);
+  const dictated = new Set(numbers.filter((q) => q.category === 'dictation').map((q) => q.expected_answer));
+  for (const word of numberVocab) {
+    assert.ok(dictated.has(word), `"${word}" is not a dictation item in the Numbers group`);
+  }
+});

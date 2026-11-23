@@ -1,0 +1,2074 @@
+{
+  "schema_version": "2.0",
+  "book": "evolve-1",
+  "lesson": "lesson-02-01",
+  "title": "Lesson 2.1 – A Family Party",
+  "exercises": [
+    {
+      "id": "evolve-1-l02-01-translation",
+      "type": "quick_translation",
+      "title": "ترجمه جمله‌ها و عبارت‌ها",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-01-tr-01",
+          "expected_answer": "What a great party!",
+          "translation": "چه مهمانی فوق‌العاده‌ای!",
+          "question": "چه مهمانی فوق‌العاده‌ای!",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "great = عالی؛ party = مهمانی (درس قبل)"
+        },
+        {
+          "id": "evolve-1-l02-01-tr-02",
+          "expected_answer": "Are your children here?",
+          "translation": "آیا فرزندانت اینجا هستند؟",
+          "question": "آیا فرزندانت اینجا هستند؟",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "children = فرزندان؛ سؤال با Are شروع می‌شود.",
+          "accepted_answers": [
+            "Are your children here?"
+          ],
+          "group": "Family"
+        },
+        {
+          "id": "evolve-1-l02-01-tr-03",
+          "expected_answer": "Yes, they are.",
+          "translation": "بله، هستند.",
+          "question": "بله، هستند.",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "ساختار سؤال یا جملهٔ خبری با فعل بودن را در نظر بگیر."
+        },
+        {
+          "id": "evolve-1-l02-01-tr-04",
+          "expected_answer": "He's my son.",
+          "translation": "او پسر من است.",
+          "question": "او پسر من است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "son = پسر",
+          "accepted_answers": [
+            "He is my son."
+          ],
+          "group": "Family"
+        },
+        {
+          "id": "evolve-1-l02-01-tr-05",
+          "expected_answer": "He's eight.",
+          "translation": "او هشت ساله است.",
+          "question": "او هشت ساله است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "ساختار سؤال یا جملهٔ خبری با فعل بودن را در نظر بگیر.",
+          "accepted_answers": [
+            "He is eight."
+          ]
+        },
+        {
+          "id": "evolve-1-l02-01-tr-06",
+          "expected_answer": "She's my daughter.",
+          "translation": "او دختر من است.",
+          "question": "او دختر من است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "daughter = دختر",
+          "accepted_answers": [
+            "She is my daughter."
+          ],
+          "group": "Family"
+        },
+        {
+          "id": "evolve-1-l02-01-tr-07",
+          "expected_answer": "She's ten.",
+          "translation": "او ده ساله است.",
+          "question": "او ده ساله است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "ساختار سؤال یا جملهٔ خبری با فعل بودن را در نظر بگیر.",
+          "accepted_answers": [
+            "She is ten."
+          ]
+        },
+        {
+          "id": "evolve-1-l02-01-tr-08",
+          "expected_answer": "Is he your husband?",
+          "translation": "آیا او شوهر تو است؟",
+          "question": "آیا او شوهر تو است؟",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "ساختار سؤال یا جملهٔ خبری با فعل بودن را در نظر بگیر."
+        },
+        {
+          "id": "evolve-1-l02-01-tr-09",
+          "expected_answer": "He's my brother Marcus.",
+          "translation": "او برادرم مارکوس است.",
+          "question": "او برادرم مارکوس است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "brother = برادر",
+          "accepted_answers": [
+            "He is my brother Marcus."
+          ],
+          "group": "Family"
+        },
+        {
+          "id": "evolve-1-l02-01-tr-10",
+          "expected_answer": "My husband isn't here.",
+          "translation": "شوهرم اینجا نیست.",
+          "question": "شوهرم اینجا نیست.",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "ساختار منفی با isn't",
+          "accepted_answers": [
+            "My husband is not here."
+          ]
+        },
+        {
+          "id": "evolve-1-l02-01-tr-11",
+          "expected_answer": "Are your parents here?",
+          "translation": "آیا والدینت اینجا هستند؟",
+          "question": "آیا والدینت اینجا هستند؟",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "parents = والدین",
+          "group": "Family"
+        },
+        {
+          "id": "evolve-1-l02-01-tr-12",
+          "expected_answer": "Here's my grandmother.",
+          "translation": "این هم مادربزرگ من.",
+          "question": "این هم مادربزرگ من.",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "grandmother = مادربزرگ",
+          "accepted_answers": [
+            "Here is my grandmother."
+          ],
+          "group": "Family"
+        },
+        {
+          "id": "evolve-1-l02-01-tr-13",
+          "expected_answer": "Nice to meet you.",
+          "translation": "از آشنایی با شما خوشبختم.",
+          "question": "از آشنایی با شما خوشبختم.",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "ساختار سؤال یا جملهٔ خبری با فعل بودن را در نظر بگیر."
+        },
+        {
+          "id": "evolve-1-l02-01-tr-14",
+          "expected_answer": "Are you both Elizabeth?",
+          "translation": "آیا هر دوی شما الیزابت هستید؟",
+          "question": "آیا هر دوی شما الیزابت هستید؟",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "both = هر دو"
+        },
+        {
+          "id": "evolve-1-l02-01-tr-15",
+          "expected_answer": "Yes, we are.",
+          "translation": "بله، همین‌طور است.",
+          "question": "بله، همین‌طور است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "ساختار سؤال یا جملهٔ خبری با فعل بودن را در نظر بگیر."
+        },
+        {
+          "id": "evolve-1-l02-01-tr-16",
+          "expected_answer": "Is your mother at home?",
+          "translation": "آیا مادرت در خانه است؟",
+          "question": "آیا مادرت در خانه است؟",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "at home = در خانه",
+          "accepted_answers": [
+            "Is your mother at home?"
+          ]
+        },
+        {
+          "id": "evolve-1-l02-01-tr-17",
+          "expected_answer": "They were tired.",
+          "translation": "آن‌ها خسته بودند.",
+          "question": "آن‌ها خسته بودند.",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "was/were برای گذشتهٔ فعل بودن"
+        },
+        {
+          "id": "evolve-1-l02-01-tr-18",
+          "expected_answer": "She was born in 1999.",
+          "translation": "او در سال ۱۹۹۹ متولد شد.",
+          "question": "او در سال ۱۹۹۹ متولد شد.",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "born = متولد شده"
+        },
+        {
+          "id": "evolve-1-l02-01-tr-19",
+          "expected_answer": "How old are you?",
+          "translation": "چند سال داری؟",
+          "question": "چند سال داری؟",
+          "time_limit": 60,
+          "explanation": "به ترتیب کلمات و فعل بودن توجه کن.",
+          "hint": "how old = چند ساله"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-01-builder",
+      "type": "sentence_builder",
+      "title": "جمله‌سازی",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-01-sb-01",
+          "expected_answer": "Are your children here?",
+          "translation": "آیا فرزندانت اینجا هستند؟",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "سؤال با Are شروع می‌شود.",
+          "word_bank": [
+            "Are",
+            "your",
+            "children",
+            "here?"
+          ],
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "در سؤال، فعل بودن قبل از فاعل می‌آید."
+        },
+        {
+          "id": "evolve-1-l02-01-sb-02",
+          "expected_answer": "He's my son.",
+          "translation": "او پسر من است.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "فاعل و فعل را کنار هم بگذار.",
+          "word_bank": [
+            "He's",
+            "my",
+            "son."
+          ],
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "جملهٔ خبری: فاعل + فعل بودن + بقیه."
+        },
+        {
+          "id": "evolve-1-l02-01-sb-03",
+          "expected_answer": "Is he your husband?",
+          "translation": "آیا او شوهر تو است؟",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "سؤال با Is شروع می‌شود.",
+          "word_bank": [
+            "Is",
+            "he",
+            "your",
+            "husband?"
+          ],
+          "time_limit": 60,
+          "explanation": "برای سؤال بله/خیر، is را قبل از he می‌آوریم."
+        },
+        {
+          "id": "evolve-1-l02-01-sb-04",
+          "expected_answer": "How old are you?",
+          "translation": "چند سال داری؟",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "how old = چند ساله",
+          "word_bank": [
+            "How",
+            "old",
+            "are",
+            "you?"
+          ],
+          "time_limit": 60,
+          "explanation": "سؤال WH: how old + are + you"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-01-grammar-correction",
+      "type": "grammar_correction",
+      "title": "اصلاح جمله",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-01-gc-01",
+          "incorrect_sentence": "She are my daughter.",
+          "expected_answer": "She's my daughter.",
+          "accepted_answers": [
+            "She is my daughter."
+          ],
+          "translation": "او دختر من است.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "بعد از She فعل is می‌آید.",
+          "time_limit": 60,
+          "explanation": "She با is قرار می‌گیرد، نه are."
+        },
+        {
+          "id": "evolve-1-l02-01-gc-02",
+          "incorrect_sentence": "They was tired.",
+          "expected_answer": "They were tired.",
+          "translation": "آن‌ها خسته بودند.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "they با were در گذشته می‌آید.",
+          "time_limit": 60,
+          "explanation": "با they در گذشته were می‌آید، نه was."
+        },
+        {
+          "id": "evolve-1-l02-01-gc-03",
+          "incorrect_sentence": "Is your children here?",
+          "expected_answer": "Are your children here?",
+          "translation": "آیا فرزندانت اینجا هستند؟",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "children جمع است.",
+          "time_limit": 60,
+          "explanation": "children جمع است، پس Are می‌آید.",
+          "group": "Family"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-01-pnq",
+      "type": "positive_negative_question",
+      "title": "منفی و سؤالی کردن",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-01-neg-01",
+          "operation": "negative",
+          "question": "جمله را منفی کن: He's my son.",
+          "expected_answer": "He isn't my son.",
+          "accepted_answers": [
+            "He is not my son."
+          ],
+          "translation": "او پسر من نیست.",
+          "hint": "not را بعد از is بگذار.",
+          "time_limit": 60,
+          "explanation": "منفی: isn't یا is not",
+          "group": "Family"
+        },
+        {
+          "id": "evolve-1-l02-01-q-01",
+          "operation": "question",
+          "question": "جمله را سؤالی کن: He is your husband.",
+          "expected_answer": "Is he your husband?",
+          "translation": "آیا او شوهر تو است؟",
+          "hint": "Is را قبل از he بیاور.",
+          "time_limit": 60,
+          "explanation": "فعل بودن را به ابتدای جمله منتقل کن."
+        },
+        {
+          "id": "evolve-1-l02-01-q-02",
+          "operation": "question",
+          "question": "جمله را سؤالی کن: Your parents are here.",
+          "expected_answer": "Are your parents here?",
+          "translation": "آیا والدینت اینجا هستند؟",
+          "hint": "parents جمع است.",
+          "time_limit": 60,
+          "explanation": "Are قبل از فاعل می‌آید.",
+          "group": "Family"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-01-choice",
+      "type": "multiple_choice",
+      "title": "سؤالات چندگزینه‌ای",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-01-mc-01",
+          "question": "کدام جمله درست است؟",
+          "expected_answer": "Are your children here?",
+          "translation": "آیا فرزندانت اینجا هستند؟",
+          "hint": "children با are می‌آید.",
+          "options": [
+            "Is your children here?",
+            "Are your children here?",
+            "Are your child here?"
+          ],
+          "time_limit": 60,
+          "explanation": "children جمع است.",
+          "group": "Family"
+        },
+        {
+          "id": "evolve-1-l02-01-mc-02",
+          "question": "پاسخ کوتاه منفی درست کدام است؟ (Is he your husband?)",
+          "expected_answer": "No, he isn't.",
+          "accepted_answers": [
+            "No, he is not."
+          ],
+          "translation": "نه، نیست.",
+          "hint": "در پاسخ منفی از isn't استفاده کن.",
+          "options": [
+            "No, he isn't.",
+            "No, he are not.",
+            "No, he don't."
+          ],
+          "time_limit": 60,
+          "explanation": "he با isn't"
+        },
+        {
+          "id": "evolve-1-l02-01-mc-03",
+          "question": "جمع کلمه child چیست؟",
+          "expected_answer": "children",
+          "translation": "فرزندان",
+          "hint": "جمع نامنظم",
+          "options": [
+            "childs",
+            "children",
+            "childes"
+          ],
+          "time_limit": 60,
+          "explanation": "child → children",
+          "group": "Family"
+        },
+        {
+          "id": "evolve-1-l02-01-mc-04",
+          "question": "عدد ۱۳ کدام است؟",
+          "expected_answer": "thirteen",
+          "translation": "سیزده",
+          "hint": "با -teen برای ۱۳ تا ۱۹",
+          "options": [
+            "thirty",
+            "thirteen",
+            "three"
+          ],
+          "time_limit": 60,
+          "explanation": "13 = thirteen؛ 30 = thirty",
+          "group": "Numbers"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-01-vocabulary",
+      "type": "vocabulary",
+      "title": "مترادف، متضاد و جمع",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-01-voc-syn-01",
+          "question": "Synonym: dad",
+          "expected_answer": "father",
+          "translation": "پدر",
+          "hint": "معنی dad را در نظر بگیر",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "dad و father در این درس نزدیک به هم‌معنی‌اند."
+        },
+        {
+          "id": "evolve-1-l02-01-voc-syn-02",
+          "question": "Synonym: grandpa",
+          "expected_answer": "grandfather",
+          "translation": "پدربزرگ",
+          "hint": "معنی grandpa را در نظر بگیر",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "grandpa و grandfather در این درس نزدیک به هم‌معنی‌اند."
+        },
+        {
+          "id": "evolve-1-l02-01-voc-syn-03",
+          "question": "Synonym: grandma",
+          "expected_answer": "grandmother",
+          "translation": "مادربزرگ",
+          "hint": "معنی grandma را در نظر بگیر",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "grandma و grandmother در این درس نزدیک به هم‌معنی‌اند."
+        },
+        {
+          "id": "evolve-1-l02-01-voc-syn-04",
+          "question": "Synonym: kid",
+          "expected_answer": "child",
+          "translation": "فرزند",
+          "hint": "معنی kid را در نظر بگیر",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "kid و child در این درس نزدیک به هم‌معنی‌اند."
+        },
+        {
+          "id": "evolve-1-l02-01-voc-opp-01",
+          "question": "Opposite: formal",
+          "expected_answer": "informal",
+          "translation": "غیررسمی",
+          "hint": "متضاد واژه را انتخاب کن",
+          "time_limit": 60,
+          "explanation": "formal ↔ informal"
+        },
+        {
+          "id": "evolve-1-l02-01-voc-opp-02",
+          "question": "Opposite: dead",
+          "expected_answer": "alive",
+          "translation": "زنده",
+          "hint": "متضاد واژه را انتخاب کن",
+          "time_limit": 60,
+          "explanation": "dead ↔ alive"
+        },
+        {
+          "id": "evolve-1-l02-01-voc-opp-03",
+          "question": "Opposite: singular",
+          "expected_answer": "plural",
+          "translation": "جمع",
+          "hint": "متضاد واژه را انتخاب کن",
+          "time_limit": 60,
+          "explanation": "singular ↔ plural"
+        },
+        {
+          "id": "evolve-1-l02-01-voc-pl-01",
+          "question": "Plural: child",
+          "expected_answer": "children",
+          "translation": "فرزندان",
+          "hint": "شکل جمع نامنظم یا با s",
+          "time_limit": 60,
+          "explanation": "child → children",
+          "group": "Family"
+        },
+        {
+          "id": "evolve-1-l02-01-voc-pl-02",
+          "question": "Plural: man",
+          "expected_answer": "men",
+          "translation": "مردان",
+          "hint": "شکل جمع نامنظم یا با s",
+          "time_limit": 60,
+          "explanation": "man → men"
+        },
+        {
+          "id": "evolve-1-l02-01-voc-pl-03",
+          "question": "Plural: woman",
+          "expected_answer": "women",
+          "translation": "زن‌ها",
+          "hint": "شکل جمع نامنظم یا با s",
+          "time_limit": 60,
+          "explanation": "woman → women"
+        },
+        {
+          "id": "evolve-1-l02-01-voc-pl-04",
+          "question": "Plural: foot",
+          "expected_answer": "feet",
+          "translation": "پاها",
+          "hint": "شکل جمع نامنظم یا با s",
+          "time_limit": 60,
+          "explanation": "foot → feet"
+        },
+        {
+          "id": "evolve-1-l02-01-voc-pl-05",
+          "question": "Plural: tooth",
+          "expected_answer": "teeth",
+          "translation": "دندان‌ها",
+          "hint": "شکل جمع نامنظم یا با s",
+          "time_limit": 60,
+          "explanation": "tooth → teeth"
+        },
+        {
+          "id": "evolve-1-l02-01-voc-pl-06",
+          "question": "Plural: mouse",
+          "expected_answer": "mice",
+          "translation": "موش‌ها",
+          "hint": "شکل جمع نامنظم یا با s",
+          "time_limit": 60,
+          "explanation": "mouse → mice"
+        },
+        {
+          "id": "evolve-1-l02-01-voc-pl-07",
+          "question": "Plural: goose",
+          "expected_answer": "geese",
+          "translation": "غازها",
+          "hint": "شکل جمع نامنظم یا با s",
+          "time_limit": 60,
+          "explanation": "goose → geese"
+        },
+        {
+          "id": "evolve-1-l02-01-voc-pl-08",
+          "question": "Plural: brother",
+          "expected_answer": "brothers",
+          "translation": "brothers",
+          "hint": "شکل جمع نامنظم یا با s",
+          "time_limit": 60,
+          "explanation": "brother → brothers",
+          "group": "Family"
+        },
+        {
+          "id": "evolve-1-l02-01-voc-pl-09",
+          "question": "Plural: sister",
+          "expected_answer": "sisters",
+          "translation": "sisters",
+          "hint": "شکل جمع نامنظم یا با s",
+          "time_limit": 60,
+          "explanation": "sister → sisters",
+          "group": "Family"
+        },
+        {
+          "id": "evolve-1-l02-01-voc-pl-10",
+          "question": "Plural: cousin",
+          "expected_answer": "cousins",
+          "translation": "cousins",
+          "hint": "شکل جمع نامنظم یا با s",
+          "time_limit": 60,
+          "explanation": "cousin → cousins",
+          "group": "Family"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-01-dictation",
+      "type": "dictation",
+      "title": "املای واژه‌ها و اعداد",
+      "presentation": "audio",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-01-dic-f-01",
+          "expected_answer": "family tree",
+          "translation": "شجره‌نامه خانوادگی",
+          "question": "family tree",
+          "hint": "شجره‌نامه خانوادگی",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-02",
+          "expected_answer": "parent",
+          "translation": "والد",
+          "question": "parent",
+          "hint": "والد",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-03",
+          "expected_answer": "parents",
+          "translation": "والدین",
+          "question": "parents",
+          "hint": "والدین",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-04",
+          "expected_answer": "father",
+          "translation": "پدر",
+          "question": "father",
+          "hint": "پدر",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-05",
+          "expected_answer": "dad",
+          "translation": "بابا",
+          "question": "dad",
+          "hint": "بابا",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-06",
+          "expected_answer": "son",
+          "translation": "پسر",
+          "question": "son",
+          "hint": "پسر",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-07",
+          "expected_answer": "daughter",
+          "translation": "دختر",
+          "question": "daughter",
+          "hint": "دختر",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-08",
+          "expected_answer": "child",
+          "translation": "فرزند",
+          "question": "child",
+          "hint": "فرزند",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-09",
+          "expected_answer": "children",
+          "translation": "فرزندان",
+          "question": "children",
+          "hint": "فرزندان",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-10",
+          "expected_answer": "kid",
+          "translation": "بچه",
+          "question": "kid",
+          "hint": "بچه",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-11",
+          "expected_answer": "kids",
+          "translation": "بچه‌ها",
+          "question": "kids",
+          "hint": "بچه‌ها",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-12",
+          "expected_answer": "brother",
+          "translation": "برادر",
+          "question": "brother",
+          "hint": "برادر",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-13",
+          "expected_answer": "sister",
+          "translation": "خواهر",
+          "question": "sister",
+          "hint": "خواهر",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-14",
+          "expected_answer": "siblings",
+          "translation": "خواهر و برادرها",
+          "question": "siblings",
+          "hint": "خواهر و برادرها",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-15",
+          "expected_answer": "grandfather",
+          "translation": "پدربزرگ",
+          "question": "grandfather",
+          "hint": "پدربزرگ",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-16",
+          "expected_answer": "grandmother",
+          "translation": "مادربزرگ",
+          "question": "grandmother",
+          "hint": "مادربزرگ",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-17",
+          "expected_answer": "grandparents",
+          "translation": "پدربزرگ و مادربزرگ",
+          "question": "grandparents",
+          "hint": "پدربزرگ و مادربزرگ",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-18",
+          "expected_answer": "grandpa",
+          "translation": "پدربزرگ (خودمانی)",
+          "question": "grandpa",
+          "hint": "پدربزرگ (خودمانی)",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-19",
+          "expected_answer": "grandma",
+          "translation": "مادربزرگ (خودمانی)",
+          "question": "grandma",
+          "hint": "مادربزرگ (خودمانی)",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-20",
+          "expected_answer": "uncle",
+          "translation": "عمو، دایی",
+          "question": "uncle",
+          "hint": "عمو، دایی",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-21",
+          "expected_answer": "aunt",
+          "translation": "عمه، خاله",
+          "question": "aunt",
+          "hint": "عمه، خاله",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-f-22",
+          "expected_answer": "cousin",
+          "translation": "عموزاده، دایی‌زاده و ...",
+          "question": "cousin",
+          "hint": "عموزاده، دایی‌زاده و ...",
+          "presentation": "audio",
+          "group": "Family",
+          "time_limit": 60,
+          "explanation": "به ترتیب حروف و شکل نوشتاری واژه توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-01",
+          "expected_answer": "eleven",
+          "translation": "یازده",
+          "question": "eleven",
+          "hint": "یازده",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-02",
+          "expected_answer": "twelve",
+          "translation": "دوازده",
+          "question": "twelve",
+          "hint": "دوازده",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-03",
+          "expected_answer": "thirteen",
+          "translation": "سیزده",
+          "question": "thirteen",
+          "hint": "سیزده",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-04",
+          "expected_answer": "fourteen",
+          "translation": "چهارده",
+          "question": "fourteen",
+          "hint": "چهارده",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-05",
+          "expected_answer": "fifteen",
+          "translation": "پانزده",
+          "question": "fifteen",
+          "hint": "پانزده",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-06",
+          "expected_answer": "sixteen",
+          "translation": "شانزده",
+          "question": "sixteen",
+          "hint": "شانزده",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-07",
+          "expected_answer": "seventeen",
+          "translation": "هفده",
+          "question": "seventeen",
+          "hint": "هفده",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-08",
+          "expected_answer": "eighteen",
+          "translation": "هجده",
+          "question": "eighteen",
+          "hint": "هجده",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-09",
+          "expected_answer": "nineteen",
+          "translation": "نوزده",
+          "question": "nineteen",
+          "hint": "نوزده",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-10",
+          "expected_answer": "twenty",
+          "translation": "بیست",
+          "question": "twenty",
+          "hint": "بیست",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-11",
+          "expected_answer": "twenty-one",
+          "translation": "بیست‌ویک",
+          "question": "twenty-one",
+          "hint": "بیست‌ویک",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-12",
+          "expected_answer": "twenty-two",
+          "translation": "بیست‌ودو",
+          "question": "twenty-two",
+          "hint": "بیست‌ودو",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-13",
+          "expected_answer": "twenty-three",
+          "translation": "بیست‌وسه",
+          "question": "twenty-three",
+          "hint": "بیست‌وسه",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-14",
+          "expected_answer": "thirty",
+          "translation": "سی",
+          "question": "thirty",
+          "hint": "سی",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-15",
+          "expected_answer": "thirty-two",
+          "translation": "سی‌ودو",
+          "question": "thirty-two",
+          "hint": "سی‌ودو",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-16",
+          "expected_answer": "thirty-seven",
+          "translation": "سی‌وهفت",
+          "question": "thirty-seven",
+          "hint": "سی‌وهفت",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-17",
+          "expected_answer": "forty",
+          "translation": "چهل",
+          "question": "forty",
+          "hint": "چهل",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-18",
+          "expected_answer": "forty-two",
+          "translation": "چهل‌ودو",
+          "question": "forty-two",
+          "hint": "چهل‌ودو",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-19",
+          "expected_answer": "fifty",
+          "translation": "پنجاه",
+          "question": "fifty",
+          "hint": "پنجاه",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-20",
+          "expected_answer": "fifty-eight",
+          "translation": "پنجاه‌وهشت",
+          "question": "fifty-eight",
+          "hint": "پنجاه‌وهشت",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-21",
+          "expected_answer": "sixty",
+          "translation": "شصت",
+          "question": "sixty",
+          "hint": "شصت",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-22",
+          "expected_answer": "sixty-one",
+          "translation": "شصت‌ویک",
+          "question": "sixty-one",
+          "hint": "شصت‌ویک",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-23",
+          "expected_answer": "sixty-four",
+          "translation": "شصت‌وچهار",
+          "question": "sixty-four",
+          "hint": "شصت‌وچهار",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-24",
+          "expected_answer": "seventy",
+          "translation": "هفتاد",
+          "question": "seventy",
+          "hint": "هفتاد",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-25",
+          "expected_answer": "eighty",
+          "translation": "هشتاد",
+          "question": "eighty",
+          "hint": "هشتاد",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-26",
+          "expected_answer": "eighty-six",
+          "translation": "هشتاد‌وشش",
+          "question": "eighty-six",
+          "hint": "هشتاد‌وشش",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-27",
+          "expected_answer": "eighty-seven",
+          "translation": "هشتاد‌وهفت",
+          "question": "eighty-seven",
+          "hint": "هشتاد‌وهفت",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-28",
+          "expected_answer": "ninety",
+          "translation": "نود",
+          "question": "ninety",
+          "hint": "نود",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-n-29",
+          "expected_answer": "one hundred",
+          "translation": "صد",
+          "question": "one hundred",
+          "hint": "صد",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "به تلفظ عدد و خط فاصله در اعداد مرکب توجه کن."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-01",
+          "expected_answer": "both",
+          "translation": "هر دو",
+          "question": "both",
+          "hint": "هر دو",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-02",
+          "expected_answer": "birthday",
+          "translation": "تولد",
+          "question": "birthday",
+          "hint": "تولد",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-03",
+          "expected_answer": "formal",
+          "translation": "رسمی",
+          "question": "formal",
+          "hint": "رسمی",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-04",
+          "expected_answer": "informal",
+          "translation": "غیررسمی",
+          "question": "informal",
+          "hint": "غیررسمی",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-05",
+          "expected_answer": "singular",
+          "translation": "مفرد",
+          "question": "singular",
+          "hint": "مفرد",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-06",
+          "expected_answer": "plural",
+          "translation": "جمع",
+          "question": "plural",
+          "hint": "جمع",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-07",
+          "expected_answer": "describe",
+          "translation": "توصیف کردن",
+          "question": "describe",
+          "hint": "توصیف کردن",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-08",
+          "expected_answer": "compare",
+          "translation": "مقایسه کردن",
+          "question": "compare",
+          "hint": "مقایسه کردن",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-09",
+          "expected_answer": "born",
+          "translation": "متولد شده",
+          "question": "born",
+          "hint": "متولد شده",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-10",
+          "expected_answer": "pass away",
+          "translation": "فوت کردن (مؤدبانه)",
+          "question": "pass away",
+          "hint": "فوت کردن (مؤدبانه)",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-11",
+          "expected_answer": "tired",
+          "translation": "خسته",
+          "question": "tired",
+          "hint": "خسته",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-12",
+          "expected_answer": "angry",
+          "translation": "عصبانی",
+          "question": "angry",
+          "hint": "عصبانی",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-13",
+          "expected_answer": "hungry",
+          "translation": "گرسنه",
+          "question": "hungry",
+          "hint": "گرسنه",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-14",
+          "expected_answer": "dead",
+          "translation": "مرده",
+          "question": "dead",
+          "hint": "مرده",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-01-dic-o-15",
+          "expected_answer": "alive",
+          "translation": "زنده",
+          "question": "alive",
+          "hint": "زنده",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        }
+      ]
+    }
+  ],
+  "lesson_content": {
+    "vocabulary": [
+      {
+        "word": "family tree",
+        "ipa": "/ˈfæməli triː/",
+        "meaning": "شجره‌نامه خانوادگی",
+        "category": "Family"
+      },
+      {
+        "word": "parent",
+        "ipa": "/ˈperənt/",
+        "meaning": "والد",
+        "category": "Family"
+      },
+      {
+        "word": "parents",
+        "ipa": "/ˈperənts/",
+        "meaning": "والدین",
+        "category": "Family"
+      },
+      {
+        "word": "father",
+        "ipa": "/ˈfɑːðər/",
+        "meaning": "پدر",
+        "category": "Family"
+      },
+      {
+        "word": "dad",
+        "ipa": "/dæd/",
+        "meaning": "بابا",
+        "category": "Family"
+      },
+      {
+        "word": "son",
+        "ipa": "/sʌn/",
+        "meaning": "پسر",
+        "category": "Family"
+      },
+      {
+        "word": "daughter",
+        "ipa": "/ˈdɔːtər/",
+        "meaning": "دختر",
+        "category": "Family"
+      },
+      {
+        "word": "child",
+        "ipa": "/tʃaɪld/",
+        "meaning": "فرزند",
+        "category": "Family"
+      },
+      {
+        "word": "children",
+        "ipa": "/ˈtʃɪldrən/",
+        "meaning": "فرزندان",
+        "category": "Family"
+      },
+      {
+        "word": "kid",
+        "ipa": "/kɪd/",
+        "meaning": "بچه",
+        "category": "Family"
+      },
+      {
+        "word": "kids",
+        "ipa": "/kɪdz/",
+        "meaning": "بچه‌ها",
+        "category": "Family"
+      },
+      {
+        "word": "brother",
+        "ipa": "/ˈbrʌðər/",
+        "meaning": "برادر",
+        "category": "Family"
+      },
+      {
+        "word": "sister",
+        "ipa": "/ˈsɪstər/",
+        "meaning": "خواهر",
+        "category": "Family"
+      },
+      {
+        "word": "siblings",
+        "ipa": "/ˈsɪblɪŋz/",
+        "meaning": "خواهر و برادرها",
+        "category": "Family"
+      },
+      {
+        "word": "grandfather",
+        "ipa": "/ˈɡrænˌfɑːðər/",
+        "meaning": "پدربزرگ",
+        "category": "Family"
+      },
+      {
+        "word": "grandmother",
+        "ipa": "/ˈɡrænˌmʌðər/",
+        "meaning": "مادربزرگ",
+        "category": "Family"
+      },
+      {
+        "word": "grandparents",
+        "ipa": "/ˈɡrænˌperənts/",
+        "meaning": "پدربزرگ و مادربزرگ",
+        "category": "Family"
+      },
+      {
+        "word": "grandpa",
+        "ipa": "/ˈɡrænpɑː/",
+        "meaning": "پدربزرگ (خودمانی)",
+        "category": "Family"
+      },
+      {
+        "word": "grandma",
+        "ipa": "/ˈɡrænmɑː/",
+        "meaning": "مادربزرگ (خودمانی)",
+        "category": "Family"
+      },
+      {
+        "word": "uncle",
+        "ipa": "/ˈʌŋkəl/",
+        "meaning": "عمو، دایی",
+        "category": "Family"
+      },
+      {
+        "word": "aunt",
+        "ipa": "/ænt/",
+        "meaning": "عمه، خاله",
+        "category": "Family"
+      },
+      {
+        "word": "cousin",
+        "ipa": "/ˈkʌzən/",
+        "meaning": "عموزاده، دایی‌زاده و ...",
+        "category": "Family"
+      },
+      {
+        "word": "eleven",
+        "ipa": "/ɪˈlevən/",
+        "meaning": "یازده",
+        "category": "Numbers"
+      },
+      {
+        "word": "twelve",
+        "ipa": "/twɛlv/",
+        "meaning": "دوازده",
+        "category": "Numbers"
+      },
+      {
+        "word": "thirteen",
+        "ipa": "/ˌθɝːˈtiːn/",
+        "meaning": "سیزده",
+        "category": "Numbers"
+      },
+      {
+        "word": "fourteen",
+        "ipa": "/ˌfɔːrˈtiːn/",
+        "meaning": "چهارده",
+        "category": "Numbers"
+      },
+      {
+        "word": "fifteen",
+        "ipa": "/ˌfɪfˈtiːn/",
+        "meaning": "پانزده",
+        "category": "Numbers"
+      },
+      {
+        "word": "sixteen",
+        "ipa": "/ˌsɪksˈtiːn/",
+        "meaning": "شانزده",
+        "category": "Numbers"
+      },
+      {
+        "word": "seventeen",
+        "ipa": "/ˌsevənˈtiːn/",
+        "meaning": "هفده",
+        "category": "Numbers"
+      },
+      {
+        "word": "eighteen",
+        "ipa": "/ˌeɪˈtiːn/",
+        "meaning": "هجده",
+        "category": "Numbers"
+      },
+      {
+        "word": "nineteen",
+        "ipa": "/ˌnaɪnˈtiːn/",
+        "meaning": "نوزده",
+        "category": "Numbers"
+      },
+      {
+        "word": "twenty",
+        "ipa": "/ˈtwenti/",
+        "meaning": "بیست",
+        "category": "Numbers"
+      },
+      {
+        "word": "twenty-one",
+        "ipa": "/ˌtwenti ˈwʌn/",
+        "meaning": "بیست‌ویک",
+        "category": "Numbers"
+      },
+      {
+        "word": "twenty-two",
+        "ipa": "/ˌtwenti ˈtuː/",
+        "meaning": "بیست‌ودو",
+        "category": "Numbers"
+      },
+      {
+        "word": "twenty-three",
+        "ipa": "/ˌtwenti ˈθriː/",
+        "meaning": "بیست‌وسه",
+        "category": "Numbers"
+      },
+      {
+        "word": "thirty",
+        "ipa": "/ˈθɝːti/",
+        "meaning": "سی",
+        "category": "Numbers"
+      },
+      {
+        "word": "thirty-two",
+        "ipa": "/ˌθɝːti ˈtuː/",
+        "meaning": "سی‌ودو",
+        "category": "Numbers"
+      },
+      {
+        "word": "thirty-seven",
+        "ipa": "/ˌθɝːti ˈsevən/",
+        "meaning": "سی‌وهفت",
+        "category": "Numbers"
+      },
+      {
+        "word": "forty",
+        "ipa": "/ˈfɔːrti/",
+        "meaning": "چهل",
+        "category": "Numbers"
+      },
+      {
+        "word": "forty-two",
+        "ipa": "/ˌfɔːrti ˈtuː/",
+        "meaning": "چهل‌ودو",
+        "category": "Numbers"
+      },
+      {
+        "word": "fifty",
+        "ipa": "/ˈfɪfti/",
+        "meaning": "پنجاه",
+        "category": "Numbers"
+      },
+      {
+        "word": "fifty-eight",
+        "ipa": "/ˌfɪfti ˈeɪt/",
+        "meaning": "پنجاه‌وهشت",
+        "category": "Numbers"
+      },
+      {
+        "word": "sixty",
+        "ipa": "/ˈsɪksti/",
+        "meaning": "شصت",
+        "category": "Numbers"
+      },
+      {
+        "word": "sixty-one",
+        "ipa": "/ˌsɪksti ˈwʌn/",
+        "meaning": "شصت‌ویک",
+        "category": "Numbers"
+      },
+      {
+        "word": "sixty-four",
+        "ipa": "/ˌsɪksti ˈfɔːr/",
+        "meaning": "شصت‌وچهار",
+        "category": "Numbers"
+      },
+      {
+        "word": "seventy",
+        "ipa": "/ˈsevənti/",
+        "meaning": "هفتاد",
+        "category": "Numbers"
+      },
+      {
+        "word": "eighty",
+        "ipa": "/ˈeɪti/",
+        "meaning": "هشتاد",
+        "category": "Numbers"
+      },
+      {
+        "word": "eighty-six",
+        "ipa": "/ˌeɪti ˈsɪks/",
+        "meaning": "هشتاد‌وشش",
+        "category": "Numbers"
+      },
+      {
+        "word": "eighty-seven",
+        "ipa": "/ˌeɪti ˈsevən/",
+        "meaning": "هشتاد‌وهفت",
+        "category": "Numbers"
+      },
+      {
+        "word": "ninety",
+        "ipa": "/ˈnaɪnti/",
+        "meaning": "نود",
+        "category": "Numbers"
+      },
+      {
+        "word": "one hundred",
+        "ipa": "/wʌn ˈhʌndrəd/",
+        "meaning": "صد",
+        "category": "Numbers"
+      },
+      {
+        "word": "both",
+        "ipa": "/boʊθ/",
+        "meaning": "هر دو"
+      },
+      {
+        "word": "age",
+        "ipa": "/eɪdʒ/",
+        "meaning": "سن"
+      },
+      {
+        "word": "birthday",
+        "ipa": "/ˈbɝːθdeɪ/",
+        "meaning": "تولد"
+      },
+      {
+        "word": "formal",
+        "ipa": "/ˈfɔːrməl/",
+        "meaning": "رسمی"
+      },
+      {
+        "word": "informal",
+        "ipa": "/ɪnˈfɔːrməl/",
+        "meaning": "غیررسمی"
+      },
+      {
+        "word": "singular",
+        "ipa": "/ˈsɪŋɡjələr/",
+        "meaning": "مفرد"
+      },
+      {
+        "word": "plural",
+        "ipa": "/ˈplʊrəl/",
+        "meaning": "جمع"
+      },
+      {
+        "word": "describe",
+        "ipa": "/dɪˈskraɪb/",
+        "meaning": "توصیف کردن"
+      },
+      {
+        "word": "compare",
+        "ipa": "/kəmˈper/",
+        "meaning": "مقایسه کردن"
+      },
+      {
+        "word": "explain",
+        "ipa": "/ɪkˈspleɪn/",
+        "meaning": "توضیح دادن"
+      },
+      {
+        "word": "born",
+        "ipa": "/bɔːrn/",
+        "meaning": "متولد شده"
+      },
+      {
+        "word": "pass away",
+        "ipa": "/ˌpæs əˈweɪ/",
+        "meaning": "فوت کردن (مؤدبانه)"
+      },
+      {
+        "word": "tired",
+        "ipa": "/ˈtaɪərd/",
+        "meaning": "خسته"
+      },
+      {
+        "word": "angry",
+        "ipa": "/ˈæŋɡri/",
+        "meaning": "عصبانی"
+      },
+      {
+        "word": "hungry",
+        "ipa": "/ˈhʌŋɡri/",
+        "meaning": "گرسنه"
+      },
+      {
+        "word": "dead",
+        "ipa": "/ded/",
+        "meaning": "مرده"
+      },
+      {
+        "word": "alive",
+        "ipa": "/əˈlaɪv/",
+        "meaning": "زنده"
+      },
+      {
+        "word": "at home",
+        "ipa": "/æt hoʊm/",
+        "meaning": "در خانه"
+      },
+      {
+        "word": "at work",
+        "ipa": "/æt wɝːk/",
+        "meaning": "سر کار"
+      },
+      {
+        "word": "how old",
+        "ipa": "/haʊ oʊld/",
+        "meaning": "چند ساله"
+      },
+      {
+        "word": "man",
+        "ipa": "/mæn/",
+        "meaning": "مرد"
+      },
+      {
+        "word": "woman",
+        "ipa": "/ˈwʊmən/",
+        "meaning": "زن"
+      },
+      {
+        "word": "women",
+        "ipa": "/ˈwɪmɪn/",
+        "meaning": "زن‌ها"
+      },
+      {
+        "word": "foot",
+        "ipa": "/fʊt/",
+        "meaning": "پا"
+      },
+      {
+        "word": "feet",
+        "ipa": "/fiːt/",
+        "meaning": "پاها"
+      },
+      {
+        "word": "tooth",
+        "ipa": "/tuːθ/",
+        "meaning": "دندان"
+      },
+      {
+        "word": "teeth",
+        "ipa": "/tiːθ/",
+        "meaning": "دندان‌ها"
+      },
+      {
+        "word": "mouse",
+        "ipa": "/maʊs/",
+        "meaning": "موش"
+      },
+      {
+        "word": "mice",
+        "ipa": "/maɪs/",
+        "meaning": "موش‌ها"
+      },
+      {
+        "word": "goose",
+        "ipa": "/ɡuːs/",
+        "meaning": "غاز"
+      },
+      {
+        "word": "geese",
+        "ipa": "/ɡiːs/",
+        "meaning": "غازها"
+      },
+      {
+        "word": "men",
+        "ipa": "/men/",
+        "meaning": "مردان"
+      }
+    ],
+    "sentences": [
+      {
+        "en": "What a great party!",
+        "fa": "چه مهمانی فوق‌العاده‌ای!"
+      },
+      {
+        "en": "Are your children here?",
+        "fa": "آیا فرزندانت اینجا هستند؟"
+      },
+      {
+        "en": "Yes, they are.",
+        "fa": "بله، هستند."
+      },
+      {
+        "en": "He's my son.",
+        "fa": "او پسر من است."
+      },
+      {
+        "en": "He's eight.",
+        "fa": "او هشت ساله است."
+      },
+      {
+        "en": "She's my daughter.",
+        "fa": "او دختر من است."
+      },
+      {
+        "en": "She's ten.",
+        "fa": "او ده ساله است."
+      },
+      {
+        "en": "Is he your husband?",
+        "fa": "آیا او شوهر تو است؟"
+      },
+      {
+        "en": "He's my brother Marcus.",
+        "fa": "او برادرم مارکوس است."
+      },
+      {
+        "en": "My husband isn't here.",
+        "fa": "شوهرم اینجا نیست."
+      },
+      {
+        "en": "Are your parents here?",
+        "fa": "آیا والدینت اینجا هستند؟"
+      },
+      {
+        "en": "Here's my grandmother.",
+        "fa": "این هم مادربزرگ من."
+      },
+      {
+        "en": "Nice to meet you.",
+        "fa": "از آشنایی با شما خوشبختم."
+      },
+      {
+        "en": "Are you both Elizabeth?",
+        "fa": "آیا هر دوی شما الیزابت هستید؟"
+      },
+      {
+        "en": "Yes, we are.",
+        "fa": "بله، همین‌طور است."
+      },
+      {
+        "en": "Is your mother at home?",
+        "fa": "آیا مادرت در خانه است؟"
+      },
+      {
+        "en": "They were tired.",
+        "fa": "آن‌ها خسته بودند."
+      },
+      {
+        "en": "She was born in 1999.",
+        "fa": "او در سال ۱۹۹۹ متولد شد."
+      },
+      {
+        "en": "How old are you?",
+        "fa": "چند سال داری؟"
+      },
+      {
+        "en": "Where is your mother?",
+        "fa": "مادرت کجاست؟"
+      },
+      {
+        "en": "Who is your brother?",
+        "fa": "برادرت کیست؟"
+      },
+      {
+        "en": "Yes, he is.",
+        "fa": "بله، هست."
+      },
+      {
+        "en": "No, he isn't.",
+        "fa": "نه، نیست."
+      },
+      {
+        "en": "Yes, she is.",
+        "fa": "بله، هست."
+      },
+      {
+        "en": "No, she isn't.",
+        "fa": "نه، نیست."
+      },
+      {
+        "en": "No, they aren't.",
+        "fa": "نه، نیستند."
+      },
+      {
+        "en": "No, I'm not.",
+        "fa": "نه، نیستم."
+      }
+    ],
+    "grammar": [
+      {
+        "title": "جملهٔ خبری با am / is / are",
+        "explanation": "برای گفتن وضعیت یا هویت، بعد از فاعل از am (برای I)، is (برای he/she/it) و are (برای you/we/they) استفاده می‌کنیم.",
+        "examples": [
+          {
+            "en": "He's my son.",
+            "fa": "او پسر من است."
+          },
+          {
+            "en": "She's my daughter.",
+            "fa": "او دختر من است."
+          },
+          {
+            "en": "Are your parents here?",
+            "fa": "آیا والدینت اینجا هستند؟"
+          }
+        ]
+      },
+      {
+        "title": "سؤال بله / خیر با am / is / are",
+        "explanation": "برای سؤال، فعل بودن را قبل از فاعل می‌آوریم و در پایان علامت سؤال می‌گذاریم.",
+        "examples": [
+          {
+            "en": "Are your children here?",
+            "fa": "آیا فرزندانت اینجا هستند؟"
+          },
+          {
+            "en": "Is he your husband?",
+            "fa": "آیا او شوهر تو است؟"
+          },
+          {
+            "en": "Is your mother at home?",
+            "fa": "آیا مادرت در خانه است؟"
+          }
+        ]
+      },
+      {
+        "title": "پاسخ کوتاه",
+        "explanation": "در پاسخ کوتاه، همان فعل بودن را تکرار می‌کنیم؛ در جواب منفی از not یا شکل مخفف آن استفاده می‌کنیم.",
+        "examples": [
+          {
+            "en": "Yes, they are.",
+            "fa": "بله، هستند."
+          },
+          {
+            "en": "No, he isn't.",
+            "fa": "نه، نیست."
+          },
+          {
+            "en": "No, I'm not.",
+            "fa": "نه، نیستم."
+          }
+        ]
+      },
+      {
+        "title": "گذشتهٔ فعل بودن: was / were",
+        "explanation": "برای زمان گذشته به‌جای am/is/are از was (اکثر ضمایر مفرد) و were (you و جمع) استفاده می‌شود.",
+        "examples": [
+          {
+            "en": "She was born in 1999.",
+            "fa": "او در سال ۱۹۹۹ متولد شد."
+          },
+          {
+            "en": "They were tired.",
+            "fa": "آن‌ها خسته بودند."
+          }
+        ]
+      },
+      {
+        "title": "سؤالات WH با فعل بودن",
+        "explanation": "کلمهٔ پرسشی (مثل who، where، how old) ابتدای جمله می‌آید و بعد am/is/are و فاعل قرار می‌گیرد.",
+        "examples": [
+          {
+            "en": "How old are you?",
+            "fa": "چند سال داری؟"
+          },
+          {
+            "en": "Where is your mother?",
+            "fa": "مادرت کجاست؟"
+          },
+          {
+            "en": "Who is your brother?",
+            "fa": "برادرت کیست؟"
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "title": "مکالمه: مهمانی خانوادگی",
+        "lines": [
+          {
+            "en": "What a great party!",
+            "fa": "چه مهمانی فوق‌العاده‌ای!"
+          },
+          {
+            "en": "Are your children here?",
+            "fa": "آیا فرزندانت اینجا هستند؟"
+          },
+          {
+            "en": "Yes, they are.",
+            "fa": "بله، هستند."
+          },
+          {
+            "en": "He's my son.",
+            "fa": "او پسر من است."
+          },
+          {
+            "en": "He's eight.",
+            "fa": "او هشت ساله است."
+          },
+          {
+            "en": "She's my daughter.",
+            "fa": "او دختر من است."
+          },
+          {
+            "en": "She's ten.",
+            "fa": "او ده ساله است."
+          },
+          {
+            "en": "Is he your husband?",
+            "fa": "آیا او شوهر تو است؟"
+          },
+          {
+            "en": "He's my brother Marcus.",
+            "fa": "او برادرم مارکوس است."
+          },
+          {
+            "en": "My husband isn't here.",
+            "fa": "شوهرم اینجا نیست."
+          },
+          {
+            "en": "Are your parents here?",
+            "fa": "آیا والدینت اینجا هستند؟"
+          },
+          {
+            "en": "Here's my grandmother.",
+            "fa": "این هم مادربزرگ من."
+          },
+          {
+            "en": "Nice to meet you.",
+            "fa": "از آشنایی با شما خوشبختم."
+          },
+          {
+            "en": "Are you both Elizabeth?",
+            "fa": "آیا هر دوی شما الیزابت هستید؟"
+          },
+          {
+            "en": "Yes, we are.",
+            "fa": "بله، همین‌طور است."
+          }
+        ]
+      }
+    ]
+  }
+}
