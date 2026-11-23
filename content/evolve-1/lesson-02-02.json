@@ -1,0 +1,1518 @@
+{
+  "schema_version": "2.0",
+  "book": "evolve-1",
+  "lesson": "lesson-02-02",
+  "title": "Lesson 2.2 – Describing people",
+  "exercises": [
+    {
+      "id": "evolve-1-l02-02-translation",
+      "type": "quick_translation",
+      "title": "ترجمه جمله‌ها و عبارت‌ها",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-02-tr-01",
+          "expected_answer": "He is tall.",
+          "translation": "او قدبلند است.",
+          "question": "او قدبلند است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "tall = قدبلند",
+          "group": "Appearance"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-02",
+          "expected_answer": "She is short.",
+          "translation": "او قدکوتاه است.",
+          "question": "او قدکوتاه است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "short = کوتاه‌قد",
+          "group": "Appearance"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-03",
+          "expected_answer": "She's really funny.",
+          "translation": "او واقعاً بامزه است.",
+          "question": "او واقعاً بامزه است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "really قبل از صفت",
+          "accepted_answers": [
+            "She is really funny."
+          ],
+          "group": "Personality"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-04",
+          "expected_answer": "She's very smart.",
+          "translation": "او بسیار باهوش است.",
+          "question": "او بسیار باهوش است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "very = خیلی",
+          "accepted_answers": [
+            "She is very smart."
+          ],
+          "group": "Appearance"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-05",
+          "expected_answer": "He's not tall.",
+          "translation": "او قدبلند نیست.",
+          "question": "او قدبلند نیست.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "منفی: is not یا isn't",
+          "accepted_answers": [
+            "He is not tall."
+          ],
+          "group": "Appearance"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-06",
+          "expected_answer": "She's not old.",
+          "translation": "او پیر نیست.",
+          "question": "او پیر نیست.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "ساختار: فاعل + am/is/are + (really/very) + صفت",
+          "accepted_answers": [
+            "She is not old."
+          ],
+          "group": "Age"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-07",
+          "expected_answer": "Both my parents are 50.",
+          "translation": "هر دو والد من ۵۰ ساله هستند.",
+          "question": "هر دو والد من ۵۰ ساله هستند.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "both = هر دو"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-08",
+          "expected_answer": "They're both really funny.",
+          "translation": "هر دوی آن‌ها واقعاً بامزه هستند.",
+          "question": "هر دوی آن‌ها واقعاً بامزه هستند.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "ساختار: فاعل + am/is/are + (really/very) + صفت",
+          "accepted_answers": [
+            "They are both really funny."
+          ],
+          "group": "Personality"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-09",
+          "expected_answer": "My grandmother is 85.",
+          "translation": "مادربزرگ من ۸۵ ساله است.",
+          "question": "مادربزرگ من ۸۵ ساله است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "ساختار: فاعل + am/is/are + (really/very) + صفت",
+          "group": "Numbers"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-10",
+          "expected_answer": "My parents are both 50.",
+          "translation": "والدین من هر دو ۵۰ ساله هستند.",
+          "question": "والدین من هر دو ۵۰ ساله هستند.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "ساختار: فاعل + am/is/are + (really/very) + صفت"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-11",
+          "expected_answer": "They're not from Texas.",
+          "translation": "آن‌ها اهل تگزاس نیستند.",
+          "question": "آن‌ها اهل تگزاس نیستند.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "ساختار: فاعل + am/is/are + (really/very) + صفت",
+          "accepted_answers": [
+            "They are not from Texas."
+          ]
+        },
+        {
+          "id": "evolve-1-l02-02-tr-12",
+          "expected_answer": "She's really funny and friendly.",
+          "translation": "او خیلی بامزه و خوش‌برخورد است.",
+          "question": "او خیلی بامزه و خوش‌برخورد است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "ساختار: فاعل + am/is/are + (really/very) + صفت",
+          "accepted_answers": [
+            "She is really funny and friendly."
+          ],
+          "group": "Personality"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-13",
+          "expected_answer": "My best friend is very smart.",
+          "translation": "بهترین دوست من خیلی باهوش است.",
+          "question": "بهترین دوست من خیلی باهوش است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "best friend = بهترین دوست",
+          "group": "Appearance"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-14",
+          "expected_answer": "We aren't in Texas.",
+          "translation": "ما در تگزاس نیستیم.",
+          "question": "ما در تگزاس نیستیم.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "ساختار: فاعل + am/is/are + (really/very) + صفت",
+          "accepted_answers": [
+            "We are not in Texas."
+          ]
+        },
+        {
+          "id": "evolve-1-l02-02-tr-15",
+          "expected_answer": "My brother isn't boring.",
+          "translation": "برادرم کسل‌کننده نیست.",
+          "question": "برادرم کسل‌کننده نیست.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "boring = کسل‌کننده",
+          "accepted_answers": [
+            "My brother is not boring."
+          ],
+          "group": "Personality"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-16",
+          "expected_answer": "They are very friendly.",
+          "translation": "آن‌ها خیلی خوش‌برخورد هستند.",
+          "question": "آن‌ها خیلی خوش‌برخورد هستند.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "ساختار: فاعل + am/is/are + (really/very) + صفت"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-17",
+          "expected_answer": "My friend is shy.",
+          "translation": "دوست من خجالتی است.",
+          "question": "دوست من خجالتی است.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "shy = خجالتی",
+          "group": "Personality"
+        },
+        {
+          "id": "evolve-1-l02-02-tr-18",
+          "expected_answer": "Erika isn't old.",
+          "translation": "ریکا پیر نیست.",
+          "question": "ریکا پیر نیست.",
+          "time_limit": 60,
+          "explanation": "به ترتیب صفت، really/very و فعل بودن توجه کن.",
+          "hint": "ساختار: فاعل + am/is/are + (really/very) + صفت",
+          "accepted_answers": [
+            "Erika is not old."
+          ],
+          "group": "Age"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-02-builder",
+      "type": "sentence_builder",
+      "title": "جمله‌سازی",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-02-sb-01",
+          "expected_answer": "She's really funny.",
+          "translation": "او واقعاً بامزه است.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "really قبل از صفت funny",
+          "word_bank": [
+            "funny.",
+            "She's",
+            "really"
+          ],
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "She + is + really + adjective"
+        },
+        {
+          "id": "evolve-1-l02-02-sb-02",
+          "expected_answer": "They're both really funny.",
+          "translation": "هر دوی آن‌ها واقعاً بامزه هستند.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "both بعد از فعل بودن",
+          "word_bank": [
+            "funny.",
+            "both",
+            "They're",
+            "really"
+          ],
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "They are both + really + adjective"
+        },
+        {
+          "id": "evolve-1-l02-02-sb-03",
+          "expected_answer": "My best friend is very smart.",
+          "translation": "بهترین دوست من خیلی باهوش است.",
+          "question": "کلمات را به ترتیب درست مرتب کن و جمله بساز.",
+          "hint": "best friend = بهترین دوست",
+          "word_bank": [
+            "smart.",
+            "friend",
+            "My",
+            "very",
+            "best",
+            "is"
+          ],
+          "time_limit": 60,
+          "explanation": "My best friend + is + very + smart"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-02-grammar-correction",
+      "type": "grammar_correction",
+      "title": "اصلاح جمله",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-02-gc-01",
+          "incorrect_sentence": "She are funny.",
+          "expected_answer": "She is funny.",
+          "accepted_answers": [
+            "She's funny."
+          ],
+          "translation": "او بامزه است.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "She با is می‌آید.",
+          "time_limit": 60,
+          "explanation": "She + is + adjective",
+          "group": "Personality"
+        },
+        {
+          "id": "evolve-1-l02-02-gc-02",
+          "incorrect_sentence": "They is friendly.",
+          "expected_answer": "They are friendly.",
+          "accepted_answers": [
+            "They're friendly."
+          ],
+          "translation": "آن‌ها خوش‌برخورد هستند.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "They با are",
+          "time_limit": 60,
+          "explanation": "They + are + adjective",
+          "group": "Personality"
+        },
+        {
+          "id": "evolve-1-l02-02-gc-03",
+          "incorrect_sentence": "She's very funnies.",
+          "expected_answer": "She's very funny.",
+          "accepted_answers": [
+            "She is very funny."
+          ],
+          "translation": "او خیلی بامزه است.",
+          "question": "جملهٔ اشتباه را اصلاح کن.",
+          "hint": "صفات جمع نمی‌شوند.",
+          "time_limit": 60,
+          "explanation": "funny بدون s",
+          "group": "Personality"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-02-pnq",
+      "type": "positive_negative_question",
+      "title": "منفی کردن",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-02-neg-01",
+          "operation": "negative",
+          "question": "جمله را منفی کن: He's tall.",
+          "expected_answer": "He isn't tall.",
+          "accepted_answers": [
+            "He's not tall.",
+            "He is not tall."
+          ],
+          "translation": "او قدبلند نیست.",
+          "hint": "is + not",
+          "group": "Appearance",
+          "time_limit": 60,
+          "explanation": "isn't / is not"
+        },
+        {
+          "id": "evolve-1-l02-02-neg-02",
+          "operation": "negative",
+          "question": "جمله را منفی کن: They're boring.",
+          "expected_answer": "They aren't boring.",
+          "accepted_answers": [
+            "They're not boring.",
+            "They are not boring."
+          ],
+          "translation": "آن‌ها کسل‌کننده نیستند.",
+          "hint": "are + not",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "aren't / are not"
+        },
+        {
+          "id": "evolve-1-l02-02-neg-03",
+          "operation": "negative",
+          "question": "جمله را منفی کن: She's old.",
+          "expected_answer": "She isn't old.",
+          "accepted_answers": [
+            "She's not old.",
+            "She is not old."
+          ],
+          "translation": "او پیر نیست.",
+          "hint": "is + not",
+          "group": "Age",
+          "time_limit": 60,
+          "explanation": "isn't / is not"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-02-choice",
+      "type": "multiple_choice",
+      "title": "سؤالات چندگزینه‌ای",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-02-mc-01",
+          "question": "Really و Very با صفت چه می‌کنند؟",
+          "expected_answer": "They make the adjective stronger.",
+          "translation": "صفت را قوی‌تر می‌کنند.",
+          "hint": "درس ۲B کتاب",
+          "options": [
+            "They make the adjective stronger.",
+            "They make the adjective weaker.",
+            "They change the adjective to a verb."
+          ],
+          "time_limit": 60,
+          "explanation": "Stronger (++).",
+          "group": "Personality"
+        },
+        {
+          "id": "evolve-1-l02-02-mc-02",
+          "question": "کدام جمله درست است؟",
+          "expected_answer": "They're very friendly.",
+          "translation": "آن‌ها خیلی خوش‌برخورد هستند.",
+          "hint": "They با are",
+          "options": [
+            "They're very friendly.",
+            "They're very friendlies.",
+            "They is very friendly."
+          ],
+          "time_limit": 60,
+          "explanation": "They are + very + friendly",
+          "group": "Personality"
+        },
+        {
+          "id": "evolve-1-l02-02-mc-03",
+          "question": "متضاد shy چیست؟",
+          "expected_answer": "bold",
+          "translation": "جسور",
+          "hint": "شخصیت",
+          "options": [
+            "bold",
+            "boring",
+            "short"
+          ],
+          "time_limit": 60,
+          "explanation": "shy ↔ bold",
+          "group": "Personality"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-02-vocabulary",
+      "type": "vocabulary",
+      "title": "مترادف و متضاد",
+      "presentation": "text",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-02-voc-syn-01",
+          "question": "Synonym: smart",
+          "expected_answer": "clever",
+          "translation": "باهوش، زیرک",
+          "hint": "مترادف نزدیک در همین درس یا درس‌های قبل",
+          "group": "Appearance",
+          "time_limit": 60,
+          "explanation": "smart و clever در این زمینه نزدیک‌اند."
+        },
+        {
+          "id": "evolve-1-l02-02-voc-syn-02",
+          "question": "Synonym: funny",
+          "expected_answer": "humorous",
+          "translation": "شوخ‌طبع",
+          "hint": "مترادف نزدیک در همین درس یا درس‌های قبل",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "funny و humorous در این زمینه نزدیک‌اند."
+        },
+        {
+          "id": "evolve-1-l02-02-voc-syn-03",
+          "question": "Synonym: pretty",
+          "expected_answer": "lovely",
+          "translation": "دوست‌داشتنی، زیبا",
+          "hint": "مترادف نزدیک در همین درس یا درس‌های قبل",
+          "group": "Appearance",
+          "time_limit": 60,
+          "explanation": "pretty و lovely در این زمینه نزدیک‌اند."
+        },
+        {
+          "id": "evolve-1-l02-02-voc-syn-04",
+          "question": "Synonym: buddy",
+          "expected_answer": "friend",
+          "translation": "دوست",
+          "hint": "مترادف نزدیک در همین درس یا درس‌های قبل",
+          "time_limit": 60,
+          "explanation": "buddy و friend در این زمینه نزدیک‌اند."
+        },
+        {
+          "id": "evolve-1-l02-02-voc-syn-05",
+          "question": "Synonym: personality",
+          "expected_answer": "character",
+          "translation": "شخصیت، ویژگی‌های شخصیتی",
+          "hint": "مترادف نزدیک در همین درس یا درس‌های قبل",
+          "time_limit": 60,
+          "explanation": "personality و character در این زمینه نزدیک‌اند."
+        },
+        {
+          "id": "evolve-1-l02-02-voc-syn-06",
+          "question": "Synonym: fam",
+          "expected_answer": "family",
+          "translation": "خانواده",
+          "hint": "مترادف نزدیک در همین درس یا درس‌های قبل",
+          "time_limit": 60,
+          "explanation": "fam و family در این زمینه نزدیک‌اند."
+        },
+        {
+          "id": "evolve-1-l02-02-voc-syn-07",
+          "question": "Synonym: seem",
+          "expected_answer": "look",
+          "translation": "نگاه کردن",
+          "hint": "مترادف نزدیک در همین درس یا درس‌های قبل",
+          "time_limit": 60,
+          "explanation": "seem و look در این زمینه نزدیک‌اند."
+        },
+        {
+          "id": "evolve-1-l02-02-voc-opp-01",
+          "question": "Opposite: elderly",
+          "expected_answer": "young",
+          "translation": "جوان",
+          "hint": "متضاد را از واژگان درس انتخاب کن",
+          "time_limit": 60,
+          "explanation": "elderly ↔ young"
+        },
+        {
+          "id": "evolve-1-l02-02-voc-opp-02",
+          "question": "Opposite: short",
+          "expected_answer": "tall",
+          "translation": "قدبلند",
+          "hint": "متضاد صفت یا فعل",
+          "group": "Appearance",
+          "time_limit": 60,
+          "explanation": "short ↔ tall"
+        },
+        {
+          "id": "evolve-1-l02-02-voc-opp-03",
+          "question": "Opposite: boring",
+          "expected_answer": "interesting",
+          "translation": "جالب",
+          "hint": "متضاد صفت یا فعل",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "boring ↔ interesting"
+        },
+        {
+          "id": "evolve-1-l02-02-voc-opp-04",
+          "question": "Opposite: smart",
+          "expected_answer": "stupid",
+          "translation": "احمق، کم‌عقل",
+          "hint": "متضاد صفت یا فعل",
+          "group": "Appearance",
+          "time_limit": 60,
+          "explanation": "smart ↔ stupid"
+        },
+        {
+          "id": "evolve-1-l02-02-voc-opp-05",
+          "question": "Opposite: shy",
+          "expected_answer": "bold",
+          "translation": "جسور، بی‌باک",
+          "hint": "متضاد صفت یا فعل",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "shy ↔ bold"
+        },
+        {
+          "id": "evolve-1-l02-02-voc-opp-06",
+          "question": "Opposite: find",
+          "expected_answer": "lose",
+          "translation": "گم کردن",
+          "hint": "متضاد صفت یا فعل",
+          "time_limit": 60,
+          "explanation": "find ↔ lose"
+        }
+      ]
+    },
+    {
+      "id": "evolve-1-l02-02-dictation",
+      "type": "dictation",
+      "title": "املای واژه‌ها",
+      "presentation": "audio",
+      "difficulty": "easy",
+      "items": [
+        {
+          "id": "evolve-1-l02-02-dic-a-01",
+          "expected_answer": "elderly",
+          "translation": "سالخورده",
+          "question": "elderly",
+          "hint": "سالخورده",
+          "presentation": "audio",
+          "group": "Age",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-a-02",
+          "expected_answer": "aged",
+          "translation": "مسن، سالخورده",
+          "question": "aged",
+          "hint": "مسن، سالخورده",
+          "presentation": "audio",
+          "group": "Age",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-a-03",
+          "expected_answer": "youth",
+          "translation": "جوانی، دورهٔ جوانی",
+          "question": "youth",
+          "hint": "جوانی، دورهٔ جوانی",
+          "presentation": "audio",
+          "group": "Age",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-a-04",
+          "expected_answer": "young people",
+          "translation": "جوانان",
+          "question": "young people",
+          "hint": "جوانان",
+          "presentation": "audio",
+          "group": "Age",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-p-01",
+          "expected_answer": "short",
+          "translation": "کوتاه‌قد",
+          "question": "short",
+          "hint": "کوتاه‌قد",
+          "presentation": "audio",
+          "group": "Appearance",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-p-02",
+          "expected_answer": "tall",
+          "translation": "قدبلند",
+          "question": "tall",
+          "hint": "قدبلند",
+          "presentation": "audio",
+          "group": "Appearance",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-p-03",
+          "expected_answer": "pretty",
+          "translation": "زیبا، خوشگل",
+          "question": "pretty",
+          "hint": "زیبا، خوشگل",
+          "presentation": "audio",
+          "group": "Appearance",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-p-04",
+          "expected_answer": "lovely",
+          "translation": "دوست‌داشتنی، زیبا",
+          "question": "lovely",
+          "hint": "دوست‌داشتنی، زیبا",
+          "presentation": "audio",
+          "group": "Appearance",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-p-05",
+          "expected_answer": "smart",
+          "translation": "باهوش",
+          "question": "smart",
+          "hint": "باهوش",
+          "presentation": "audio",
+          "group": "Appearance",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-r-01",
+          "expected_answer": "funny",
+          "translation": "بامزه، خنده‌دار",
+          "question": "funny",
+          "hint": "بامزه، خنده‌دار",
+          "presentation": "audio",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-r-02",
+          "expected_answer": "boring",
+          "translation": "کسل‌کننده",
+          "question": "boring",
+          "hint": "کسل‌کننده",
+          "presentation": "audio",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-r-03",
+          "expected_answer": "friendly",
+          "translation": "خوش‌برخورد، دوستانه",
+          "question": "friendly",
+          "hint": "خوش‌برخورد، دوستانه",
+          "presentation": "audio",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-r-04",
+          "expected_answer": "interesting",
+          "translation": "جالب",
+          "question": "interesting",
+          "hint": "جالب",
+          "presentation": "audio",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-r-05",
+          "expected_answer": "shy",
+          "translation": "خجالتی",
+          "question": "shy",
+          "hint": "خجالتی",
+          "presentation": "audio",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-r-06",
+          "expected_answer": "clever",
+          "translation": "باهوش، زیرک",
+          "question": "clever",
+          "hint": "باهوش، زیرک",
+          "presentation": "audio",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-r-07",
+          "expected_answer": "stupid",
+          "translation": "احمق، کم‌عقل",
+          "question": "stupid",
+          "hint": "احمق، کم‌عقل",
+          "presentation": "audio",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-r-08",
+          "expected_answer": "bold",
+          "translation": "جسور، بی‌باک",
+          "question": "bold",
+          "hint": "جسور، بی‌باک",
+          "presentation": "audio",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-r-09",
+          "expected_answer": "humorous",
+          "translation": "شوخ‌طبع",
+          "question": "humorous",
+          "hint": "شوخ‌طبع",
+          "presentation": "audio",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-r-10",
+          "expected_answer": "intimate",
+          "translation": "صمیمی، نزدیک",
+          "question": "intimate",
+          "hint": "صمیمی، نزدیک",
+          "presentation": "audio",
+          "group": "Personality",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-n-01",
+          "expected_answer": "twenty-four",
+          "translation": "بیست‌وچهار",
+          "question": "twenty-four",
+          "hint": "بیست‌وچهار",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-n-02",
+          "expected_answer": "eighty-five",
+          "translation": "هشتاد‌وپنج",
+          "question": "eighty-five",
+          "hint": "هشتاد‌وپنج",
+          "presentation": "audio",
+          "group": "Numbers",
+          "time_limit": 60,
+          "explanation": "املای واژه را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-01",
+          "expected_answer": "buddy",
+          "translation": "رفیق، دوست",
+          "question": "buddy",
+          "hint": "رفیق، دوست",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-02",
+          "expected_answer": "best friend",
+          "translation": "بهترین دوست",
+          "question": "best friend",
+          "hint": "بهترین دوست",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-03",
+          "expected_answer": "fam",
+          "translation": "خانواده (خودمانی)",
+          "question": "fam",
+          "hint": "خانواده (خودمانی)",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-04",
+          "expected_answer": "college student",
+          "translation": "دانشجوی دانشگاه",
+          "question": "college student",
+          "hint": "دانشجوی دانشگاه",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-05",
+          "expected_answer": "seem",
+          "translation": "به نظر رسیدن",
+          "question": "seem",
+          "hint": "به نظر رسیدن",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-06",
+          "expected_answer": "look like",
+          "translation": "شبیه بودن به",
+          "question": "look like",
+          "hint": "شبیه بودن به",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-07",
+          "expected_answer": "lose",
+          "translation": "گم کردن",
+          "question": "lose",
+          "hint": "گم کردن",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-08",
+          "expected_answer": "really",
+          "translation": "واقعاً، خیلی",
+          "question": "really",
+          "hint": "واقعاً، خیلی",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-09",
+          "expected_answer": "very",
+          "translation": "خیلی، بسیار",
+          "question": "very",
+          "hint": "خیلی، بسیار",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-10",
+          "expected_answer": "so",
+          "translation": "خیلی، این‌قدر",
+          "question": "so",
+          "hint": "خیلی، این‌قدر",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-11",
+          "expected_answer": "above",
+          "translation": "بالای، بالاتر از",
+          "question": "above",
+          "hint": "بالای، بالاتر از",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-12",
+          "expected_answer": "over",
+          "translation": "بالای، بر فراز",
+          "question": "over",
+          "hint": "بالای، بر فراز",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-13",
+          "expected_answer": "higher",
+          "translation": "بالاتر",
+          "question": "higher",
+          "hint": "بالاتر",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-14",
+          "expected_answer": "character",
+          "translation": "شخصیت، ویژگی‌های شخصیتی",
+          "question": "character",
+          "hint": "شخصیت، ویژگی‌های شخصیتی",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-15",
+          "expected_answer": "personality",
+          "translation": "شخصیت",
+          "question": "personality",
+          "hint": "شخصیت",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        },
+        {
+          "id": "evolve-1-l02-02-dic-o-16",
+          "expected_answer": "days",
+          "translation": "روزها",
+          "question": "days",
+          "hint": "روزها",
+          "presentation": "audio",
+          "time_limit": 60,
+          "explanation": "املای واژه یا عبارت را با دقت بنویس."
+        }
+      ]
+    }
+  ],
+  "lesson_content": {
+    "vocabulary": [
+      {
+        "word": "elderly",
+        "ipa": "/ˈeldərli/",
+        "meaning": "سالخورده",
+        "category": "Age"
+      },
+      {
+        "word": "aged",
+        "ipa": "/eɪdʒd/",
+        "meaning": "مسن، سالخورده",
+        "category": "Age"
+      },
+      {
+        "word": "youth",
+        "ipa": "/juːθ/",
+        "meaning": "جوانی، دورهٔ جوانی",
+        "category": "Age"
+      },
+      {
+        "word": "young people",
+        "ipa": "/jʌŋ ˈpiːpəl/",
+        "meaning": "جوانان",
+        "category": "Age"
+      },
+      {
+        "word": "short",
+        "ipa": "/ʃɔːrt/",
+        "meaning": "کوتاه‌قد",
+        "category": "Appearance"
+      },
+      {
+        "word": "tall",
+        "ipa": "/tɔːl/",
+        "meaning": "قدبلند",
+        "category": "Appearance"
+      },
+      {
+        "word": "pretty",
+        "ipa": "/ˈprɪti/",
+        "meaning": "زیبا، خوشگل",
+        "category": "Appearance"
+      },
+      {
+        "word": "lovely",
+        "ipa": "/ˈlʌvli/",
+        "meaning": "دوست‌داشتنی، زیبا",
+        "category": "Appearance"
+      },
+      {
+        "word": "smart",
+        "ipa": "/smɑːrt/",
+        "meaning": "باهوش",
+        "category": "Appearance"
+      },
+      {
+        "word": "funny",
+        "ipa": "/ˈfʌni/",
+        "meaning": "بامزه، خنده‌دار",
+        "category": "Personality"
+      },
+      {
+        "word": "boring",
+        "ipa": "/ˈbɔːrɪŋ/",
+        "meaning": "کسل‌کننده",
+        "category": "Personality"
+      },
+      {
+        "word": "friendly",
+        "ipa": "/ˈfrendli/",
+        "meaning": "خوش‌برخورد، دوستانه",
+        "category": "Personality"
+      },
+      {
+        "word": "interesting",
+        "ipa": "/ˈɪntrəstɪŋ/",
+        "meaning": "جالب",
+        "category": "Personality"
+      },
+      {
+        "word": "shy",
+        "ipa": "/ʃaɪ/",
+        "meaning": "خجالتی",
+        "category": "Personality"
+      },
+      {
+        "word": "clever",
+        "ipa": "/ˈklevər/",
+        "meaning": "باهوش، زیرک",
+        "category": "Personality"
+      },
+      {
+        "word": "stupid",
+        "ipa": "/ˈstuːpɪd/",
+        "meaning": "احمق، کم‌عقل",
+        "category": "Personality"
+      },
+      {
+        "word": "bold",
+        "ipa": "/boʊld/",
+        "meaning": "جسور، بی‌باک",
+        "category": "Personality"
+      },
+      {
+        "word": "humorous",
+        "ipa": "/ˈhjuːmərəs/",
+        "meaning": "شوخ‌طبع",
+        "category": "Personality"
+      },
+      {
+        "word": "intimate",
+        "ipa": "/ˈɪntəmət/",
+        "meaning": "صمیمی، نزدیک",
+        "category": "Personality"
+      },
+      {
+        "word": "twenty-four",
+        "ipa": "/ˌtwenti ˈfɔːr/",
+        "meaning": "بیست‌وچهار",
+        "category": "Numbers"
+      },
+      {
+        "word": "eighty-five",
+        "ipa": "/ˌeɪti ˈfaɪv/",
+        "meaning": "هشتاد‌وپنج",
+        "category": "Numbers"
+      },
+      {
+        "word": "buddy",
+        "ipa": "/ˈbʌdi/",
+        "meaning": "رفیق، دوست"
+      },
+      {
+        "word": "best friend",
+        "ipa": "/best frend/",
+        "meaning": "بهترین دوست"
+      },
+      {
+        "word": "fam",
+        "ipa": "/fæm/",
+        "meaning": "خانواده (خودمانی)"
+      },
+      {
+        "word": "college student",
+        "ipa": "/ˈkɑːlɪdʒ ˈstuːdənt/",
+        "meaning": "دانشجوی دانشگاه"
+      },
+      {
+        "word": "seem",
+        "ipa": "/siːm/",
+        "meaning": "به نظر رسیدن"
+      },
+      {
+        "word": "look like",
+        "ipa": "/lʊk laɪk/",
+        "meaning": "شبیه بودن به"
+      },
+      {
+        "word": "lose",
+        "ipa": "/luːz/",
+        "meaning": "گم کردن"
+      },
+      {
+        "word": "really",
+        "ipa": "/ˈrɪəli/",
+        "meaning": "واقعاً، خیلی"
+      },
+      {
+        "word": "very",
+        "ipa": "/ˈveri/",
+        "meaning": "خیلی، بسیار"
+      },
+      {
+        "word": "so",
+        "ipa": "/soʊ/",
+        "meaning": "خیلی، این‌قدر"
+      },
+      {
+        "word": "above",
+        "ipa": "/əˈbʌv/",
+        "meaning": "بالای، بالاتر از"
+      },
+      {
+        "word": "over",
+        "ipa": "/ˈoʊvər/",
+        "meaning": "بالای، بر فراز"
+      },
+      {
+        "word": "higher",
+        "ipa": "/ˈhaɪər/",
+        "meaning": "بالاتر"
+      },
+      {
+        "word": "character",
+        "ipa": "/ˈkærəktər/",
+        "meaning": "شخصیت، ویژگی‌های شخصیتی"
+      },
+      {
+        "word": "personality",
+        "ipa": "/ˌpɜːrsəˈnæləti/",
+        "meaning": "شخصیت"
+      },
+      {
+        "word": "days",
+        "ipa": "/deɪz/",
+        "meaning": "روزها"
+      }
+    ],
+    "sentences": [
+      {
+        "en": "She is funny.",
+        "fa": "او بامزه است."
+      },
+      {
+        "en": "He is tall.",
+        "fa": "او قدبلند است."
+      },
+      {
+        "en": "My mother is short.",
+        "fa": "مادر من قدکوتاه است."
+      },
+      {
+        "en": "They are friendly.",
+        "fa": "آن‌ها خوش‌برخورد هستند."
+      },
+      {
+        "en": "My sister is smart.",
+        "fa": "خواهر من باهوش است."
+      },
+      {
+        "en": "She's really funny.",
+        "fa": "او واقعاً بامزه است."
+      },
+      {
+        "en": "He's really tall.",
+        "fa": "او خیلی قدبلند است."
+      },
+      {
+        "en": "She's very smart.",
+        "fa": "او بسیار باهوش است."
+      },
+      {
+        "en": "She's very interesting.",
+        "fa": "او خیلی جالب است."
+      },
+      {
+        "en": "He is really young.",
+        "fa": "او واقعاً جوان است."
+      },
+      {
+        "en": "They are very friendly.",
+        "fa": "آن‌ها خیلی خوش‌برخورد هستند."
+      },
+      {
+        "en": "My brother is really funny.",
+        "fa": "برادرم واقعاً بامزه است."
+      },
+      {
+        "en": "My grandmother is very interesting.",
+        "fa": "مادربزرگ من خیلی جالب است."
+      },
+      {
+        "en": "She's so funny.",
+        "fa": "او خیلی بامزه است."
+      },
+      {
+        "en": "He's so smart.",
+        "fa": "او خیلی باهوش است."
+      },
+      {
+        "en": "They are so friendly.",
+        "fa": "آن‌ها خیلی خوش‌برخورد هستند."
+      },
+      {
+        "en": "He's not tall.",
+        "fa": "او قدبلند نیست."
+      },
+      {
+        "en": "She's not old.",
+        "fa": "او پیر نیست."
+      },
+      {
+        "en": "They're not boring.",
+        "fa": "آن‌ها کسل‌کننده نیستند."
+      },
+      {
+        "en": "We're in Texas.",
+        "fa": "ما در تگزاس هستیم."
+      },
+      {
+        "en": "We're not in Texas.",
+        "fa": "ما در تگزاس نیستیم."
+      },
+      {
+        "en": "Both my parents are 50.",
+        "fa": "هر دو والد من ۵۰ ساله هستند."
+      },
+      {
+        "en": "They're both really funny.",
+        "fa": "هر دوی آن‌ها واقعاً بامزه هستند."
+      },
+      {
+        "en": "She is short.",
+        "fa": "او قدکوتاه است."
+      },
+      {
+        "en": "My father is old.",
+        "fa": "پدر من مسن است."
+      },
+      {
+        "en": "My mother is young.",
+        "fa": "مادر من جوان است."
+      },
+      {
+        "en": "My brother is really tall.",
+        "fa": "برادرم واقعاً قدبلند است."
+      },
+      {
+        "en": "She's very beautiful.",
+        "fa": "او بسیار زیباست."
+      },
+      {
+        "en": "My sister is funny.",
+        "fa": "خواهرم بامزه است."
+      },
+      {
+        "en": "He's really smart.",
+        "fa": "او خیلی باهوش است."
+      },
+      {
+        "en": "She's very friendly.",
+        "fa": "او خیلی خوش‌برخورد است."
+      },
+      {
+        "en": "My friend is shy.",
+        "fa": "دوست من خجالتی است."
+      },
+      {
+        "en": "My brother isn't boring.",
+        "fa": "برادرم کسل‌کننده نیست."
+      },
+      {
+        "en": "They're really interesting.",
+        "fa": "آن‌ها واقعاً جالب هستند."
+      },
+      {
+        "en": "My parents are both 50.",
+        "fa": "والدین من هر دو ۵۰ ساله هستند."
+      },
+      {
+        "en": "They're not from Texas.",
+        "fa": "آن‌ها اهل تگزاس نیستند."
+      },
+      {
+        "en": "My grandmother is 85.",
+        "fa": "مادربزرگ من ۸۵ ساله است."
+      },
+      {
+        "en": "She's really funny and friendly.",
+        "fa": "او خیلی بامزه و خوش‌برخورد است."
+      },
+      {
+        "en": "My best friend is very smart.",
+        "fa": "بهترین دوست من خیلی باهوش است."
+      },
+      {
+        "en": "He isn't shy.",
+        "fa": "او خجالتی نیست."
+      },
+      {
+        "en": "We're both students.",
+        "fa": "ما هر دو دانشجو هستیم."
+      },
+      {
+        "en": "Erika isn't old.",
+        "fa": "ریکا پیر نیست."
+      },
+      {
+        "en": "My parents aren't from Miami.",
+        "fa": "والدین من اهل میامی نیستند."
+      },
+      {
+        "en": "My friends aren't boring.",
+        "fa": "دوستان من کسل‌کننده نیستند."
+      },
+      {
+        "en": "Filip isn't American.",
+        "fa": "فیلیپ آمریکایی نیست."
+      }
+    ],
+    "grammar": [
+      {
+        "title": "صفات با am / is / are",
+        "explanation": "برای توصیف افراد، بعد از فعل بودن صفت می‌آید. صفت برای جمع تغییر نمی‌کند: They are smart (نه smarts).",
+        "examples": [
+          {
+            "en": "He is tall.",
+            "fa": "او قدبلند است."
+          },
+          {
+            "en": "They are friendly.",
+            "fa": "آن‌ها خوش‌برخورد هستند."
+          },
+          {
+            "en": "My sister is smart.",
+            "fa": "خواهر من باهوش است."
+          }
+        ]
+      },
+      {
+        "title": "Really و Very قبل از صفت",
+        "explanation": "Really و Very معمولاً قبل از صفت می‌آیند و معنای صفت را قوی‌تر می‌کنند.",
+        "examples": [
+          {
+            "en": "She's really funny.",
+            "fa": "او واقعاً بامزه است."
+          },
+          {
+            "en": "She's very smart.",
+            "fa": "او بسیار باهوش است."
+          },
+          {
+            "en": "My brother is really funny.",
+            "fa": "برادرم واقعاً بامزه است."
+          }
+        ]
+      },
+      {
+        "title": "So + صفت",
+        "explanation": "So قبل از صفت می‌آید و یعنی «خیلی» یا «این‌قدر»؛ بعد از آن فعل نیست.",
+        "examples": [
+          {
+            "en": "She's so funny.",
+            "fa": "او خیلی بامزه است."
+          },
+          {
+            "en": "He's so smart.",
+            "fa": "او خیلی باهوش است."
+          },
+          {
+            "en": "They are so friendly.",
+            "fa": "آن‌ها خیلی خوش‌برخورد هستند."
+          }
+        ]
+      },
+      {
+        "title": "منفی با is not / are not",
+        "explanation": "برای منفی کردن، not را بعد از is یا are می‌گذاریم. شکل‌های مخفف: isn't، aren't، 're not.",
+        "examples": [
+          {
+            "en": "He's not tall.",
+            "fa": "او قدبلند نیست."
+          },
+          {
+            "en": "She's not old.",
+            "fa": "او پیر نیست."
+          },
+          {
+            "en": "They're not boring.",
+            "fa": "آن‌ها کسل‌کننده نیستند."
+          }
+        ]
+      },
+      {
+        "title": "Both",
+        "explanation": "Both یعنی «هر دو». می‌تواند قبل از اسم بیاید یا بعد از فعل بودن: Both my parents… / They're both …",
+        "examples": [
+          {
+            "en": "Both my parents are 50.",
+            "fa": "هر دو والد من ۵۰ ساله هستند."
+          },
+          {
+            "en": "They're both really funny.",
+            "fa": "هر دوی آن‌ها واقعاً بامزه هستند."
+          },
+          {
+            "en": "We're both students.",
+            "fa": "ما هر دو دانشجو هستیم."
+          }
+        ]
+      }
+    ],
+    "stories": [
+      {
+        "title": "متن Lara: توصیف خانواده",
+        "lines": [
+          {
+            "en": "We're in Texas.",
+            "fa": "ما در تگزاس هستیم."
+          },
+          {
+            "en": "My grandmother is 85.",
+            "fa": "مادربزرگ من ۸۵ ساله است."
+          },
+          {
+            "en": "My grandmother is very interesting.",
+            "fa": "مادربزرگ من خیلی جالب است."
+          },
+          {
+            "en": "My sister is funny.",
+            "fa": "خواهرم بامزه است."
+          },
+          {
+            "en": "She's really funny and friendly.",
+            "fa": "او خیلی بامزه و خوش‌برخورد است."
+          },
+          {
+            "en": "My brother is really tall.",
+            "fa": "برادرم واقعاً قدبلند است."
+          },
+          {
+            "en": "He's really smart.",
+            "fa": "او خیلی باهوش است."
+          },
+          {
+            "en": "My parents are both 50.",
+            "fa": "والدین من هر دو ۵۰ ساله هستند."
+          },
+          {
+            "en": "They're both really funny.",
+            "fa": "هر دوی آن‌ها واقعاً بامزه هستند."
+          },
+          {
+            "en": "Erika isn't old.",
+            "fa": "ریکا پیر نیست."
+          },
+          {
+            "en": "My friend is shy.",
+            "fa": "دوست من خجالتی است."
+          },
+          {
+            "en": "My best friend is very smart.",
+            "fa": "بهترین دوست من خیلی باهوش است."
+          },
+          {
+            "en": "My parents aren't from Miami.",
+            "fa": "والدین من اهل میامی نیستند."
+          },
+          {
+            "en": "My friends aren't boring.",
+            "fa": "دوستان من کسل‌کننده نیستند."
+          }
+        ]
+      }
+    ]
+  }
+}

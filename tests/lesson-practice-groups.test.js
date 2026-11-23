@@ -113,3 +113,20 @@ test('lesson 2.1 has a Numbers practice group with dictation for every number wo
     assert.ok(dictated.has(word), `"${word}" is not a dictation item in the Numbers group`);
   }
 });
+
+const lesson202 = JSON.parse(readFileSync(new URL('../content/evolve-1/lesson-02-02.json', import.meta.url), 'utf8'));
+const questions202 = flattenLesson(lesson202, { book: 'evolve-1', lesson: 'lesson-02-02' }).questions;
+
+for (const groupName of ['Age', 'Appearance', 'Personality']) {
+  test(`lesson 2.2 has a ${groupName} practice group with dictation for every ${groupName} word`, () => {
+    const vocab = lesson202.lesson_content.vocabulary
+      .filter((w) => w.category === groupName)
+      .map((w) => w.word);
+    const group = questions202.filter((q) => q.group === groupName);
+    assert.ok(group.length >= 3);
+    const dictated = new Set(group.filter((q) => q.category === 'dictation').map((q) => q.expected_answer));
+    for (const word of vocab) {
+      assert.ok(dictated.has(word), `"${word}" is not a dictation item in the ${groupName} group`);
+    }
+  });
+}

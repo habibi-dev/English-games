@@ -236,6 +236,23 @@ test('every quiz word is a vocabulary word, so it has its pronunciation, and an 
   }
 });
 
+test('lesson 2.2 vocabulary keeps Age, Appearance, and Personality blocks in order', () => {
+  const lesson202 = JSON.parse(readFileSync(new URL('../content/evolve-1/lesson-02-02.json', import.meta.url), 'utf8'));
+  const material = lessonMaterial([], [lesson202.lesson_content]);
+  const blocks = ['Age', 'Appearance', 'Personality'];
+  let at = 0;
+  for (const name of blocks) {
+    const expected = lesson202.lesson_content.vocabulary.filter((w) => w.category === name).map((w) => w.word);
+    const slice = material.words.slice(at, at + expected.length);
+    assert.deepEqual(
+      slice.map((w) => w.word),
+      expected,
+    );
+    assert.ok(slice.every((w) => w.category === name));
+    at += expected.length;
+  }
+});
+
 test('the Family words of lesson 2.1 are one category block in vocabulary order', () => {
   const lesson201 = JSON.parse(readFileSync(new URL('../content/evolve-1/lesson-02-01.json', import.meta.url), 'utf8'));
   const material = lessonMaterial([], [lesson201.lesson_content]);
